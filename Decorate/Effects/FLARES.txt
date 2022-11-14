@@ -1,0 +1,29 @@
+ACTOR PlayerMuzzle1
+{
+    Speed 0
+    PROJECTILE
+    +NOCLIP
+    +BLOODSPLATTER
+    States
+    {
+    Spawn:
+        PLMZ A 2 BRIGHT
+        Stop
+    }
+}
+
+
+ACTOR PlayerMuzzle2
+{
+    Speed 0
+    PROJECTILE
+    +NOCLIP
+    +BLOODSPLATTER
+    Scale 1.8
+    States
+    {
+    Spawn:
+        PLMZ A 2 BRIGHT
+        Stop
+    }
+}

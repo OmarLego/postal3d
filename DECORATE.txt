@@ -1,0 +1,8 @@
+#include Decorate/Test/Test.txt
+
+//Hostiles
+#include Decorate/Hostiles/Military.txt
+
+//Effects
+#include Decorate/Effects/FLARES.txt
+#include Decorate/Effects/TRACERS.txt

@@ -1,0 +1,11 @@
+ACTOR DudeSr
+{
+	XScale 0.58
+	YScale 0.58
+	States
+	{
+	Spawn:
+		DUDE A 1
+		Loop
+	}
+}
