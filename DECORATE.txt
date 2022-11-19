@@ -1,8 +1,16 @@
 #include Decorate/Test/Test.txt
 
-//Hostiles
-#include Decorate/Hostiles/Military.txt
-
 //Effects
 #include Decorate/Effects/FLARES.txt
 #include Decorate/Effects/TRACERS.txt
+
+//Weapons
+#include Decorate/Weapons/Postal3dWeaponBase.txt
+#include Decorate/Weapons/StarterSMG.txt
+#include Decorate/Weapons/ChinaLakeGL.txt
+
+//Hostiles
+#include Decorate/Hostiles/Military.txt
+
+//Player Classes
+#include Decorate/Player/Player.txt

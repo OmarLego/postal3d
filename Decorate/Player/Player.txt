@@ -1,0 +1,9 @@
+ACTOR PostalDudeSr : DoomPlayer
+{
+	Player.DisplayName "The Postal Dude, Sr."
+	Player.SoundClass "Dude"
+	Player.StartItem "StarterSMG"
+	Player.StartItem "Fist"
+	Player.StartItem "Clip", 50
+	Player.WeaponSlot 2, "StarterSMG"
+}

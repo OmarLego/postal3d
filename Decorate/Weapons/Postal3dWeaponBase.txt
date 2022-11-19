@@ -1,0 +1,5 @@
+ACTOR Postal3dWeaponBase : Weapon
+{
+	 Weapon.BobStyle "InverseSmooth"
+	 Weapon.BobSpeed 0.8
+}

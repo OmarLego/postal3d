@@ -1,0 +1,62 @@
+DefaultListMenu
+{
+    Font "BigFont", "Grey"
+	Selector "M_SKULL1", -32, -5
+	Linespacing 16
+}
+
+ListMenu "MainMenu"
+{
+  	StaticPatch 54, -1, "POSTPIC"
+ 	Position 105, 87
+    PatchItem "D_NGAME", "n", "PlayerclassMenu"
+	PatchItem "D_OPTION", "o", "OptionsMenu"
+	TextItem "POSTAL 3D Options", "b", "Postal3dMenu"
+	PatchItem "D_LOADG", "l", "LoadGameMenu"
+	PatchItem "D_SAVEG", "s", "SaveGameMenu"
+	TextItem "Credits", "c", "Postal3dCreditsMenu"
+    PatchItem "D_QUITG", "q", "QuitMenu"
+}
+
+ListMenu "SkillMenu"
+{
+		Linespacing 16
+
+		StaticPatch 75, 42, "D_SKILL"
+		Position 130, 72
+}
+
+
+
+AddOptionMenu "OptionsMenu"
+{
+  StaticText " "
+  Submenu "POSTAL 3D Options", "Postal3dMenu"
+}
+
+OptionValue "WeatherPrecipitationAmount"
+{
+	0, "Off"
+	1, "Low"
+	2, "Medium"
+	3, "High"
+	4, "Very High"
+}
+
+OptionMenu "Postal3dMenu"
+{
+  Title "POSTAL 3D Options"
+	StaticText ""
+  Option "Alternative Starter SMG Skin", "AlternativeStarterSMGSkin", "YesNo"
+	StaticText ""
+	StaticText "Weather Settings", Gold
+	StaticText ""
+	Option "Precipitation Amount", "weather_amount", "WeatherPrecipitationAmount"
+	StaticText ""
+	Slider "Precipitation Volume", "weather_precip_vol", 0, 1, 0.05, 2
+	Slider "Wind Volume", "weather_wind_vol", 0, 1, 0.05, 2
+	Slider "Thunder Volume", "weather_thunder_vol", 0, 1, 0.05, 2
+	StaticText ""
+	Option "Disable Lightning", "weather_no_lightning", "OnOff"
+	Option "Disable Fog", "weather_no_fog", "OnOff"
+}

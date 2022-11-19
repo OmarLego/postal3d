@@ -1,0 +1,325 @@
+class Rain : Precipitation
+{
+	Default
+	{
+		RenderStyle "Add";
+		Alpha 0.5;
+		XScale 0.25;
+		VSpeed -48;
+		
+		+FORCEYBILLBOARD
+	}
+	
+	States
+	{
+		Spawn:
+			RAIN A 15;
+			Stop;
+		
+		Death:
+			RAIN A 1;
+			TNT1 A 0
+			{
+				scale = (0.2,0.2);
+				bForceYBillboard = false;
+				bForceXYBillboard = true;
+			}
+			RAIN BCDE 1;
+			Stop;
+	}
+}
+
+class BloodRain : Rain
+{
+	Default
+	{
+		Translation "0:255=176:191";
+	}
+}
+
+class Snow : Precipitation
+{
+	Default
+	{
+		RenderStyle "Translucent";
+		Alpha 0.9;
+		Gravity 0.02;
+		
+		+FORCEXYBILLBOARD
+	}
+	
+	States
+	{
+		Death:
+			SNOW A 1;
+			Stop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		A_SetScale(frandom[Snow](0.25,0.5));
+	}
+}
+
+class LightSnow : Snow
+{
+	Default
+	{
+		VSpeed -4;
+	}
+	
+	States
+	{
+		Spawn:
+			SNOW A 140;
+			Stop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		VelFromAngle(frandom[Snow](0,1), frandom[Snow](0,360));
+	}
+}
+
+class LightAsh : LightSnow
+{
+	Default
+	{
+		Translation "0:255=9:15";
+		
+		+BRIGHT
+	}
+}
+
+class MediumSnow : Snow
+{
+	Default
+	{
+		VSpeed -8;
+	}
+	
+	States
+	{
+		Spawn:
+			SNOW A 70;
+			Stop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		VelFromAngle(frandom[Snow](2,3), frandom[Snow](0,360));
+	}
+}
+
+class HeavySnow : Snow
+{
+	Default
+	{
+		VSpeed -16;
+	}
+	
+	States
+	{
+		Spawn:
+			SNOW A 35;
+			Stop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		super.PostBeginPlay();
+		
+		VelFromAngle(frandom[Snow](7,10), frandom[Snow](20,30));
+	}
+}
+
+class HeavyAsh : HeavySnow
+{
+	Default
+	{
+		Translation "0:255=9:15";
+		
+		+BRIGHT
+	}
+}
+
+class RainAndSnow : Weather
+{
+	private WeatherHandler wh;
+	
+	Array<string> weatherTypes;
+	Array<string> intensityTypes;
+	
+	override void BeginPlay()
+	{
+		super.BeginPlay();
+		
+		intensityTypes.Push("Min");
+		intensityTypes.Push("Med");
+		intensityTypes.Push("Max");
+		
+		weatherTypes.Push("");
+		wh = WeatherHandler(StaticEventHandler.Find("WeatherHandler"));
+		if (wh)
+		{
+			for (uint i = 0; i < wh.precipTypes.Size(); ++i)
+			{
+				string n = wh.precipTypes[i].GetName().Mid(3);
+				if (weatherTypes.Find(n) >= weatherTypes.Size())
+					weatherTypes.Push(n);
+			}
+		}
+	}
+	
+	void SetWeather(int w, int i, bool message = true)
+	{
+		w = clamp(w, 0, weatherTypes.Size()-1);
+		i = clamp(i, 0, intensityTypes.Size()-1);
+		
+		string weath = weatherTypes[w];
+		if (weath == "")
+			Weather.SetPrecipitationType(weath);
+		else
+		{
+			string inten = intensityTypes[i];
+			if (wh)
+			{
+				int index = i;
+				do
+				{
+					inten = intensityTypes[index];
+					let pt = wh.Find(inten..weath);
+					if (pt)
+						break;
+					
+					--index;
+					if (index < 0)
+						index = intensityTypes.Size()-1;
+				} while (index != i)
+			}
+			
+			Weather.SetPrecipitationType(inten..weath);
+		}
+		
+		if (message)
+		{
+			string m = Weather.GetPrecipitationTypeTag();
+			if (m == "")
+				m = StringTable.Localize("$WTHR_SUNNY");
+			
+			console.printf("%s", m);
+		}
+	}
+}
+class RainAndSnowHandler : StaticEventHandler
+{
+	private RainAndSnow rs;
+	private transient CVar weath;
+	private transient CVar intensity;
+	private int prevWeather;
+	private int prevIntensity;
+	
+	override void WorldLoaded(WorldEvent e)
+	{
+		rs = null;
+		let wthr = Weather.Get();
+		if (wthr is "RainAndSnow")
+			rs = RainAndSnow(wthr);
+		else if (!wthr)
+			rs = RainAndSnow(Actor.Spawn("RainAndSnow"));
+		
+		if (rs)
+		{
+			if (!weath)
+				weath = CVar.GetCVar("rs_weather", players[consoleplayer]);
+			if (!intensity)
+				intensity = CVar.GetCVar("rs_intensity", players[consoleplayer]);
+			
+			rs.SetWeather(weath.GetInt(), intensity.GetInt(), false);
+			prevWeather = weath.GetInt();
+			prevIntensity = intensity.GetInt();
+		}
+	}
+	
+	override void WorldTick()
+	{
+		if (!rs)
+			return;
+		
+		if (!weath)
+			weath = CVar.GetCVar("rs_weather", players[consoleplayer]);
+		if (!intensity)
+			intensity = CVar.GetCVar("rs_intensity", players[consoleplayer]);
+		
+		if (weath.GetInt() != prevWeather || intensity.GetInt() != prevIntensity)
+			rs.SetWeather(weath.GetInt(), intensity.GetInt());
+		
+		prevWeather = weath.GetInt();
+		prevIntensity = intensity.GetInt();
+	}
+	
+	void ToggleWeather(bool prev = false)
+	{
+		if (!rs)
+			return;
+		
+		if (!weath)
+			weath = CVar.GetCVar("rs_weather", players[consoleplayer]);
+		
+		if (prev)
+		{
+			weath.SetInt(weath.GetInt()-1);
+			if (weath.GetInt() < 0)
+				weath.SetInt(rs.weatherTypes.Size()-1);
+		}
+		else
+		{
+			weath.SetInt(weath.GetInt()+1);
+			if (weath.GetInt() >= rs.weatherTypes.Size())
+				weath.SetInt(0);
+		}
+	}
+	
+	void ToggleIntensity(bool prev = false)
+	{
+		if (!rs)
+			return;
+		
+		if (!intensity)
+			intensity = CVar.GetCVar("rs_intensity", players[consoleplayer]);
+		
+		if (prev)
+		{
+			intensity.SetInt(intensity.GetInt()-1);
+			if (intensity.GetInt() < 0)
+				intensity.SetInt(rs.intensityTypes.Size()-1);
+		}
+		else
+		{
+			intensity.SetInt(intensity.GetInt()+1);
+			if (intensity.GetInt() >= rs.intensityTypes.Size())
+				intensity.SetInt(0);
+		}
+	}
+	
+	override void NetworkProcess(ConsoleEvent e)
+	{
+		if (e.player != consoleplayer || !rs)
+			return;
+		
+		if (e.Name ~== "NextWeather")
+			ToggleWeather();
+		else if (e.Name ~== "PrevWeather")
+			ToggleWeather(true);
+		else if (e.Name ~== "NextIntensity")
+			ToggleIntensity();
+		else if (e.Name ~== "PrevIntensity")
+			ToggleIntensity(true);
+	}
+}
