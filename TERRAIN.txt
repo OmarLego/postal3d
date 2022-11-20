@@ -1,0 +1,169 @@
+////////////
+// Splashes
+////////////
+
+Splash Nukage
+{
+    SmallClass      NukageSplashBase
+    SmallClip       6
+
+    BaseClass       NukageSplashBase
+    ChunkClass      SludgeChunk
+    ChunkXVelShift  8
+    ChunkYVelShift  8
+    ChunkZVelShift  6
+    ChunkBaseZVel   2
+    Sound           world/lavasizzle
+    
+    NOALERT
+}
+
+Splash Slime
+{
+    SmallClass      SlimeSplashBaseSmall
+    SmallClip       16
+    SmallSound      world/watersplashsmall
+    
+    BaseClass       SlimeSplashBase
+    ChunkClass      SlimeChunk
+    ChunkXVelShift  8
+    ChunkYVelShift  8
+    ChunkZVelShift  8
+    ChunkBaseZVel   2
+    Sound           world/sludgegloop
+    
+    NOALERT
+}
+
+Splash Slimy
+{
+    Sound           floor/slimy
+    NOALERT
+}
+
+Splash Water
+{
+    SmallClass      WaterSplashBaseSmall
+    SmallClip       16
+    SmallSound      world/watersplashsmall
+
+    BaseClass       WaterSplashBase2
+    ChunkClass      WaterSplash
+    ChunkXVelShift  8
+    ChunkYVelShift  8
+    ChunkZVelShift  8
+    ChunkBaseZVel   2
+    Sound           world/water-splash3
+    
+    NOALERT
+}
+
+Splash Blood
+{
+    SmallClass      BloodSplashBaseSmall
+    SmallClip       16
+
+    BaseClass       BloodSplashBase3
+    ChunkClass      BloodSplash
+    ChunkXVelShift  8
+    ChunkYVelShift  8
+    ChunkZVelShift  8
+    ChunkBaseZVel   2
+    Sound           world/sludgegloop
+    
+    NOALERT
+}
+
+Splash Lava
+{
+    SmallClass      LavaSplash
+    SmallClip       10
+
+    BaseClass       LavaSplash
+    ChunkXVelShift  -1
+    ChunkYVelShift  -1
+    ChunkZVelShift  2
+    ChunkBaseZVel   1
+    Sound           world/lavasizzle
+    
+    NOALERT
+}
+
+///////////
+// Terrain
+///////////
+
+terrain Nukage
+{
+    Splash      Nukage
+    FootClip    6
+    LIQUID
+}
+
+terrain Water
+{
+    Splash      Water
+    FootClip    6
+    LIQUID
+}
+
+terrain Lava
+{
+    Splash      Lava
+    FootClip    6
+    DamageType  "Fire"
+    LIQUID
+}
+
+terrain Blood
+{
+    Splash      Blood
+    FootClip    6
+    LIQUID
+}
+
+terrain Slime
+{
+    Splash      Slime
+    FootClip    6
+    LIQUID
+}
+
+terrain Slimy
+{
+    Splash      Slimy
+}
+
+//////////
+// Floors
+//////////
+
+ifdoom
+    floor BLOOD1 Blood
+    floor BLOOD2 Blood
+    floor BLOOD3 Blood
+    floor FWATER1 Water
+    floor FWATER2 Water
+    floor FWATER3 Water
+    floor FWATER4 Water
+    floor FWATER02 Water
+    floor LAVA1 Lava
+    floor LAVA2 Lava
+    floor LAVA3 Lava
+    floor LAVA4 Lava
+    floor NUKAGE1 Nukage
+    floor NUKAGE2 Nukage
+    floor NUKAGE3 Nukage
+    floor SLIME01 Slime
+    floor SLIME02 Slime
+    floor SLIME03 Slime
+    floor SLIME04 Slime
+    floor SLIME05 Slime
+    floor SLIME06 Slime
+    floor SLIME07 Slime
+    floor SLIME08 Slime
+    floor SFLR6_1 Slimy
+    floor SFLR6_4 Slimy
+    floor SFLR7_1 Slimy
+    floor SFLR7_4 Slimy
+endif

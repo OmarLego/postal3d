@@ -1,3 +1,6 @@
+//Hostiles' Weapons
+hostrifl hostrifl
+
 //Weapons
 $RANDOM SMGSHOT { SMGSHOT1 SMGSHOT2 SMGSHOT3 SMGSHOT4 }
 SMGSHOT1 SMGSHOT1
@@ -5,8 +8,118 @@ SMGSHOT2 SMGSHOT2
 SMGSHOT3 SMGSHOT3
 SMGSHOT4 SMGSHOT4
 
-//Hostiles' Weapons
-hostrifl hostrifl
+//Gore
+$random SLOP		{ SLOP1 SLOP2 SLOP3 }
+SLOP1 SLOP1
+SLOP2 SLOP2
+SLOP3 SLOP3
+
+$random misc/xdeath		{ misc/xdeath1a misc/xdeath1b misc/xdeath1c misc/xdeath1d misc/xdeath1e misc/xdeath1f misc/xdeath2a misc/xdeath2b misc/xdeath2c misc/xdeath2d misc/xdeath2e misc/xdeath2f misc/xdeath3a misc/xdeath3b misc/xdeath3c misc/xdeath4a misc/xdeath4b misc/xdeath4c }
+misc/xdeath1a			dsxdth1a
+misc/xdeath1b			dsxdth1b
+misc/xdeath1c			dsxdth1c
+misc/xdeath1d			dsxdth1d
+misc/xdeath1e			dsxdth1e
+misc/xdeath1f			dsxdth1f
+$random misc/xdeath1		{ misc/xdeath1a misc/xdeath1b misc/xdeath1c misc/xdeath1d misc/xdeath1e misc/xdeath1f }
+misc/xdeath2a			dsxdth2a
+misc/xdeath2b			dsxdth2b
+misc/xdeath2c			dsxdth2c
+misc/xdeath2d			dsxdth2d
+misc/xdeath2e			dsxdth2e
+misc/xdeath2f			dsxdth2f
+$random misc/xdeath2		{ misc/xdeath2a misc/xdeath2b misc/xdeath2c misc/xdeath2d misc/xdeath2e misc/xdeath2f }
+misc/xdeath3a			dsxdth3a
+misc/xdeath3b			dsxdth3b
+misc/xdeath3c			dsxdth3c
+$random misc/xdeath3		{ misc/xdeath3a misc/xdeath3b misc/xdeath3c }
+misc/xdeath4a			dsxdth4a
+misc/xdeath4b			dsxdth4b
+misc/xdeath4c			dsxdth4c
+$random misc/xdeath4		{ misc/xdeath4a misc/xdeath4b misc/xdeath4c }
+
+
+$random misc/xdeath5		{ misc/xdeath4a misc/xdeath4b misc/xdeath2a misc/xdeath2b misc/xdeath2e}
+
+$volume misc/xdeath 0.3
+$volume misc/xdeath1 0.5 //blop glop
+$volume misc/xdeath2 0.3 //gibs falling1
+$volume misc/xdeath3 0.3 //gibs falling2
+$volume misc/xdeath4 0.3 //bones crushing
+$volume misc/xdeath5 0.4 //bullet hit
+$limit misc/xdeath5 4
+$rolloff blooddrop 200 1000
+
+LQDRIP1 LQDRIP1
+LQDRIP2 LQDRIP2
+LQDRIP3 LQDRIP3
+LQDRIP4 LQDRIP4
+LQDRIP5 LQDRIP5
+LQDRIP6 LQDRIP6
+LQDRIP7 LQDRIP7
+LQDRIP8 LQDRIP8
+LQDRIP9 LQDRIP9
+LQDRIP10 LQDRIP10
+LQDRIP11 LQDRIP11
+LQDRIP12 LQDRIP12
+LQDRIP13 LQDRIP13
+LQDRIP14 LQDRIP14
+
+$random blooddrop  { LQDRIP1 LQDRIP2 LQDRIP3 } 
+$rolloff blooddrop 10 400
+$random blooddrop2  { LQDRIP4 LQDRIP5 LQDRIP6 LQDRIP7 }
+$rolloff blooddrop2 10 400
+$random blooddrop3  { LQDRIP8 LQDRIP9 LQDRIP10 LQDRIP11 LQDRIP12 LQDRIP13 LQDRIP14 LQDRIP14 } 
+$rolloff blooddrop3 10 400
+
+//Other effects
+
+weapons/smallmagdrop1   "sounds/impacts/case-drop-light-1.wav"
+weapons/smallmagdrop2   "sounds/impacts/case-drop-light-2.wav"
+weapons/smallmagdrop3   "sounds/impacts/case-drop-light-3.wav"
+weapons/smallmagdrop4   "sounds/impacts/case-drop-light-4.wav"
+$random weapons/smallmagdrop { weapons/smallmagdrop1 weapons/smallmagdrop2 weapons/smallmagdrop3 weapons/smallmagdrop4 }
+$volume weapons/smallmagdrop 0.5
+
+weapons/largemagdrop1   "sounds/impacts/case-drop-med-1.wav"
+weapons/largemagdrop2   "sounds/impacts/case-drop-med-2.wav"
+weapons/largemagdrop3   "sounds/impacts/case-drop-med-3.wav"
+weapons/largemagdrop4   "sounds/impacts/case-drop-med-4.wav"
+$random weapons/largemagdrop { weapons/largemagdrop1 weapons/largemagdrop2 weapons/largemagdrop3 weapons/largemagdrop4 }
+$volume weapons/largemagdrop 0.5
+
+weapons/hugemagdrop     "sounds/impacts/case-drop-heavy.ogg"
+
+weapons/shelldrop1      "sounds/impacts/shell-drop-1.wav"
+weapons/shelldrop2      "sounds/impacts/shell-drop-2.wav"
+weapons/shelldrop3      "sounds/impacts/shell-drop-3.wav"
+$random weapons/shelldrop { weapons/shelldrop1 weapons/shelldrop2 weapons/shelldrop3 }
+
+weapons/casing1     "sounds/impacts/brass-drop-1.ogg"
+weapons/casing2     "sounds/impacts/brass-drop-2.ogg"
+$random weapons/casing { weapons/casing1 weapons/casing2 } 
+$limit weapons/casing 5
+$rolloff weapons/casing 100 600
+
+impacts/breakglass  "sounds/impacts/glass-break.ogg"
+
+world/ricochet1     "sounds/impacts/ricochet-1.wav"
+world/ricochet2     "sounds/impacts/ricochet-2.wav"
+world/ricochet3     "sounds/impacts/ricochet-3.wav"
+world/ricochet4     "sounds/impacts/ricochet-4.wav"
+world/ricochet5     "sounds/impacts/ricochet-5.wav"
+world/ricochet6     "sounds/impacts/ricochet-6.wav"
+world/ricochet7     "sounds/impacts/ricochet-7.wav"
+$random impacts/ricochet { world/ricochet1 world/ricochet2 world/ricochet3 world/ricochet4 world/ricochet5 world/ricochet6 world/ricochet7 }
+$volume impacts/ricochet 0.7 
+$limit impacts/ricochet 1
+$rolloff impacts/ricochet 200 700
+
+explosions/explode  "sounds/explosions/explosion.ogg"
+explosions/far      "sounds/explosions/explosion-far.ogg"
+$rolloff explosions/explode 900 1500
+$rolloff explosions/far 3200 7400
+$limit explosions/far 4
 
 //Weather
 "weather/rain" RAIN

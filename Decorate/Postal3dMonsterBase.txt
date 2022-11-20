@@ -1,0 +1,9 @@
+ACTOR Postal3dMonsterBase {
+    //$Category Monsters
+    Monster
+    +FLOORCLIP
+    +SLIDESONWALLS
+    MaxStepHeight 24
+    MaxDropOffHeight 32
+    PainChance "Kick", 255
+}

@@ -1,16 +1,38 @@
-#include Decorate/Test/Test.txt
-
 //Effects
-#include Decorate/Effects/FLARES.txt
-#include Decorate/Effects/TRACERS.txt
+#include decorate/effects/PARTICLES.txt
+#include decorate/effects/BDSMOKE.txt
+#include decorate/effects/BDCASING.txt
+#include decorate/effects/SPARKS.txt
+#include decorate/effects/FLARES.txt
+#include decorate/effects/PUFF.txt
+#include decorate/effects/TRACERS.txt
+#include decorate/effects/FlatDecals.txt
+#include decorate/effects/KetchupBLOOD.txt //Blood actors
+#include decorate/effects/KetchupMEAT.txt //Gib actors
+#include decorate/effects/KetchupSERVING.txt //Gore Groups (spawns gibs and blood when enemies explodes)
 
 //Weapons
+#include decorate/weapons/PlayerProjectiles.txt
 #include Decorate/Weapons/Postal3dWeaponBase.txt
 #include Decorate/Weapons/StarterSMG.txt
 #include Decorate/Weapons/ChinaLakeGL.txt
+
+//Monster Base
+#include decorate/Postal3dMonsterBase.txt
 
 //Hostiles
 #include Decorate/Hostiles/Military.txt
 
 //Player Classes
 #include Decorate/Player/Player.txt
+
+//These are inventory tokens required for several things.
+Actor IsOverWater : Inventory{inventory.maxamount 1}
+Actor IsOverSlime : Inventory{inventory.maxamount 1}
+Actor IsOverSludge : Inventory{inventory.maxamount 1}
+Actor IsOverBlood : Inventory{inventory.maxamount 1}
+Actor IsOverNukage : Inventory{inventory.maxamount 1}
+Actor AnimuGore : Inventory{inventory.maxamount 1}
+Actor IsOverLava : Inventory{inventory.maxamount 1}
+Actor LowGraphicsMode : Inventory{inventory.maxamount 1}
+Actor IsOverSlimy : Inventory{inventory.maxamount 1}

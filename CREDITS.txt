@@ -5,10 +5,16 @@ Running With Scissors - Well, it is pretty obvious if you ask me (POSTAL and POS
 ID Software - Hmm, I wonder (DOOM)
 Apogee/3D Realms - Duke Nukem 3D and Rise of the Triad
 Monolith Productions - Blood (1997)
+Ceeb - Blood (1997) Texture Conversion into DOOM
+Bloom Team - Bloom (Palette Only)
 
 Individuals:
 Foxhead/Thfpjct - ComTex and RWLDEC
-Sergeant_Mark_IV - Brutal Doom
+Sergeant_Mark_IV - Brutal Doom and Brutal Bolognese
 DavidN - BDLite
+LossForWords - POSTAL: Running With Chainsaws
+Boondorl - Weather Spawner + Universal Rain and Snow
+Nash Muhandes - Less Slippery Doom Movement
+Accensus - Universal Gibs
 
 Brain Dead Arts Team Members:

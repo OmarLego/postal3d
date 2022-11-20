@@ -1,5 +1,11 @@
 server int AlternativeStarterSMGSkin = 0;
 
+//brutal bolognese
+user int bd_bloodamount	= 2;
+user int bd_lowgraphicsmode = 0;
+server int zdoombrutalblood	= 2;
+server int isrunningzandronum = 1;
+
 //weather
 user float weather_amount = 3;
 user float weather_precip_vol = 1;

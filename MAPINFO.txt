@@ -9,6 +9,7 @@ gameinfo
    Menufontcolor_highlight = "White"
    Menufontcolor_selection = "White"
    AddEventHandlers 	= "SaySomethingOnKill"
+   AddEventHandlers = "NashMoveHandler"
    PlayerClasses = "PostalDudeSr"
 	AddEventHandlers = "WeatherHandler"
 }
@@ -18,9 +19,20 @@ DoomEdNums
 	28473 = Weather
 }
 
+Episode MAP01
+{
+name = "Excess Postage"
+}
+
 Episode DM1
 {
 name = "Dudematch"
+}
+
+map MAP01 "Home"
+{
+music = ""
+sky1 = "skyhome"
 }
 
 map DM1 "Postal dudes mind"
