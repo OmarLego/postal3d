@@ -1,0 +1,6 @@
+switch SDWINDOW 
+	on sound glass/break
+	pic BKWINDOW tics 0
+	
+	off
+	pic SDWINDOW tics 0

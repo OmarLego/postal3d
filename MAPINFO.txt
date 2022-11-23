@@ -1,5 +1,6 @@
 gameinfo
 {
+   Intro {video = "Movies/RWSINTRO.ivf" sound = "Movies/RWSINTRO"}
    MenuSliderColor 		= "White"
    Menufontcolor_title 	= "Red"
    Menufontcolor_label 	= "Red"
@@ -10,7 +11,7 @@ gameinfo
    Menufontcolor_selection = "White"
    AddEventHandlers 	= "SaySomethingOnKill"
    AddEventHandlers = "NashMoveHandler"
-   PlayerClasses = "PostalDudeSr"
+   PlayerClasses = "PostalDudeSr", "NotimPortant"
 	AddEventHandlers = "WeatherHandler"
 }
 
@@ -32,7 +33,7 @@ name = "Dudematch"
 map MAP01 "Home"
 {
 music = ""
-sky1 = "skyhome"
+sky1 = "CLDYSKY5"
 }
 
 map DM1 "Postal dudes mind"

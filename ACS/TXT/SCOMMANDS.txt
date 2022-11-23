@@ -1,0 +1,17 @@
+#library "commands"
+#include "zcommon.acs"
+
+Script 301 (VOID) NET
+{
+ GiveInventory("Kicking", 1);
+}
+
+Script 363 (VOID) NET
+{
+ GiveInventory("YouRegretNothing", 1);
+}
+
+Script 315 (VOID) NET
+{
+ GiveInventory("TossGrenade", 1);
+}

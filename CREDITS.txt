@@ -13,8 +13,11 @@ Foxhead/Thfpjct - ComTex and RWLDEC
 Sergeant_Mark_IV - Brutal Doom and Brutal Bolognese
 DavidN - BDLite
 LossForWords - POSTAL: Running With Chainsaws
+TatumWilbanks - China Lake Finalized 3D Model (Sketchfab)
 Boondorl - Weather Spawner + Universal Rain and Snow
 Nash Muhandes - Less Slippery Doom Movement
 Accensus - Universal Gibs
+enderkevin13 - Destroyable windows: An easier way Guide
+Jakie - How to make .IVF cutscenes in GZDoom
 
 Brain Dead Arts Team Members:

@@ -6,4 +6,17 @@ ACTOR Postal3dMonsterBase {
     MaxStepHeight 24
     MaxDropOffHeight 32
     PainChance "Kick", 255
+	States
+	{
+	Spawn:
+        TNT1 A 0 A_Print("??? Weapon reached unimplemented state ???")
+        Stop
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("BurningGeneric")
+		Stop
+	}
 }

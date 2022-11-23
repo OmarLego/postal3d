@@ -2,6 +2,7 @@
 #include decorate/effects/PARTICLES.txt
 #include decorate/effects/BDSMOKE.txt
 #include decorate/effects/BDCASING.txt
+#include decorate/effects/FIRE.txt
 #include decorate/effects/SPARKS.txt
 #include decorate/effects/FLARES.txt
 #include decorate/effects/PUFF.txt
@@ -10,12 +11,14 @@
 #include decorate/effects/KetchupBLOOD.txt //Blood actors
 #include decorate/effects/KetchupMEAT.txt //Gib actors
 #include decorate/effects/KetchupSERVING.txt //Gore Groups (spawns gibs and blood when enemies explodes)
+#include decorate/effects/BURN.txt
 
 //Weapons
 #include decorate/weapons/PlayerProjectiles.txt
 #include Decorate/Weapons/Postal3dWeaponBase.txt
 #include Decorate/Weapons/StarterSMG.txt
-#include Decorate/Weapons/ChinaLakeGL.txt
+#include Decorate/Weapons/Flamer.txt
+#include Decorate/Weapons/GrenadeLauncher.txt
 
 //Monster Base
 #include decorate/Postal3dMonsterBase.txt
@@ -36,3 +39,12 @@ Actor AnimuGore : Inventory{inventory.maxamount 1}
 Actor IsOverLava : Inventory{inventory.maxamount 1}
 Actor LowGraphicsMode : Inventory{inventory.maxamount 1}
 Actor IsOverSlimy : Inventory{inventory.maxamount 1}
+
+//Monster Tokens
+Actor PoorGuyBurningLife : Inventory {inventory.maxamount 10}
+
+//player tokens
+Actor Kicking : Inventory
+{
+inventory.maxamount 1
+}

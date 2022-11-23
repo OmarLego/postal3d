@@ -143,3 +143,39 @@ ACTOR BlackSmoke : ExplosionSmoke
     Stop
     }
 }
+
+ACTOR AltSmoke: ExplosionSmoke
+{
++NOINTERACTION
++NOCLIP
+Scale 0.8
+States
+	{
+	Spawn:
+	PUF2 A 1
+	Goto Death
+	Death:                                                          
+	PUF2 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 A_FadeOut(0.010)
+	Stop
+	}
+}
+
+Actor PlasmaSmoke: AltSmoke
+{
+Alpha 0.15
+Speed 1
++CLIENTSIDEONLY
+Scale 0.4
+States
+	{
+	Spawn:
+	PUF2 D 1
+	Goto Death
+	Death:                                                          
+	SMOC ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 A_FadeOut(0.002)
+	SM7C AB 2 A_FadeOut(0.002)
+	SMOC ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 A_FadeOut(0.002)
+	SM7C AB 2 A_FadeOut(0.002)
+	Stop
+	}
+}
