@@ -12,6 +12,7 @@ gameinfo
    AddEventHandlers 	= "SaySomethingOnKill"
    AddEventHandlers = "NashMoveHandler"
    PlayerClasses = "PostalDudeSr", "NotimPortant"
+	NoRandomPlayerClass = True
 	AddEventHandlers = "WeatherHandler"
 }
 
@@ -22,6 +23,7 @@ DoomEdNums
 
 Episode MAP01
 {
+   Intro {video = "Movies/burningparadisetest.ivf" sound = "Movies/burningparadisetest"}
 name = "Excess Postage"
 }
 

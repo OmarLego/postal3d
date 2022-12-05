@@ -85,6 +85,7 @@ ACTOR NotimPortant : PostalDudeSr
 
 	Player.DisplayName "Not Important"
 	Player.SoundClass "Notim"
+	+NOMENU
 	States
     {
     Spawn:

@@ -1,0 +1,15 @@
+ACTOR ZombiemanReplacer: RandomSpawner replaces Zombieman
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "PoliceBrownPistolWhiteMale"
+}
+
+ACTOR ChaingunnerReplacer: RandomSpawner replaces Chaingunguy
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "MilitaryRifleWhiteMale"
+}

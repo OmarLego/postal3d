@@ -7,6 +7,11 @@ hostrif4 hostrif4
 hostrif5 hostrif5
 hostrif6 hostrif6
 
+$random hostpis { hostpis1 hostpis2 hostpis3 }
+hostpis1 hostpis1
+hostpis2 hostpis2
+hostpis3 hostpis3
+
 //Weapons
 weapons/melee/swing     "sounds/weapons/melee/melee-swing.wav"
 weapons/melee/punch     "sounds/weapons/melee/melee-punch.wav"
@@ -30,10 +35,11 @@ FLAMERF1 FLAMERF1
 FLAMERF2 FLAMERF2
 
 //Gore
-$random SLOP		{ SLOP1 SLOP2 SLOP3 }
+$random SLOP		{ SLOP1 SLOP2 SLOP3 SLOP4 }
 SLOP1 SLOP1
 SLOP2 SLOP2
 SLOP3 SLOP3
+SLOP4 SLOP4
 
 $random misc/xdeath		{ misc/xdeath1a misc/xdeath1b misc/xdeath1c misc/xdeath1d misc/xdeath1e misc/xdeath1f misc/xdeath2a misc/xdeath2b misc/xdeath2c misc/xdeath2d misc/xdeath2e misc/xdeath2f misc/xdeath3a misc/xdeath3b misc/xdeath3c misc/xdeath4a misc/xdeath4b misc/xdeath4c }
 misc/xdeath1a			dsxdth1a
@@ -344,3 +350,4 @@ $RANDOM DudeTalk { BurnLines ExplosionLines KillSeriesLines WeaponFiringLines We
 
 //FMV Audio
 Movies/RWSINTRO "Movies/RWSINTRO.ogg"
+Movies/burningparadisetest "Movies/burningparadisetest.ogg"

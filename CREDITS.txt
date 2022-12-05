@@ -7,6 +7,8 @@ Apogee/3D Realms - Duke Nukem 3D and Rise of the Triad
 Monolith Productions - Blood (1997)
 Ceeb - Blood (1997) Texture Conversion into DOOM
 Bloom Team - Bloom (Palette Only)
+Destructive Creations - Hatred
+Hyperstrange - POSTAL: Brain Damaged
 
 Individuals:
 Foxhead/Thfpjct - ComTex and RWLDEC
@@ -19,5 +21,14 @@ Nash Muhandes - Less Slippery Doom Movement
 Accensus - Universal Gibs
 enderkevin13 - Destroyable windows: An easier way Guide
 Jakie - How to make .IVF cutscenes in GZDoom
+bartkov - Redux Dude for POSTAL 2
+Man Chrzan/SZATAN - Redux Dude for POSTAL 2
+Adams - Redux Dude for POSTAL 2
+KeshaFilm -  HONG KONG 2027 and NOTIM PORTANT for POSTAL 2
+Evil -  NOTIM PORTANT for POSTAL 2
 
 Brain Dead Arts Team Members:
+NastyAndBrutal - Owner
+Johnny Cruelty - Owner
+whatever im gonna name myself (formerly omar) online in my girlness arc (its happening now) - Artist, Mapper, and Coder
+Pennis Drager - Artist and Coder

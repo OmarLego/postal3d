@@ -20,10 +20,12 @@
 #include Decorate/Weapons/Flamer.txt
 #include Decorate/Weapons/GrenadeLauncher.txt
 
-//Monster Base
+//Monster Base + Brutal Monster Heritage
 #include decorate/Postal3dMonsterBase.txt
+#include decorate/BrutalMonsterHeritage.txt
 
 //Hostiles
+#include Decorate/Hostiles/POLICE.txt
 #include Decorate/Hostiles/Military.txt
 
 //Player Classes
@@ -42,9 +44,20 @@ Actor IsOverSlimy : Inventory{inventory.maxamount 1}
 
 //Monster Tokens
 Actor PoorGuyBurningLife : Inventory {inventory.maxamount 10}
+Actor IsCrawling : Inventory
+{
+inventory.maxamount 1
+}
+Actor DeathTimer1 : Inventory
+{
+inventory.maxamount 120
+}
 
 //player tokens
 Actor Kicking : Inventory
 {
 inventory.maxamount 1
 }
+
+//Replacers for Vanilla DOOM
+#include Decorate/DOOMREPLACERS.txt
