@@ -21,25 +21,25 @@ DoomEdNums
 	28473 = Weather
 }
 
-Episode MAP01
+Episode P3D01
 {
    Intro {video = "Movies/burningparadisetest.ivf" sound = "Movies/burningparadisetest"}
 name = "Excess Postage"
 }
 
-Episode DM1
+Episode P3DDM01
 {
 name = "Dudematch"
 }
 
-map MAP01 "Home"
+map P3D01 "Home"
 {
 music = ""
 sky1 = "CLDYSKY5"
 }
 
-map DM1 "Postal dudes mind"
+map P3DDM01 "Postal dudes mind"
 {
 music = D_MIND
-sky1 = "CLDYSKY2.png", 0.2
+sky1 = "CLDYSKY2", 0.2
 }

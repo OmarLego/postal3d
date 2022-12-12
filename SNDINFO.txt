@@ -149,12 +149,7 @@ $rolloff explosions/far 3200 7400
 $limit explosions/far 4
 
 //Map Effects
-glass/break	DSGLASS
-$limit 	glass/break 0
-$pitchshift 	glass/break 3
-$rolloff 	glass/break 1000 2000
-
-//Weather
+//weather
 "weather/rain" RAIN
 "weather/wind" WIND
 $random "weather/thunder" { THND1 THND2 THND3 THND4 THND5 THND6 }
@@ -164,6 +159,15 @@ THND3 THND3
 THND4 THND4
 THND5 THND5
 THND6 THND6
+//glass
+glass/break	DSGLASS
+$limit 	glass/break 0
+$pitchshift 	glass/break 3
+$rolloff 	glass/break 1000 2000
+//doors
+dooropen			dooropen
+doorclos			doorclos
+doorstop			doorstop
 
 //Demon
 $RANDOM BurnLines { BL1 BL2 BL3 BL4 BL5 BL6 BL7 BL8 BL9 BL10 BL11 BL12 BL13 BL14 BL15 BL16 BL17 BL18 BL19 BL20 BL21 BL22 BL23 }

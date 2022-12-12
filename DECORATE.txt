@@ -31,6 +31,12 @@
 //Player Classes
 #include Decorate/Player/Player.txt
 
+//Replacers for Vanilla DOOM
+#include Decorate/DOOMREPLACERS.txt
+
+//Secret Stuff
+#include Decorate/SecretStuff/DEVTEAM.txt
+
 //These are inventory tokens required for several things.
 Actor IsOverWater : Inventory{inventory.maxamount 1}
 Actor IsOverSlime : Inventory{inventory.maxamount 1}
@@ -52,12 +58,13 @@ Actor DeathTimer1 : Inventory
 {
 inventory.maxamount 120
 }
+Actor IsDown : Inventory
+{
+inventory.maxamount 1
+}
 
 //player tokens
 Actor Kicking : Inventory
 {
 inventory.maxamount 1
 }
-
-//Replacers for Vanilla DOOM
-#include Decorate/DOOMREPLACERS.txt

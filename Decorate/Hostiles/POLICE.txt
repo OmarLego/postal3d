@@ -5,6 +5,7 @@ ACTOR DyingPoliceBrownWhiteMale : DyingZombieman
     {
 	Spawn:
 		TNT1 A 0
+        TNT1 A 0 A_GiveInventory("IsDown", 1)
 		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
 		SHIW A 1 A_Look
 		Loop
@@ -24,6 +25,7 @@ ACTOR DyingPoliceBrownWhiteMale : DyingZombieman
 	Death:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Pain
+        TNT1 A 0 A_TakeInventory("IsDown", 1)
 		SHRD L -1
 		Stop
     Death.fire:
@@ -31,6 +33,7 @@ ACTOR DyingPoliceBrownWhiteMale : DyingZombieman
 	Death.burn:
 	Death.flame:
 		TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_TakeInventory("IsDown", 1)
 		TNT1 A 0 A_SpawnItem("BurningGeneric")
 		Stop
 	}
