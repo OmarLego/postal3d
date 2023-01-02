@@ -1,7 +1,12 @@
 ACTOR Postal3dWeaponBase : Weapon
 {
+    Weapon.AmmoUse1 0
+    Weapon.AmmoUse2 0
+    Weapon.AmmoGive1 0
+    Weapon.AmmoGive2 0
     +FORCEXYBILLBOARD
-    +WEAPON.NOALERT
+	Weapon.BobStyle "InverseSmooth"
+	Weapon.BobSpeed 0.8
 	States
 	{
     Ready:

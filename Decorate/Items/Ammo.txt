@@ -1,0 +1,531 @@
+ACTOR AKMag : Ammo
+{
+  Inventory.PickupMessage "Got a magazine of heavy ammo"
+  Inventory.Amount 10
+  scale 0.7
+  Inventory.MaxAmount 132
+  Tag "7.62 Magazine"
+  Ammo.BackpackAmount 16
+  Ammo.BackpackMaxAmount 225
+  Inventory.PickupSound "AKREL"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   AKMG A -1
+      loop
+  }
+}
+
+ACTOR AKBullets : AKMag
+{
+  Inventory.PickupMessage "Got some heavy ammo cartridges"
+  Inventory.Amount 4
+  scale 0.2
+  Inventory.MaxAmount 132
+  Tag "7.62 Bullets"
+  Ammo.BackpackAmount 16
+  Ammo.BackpackMaxAmount 225
+  Inventory.PickupSound "AKREL"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   AKMG G -1
+      loop
+  }
+}
+
+
+
+ACTOR AKMagBox : AKMag
+{
+  Inventory.PickupMessage "Got a box of heavy ammo"
+  Inventory.Amount 25
+  scale 0.9
+  Inventory.MaxAmount 132
+  Tag "7.62 Magazine box"
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 225
+  Inventory.PickupSound "AKREL"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   AKMG B -1
+      loop
+  }
+}
+
+
+ACTOR Buckshot : Ammo
+{
+  Inventory.PickupMessage "Got 3 12ga shells"
+  Inventory.Amount 3
+  scale 0.4
+  Inventory.MaxAmount 50
+  Tag "12ga Shells"
+  Ammo.BackpackAmount 16
+  Ammo.BackpackMaxAmount 100
+  Inventory.PickupSound "SLOAD"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   SHLS A -1
+      loop
+  }
+}
+
+ACTOR BuckshotBandolier : Buckshot
+{
+  Inventory.PickupMessage "Got a pack of 12ga Shells"
+  Inventory.Amount 6
+  scale 0.4
+  Inventory.MaxAmount 50
+  Tag "12ga Bandolier"
+  Ammo.BackpackAmount 16
+  Ammo.BackpackMaxAmount 100
+  Inventory.PickupSound "SLOAD"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   SHLS B -1
+      loop
+  }
+}
+
+
+
+ACTOR BuckshotBox : Buckshot
+{
+  Inventory.PickupMessage "Got a magazine of 12ga Shells"
+  Inventory.Amount 14
+  scale 1
+  Inventory.MaxAmount 50
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 100
+  Inventory.PickupSound "SLOAD"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   SHLS C -1
+      loop
+  }
+}
+
+
+ACTOR MagnumLoad : Ammo
+{
+  Inventory.PickupMessage "Got 3 .357 cartridges"
+  Inventory.Amount 3
+  scale 0.6
+  Inventory.MaxAmount 12
+  Ammo.BackpackAmount 10
+  Ammo.BackpackMaxAmount 18
+  Inventory.PickupSound "SOPN"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   MAGA A -1
+      loop
+  }
+}
+
+ACTOR Speedloader : MagnumLoad
+{
+  Inventory.PickupMessage "Got a .357 Speedloader with 6 cartridges"
+  Inventory.Amount 6
+  scale 0.4
+  Inventory.MaxAmount 12
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 18
+  Inventory.PickupSound "SOPN"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   MAGA B -1
+      loop
+  }
+}
+
+
+
+ACTOR MagnumBox : MagnumLoad
+{
+  Inventory.PickupMessage "Got a box with Magnum loads"
+  Inventory.Amount 10
+  scale 0.4
+  Inventory.MaxAmount 12
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 18
+  Inventory.PickupSound "SOPN"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   MAGA C -1
+      loop
+  }
+}
+
+
+ACTOR 9MM : Ammo
+{
+  Inventory.PickupMessage "Got 4 light cartridges"
+  Inventory.Amount 4
+  scale 0.5
+  Inventory.MaxAmount 180
+  Ammo.BackpackAmount 20
+  Ammo.BackpackMaxAmount 270
+  Inventory.PickupSound "MP5REL"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   9MMM B -1
+      loop
+  }
+}
+
+ACTOR 9MMMag : 9MM
+{
+  Inventory.PickupMessage "Got a magazine of light ammo"
+  Inventory.Amount 16
+  scale 0.3
+  Inventory.MaxAmount 180
+  Ammo.BackpackAmount 10
+  Ammo.BackpackMaxAmount 270
+  Inventory.PickupSound "MP5REL"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   9MMM A -1
+      loop
+  }
+}
+
+
+
+ACTOR 9MMBox : 9MM
+{
+  Inventory.PickupMessage "Got a box with light cartridges"
+  Inventory.Amount 24
+  scale 0.6
+  Inventory.MaxAmount 180
+  Ammo.BackpackAmount 10
+  Ammo.BackpackMaxAmount 270
+  Inventory.PickupSound "MP5REL"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+   9MMM C -1
+      loop
+  }
+}
+
+ACTOR Fuel : Ammo
+{
+  Inventory.PickupMessage "Got a small fuel can"
+  Inventory.Amount 15
+  scale 0.8
+  Inventory.MaxAmount 240
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 240
+  Inventory.PickupSound "GASOL"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  GASO B -1
+      loop
+  }
+}
+
+ACTOR BigFuel : Fuel
+{
+  Inventory.PickupMessage "Got a big fuel can"
+  Inventory.Amount 35
+  scale 1.1
+  Inventory.MaxAmount 240
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 240
+  Inventory.PickupSound "GASOL"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  GASO A -1
+      loop
+  }
+}
+
+
+ACTOR 1Missile : Ammo
+{
+  Inventory.PickupMessage "Got 1 missile"
+  Inventory.Amount 1
+  scale 0.8
+  Inventory.MaxAmount 20
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 50
+  Inventory.PickupSound "MPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  RCKT A -1
+      loop
+  }
+}
+ACTOR 1HSMissile : Ammo
+{
+  Inventory.PickupMessage "Got 1 Heat-Seeking missile"
+  Inventory.Amount 1
+  scale 0.8
+  Inventory.MaxAmount 15
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 25
+  Inventory.PickupSound "MPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  RCKT B -1
+      loop
+  }
+}
+ACTOR NapCan : Ammo
+{
+  Inventory.PickupMessage "Got 1 Napalm canister"
+  Inventory.Amount 1
+  scale 0.2
+  Inventory.MaxAmount 4
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 4
+  Inventory.PickupSound "MPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  NPAM A -1
+      loop
+  }
+}
+
+ACTOR MissileBox : 1Missile
+{
+  Inventory.PickupMessage "Got a box of 4 missiles"
+  Inventory.Amount 4
+  scale 0.8
+  Inventory.MaxAmount 20
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 50
+  Inventory.PickupSound "MPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  RCKT C -1
+      loop
+  }
+}
+ACTOR 1HSMissileBox : 1HSmissile
+{
+  Inventory.PickupMessage "Got a box of 4 Heat-Seeking missiles"
+  Inventory.Amount 4
+  scale 0.8
+  Inventory.MaxAmount 15
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 25
+  Inventory.PickupSound "MPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  RCKT D -1
+      loop
+  }
+}
+
+ACTOR Grenadee : Ammo
+{
+  Inventory.PickupMessage "Got 1 grenade"
+  Inventory.Amount 1
+  scale 0.3
+  Inventory.MaxAmount 6
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 15
+  Inventory.PickupSound "MPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  GRNS A -1
+      loop
+  }
+}
+
+ACTOR GrenadeBox : Grenadee
+{
+  Inventory.PickupMessage "Got a box of 5 grenades"
+  Inventory.Amount 5
+  scale 0.9
+  Inventory.MaxAmount 6
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 15
+  Inventory.PickupSound "MPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  GRNS B -1
+      loop
+  }
+}
+
+ACTOR Molotovv : Ammo
+{
+  Inventory.PickupMessage "Got 1 Molotov"
+  Inventory.Amount 1
+  scale 0.3
+  Inventory.MaxAmount 4
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 9
+  Inventory.PickupSound "MLPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  MOLP A -1
+      loop
+  }
+}
+
+ACTOR MolotovBox : Molotovv
+{
+  Inventory.PickupMessage "Got a box of 3 Molotovs"
+  Inventory.Amount 3
+  scale 0.9
+  Inventory.MaxAmount 4
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 9
+  Inventory.PickupSound "MLPICK"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  MOLP B -1
+      loop
+  }
+}
+ACTOR PB : Ammo
+{
+  Inventory.PickupMessage "Got a Pipe Bomb"
+  Inventory.Amount 1
+  scale 0.2
+  Inventory.MaxAmount 3
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 6
+  Inventory.PickupSound "MPICK"
+    +FLOORCLIP
+  States
+  {
+   Spawn:
+  PBMB A -1
+      loop
+  }
+}
+
+
+actor ClipReplacer : RandomSpawner replaces Clip
+{
+    DropItem "AKBullets", 255, 4
+	DropItem "9MM", 255, 4
+    DropItem "AKMAG", 255, 2
+	DropItem "MagnumLoad", 255, 2
+	DropItem "9MMMag", 255, 3
+	DropItem "SpeedLoader", 255, 2
+	
+}
+
+
+
+actor ClipBoxReplacer : RandomSpawner replaces ClipBox
+{
+    DropItem "AKMAGBOX", 255, 2
+	DropItem "9MMBOX", 255, 2
+}
+	
+	actor ShellsReplacer : RandomSpawner replaces Shell
+{
+    DropItem "Buckshot", 255, 6
+	DropItem "MagnumLoad", 255, 2
+	DropItem "SpeedLoader", 255, 3
+    DropItem "Buckshotbandolier", 255, 4
+	
+}
+
+
+
+actor ShellBoxReplacer : RandomSpawner replaces ShellBox
+{
+    DropItem "BuckshotBox", 255, 4
+	DropItem "MagnumBox", 255, 3
+}
+	
+
+actor CellReplacer : RandomSpawner replaces Cell
+{
+    DropItem "Fuel", 255, 4
+}
+	
+actor CellBoxReplacer : RandomSpawner replaces CellPack
+{
+    DropItem "BigFuel", 255, 4
+	DropItem "NapCan", 255, 1
+}
+	
+	
+	
+actor RKReplacer : RandomSpawner replaces RocketAmmo
+{
+    DropItem "1Missile", 255, 4
+	DropItem "NapCan", 255, 1
+	DropItem "1HSMissile", 255, 2
+	DropItem "Grenadee", 255, 3
+	DropItem "Molotovv", 255, 2
+	DropItem "PB", 255, 2
+}
+
+actor RKBoxReplacer : RandomSpawner replaces RocketBox
+{
+    DropItem "MissileBox", 255, 4
+	DropItem "NapCan", 255, 1
+	DropItem "1HSMissileBox", 255, 2
+	DropItem "GrenadeBox", 255, 3
+	DropItem "MolotovBox", 255, 2
+}
+
+ACTOR MacheteAmmo : Ammo
+{
+  Inventory.Pickupmessage "You got your Machete back!"
+  Inventory.Amount 1
+  Inventory.MaxAmount 1
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 1
+  Inventory.PickupSound "weapons/machete/pickup"
+    +FLOORCLIP
+  States
+  {
+  Spawn:
+  MCHP A -1
+      loop
+  }
+}

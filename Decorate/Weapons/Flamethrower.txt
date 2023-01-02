@@ -1,0 +1,589 @@
+
+ACTOR Flammenwerfer : Postal3dWeaponBase
+{
+Weapon.AmmoUse1 0
+	Weapon.AmmoGive1 50
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 100
+	Weapon.AmmoType1 "Fuel"
+	Weapon.AmmoType2 "Magazine8"
+Inventory.PickupMessage "\c[red]You got the \c[Yellow]Flamethrower"
+  Inventory.PickupSound "FTUP"
+  +weapon.NoAutoaim
+  +Weapon.NoAutoFire
+  
+  States
+  { 
+	Ready:
+	TNT1 A 0 A_JumpIfInventory ("Magazine8",1,"Ready1")
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+	Goto Ready
+	
+	Ready1:
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	
+	Goto Ready1
+	
+	Select:
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+	FLMR A 1 A_Raise
+	Goto Ready
+	
+	Deselect:
+	TNT1 A 0 A_StopSoundEx("Weapon")
+	FLMR A 1 A_Lower
+	loop
+	
+	Spawn:
+	FLAM A 1
+	loop
+
+Reload:
+TNT1 A 0 A_JumpIfInventory ("Magazine8",80,"Ready")
+Goto Reloading
+
+	Fire:
+	TNT1 A 0 A_JumpIfInventory ("Magazine8",1,"Firestart")
+	goto OutOfAmmo
+	
+	FireStart:
+	TNT1 A 0 A_Takeinventory("DoubleMagazine8",1)
+	TNT1 A 0 A_PlaySoundEx("FLSTART","SoundSlot6")
+	TNT1 A 0 A_PlaySoundEx("FLLOOP","Weapon",true)
+	FLMF A 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+	Goto FireLooping
+	FireLooping:
+	TNT1 A 0 A_JumpIfInventory ("Magazine8",1,"FireLooping2")
+	goto OutOfAmmo
+	FireLooping2:
+		FLMF A 2 Bright
+		{
+		A_FireCustomMissile("FlameFire", 2, 0, Random(4, 8), 2);
+		A_TakeInventory ("Magazine8",1);
+		A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate);
+		}
+		goto FireLooping3
+		
+		FireLooping3:
+	   FLMF B 2 Bright
+		{
+		A_TakeInventory ("Magazine8",1);
+		A_FireCustomMissile("FlameFire", 2, 0, Random(4, 8), 2);
+		A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate);
+		}
+		TNT1 A 0 A_Refire ("FireLooping")
+		goto FireFinish
+		
+	FireFinish:
+		FLMF C 2 BRIGHT A_StopSoundEx("Weapon")
+		FLMF D 2 BRIGHT A_PlaySoundEx("FLEND","SoundSlot6")
+		FLMF E 2 BRIGHT
+		goto Ready
+		
+OutOfAmmo:
+TNT1 A 0  A_StopSoundEx("Weapon")
+TNT1 A 0 A_PlaySoundEx("FLEND","SoundSlot6")
+FLMR B 1 A_Print ("\c[yellow]Out of ammo",1)
+Goto Ready
+
+Reloading:
+TNT1 A 0 A_JumpIfInventory ("Magazine8",80,"FinishReload")
+TNT1 A 0 A_JumpIfInventory ("Fuel",1,"StartReload")
+goto FinishReload
+StartReload:
+FLML A 2 A_PlaySound ("FTPULL",CHAN_AUTO)
+FLML BCDEFGHIJ 3
+FLML JJJJJJJJ 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+FLML J 2 A_PlaySound ("FTOPN",CHAN_AUTO)
+FLML JJJJJJ 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+FLML J 1 A_FireCustomMissile ("FTCasingSpawner",0,0,-30,-10)
+FLML JJJJJJJ 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+FLML J 3 A_PlaySound ("AIM",CHAN_AUTO)
+FLML JJ 3
+FLML J 2 A_PlaySound ("FTIN",CHAN_AUTO)
+Goto Bulletin
+
+ReloadContinue:
+FLML J 2 A_PlaySound ("FTCLOS",CHAN_AUTO)
+FLML JJJJJJJJJJ 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+FLML JIHGFED 3
+FLML C 2 A_PlaySound ("FTREL",CHAN_AUTO)
+FLML BA 2
+FLML AAA 2
+FLML A 2 A_PlaySound ("FTPULL",CHAN_AUTO)
+FLML B 2
+FLML K 2
+FLML L 2 A_PlaySound ("FTREL",CHAN_AUTO)
+FLML M 2
+goto FinishReload
+
+FinishReload:
+FLMR CD 2
+goto Ready
+
+Bulletin:
+TNT1 AAAA 0
+		TNT1 A 0 A_JumpIfInventory("Magazine8",80,"ReloadContinue")
+		TNT1 A 0 A_JumpIfInventory("Fuel",1,"Bulletin2")
+	   goto FinishReload
+		Bulletin2:
+        TNT1 AAAAAA 0
+		TNT1 A 0 A_Giveinventory("Magazine8",1)
+		TNT1 A 0 A_Giveinventory("DoubleMagazine8",1)
+		TNT1 A 0 A_Takeinventory("Fuel",1)
+		Goto Bulletin
+
+  }
+}
+
+Actor FlameFire
+{
+  Radius 2
+  Height 4
+  Speed 20
+  Damage 1
+  Projectile
+  RenderStyle Add
+  DamageType Fire
+  Alpha 0.67
+  Scale 0.45
+  DeathSound "FHIT"
+  Decal Scorch
+  +Bright
+  States
+  {
+  Spawn:
+    TNT1 A 0
+	Goto Spawn1
+  Spawn1:	
+    TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)	
+	
+	FIR3 AB 1 Bright  A_Explode(8, 34, 0)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 CD 1 Bright  A_Explode(8, 34, 0)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 EF 1 Bright  A_Explode(9, 34, 0)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 GH 1 Bright  A_Explode(9, 34, 0)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 IJ 2 Bright  A_Explode(9, 34, 0)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 KL 2 Bright  A_Explode(9, 34, 0)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	FIR3 MN 2 Bright  A_Explode(9, 34, 0)
+	FIR3 OP 2 A_FadeOut(0.32)
+    Stop
+  Death:
+    TNT1 AA 0 A_Explode(5, 64, 0)
+	TNT1 AA 0 A_SpawnItemEx("DropFire",1,1,1)
+    Stop
+  }
+}
+
+Actor DropFire
+{
+  Radius 8
+  Height 40
+  Projectile
+  Speed 0 
+  RenderStyle Add
+  DamageType Fire
+  Paintype Fire
+  Deathtype Fire
+  Scale 0.50
+  Alpha 0.90
+  -NoGravity
+  -NoBlockMap
+  +NoExplodeFloor
+  +NoDamageThrust
+  States
+  {
+  Spawn:
+    TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(20, 32, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(20, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(20, 32, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(1, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(20, 32, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(20, 16, 0)
+    TNT1 A 0 A_Jump(192, "Death")
+    Loop
+  Death:
+  FLME ABCDEFGHIJKLMN 2 A_FadeOut
+    TNT1 A 1
+    Stop
+  }
+}
+
+
+Actor DropFire3
+{
+  Radius 8
+  Height 40
+  Projectile
+  Speed 0 
+  RenderStyle Add
+  DamageType Fire
+  Paintype Fire
+  Deathtype Fire
+  Alpha 0.9
+  Scale 0.1
+  -NoGravity
+  -NoBlockMap
+  +NoExplodeFloor
+  +NoDamageThrust
+  States
+  {
+  Spawn:
+  FLME A 2 Bright A_SetScale (0.5)
+  FLME B 2 Bright A_SetScale (0.10)
+  FLME C 2 Bright A_SetScale (0.15)
+  FLME D 2 Bright A_SetScale (0.20)
+  FLME E 2 Bright A_SetScale (0.22)
+  FLME F 2 Bright A_SetScale (0.26)
+  FLME G 2 Bright A_SetScale (0.30)
+  FLME H 2 Bright A_SetScale (0.34)
+  FLME I 2 Bright A_SetScale (0.37)
+  FLME J 2 Bright A_SetScale (0.40)
+  FLME K 2 Bright A_SetScale (0.44)
+  FLME L 2 Bright A_SetScale (0.47)
+  FLME M 2 Bright A_SetScale (0.49)
+  FLME N 2 Bright A_SetScale (0.50)
+    TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(20, 32, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(20, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(20, 32, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(1, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(20, 32, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(20, 16, 0)
+    TNT1 A 0 A_Jump(150, "Death")
+    Loop
+  Death:
+  FLME ABCDEFGHIJKLMN 2 A_FadeOut
+    TNT1 A 1
+    Stop
+  }
+}
+
+
+Actor SmallFlame
+{
+  Radius 8
+  Height 40
+  Projectile
+  Speed 0 
+  RenderStyle Add
+  DamageType Fire
+  Paintype Fire
+  Deathtype Fire
+  Scale 0.3
+  Alpha 0.90
+  -NoGravity
+  -NoBlockMap
+  +NoExplodeFloor
+  +NoDamageThrust
+  States
+  {
+  Spawn:
+    TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+    TNT1 A 0 A_Jump(100, "Death")
+    Loop
+  Death:
+  FLME ABCDEFGHIJKLMN 2 A_FadeOut
+    TNT1 A 1
+    Stop
+  }
+}
+
+Actor LargeFire
+{
+  Radius 8
+  Height 40
+  Projectile
+  Speed 0 
+  RenderStyle Add
+  DamageType Fire
+  Paintype Fire
+  Deathtype Fire
+  Scale 0.1
+  Alpha 0.90
+  -NoGravity
+  -NoBlockMap
+  +NoExplodeFloor
+  +NoDamageThrust
+  States
+  {
+  Spawn:
+  TNT1 A 0 A_PlaySound("FIRLOOP")
+  FLME A 2 BRIGHT A_SetScale (0.2)
+  FLME B 2 BRIGHT A_SetScale (0.3)
+  FLME C 2 BRIGHT A_SetScale (0.4)
+  FLME D 2 BRIGHT A_SetScale (0.5)
+  FLME E 2 BRIGHT A_SetScale (0.7)
+  FLME F 2 BRIGHT A_SetScale (0.9)
+  FLME G 2 BRIGHT A_SetScale (1)
+  FLME H 2 BRIGHT A_SetScale (1.5)
+  FLME I 2 BRIGHT A_SetScale (1.6)
+  FLME J 2 BRIGHT A_SetScale (1.7)
+  FLME K 2 BRIGHT 
+  FLME L 2 BRIGHT 
+  FLME M 1 BRIGHT
+  FLME N 1 BRIGHT
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	 FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	 FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(10, 16, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(10, 16, 0)
+    TNT1 A 0 A_Jump(160, "Death")
+    Loop
+  Death:
+  FLME ABCDEFGHIJKLMN 2 A_FadeOut
+    TNT1 A 1
+    Stop
+  }
+}
+
+
+Actor LargeFire2
+{
+  Radius 8
+  Height 40
+  Projectile
+  Speed 0 
+  RenderStyle Add
+  DamageType Fire
+  Paintype Fire
+  Deathtype Fire
+  Scale 0.1
+  Alpha 0.90
+  -NoGravity
+  -NoBlockMap
+  +NoExplodeFloor
+  +NoDamageThrust
+  States
+  {
+  Spawn:
+  TNT1 A 0 A_PlaySound("FIRLOOP")
+  FLME A 2 BRIGHT A_SetScale (0.4)
+  FLME B 2 BRIGHT A_SetScale (0.6)
+  FLME C 2 BRIGHT A_SetScale (0.8)
+  FLME D 2 BRIGHT A_SetScale (1)
+  FLME E 2 BRIGHT A_SetScale (1.6)
+  FLME F 2 BRIGHT A_SetScale (1.8)
+  FLME G 2 BRIGHT A_SetScale (2)
+  FLME H 2 BRIGHT 
+  FLME I 2 BRIGHT 
+  FLME J 2 BRIGHT 
+  FLME K 2 BRIGHT 
+  FLME L 2 BRIGHT 
+  FLME M 1 BRIGHT
+  FLME N 1 BRIGHT
+    FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+	 FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+	 FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+	TNT1 A 0 A_PlaySound("FIRLOOP")
+    FLME A 2 bright A_Explode(35, 24, 0)
+    FLME BCDEFGHIJKLMN 2 bright A_Explode(35, 24, 0)
+    TNT1 A 0 A_Jump(160, "Death")
+    Loop
+  Death:
+  FLME ABCDEFGHIJKLMN 2 A_FadeOut
+    TNT1 A 1
+    Stop
+  }
+}
+
+Actor Firetype
+{
+    Projectile
+	+MISSILE
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +DONTSPLASH
+	+FORCEXYBILLBOARD
+	+THRUACTORS
+	+NOBLOOD
+	+NOBLOODDECALS
+	+BLOODLESSIMPACT
+	+NODAMAGETHRUST
+	-NOGRAVITY
+	-BLOODSPLATTER
+	-RIPPER
+}	
+
+
+Actor DecorFlame : Firetype
+{
+  Radius 20
+  Height 20
+  Speed 2
+  Gravity 6
+  Projectile
+  RenderStyle Add
+  Alpha 0.67
+  Scale 1
+  -SOLID
+  +MISSILE
+  +NOBLOCKMAP
+  +NOCLIP
+  States
+  {
+  Spawn:
+    FRFX A 4
+    FRFX BCD 2 bright 
+    FRFX EFG 2 bright
+    FRFX HIJ 2 bright 
+    FRFX KLM 2 bright 
+    FRFX NO 2 bright
+    Stop
+	
+  Death:
+    FRFX HIJ 2 bright 
+    FRFX KLM 2 bright 
+    FRFX NO 2 bright
+    Stop
+  }
+}
+Actor DecorFlame2 : Firetype
+{
+  Radius 20
+  Height 20
+  Speed 2
+  Gravity 6
+  Projectile
+  RenderStyle Add
+  Alpha 0.67
+  Scale 0.4
+  -SOLID
+  +MISSILE
+  +NOBLOCKMAP
+  +NOCLIP
+  States
+  {
+  Spawn:
+    FRFX A 4
+    FRFX BCD 2 bright 
+    FRFX EFG 2 bright
+    FRFX HIJ 2 bright 
+    FRFX KLM 2 bright 
+    FRFX NO 2 bright
+    Stop
+	
+  Death:
+    FRFX HIJ 2 bright 
+    FRFX KLM 2 bright 
+    FRFX NO 2 bright
+    Stop
+  }
+}
+
+
+ACTOR Magazine8 : Ammo
+{
+   Inventory.Amount 0
+   Inventory.MaxAmount 80
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 80
+   scale 0.2
+   Inventory.Icon "GCANA0"
+}
+
+ACTOR DoubleMagazine8 : Ammo
+{
+   Inventory.Amount 0
+   Inventory.MaxAmount 160
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 160
+   Inventory.Icon "AKMGC0"
+}

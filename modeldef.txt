@@ -9,6 +9,81 @@ Model Tracer // Name of actor in DECORATE
    FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
 }
 
+Model DamagingTracer // Name of actor in DECORATE
+{ 
+   Path "models/Projectiles" // Path to model in PK3
+   SKIN 0 "tracer1.tga" // Model index, model file
+   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   Scale 4.5 4.5 1.5 // Scale values
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+   
+   FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+
+Model M16Tracer // Name of actor in DECORATE
+{ 
+   Path "models/Projectiles" // Path to model in PK3
+   SKIN 0 "tracer1.tga" // Model index, model file
+   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   Scale 4.5 4.5 1.5 // Scale values
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+   
+   FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+Model ShotgunTracer // Name of actor in DECORATE
+{ 
+   Path "models/Projectiles" // Path to model in PK3
+   SKIN 0 "tracer1.tga" // Model index, model file
+   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   Scale 4.5 4.5 1.5 // Scale values
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+   
+   FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+Model MagnumTracer // Name of actor in DECORATE
+{ 
+   Path "models/Projectiles" // Path to model in PK3
+   SKIN 0 "tracer1.tga" // Model index, model file
+   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   Scale 4.5 4.5 1.5 // Scale values
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+   
+   FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+Model MP5Tracer // Name of actor in DECORATE
+{ 
+   Path "models/Projectiles" // Path to model in PK3
+   SKIN 0 "tracer1.tga" // Model index, model file
+   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   Scale 4.5 4.5 1.5 // Scale values
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+   
+   FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+
+Model MGTracer // Name of actor in DECORATE
+{ 
+   Path "models/Projectiles" // Path to model in PK3
+   SKIN 0 "tracer1.tga" // Model index, model file
+   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   Scale 4.5 4.5 1.5 // Scale values
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+   
+   FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+
+
+Model FragTracer // Name of actor in DECORATE
+{ 
+   Path "models/Projectiles" // Path to model in PK3
+   SKIN 0 "tracer1.tga" // Model index, model file
+   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   Scale 4.5 4.5 1.5 // Scale values
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+   
+   FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+
 Model MinigunTracer // Name of actor in DECORATE
 { 
    Path "models/Projectiles" // Path to model in PK3

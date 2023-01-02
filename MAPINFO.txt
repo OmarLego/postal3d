@@ -1,6 +1,6 @@
 gameinfo
 {
-   Intro {video = "Movies/RWSINTRO.ivf" sound = "Movies/RWSINTRO"}
+   //Intro {video = "Movies/RWSINTRO.ivf" sound = "Movies/RWSINTRO"}
    MenuSliderColor 		= "White"
    Menufontcolor_title 	= "Red"
    Menufontcolor_label 	= "Red"
@@ -10,7 +10,6 @@ gameinfo
    Menufontcolor_highlight = "White"
    Menufontcolor_selection = "White"
    AddEventHandlers 	= "SaySomethingOnKill"
-   AddEventHandlers = "NashMoveHandler"
    PlayerClasses = "PostalDudeSr", "NotimPortant"
 	NoRandomPlayerClass = True
 	AddEventHandlers = "WeatherHandler"
@@ -23,23 +22,12 @@ DoomEdNums
 
 Episode P3D01
 {
-   Intro {video = "Movies/burningparadisetest.ivf" sound = "Movies/burningparadisetest"}
+   //Intro {video = "Movies/burningparadisetest.ivf" sound = "Movies/burningparadisetest"}
 name = "Excess Postage"
-}
-
-Episode P3DDM01
-{
-name = "Dudematch"
 }
 
 map P3D01 "Home"
 {
 music = ""
 sky1 = "CLDYSKY5"
-}
-
-map P3DDM01 "Postal dudes mind"
-{
-music = D_MIND
-sky1 = "CLDYSKY2", 0.2
 }

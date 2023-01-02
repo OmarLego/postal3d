@@ -1,10 +1,7 @@
 Version "3.3"
 
 //One-Liners
-#include "ZScript/TauntEventHandler.zc"
-
-//Less slippery player movement
-#include "ZScript/nashmove.zc"
+#include "ZScript/TauntEventHandler.zs"
 
 // Weather
 #include "ZScript/weather/weatherhandler.zs"

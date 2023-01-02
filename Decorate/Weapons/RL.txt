@@ -1,0 +1,261 @@
+
+actor MissileToken : Inventory {
+	Inventory.MaxAmount 1
+	+UNDROPPABLE
+}
+
+
+actor ChoiceToken : Inventory {
+	Inventory.MaxAmount 2
+	+UNDROPPABLE
+}
+
+
+actor ChoiceToken2 : Inventory {
+	Inventory.MaxAmount 1
+	+UNDROPPABLE
+}
+
+ACTOR MissileLauncher : weapon
+{
+Weapon.AmmoUse1 0
+	Weapon.AmmoGive1 1
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 5
+	Weapon.AmmoType1 "1Missile"
+	Weapon.AmmoType2 "Magazine9"
+Scale 0.9
+Inventory.PickupMessage "\c[red]You got the \c[Purple]Rocket Launcher"
+  Inventory.PickupSound "RLPICK"
+  +weapon.NoAutoaim
+  +Weapon.NoAutoFire
+  
+  States
+  { 
+	Ready:
+	TNT1 A 0 A_JumpIfInventory ("ChoiceToken",1,"ChoiceAnim")
+	TNT1 A 0 A_JumpIfInventory ("ChoiceToken2",1,"ReadyChoice")
+	RCLR A 1 A_Weaponready (WRF_ALLOWRELOAD)
+	loop
+	
+	ChoiceAnim:
+	RCLL ABC 3
+	RCLL D 3 A_PlaySound ("RBEGIN",CHAN_AUTO)
+	RCLL EFGHIJKLMN 3
+	TNT1 A 0 A_TakeInventory ("ChoiceToken",1)
+	TNT1 A 0 A_GiveInventory ("ChoiceToken2",1)
+	goto Ready
+	
+	ReadyChoice:
+	RCLL N 1 A_Print ("\c[Yellow]LMB \c[red]- \c[White]Regular Missile \c[Orange]LMB \c[red]- \c[Purple]Heat-Seeking Missile",2)
+	RCLL N 999 A_WeaponReady
+	loop
+	
+	Select:
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+	RCLR A 1 A_Raise
+	Goto Ready
+	
+	Deselect:
+	RCLR A 1 A_Lower
+	loop
+	
+	Spawn:
+	RCLN A 1
+	loop
+
+Reload:
+TNT1 A 0 A_JumpIfInventory ("Magazine9",1,"Ready")
+Goto Reloading
+
+	Fire:
+	TNT1 A 0 A_JumpIfInventory ("ChoiceToken2",1,"LoadMissile")
+	TNT1 A 0 A_JumpIfInventory ("Magazine9",1,"Firestart")
+	goto OutOfAmmo
+	Altfire:
+	TNT1 A 0 A_JumpIfInventory ("ChoiceToken2",1,"LoadHSMissile")
+	goto Ready
+	
+	FireStart:
+	TNT1 A 0 A_JumpIfInventory ("MissileToken",1,"FireFinish2")
+	TNT1 A 0 A_Takeinventory("DoubleMagazine9",1)
+	FireFinish:
+	    TNT1 A 0 A_TakeInventory ("Magazine9",1)
+		TNT1 A 0 A_AlertMonsters
+		TNT1 AA 0 A_FireCustomMissile("BigSmokeSpawner",4,0,14,0)
+	    TNT1 A 0 A_FireCustomMissile ("Missile",0,0,14,0)
+		TNT1 A 0 A_PlaySound("MSSHOT",CHAN_AUTO)
+		RCLF ABCDEF 2 
+		goto Ready
+		FireFinish2:
+		TNT1 A 0 A_TakeInventory ("Magazine9",1)
+		TNT1 A 0 A_AlertMonsters
+		TNT1 AAAAAAAA 0 A_FireCustomMissile("BigSmokeSpawner",4,0,14,0)
+	    TNT1 A 0 A_FireCustomMissile ("HSMissile",0,0,14,0)
+		TNT1 A 0 A_PlaySound("HSSHOT",CHAN_AUTO)
+		RCLF ABCDEF 2 
+		goto Ready
+		
+OutOfAmmo:
+TNT1 A 0 A_PlaySound ("AKEMPT",CHAN_AUTO)
+TNT1 A 0 A_Print ("\c[yellow]Out of ammo",1)
+Goto Ready
+
+Reloading:
+TNT1 A 0 A_Giveinventory ("ChoiceToken",1)
+goto Ready
+
+LoadMissile:
+TNT1 A 0 A_SetSpeed (0.6)
+RCLL NNNNNNN 2 A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
+RCLL N 2 A_PlaySound ("RTAKE",CHAN_AUTO)
+RCLL NNNN 2 A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
+RCLM ABCDEF 2
+RCLM G 4 A_PlaYSound ("RLIN",CHAN_AUTO)
+RCLM G 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+RCLM H 4 A_PlaySound ("RPUSH",CHAN_AUTO)
+RCLM III 4
+RCLM JK 4
+RCLM L 4 A_PlaySound ("RPUSH",CHAN_AUTO)
+RCLM MNO 4
+RCLM P 4 A_PlaySound ("RLOAD",CHAN_AUTO)
+RCLM Q 4
+RCLL IHGFEDCBA 3
+TNT1 A 0 A_SetSpeed (0.7)
+TNT1 A 0 A_TakeInventory ("1Missile",1)
+TNT1 A 0 A_TakeInventory ("ChoiceToken",1)
+TNT1 A 0 A_TakeInventory ("ChoiceToken2",1)
+TNT1 A 0 A_Giveinventory ("Magazine9",1)
+goto Ready
+
+
+LoadHSMissile:
+TNT1 A 0 A_SetSpeed (0.6)
+RCLL NNNNNNNNN 2 A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
+RCLL N 2 A_PlaySound ("RTAKE",CHAN_AUTO)
+RCLL NNNNN 2 A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
+RCLH ABCDEF 2
+RCLH G 4 A_PlaYSound ("RLIN",CHAN_AUTO)
+RCLH G 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+RCLH H 4 A_PlaySound ("RPUSH",CHAN_AUTO)
+RCLH III 4
+RCLH JK 4
+RCLH L 4 A_PlaySound ("RPUSH",CHAN_AUTO)
+RCLH MN 4
+RCLM P 4 A_PlaySound ("RLOAD",CHAN_AUTO)
+RCLM Q 4
+RCLL IHGFEDCBA 3
+TNT1 A 0 A_SetSpeed (0.7)
+TNT1 A 0 A_TakeInventory ("1HSMissile",1)
+TNT1 A 0 A_TakeInventory ("ChoiceToken",1)
+TNT1 A 0 A_TakeInventory ("ChoiceToken2",1)
+TNT1 A 0 A_Giveinventory ("Magazine9",1)
+TNT1 A 0 A_GiveInventory ("MissileToken",1)
+goto Ready
+
+  }
+}
+
+ACTOR Missile
+{
+  Radius 7
+  Height 8
+  Speed 4
+  Damage 160
+  Projectile
+  +DEHEXPLOSION
+  Alpha 0.90
+  Scale 0.8
+  DeathSound "Rocket/Explosion"
+  Decal "Scorch"
+  States
+  {
+  Spawn:
+    TNT1 A 1 
+    MISL A 14 A_SpawnItemEx ("SmokeSpawner", 0, 0, 0, 1)
+    MISL A 0 A_PlaySound("RFLY")
+    MISL A 1 A_ScaleVelocity (5) 
+    Goto Spawn2
+  Spawn2:
+   MISL AAAAAAAAAAAAAAAAAAAAAAAAA 4 bright A_SpawnItemEx ("BigSmokeSpawner", 0, 0, 0, 1)
+	loop
+  Death:
+    TNT1 A 0 A_StopSound(CHAN_6)
+	TNT1 A 0 A_SetScale(0.9)
+    TNT1 A 0 bright A_ChangeFlag("NOGRAVITY",1)
+    TNT1 A 1 bright A_PlaySound("Rocket/Explosion")
+	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
+    TNT1 A 2 bright A_Explode(160, 250, 1,1,0,0,0,0,"MisBoom")
+    TNT1  AAAAAAAAAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	FXPO ABCDEFGHIJKLM 1 bright 
+    stop
+  }
+}
+
+
+
+ACTOR HSMissile
+{
+  Radius 7
+  Height 8
+  Speed 3
+  Damage 160
+  Projectile
+  +DEHEXPLOSION
+  +SEEKERMISSILE
+  +SCREENSEEKER
+  Alpha 0.90
+  Scale 0.8
+  DeathSound "Rocket/Explosion"
+  Decal "Scorch"
+  States
+  {
+  Spawn:
+    TNT1 A 1 
+    MISL A 14 A_SpawnItemEx ("SmokeSpawner", 0, 0, 0, 1)
+    MISL A 0 A_PlaySound("RFLY")
+    MISL A 1 A_ScaleVelocity (5) 
+    Goto Spawn2
+  Spawn2:
+   MISL AAAAAAAAAAAAAAAAAAAAAAAAA 4 bright 
+   {
+   A_SeekerMissile(0,10, SMF_LOOK | SMF_PRECISE | SMF_CURSPEED,999);
+   A_SpawnItemEx ("BigSmokeSpawner", 0, 0, 0, 1);
+   }
+	loop
+  Death:
+    TNT1 A 0 A_StopSound(CHAN_6)
+	TNT1 A 0 A_SetScale(0.9)
+    TNT1 A 0 bright A_ChangeFlag("NOGRAVITY",1)
+    TNT1 A 1 bright A_PlaySound("Rocket/Explosion")
+	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
+    TNT1 A 2 bright A_Explode(160, 250, 1,1,0,0,0,0,"MisBoom")
+    TNT1  AAAAAAAAAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	FXPO ABCDEFGHIJKLM 1 bright 
+    stop
+  }
+}
+
+
+ACTOR Magazine9 : Ammo
+{
+   Inventory.Amount 0
+   Inventory.MaxAmount 1
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 1
+   scale 0.2
+   Inventory.Icon "RCKTC0"
+}
+
+ACTOR DoubleMagazine9 : Ammo
+{
+   Inventory.Amount 0
+   Inventory.MaxAmount 2
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 2
+   Inventory.Icon "AKMGC0"
+}
+actor RLReplacer : RandomSpawner replaces RocketLauncher
+{
+    DropItem "MissileLauncher", 255, 3
+}

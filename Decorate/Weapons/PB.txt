@@ -1,0 +1,242 @@
+
+
+
+actor DetToken : Inventory {
+	Inventory.MaxAmount 1
+	+UNDROPPABLE
+}
+
+
+actor DetToken2 : Inventory {
+	Inventory.MaxAmount 1
+	+UNDROPPABLE
+}
+
+
+actor Detonation : Inventory {
+		Inventory.Amount 1
+	Inventory.MaxAmount 1
+}
+ACTOR PipeBomb : Postal3dWeaponBase
+{
+Weapon.AmmoUse1 0
+	Weapon.AmmoGive1 1
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 1
+	Weapon.AmmoType1 "PB"
+	Weapon.AmmoType2 "Magazine12"
+	Inventory.icon "AAAAA0"
+Scale 0.2
+  +weapon.NoAutoaim
+  +Weapon.NoAutoFire
+  +Weapon.Noalert
+  
+  States
+  { 
+  Ready:
+	TNT1 A 0 A_JumpIfInventory ("DetToken",1,"DetUp")
+	PBMR A  1 A_WeaponReady (WRF_ALLOWRELOAD)
+	loop
+	DetUp:
+	PBME GHI 2
+	TNT1 A 0 A_GiveInventory ("DetToken2",1)
+	TNT1 A 0 A_TakeInventory ("DetToken1",1)
+	TNT1 A 0 A_JumpIfInventory ("DetToken2",1,"DetReady")
+	goto Ready
+	
+	DetReady:
+	PBMR B 1 A_WeaponReady
+	loop
+
+	Select:
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+	TNT1 A 1 A_Raise
+	Goto Ready
+	
+	Deselect:
+	TNT1 A 1 A_Lower
+	loop
+	
+
+	Reload:
+TNT1 A 0 A_JumpIfInventory ("Magazine12",1,"Ready")
+Goto Reloading
+
+	Fire:
+	TNT1 A 0 A_JumpIfInventory ("DetToken2",1,"Detonate")
+	TNT1 A 0 A_JumpIfInventory ("Magazine12",1,"Firestart")
+	goto Ready
+	
+	Detonate:
+	PBMR CCDD 2
+	PBMR E 2 A_PlaySound ("BPRESS",CHAN_AUTO)
+	PBMR E 2 A_GiveInventory("Detonation",1)
+	PBMR FFGG 2
+	TNT1 A 0 A_TakeInventory ("DetToken2",1)
+	TNT1 A 0 A_TakeInventory("Detonation",1)
+	goto Reloading
+	
+	FireStart:
+	TNT1 A 0 A_Takeinventory("DoubleMagazine12",1)
+	FireFinish:
+	TNT1 A 0 A_TakeInventory ("Magazine12",1)
+	   PBMF ABCDEFGHIJK 2
+	   PBMF N 2 A_FireCustomMissile ("PBFly",1,0,5,5)
+		TBT1 A 0 A_PlaySound ("Throw",CHAN_AUTO)
+		PBMF OPQ 2
+		TNT1 A 0 A_GiveInventory ("DetToken",1)
+ 		goto Ready
+
+Reloading:
+TNT1 A 0 A_JumpIfInventory ("Magazine12",1,"FinishReload")
+TNT1 A 0 A_JumpIfInventory ("PB",1,"StartReload")
+goto FinishReload
+StartReload:
+TNT1 A 0 A_JumpIfInventory ("Magazine12",1,"Ready")
+TNT1 A 0
+goto Bulletin
+
+ReloadContinue:
+PBME ABCDEF 2
+goto FinishReload
+
+Bulletin:
+TNT1 AAAA 0
+		TNT1 A 0 A_JumpIfInventory("Magazine12",1,"ReloadContinue")
+		TNT1 A 0 A_JumpIfInventory("PB",1,"Bulletin2")
+	   goto FinishReload
+		Bulletin2:
+        TNT1 AAAAAA 0
+		TNT1 A 0 A_Giveinventory("Magazine12",1)
+		TNT1 A 0 A_Giveinventory("DoubleMagazine12",1)
+		TNT1 A 0 A_Takeinventory("PB",1)
+		Goto Bulletin
+		
+		FinishReload:
+		PBMR A 1 
+		TNT1 A 0 A_TakeInventory ("DetToken2",1)
+		TNT1 A 0 A_TakeInventory ("DetToken",1)
+		Goto Ready
+
+
+  }
+}
+
+ACTOR PBFly
+{
+Radius 4
+	Height 4
+	Projectile
+	Speed 12
+    Gravity 0.5
+	Scale 0.2
+    -NOGRAVITY
+    -BLOODSPLATTER
+	+BOUNCEONFLOORS
+	+BOUNCEONWALLS
+	-EXTREMEDEATH
+	+EXPLODEONWATER
+	+SKYEXPLODE
+	-NOTELEPORT
+	BounceFactor 0.7
+	WallBounceFactor 0.7
+    Health 5
+    BounceSound "CBNC"
+	BounceCount 8
+	DeathSound "none"
+States
+    {
+	Spawn:
+	PBMB B 1 A_JumpIfInTargetInventory ("Detonation",1,"Explode")
+	Loop
+
+Explode:
+TNT1 A 0 A_setScale (0.9)
+	TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("FragTracer", 0, 0, random (0, 360), 2, random (0, 70))
+	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("DecorFlame", 0, 0, random (0, 360), 2, random (0, 360))
+    TNT1 A 1 bright A_PlaySound("PB/Explosion",CHAN_AUTO)
+	TNT1 A 1 bright A_PlaySound("Frag",CHAN_AUTO)
+	TNT1 A 0 A_SpawnItemEx ("PBSmoke",1,1,1)
+	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
+    TNT1 A 2 bright A_Explode(100, 250, 1,1,0,0,0,0,"MisBoom")
+    TNT1  AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	FXPO ABCDEFGHIJKLM 1 bright 
+    stop
+	
+	Death:
+	TNT1 A 0
+	TNT1 A 1  A_CustomMissile("PBSit",1,0,0,CMF_TRACKOWNER)
+	TNT1 A 0
+	stop
+		}
+}
+
+ACTOR PBSit
+{
+Radius 4
+	Height 4
+	Monster
+	Speed 0
+    Gravity 1
+	Scale 0.2
+    +ThruSpecies
+	+Shootable
+	-SOLID
+	+NoBlood
+	 Speed 0
+	 -NoGravity
+	 +Activateimpact
+	DeathSound "none"
+States
+    {
+	Spawn:
+	PBMB B 8 A_JumpIfInTargetInventory ("Detonation",1,"Death")
+	Loop
+	Death:
+    TNT1 A 0 A_setScale (0.9)
+	TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("FragTracer", 0, 0, random (0, 360), 2, random (0, 70))
+	TNT1 AAAAAA 0 A_CustomMissile("DecorFlame", 0, 0, random (0, 360), 2, random (0, 360))
+    TNT1 A 1 bright A_PlaySound("PB/Explosion",CHAN_AUTO)
+	TNT1 A 1 bright A_PlaySound("Frag",CHAN_AUTO)
+	TNT1 A 0 A_SpawnItemEx ("PBSmoke",1,1,1)
+	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
+    TNT1 A 2 bright A_Explode(100, 250, 1,1,0,0,0,0,"MisBoom")
+    TNT1  AAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	FXPO ABCDEFGHIJKLM 1 bright 
+    stop
+	}
+}
+
+ACTOR Magazine12 : Ammo
+{
+   Inventory.Amount 0
+   Inventory.MaxAmount 1
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 1
+   scale 0.2
+   Inventory.icon "AAAAA0"
+}
+
+ACTOR DoubleMagazine12 : Ammo
+{
+   Inventory.Amount 0
+   Inventory.MaxAmount 2
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 2
+   Inventory.Icon "AKMGC0"
+}
+ACTOR PBSmoke
+{
+  Radius 7
+  Height 8
+  Speed 4
+  Alpha 0.90
+  Scale 1.6
+  States
+  {
+  Spawn:
+  Death:
+    SM8K BCDEFGHIJKLMNOPQRSTUVWXYZ 3
+    stop
+  }
+}

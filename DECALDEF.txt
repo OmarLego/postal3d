@@ -1,4 +1,54 @@
 
+//postal 3d stuff
+
+decal Crack1smol
+{
+	pic BFGLITE1
+	shade "00 00 00"
+	x-scale 0.60
+	y-scale 0.60
+	randomflipy
+	randomflipx
+}
+
+decal Crack2smol
+{
+	pic BFGLITE2
+	x-scale 0.60
+	y-scale 0.60
+	shade "00 00 00"
+	randomflipy
+	randomflipx
+}
+
+decalgroup CrackSmol
+{
+	Crack1smol	1
+	Crack2smol	1
+}
+
+decal MacheteVertical
+{
+	pic BULDE1
+	translucent 0.8
+	shade "00 00 00"
+	x-scale 0.2
+	y-scale 2.0
+	randomflipy
+	randomflipx
+}
+
+decal MacheteHorizontal
+{
+	pic BULDE1
+	translucent 0.8
+	shade "00 00 00"
+	x-scale 4.0
+	y-scale 0.2
+	randomflipy
+	randomflipx
+}
+
 /// +++++++++++++++++////
 /// Blood Base
 /// +++++++++++++++++////

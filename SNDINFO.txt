@@ -24,15 +24,218 @@ weapons/melee/heavy4    "sounds/weapons/melee/melee-heavy-4.ogg"
 weapons/melee/heavy5    "sounds/weapons/melee/melee-heavy-5.ogg"
 $random weapons/melee/heavy { weapons/melee/heavy1 weapons/melee/heavy2 weapons/melee/heavy3 weapons/melee/heavy4 weapons/melee/heavy5 }
 
-$RANDOM SMGSHOT { SMGSHOT1 SMGSHOT2 SMGSHOT3 SMGSHOT4 }
+weapons/bat/swing		"sounds/weapons/batweap/batswing.wav"
+weapons/bat/hit1		"sounds/weapons/batweap/bathit1.wav"
+weapons/bat/hit2		"sounds/weapons/batweap/bathit2.wav"
+$random weapons/bat/hit		{ weapons/bat/hit1 weapons/bat/hit2 }
+weapons/bat/hitwall		"sounds/weapons/batweap/batwall.wav"
+weapons/bat/pickup		"sounds/weapons/batweap/batpickup.ogg"
+
+weapons/machete/swing		"sounds/weapons/machete/macheteswing.wav"
+weapons/machete/hit			"sounds/weapons/machete/machetehit.wav"
+weapons/machete/hitwall		"sounds/weapons/machete/machetewall.wav"
+weapons/machete/pickup		"sounds/weapons/machete/machetepickup.wav"
+weapons/machete/swoosh		"sounds/weapons/machete/macheteswoosh.wav"
+weapons/machete/throw		"sounds/weapons/machete/machetethrow.wav"
+weapons/machete/nomachete 	"sounds/weapons/machete/nomachete.wav"
+
 SMGSHOT1 SMGSHOT1
 SMGSHOT2 SMGSHOT2
 SMGSHOT3 SMGSHOT3
 SMGSHOT4 SMGSHOT4
+$Random SMG/Single { SMGSHOT1 SMGSHOT2 SMGSHOT3 SMGSHOT4 }
 
-$RANDOM FLAMERF { FLAMERF1 FLAMERF2 }
-FLAMERF1 FLAMERF1
-FLAMERF2 FLAMERF2
+AKFIR AKFIR
+AKMAGIN AKMAGIN
+AKMAGOUT AKMAGOUT
+AKMAGMOV AKMAGMOV
+AKBACK AKBACK
+AKREL AKREL
+AKEMPT AKEMPT
+
+
+SOPN SOPN
+SLOAD SLOAD
+SCLOS SCLOS
+DSHOT DSHOT
+SSHOT SSHOT
+WEPDESEL WEPDESEL
+MHAM1 MHAM1
+MHAM2 MHAM2
+MINSSPL MINSSPL
+MCLOS MCLOS
+MOPN MOPN
+MFLY MFLY
+
+
+WEPSEL1 WEPSEL1
+WEPSEL2 WEPSEL2
+WEPSEL3 WEPSEL3
+$Random WEPSEL { WEPSEL1 WEPSEL2 WEPSEL3 }
+
+INS1 INS1
+INS2 INS2
+INS3 INS3
+$Random MINSERT { INS1 INS2 INS3 }
+
+MFIR1 MFIR1
+MFIR2 MFIR2
+MFIR3 MFIR3
+$Random MFIR { MFIR1 MFIR2 MFIR3 }
+
+
+MP5REL MP5REL
+MP5MAGIN MP5MAGIN
+MP5MAGOUT MP5MAGOUT
+MP5MAGOUTMOV MP5MAGOUTMOV
+MP5GRAB MP5GRAB
+MP5BACK MP5BACK
+MP5BOLT MP5BOLT
+MP5FIR MP5FIR
+MPMAGOUT MPMAGOUT
+
+
+MP5FIR1 MP5FIR1
+MP5FIR2 MP5FIR2
+MP5FIR3 MP5FIR3
+$Random MP5FIR { MP5FIR1 MP5FIR2 MP5FIR3 }
+
+INNS1 INNS1
+INNS2 INNS2
+INNS3 INNS3
+INNS4 INNS4
+$Random INS { INNS1 INNS2 INNS3 INNS4 }
+
+RCOCK RCOCK
+RUNCOCK RUNCOCK
+
+MPULL1 MPULL1
+MPULL2 MPULL2
+MPULL3 MPULL3
+$Random MPULL { MPULL1 MPULL2 MPULL3 }
+
+AIM1 AIM1
+AIM2 AIM2
+AIM3 AIM3
+AIM4 AIM4
+$Random AIM { AIM1 AIM2 AIM3 AIM4 }
+
+MGFIR1 MGFIR1
+MGFIR2 MGFIR2
+MGFIR3 MGFIR3
+$Random MGFIR { MGFIR1 MGFIR2 MGFIR3 }
+
+
+SCFIR SCFIR
+SCHIT SCHIT
+SCLOCK SCLOCK
+SCMAGIN SCMAGIN
+SCMAGOUT SCMAGOUT
+SCPULL SCPULL
+SCREL SCREL
+MAGTHUD MAGTHUD
+FOOTWALL FOOTWALL
+MGBELT MGBELT
+MGPULL MGPULL
+MGREL MGREL 
+MGGRAB MGGRAB
+GASOL GASOL
+FLSTART FLSTART
+FLLOOP FLLOOP
+FLEND FLEND
+FTPULL FTPULL
+FTREL FTREL
+FTOPN FTOPN
+FTCLOS FTCLOS
+GCEND GCEND
+GCLOOP GCLOOP
+NAPFIR NAPFIR
+GCSTART GCSTART
+FTUP FTUP
+FTIN FTIN
+CBNC CBNC
+FHIT FHIT
+NLOAD NLOAD
+NINS NINS
+FIRLOOP FIRLOOP
+HSSHOT HSSHOT
+MSSHOT MSSHOT
+RLPICK RLPICK
+MPICK MPICK
+RFLY RFLY
+RBEGIN RBEGIN
+RLOAD RLOAD
+RPUSH RPUSH
+RTAKE RTAKE
+GPIN GPIN
+NSPRAY NSPRAY
+GTOSS GTOSS
+RLIN RLIN
+NSTART NSTART
+RLOOP RLOOP
+MLLOOP MLLOOP
+MDET MDET
+MLPICK MLPICK
+LITUP LITUP
+MOLFIR MOLFIR
+BPRESS BPRESS
+MEXP MEXP
+
+REXP1 REXP1
+REXP2 REXP2
+REXP3 REXP3
+REXP4 REXP4
+REXP5 REXP5
+REXP6 REXP6
+REXP7 REXP7
+REXP8 REXP8
+REXP9 REXP9
+REXP10 REXP10
+$Random Rocket/Explosion { REXP1 REXP2 REXP3 REXP4 REXP5 REXP6 REXP7 REXP8 REXP9 REXP10 }
+
+
+NEXP1 NEXP1
+NEXP2 NEXP2
+NEXP3 NEXP3
+NEXP4 NEXP4
+NEXP5 NEXP5
+$Random Canister/Explosion { NEXP1 NEXP2 NEXP3 NEXP4 NEXP5 }
+
+BEXP1 BEXP1
+BEXP2 BEXP2
+BEXP3 BEXP3
+$Random PB/Explosion { BEXP1 BEXP2 BEXP3 }
+
+GBONC1 GBONC1
+GBONC2 GBONC2
+GBONC3 GBONC3
+GBONC4 GBONC4
+GBONC5 GBONC5
+GBONC6 GBONC6
+$random GrenBounce { GBONC1 GBONC2 GBONC3 GBONC4 GBONC5 GBONC6 }
+
+
+NBNC1 NBNC1
+NBNC2 NBNC2
+$random CanBounce { NBNC1 NBNC2 }
+
+MBRK1 MBRK1
+MBRK2 MBRK2
+MBRK3 MBRK3
+MBRK4 MBRK4
+$Random MBREAK { MBRK1 MBRK2 MBRK3 MBRK4 }
+
+Swoosh5 Swoosh5
+Swoosh6 Swoosh6
+Swoosh7 Swoosh7
+$random Throw { Swoosh5 Swoosh6 Swoosh7 }
+
+
+FRAG1 FRAG1
+FRAG2 FRAG2
+FRAG3 FRAG3
+FRAG4 FRAG4
+$Random Frag { FRAG1 FRAG2 FRAG3 FRAG4 }
 
 //Gore
 $random SLOP		{ SLOP1 SLOP2 SLOP3 SLOP4 }
@@ -101,46 +304,63 @@ $rolloff blooddrop3 10 400
 
 //Other effects
 
-weapons/smallmagdrop1   "sounds/impacts/case-drop-light-1.wav"
-weapons/smallmagdrop2   "sounds/impacts/case-drop-light-2.wav"
-weapons/smallmagdrop3   "sounds/impacts/case-drop-light-3.wav"
-weapons/smallmagdrop4   "sounds/impacts/case-drop-light-4.wav"
-$random weapons/smallmagdrop { weapons/smallmagdrop1 weapons/smallmagdrop2 weapons/smallmagdrop3 weapons/smallmagdrop4 }
-$volume weapons/smallmagdrop 0.5
-
-weapons/largemagdrop1   "sounds/impacts/case-drop-med-1.wav"
-weapons/largemagdrop2   "sounds/impacts/case-drop-med-2.wav"
-weapons/largemagdrop3   "sounds/impacts/case-drop-med-3.wav"
-weapons/largemagdrop4   "sounds/impacts/case-drop-med-4.wav"
-$random weapons/largemagdrop { weapons/largemagdrop1 weapons/largemagdrop2 weapons/largemagdrop3 weapons/largemagdrop4 }
-$volume weapons/largemagdrop 0.5
-
-weapons/hugemagdrop     "sounds/impacts/case-drop-heavy.ogg"
-
-weapons/shelldrop1      "sounds/impacts/shell-drop-1.wav"
-weapons/shelldrop2      "sounds/impacts/shell-drop-2.wav"
-weapons/shelldrop3      "sounds/impacts/shell-drop-3.wav"
-$random weapons/shelldrop { weapons/shelldrop1 weapons/shelldrop2 weapons/shelldrop3 }
-
-weapons/casing1     "sounds/impacts/brass-drop-1.ogg"
-weapons/casing2     "sounds/impacts/brass-drop-2.ogg"
-$random weapons/casing { weapons/casing1 weapons/casing2 } 
-$limit weapons/casing 5
-$rolloff weapons/casing 100 600
-
 impacts/breakglass  "sounds/impacts/glass-break.ogg"
 
-world/ricochet1     "sounds/impacts/ricochet-1.wav"
-world/ricochet2     "sounds/impacts/ricochet-2.wav"
-world/ricochet3     "sounds/impacts/ricochet-3.wav"
-world/ricochet4     "sounds/impacts/ricochet-4.wav"
-world/ricochet5     "sounds/impacts/ricochet-5.wav"
-world/ricochet6     "sounds/impacts/ricochet-6.wav"
-world/ricochet7     "sounds/impacts/ricochet-7.wav"
-$random impacts/ricochet { world/ricochet1 world/ricochet2 world/ricochet3 world/ricochet4 world/ricochet5 world/ricochet6 world/ricochet7 }
-$volume impacts/ricochet 0.7 
-$limit impacts/ricochet 1
-$rolloff impacts/ricochet 200 700
+Rico1 Rico1
+Rico2 Rico2
+Rico3 Rico3
+Rico4 Rico4
+Rico5 Rico5
+Rico6 Rico6 
+$Random Impact { Rico1 Rico2 Rico3 Rico4 Rico5 Rico6 }
+
+$random CasBounce { CBNCE1 CBNCE2 CBNCE3 CBNCE4 CBNCE5 CBNCE6 CBNCE7 CBNCE8 CBNCE9 CBNCE10 }
+CBNCE1 CBNCE1
+CBNCE2 CBNCE2
+CBNCE3 CBNCE3
+CBNCE4 CBNCE4
+CBNCE5 CBNCE5
+CBNCE6 CBNCE6
+CBNCE7 CBNCE7 
+CBNCE8 CBNCE8
+CBNCE9 CBNCE9
+CBNCE10 CBNCE10
+
+
+$random CasDie { CASDIE1 CASDIE2 CASDIE3 CASDIE4 CASDIE5 CASDIE6 CASDIE7 CASDIE8 CASDIE9 CASDIE10 }
+CASDIE1 CASDIE1
+CASDIE2 CASDIE2
+CASDIE3 CASDIE3
+CASDIE4 CASDIE4
+CASDIE5 CASDIE5
+CASDIE6 CASDIE6 
+CASDIE7 CASDIE7 
+CASDIE8 CASDIE8
+CASDIE9 CASDIE9
+CASDIE10 CASDIE10
+
+
+MAGDROP1 MAGDROP1
+MAGDROP2 MAGDROP2
+MAGDROP3 MAGDROP3
+MAGDROP4 MAGDROP4
+$Random MagDrop { MAGDROP1 MAGDROP2 MAGDROP3 MAGDROP4 }
+
+$random ShellBounce { DSSHELL1 DSSHELL2 DSSHELL3 }
+DSSHELL1 DSSHELL1
+DSSHELL2 DSSHELL2
+DSSHELL3 DSSHELL3
+
+
+
+$random ShellDie { DSSHELL1 DSSHELL2 DSSHELL3 DSSHELL4 }
+DSSHELL1 DSSHELL1
+DSSHELL2 DSSHELL2
+DSSHELL3 DSSHELL3
+DSSHELL4 DSSHELL4
+
+$volume ShellBounce 0.4
+$volume ShellDie 0.4
 
 explosions/explode  "sounds/explosions/explosion.ogg"
 explosions/far      "sounds/explosions/explosion-far.ogg"
@@ -168,6 +388,34 @@ $rolloff 	glass/break 1000 2000
 dooropen			dooropen
 doorclos			doorclos
 doorstop			doorstop
+
+//Dude
+
+dude/fire2			"Sounds/Dude/fire2.ogg"
+dude/groanmale1		"Sounds/Dude/groan_male1.ogg"
+dude/groanmale2		"Sounds/Dude/groan_male2.ogg"
+dude/grunt3			"Sounds/Dude/grunt3.ogg"
+dude/ahuh			"Sounds/Dude/vinceahuh.ogg"
+dude/hu				"Sounds/Dude/vincehu.ogg"
+dude/weirdscream1	"Sounds/Dude/weird scream1.ogg"
+dude/writhing2		"Sounds/Dude/writhing2.ogg"
+dude/writhing3		"Sounds/Dude/writhing3.ogg"
+dude/writhing4		"Sounds/Dude/writhing4.ogg"
+$random dude/writhing { dude/writhing2 dude/writhing3 dude/writhing4 }
+$random dude/pain { dude/groanmale1 dude/ahuh }
+dude/land			"Sounds/Dude/dudeland.wav"
+
+$playeralias	Dude	Dude	*usefail	dude/grunt3
+$playeralias	Dude	Dude	*jump	dude/hu
+$playeralias	Dude	Dude	*falling	dude/groanmale2
+$playeralias	Dude	Dude	*land	dude/land
+$playeralias	Dude	Dude	*grunt	dude/grunt3
+$playeralias	Dude	Dude	*pain100 dude/pain
+$playeralias	Dude	Dude	*pain75	dude/pain
+$playeralias	Dude	Dude	*pain50	dude/pain
+$playeralias	Dude	Dude	*pain25	dude/pain
+$playeralias	Dude	Dude	*death	dude/writhing
+$playeralias	Dude	Dude	*xdeath	dude/groanmale2
 
 //Demon
 $RANDOM BurnLines { BL1 BL2 BL3 BL4 BL5 BL6 BL7 BL8 BL9 BL10 BL11 BL12 BL13 BL14 BL15 BL16 BL17 BL18 BL19 BL20 BL21 BL22 BL23 }
@@ -351,6 +599,123 @@ WTL21	"Sounds/Demon/WrithingTauntLines/Dude-Wussy01.ogg"
 WTL22	"Sounds/Demon/WrithingTauntLines/Dude-Wussy02.ogg"
 
 $RANDOM DudeTalk { BurnLines ExplosionLines KillSeriesLines WeaponFiringLines WeaponSelectionLines WrithingTauntLines }
+
+$Random Dude/MG/Shooting { WFL9 WFL10 WFL11 WFL12}
+
+// Footsteps
+// default/ground
+step/default1			DSSTP1
+step/default2			DSSTP2
+step/default3			DSSTP3
+step/default4			DSSTP4
+$random step/default { step/default1  step/default2  step/default3  step/default4 }
+//water
+step/water1			DSWTR1
+step/water2			DSWTR2
+step/water3			DSWTR3
+step/water4			DSWTR4
+$random step/water { step/water1  step/water2  step/water3  step/water4 }
+//carpet
+step/carpet1			DSCARP1
+step/carpet2			DSCARP2
+step/carpet3			DSCARP3
+$random step/carpet { step/carpet1 step/carpet2 step/carpet3 }
+//dirt
+step/dirt1			DSDIRT1
+step/dirt2			DSDIRT2
+step/dirt3			DSDIRT3
+step/dirt4			DSDIRT4
+step/dirt5			DSDIRT5
+step/dirt6			DSDIRT6
+$random step/dirt { step/dirt1 step/dirt2 step/dirt3 step/dirt4 step/dirt5 step/dirt6 }
+//gravel
+step/gravel1			DSGRAV1
+step/gravel2			DSGRAV2
+step/gravel3			DSGRAV3
+step/gravel4			DSGRAV4
+$random step/gravel { step/gravel1 step/gravel2 step/gravel3 step/gravel4 }
+//hard
+step/hard1			DSHARD1
+step/hard2			DSHARD2
+step/hard3			DSHARD3
+step/hard4			DSHARD4
+step/hard5			DSHARD5
+step/hard6			DSHARD6
+$random step/hard { step/hard1 step/hard2 step/hard3 step/hard4 step/hard5 step/hard6 }
+//metal a
+step/metal/a1			DSMET01
+step/metal/a2			DSMET02
+step/metal/a3			DSMET03
+step/metal/a4			DSMET04
+step/metal/a5			DSMET05
+step/metal/a6			DSMET06
+$random step/metal/a { step/metal/a1 step/metal/a2 step/metal/a3 step/metal/a4 step/metal/a5 step/metal/a6 }
+//metal b (thin metals, girders)
+step/metal/b1			DSMET201
+step/metal/b2			DSMET202
+step/metal/b3			DSMET203
+step/metal/b4			DSMET204
+$random step/metal/b { step/metal/b1 step/metal/b2 step/metal/b3 step/metal/b4 }
+//rock
+step/rock1			DSROCK1
+step/rock2			DSROCK2
+step/rock3			DSROCK3
+step/rock4			DSROCK4
+step/rock5			DSROCK5
+step/rock6			DSROCK6
+step/rock7			DSROCK7
+step/rock8			DSROCK8
+$random step/rock { step/rock1 step/rock2 step/rock3 step/rock4 step/rock5 step/rock6 step/rock7 step/rock8 }
+//snow
+step/snow1			DSSNOW1
+step/snow2			DSSNOW2
+step/snow3			DSSNOW3
+step/snow4			DSSNOW4
+step/snow5			DSSNOW5
+step/snow6			DSSNOW6
+$random step/snow { step/snow1 step/snow2 step/snow3 step/snow4 step/snow5 step/snow6 }
+//tile A
+step/tile/a1			DSTILE01
+step/tile/a2			DSTILE02
+step/tile/a3			DSTILE03
+step/tile/a4			DSTILE04
+step/tile/a5			DSTILE05
+step/tile/a6			DSTILE06
+$random step/tile/a { step/tile/a1 step/tile/a2 step/tile/a3 step/tile/a4 step/tile/a5 step/tile/a6 }
+//tile b (hallways, marble/finer tiles)
+step/tile/b1			DSTILE21
+step/tile/b2			DSTILE22
+step/tile/b3			DSTILE23
+step/tile/b4			DSTILE24
+step/tile/b5			DSTILE25
+step/tile/b6			DSTILE26
+step/tile/b7			DSTILE27
+step/tile/b8			DSTILE28
+$random step/tile/b { step/tile/b1 step/tile/b2 step/tile/b3 step/tile/b4 step/tile/b5 step/tile/b6 step/tile/b7 step/tile/b8 }
+//wood
+step/wood1			DSWOOD1
+step/wood2			DSWOOD2
+step/wood3			DSWOOD3
+step/wood4			DSWOOD4
+$random step/wood { step/wood1 step/wood2 step/wood3 step/wood4 }
+//slime
+step/slime1			DSSLIME1
+step/slime2			DSSLIME2
+step/slime3			DSSLIME3
+step/slime4			DSSLIME4
+$random step/slime { step/slime1 step/slime2 step/slime3 step/slime4 }
+//slimy
+step/slimy1			DSSLIMY1
+step/slimy2			DSSLIMY2
+step/slimy3			DSSLIMY3
+step/slimy4			DSSLIMY4
+$random step/slimy { step/slimy1 step/slimy2 step/slimy3 step/slimy4 }
+//lava
+step/lava1			DSLAVA1
+step/lava2			DSLAVA2
+step/lava3			DSLAVA3
+step/lava4			DSLAVA4
+$random step/lava { step/lava1 step/lava2 step/lava3 step/lava4 }
 
 //FMV Audio
 Movies/RWSINTRO "Movies/RWSINTRO.ogg"

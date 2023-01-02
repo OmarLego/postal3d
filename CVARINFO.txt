@@ -13,3 +13,7 @@ user float weather_wind_vol = 1;
 user float weather_thunder_vol = 1;
 user bool weather_no_fog = false;
 user bool weather_no_lightning = false;
+
+//footsteps
+server float fs_volume_mul = 1.0;
+server float fs_delay_mul = 1.0;

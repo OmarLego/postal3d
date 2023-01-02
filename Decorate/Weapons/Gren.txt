@@ -1,0 +1,213 @@
+
+
+ACTOR GGrenade : Postal3dWeaponBase
+{
+Weapon.AmmoUse1 0
+	Weapon.AmmoGive1 1
+  Tag "Grenade"
+	Weapon.AmmoUse2 0
+	Weapon.AmmoGive2 1
+	Weapon.AmmoType1 "Grenadee"
+	Weapon.AmmoType2 "Magazine10"
+Scale 0.2
+  +weapon.NoAutoaim
+  +Weapon.NoAutoFire
+  +Weapon.Noalert
+  
+  States
+  { 
+	Ready:
+	TNT1 A 0 A_JumpIfInventory ("Magazine10",1,"TrueReady")
+	goto Unready
+	Unready:
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	TNT1 A 1 A_WeaponReady (WRF_ALLOWRELOAD)
+Loop
+	TrueReady:
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	GRNR A 1 A_WeaponReady 
+	loop
+
+	Select:
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+	GRNR A 1 A_Raise
+	Goto Ready
+	
+	Deselect:
+	GRNR A 1 A_Lower
+	loop
+	
+	Spawn:
+	RCLN A 1
+	loop
+
+	Reload:
+TNT1 A 0 A_JumpIfInventory ("Magazine10",1,"Ready")
+Goto Reloading
+
+	Fire:
+	TNT1 A 0 A_JumpIfInventory ("Magazine10",1,"Firestart")
+	goto Ready
+	
+	FireStart:
+	TNT1 A 0 A_Takeinventory("DoubleMagazine10",1)
+	FireFinish:
+	    TNT1 A 0 A_TakeInventory ("Magazine10",1)
+		GRNF ABCDEFGHI 3
+		GRNF J 3 A_PlaySound ("GPIN",CHAN_AUTO)
+		GRNF KLMN 3
+		GRNF O 3 A_PlaySound ("GTOSS",CHAN_AUTO)
+		TNT1 A 0 A_FireCustomMissile ("GrenadeFly",1,0,11,12)
+		GRNF PQRS 3
+ 		goto Ready
+		
+
+Reloading:
+TNT1 A 0 A_JumpIfInventory ("Magazine10",1,"FinishReload")
+TNT1 A 0 A_JumpIfInventory ("Grenadee",1,"StartReload")
+goto FinishReload
+StartReload:
+TNT1 A 0 A_JumpIfInventory ("Magazine10",1,"Ready")
+TNT1 A 0
+goto Bulletin
+
+ReloadContinue:
+GRNE ABCDEFG 2
+goto FinishReload
+
+Bulletin:
+TNT1 AAAA 0
+		TNT1 A 0 A_JumpIfInventory("Magazine10",1,"ReloadContinue")
+		TNT1 A 0 A_JumpIfInventory("Grenadee",1,"Bulletin2")
+	   goto FinishReload
+		Bulletin2:
+        TNT1 AAAAAA 0
+		TNT1 A 0 A_Giveinventory("Magazine10",1)
+		TNT1 A 0 A_Giveinventory("DoubleMagazine10",1)
+		TNT1 A 0 A_Takeinventory("Grenadee",1)
+		Goto Bulletin
+		
+		FinishReload:
+		GRNR A 1 
+		Goto Ready
+
+
+  }
+}
+
+ACTOR GrenadeFly
+{
+Radius 4
+	Height 4
+	Projectile
+	Speed 30
+    Gravity 0.7
+	Scale 0.3
+    -NOGRAVITY
+    -BLOODSPLATTER
+	-EXTREMEDEATH
+	+EXPLODEONWATER
+	+SKYEXPLODE
+	+ROLLSPRITE
++ROLLCENTER
+	+BOUNCEONFLOORS
+	+BOUNCEONWALLS
+	+BOUNCEONCEILINGS
+	-NOTELEPORT
+	BounceFactor 0.5
+	WallBounceFactor 0.25
+    Health 5
+    BounceSound "GrenBounce"
+	BounceCount 8
+	DeathSound "none"
+States
+    {
+	Spawn:
+	GRNT  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 
+		{
+   A_SetRoll(roll - 10, SPF_INTERPOLATE);
+}
+	Loop
+	
+	Death:
+	goto Waiting
+	
+	Waiting:
+	GRNT AA 6
+	Goto Explode
+	
+	Explode:
+		TNT1 A 0 A_setScale (0.6)
+    TNT1 A 1 bright A_PlaySound("Rocket/Explosion",CHAN_AUTO)
+	TNT1 A 0 A_SpawnItemEx ("GrenSmoke",1,1,1)
+    TNT1 A 2 bright A_Explode(50, 150, 1,1,0,0,0,0,"MisBoom")
+	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
+    TNT1  AAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	FXPO ABCDEFGHIJKLM 1 bright 
+    stop
+		Bounce:
+	TNT1 A 0
+	Goto Spawn
+	}
+}
+
+
+ACTOR GrenadeExplosion
+{
+  Radius 7
+  Height 8
+  Speed 4
+  Damage 50
+  Projectile
+  +DEHEXPLOSION
+  Alpha 0.90
+  Scale 0.5
+  DeathSound "Rocket/Explosion"
+  Decal "Scorch"
+  States
+  {
+  Spawn:
+  Death:
+    TNT1 A 1 bright A_PlaySound("Rocket/Explosion")
+	TNT1 A 0 A_SpawnItemEx ("GrenSmoke",1,1,1)
+	TNT1 A 0 Radius_Quake(5,5,0,3200,0)
+    TNT1 A 2 bright A_Explode(50, 150, 1,1,0,0,0,0,"MisBoom")
+    TNT1  AAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	FXPO ABCDEFGHIJKLM 1 bright 
+    stop
+  }
+}
+ACTOR GrenSmoke
+{
+  Radius 7
+  Height 8
+  Speed 4
+  Alpha 0.90
+  Scale 0.7
+  States
+  {
+  Spawn:
+  Death:
+    SM8K BCDEFGHIJKLMNOPQRSTUVWXYZ 1
+    stop
+  }
+}
+ACTOR Magazine10 : Ammo
+{
+   Inventory.Amount 0
+   Inventory.MaxAmount 1
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 1
+   scale 0.2
+   Inventory.Icon "GRNSA0"
+}
+
+ACTOR DoubleMagazine10 : Ammo
+{
+   Inventory.Amount 0
+   Inventory.MaxAmount 2
+   Ammo.BackpackAmount 0
+   Ammo.BackpackMaxAmount 2
+   Inventory.Icon "AKMGC0"
+}
+

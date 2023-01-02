@@ -1,7 +1,7 @@
 //Effects
 #include decorate/effects/PARTICLES.txt
-#include decorate/effects/BDSMOKE.txt
-#include decorate/effects/BDCASING.txt
+#include decorate/effects/SMOKE.txt
+#include decorate/effects/CASINGs.txt
 #include decorate/effects/FIRE.txt
 #include decorate/effects/SPARKS.txt
 #include decorate/effects/FLARES.txt
@@ -13,16 +13,35 @@
 #include decorate/effects/KetchupSERVING.txt //Gore Groups (spawns gibs and blood when enemies explodes)
 #include decorate/effects/BURN.txt
 
+//Pickups
+#include decorate/items/Ammo.txt
+
 //Weapons
 #include decorate/weapons/PlayerProjectiles.txt
 #include Decorate/Weapons/Postal3dWeaponBase.txt
-#include Decorate/Weapons/StarterSMG.txt
-#include Decorate/Weapons/Flamer.txt
-#include Decorate/Weapons/GrenadeLauncher.txt
+#include Decorate/Weapons/M-12.txt
+#include Decorate/Weapons/M-16.txt
+#include Decorate/Weapons/DB.txt
+#include Decorate/Weapons/Magnum.txt
+#include Decorate/Weapons/MP5K.txt
+#include Decorate/Weapons/Rifle.txt
+#include Decorate/Weapons/SprayCannon.txt
+#include Decorate/Weapons/MG.txt
+#include Decorate/Weapons/Flamethrower.txt
+#include Decorate/Weapons/RL.txt
+#include Decorate/Weapons/NL.txt
+#include Decorate/Weapons/Gren.txt
+#include Decorate/Weapons/Mol.txt
+#include Decorate/Weapons/PB.txt
+#include Decorate/Weapons/BatWeap.txt
+#include Decorate/Weapons/Machete.txt
 
 //Monster Base + Brutal Monster Heritage
 #include decorate/Postal3dMonsterBase.txt
 #include decorate/BrutalMonsterHeritage.txt
+
+//Civilians
+#include Decorate/Civilians/Civilians.txt
 
 //Hostiles
 #include Decorate/Hostiles/POLICE.txt

@@ -3,21 +3,32 @@ ACTOR PostalDudeSr : PlayerPawn
 
 	Player.DisplayName "The Postal Dude, Sr."
 	Player.SoundClass "Dude"
-    Mass 100
-    player.viewheight 44
-    player.attackzoffset 16
-    GibHealth 20
-    PainChance 255
-    Species "Players"
-    Player.ColorRange 112, 127
-	Player.StartItem "StarterSMG"
-	Player.StartItem "Clip", 100
-    Player.JumpZ 7.4
-	XScale 0.58
-	YScale 0.58
-	Player.WeaponSlot 4, "StarterSMG"
-	Player.WeaponSlot 5, "GrenadeLauncher"
-	Player.WeaponSlot 8, "Flamer"
+    Species "Player"
+	SCALE 0.60
+	Speed 0.7
+	Player.StartItem "M-12", 1
+	Player.StartItem "clip", 400
+	Player.StartItem "Magazine1", 24
+	Player.StartItem "Magazine2", 22
+	Player.StartItem "Magazine3", 6
+	Player.StartItem "Magazine10", 1
+	Player.StartItem "Magazine11", 1
+	Player.StartItem "GGrenade",1
+	Player.StartItem "Molotov",1
+	Player.StartItem "PipeBomb",1
+	Player.StartItem "Grenadee", 3
+	Player.StartItem "Molotovv",1
+	Player.StartItem "PB",1
+	Player.StartItem "DBMag", 2
+	Player.StartItem "MacheteAmmoLoaded", 1
+    Player.WeaponSlot 1, "Machete", "BatWeap"
+    Player.Weaponslot 2, "M-12", "MP5K"
+    Player.Weaponslot 3, "DoubleBarrel", "Magnum", "Lever-Action"
+    Player.Weaponslot 4, "M-16"
+    Player.Weaponslot 5, "MissileLauncher", "Chinalake"
+    Player.Weaponslot 6, "Machinegun", "Flammenwerfer"
+    Player.Weaponslot 7, "Spraycannon", "NapalmLauncher"
+	Player.Weaponslot 8, "GGrenade", "PipeBomb", "Molotov"
 	
     +SOLID
     +THRUSPECIES

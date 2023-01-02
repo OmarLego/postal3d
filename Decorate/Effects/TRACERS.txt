@@ -28,6 +28,288 @@ Stop
     }
 }
 
+
+Actor DamagingTracer: Tracer
+{
++BLOODSPLATTER 
++THRUGHOST
+-DONTSPLASH
++MISSILE
+speed 95
+damage (random(4,6))
+Decal BulletChip
+Paintype "SMG"
+Damagetype "SMG"
+Deathtype "SMG"
+DeathSound "Impact"
+States
+{
+    Spawn:
+        TRAC A 1 BRIGHT
+        TNT1 A 0 ThrustThingZ(0,random(-1, 1),0,1)
+        TRAC A 1 BRIGHT
+        Goto Spawn2
+        
+    Spawn2:
+        TRAC A 1 BRIGHT
+        Loop    
+        
+Death:
+		PUFF A 1 BRIGHT A_Scream
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+		Stop
+		XDeath:
+		TNT1 A 3 A_PlaySound("hitflesh")
+		Stop
+}
+}
+
+Actor M16Tracer: Tracer
+{
++BLOODSPLATTER 
++THRUGHOST
+-DONTSPLASH
++MISSILE
+speed 70
+damage (random(7,13))
+Decal BulletChip
+Paintype "SMG"
+Damagetype "SMG"
+Deathtype "SMG"
+DeathSound "Impact"
+States
+{
+    Spawn:
+        TRAC A 1 BRIGHT
+        TNT1 A 0 ThrustThingZ(0,random(-1, 1),0,1)
+        TRAC A 1 BRIGHT
+        Goto Spawn2
+        
+    Spawn2:
+        TRAC A 1 BRIGHT
+        Loop    
+        
+Death:
+		PUFF A 1 BRIGHT A_Scream
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+		Stop
+		XDeath:
+		TNT1 A 3 A_PlaySound("hitflesh")
+		Stop
+}
+}
+Actor FragTracer: Tracer
+{
++BLOODSPLATTER 
++THRUGHOST
+-DONTSPLASH
++MISSILE
+speed 30
+damage (random(8,14))
+Decal BulletChip
+Paintype "SMG"
+Damagetype "SMG"
+Deathtype "SMG"
+DeathSound "Impact"
+States
+{
+    Spawn:
+        TRAC A 1 BRIGHT
+        TNT1 A 0 ThrustThingZ(0,random(-1, 1),0,1)
+        TRAC A 1 BRIGHT
+        Goto Spawn2
+        
+    Spawn2:
+        TRAC A 1 BRIGHT
+        Loop    
+        
+Death:
+		PUFF A 1 BRIGHT A_Scream
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+		Stop
+		XDeath:
+		TNT1 A 3 A_PlaySound("hitflesh")
+		Stop
+}
+}
+Actor MGTracer: Tracer
+{
++BLOODSPLATTER 
++THRUGHOST
+-DONTSPLASH
++MISSILE
+speed 70
+damage (random(16,25))
+Decal BulletChip
+Paintype "SMG"
+Damagetype "SMG"
+Deathtype "SMG"
+DeathSound "Impact"
+States
+{
+    Spawn:
+        TRAC A 1 BRIGHT
+        TNT1 A 0 ThrustThingZ(0,random(-1, 1),0,1)
+        TRAC A 1 BRIGHT
+        Goto Spawn2
+        
+    Spawn2:
+        TRAC A 1 BRIGHT
+        Loop    
+        
+Death:
+		PUFF A 1 BRIGHT A_Scream
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+		Stop
+		XDeath:
+		TNT1 A 3 A_PlaySound("hitflesh")
+		Stop
+}
+}
+Actor MP5Tracer: Tracer
+{
++BLOODSPLATTER 
++THRUGHOST
+-DONTSPLASH
++MISSILE
+speed 100
+damage (random(5,12))
+Decal BulletChip
+Paintype "SMG"
+Damagetype "SMG"
+Deathtype "SMG"
+DeathSound "Impact"
+States
+{
+    Spawn:
+        TRAC A 1 BRIGHT
+        TNT1 A 0 ThrustThingZ(0,random(-1, 1),0,1)
+        TRAC A 1 BRIGHT
+        Goto Spawn2
+        
+    Spawn2:
+        TRAC A 1 BRIGHT
+        Loop    
+        
+Death:
+		PUFF A 1 BRIGHT A_Scream
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+		Stop
+		XDeath:
+		TNT1 A 3 A_PlaySound("hitflesh")
+		Stop
+}
+}
+Actor ShotgunTracer: Tracer
+{
++BLOODSPLATTER 
++THRUGHOST
+-DONTSPLASH
++MISSILE
+speed 60
+damage (random(12,16))
+Decal BulletChip
+Paintype "SMG"
+Damagetype "SMG"
+Deathtype "SMG"
+DeathSound "Impact"
+States
+{
+    Spawn:
+        TRAC A 1 BRIGHT
+        TNT1 A 0 ThrustThingZ(0,random(-1, 1),0,1)
+        TRAC A 1 BRIGHT
+        Goto Spawn2
+        
+    Spawn2:
+        TRAC A 1 BRIGHT
+        Loop    
+        
+Death:
+		PUFF A 1 BRIGHT A_Scream
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+		Stop
+		XDeath:
+		TNT1 A 3 A_PlaySound("hitflesh")
+		Stop
+}
+}
+
+Actor MagnumTracer: Tracer
+{
++BLOODSPLATTER 
++THRUGHOST
+-DONTSPLASH
++MISSILE
+speed 100
+damage (random(160,230))
+Decal BulletChip
+Paintype "SMG"
+Damagetype "SMG"
+Deathtype "SMG"
+DeathSound "Impact"
+States
+{
+    Spawn:
+        TRAC A 1 BRIGHT
+        TNT1 A 0 ThrustThingZ(0,random(-1, 1),0,1)
+        TRAC A 1 BRIGHT
+        Goto Spawn2
+        
+    Spawn2:
+        TRAC A 1 BRIGHT
+        Loop    
+        
+Death:
+		PUFF A 1 BRIGHT A_Scream
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+		Stop
+		XDeath:
+		TNT1 A 3 A_PlaySound("hitflesh")
+		Stop
+}
+}
+ACTOR TracerSpark
+{
+	Health 4
+	radius 3
+	height 6
+	speed .1
+	RenderStyle ADD
+	Alpha		1
+	Scale 0.2
+	Mass		0
+	+missile
+		-COUNTITEM
+	+doombounce
+	+FLOORCLIP
+	+DONTSPLASH
+	+NOTELEPORT
+	States
+	{
+		PUFF A 1
+		PUFF AAAAA 1  Bright A_SetTranslucent(.8,1)
+		PUFF AAAAAA 1  Bright A_SetTranslucent(.6,1)
+		PUFF AAAAAAAA 1  Bright A_SetTranslucent(.4,1)
+		PUFF AAAAAAAAAA 1 Bright A_SetTranslucent(.2,1)
+		Stop
+	}
+}
+
 /** Non-damaging tracer fired by the player's minigun */
 Actor MinigunTracer: Tracer
 {
