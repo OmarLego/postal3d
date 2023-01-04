@@ -36,16 +36,15 @@
 #include Decorate/Weapons/BatWeap.txt
 #include Decorate/Weapons/Machete.txt
 
-//Monster Base + Brutal Monster Heritage
-#include decorate/Postal3dMonsterBase.txt
-#include decorate/BrutalMonsterHeritage.txt
-
-//Civilians
-#include Decorate/Civilians/Civilians.txt
-
-//Hostiles
-#include Decorate/Hostiles/POLICE.txt
-#include Decorate/Hostiles/Military.txt
+//Monsters
+#include decorate/monsters/Postal3dMonsterBase.txt
+#include decorate/monsters/BrutalMonsterHeritage.txt
+//civilians
+#include Decorate/monsters/Civilians.txt
+//hostiles
+#include Decorate/monsters/POLICEspecial.txt
+#include Decorate/monsters/POLICE.txt
+#include Decorate/monsters/Military.txt
 
 //Player Classes
 #include Decorate/Player/Player.txt
@@ -84,6 +83,10 @@ inventory.maxamount 1
 
 //player tokens
 Actor Kicking : Inventory
+{
+inventory.maxamount 1
+}
+Actor ExecuteDownedEnemy : Inventory
 {
 inventory.maxamount 1
 }

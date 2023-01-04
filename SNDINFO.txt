@@ -389,21 +389,40 @@ dooropen			dooropen
 doorclos			doorclos
 doorstop			doorstop
 
+//Voiceover Actor 1
+$random act1_agony		{ act1_agony_01 act1_agony_02 act1_agony_03 act1_agony_04 act1_agony_05 act1_agony_06 act1_agony_07 act1_agony_08 act1_agony_09 act1_agony_10 act1_agony_11 act1_agony_12 act1_agony_13 act1_agony_14 }
+act1_agony_01 			"Sounds/Voiceovers/Actor1/act1_agony_01.ogg"
+act1_agony_02 			"Sounds/Voiceovers/Actor1/act1_agony_02.ogg"
+act1_agony_03 			"Sounds/Voiceovers/Actor1/act1_agony_03.ogg"
+act1_agony_04 			"Sounds/Voiceovers/Actor1/act1_agony_04.ogg"
+act1_agony_05 			"Sounds/Voiceovers/Actor1/act1_agony_05.ogg"
+act1_agony_06 			"Sounds/Voiceovers/Actor1/act1_agony_06.ogg"
+act1_agony_07 			"Sounds/Voiceovers/Actor1/act1_agony_07.ogg"
+act1_agony_08 			"Sounds/Voiceovers/Actor1/act1_agony_08.ogg"
+act1_agony_09 			"Sounds/Voiceovers/Actor1/act1_agony_09.ogg"
+act1_agony_10 			"Sounds/Voiceovers/Actor1/act1_agony_10.ogg"
+act1_agony_11 			"Sounds/Voiceovers/Actor1/act1_agony_11.ogg"
+act1_agony_12 			"Sounds/Voiceovers/Actor1/act1_agony_12.ogg"
+act1_agony_13 			"Sounds/Voiceovers/Actor1/act1_agony_13.ogg"
+act1_agony_14 			"Sounds/Voiceovers/Actor1/act1_agony_14.ogg"
+
+
+
 //Dude
 
-dude/fire2			"Sounds/Dude/fire2.ogg"
-dude/groanmale1		"Sounds/Dude/groan_male1.ogg"
-dude/groanmale2		"Sounds/Dude/groan_male2.ogg"
-dude/grunt3			"Sounds/Dude/grunt3.ogg"
-dude/ahuh			"Sounds/Dude/vinceahuh.ogg"
-dude/hu				"Sounds/Dude/vincehu.ogg"
-dude/weirdscream1	"Sounds/Dude/weird scream1.ogg"
-dude/writhing2		"Sounds/Dude/writhing2.ogg"
-dude/writhing3		"Sounds/Dude/writhing3.ogg"
-dude/writhing4		"Sounds/Dude/writhing4.ogg"
+dude/fire2			"Sounds/Voiceovers/Dude/fire2.ogg"
+dude/groanmale1		"Sounds/Voiceovers/Dude/groan_male1.ogg"
+dude/groanmale2		"Sounds/Voiceovers/Dude/groan_male2.ogg"
+dude/grunt3			"Sounds/Voiceovers/Dude/grunt3.ogg"
+dude/ahuh			"Sounds/Voiceovers/Dude/vinceahuh.ogg"
+dude/hu				"Sounds/Voiceovers/Dude/vincehu.ogg"
+dude/weirdscream1	"Sounds/Voiceovers/Dude/weird scream1.ogg"
+dude/writhing2		"Sounds/Voiceovers/Dude/writhing2.ogg"
+dude/writhing3		"Sounds/Voiceovers/Dude/writhing3.ogg"
+dude/writhing4		"Sounds/Voiceovers/Dude/writhing4.ogg"
 $random dude/writhing { dude/writhing2 dude/writhing3 dude/writhing4 }
 $random dude/pain { dude/groanmale1 dude/ahuh }
-dude/land			"Sounds/Dude/dudeland.wav"
+dude/land			"Sounds/Voiceovers/Dude/dudeland.wav"
 
 $playeralias	Dude	Dude	*usefail	dude/grunt3
 $playeralias	Dude	Dude	*jump	dude/hu

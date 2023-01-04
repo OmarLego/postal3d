@@ -1,6 +1,0 @@
-//Tokens are inventory items used to change monster or weapon behavior, by either acting a "switch" to set
-//properties true or false, or serving as counter for things such as how much ammo a zombieman has, and how
-//much time a grenade fuse has until exploding.
-
-Actor evmarinenoway : Inventory {inventory.maxamount 1}
-Actor evmarinecanjump : Inventory {inventory.maxamount 1}

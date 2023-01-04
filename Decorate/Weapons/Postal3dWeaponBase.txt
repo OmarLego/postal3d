@@ -20,6 +20,7 @@ ACTOR Postal3dWeaponBase : Weapon
         TNT1 AA 0 A_Raise
         Wait
 	Kick:
+		TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
         TNT1 A 0 A_PlaySound("weapons/melee/kick")
         TNT1 A 0 SetPlayerProperty(0, 1, PROP_FROZEN)
 		//If the player has been punching, end the combo here
@@ -31,7 +32,39 @@ ACTOR Postal3dWeaponBase : Weapon
         KICK I 1
 		KICK GFEDCBA 1
         TNT1 A 0 SetPlayerProperty(0,0, PROP_FROZEN)
+		TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
 		TNT1 A 0 A_Takeinventory("Kicking",1)
+        Goto Select
+	DoExecution:
+		TNT1 A 0 A_SetPitch(65)
+		TNT1 A 1
+		TNT1 A 0 A_ChangeFLag("NOPAIN", 1)
+		TNT1 A 0 A_ChangeFLag("PUSHABLE", 0)
+		TNT1 A 0 A_Stop
+		TNT1 A 0 SetPlayerProperty(0,1,4)
+		KICK A 0 A_Takeinventory("Kicking",1)
+		KICK A 0 A_Takeinventory("ExecuteDownedEnemy",1)
+		
+		TNT1 AAAAA 1 A_SetPitch(70)
+		TNT1 A 0 A_Jump(255, "Execution1", "Execution2")
+		Goto Execution1
+	Execution1:	
+		KICK BCD 1
+		RIFF A 0 A_FireCustomMissile("ExecutionAttackKick", 0, 0, 0, -7)
+        KICK H 5
+		KICK A 0 A_Takeinventory("Kicking",1)
+		KICK I 1
+		KICK GFEDCBA 1
+		TNT1 A 5
+		Goto FinishExecution
+	FinishExecution:
+		TNT1 A 0
+		TNT1 AAAAAAAA 1 A_SetPitch(Pitch-10)
+		TNT1 A 0 A_ChangeFLag("NOPAIN", 0)
+		TNT1 A 0 A_ChangeFLag("PUSHABLE", 1)
+		TNT1 A 0 SetPlayerProperty(0,0,4)
+		KICK A 0 A_Takeinventory("ExecuteDownedEnemy",1)
+		TNT1 A 0 A_takeInventory("PressedUSe", 1)
         Goto Select
 	}
 }

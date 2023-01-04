@@ -1,0 +1,110 @@
+//PoliceBrownWhiteMale
+Actor PoliceBrownWhiteMaleExecute1
+{
+	SCALE 0.60
+Health 150
+Radius 38
+Height 4
+Mass 99999
+Painchance 256
+Species "Player"
++SHOOTABLE
++FORCEXYBILLBOARD
+Damagefactor "kick", 50.0
+	States
+	{
+		Spawn:
+		01EP A 35
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+		NULL A 0 A_SpawnItem ("StompedImp")
+		Stop
+		
+		Pain:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("imp/pain")
+		TNT1 A 0 A_SpawnItem("Blood", 0, 1)
+		01EP B 3
+		01EP B 30
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+		NULL A 0 A_SpawnItem ("StompedImp")
+		Stop
+		
+		Death:
+		
+		01EP J 1
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+		01EP KLMNOPQ 1
+		NULL A 0 A_SpawnItem ("StompedImp")
+		Stop
+	}
+}
+ACTOR DyingPoliceBrownWhiteMale : DyingZombieman
+{
+	SCALE 0.60
+    PainSound "act1_agony"
+    States
+    {
+	Death.Kick:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
+		TNT1 A 0 A_SpawnItem("PoliceBrownWhiteMaleExecute1")
+		Stop
+	Spawn:
+		TNT1 A 0
+        TNT1 A 0 A_GiveInventory("IsDown", 1)
+		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+		SHIW A 1 A_Look
+		Loop
+	See:
+		SHIW ABAB 10 A_Chase
+        SHIW A 9 A_Pain
+		TNT1 A 0 A_SpawnItemEx("BD_FlyingBlood", 0, 0, 10, 0, 0)
+	    
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 12, "GotoDeath")
+
+		SHIW ABAB 10 A_Chase
+        SHIW A 9 
+		TNT1 A 0 A_SpawnItemEx("BD_FlyingBlood", 0, 0, 10, 0, 0)
+	    
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 12, "GotoDeath")
+		
+		SHIW ABAB 10 A_Chase
+        SHIW A 9 
+		TNT1 A 0 A_SpawnItemEx("BD_FlyingBlood", 0, 0, 10, 0, 0)
+	    
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 12, "GotoDeath")
+
+		SHIW ABAB 10 A_Chase
+        SHIW A 9 
+		TNT1 A 0 A_SpawnItemEx("BD_FlyingBlood", 0, 0, 10, 0, 0)
+	    
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 12, "GotoDeath")
+		Loop
+	GotoDeath:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+		TNT1 A 0 A_ChangeFlag("FRIENDLY", 1)
+		Goto Death
+	Death:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Pain
+        TNT1 A 0 A_TakeInventory("IsDown", 1)
+		SHRD L -1
+		Stop
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_TakeInventory("IsDown", 1)
+		TNT1 A 0 A_SpawnItem("BurningGeneric")
+		Stop
+	}
+}
