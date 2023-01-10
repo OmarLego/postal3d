@@ -1,12 +1,12 @@
+clearplayerclasses
+addplayerclass PostalDudeSr
+addplayerclass NotimPortant nomenu
+
 	addkeysection "POSTAL 3D Custom Controls" Postal3dActions    
    
 	addmenukey "Kick" kickem
 	alias kickem "puke 301"
 	defaultbind Q kickem
-	
-	addmenukey "Toss Grenade" grenadetoss
-	alias grenadetoss "puke 315"
-	defaultbind G grenadetoss
 	
 	addmenukey "Suicide" suicide
 	alias suicide "puke 363"

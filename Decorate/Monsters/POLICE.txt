@@ -1,4 +1,4 @@
-ACTOR PoliceBrownPistolWhiteMale : Postal3dMonsterBase
+ACTOR Cop1 : Postal3dMonsterBase
 {
     Health 40
 	Radius 20
@@ -7,10 +7,10 @@ ACTOR PoliceBrownPistolWhiteMale : Postal3dMonsterBase
 	FastSpeed 8
     Mass 100
     PainChance 200
-    SeeSound "grunt/sight"
-    PainSound "grunt/pain"
-    DeathSound ""
-    ActiveSound "grunt/active"
+    SeeSound "act1_copspot"
+    PainSound "act1_hit"
+    DeathSound "act1_death"
+    ActiveSound "act1_copact"
     DropItem "Clip"
     Obituary "%o was shot by a Police Officer."
 	+FLOORCLIP
@@ -31,7 +31,7 @@ ACTOR PoliceBrownPistolWhiteMale : Postal3dMonsterBase
 	Missile:
 		SHRF AB 7 A_FaceTarget
 	FireGun:
-		TNT1 A 0 A_PlaySound("hostpis")
+		TNT1 A 0 A_PlaySound("hstlpstl")
 		SHRF C 2 BRIGHT A_CustomMissile("ZombieManTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		SHRF D 12 A_FaceTarget
 		TNT1 A 0 A_Jump(96, "FireGun")
@@ -90,7 +90,14 @@ ACTOR PoliceBrownPistolWhiteMale : Postal3dMonsterBase
         SRFD LKJIGFEDCBA 3
         Goto See
 	Crawl:
-        TNT1 A 0 A_SpawnItem("DyingPoliceBrownWhiteMale")
+        TNT1 A 0 A_SpawnItem("DyingCop1")
+		Stop
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItem("BurningActor1")
 		Stop
 	}
 }

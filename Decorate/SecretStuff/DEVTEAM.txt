@@ -1,45 +1,13 @@
-ACTOR Kathy
+ACTOR Kathy 3101
 {
-	Health 9999999
-	Radius 14//Changed from 20 to 14
+	Radius 14
 	Height 40
-	Speed 5
 	Scale 1.25
-	PainChance 00
-	MaxStepHeight 64 //default is 24. 48 is the height of the starting ledge of MAP01. Substitute for a jump. Personally I like when he drops naturally and warps if he can't reach player.
-	DamageFactor "Taunt", 1
-	PainChance "Taunt", 255
-	Monster
-	
-	+FLOORCLIP
-	//+NOBLOCKMAP
-	-SOLID //added
-	+JUMPDOWN //added but for some reason he's not dropping down.
-	+DROPOFF //added. Now he'll drop down for sure.
-	+NOBLOCKMONST
-	+THRUGHOST
-	+NOBLOOD
-	+NODAMAGETHRUST
-	//+NOCLIP
-	//+FLOORHUGGER
-	-SHOOTABLE
-	+NOTARGET
-	+MOVEWITHSECTOR
-	+INVULNERABLE
-	-COUNTKILL //Added
-	
-	SeeSound ""
-	AttackSound ""
-	PainSound ""
-	DeathSound ""
-	ActiveSound ""
-	
-	Obituary "%o recieved warm hugs from Ralsei! <3" // "%o was killed by a zombieman."
-	DropItem "soulsphere"
-	States
-	{
-	Spawn:
-		KATH AA 10 A_Look
-		Loop
-	}
+	+SOLID
+  States
+  {
+  Spawn:
+    KATH A 1
+    loop
+  }
 }

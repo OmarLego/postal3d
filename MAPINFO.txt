@@ -1,17 +1,17 @@
 gameinfo
 {
-   //Intro {video = "Movies/RWSINTRO.ivf" sound = "Movies/RWSINTRO"}
-   MenuSliderColor 		= "White"
-   Menufontcolor_title 	= "Red"
-   Menufontcolor_label 	= "Red"
-   Menufontcolor_value 	= "White"
-   Menufontcolor_action 	= "Red"
-   Menufontcolor_header 	= "White"
-   Menufontcolor_highlight = "White"
-   Menufontcolor_selection = "White"
-   AddEventHandlers 	= "SaySomethingOnKill"
-   PlayerClasses = "PostalDudeSr", "NotimPortant"
-	NoRandomPlayerClass = True
+	//Intro {video = "Movies/RWSINTRO.ivf" sound = "Movies/RWSINTRO"}
+	MenuSliderColor 		= "White"
+	Menufontcolor_title 	= "Red"
+	Menufontcolor_label 	= "Red"
+	Menufontcolor_value 	= "White"
+	Menufontcolor_action 	= "Red"
+	Menufontcolor_header 	= "White"
+	Menufontcolor_highlight = "White"
+	Menufontcolor_selection = "White"
+	AddEventHandlers 	= "SaySomethingOnKill"
+	AddEventHandlers = "HatredVision"
+NoRandomPlayerClass = True
 	AddEventHandlers = "WeatherHandler"
 }
 
@@ -30,4 +30,5 @@ map P3D01 "Home"
 {
 music = ""
 sky1 = "CLDYSKY5"
+fade = "gray"
 }

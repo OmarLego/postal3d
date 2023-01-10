@@ -10,8 +10,3 @@ Script 363 (VOID) NET
 {
  GiveInventory("YouRegretNothing", 1);
 }
-
-Script 315 (VOID) NET
-{
- GiveInventory("TossGrenade", 1);
-}

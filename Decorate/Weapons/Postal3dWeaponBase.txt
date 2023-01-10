@@ -5,8 +5,12 @@ ACTOR Postal3dWeaponBase : Weapon
     Weapon.AmmoGive1 0
     Weapon.AmmoGive2 0
     +FORCEXYBILLBOARD
-	Weapon.BobStyle "InverseSmooth"
-	Weapon.BobSpeed 0.8
+	//Weapon.BobStyle "InverseSmooth" //P:RWC Style Bobbing
+	//Weapon.BobSpeed 0.8
+	//Weapon.BobRangeX 0.2 //BDv21 Style Bobbing
+	//Weapon.BobRangeY 0.4
+	//Weapon.BobSpeed 2.9
+	//Weapon.BobStyle Smooth
 	States
 	{
     Ready:

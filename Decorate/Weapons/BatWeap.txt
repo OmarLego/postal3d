@@ -5,6 +5,8 @@ ACTOR BatWeap : Postal3dWeaponBase
     +WEAPON.NOAUTOAIM
     +WEAPON.NOAUTOFIRE
 	Tag "Bat"
+	Inventory.PickupSound "weapons/bat/pickup"
+	Inventory.PickupMessage "You got the Bat!"
   States
   { 
 	Ready:

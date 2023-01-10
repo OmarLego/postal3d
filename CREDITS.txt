@@ -1,34 +1,86 @@
 Credits for POSTAL 3D:
 
-Big Groups:
-Running With Scissors - Well, it is pretty obvious if you ask me (POSTAL and POSTAL 2)
-ID Software - Hmm, I wonder (DOOM)
-Apogee/3D Realms - Duke Nukem 3D and Rise of the Triad
-Monolith Productions - Blood (1997)
-Ceeb - Blood (1997) Texture Conversion into DOOM
-Bloom Team - Bloom (Palette Only)
-Destructive Creations - Hatred
-Hyperstrange - POSTAL: Brain Damaged
+POSTAL:
+Running With Scissors
 
-Individuals:
-Foxhead/Thfpjct - ComTex and RWLDEC
-Sergeant_Mark_IV - Brutal Doom and Brutal Bolognese
-DavidN - BDLite
-LossForWords - POSTAL: Running With Chainsaws
-TatumWilbanks - China Lake Finalized 3D Model (Sketchfab)
-Boondorl - Weather Spawner + Universal Rain and Snow
-Nash Muhandes - Less Slippery Doom Movement
-Accensus - Universal Gibs
-enderkevin13 - Destroyable windows: An easier way Guide
-Jakie - How to make .IVF cutscenes in GZDoom
-bartkov - Redux Dude for POSTAL 2
-Man Chrzan/SZATAN - Redux Dude for POSTAL 2
-Adams - Redux Dude for POSTAL 2
-KeshaFilm -  HONG KONG 2027 and NOTIM PORTANT for POSTAL 2
-Evil -  NOTIM PORTANT for POSTAL 2
+DOOM:
+ID Software
+
+Coding Base:
+BDLite
+
+Sound Effects:
+Killing Floor
+Call of Duty 
+Postal 1, Postal 2, Postal Redux
+Insurgency:Sandstorm
+Brutal Doom/Project Brutality
+Naku-Naru
+Enhanced Vanilla Project
+Hatred
+
+Item graphics:
+Pennis Drager/SevaKsP
+Brutal Doom/Project Brutality
+Duke Nukem 64
+aeea7835
+LossForWords
+
+Weapon Graphics:
+Brutal Doom
+LossForWords
+Lucas Kord
+Postal 2 (Digitized by katherinecode)
+Realm667
+fgsfds, Kingy, Dzierzan
+jdredalert
+Arachnocide
+Pennis Drager(SevaKsP)
+War Rooster
+Kinsie
+EmeraldCoasttt
+Foxhead/Thfpjct 
+
+Monster Graphics:
+Postal 2 (Digitized by katherinecode)
+Rise of the Triad
+Pennis Drager/SevaKsP
+Duke Nukem Forever 2013
+sebabdukeboss20 
+
+Textures:
+Foxhead/Thfpjct (Comtext)
+Blood (Conversion by Ceeb)
+Duke Nukem 3D (Conversion from Realm667)
+GLMatrix screensaver
+
+Map Decorations:
+Foxhead/Thfpjct (RWLDEC)
+
+Map Effects:
+Boondorl
+enderkevin13
+
+The Postal Dude Sr. Graphics:
+Redux Dude for POSTAL 2/HONG KONG 2027 (Digitized by katherinecode)
+
+One-Liner Code:
+LossForWords
+
+Machete Throwing Code:
+Dox778
+
+Palette:
+Bloom (Doom/Blood crossover)
+
+Secret Character Stuff:
+Hatred
+NOTIM PORTANT (Player Mod) for Postal 2 (Digitized by katherinecode)
+SinCity Shader v3 by Rachael
+Judgement Doom
 
 Brain Dead Arts Team Members:
-NastyAndBrutal - Owner
+NastyAndBrutal - Former Owner
 Johnny Cruelty - Owner
 katherinecode - Artist, Mapper, and Coder
-Pennis Drager - Artist and Coder
+Pennis Drager/SevaKsP - Artist and Coder

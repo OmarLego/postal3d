@@ -50,18 +50,18 @@ Goto Reloading
 	TNT1 A 0 A_Takeinventory("DoubleMagazine11",1)
 	FireFinish:
 	    TNT1 A 0 A_TakeInventory ("Magazine11",1)
-		MOLT ABCDEFG 4
-		MOLT G 4
+		MLTT ABCDEFG 4
+		MLTT G 4
 		{
 		A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate);
 		A_PlaySound ("LITUP",CHAN_AUTO);
 		}
-		MOLT GGGGGG 3 BRIGHT A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
-		MOLT H 3 BRIGHT A_PlaySound ("MOLFIR",CHAN_AUTO)
-		MOLT IJKLMNOP 3 BRIGHT 
-		MOLT Q 2 A_PlaySound ("Throw",CHAN_AUTO)
+		MLTT GGGGGG 3 BRIGHT A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
+		MLTT H 3 BRIGHT A_PlaySound ("MOLFIR",CHAN_AUTO)
+		MLTT IJKLMNOP 3 BRIGHT 
+		MLTT Q 2 A_PlaySound ("Throw",CHAN_AUTO)
 		TNT1 A 0 A_FireCustomMissile ("MolotovFly",1,0,11,12)
-		MOLT RS 2
+		MLTT RS 2
  		goto Ready
 		
 

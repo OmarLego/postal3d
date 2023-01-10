@@ -1,7 +1,7 @@
 /** Tracers are a bit weird and inconsistent. The base class "Tracer" fired by the player is just decorative, so that hitscan weapons are actually hitscan and don't have a delay in crossing the map - however, enemy tracers actually do the damage directly and are used in place of firing hitscan bullets. I speculate that this is done so that the player doesn't get caught out by a hitscan attack that happens before the enemy fire reaches them visually.
 
 They're defined as models in modeldef.bdlite. */
-Actor Tracer: FastProjectile
+Actor P3D_Tracer: FastProjectile
 {
     Projectile
     +RANDOMIZE
@@ -29,7 +29,7 @@ Stop
 }
 
 
-Actor DamagingTracer: Tracer
+Actor P3D_DamagingTracer: P3D_Tracer
 {
 +BLOODSPLATTER 
 +THRUGHOST
@@ -66,7 +66,7 @@ Death:
 }
 }
 
-Actor M16Tracer: Tracer
+Actor P3D_M16Tracer: P3D_Tracer
 {
 +BLOODSPLATTER 
 +THRUGHOST
@@ -102,7 +102,7 @@ Death:
 		Stop
 }
 }
-Actor FragTracer: Tracer
+Actor P3D_FragTracer: P3D_Tracer
 {
 +BLOODSPLATTER 
 +THRUGHOST
@@ -138,7 +138,7 @@ Death:
 		Stop
 }
 }
-Actor MGTracer: Tracer
+Actor P3D_MGTracer: P3D_Tracer
 {
 +BLOODSPLATTER 
 +THRUGHOST
@@ -174,7 +174,7 @@ Death:
 		Stop
 }
 }
-Actor MP5Tracer: Tracer
+Actor P3D_MP5Tracer: P3D_Tracer
 {
 +BLOODSPLATTER 
 +THRUGHOST
@@ -210,7 +210,7 @@ Death:
 		Stop
 }
 }
-Actor ShotgunTracer: Tracer
+Actor P3D_ShotgunTracer: P3D_Tracer
 {
 +BLOODSPLATTER 
 +THRUGHOST
@@ -247,7 +247,7 @@ Death:
 }
 }
 
-Actor MagnumTracer: Tracer
+Actor P3D_MagnumTracer: P3D_Tracer
 {
 +BLOODSPLATTER 
 +THRUGHOST
@@ -310,22 +310,16 @@ ACTOR TracerSpark
 	}
 }
 
-/** Non-damaging tracer fired by the player's minigun */
-Actor MinigunTracer: Tracer
-{
--DONTSPLASH
-damagetype RapidFire
-}
-
-/** Damaging tracer fired by BdShotgunGuy */
-Actor MonsterTracer: Tracer
+//BDLite stuff (actually UCBD since the damage values but stfu)
+//sorry im just on my period today it seems
+Actor MonsterTracer: P3D_Tracer
 {
 +BLOODSPLATTER 
 +THRUGHOST
 -DONTSPLASH
 +MISSILE
 speed 60
-damage (random(3,4))
+damage (random(8,8))
 Decal "BulletDecalNew1"
 DamageType Bullet
 States
@@ -346,10 +340,16 @@ Death:
 }
 }
 
+/** Damaging tracer fired by BdShotgunGuy */
+Actor ShotgunguyTracer: MonsterTracer
+{
+damage (random(12,12))
+}
+
 /** Slightly less damaging tracer fired by BdZombieMan */
 Actor ZombieManTracer: MonsterTracer
 {
-damage (random(2,3))
+damage (random(11,11))
 }
 
 /** Damaging tracer fired by BdCommando */
@@ -359,7 +359,7 @@ Actor MonsterMinigunTracer: MonsterTracer
 +THRUGHOST
 -DONTSPLASH
 speed 60
-damage (random(2,2))
+damage (random(9,9))
 seesound "weapons/chaingun/fire"
 damagetype RapidFire
 Decal "BulletDecalNew1"
@@ -371,95 +371,3 @@ Death:
     Stop
 }
 }
-
-/** Devastating damaging tracer fired by the Spider Mastermind */
-Actor MastermindTracer: Tracer
-{
-+BLOODSPLATTER 
-+THRUGHOST
--DONTSPLASH
-speed 90
-damage (random(5,7))
-scale .2
-RenderStyle Add
-Alpha 0.9
-seesound "weapons/ssg/fire"
-damagetype ExplosiveImpact
-Decal "Scorch"
-Obituary "$OB_SPIDER"
-States
-{
-
-    Spawn:
-        TNT1 A 1 BRIGHT A_SpawnItemEx("MastermindTracerTrail", 0,               0,              2)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail2", (2 *momx)/-35.0, -(2 *momy)/-35.0, 2+(2 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail3", (4 *momx)/-35.0, -(4 *momy)/-35.0, 2+(4 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail4", (6 *momx)/-35.0, -(6 *momy)/-35.0, 2+(6 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail5", (8 *momx)/-35.0, -(8 *momy)/-35.0, 2+(8 *momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail6", (10*momx)/-35.0, -(10*momy)/-35.0, 2+(10*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail7", (12*momx)/-35.0, -(12*momy)/-35.0, 2+(12*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail8", (14*momx)/-35.0, -(14*momy)/-35.0, 2+(14*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail9", (16*momx)/-35.0, -(16*momy)/-35.0, 2+(16*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail10", (18*momx)/-35.0, -(18*momy)/-35.0, 2+(18*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail11", (20*momx)/-35.0, -(20*momy)/-35.0, 2+(20*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail12", (22*momx)/-35.0, -(22*momy)/-35.0, 2+(22*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail13", (24*momx)/-35.0, -(24*momy)/-35.0, 2+(24*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail14", (26*momx)/-35.0, -(26*momy)/-35.0, 2+(26*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail15", (28*momx)/-35.0, -(28*momy)/-35.0, 2+(28*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail15", (30*momx)/-35.0, -(30*momy)/-35.0, 2+(30*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail16", (32*momx)/-35.0, -(32*momy)/-35.0, 2+(32*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail17", (34*momx)/-35.0, -(34*momy)/-35.0, 2+(34*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail18", (36*momx)/-35.0, -(36*momy)/-35.0, 2+(36*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail18", (38*momx)/-35.0, -(38*momy)/-35.0, 2+(38*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        TNT1 A 0 A_SpawnItemEx("MastermindTracerTrail18", (40*momx)/-35.0, -(40*momy)/-35.0, 2+(40*momz)/-35.0, 0,0,0, 0, SXF_ABSOLUTEANGLE)
-        Loop
-    Death:
-    Xdeath:
-        TNT1 A 0 A_Explode (2, 120, 0)
-        TNT1 A 0 A_SpawnItemEx ("ExplosionFlare",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-        TNT1 AA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 360), 2, random (0, 180))
-        TNT1 AAAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 180), 2, random (0, 180))
-        TNT1 AAAA 0 A_CustomMissile ("SmallExplosionFlames", 0, 0, random (0, 360), 2, random (0, 360))
-        
-        TNT1 AAA 0 A_CustomMissile ("ExplosionParticleHeavy", 0, 0, random (0, 360), 2, random (0, 360))
-        TNT1 AAA 0 A_CustomMissile ("ExplosionParticleVeryFast", 0, 0, random (0, 360), 2, random (0, 40))
-        
-                TNT1 A 0 A_PlaySound("explosions/far")
-                TNT1 AAAAAAAA 4 A_CustomMissile ("MiniSmoke", 2, 0, random (0, 360), 2, random (0, 360))
-    Stop
-}
-}
-
-/** These are effects that are spawned when the Mastermind fires. */
-actor MastermindTracerTrail
-{
-    Scale 0.13
-    RenderStyle Add
-    Alpha 0.9
-    +NOINTERACTION
-    +CLIENTSIDEONLY
-    States
-    {
-    Spawn:
-        SPRK A 2 BRIGHT
-        stop
-    }
-}
-
-actor MastermindTracerTrail2: MastermindTracerTrail {    Alpha 0.85 }
-actor MastermindTracerTrail3: MastermindTracerTrail {    Alpha 0.80 }
-actor MastermindTracerTrail4: MastermindTracerTrail {    Alpha 0.75 }
-actor MastermindTracerTrail5: MastermindTracerTrail {    Alpha 0.70 }
-actor MastermindTracerTrail6: MastermindTracerTrail {    Alpha 0.65 }
-actor MastermindTracerTrail7: MastermindTracerTrail {    Alpha 0.60 }
-actor MastermindTracerTrail8: MastermindTracerTrail {    Alpha 0.55 }
-actor MastermindTracerTrail9: MastermindTracerTrail {    Alpha 0.50 }
-actor MastermindTracerTrail10: MastermindTracerTrail {    Alpha 0.45 }
-actor MastermindTracerTrail11: MastermindTracerTrail {    Alpha 0.40 }
-actor MastermindTracerTrail12: MastermindTracerTrail {    Alpha 0.35 }
-actor MastermindTracerTrail13: MastermindTracerTrail {    Alpha 0.30 }
-actor MastermindTracerTrail14: MastermindTracerTrail {    Alpha 0.25 }
-actor MastermindTracerTrail15: MastermindTracerTrail {    Alpha 0.20 }
-actor MastermindTracerTrail16: MastermindTracerTrail {    Alpha 0.15 }
-actor MastermindTracerTrail17: MastermindTracerTrail {    Alpha 0.10 }
-actor MastermindTracerTrail18: MastermindTracerTrail {    Alpha 0.05 }

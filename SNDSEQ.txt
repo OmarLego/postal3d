@@ -1,5 +1,5 @@
 :WoodDoor
 	door 10
-	playuntildone		dooropen
-	stopsound 			doorclos
+	play				dooropen
+	nostopcutoff
 end
