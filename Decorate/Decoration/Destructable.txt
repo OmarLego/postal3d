@@ -1,0 +1,62 @@
+ACTOR PRLD_DestructSpawn
+{
+	Health 30
+	Radius 32
+	Height 4
+	+SHOOTABLE
+	+NOBLOOD
+	+NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 100
+		Loop
+	}
+}
+Actor PRLD_FenceDestruct: PRLD_DestructSpawn
+{
+	DamageFactor "Saw", 0.0 //i have no idea if this does anything but whatever
+	DamageFactor "M12", 0.0
+	States
+	{
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldExplosion")
+	    TNT1 AA 0 A_CustomMissile ("SFXWoodParticle2", 0, 0, random (0, 360), 2, random (30, 60))
+		TNT1 AA 0 A_CustomMissile ("SFXWoodParticle1", 0, 0, random (0, 360), 2, random (30, 60))
+		TNT1 AA 0 A_CustomMissile ("SFXWoodParticle4", 0, 0, random (0, 360), 2, random (30, 60))
+		TNT1 AAA 0 A_CustomMissile ("SFXBrownSmoke", 20, 0, random (0, 360), 2, random (10, 40))
+		TNT1 A 0 A_PlaySound("DSBRK2")
+		TNT1 A 1
+		Stop
+	}
+}
+Actor PRLD_GlassDestruct: PRLD_DestructSpawn
+{
+	Radius 4
+	States
+	{
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldExplosion")
+		Stop
+	}
+}
+
+//is there a way better way of making a texture change on impact? yeah probably, but ((i think)) this works
+ACTOR NoGlassJunk : GlassJunk Replaces GlassJunk
+{
+	States
+	{
+  Spawn:
+    TNT1 A 128
+	Goto Death
+	TNT1 A 128
+	Goto Death
+	TNT1 A 128
+	Goto Death
+  Death:
+    TNT1 A 1
+	Stop
+	}
+}

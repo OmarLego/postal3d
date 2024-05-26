@@ -1,19 +1,80 @@
-server int AlternativeStarterSMGSkin = 0;
-
-//brutal bolognese
-user int bd_bloodamount	= 2;
-user int bd_lowgraphicsmode = 0;
-server int zdoombrutalblood	= 2;
-server int isrunningzandronum = 1;
-
-//weather
+//Weather
 user float weather_amount = 3;
 user float weather_precip_vol = 1;
 user float weather_wind_vol = 1;
 user float weather_thunder_vol = 1;
 user bool weather_no_fog = false;
 user bool weather_no_lightning = false;
+//rain and snow specific
+user int rs_weather = 0;
+user int rs_intensity = 0;
 
-//footsteps
+//Footsteps
 server float fs_volume_mul = 1.0;
 server float fs_delay_mul = 1.0;
+
+//QuakeMove
+//bob has issues so its removed by default :(
+//i dunno how to fix this code out of my league
+user bool CG_QuakeBob = false;
+
+user float CG_RunPitch = 0.002;
+user float CG_RunRoll = 0.005;
+
+user float CG_BobPitch = 0.002;
+user float CG_BobRoll = 0.002;
+user float CG_BobUp = 0.005;
+
+user float CG_DamageKick = 1.0;
+user float CG_LandKick = 1.0;
+
+user float CG_LagSensitivityX = 100;
+user float CG_LagSensitivityY = 100;
+user float CG_LagRecenterX = 0.2;
+user float CG_LagRecenterY = 0.2;
+user float CG_LagMinX = -64;
+user float CG_LagMaxX = 64;
+user float CG_LagMinY = -8;
+user float CG_LagMaxY = 64;
+user float CG_LagOffsetY = 8;
+
+user bool CG_Speedometer = false;
+
+server bool G_StrafeJumping = true;
+server bool G_StrafeRunning = false;
+
+server float SV_FlyControl = 0.4;
+server float SV_WaterControl = 0.8;
+server bool SV_AssumeCVarDefaults = true;
+
+user noarchive cheat bool HelpMeMommy = false;
+
+//Universal Weapon Sway
+user bool ws_disablefire = false;
+user bool ws_bobonly = false;
+user bool ws_nobobsway = false;
+
+user bool ws_vertextend = false;
+user bool ws_extendready = false;
+user bool ws_inversevert = false;
+user bool ws_crouchinversevert = false;
+user float ws_vertscale = 0;
+user float ws_crouchvertscale = 1;
+
+user bool ws_swayhinverse = false;
+user bool ws_swayhcumulative = false;
+user float ws_swayhcrouchscale = 1;
+user float ws_swayhscale = 1;
+user float ws_swayhspeed = 2;
+user float ws_swayhaccuracy = 3;
+
+user bool ws_swayvinverse = false;
+user bool ws_swayvcumulative = false;
+user float ws_swayvcrouchscale = 1;
+user float ws_swayvscale = 1;
+user float ws_swayvspeed = 2;
+user float ws_swayvaccuracy = 3;
+
+user bool ws_nohmove = false;
+user bool ws_novmove = false;
+user bool ws_nofmove = false;

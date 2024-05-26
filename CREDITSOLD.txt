@@ -1,0 +1,91 @@
+Credits for POSTAL 3D:
+
+POSTAL:
+Running With Scissors
+
+DOOM:
+ID Software
+
+Coding Base:
+BDLite
+
+Sound Effects:
+Killing Floor
+Call of Duty 
+Postal 1, Postal 2, Postal Redux
+Insurgency:Sandstorm
+Brutal Doom/Project Brutality
+Naku-Naru
+Enhanced Vanilla Project
+Hatred
+
+Item graphics:
+Pennis Drager/SevaKsP
+Brutal Doom/Project Brutality
+Duke Nukem 64
+aeea7835
+LossForWords
+
+Weapon Graphics:
+Brutal Doom
+LossForWords
+Lucas Kord
+Postal 2 (Digitized by katherinecode)
+Realm667
+fgsfds, Kingy, Dzierzan
+jdredalert
+Arachnocide
+Pennis Drager(SevaKsP)
+War Rooster
+Kinsie
+EmeraldCoasttt
+Foxhead/Thfpjct 
+
+Monster Graphics:
+Postal 2 (Digitized by katherinecode)
+Rise of the Triad
+Pennis Drager/SevaKsP
+Duke Nukem Forever 2013
+Duke Nukem: Alien Armageddon
+
+Monster Code:
+BDLite
+Brutal DOOM
+ZBloody Hell
+Brutal Wolfenstein
+
+Textures:
+Foxhead/Thfpjct (Comtext)
+Blood (Conversion by Ceeb)
+Duke Nukem 3D (Conversion from Realm667)
+GLMatrix screensaver
+
+Map Decorations:
+Foxhead/Thfpjct (RWLDEC)
+
+Map Effects:
+Boondorl
+enderkevin13
+
+The Postal Dude Sr. Graphics:
+Redux Dude for POSTAL 2/HONG KONG 2027 (Digitized by katherinecode)
+
+One-Liner Code:
+LossForWords
+Kizoky
+
+Machete Throwing Code:
+Dox778
+
+Palette:
+Bloom (Doom/Blood crossover)
+
+Secret Character Stuff:
+Hatred
+NOTIM PORTANT (Player Mod) for Postal 2 (Digitized by katherinecode)
+SinCity Shader v3 by Rachael
+Judgement Doom
+
+Brain Dead Arts Team Members:
+katherinecode - Project Lead, Artist, Mapper, and Coder
+Pennis Drager/SevaKsP - Artist and Coder

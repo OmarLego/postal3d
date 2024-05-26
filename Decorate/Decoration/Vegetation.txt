@@ -1,0 +1,70 @@
+ACTOR PRLD_SnowTree
+{
+  radius 56
+  height 225
+  +SOLID
+  States
+  {
+  Spawn:
+    TRDE F 1
+    loop
+  }
+}
+
+ACTOR PRLD_DeadTree1
+{
+  radius 16
+  height 192
+  +SOLID
+  States
+  {
+  Spawn:
+    DTRE A 1
+    loop
+  }
+}
+
+ACTOR PRLD_Snowman
+{
+	Radius 16
+	Height 56
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	Health 1
+	Scale 0.5
+	States
+	{
+	Spawn:
+		SNMN A 10
+		Loop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnDebris("PRLD_SnowParticles")
+		Stop
+	}
+}
+Actor PRLD_SnowParticles
+{
+	//+Missile
+	Health 40
+	//+doombounce
+	+FLOORCLIP
+	+DONTSPLASH
+	+NOTELEPORT
+	Radius 3
+	Height 6
+	Speed .1
+	Mass 0
+	States
+	{
+		SNOW A 35
+		SNOW A 35
+		SNOW A 35
+		SNOW AAAAA 1  Bright A_SetTranslucent(.8,1)
+		SNOW AAAAAA 1  Bright A_SetTranslucent(.6,1)
+		SNOW AAAAAAAA 1  Bright A_SetTranslucent(.4,1)
+		SNOW AAAAAAAAAA 1 Bright A_SetTranslucent(.2,1)
+		Stop
+	}
+}

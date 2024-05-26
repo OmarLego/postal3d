@@ -1,0 +1,13 @@
+ACTOR Kathy
+{
+	Radius 14
+	Height 40
+	Scale 1.25
+	+SOLID
+  States
+  {
+  Spawn:
+    KATH A 1
+    loop
+  }
+}

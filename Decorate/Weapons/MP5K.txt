@@ -1,10 +1,9 @@
-
-ACTOR MP5K : Postal3dWeaponBase
+ACTOR MP5K : Postal3dWeapon Replaces Pistol
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 10
 	Weapon.AmmoUse2 0
-	Weapon.AmmoGive2 30
+	Weapon.AmmoGive2 35
 	Weapon.AmmoType1 "9MM"
 	Weapon.AmmoType2 "Magazine4"
 Scale 1
@@ -17,11 +16,12 @@ Inventory.PickupMessage "\c[red]You got the \c[Blue]MP5K"
   { 
 	Ready:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	MP5R A 1 A_Weaponready (WRF_ALLOWRELOAD)
+	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
+	MP5R A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 	loop
 	
 	Select:
-	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+	TNT1 A 0 A_PlaySound ("MP5BACK",CHAN_AUTO)
 	MP5R A 1 A_Raise
 	Goto Ready
 	
@@ -34,7 +34,7 @@ Inventory.PickupMessage "\c[red]You got the \c[Blue]MP5K"
 	loop
 
 Reload:
-TNT1 A 0 A_JumpIfInventory ("Magazine4",30,"Ready")
+TNT1 A 0 A_JumpIfInventory ("Magazine4",35,"Ready")
 Goto Reloading
 
 	Fire:
@@ -90,6 +90,7 @@ Goto Reloading
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("P3D_MP5Tracer",0,0,5,3)
 		TNT1 A 0 A_PlaySound("MP5FIR",CHAN_AUTO)
+		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,5,3)
 		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,15,1)
 		MP5F B 2 
@@ -102,40 +103,40 @@ TNT1 A 0 A_Print ("\c[yellow]Out of ammo",1)
 Goto Ready
 
 Reloading:
-TNT1 A 0 A_JumpIfInventory ("Magazine4",30,"FinishReload")
+TNT1 A 0 A_JumpIfInventory ("Magazine4",35,"FinishReload")
 TNT1 A 0 A_JumpIfInventory ("9MM",1,"StartReload")
 goto FinishReload
 StartReload:
-TNT1 A 0 A_JumpIfInventory ("Magazine4",30,"Ready")
+TNT1 A 0 A_JumpIfInventory ("Magazine4",35,"Ready")
 MP5L A 2 A_PlaySound ("AKMOV",CHAN_AUTO)
 MP5L BCDEFG 2
-MP5L H 2 A_PlaySound ("MP5BACK",CHAN_AUTO)
-MP5L I 2
-MP5L J 2 A_PlaySound ("MP5BOLT",CHAN_AUTO)
-MP5L KLMN 2
-MP5L O 2 A_PlaySound ("MP5GRAB",CHAN_AUTO) 
-MP5L O 2 A_PlaySound ("MP5MAGOUTMOV",CHAN_AUTO)
-MP5L OOOO 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-MP5L P 2 A_PlaySound ("MPMAGOUT",CHAN_WEAPON)
+MP5L H 3 A_PlaySound ("MP5BACK",CHAN_AUTO)
+MP5L I 3
+MP5L J 3 A_PlaySound ("MP5BOLT",CHAN_AUTO)
+MP5L KLMN 3
+MP5L O 3 A_PlaySound ("MP5GRAB",CHAN_AUTO) 
+MP5L O 3 A_PlaySound ("MP5MAGOUTMOV",CHAN_AUTO)
+MP5L OOOO 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+MP5L P 3 A_PlaySound ("MPMAGOUT",CHAN_WEAPON)
 TNT1 A 0 A_FireCustomMissile ("EmptyMP5MagSpawner",0,0,5,3)
-MP5L QRSTUVWXYZ 1
+MP5L QRSTUVWXYZ 2
 MPKL AAAAA 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-MPKL A 2 A_PlaySound ("AKMAGOUTMOV",CHAN_AUTO)
-MPKL A 2
-MPKL BCDEF 1
+MPKL A 3 A_PlaySound ("AKMAGOUTMOV",CHAN_AUTO)
+MPKL A 3
+MPKL BCDEF 2
 MPKL G 2 A_PlaySound ("MP5MAGIN",CHAN_AUTO)
 goto Bulletin
 
 ReloadContinue:
-MPKL HIJKLMNO 3
+MPKL HIJKLMNO 2
 MPKL PQ 3
-MPKL R 3 A_PlaySound ("MP5REL",CHAN_AUTO)
-MP5L DCBA 3
+MPKL R 2 A_PlaySound ("MP5REL",CHAN_AUTO)
+MP5L DCBA 2
 goto FinishReload
 
 Bulletin:
 TNT1 AAAA 0
-		TNT1 A 0 A_JumpIfInventory("Magazine4",30,"ReloadContinue")
+		TNT1 A 0 A_JumpIfInventory("Magazine4",35,"ReloadContinue")
 		TNT1 A 0 A_JumpIfInventory("9MM",1,"Bulletin2")
 	   goto FinishReload
 		Bulletin2:
@@ -154,18 +155,25 @@ TNT1 AAAA 0
 ACTOR Magazine4 : Ammo
 {
    Inventory.Amount 0
-   Inventory.MaxAmount 30
+   Inventory.MaxAmount 35
    Ammo.BackpackAmount 0
-   Ammo.BackpackMaxAmount 30
+   Ammo.BackpackMaxAmount 35
    scale 0.2
-   Inventory.Icon "9MMMB0"
+   Inventory.Icon "MP5KA0"
 }
 
 ACTOR DoubleMagazine4 : Ammo
 {
    Inventory.Amount 0
-   Inventory.MaxAmount 60
+   Inventory.MaxAmount 70
    Ammo.BackpackAmount 0
-   Ammo.BackpackMaxAmount 60
-   Inventory.Icon "AKMGC0"
+   Ammo.BackpackMaxAmount 70
+   Inventory.Icon "MP5KA0"
+}
+
+actor PRLD_MP5Spawner : RandomSpawner
+{
+	radius 24
+	height 24
+    DropItem "MP5K"
 }
