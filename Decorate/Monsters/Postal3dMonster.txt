@@ -1,0 +1,545 @@
+ACTOR PRLD_HomeToken : Inventory //home level exit token for the player
+{
+Inventory.maxamount 1
+}
+
+ACTOR Postal3dMonster {
+    //$Category Monsters
+    Monster
+    +FLOORCLIP
+    +SLIDESONWALLS
+	+COUNTKILL
+    MaxStepHeight 24
+    damagefactor "Crush", 10.0
+    damagefactor "Blood", 0.0
+    damagefactor "BlueBlood", 0.0
+    damagefactor "GreenBlood", 0.0
+    damagefactor "Avoid", 0.0
+    DamageFactor "CauseObjectsToSplash", 0.0
+	damagefactor "UseAttack", 0.0
+    damagefactor "Flak", 2.5
+	PainChance 256
+    //PainChance "SkillIssue", 256
+	//PainChance "M12", 0
+	+NODROPOFF
+	MaxDropoffHeight 69
+	MinMissileChance 88
+	Radius 16
+	Height 56
+	Mass 300
+	+CANPASS
+	+THRUGHOST
+	Scale 0.53
+	//Scale 0.5 change the scale to perfect half once im done redoing all of them
+	+NOINFIGHTSPECIES
+	States
+	{
+	Pain.UseAttack:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("IsDown", 1, "Execute")
+		TNT1 A 0 A_Jump(256, "SeeLoop")
+    Death:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 48)
+		//for the home exit level key
+		TNT1 A 0 A_JumpIfInTargetInventory("PRLD_HomeToken",1,"DieHome")
+		TNT1 A 0 A_Jump(65, "DieCrawl")
+        TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
+	DieHome:
+		TNT1 A 0
+		TNT1 A 0 A_DropItem("KeySpot",1)
+		TNT1 A 0 A_Jump(65, "DieCrawl")
+        TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
+	Death.Shotgun:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 48)
+		//for the home exit level key
+		TNT1 A 0 A_JumpIfInTargetInventory("PRLD_HomeToken",1,"DieHomeShotgun")
+		TNT1 A 0 A_Jump(256, "DieShotgun")
+	DieHomeShotgun:
+		TNT1 A 0
+		TNT1 A 0 A_DropItem("KeySpot",1)
+		TNT1 A 0 A_Jump(256, "DieShotgun")
+    Death.Kick:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 48)
+        //TNT1 A 0 A_Jump(256, "DieCrawl")
+		TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
+	Death.Cut:
+	Death.Saw:
+		TNT1 A 0
+        TNT1 A 0 A_XScream
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_FaceTarget
+        TNT1 A 0 A_Jump(256, "DieHeadOff1","DieHeadOff2")
+	Death.Flak:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_XScream
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_Jump(256, "DieX")
+	Death.Fall:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_Jump(256, "DieFall", "DieFallReverse")
+    Death.Fire:
+	Death.Burn:
+	Death.Flame:
+	Death.Flames:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_Scream
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Jump(256, "DieBurn")
+	Death.Explosive:
+	Death.MisBoom:
+    XDeath:
+		TNT1 A 0
+        TNT1 A 0 A_XScream
+        TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_JumpIfInTargetInventory("PRLD_HomeToken",1,"DieXHome")
+        TNT1 A 0 A_Jump(256, "DieX")
+	DieXHome:
+		TNT1 A 0
+		TNT1 A 0 A_DropItem("KeySpot",1)
+		TNT1 A 0 A_Jump(256, "DieX")
+	DieShotgun:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 48)
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		TNT1 A 0 A_Jump(65, "DieCrawl")
+        TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
+	XDeath.Fire:
+	XDeath.Burn:
+	XDeath.Flame:
+	XDeath.Flames:
+	DieXBurn:
+	DieXBurnING:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		FLMD EFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHI 5 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+        FLD2 ABCDE 5 Bright
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		FLD2 E -1
+		Stop
+	}
+}
+
+ACTOR PrldDesructableDeadBody
+{
+	Radius 10
+    Height 6
+    +NOTELEPORT
+    +MOVEWITHSECTOR
+	+FLOORCLIP
+	+FORCEXYBILLBOARD
+	+SHOOTABLE
+	+GHOST
+	+NOTAUTOAIMED
+	+CORPSE
+	-THRUACTORS
+	+NOCLIP
+    Health 300
+	PainChance 255
+	Mass 3000
+	bloodtype "Blood", "BloodSplatter", "AxeBlood"
+	XScale 0.5
+	YScale 0.5
+	States
+	{
+	Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		FLMD EFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHI 5 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+        FLD2 ABCDE 5 Bright
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		FLD2 E -1
+		Stop
+	}
+}
+
+ACTOR ExecutionHealth : Health
+{
+	Inventory.Amount 6
+	Inventory.MaxAmount 100
+	States
+	{
+	Spawn:
+		TNT1 A -1
+	}
+}
+
+Actor PrldMonsterExecute
+{
+	Health 150
+	//Radius 38
+	//Height 4
+	Radius 1
+	Height 4
+	Mass 99999
+	Painchance 256
+	Species "Player"
+	+SHOOTABLE
+	+FORCEXYBILLBOARD
+	//+FLATSPRITE
+    DeathSound "NoSoundHax"
+	Scale 0.2
+	//Scale 0.1
+	+NOGRAVITY
+}
+
+Actor PrldInjuredMonster //: SwitchingDecoration
+{
+    Radius 20
+    Height 20
+    Speed 5
+	Health 25
+    PainSound "act1_agony"
+    DeathSound "NoSoundHax"
+	//damagefactor "Kick", 6.0
+	//PainChance "Kick", 255
+	+SHOOTABLE
+    +FLOORCLIP
+    +LOOKALLAROUND
+	+FRIGHTENED
+	+SOLID
+	+DONTSPLASH
+	+GHOST
+	+THRUGHOST
+	Mass 500
+	//Activation THINGSPEC_ACTIVATE
+	//+USESPECIAL
+	bloodtype "Blood", "BloodSplatter", "AxeBlood"
+	Scale 0.5
+	States
+	{
+	Pain.UseAttack:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(256, "active")
+	Death:
+	GotoDeath:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+		TNT1 A 0 A_ChangeFlag("FRIENDLY", 1)
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_ChangeFlag("USESPECIAL", 0)
+		TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_TakeInventory("IsDown", 1)
+		TNT1 A 0 A_CustomMissile ("CorpseBloodNew", 0, 0, random (0, 360), 2, random (0, 90))
+		TNT1 A 0 A_Jump(256, "Death1", "Death2")
+	DieBurning:
+		TNT1 A 0 A_NoBlocking
+        TNT1 A 0 A_TakeInventory("IsDown", 1)
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,6,random(-4,4),random(-4,4),random(2,8))
+		FLMD EFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHIEFGHI 5 Bright A_CustomMissile("BurnParticles", 10, 0, random (0, 360), 2, random (50, 130))
+        FLD2 ABCDE 5 Bright
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		FLD2 E -1
+		Stop
+	}
+}
+
+
+
+//                                                   BURNING                                        //
+
+
+
+Actor PRLD_BurnLife : Inventory
+{
+Inventory.Maxamount 8
+}
+
+ACTOR PrldBurningGeneric
+{
+	//Monster
+	+NOTARGET
+	//-COUNTKILL
+	Scale 0.50
+	Speed 5
+	+LOOKALLAROUND
+	+FRIGHTENED
+	States
+	{
+	Spawn:
+	    TNT1 A 1
+	Suffer:	   
+		TNT1 A 0
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+	    TNT1 A 0 A_Explode(3, 30)
+		FGUY AAAA 1 Bright A_Wander
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY CCCC 1 Bright A_Wander
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY EEEE 1 Bright A_Wander
+		TNT1 A 0 A_SpawnItemEx  ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY FFFF 1 Bright A_Wander
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		
+		TNT1 A 0 A_GiveInventory("PRLD_BurnLife", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BurnLife", 4, "Stumble")
+		Loop
+	Stumble:
+		TNT1 A 0
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY G 5 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY H 9 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY I 9 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 4)
+		
+	FloorBurn:
+		TNT1 A 0
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY J 5 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY K 5 Bright
+		TNT1 A 0 A_SpawnItemEx  ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY L 5 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY M 5 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY N 5 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		TNT1 A 0 A_Explode(3, 30)
+		FGUY O 5 Bright
+		TNT1 A 0 A_GiveInventory("PRLD_BurnLife", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BurnLife", 7, "SoberUp")
+		Loop
+	
+	SoberUp:
+		TNT1 A 0
+		TNT1 A 0 A_Explode(3, 30)
+		TNT1 A 0 A_Jump(65, "Crawl")
+		BVIC B -1
+		Stop
+	Crawl:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BurnVictimM", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+		/*TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		FGUY PPPPP 1 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		FGUY QQQQQ 1 Bright
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 AAA 0 A_SpawnItemEx ("LittlePieceOfBurningAss", random (-10,10), random (-10,10), random (10,32),  random (0, 4), random(0, 4), random (3,6))
+		FGUY RRRRR 1 Bright DamageThing (1000)   
+	Death:
+	    TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+	    TNT1 A 0 A_SpawnItemEx ("PostLittlePieceOfBurningAss", 0, 0, 0, 0, 0, 0)
+		
+	    FGUY SSSSS 1 Bright A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx ("AssSmoke2", random (-10,10), random (-10,10), random (10,32), random (0,2), random(0,2), random(0,2))
+		TNT1 A 0 A_SpawnItemEx ("PostLittlePieceOfBurningAss", 0, 0, 0, 0, 0, 0)
+	    FGUT T -1*/
+		Stop
+	}
+}
+
+ACTOR PrldBurningActor1: PrldBurningGeneric
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySound("act1_burn")
+Goto Suffer
+}
+}
+
+ACTOR PrldBurningActor2: PrldBurningGeneric
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySound("act2_burn")
+Goto Suffer
+}
+}
+
+ACTOR PrldBurningActor3: PrldBurningGeneric
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySound("act3_burn")
+Goto Suffer
+	Crawl:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BurnVictimF", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+		Stop
+}
+}
+
+ACTOR PrldBurningActor4: PrldBurningGeneric
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySound("act4_burn")
+Goto Suffer
+}
+}
+
+ACTOR PrldBurningActor5: PrldBurningGeneric
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySound("act5_burn")
+Goto Suffer
+}
+}
+
+ACTOR PrldBurningActor6: PrldBurningGeneric
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySound("act6_burn")
+Goto Suffer
+}
+}
+
+ACTOR PrldBurningActor7: PrldBurningGeneric
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySound("act7_burn")
+Goto Suffer
+	Crawl:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BurnVictimF", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION)
+		Stop
+}
+}
+ACTOR PrldBurningActor8: PrldBurningGeneric
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_PlaySound("act8_burn")
+Goto Suffer
+}
+}
+
+
+ACTOR PRLD_BurnVictimM : PrldInjuredMonster
+{
+    PainSound "burnvictim/male"
+    States
+    {
+	active:
+		TNT1 A 0
+	Spawn:
+		BVIC A 7 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(192, 2)
+		TNT1 A 0 A_Pain
+		TNT1 A 0
+		BVIC A 15 A_Chase
+		BVIC B 15
+		BVIC A 15 A_Chase
+		BVIC B 15
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		
+		BVIC A 15 A_Chase
+		BVIC B 15
+		BVIC A 15 A_Chase
+		BVIC B 15
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		
+		BVIC A 15 A_Chase
+		BVIC B 15
+		BVIC A 15 A_Chase
+		BVIC B 15
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		Loop
+	Death1:
+	Death2:
+		BVIC B -1
+		Stop
+	}
+}
+ACTOR PRLD_BurnVictimF : PRLD_BurnVictimM
+{
+    PainSound "burnvictim/female"
+}

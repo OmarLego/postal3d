@@ -1,4 +1,4 @@
-ACTOR Machete : Postal3dWeaponBase
+ACTOR Machete : Postal3dWeapon Replaces Chainsaw
 {
 	Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 1
@@ -15,98 +15,150 @@ ACTOR Machete : Postal3dWeaponBase
   States
   { 
 	Ready:
-	TNT1 A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"TrueReady")
-	goto Unready
+		TNT1 A 0
+		MCH2 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, 2)
+		MCHT A 0
+		"####" A 0
+		Goto ReadyCont
+	ReadyCont:
+		"####" A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"TrueReady")
+		goto Unready
 	Unready:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	TNT1 A 1 A_WeaponReady (WRF_ALLOWRELOAD)
+	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
+	TNT1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 	Loop
 	TrueReady:
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	MCHT A 1 A_WeaponReady 
+	"####" A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	"####" A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
+	"####" A 1 A_WeaponReady(WRF_ALLOWZOOM)
 	loop
 	
 	Select:
+	TNT1 A 1
+	TNT1 AAAAAAAAAAAAAAA 0 A_Raise
+	TNT1 A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"SelectCont")
+	Goto Unready
+	ReloadContinue:
+	SelectCont:
+	TNT1 A 1 Offset(119, 99)
 	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
-	MCHT A 1 A_Raise
+	MCH2 A 0 A_TakeInventory("PRLD_BloodyWeapons", 1)
+	MCHT A 0
+	MCHT A 1 Offset(119, 99)
+	MCHT A 1 Offset(76, 65)
+	MCHT A 1 Offset(46, 53)
+	MCHT A 1 Offset(21, 39)
+	MCHT A 1 Offset(5, 35)
 	Goto Ready
 	
 	Deselect:
-	MCHT A 1 A_Lower
-	loop
+	"####" A 1 Offset(5, 35)
+	"####" A 1 Offset(21, 39)
+	"####" A 1 Offset(46, 53)
+	"####" A 1 Offset(76, 65)
+	"####" A 1 Offset(119, 99)
+	TNT1 A 5
+	TNT1 AAAAAAAAAAAAAAA 0 A_Lower
+	Wait
+	
+	KickFlash:
+	TNT1 A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"KickFlashActualEdition")
+	Stop
+	KickFlashActualEdition:
+	MCH2 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, 2)
+	MCHT A 0
+	"####" A 16
+	Stop
 	
 	Spawn:
 	MCHP A 1
 	loop
 	
 	Fire:
-        TNT1 A 0 A_JumpIfInventory("MacheteAmmoLoaded", 1, "FireStart")
+        "####" A 0 A_JumpIfInventory("MacheteAmmoLoaded", 1, "FireStart")
+		"####" A 0 A_Print("\c[Yellow]Reload\c[White] to Get another machete",2)
 		goto Ready
 	FireStart:
-		TNT1 A 0 A_PlaySound("weapons/machete/swing",CHAN_AUTO)
-		TNT1 A 0 A_Jump (256,"Slice1","Slice2","Slice3")
+		"####" A 0 A_PlaySound("weapons/machete/swing",CHAN_AUTO)
+		"####" A 0 A_Jump (256,"Slice1","Slice2","Slice3")
 	Slice1:
-		MCH1 ABCD 1
-		TNT1 A 0 A_Saw("", "", 3, "MachetePuffsHorizontal", 0, 120, 0,1)
-		TNT1 A 0 A_FireCustomMissile("MonotoneAttack", 0, 0, 0, 0)
-		MCH1 EFG 1
-		Goto FireFinish
+		"####" FG 2
+		//"####" F 4
+		"####" A 0 A_FireCustomMissile("MonotoneAttack", 0, 0, 0, 0)
+		"####" H 3
+		MCH2 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, 2)
+		MCHT A 0
+		"####" I 3 A_WeaponReady(WRF_ALLOWZOOM)
+		Goto Ready
 	Slice2:
-		MCH2 ABCD 1
-		TNT1 A 0 A_Saw("", "", 3, "MachetePuffsHorizontal", 0, 120, 0,1)
-		TNT1 A 0 A_FireCustomMissile("MonotoneAttack", 0, 0, 0, 0)
-		MCH2 EFG 1
-		Goto FireFinish
+		"####" JK 2
+		//"####" J 4
+		"####" A 0 A_FireCustomMissile("MonotoneAttack", 0, 0, 0, 0)
+		"####" L 3
+		MCH2 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, 2)
+		MCHT A 0
+		"####" M 3 A_WeaponReady(WRF_ALLOWZOOM)
+		Goto Ready
 	Slice3:
-		MCH3 ABCD 1
-		TNT1 A 0 A_Saw("", "", 3, "MachetePuffs", 0, 120, 0,1)
-		TNT1 A 0 A_FireCustomMissile("MonotoneAttack", 0, 0, 0, 0)
-		MCH3 EFG 1
-		Goto FireFinish
+		"####" BC 2
+		//"####" B 4
+		"####" A 0 A_FireCustomMissile("MonotoneAttackVertical", 0, 0, 0, 0)
+		"####" D 3
+		MCH2 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, 2)
+		MCHT A 0
+		"####" E 3 A_WeaponReady(WRF_ALLOWZOOM)
+		Goto Ready
 	FireFinish:
-		TNT1 A 1 A_Weaponready (WRF_ALLOWRELOAD)
-		MCHF ABC 1 A_Weaponready (WRF_ALLOWRELOAD)
-		MCHT A 1 A_Weaponready (WRF_ALLOWRELOAD)
+		"####" A 1 A_WeaponReady(WRF_ALLOWZOOM)
+		MCHF ABC 1 A_WeaponReady(WRF_ALLOWZOOM)
+		MCHT A 1 A_WeaponReady(WRF_ALLOWZOOM)
 		goto ready
 	AltFire:
-        TNT1 A 0 A_JumpIfInventory("MacheteAmmoLoaded", 1, "Throw")
+        "####" A 0 A_JumpIfInventory("MacheteAmmoLoaded", 1, "Throw")
+		"####" A 0 A_Print("\c[Yellow]Reload\c[White] to Get another machete",2)
 		goto Ready
 	Throw:
-		TNT1 A 0 A_Takeinventory("MacheteAmmoLoaded",1)
-		MCH3 ABCD 1
-		TNT1 A 0 A_FireCustomMissile("ThrowedMachete", 0, 0, 0, 0)
-		GRNF QRS 1
-		Goto AltFireFinish
-	AltFireFinish:
-        TNT1 A 0 A_JumpIfInventory("MacheteAmmoLoaded", 1, "FireFinish")
+		"####" A 0 A_Takeinventory("MacheteAmmoLoaded",1)
+		"####" A 0 A_PlaySound("weapons/machete/swing",CHAN_AUTO)
+		"####" BC 2
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
+		MCHT A 0 A_FireCustomMissile("ThrowedMachete", 0, 0, 0, 0)
+		MCHT N 3
+		TNT1 A 1
+		goto Ready
+	ThrowBlood:
+		MCH2 A 0 A_FireCustomMissile("BloodMachete", 0, 0, 0, 0)
+		MCHT N 3
+		TNT1 A 1
 		goto Ready
 	Reload:
-TNT1 A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"Ready")
+"####" A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"Ready")
 Goto Reloading
 Reloading:
-TNT1 A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"Ready")
-TNT1 A 0 A_JumpIfInventory ("MacheteAmmo",1,"StartReload")
+"####" A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"Ready")
+"####" A 0 A_JumpIfInventory ("MacheteAmmo",1,"StartReload")
 goto Ready
 StartReload:
-TNT1 A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"Ready")
-TNT1 A 0
+"####" A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"Ready")
+"####" A 0
 goto Bulletin
 
-ReloadContinue:
+/*ReloadContinue:
 MCHF ABC 2
-MCHT A 2
-goto Ready
+"####" A 2
+goto Ready*/
 
 Bulletin:
-TNT1 AAAA 0
-		TNT1 A 0 A_JumpIfInventory("MacheteAmmoLoaded",1,"ReloadContinue")
-		TNT1 A 0 A_JumpIfInventory("MacheteAmmo",1,"Bulletin2")
+"####" AAAA 0
+		"####" A 0 A_JumpIfInventory("MacheteAmmoLoaded",1,"ReloadContinue")
+		"####" A 0 A_JumpIfInventory("MacheteAmmo",1,"Bulletin2")
 	   goto Ready
 		Bulletin2:
-        TNT1 AAAAAA 0
-		TNT1 A 0 A_Giveinventory("MacheteAmmoLoaded",1)
-		//TNT1 A 0 A_Giveinventory("DoubleMagazine10",1)
-		TNT1 A 0 A_Takeinventory("MacheteAmmo",1)
+        "####" AAAAAA 0
+		"####" A 0 A_Giveinventory("MacheteAmmoLoaded",1)
+		//"####" A 0 A_Giveinventory("DoubleMagazine10",1)
+		"####" A 0 A_Takeinventory("MacheteAmmo",1)
 		Goto Bulletin
   }
 }
@@ -120,11 +172,12 @@ ACTOR MacheteAmmoLoaded : Ammo
    Inventory.Icon "MCHPA0"
 }
 
+//https://youtu.be/UXfscfc5U6M
 ACTOR MonotoneAttack: FastProjectile
 {
 	Radius 4
 	Height 14
-	DamageType Saw
+	damagetype "Saw"
 	+MISSILE
 	+FORCEXYBILLBOARD
 	+FORCERADIUSDMG
@@ -135,125 +188,277 @@ ACTOR MonotoneAttack: FastProjectile
     Speed 50
 	SeeSound "none"
 	DeathSound "none"
-    damagetype Cut
   renderstyle Translucent
   alpha 0.5
   Scale 1.5
+	decal "MacheteHorizontal"
 	States
 	{
     Spawn:
-        TNT1 A 1
+        "####" A 1
         stop
 	Death:
-		TNT1 A 0 A_PlaySound("weapons/machete/hitwall",CHAN_AUTO)
-		TNT1 A 0 A_giveToTarget("MacheteHit", 1)
-		TNT1 A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
-        TNT1 A 0 A_SpawnItem ("Sparks", 0)
-        TNT1 AAAAAA 0 A_CustomMissile ("SparkX", 2, 0, random (0, 360), 2, random (30, 170))
-		TNT1 A 0 A_ALertMonsters(400)
+		"####" A 0 A_PlaySound("weapons/machete/hitwall",CHAN_AUTO)
+		"####" A 0 A_giveToTarget("MacheteHit", 1)
+		"####" A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
+        "####" A 0 A_SpawnItem ("Sparks", 0)
+        "####" AAAAAA 0 A_CustomMissile ("SparkX", 2, 0, random (0, 360), 2, random (30, 170))
+		"####" A 0 A_ALertMonsters(400)
 		MPUF A 3
 		MPUF BCD 3
 		Stop
 	XDeath:
-		TNT1 A 0 A_PlaySound("weapons/machete/hit",CHAN_AUTO)
-		TNT1 A 0 A_giveToTarget("MacheteHit", 1)
-		TNT1 A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
-		TNT1 A 0 A_ALertMonsters(400)
-		MPUF A 3
-		MPUF BCD 3
+		"####" A 0 A_PlaySound("weapons/machete/hit",CHAN_AUTO)
+		"####" A 0 A_giveToTarget("MacheteHit", 1)
+		"####" A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
+		"####" A 0 A_ALertMonsters(400)
+		"####" A 1
 		Stop
 	}
 }
-ACTOR MachetePuffs: HitPuff
+
+ACTOR MonotoneAttackVertical: MonotoneAttack
 {
-Radius 20
-damagetype Saw
-decal "MacheteVertical"
-  +NOBLOCKMAP
-  +NOGRAVITY
-  +NOEXTREMEDEATH
-  +FORCEXYBILLBOARD
-  +BLOODSPLATTER
-  damagetype Cut
-  states
-  {
-Spawn:
-Death:
-XDeath:
-Melee:
-		
-		TNT1 A 20
-		
-Stop	
-  }
+	decal "MacheteVertical"
+	States
+	{
+    Spawn:
+        "####" A 1
+        stop
+	Death:
+		"####" A 0 A_PlaySound("weapons/machete/hitwall",CHAN_AUTO)
+		"####" A 0 A_giveToTarget("MacheteHit", 1)
+		"####" A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
+        "####" A 0 A_SpawnItem ("Sparks", 0)
+        "####" AAAAAA 0 A_CustomMissile ("SparkX", 2, 0, random (0, 360), 2, random (30, 170))
+		"####" A 0 A_ALertMonsters(400)
+		MPUF A 3
+		MPUF BCD 3
+		Stop
+	XDeath:
+		"####" A 0 A_PlaySound("weapons/machete/hit",CHAN_AUTO)
+		"####" A 0 A_giveToTarget("MacheteHit", 1)
+		"####" A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
+		"####" A 0 A_ALertMonsters(400)
+		"####" A 1
+		Stop
+	}
 }
-ACTOR MachetePuffsHorizontal: MachetePuffs { decal "MacheteHorizontal" }
 
 ACTOR ThrowedMachete
 {
-	Radius 8
-	Height 8
+	Projectile
 	Speed 45
-	Damage (random(100, 100))
-damagetype Saw
-  damagetype Cut
-	+MISSILE
-	+FORCEXYBILLBOARD
-	-NOGRAVITY
-	+NOEXTREMEDEATH
+	Scale 0.5
+    -NOGRAVITY
+    +BLOODSPLATTER
+	//+NOEXTREMEDEATH
+	+EXPLODEONWATER
 	+SKYEXPLODE
-	+NOEXTREMEDEATH
-	+THRUSPECIES
-	+BLOODSPLATTER
-	+thruactors
+	+BOUNCEONFLOORS
+	+BOUNCEONWALLS
+	+BOUNCEONCEILINGS
+	+DONTBOUNCEONSKY
+	-NOTELEPORT
+	BounceFactor 0.5
+	WallBounceFactor 0.25
+    BounceSound "weapons/machete/hitwall"
+	BounceCount 2
+	Damage (100)
+	DamageType "Saw"
+	+THRUACTORS
+	+MTHRUSPECIES
 	Species "Player"
 	Decal "Cracksmol"
-	Gravity 0.9
-	scale 0.5
-	BounceType Doom
-	BounceCount 2
-	BounceFactor 0.6
-	WallBounceFactor 0.3
-	+USEBOUNCESTATE
-	+EXPLODEONWATER
-	+THRUSPECIES
-	+MTHRUSPECIES
-	Obituary "%o was hunted down by %k's machete."
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_PlaySound("weapons/machete/swoosh")
-		TNT1 A 0 A_explode(70,32,0,0,15,0,0,"none","Saw")
-		MCHA A 2 
-		MCHA B 2 A_explode(70,64,0,0,32,0,0,"none","Saw")
-		TNT1 A 0 A_PlaySound("weapons/machete/swoosh")
-		TNT1 A 0 A_explode(70,32,0,0,15,0,0,"none","Saw")
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
+		MCHA A 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+}
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
+		MCHA B 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+}
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
 		MCHA C 2
-		MCHA D 2 A_explode(70,32,0,0,15,0,0,"none","Saw")
-		TNT1 A 0 A_PlaySound("weapons/machete/swoosh")
-		TNT1 A 0 A_explode(70,64,0,0,32,0,0,"none","Saw")
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+}
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
+		MCHA D 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+}
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
 		MCHA E 2
-		MCHA F 2 A_explode(70,32,0,0,15,0,0,"none","Saw")
-		TNT1 A 0 A_PlaySound("weapons/machete/swoosh")
-		TNT1 A 0 A_explode(70,64,0,0,32,0,0,"none","Saw")
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+}
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
+		MCHA F 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+}
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
 		MCHA G 2
-		MCHA H 2 A_explode(70,32,0,0,15,0,0,"none","Saw")
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+}
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
+		MCHA H 2
+		{
+ 
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+}
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "ThrowBlood")
 		Loop
 		
+		
+	ThrowBlood:
+		MCHB A 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB B 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB C 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB D 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB E 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB F 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB G 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB H 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		Loop
 	Bounce:
-	TNT1 A 0 A_PlaySound("weapons/machete/hitwall", 6)
-	TNT1 A 0 A_SpawnItem ("Sparks", 0)
+	"####" A 0 A_SpawnItem ("Sparks", 0)
 	Goto Spawn
 	
 	Death:	
-		TNT1 A 0 A_SpawnItem ("Sparks", 0)
-		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_PlaySound("weapons/machete/hitwall", 6)
+		"####" A 0
+		"####" A 0 A_SpawnItem ("Sparks", 0)
+		"####" A 0 A_StopSound
+		"####" A 0 A_PlaySound("weapons/machete/hitwall")
 	XDeath:
-		TNT1 A 0
-		TNT1 A 0 A_ALertMonsters(200)
-		TNT1 A 0 A_spawnItem("MacheteAmmo")
-		TNT1 A 0 A_PlaySound("weapons/machete/hitwall", 6)
+		"####" A 0
+		"####" A 0 A_ALertMonsters(200)
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "XDeathBlood")
+		TNT1 A 0 A_SpawnItem("MacheteAmmo")
+		"####" A 0 A_PlaySound("weapons/machete/hitwall")
+		Stop
+	XDeathBlood:
+		TNT1 A 0 A_SpawnItem("MacheteBloodAmmo")
+		"####" A 0 A_PlaySound("weapons/machete/hitwall")
+		Stop
+	}
+}
+ACTOR BloodMachete : ThrowedMachete
+{
+	States
+	{
+	Spawn:
+		MCHB A 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB B 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB C 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB D 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB E 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB F 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB G 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		MCHB H 2
+		{
+  A_Explode(65, 40, 0, 0, 16, 0, 0, "None", "Saw");
+  A_PlaySound("weapons/machete/swoosh");
+  A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+}
+		Loop
+	XDeath:
+		"####" A 0
+		"####" A 0 A_ALertMonsters(200)
+		TNT1 A 0 A_JumpIfInventory ("PRLD_BloodyWeapons", 1, "XDeathBlood")
+		TNT1 A 0 A_SpawnItem("MacheteBloodAmmo")
+		"####" A 0 A_PlaySound("weapons/machete/hitwall")
 		Stop
 	}
 }

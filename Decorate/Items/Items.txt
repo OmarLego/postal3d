@@ -1,0 +1,18 @@
+ACTOR PRLD_HomeKey : BlueCard
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_Teleport("Spawn2", "KeySpot")
+		Loop
+	Spawn2:
+		BKEY A 10
+		BKEY B 10 Bright
+		Loop
+	}
+}
+actor KeySpot : SpecialSpot 600
+{
+  +INVISIBLE
+}

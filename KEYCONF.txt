@@ -1,13 +1,9 @@
-clearplayerclasses
-addplayerclass PostalDudeSr
-addplayerclass NotimPortant nomenu
+	addkeysection "POSTAL: Red Letter Day Custom Controls" Postal3dActions    
 
-	addkeysection "POSTAL 3D Custom Controls" Postal3dActions    
-   
-	addmenukey "Kick" kickem
+	addmenukey "Execute" kickem
 	alias kickem "puke 301"
 	defaultbind Q kickem
-	
+
 	addmenukey "Suicide" suicide
 	alias suicide "puke 363"
 	defaultbind K suicide

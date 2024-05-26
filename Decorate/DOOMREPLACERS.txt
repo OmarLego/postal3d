@@ -1,21 +1,92 @@
-ACTOR ChainsawReplacer: RandomSpawner replaces Chainsaw
-{
-	DropItem "BatWeap"
-	DropItem "Machete"
-}
+//Monsters
+//im changing this to be vanilla balanced versions of the main hostile roster, since atm they are too different from main doom cast for me to
+//just copy and paste them verbatim
 
-ACTOR ZombiemanReplacer: RandomSpawner replaces Zombieman
+
+
+ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 {
 	Species Hostile
 	Radius 20
     Height 52
-	DropItem "Cop1"
+	DropItem "PistolOfficer1"
+	DropItem "PistolOfficer1_2"
+	DropItem "PistolOfficer1_3"
+	DropItem "PistolOfficer1_4"
+	DropItem "PistolOfficer1_5"
+	DropItem "PistolOfficer1_6"
+	DropItem "PistolOfficer2"
+	DropItem "PistolOfficer2_2"
+	DropItem "PistolOfficer2_3"
+	DropItem "PistolOfficer2_4"
+	DropItem "PistolOfficer2_5"
+	DropItem "PistolOfficer2_6"
+	DropItem "Sheriff1"
+	DropItem "Sheriff1_2"
+	DropItem "Sheriff1_3"
+	DropItem "Sheriff1_4"
+	DropItem "Sheriff1_5"
+	DropItem "Sheriff1_6"
 }
-
-ACTOR ChaingunnerReplacer: RandomSpawner replaces Chaingunguy
+ACTOR PrldImpReplacer: RandomSpawner replaces DoomImp
 {
 	Species Hostile
 	Radius 20
     Height 52
-	DropItem "MilitaryRifleWhiteMale"
+	//DropItem "Sheriff1"
+	//DropItem "Sheriff1_2"
+	//DropItem "Sheriff1_3"
+	//DropItem "Sheriff1_4"
+	//DropItem "Sheriff1_5"
+	//DropItem "Sheriff1_6"
+	DropItem "Grenader1"
+}
+ACTOR PrldShotgunnerReplacer: RandomSpawner replaces Shotgunguy
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "ShotgunOfficer1"
+}
+ACTOR PrldChaingunnerReplacer: RandomSpawner replaces Chaingunguy
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "RifleOfficer1"
+	DropItem "RifleOfficer1_2"
+	DropItem "RifleOfficer1_3"
+	DropItem "RifleOfficer1_4"
+	DropItem "RifleOfficer1_5"
+	DropItem "RifleOfficer1_6"
+}
+ACTOR PrldRevenantReplacer: RandomSpawner replaces Revenant
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "Rocketeer1"
+}
+
+
+
+//Weapons
+
+
+
+actor PrldSuperShotgunReplacer : RandomSpawner replaces SuperShotgun
+{
+	radius 24
+	height 24
+    DropItem "Lever-Action", 255, 3
+	DropItem "Magnum", 255, 5
+}
+actor PrldChaingunReplacer : RandomSpawner replaces Chaingun
+{
+	radius 24
+	height 24
+	DropItem "MP5K"
+	DropItem "M-16"
+	DropItem "SprayCannon"
+	DropItem "Machinegun"
 }

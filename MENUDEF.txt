@@ -1,6 +1,7 @@
 DefaultListMenu
 {
-    Font "BigFont", "Grey"
+    Font "BigFont", "Red"
+	//Font "BigFont, "Gray"
 	Selector "M_SKULL1", -32, -5
 	Linespacing 16
 }
@@ -9,13 +10,24 @@ ListMenu "MainMenu"
 {
   	StaticPatch 54, -1, "POSTPIC"
  	Position 105, 87
-    PatchItem "D_NGAME", "n", "PlayerclassMenu"
-	PatchItem "D_OPTION", "o", "OptionsMenu"
-	TextItem "POSTAL 3D Options", "b", "Postal3dMenu"
-	PatchItem "D_LOADG", "l", "LoadGameMenu"
-	PatchItem "D_SAVEG", "s", "SaveGameMenu"
-	TextItem "Credits", "c", "Postal3dCreditsMenu"
-    PatchItem "D_QUITG", "q", "QuitMenu"
+    //PatchItem "D_NGAME", "n", "PlayerclassMenu"
+	//PatchItem "D_OPTION", "o", "OptionsMenu"
+    TextItem "START", "n", "SPMenu"
+	TextItem "OPTIONS", "o", "OptionsMenu"
+	TextItem "TC OPTIONS", "b", "Postal3dMenu"
+	//PatchItem "D_LOADG", "l", "LoadGameMenu"
+	//PatchItem "D_SAVEG", "s", "SaveGameMenu"
+	TextItem "TC CREDITS", "c", "Postal3dCreditsMenu"
+   //PatchItem "D_QUITG", "q", "QuitMenu"
+   TextItem "QUIT", "q", "QuitMenu"
+}
+
+ListMenu "SPMenu"
+{
+    Position 50, 90
+    TextItem "NEW GAME", "n", "PlayerclassMenu"
+	TextItem "LOAD GAME", "l", "LoadGameMenu"
+	TextItem "SAVE GAME", "s", "SaveGameMenu"
 }
 
 ListMenu "SkillMenu"
@@ -31,7 +43,7 @@ ListMenu "SkillMenu"
 AddOptionMenu "OptionsMenu"
 {
   StaticText " "
-  Submenu "POSTAL 3D Options", "Postal3dMenu"
+  Submenu "POSTAL: Red Letter Day Options", "Postal3dMenu"
 }
 
 OptionValue "WeatherPrecipitationAmount"
@@ -43,25 +55,35 @@ OptionValue "WeatherPrecipitationAmount"
 	4, "Very High"
 }
 
+OptionValue "WeatherType"
+{
+	0, "Sunny"
+	1, "Rain"
+	2, "Snow"
+	3, "Blood Rain"
+	4, "Ash"
+}
+
+OptionValue "WeatherIntensity"
+{
+	0, "Light"
+	1, "Moderate"
+	2, "Heavy"
+}
+
 OptionMenu "Postal3dMenu"
 {
-  Title "POSTAL 3D Options"
+  Title "POSTAL: Red Letter Day Options"
 	StaticText ""
-  Option "Alternative Starter SMG Skin", "AlternativeStarterSMGSkin", "YesNo"
+	StaticText "Blood Settings", Gold
 	StaticText ""
-	StaticText "Brutal Bolognese Settings", Gold
-	StaticText ""
-	
-  Option "Which mode are you playing", "isrunningzandronum", "SelectEngineType"
-  StaticText "Singleplayer/Multiplayer requires different CVARs for blood amount."
-  StaticText " "
-  StaticText " "
-   Option "Blood Amount (Server/Singleplayer)", "zdoombrutalblood", "BrutalBlood"
-  Option "Blood Amount (Client/Multiplayer)", "bd_bloodamount", "BrutalBlood"
+
   StaticText "How much blood you want to see?"
   StaticText " "
-  Option "Max Wall Decals", "cl_maxdecals", "maxdecals"
-  Option "Max Gibs and Blood Pools", "sv_corpsequeuesize", "maxgibs"
+  //Option "Max Wall Decals", "cl_maxdecals", "maxdecals"
+  //Option "Max Gibs and Blood Pools", "sv_corpsequeuesize", "maxgibs"
+  Slider "Max Wall Decals", "cl_maxdecals", 0, 10000, 10, 0
+  Slider "Max Gibs/Blood Pools", "sv_corpsequeuesize", 0, 256, 10, 0
   
 	StaticText ""
 	StaticText "Weather Settings", Gold
@@ -74,34 +96,20 @@ OptionMenu "Postal3dMenu"
 	StaticText ""
 	Option "Disable Lightning", "weather_no_lightning", "OnOff"
 	Option "Disable Fog", "weather_no_fog", "OnOff"
-}
-
-OptionValue "BrutalBlood"
-{
-	1, "1-Minimal"
-	2, "2-Normal"
-	3, "3-Quentin Tarantino Movie"
-	4, "4-Anime Blood"
-	5, "5-Geisers of Blood"
-}
-
-
-OptionValue "mingibhealth"
-{
-	 1, "Always Gib"
-	-5, "-5"
-	-10, "-10"
-	-15, "-15"
-	-20, "-20"
-	-25, "-25"
-	-30, "-30"
-	-40, "-40"
-	-50, "-50"
-	-60, "-60"
-	-70, "-70"
-	-80, "-80"
-	-90, "-90"
-	-100, "-100"
+	
+	StaticText "Rain and Snow Controls (Doesn't apply to TC's maps)", Gold
+	StaticText ""
+	
+	StaticText ""
+	Option "Weather Type", "rs_weather", "WeatherType"
+	Option "Weather Intensity", "rs_intensity", "WeatherIntensity"
+	StaticText ""
+	
+	Control "Next Weather", "NextWeather"
+	Control "Previous Weather", "PrevWeather"
+	Control "Next Intensity", "NextIntensity"
+	Control "Previous Intensity", "PrevIntensity"
+	StaticText ""
 }
 
 OptionValue "YesOrNo"
@@ -116,15 +124,6 @@ OptionValue "YesOrNoFalse"
 	1, "No"
 	0, "Yes"
 }
-
-
-OptionValue "SelectEngineType"
-{
-	1, "Multiplayer"
-	0, "Singleplayer"
-}
-
-
 
 OptionValue "maxdecals"
 {
@@ -150,4 +149,64 @@ OptionValue "maxgibs"
 	10000, "10000"
 	25000, "25000"
 	50000, "50000"
+}
+
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "$MENU_TITLE", "WSOptions"
+}
+
+OptionMenu "WSOptions"
+{
+	Class "WSOptionMenu"
+	Title "$MENU_TITLE"
+	
+	StaticText "$HEADER_GEN", Gold
+	
+	WSOption "$OPTION_FIRE", "$HELP_FIRE", "ws_disablefire", "Toggle"
+	WSOption "$OPTION_BOB", "$HELP_BOB", "ws_bobonly", "Toggle"
+	WSOption "$OPTION_NOBOB", "$HELP_NOBOB", "ws_nobobsway", "Toggle"
+	
+	StaticText ""
+	StaticText "$HEADER_VERT", Gold
+	
+	WSOption "$OPTION_EXTEND", "$HELP_EXTEND", "ws_vertextend", "Toggle"
+	WSOption "$OPTION_READYEXT", "$HELP_READYEXT", "ws_extendready", "Toggle"
+	WSOption "$OPTION_INVVERT", "$HELP_INVVERT", "ws_inversevert", "Toggle"
+	WSOption "$OPTION_CROUCHINVVERT", "$HELP_CROUCHINVVERT", "ws_crouchinversevert", "Toggle"
+	WSSlider "$OPTION_VERTSCALE", "$HELP_VERTSCALE", "ws_vertscale", 0, 2, 0.1, 2
+	WSSlider "$OPTION_CROUCHVERTSCALE", "$HELP_CROUCHVERTSCALE", "ws_crouchvertscale", 0, 2, 0.1, 2
+	
+	StaticText ""
+	StaticText "$HEADER_HSWAY", Gold
+	
+	WSOption "$OPTION_INVERT", "$HELP_INVERT", "ws_swayhinverse", "Toggle"
+	WSOption "$OPTION_CUMUL", "$HELP_CUMUL", "ws_swayhcumulative", "Toggle"
+	WSSlider "$OPTION_SCALE", "$HELP_SCALE", "ws_swayhscale", 0, 2, 0.1, 2
+	WSSlider "$OPTION_CROUCHSCALE", "$HELP_CROUCHSCALE", "ws_swayhcrouchscale", 0, 2, 0.1, 2
+	WSSlider "$OPTION_SPEED", "$HELP_SPEED", "ws_swayhspeed", 1, 5, 0.5, 2
+	WSSlider "$OPTION_ACCURACY", "$HELP_ACCURACY", "ws_swayhaccuracy", 0, 5, 0.5, 2
+	
+	StaticText ""
+	StaticText "$HEADER_VSWAY", Gold
+	
+	WSOption "$OPTION_INVERT", "$HELP_INVERT", "ws_swayvinverse", "Toggle"
+	WSOption "$OPTION_CUMUL", "$HELP_CUMUL", "ws_swayvcumulative", "Toggle"
+	WSSlider "$OPTION_SCALE", "$HELP_SCALE", "ws_swayvscale", 0, 2, 0.1, 2
+	WSSlider "$OPTION_CROUCHSCALE", "$HELP_CROUCHSCALE", "ws_swayvcrouchscale", 0, 2, 0.1, 2
+	WSSlider "$OPTION_SPEED", "$HELP_SPEED", "ws_swayvspeed", 1, 5, 0.5, 2
+	WSSlider "$OPTION_ACCURACY", "$HELP_ACCURACY", "ws_swayvaccuracy", 0, 5, 0.5, 2
+	
+	StaticText ""
+	StaticText "$HEADER_MSWAY", Gold
+
+	WSOption "$OPTION_HSWAY", "$HELP_HSWAY", "ws_nohmove", "Toggle"
+	WSOption "$OPTION_VSWAY", "$HELP_VSWAY", "ws_novmove", "Toggle"
+	WSOption "$OPTION_FSWAY", "$HELP_FSWAY", "ws_nofmove", "Toggle"
+}
+
+OptionValue "Toggle"
+{
+	0, "$VALUE_DISABLED"
+	1, "$VALUE_ENABLED"
 }

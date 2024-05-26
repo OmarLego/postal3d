@@ -16,7 +16,7 @@ actor ChoiceToken4 : Inventory {
 	+UNDROPPABLE
 }
 
-ACTOR NapalmLauncher : Postal3dWeaponBase
+ACTOR NapalmLauncher : Postal3dWeapon Replaces BFG9000
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 1
@@ -40,22 +40,24 @@ Goto Ready
 
 	Ready:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
 	TNT1 A 0 A_JumpIfInventory ("ChoiceToken3",1,"ChoiceAnim")
 	TNT1 A 0 A_JumpIfInventory ("ChoiceToken4",1,"ReadyChoice")
 	TNT1 A 0 A_JumpIfInventory ("EmptyToken",1,"EmptyReady")
-	NPMR A 1 A_Weaponready 
+	NPMR A 1 A_WeaponReady(WRF_ALLOWZOOM)
 	loop
 	
 	EmptyReady:
   TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	NPMR B 1 A_Weaponready (WRF_ALLOWRELOAD)
+  TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
+	NPMR B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 	loop
 	
 	ChoiceAnim:
 	TNT1 A 0 A_JumpIfInventory ("NapCan",1,"TrueChoiceAnim")
 	goto Ready2
 	TrueChoiceAnim:
-	TNT1 A 0 A_SetSpeed (0.2)
+	TNT1 A 0 A_SetSpeed (1.82857142857143)
 	NPML ABC 3
 	NPML D 3 A_PlaySound ("RBEGIN",CHAN_AUTO)
 	NPML EFGHIJKLMNOPQRSTUV 3
@@ -69,15 +71,18 @@ Goto Ready
 	Goto ReadyChoiceLoop
 	ReadyChoiceLoop:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	NPML V 1 A_WeaponReady 
+	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
+	NPML V 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 	loop
 	
 	Select:
-	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+	TNT1 A 0 A_PlaySound ("NLOAD",CHAN_AUTO)
 	NPMR A 1 A_Raise
 	Goto Ready
 	
 	Deselect:
+	TNT1 A 0
+	TNT1 A 0 A_SetSpeed (9.142857142857152)
 	NPMR A 1 A_Lower
 	loop
 	
@@ -126,7 +131,7 @@ A_PlaySound ("NINS",CHAN_AUTO);
 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate);
 }
 NPMI Q 4  A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-NPMZ A 4
+NPMZ A 4 
 { 
 A_PlaySound ("NLOAD",CHAN_AUTO);
 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate);
@@ -143,7 +148,7 @@ TNT1 A 0 A_TakeInventory ("ChoiceToken3",1)
 TNT1 A 0 A_TakeInventory ("ChoiceToken4",1)
 TNT1 A 0 A_TakeInventory ("EmptyToken",1)
 TNT1 A 0 A_Giveinventory ("Magazine13",1)
-TNT1 A 0 A_SetSpeed (0.7)
+TNT1 A 0 A_SetSpeed (9.142857142857152)
 goto Ready
 
   }
@@ -214,7 +219,7 @@ ACTOR Magazine13 : Ammo
    Ammo.BackpackAmount 0
    Ammo.BackpackMaxAmount 1
    scale 0.2
-   Inventory.Icon "NapCan"
+   Inventory.Icon "NPLPA0"
 }
 
 ACTOR DoubleMagazine13 : Ammo
@@ -223,5 +228,5 @@ ACTOR DoubleMagazine13 : Ammo
    Inventory.MaxAmount 2
    Ammo.BackpackAmount 0
    Ammo.BackpackMaxAmount 2
-   Inventory.Icon "AKMGC0"
+   Inventory.Icon "NPLPA0"
 }
