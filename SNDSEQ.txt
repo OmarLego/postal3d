@@ -1,18 +1,5 @@
-:WoodDoorOpen
-Play     WDOPN
-Nostopcutoff
-End
-
-:WoodDoorClose
-Play WDCLO
-NostopCutoff
-End
-
-[WoodDoor
-Door 13
-Platform 10
-0 WoodDoorOpen
-1 WoodDoorClose
-3 WoodDoorOpen
-4 WoodDoorClose
-]
+:WoodDoor
+	door 10
+	play				dooropen
+	nostopcutoff
+end

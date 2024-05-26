@@ -1,12 +1,14 @@
-ACTOR PostalDudeSr : QuakePlayer
+ACTOR PostalDudeSr : PlayerPawn
 {
-	Player.DisplayName "Angel of Death"
+
+	Player.DisplayName "The Postal Dude, Sr."
 	Player.SoundClass "Dude"
     Species "Player"
-	Scale 0.53
-	//Speed 0.7
-	Player.StartItem "PRLD_M12", 1
+	SCALE 0.60
+	Speed 0.7
+	Player.StartItem "M-12", 1
 	Player.StartItem "Machete", 1
+	Player.StartItem "clip", 400
 	Player.StartItem "Magazine1", 24
 	Player.StartItem "Magazine2", 22
 	Player.StartItem "Magazine3", 6
@@ -21,85 +23,94 @@ ACTOR PostalDudeSr : QuakePlayer
 	Player.StartItem "PB",1
 	Player.StartItem "DBMag", 2
 	Player.StartItem "MacheteAmmoLoaded", 1
-    Player.WeaponSlot 1, "Machete"
-    Player.Weaponslot 2, "PRLD_M12", "MP5K", "Magnum"
-    Player.Weaponslot 3, "DoubleBarrel", "Lever-Action"
-    Player.Weaponslot 4, "M-16", "Spraycannon", "Machinegun"
-    Player.Weaponslot 5, "MissileLauncher"
-    Player.Weaponslot 6, "Flammenwerfer"
-    Player.Weaponslot 7, "NapalmLauncher"
+    Player.WeaponSlot 1, "Machete", "BatWeap"
+    Player.Weaponslot 2, "M-12", "MP5K"
+    Player.Weaponslot 3, "DoubleBarrel", "Magnum", "Lever-Action"
+    Player.Weaponslot 4, "M-16"
+    Player.Weaponslot 5, "MissileLauncher", "Chinalake"
+    Player.Weaponslot 6, "Machinegun", "Flammenwerfer"
+    Player.Weaponslot 7, "Spraycannon", "NapalmLauncher"
 	Player.Weaponslot 8, "GGrenade", "PipeBombWeap", "Molotov"
+	
     +SOLID
     +THRUSPECIES
+    +MTHRUSPECIES
+    +DONTHURTSPECIES
     +THRUGHOST
-	Player.ViewHeight 48
-	Player.AttackZOffset 15
-	BloodType "PRLD_BloodPlayer"
+
    States
     {
     Spawn:
-		TNT1 A 0
-		TNT1 A 0 A_Changeflag("NOPAIN", 0)
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialChecker")
-        DUDE E 1
-		TNT1 A 0 A_Changeflag("THRUSPECIES", 0)
-		Loop
+        TNT1 A 0 NoDelay SetPlayerProperty(0, 1, PROP_FROZEN)
+        TNT1 A 0 A_Changeflag("NOPAIN", 1)
+        DUDE A 1
+        {
+            SetPlayerProperty(0, 0, PROP_FROZEN);
+            A_Changeflag("NOPAIN", 0);
+            if (GameType() == 2) //Deathmatch
+            {
+                A_ChangeFlag("THRUSPECIES", 0);
+                A_ChangeFlag("MTHRUSPECIES", 0);
+                A_ChangeFlag("DONTHURTSPECIES", 0);
+            }
+        }
+    StandStill:
+        DUDE A 1
+        loop
+    
     See:
-        DUDE A 4
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialCheckerMoving")
-        DUDE B 4
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialCheckerMoving")
-		DUDE C 4
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialCheckerMoving")
-		DUDE D 4
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialCheckerMoving")
-        Loop
-	Missile:
-		DUDE E 12
-		Goto Spawn
-	Melee:
-		DUDE L 6 BRIGHT
-		Goto Missile
+        DUDE AAAA 6
+        goto StandStill
     Pain:
         TNT1 A 0 A_Pain
-        DUDE F 5
+        DUDE A 5
         goto See
     Death:
-		DUDE G 5
-		DUDE H 5 A_PlayerScream
-		DUDE I 5 A_NoBlocking
-		DUDE J 5
-		DUDE K -1
+        DUDE A 10
+        DUDE A 10 A_PlayerScream
+        DUDE A 10 A_NoBlocking
+        DUDE AAA 10
+        DUDE A -1
         Stop
-		
-	//Special Checkers
-	
-	SpecialChecker:
-		NULL A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
-        NULL A 0 A_TakeInventory("GoSpecial", 1)
-		NULL A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
-        NULL A 0 A_TakeInventory("GoSpecial", 1)
-        Goto Spawn
-	SpecialCheckerMoving:
-		NULL A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
-		NULL A 0 A_TakeInventory("GoSpecial", 1)
-		NULL A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
-		NULL A 0 A_TakeInventory("GoSpecial", 1)
-		Goto See
-		
-	//Executions
-	
-	ExecuteSheriff1:
-		TNT1 A 0
-		NULL A 0 A_GiveInventory("Kicking", 1)
-		NULL A 0 A_GiveInventory("ExecuteDownedEnemy", 1)
-		NULL A 0 A_GiveInventory("ExecuteDownedEnemy", 1)
-		NULL A 0 A_TakeInventory("ExecuteDownedSheriff1", 1)
-		
-		TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
-		TNT1 A 0 A_ChangeFlag("INVULNERABLE", 1)
-		//TNT1 A 0 A_SpawnItemEx("Sheriff1Execute",2,0,-10,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItem("Sheriff1Execute", 4)
-		Goto Missile
+	}
+}
+
+actor NotimPortant : PostalDudeSr
+{
+	Player.DisplayName "Not Important"
+	Player.SoundClass "Notim"
+   States
+    {
+    Spawn:
+        TNT1 A 0 NoDelay SetPlayerProperty(0, 1, PROP_FROZEN)
+        TNT1 A 0 A_Changeflag("NOPAIN", 1)
+        NTIM E 1
+        {
+            SetPlayerProperty(0, 0, PROP_FROZEN);
+            A_Changeflag("NOPAIN", 0);
+            if (GameType() == 2) //Deathmatch
+            {
+                A_ChangeFlag("THRUSPECIES", 0);
+                A_ChangeFlag("MTHRUSPECIES", 0);
+                A_ChangeFlag("DONTHURTSPECIES", 0);
+            }
+        }
+    StandStill:
+        NTIM E 1
+        loop
+    See:
+        NTIM ABCD 6
+        goto StandStill
+    Pain:
+        TNT1 A 0 A_Pain
+        NTIM F 5
+        goto See
+    Death:
+		NTIM G 5
+		NTIM H 5 A_PlayerScream
+		NTIM I 5 A_NoBlocking
+		NTIM J 5
+        NTIM K -1
+        Stop
 	}
 }

@@ -1,13 +1,6 @@
-Switch WINDOW1 
-	On Sound glass/break
-	Pic WINDOWB1 Tics 0
+switch SDWINDOW 
+	on sound glass/break
+	pic BKWINDOW tics 0
 	
-	Off
-	Pic WINDOW1 Tics 0
-	
-Switch WINDOW2 
-	On Sound glass/break
-	Pic WINDOWB1 Tics 0
-	
-	Off
-	Pic WINDOW2 Tics 0
+	off
+	pic SDWINDOW tics 0

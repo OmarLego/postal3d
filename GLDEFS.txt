@@ -1,0 +1,5 @@
+hardwareshader postprocess screen
+{
+	Name "SinCity"
+	Shader "Shaders/SinCity.glsl" 330
+}

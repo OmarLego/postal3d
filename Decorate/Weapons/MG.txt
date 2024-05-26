@@ -8,7 +8,7 @@ actor BeltToken : Inventory {
 
 
 
-ACTOR Machinegun : Postal3dWeapon
+ACTOR Machinegun : Postal3dWeaponBase
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 15
@@ -25,38 +25,35 @@ Inventory.PickupMessage "\c[red]You got the \c[Gray]Machinegun"
   { 
 	Ready:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
 	TNT1 A 0 A_JumpIfInventory("BeltToken",25,"Ready2")
-	MGRR A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+	MGRR A 1 A_WeaponReady (WRF_ALLOWRELOAD)
 	loop
 	
 	Ready2:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
 	TNT1 A 0 A_JumpIfInventory("BeltToken",50,"Ready3")
-	MGRR B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+	MGRR B 1 A_WeaponReady (WRF_ALLOWRELOAD)
 	Loop
 	
 	Ready3:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	MGRR C 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+	MGRR C 1 A_Weaponready (WRF_ALLOWRELOAD)
 	Loop 
 	
 	Select:
 	TNT1 A 0 A_JumpIfInventory("BeltToken",25,"Select2")
-	TNT1 A 0 A_PlaySound ("MGPULL",CHAN_AUTO)
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
 	MGRR A 1 A_Raise
 	Goto Ready
 	
 	Select2:
 	TNT1 A 0 A_JumpIfInventory("BeltToken",50,"Select3")
-	TNT1 A 0 A_PlaySound ("MGPULL",CHAN_AUTO)
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
 	MGRR B 1 A_Raise
 	goto Ready
 	
 	Select3:
-	TNT1 A 0 A_PlaySound ("MGPULL",CHAN_AUTO)
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
 	MGRR C 1 A_Raise
 	goto Ready
 	
@@ -87,7 +84,7 @@ Goto Reloading
 	goto OutOfAmmo
 	
 	FireStart:
-	TNT1 A 0 A_SetSpeed (1.82857142857143)
+	TNT1 A 0 A_SetSpeed (0.2)
 	TNT1 A 0 A_JumpIfInventory ("BeltToken",25,"FireStart2")
 	TNT1 A 0 A_Takeinventory("DoubleMagazine7",1)
 	TNT1 A 0 A_Jump (256,"MF1","MF2","MF3","MF4")
@@ -113,7 +110,7 @@ Goto Reloading
 	Goto FireFinish
 	
 	FireStart2:
-	TNT1 A 0 A_SetSpeed (9.142857142857152)
+	TNT1 A 0 A_SetSpeed (0.7)
 TNT1 A 0 A_Takeinventory("DoubleMagazine7",1)
 	TNT1 A 0 A_Jump (256,"MF5","MF6","MF7","MF8")
 	MF5:
@@ -144,12 +141,11 @@ TNT1 A 0 A_Takeinventory("DoubleMagazine7",1)
 		TNT1 A 0 A_FireCustomMissile("P3D_MGTracer",0,0,5,3)
 		TNT1 A 0 A_setpitch(pitch-2.6)
 		TNT1 A 0 A_PlaySound("MGFIR",CHAN_AUTO)
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,5,3)
 		TNT1 A 0 A_FireCustomMissile ("RifleCasingSpawner",0,0,15,1)
 		MGRF B 2 
 		MGRR A 1 A_Refire
-		TNT1 A 0 A_SetSpeed (9.142857142857152)
+		TNT1 A 0 A_SetSpeed (0.7)
 		goto Ready
 		
 		FireFinish2:
@@ -160,16 +156,15 @@ TNT1 A 0 A_Takeinventory("DoubleMagazine7",1)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("P3D_MGTracer",0,0,5,3)
 		TNT1 A 0 A_PlaySound("MGFIR",CHAN_AUTO)
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,5,3)
 		TNT1 A 0 A_FireCustomMissile ("RifleCasingSpawner",0,0,15,1)
 		MGRF D 2 
 		MGRR B 1 A_Refire
-		TNT1 A 0 A_SetSpeed (9.142857142857152)
+		TNT1 A 0 A_SetSpeed (0.7)
 		goto Ready
 		
 OutOfAmmo:
-TNT1 A 0 A_SetSpeed (9.142857142857152)
+TNT1 A 0 A_SetSpeed (0.7)
 TNT1 A 0 A_PlaySound ("AKEMPT",CHAN_AUTO)
 TNT1 A 0 A_Print ("\c[yellow]Out of ammo",1)
 Goto Ready
@@ -179,7 +174,7 @@ TNT1 A 0 A_JumpIfInventory ("Magazine7",50,"FinishReload")
 TNT1 A 0 A_JumpIfInventory ("AKMag",1,"StartReload")
 goto FinishReload
 StartReload:
-TNT1 A 0 A_setSpeed (0.9142857142857152)
+TNT1 A 0 A_setSpeed (0.1)
 TNT1 A 0 A_JumpIfInventory ("Magazine7",50,"Ready")
 MGRL A 4 A_PlaySound ("AIM",CHAN_AUTO)
 MGRL BCDEFGHIJKLM 4
@@ -194,11 +189,11 @@ Goto Bulletin
 
 ReloadContinue:
 MGRL WXYZ 4
-MGRO A 4
-MGRO B 5 A_PlaySound ("MGPULL",CHAN_AUTO)
-MGRO C 5
-MGRO D 5 A_PlaySound ("MGREL",CHAN_AUTO)
-MGRO EFGHI 5
+MGR2 A 4
+MGR2 B 5 A_PlaySound ("MGPULL",CHAN_AUTO)
+MGR2 C 5
+MGR2 D 5 A_PlaySound ("MGREL",CHAN_AUTO)
+MGR2 EFGHI 5
 goto FinishReload
 
 Bulletin:
@@ -214,7 +209,7 @@ TNT1 AAAA 0
 		Goto Bulletin
 		
 		FinishReload:
-		TNT1 A 0 A_SetSpeed (9.142857142857152)
+		TNT1 A 0 A_SetSpeed (0.7)
 		TNT1 A 0 A_Takeinventory ("BeltToken",100)
 		MGRR A 1 
 		Goto Ready
@@ -228,7 +223,7 @@ ACTOR Magazine7 : Ammo
    Ammo.BackpackAmount 0
    Ammo.BackpackMaxAmount 50
    scale 0.2
-   Inventory.Icon "MGRPA0"
+   Inventory.Icon "AKMagMB0"
 }
 
 ACTOR DoubleMagazine7 : Ammo
@@ -237,5 +232,10 @@ ACTOR DoubleMagazine7 : Ammo
    Inventory.MaxAmount 100
    Ammo.BackpackAmount 0
    Ammo.BackpackMaxAmount 100
-   Inventory.Icon "MGRPA0"
+   Inventory.Icon "AKMGC0"
+}
+
+actor PReplacer : RandomSpawner replaces Plasmarifle
+{
+    DropItem "Machinegun", 255, 5
 }

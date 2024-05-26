@@ -10,7 +10,7 @@ actor FireOnceToken : Inventory {
 
 
 
-ACTOR DoubleBarrel : Postal3dWeapon Replaces Shotgun
+ACTOR DoubleBarrel : Postal3dWeaponBase
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 2
@@ -20,7 +20,7 @@ Weapon.AmmoUse1 0
 	Weapon.AmmoType2 "Magazine2"
 Scale 0.5
 Inventory.PickupMessage "\c[red]You got the \c[Orange]Double-Barrel Shotgun"
-  //Inventory.PickupSound "SCLOS"
+  Inventory.PickupSound "SCLOS"
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
   
@@ -28,35 +28,17 @@ Inventory.PickupMessage "\c[red]You got the \c[Orange]Double-Barrel Shotgun"
   { 
 	Ready:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	DBRL A 1 A_WeaponReady (WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+	DBLR A 1 A_Weaponready (WRF_ALLOWRELOAD)
 	loop
 	
 	Select:
-	TNT1 A 1
-	TNT1 AAAAAAAAAAAAAAA 0 A_Raise
-	TNT1 A 1 Offset(119, 99)
 	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
-	DBRL A 1 Offset(119, 99)
-	DBRL A 1 Offset(76, 65)
-	DBRL A 1 Offset(46, 53)
-	DBRL A 1 Offset(21, 39)
-	DBRL A 1 Offset(5, 35)
+	DBLR A 1 A_Raise
 	Goto Ready
 	
 	Deselect:
-	DBRL A 1 Offset(5, 35)
-	DBRL A 1 Offset(21, 39)
-	DBRL A 1 Offset(46, 53)
-	DBRL A 1 Offset(76, 65)
-	DBRL A 1 Offset(119, 99)
-	TNT1 A 5
-	TNT1 AAAAAAAAAAAAAAA 0 A_Lower
-	Wait
-	
-	KickFlash:
-	DBRL A 16
-	Stop
+	DBLR A 1 A_Lower
+	loop
 	
 	Spawn:
 	DOBL A 1
@@ -67,67 +49,67 @@ TNT1 A 0 A_JumpIfInventory ("Magazine2",2,"Ready")
 Goto Reloading
 
 	AltFire:
-	TNT1 A 0 A_JumpIfInventory ("Magazine2",2,"FireBoth")
+	TNT1 A 0 A_JumpIfInventory ("Magazine2",2,"Firestart")
 	goto OutOfAmmo
-	FireBoth:
-		TNT1 A 0 A_Takeinventory("DoubleMagazine2",1)
+	FireStart:
+	TNT1 A 0 A_Takeinventory("DoubleMagazine2",1)
+	TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+	DBLM A 2 BRIGHT
+	Goto FireFinish
+	
+	FireFinish:
 	    TNT1 A 0 A_TakeInventory ("Magazine2",2)
-		//ShakeYourAss actors make the screen shake, easy way to make weapons feel more punchy
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAssQuad", 0, 0, 0, 0)
 	    TNT1 A 0 A_Recoil (2)
-		TNT1 AAAAAAAAAAAAAAAAAA 0 A_FireCustomMissile("P3D_ShotgunTracer",random(-10,10),0,0,0,0,random(-5,5))
+		TNT1 A 0 A_AlertMonsters
+		TNT1 AAAAAAAA 0 A_FireCustomMissile("P3D_ShotgunTracer",frandom (-7.0,7.0),0,0,0,0,frandom(-1.5,1.5))
 		TNT1 A 0 A_setpitch(pitch-2)
-		TNT1 A 0 A_PlaySound("weapons/dbshotgun/altfire",CHAN_AUTO)
-		//TNT1 A 0 A_PlaySound("weapons/dbshotgun/fire",CHAN_AUTO)
-		//TNT1 A 0 A_PlaySound("weapons/dbshotgun/fire",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("DSHOT",CHAN_AUTO)
 		TNT1 AAAAA 0 A_FireProjectile("SmokeSpawner",0,0,5,1)
-		DBLB A 2 BRIGHT
-		DBLB BCDE 3
-		DBLB F 2
-		DBLB F 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		DBLF BC 4
+		DBLR AAA 2
 		goto Ready
 		
 		
-	Fire:
-		TNT1 A 0 A_JumpIfInventory ("Magazine2",1,"FireLeft")
-		goto OutOfAmmo
-	FireLeft:
-		TNT1 A 0 A_JumpIfInventory ("FireOnceToken",1,"FireRight")
-		TNT1 A 0 A_Takeinventory("DoubleMagazine2",1)//idk what this is for just keeping it just in case
+		fire:
+		TNT1 A 0 A_JumpIfInventory ("Magazine2",1,"Firestart2")
+	goto OutOfAmmo
+	FireStart2:
+	TNT1 A 0 A_JumpIfInventory ("FireOnceToken",1,"FireStart3")
+	TNT1 A 0 A_Takeinventory("DoubleMagazine2",1)
+	TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+	DBLM B 2 BRIGHT
+	Goto FireFinish2
+	
+	FireFinish2:
 	    TNT1 A 0 A_TakeInventory ("Magazine2",1)
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAssDouble", 0, 0, 0, 0)
 	    TNT1 A 0 A_Recoil (1)
 		TNT1 A 0 A_AlertMonsters
-		//TNT1 AAAAAAAAA 0 A_FireCustomMissile("P3D_ShotgunTracer",random(-3,3),0,0,0,0,random(-3,3))
-		TNT1 AAAAAAAAA 0 A_FireCustomMissile("P3D_ShotgunTracer",frandom(-3.0,3.0),0,0,0,0,random(-3.0,3.0))
+		TNT1 AAAA 0 A_FireCustomMissile("P3D_ShotgunTracer",frandom (-7.0,7.0),0,0,0,0,frandom(-1.5,1.5))
 		TNT1 A 0 A_setpitch(pitch-1)
-		TNT1 A 0 A_PlaySound("weapons/dbshotgun/fire",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("SSHOT",CHAN_AUTO)
 		TNT1 AAA 0 A_FireProjectile("SmokeSpawner",0,0,5,1)
-		DBLF A 2 Bright
-		DBLF C 3
-		DBLF D 2
+		DBLF E 2
+		DBLR AAA 1
 		TNT1 A 0 A_GiveInventory ("FireOnceToken",1)
-		DBLF D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
-		DBLF E 3 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		goto Ready
 	
-	FireRight:
-		TNT1 A 0 A_Takeinventory("DoubleMagazine2",1)
+	FireStart3:
+	TNT1 A 0 A_Takeinventory("DoubleMagazine2",1)
+	TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+	DBLM c 2 BRIGHT
+	Goto FireFinish3
+	
+	FireFinish3:
 	    TNT1 A 0 A_TakeInventory ("Magazine2",1)
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAssDouble", 0, 0, 0, 0)
 	    TNT1 A 0 A_Recoil (1)
 		TNT1 A 0 A_AlertMonsters
-		//TNT1 AAAAAAAAA 0 A_FireCustomMissile("P3D_ShotgunTracer",random(-3,3),0,0,0,0,random(-3,3))
-		TNT1 AAAAAAAAA 0 A_FireCustomMissile("P3D_ShotgunTracer",frandom(-3.0,3.0),0,0,0,0,frandom(-3.0,3.0))
+		TNT1 AAAA 0 A_FireCustomMissile("P3D_ShotgunTracer",frandom (-7.0,7.0),0,0,0,0,frandom(-1.5,1.5))
 		TNT1 A 0 A_setpitch(pitch-1)
-		TNT1 A 0 A_PlaySound("weapons/dbshotgun/fire",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("SSHOT",CHAN_AUTO)
 		TNT1 AAA 0 A_FireProjectile("SmokeSpawner",0,0,5,1)
-		DBLF B 2 Bright
-		DBLF C 3
-		DBLF D 2
+		DBLF E 2
+		DBLR AAA 1
 		TNT1 A 0 A_TakeInventory ("FireOnceToken",1)
-		DBLF D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
-		DBLF E 3 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		goto Ready
 	
 OutOfAmmo:
@@ -136,42 +118,50 @@ TNT1 A 0 A_Print ("\c[yellow]Out of ammo",1)
 Goto Ready
 
 Reloading:
-TNT1 A 0 A_JumpIfInventory ("Magazine2",2,"Ready")
+TNT1 A 0 A_JumpIfInventory ("Magazine2",2,"FinishReload")
 TNT1 A 0 A_JumpIfInventory ("Buckshot",1,"StartReload")
-goto Ready
+goto FinishReload
 StartReload:
-	TNT1 A 0 A_JumpIfInventory ("Magazine2",2,"Ready")
-	TNT1 A 0 A_PlaySound ("SOPN",CHAN_AUTO)
-	DBLR A 3
-	TNT1 AAAAAAAA 0 A_FireProjectile("SmokeSpawner",0,0,5,1)
-	TNT1 AA 0 A_FireCustomMissile ("ShotgunCasingSpawner",-4,0,11,-10)
-	DBLR BCD 3
-	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
-	DBLR EFGHIJ 3
-	TNT1 A 0 A_PlaySound ("weapons/db/insert",CHAN_AUTO)
-	DBLR KLMNOPQ 3
-	Goto Bulletin
+TNT1 A 0 A_JumpIfInventory ("Magazine2",2,"Ready")
+DBL1 A 2 A_PlaySound ("AKMOV",CHAN_AUTO)
+DBL1 BCDEF 2 
+DBL1 G 2 A_PlaySound ("SOPN",CHAN_AUTO)
+TNT1 AAAAAAAA 0 A_FireProjectile("SmokeSpawner",0,0,5,1)
+TNT1 AA 0 A_FireCustomMissile ("ShotgunCasingSpawner",-4,0,11,-10)
+DBL1 HIJ 2
+DBL1 JJJJJ 2 
+DBL1 KLMNOPQ 2
+DBL1 R 2 A_PlaySound ("SLOAD",CHAN_AUTO)
+goto Bulletin
+
 ReloadContinue:
-	TNT1 A 0 A_PlaySound ("weapons/db/insert",CHAN_AUTO)
-	DBLR RSTUVWX 3
-	TNT1 A 0 A_PlaySound ("SCLOS",CHAN_AUTO)
-	DBLR Y 2
-	DBLR Y 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
-	goto Ready
+DBL1 ST 2
+DBL1 F 2 A_PlaySound ("SCLOS",CHAN_AUTO)
+DBL1 EDCBA 2
+DBLR AA 2
+goto FinishReload
 
 Bulletin:
 TNT1 AAAA 0
 		TNT1 A 0 A_JumpIfInventory("Magazine2",2,"ReloadContinue")
 		TNT1 A 0 A_JumpIfInventory("Buckshot",1,"Bulletin2")
-	   goto Ready
+	   goto FinishReload
 		Bulletin2:
         TNT1 AAAAAA 0
 		TNT1 A 0 A_Giveinventory("Magazine2",1)
 		TNT1 A 0 A_Giveinventory("DoubleMagazine2",1)
 		TNT1 A 0 A_Takeinventory("Buckshot",1)
 		Goto Bulletin
+		
+		FinishReload:
+		DBLR A 1
+		Goto Ready
 
   }
+}
+actor SGReplacer : RandomSpawner replaces Shotgun
+{
+    DropItem "DoubleBarrel", 255, 5
 }
 ACTOR Magazine2 : Ammo
 {

@@ -1,5 +1,5 @@
 
-ACTOR Flammenwerfer : Postal3dWeapon Replaces PlasmaRifle
+ACTOR Flammenwerfer : Postal3dWeaponBase
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 50
@@ -11,67 +11,51 @@ Inventory.PickupMessage "\c[red]You got the \c[Yellow]Flamethrower"
   Inventory.PickupSound "FTUP"
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
-  Tag "Flamethrower"
   
   States
   { 
 	Ready:
 	TNT1 A 0 A_JumpIfInventory ("Magazine8",1,"Ready1")
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 	Goto Ready
 	
 	Ready1:
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR C 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR C 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR C 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR C 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR C 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
-	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")	
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	FLMR D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM) 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR B 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR C 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
+	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
+	FLMR D 1 A_Weaponready 
 	
 	Goto Ready1
 	
 	Select:
-	TNT1 A 0 A_PlaySound ("FTUP",CHAN_AUTO)
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
 	FLMR A 1 A_Raise
 	Goto Ready
 	
@@ -500,7 +484,7 @@ Actor LargeFire2
   }
 }
 
-/*Actor Firetype
+Actor Firetype
 {
     Projectile
 	+MISSILE
@@ -582,7 +566,7 @@ Actor DecorFlame2 : Firetype
     FRFX NO 2 bright
     Stop
   }
-}*/
+}
 
 
 ACTOR Magazine8 : Ammo
@@ -592,7 +576,7 @@ ACTOR Magazine8 : Ammo
    Ammo.BackpackAmount 0
    Ammo.BackpackMaxAmount 80
    scale 0.2
-   Inventory.Icon "FLAMA0"
+   Inventory.Icon "GCANA0"
 }
 
 ACTOR DoubleMagazine8 : Ammo
@@ -601,5 +585,5 @@ ACTOR DoubleMagazine8 : Ammo
    Inventory.MaxAmount 160
    Ammo.BackpackAmount 0
    Ammo.BackpackMaxAmount 160
-   Inventory.Icon "FLAMA0"
+   Inventory.Icon "AKMGC0"
 }

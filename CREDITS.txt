@@ -1,53 +1,86 @@
-[POSTAL: Red Letter Day]
+Credits for POSTAL 3D:
 
-A POSTAL (1997) Reimagining
-Created by Brain Dead Arts
+POSTAL:
+Running With Scissors
 
-============
-[POSTAL]
+DOOM:
+ID Software
 
-Running With Scissors - POSTAL
+Coding Base:
+BDLite
 
-======
-[GRAPHICS]
+Sound Effects:
+Killing Floor
+Call of Duty 
+Postal 1, Postal 2, Postal Redux
+Insurgency:Sandstorm
+Brutal Doom/Project Brutality
+Naku-Naru
+Enhanced Vanilla Project
+Hatred
 
-katherinecode - Main Sprite, Texture, and Model Artist
-//dennis will hopefully become a bigger part of the project in the future, just right now i want to hog all the work xddd
-SevaKsP - Spriting, Texturing, and Modeling Help
+Item graphics:
+Pennis Drager/SevaKsP
+Brutal Doom/Project Brutality
+Duke Nukem 64
+aeea7835
+LossForWords
 
-Running With Scissors - Various POSTAL Titles
+Weapon Graphics:
+Brutal Doom
+LossForWords
+Lucas Kord
+Postal 2 (Digitized by katherinecode)
+Realm667
+fgsfds, Kingy, Dzierzan
+jdredalert
+Arachnocide
+Pennis Drager(SevaKsP)
+War Rooster
+Kinsie
+EmeraldCoasttt
+Foxhead/Thfpjct 
 
-povchik - Military Beret (https://sketchfab.com/3d-models/military-beret-5228c9b5506f4005a76654d5346e6fa1)
+Monster Graphics:
+Postal 2 (Digitized by katherinecode)
+Rise of the Triad
+Pennis Drager/SevaKsP
+Duke Nukem Forever 2013
+sebabdukeboss20 
 
-Rob Tuytel - Brown Planks 03 (https://polyhaven.com/a/brown_planks_03), Pebble Ground 01 (https://polyhaven.com/a/pebble_ground_01)
-https://polyhaven.com/a/beige_wall_001
-https://polyhaven.com/a/beige_wall_002
-=============
-[SOUNDS]
+Textures:
+Foxhead/Thfpjct (Comtext)
+Blood (Conversion by Ceeb)
+Duke Nukem 3D (Conversion from Realm667)
+GLMatrix screensaver
 
-Pixabay - Belt Buckle (https://pixabay.com/sound-effects/belt-buckle-103410/)
+Map Decorations:
+Foxhead/Thfpjct (RWLDEC)
 
-=======
-[BRAIN DEAD ARTS IS]
+Map Effects:
+Boondorl
+enderkevin13
 
-katherinecode - Project Lead, Artist, Mapper, and Coder
-SevaKsP - Artist, Coder, and Feature Creep Prevention
+The Postal Dude Sr. Graphics:
+Redux Dude for POSTAL 2/HONG KONG 2027 (Digitized by katherinecode)
 
-unsorted
+One-Liner Code:
+LossForWords
 
-https://sketchfab.com/3d-models/animated-knife-7bee900b43f24ed9b3d48304362d5599
-https://sketchfab.com/3d-models/remington-870-with-magpul-furniture-07d1fce010ef4127931e8ddd516713f8
-https://polyhaven.com/a/fabric_pattern_05
-https://polyhaven.com/a/concrete_floor_worn_001
-https://polyhaven.com/a/rollershutter_window_01
-https://pixabay.com/photos/shorn-hedge-shorn-bush-hedge-bush-3392367/
-https://polyhaven.com/a/garage_floor
-https://polyhaven.com/a/rural_asphalt_road
-https://pixabay.com/photos/mountains-summit-snow-peak-276995/
-https://commons.wikimedia.org/wiki/File:4_Peaks_with_snow.jpg
-https://sketchfab.com/3d-models/old-tree-5ce2a40a69b542c789c030bde6c33f18
-https://polyhaven.com/a/grassy_cobblestone
-https://polyhaven.com/a/floor_tiles_08 
-https://sketchfab.com/3d-models/m1911s-with-underbarrel-grenade-launcher-d1e1a1b231e541fa962605d3913e01e5
-https://sketchfab.com/3d-models/mp5k-b47fa4053c1e4cfabe91b0046689f8c9
-https://sketchfab.com/3d-models/beretta-pm12-s2-3eacddf8d6dc48dda78e9130cc6b81da
+Machete Throwing Code:
+Dox778
+
+Palette:
+Bloom (Doom/Blood crossover)
+
+Secret Character Stuff:
+Hatred
+NOTIM PORTANT (Player Mod) for Postal 2 (Digitized by katherinecode)
+SinCity Shader v3 by Rachael
+Judgement Doom
+
+Brain Dead Arts Team Members:
+NastyAndBrutal - Former Owner
+Johnny Cruelty - Owner
+katherinecode - Artist, Mapper, and Coder
+Pennis Drager/SevaKsP - Artist and Coder

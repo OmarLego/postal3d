@@ -49,256 +49,265 @@ decal MacheteHorizontal
 	randomflipx
 }
 
-decal BDBulletChip1
+/// +++++++++++++++++////
+/// Blood Base
+/// +++++++++++++++++////
+decal BloodSplat001
 {
-	pic CHIZ1
-	x-scale 0.75
-	y-scale 0.75
-	randomflipx
+pic BSPRAY1
+shade "65 00 00"
+x-scale 0.35
+y-scale 0.35
+randomflipx
+randomflipy
+//translucent 0.9
+//lowerdecal BrutalBloodSmearSmall
 }
 
-decal BDBulletChip2
+decal BloodSplat002
 {
-	pic CHIZ2
-	x-scale 0.6
-	y-scale 0.6
-	randomflipx
+pic BSPRAY2
+shade "65 00 00"
+x-scale 0.35
+y-scale 0.35
+randomflipx
+randomflipy
+//translucent 0.9
+//lowerdecal BrutalBloodSmearSmall
 }
 
-decal BDBulletChip3
-{
-	pic CHIZ3
-	x-scale 0.6
-	y-scale 0.6
-	randomflipx
-}
-
-decal BDBulletChip4
-{
-	pic CHIZ4
-	x-scale 0.7
-	y-scale 0.7
-	randomflipx
-}
-
-decalgroup BulletChip
-{
-	BDBulletChip1	1
-	BDBulletChip2	1
-	BDBulletChip3	1
-	BDBulletChip4	1
-}
-
-/*//re-blood blood
-decal BloodSmall1
-{
-	pic BLUDSM1
-	x-scale 0.425
-	y-scale 0.425
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodSmall2
-{
-	pic BLUDSM2
-	x-scale 0.425
-	y-scale 0.425
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodSmall3
-{
-	pic BLUDSM3
-	x-scale 0.425
-	y-scale 0.425
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodSmall4
-{
-	pic BLUDSM4
-	x-scale 0.425
-	y-scale 0.425
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-
-decalgroup BloodSmall
-{
-BloodSmall1 1
-BloodSmall2 1
-BloodSmall3 1
-BloodSmall4 1
-}
-
-decal BloodBig1 1
-{
-	pic BLUDBG1
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig2 2
-{
-	pic BLUDBG2
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig3 3
-{
-	pic BLUDBG3
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig4 4
-{
-	pic BLUDBG4
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig5 5
-{
-	pic BLUDBG5
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig6 6
-{
-	pic BLUDBG6
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig7 7
-{
-	pic BLUDBG7
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig8 8
-{
-	pic BLUDBG8
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig9 9
-{
-	pic BLUDBG9
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-decal BloodBig10 10
-{
-	pic BLUDBG10
-	x-scale 0.4
-	y-scale 0.4
-	//shade "64 00 00"
-	translucent 0.7
-	randomflipx
-}
-
-decalgroup BloodBig
-{
-BloodBig1 1
-BloodBig2 1
-BloodBig3 1
-BloodBig4 1
-BloodBig5 1
-BloodBig6 1
-BloodBig7 1
-BloodBig8 1
-BloodBig9 1
-BloodBig10 1
-}
-
-
-
-//copy and paste but with zdooms standard blood decals
-decalgroup BloodSplat
-{
-BloodBig1 1
-BloodBig2 1
-BloodBig3 1
-BloodBig4 1
-BloodBig5 1
-BloodBig6 1
-BloodBig7 1
-BloodBig8 1
-BloodBig9 1
-BloodBig10 1
-}*/
-
-decal PBloodSplat1
-{
-	Pic BSPLAT1
-	X-Scale 0.5
-	Y-Scale 0.5
-	RandomFlipX
-}
-decal PBloodSplat2
-{
-	Pic BSPLAT2
-	X-Scale 0.5
-	Y-Scale 0.5
-	RandomFlipX
-}
-decal PBloodSplat3
-{
-	Pic BSPLAT3
-	X-Scale 0.5
-	Y-Scale 0.5
-	RandomFlipX
-}
-decal PBloodSplat5
-{
-	Pic BSPLAT5
-	X-Scale 0.5
-	Y-Scale 0.5
-	RandomFlipX
-}
-decal PBloodSplat6
-{
-	Pic BSPLAT6
-	X-Scale 0.5
-	Y-Scale 0.5
-	RandomFlipX
-}
 
 decalgroup BloodSplat
 {
-	PBloodSplat1 1
-	PBloodSplat2 1
-	PBloodSplat3 1
-	//PBloodSplat4 1 i forgot to make it ill get to it later I Hope
-	PBloodSplat5 1
-	PBloodSplat6 1
+BloodSplat001 6
+BloodSplat002 6
 }
+
+
+
+stretcher BrutalBloodSmearer
+{
+   GoalX 0.4
+   GoalY 2.0
+   StretchStart 1
+   StretchTime 6
+}
+
+
+stretcher BrutalBloodSmearerSmall
+{
+   GoalX 0.35
+   GoalY 1.4
+   StretchStart 1
+   StretchTime 6
+}
+
+
+
+decal BrutalBloodSmear1
+{
+	pic BSMR1
+	x-scale 0.4
+	y-scale 0.4
+	randomflipx
+	animator BrutalBloodSmearer
+}
+
+decal BrutalBloodSmear2
+{
+	pic BSMR2
+	x-scale 0.4
+	y-scale 0.4
+	randomflipx
+	animator BrutalBloodSmearer
+}
+
+decalgroup BrutalBloodSmear
+{
+	BrutalBloodSmear1	1
+	BrutalBloodSmear2	1
+}
+
+
+
+decal BrutalBloodSmearSmall1
+{
+	pic BSMR1
+	x-scale 0.355
+	y-scale 0.355
+	randomflipx
+	animator BrutalBloodSmearerSmall
+}
+
+decal BrutalBloodSmearSmall2
+{
+	pic BSMR1
+	x-scale 0.4
+	y-scale 0.4
+	randomflipx
+	animator BrutalBloodSmearerSmall
+}
+
+decalgroup BrutalBloodSmearSmall
+{
+	BrutalBloodSmearSmall1	1
+	BrutalBloodSmearSmall2	1
+}
+
+
+
+/// +++++++++++++++++////
+/// Red Blood
+/// +++++++++++++++++////
+
+decal BrutalBloodSplat01
+{
+pic BSPL1
+x-scale 0.4
+y-scale 0.4
+randomflipx
+randomflipy
+}
+
+decal BrutalBloodSplat02
+{
+pic BSPL2
+x-scale 0.4
+y-scale 0.4
+randomflipx
+randomflipy
+}
+
+
+
+decalgroup BrutalBloodSplat
+{
+BrutalBloodSplat01 6
+BrutalBloodSplat02 6
+}
+
+
+decalgroup BrutalBlood
+{
+BrutalBloodSplat01 6
+BrutalBloodSplat02 6
+}
+
+
+
+
+decal BrutalBloodSuper01
+{
+pic BSPBIG1
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+lowerdecal BrutalBloodSmear
+}
+
+decal BrutalBloodSuper02
+{
+pic BSPBIG2
+x-scale 0.5
+y-scale 0.5
+randomflipx
+lowerdecal BrutalBloodSmear
+}
+
+decalgroup BrutalBloodSuper
+{
+BrutalBloodSuper01 6
+BrutalBloodSuper02 6
+}
+
+
+
+decal BrutalBloodGiant01
+{
+pic BSPBIG1
+x-scale 1.0
+y-scale 1.0
+randomflipx
+randomflipy
+lowerdecal BrutalBloodSmear
+}
+
+decal BrutalBloodGiant02
+{
+pic BSPBIG2
+x-scale 1.0
+y-scale 1.0
+randomflipx
+lowerdecal BrutalBloodSmear
+}
+
+decalgroup BrutalBloodGiant
+{
+BrutalBloodGiant01 6
+BrutalBloodGiant02 6
+}
+
+
+
+
+
+
+
+
+
+
+/// +++++++++++++++++////
+/// +++++++++++++++++////
+/// BLOOD DECALS
+/// +++++++++++++++++////
+/// +++++++++++++++++////
+
+/// +++++++++++++++++////
+/// Blood Animators
+/// +++++++++++++++++////
+
+
+slider BSlide1
+{
+DistY -26
+SlideStart 0
+SlideTime 9
+}
+
+stretcher BStretch1
+{
+GoalX 1.0
+GoalY 3.5
+StretchStart 0
+StretchTime 9
+}
+
+slider BSlide2
+{
+DistY -20
+SlideStart 0
+SlideTime 12
+}
+
+stretcher BStretch2
+{
+GoalX 1.0
+GoalY 3.2
+StretchStart 0
+StretchTime 12
+}
+
+combiner BloodSlide1
+{
+BSlide1
+BStretch1
+}
+
+combiner BloodSlide2
+{
+BSlide2
+BStretch2
+}
+
+

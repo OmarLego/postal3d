@@ -10,7 +10,7 @@ actor BurstShotToken : Inventory {
 
 
 
-ACTOR M-16 : Postal3dWeapon
+ACTOR M-16 : Postal3dWeaponBase
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 10
@@ -28,12 +28,11 @@ Inventory.PickupMessage "\c[red]You got the \c[yellow]*Unmistakable*\c[red] M-16
   { 
 	Ready:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	M16R A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+	M16R A 1 A_Weaponready (WRF_ALLOWRELOAD)
 	loop
 	
 	Select:
-	TNT1 A 0 A_PlaySound ("AKBACK",CHAN_AUTO)
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
 	M16R A 1 A_Raise
 	Goto Ready
 	
@@ -84,10 +83,9 @@ Goto Reloading
 		TNT1 A 0 A_FireCustomMissile("P3D_M16Tracer",0,0,5,1)
 		TNT1 A 0 A_setpitch(pitch-1)
 		TNT1 A 0 A_PlaySound("AKFIR",CHAN_AUTO)
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,5,1)
 		TNT1 A 0 A_FireCustomMissile ("RifleCasingSpawner",-4,0,11,-10)
-		M16F B 1
+		M16F B 2
 		TNT1 A 0 A_GiveInventory ("BurstShotToken",1)
 		goto FireStart
 		
@@ -98,12 +96,11 @@ Goto Reloading
 		TNT1 A 0 A_FireCustomMissile("P3D_M16Tracer",0,0,5,1)
 		TNT1 A 0 A_setpitch(pitch-1)
 		TNT1 A 0 A_PlaySound("AKFIR",CHAN_AUTO)
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,5,1)
 		TNT1 A 0 A_FireCustomMissile ("RifleCasingSpawner",-4,0,11,-10)
-		M16F B 1
+		M16F B 2
 		TNT1 A 0 A_TakeInventory ("BurstShotToken",2)
-		M16R A 1
+		M16R AAA 2
 		goto Ready
 		
 OutOfAmmo:
@@ -155,6 +152,11 @@ TNT1 AAAA 0
 
   }
 }
+actor CGReplacer : RandomSpawner replaces Chaingun
+{
+    DropItem "M-16", 255, 3
+	DropItem "MP5K", 255, 3
+}
 ACTOR Magazine1 : Ammo
 {
    Inventory.Amount 0
@@ -162,7 +164,7 @@ ACTOR Magazine1 : Ammo
    Ammo.BackpackAmount 0
    Ammo.BackpackMaxAmount 24
    scale 0.2
-   Inventory.Icon "AK47A0"
+   Inventory.Icon "BIBAA0"
 }
 
 ACTOR DoubleMagazine1 : Ammo
@@ -171,5 +173,5 @@ ACTOR DoubleMagazine1 : Ammo
    Inventory.MaxAmount 48
    Ammo.BackpackAmount 0
    Ammo.BackpackMaxAmount 38
-   Inventory.Icon "AK47A0"
+   Inventory.Icon "AKMGC0"
 }

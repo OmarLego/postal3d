@@ -1,71 +1,70 @@
 //Effects
-#include "decorate/effects/Blood.txt"
-#include "decorate/effects/GIBS.txt"
-#include "decorate/effects/PARTICLES.txt"
-#include "decorate/effects/SMOKE.txt"
-#include "decorate/effects/CASINGs.txt"
-#include "decorate/effects/FIRE.txt"
-#include "decorate/effects/SPARKS.txt"
-#include "decorate/effects/FLARES.txt"
-#include "decorate/effects/PUFF.txt"
-//#include "decorate/effects/BURN.txt"
+#include decorate/effects/PARTICLES.txt
+#include decorate/effects/SMOKE.txt
+#include decorate/effects/CASINGs.txt
+#include decorate/effects/FIRE.txt
+#include decorate/effects/SPARKS.txt
+#include decorate/effects/FLARES.txt
+#include decorate/effects/PUFF.txt
+#include decorate/effects/TRACERS.txt
+#include decorate/effects/FlatDecals.txt
+#include decorate/effects/KetchupBLOOD.txt //Blood actors
+#include decorate/effects/KetchupMEAT.txt //Gib actors
+#include decorate/effects/KetchupSERVING.txt //Gore Groups (spawns gibs and blood when enemies explodes)
+#include decorate/effects/BURN.txt
 
 //Pickups
-#include "decorate/items/Ammo.txt"
-#include "decorate/items/Powerups.txt"
-#include "decorate/items/Items.txt"
-
-//Tracers (i placed them in the decorate root since they are shared between the players and monsters weapons)
-#include "decorate/TRACERS.txt"
+#include decorate/items/Ammo.txt
 
 //Weapons
-#include "decorate/weapons/PlayerProjectiles.txt"
-#include "Decorate/Weapons/Postal3dWeapon.txt"
-#include "Decorate/Weapons/M-12.txt"
-#include "Decorate/Weapons/M-16.txt"
-#include "Decorate/Weapons/DB.txt"
-#include "Decorate/Weapons/Magnum.txt"
-#include "Decorate/Weapons/MP5K.txt"
-#include "Decorate/Weapons/Rifle.txt"
-#include "Decorate/Weapons/SprayCannon.txt"
-#include "Decorate/Weapons/MG.txt"
-#include "Decorate/Weapons/Flamethrower.txt"
-#include "Decorate/Weapons/RL.txt"
-#include "Decorate/Weapons/NL.txt"
-#include "Decorate/Weapons/Gren.txt"
-#include "Decorate/Weapons/Mol.txt"
-#include "Decorate/Weapons/PB.txt"
-#include "Decorate/Weapons/Machete.txt"
+#include decorate/weapons/PlayerProjectiles.txt
+#include Decorate/Weapons/Postal3dWeaponBase.txt
+#include Decorate/Weapons/M-12.txt
+#include Decorate/Weapons/M-16.txt
+#include Decorate/Weapons/DB.txt
+#include Decorate/Weapons/Magnum.txt
+#include Decorate/Weapons/MP5K.txt
+#include Decorate/Weapons/Rifle.txt
+#include Decorate/Weapons/SprayCannon.txt
+#include Decorate/Weapons/MG.txt
+#include Decorate/Weapons/Flamethrower.txt
+#include Decorate/Weapons/RL.txt
+#include Decorate/Weapons/NL.txt
+#include Decorate/Weapons/Gren.txt
+#include Decorate/Weapons/Mol.txt
+#include Decorate/Weapons/PB.txt
+#include Decorate/Weapons/BatWeap.txt
+#include Decorate/Weapons/Machete.txt
 
 //Monsters
-#include "decorate/monsters/Postal3dMonster.txt"
+#include decorate/monsters/Postal3dMonsterBase.txt
+#include decorate/monsters/BrutalMonsterHeritage.txt
 //civilians
-#include "Decorate/monsters/Civilians.txt"
+#include Decorate/monsters/Civilians.txt
 //hostiles
-#include "Decorate/monsters/Military.txt" //can you tell this the first thing made for the project?
-#include "Decorate/monsters/POLICEspecial.txt"
-#include "Decorate/monsters/POLICE.txt"
-#include  "Decorate/monsters/Grenaders.txt"
-#include  "Decorate/monsters/Rocketeers.txt"
+#include Decorate/monsters/POLICEspecial.txt
+#include Decorate/monsters/POLICE.txt
+#include Decorate/monsters/Military.txt
 
 //Player Classes
-#include "Decorate/Player/Player.txt"
+#include Decorate/Player/Player.txt
 
 //Replacers for Vanilla DOOM
-#include "Decorate/DOOMREPLACERS.txt"
+#include Decorate/DOOMREPLACERS.txt
 
-//Decoration
-#include "Decorate/Decoration/Barrel.txt"
-#include "Decorate/Decoration/Cars.txt"
-#include "Decorate/Decoration/Destructable.txt"
-#include "Decorate/Decoration/DEVTEAM.txt"
-#include "Decorate/Decoration/Vegetation.txt"
-#include "Decorate/Decoration/Geometry.txt"
-#include "Decorate/Decoration/Scripted.txt"
-
-
+//Secret Stuff
+#include Decorate/SecretStuff/DEVTEAM.txt
 
 //These are inventory tokens required for several things.
+Actor IsOverWater : Inventory{inventory.maxamount 1}
+Actor IsOverSlime : Inventory{inventory.maxamount 1}
+Actor IsOverSludge : Inventory{inventory.maxamount 1}
+Actor IsOverBlood : Inventory{inventory.maxamount 1}
+Actor IsOverNukage : Inventory{inventory.maxamount 1}
+Actor AnimuGore : Inventory{inventory.maxamount 1}
+Actor IsOverLava : Inventory{inventory.maxamount 1}
+Actor LowGraphicsMode : Inventory{inventory.maxamount 1}
+Actor IsOverSlimy : Inventory{inventory.maxamount 1}
 
 //Monster Tokens
 Actor PoorGuyBurningLife : Inventory {inventory.maxamount 10}
@@ -81,34 +80,13 @@ Actor IsDown : Inventory
 {
 inventory.maxamount 1
 }
-Actor FallingHeight : Inventory
-{
-inventory.maxamount 100
-}
-//monster execution tokens
-Actor ExecuteDownedSheriff1 : Inventory
-{
-inventory.maxamount 1
-}
 
-//Player tokens
+//player tokens
 Actor Kicking : Inventory
 {
 inventory.maxamount 1
 }
 Actor ExecuteDownedEnemy : Inventory
-{
-inventory.maxamount 1
-}
-Actor GoSpecial : Inventory
-{
-inventory.maxamount 1
-}
-Actor YouRegretNothing : Inventory
-{
-inventory.maxamount 1
-}
-Actor PressedUse : Inventory
 {
 inventory.maxamount 1
 }

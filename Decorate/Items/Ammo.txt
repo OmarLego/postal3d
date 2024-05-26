@@ -62,7 +62,7 @@ ACTOR Buckshot : Ammo
 {
   Inventory.PickupMessage "Got 3 12ga shells"
   Inventory.Amount 3
-  scale 0.5
+  scale 0.4
   Inventory.MaxAmount 50
   Tag "12ga Shells"
   Ammo.BackpackAmount 16
@@ -79,8 +79,9 @@ ACTOR Buckshot : Ammo
 
 ACTOR BuckshotBandolier : Buckshot
 {
-  Inventory.PickupMessage "Got a pack of 6 12ga Shells"
+  Inventory.PickupMessage "Got a pack of 12ga Shells"
   Inventory.Amount 6
+  scale 0.4
   Inventory.MaxAmount 50
   Tag "12ga Bandolier"
   Ammo.BackpackAmount 16
@@ -95,41 +96,6 @@ ACTOR BuckshotBandolier : Buckshot
   }
 }
 
-//spawners for just the shells, no magnum
-ACTOR ShotgunCopShellDrop : RandomSpawner
-{
-    DropItem "Buckshot", 255, 6
-    DropItem "Buckshotbandolier", 255, 4
-	//scale 0.4
-	States
-	{
-	Spawn:
-		SHLS B 0
-		Stop
-	}
-}
-
-actor Buckshot2 : Buckshot
-{
-	Tag "12ga Sling"
-  States
-  {
-  Spawn:
-   SOH1 N -1
-      loop
-  }
-}
-actor BuckshotBandolier2 : Buckshot2
-{
-  Inventory.PickupMessage "Got a pack of 6 12ga Shells"
-  Inventory.Amount 6
-}
-//variant for shotgun cops (actual purpose)
-Actor ShotgunCopShellDrop2 : RandomSpawner
-{
-    DropItem "Buckshot2", 255, 6
-    DropItem "Buckshotbandolier2", 255, 4
-}
 
 
 ACTOR BuckshotBox : Buckshot
@@ -560,15 +526,6 @@ ACTOR MacheteAmmo : Ammo
   {
   Spawn:
   MCHP A -1
-      loop
-  }
-}
-ACTOR MacheteBloodAmmo : MacheteAmmo
-{
-  States
-  {
-  Spawn:
-  MCHP B -1
       loop
   }
 }

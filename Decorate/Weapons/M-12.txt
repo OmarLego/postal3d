@@ -1,14 +1,10 @@
-actor M12ExecShotToken : Inventory {
-	Inventory.MaxAmount 3
-	+UNDROPPABLE
-}
-ACTOR PRLD_M12 : Postal3dWeapon
+
+ACTOR M-12 : Postal3dWeaponBase
 {
 Weapon.AmmoUse 0
-Scale 0.4
-Weapon.AmmoGive 0
-Weapon.AmmoType1 "Grenadee"
-Weapon.AmmoType2 ""
+Scale 0.5
+Weapon.AmmoGive 20
+Weapon.AmmoType ""
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
   
@@ -16,258 +12,66 @@ Weapon.AmmoType2 ""
   { 
 	Ready:
 	TNT1 A 0 A_JumpIfInventory("Kicking",1,"Kick")
-	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-	TNT1 A 0 A_JumpIfInventory("PressedUse", 1, "UseAttack")
-	SMGR A 1 A_WeaponReady(WRF_ALLOWZOOM)
+	SMGR A 1 A_Weaponready
 	loop
 	
 	Select:
-	TNT1 A 1
-	TNT1 AAAAAAAAAAAAAAA 0 A_Raise
-	TNT1 A 1 Offset(119, 99)
 	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
-	SMGR A 1 Offset(119, 99)
-	SMGR A 1 Offset(76, 65)
-	SMGR A 1 Offset(46, 53)
-	SMGR A 1 Offset(21, 39)
-	SMGR A 1 Offset(5, 35)
+	SMGR A 1 A_Raise
 	Goto Ready
 	
 	Deselect:
-	//TNT1 A 0 A_PlaySound ("weapons/deselect",CHAN_AUTO)
-	SMGR A 1 Offset(5, 35)
-	SMGR A 1 Offset(21, 39)
-	SMGR A 1 Offset(46, 53)
-	SMGR A 1 Offset(76, 65)
-	SMGR A 1 Offset(119, 99)
-	TNT1 A 5
-	TNT1 AAAAAAAAAAAAAAA 0 A_Lower
-	Wait
+	SMGR A 1 A_Lower
+	loop
 	
-	KickFlash:
-	/*SMGR A 1 Offset(4, 34)
-	SMGR A 1 Offset(16, 37)
-	SMGR A 1 Offset(26, 43)
-	SMGR A 1 Offset(54, 69)
-	SMGR A 1 Offset(49, 72)
-	SMGR A 1 Offset(32, 69)
-	SMGR A 1 Offset(26, 68)
-	SMGR A 1 Offset(28, 66)
-	SMGR A 1 Offset(35, 62)
-	SMGR A 1 Offset(35, 64)
-	SMGR A 1 Offset(30, 61)
-	SMGR A 1 Offset(19, 49)
-	SMGR A 1 Offset(11, 37)
-	SMGR A 1 Offset(9, 36)
-	SMGR A 1 Offset(3, 34)*/
-	SMGR A 16
-	Stop
 	
 	Fire:
-		SMGR B 2
-		TNT1 A 0 A_Jump (30,"Quote")
-		goto FireStart
+	TNT1 A 0 A_Jump (30,"Quote")
+	goto FireStart
+	
 	Quote:
-		TNT1 A 0 A_PlaySound ("Dude/MG/Shooting",CHAN_AUTO)
-		goto FireStart
+	TNT1 A 0 A_PlaySound ("Dude/MG/Shooting",CHAN_AUTO)
+	goto FireStart
+	
 	FireStart:
+	TNT1 A 0 A_Jump (256,"MF1","MF2","MF3","MF4","MF5")
+	MF1:
+	TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+	SMGF A 2
+	Goto FireFinish
+	
+	MF2:
+	TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+	SMGM A 2 BRIGHT
+	Goto FireFinish
+	
+	MF3:
+	TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+	SMGM B 2 BRIGHT
+	Goto FireFinish
+	
+	MF4:
+	TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+	SMGM C 2 BRIGHT
+	Goto FireFinish
+	
+	MF5:
+	TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+	SMGM D 2 BRIGHT
+	Goto FireFinish
+	
+	
+	FireFinish:
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("P3D_DamagingTracer",0,0,7,3)
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO)
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
 		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,15,1)
-		//TNT1 A 0 A_Jump (256,"MF1","MF2","MF3","MF4","MF5")
-		TNT1 A 0 A_Jump (256,"MF2","MF3","MF4","MF5")
-	MF1:
-		TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		SMGR H 2
-		Goto FireFinish
-	MF2:
-		TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		SMGR C 2 BRIGHT
-		Goto FireFinish
-	MF3:
-		TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		SMGR D 2 BRIGHT
-		Goto FireFinish
-	MF4:
-		TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		SMGR E 2 BRIGHT
-		Goto FireFinish
-	MF5:
-		TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		SMGR F 2 BRIGHT
-		Goto FireFinish
-		
-	FireFinish:
-		SMGR G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		SMGR H 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		SMGR I 1 A_Refire ("FireStart")
-		SMGR I 2 A_WeaponReady(WRF_ALLOWZOOM)
-		//SMGR I 3 A_WeaponReady(WRF_ALLOWZOOM)
+		SMGF B 2
+		SMGR A 1 A_Refire ("FireStart")
 		goto ready
 		
-	//kathy additions (mwe :3 UwU nyaaaaa)
-	//why the fuck did i type this out what crack was i on
-	Spawn:
-		SMGP A 1
-		loop
-		
-	AltFire:
-		TNT1 A 0 A_JumpIfInventory ("Grenadee",1,"TheActualAltFire")
-		TNT1 A 0 A_PlaySound ("AKEMPT",CHAN_AUTO)
-		TNT1 A 0 A_Print ("\c[yellow]Out of ammo",1)
-		Goto Ready
-	TheActualAltFire:
-		TNT1 A 0 A_TakeInventory ("Grenadee",1)
-		TNT1 A 0 A_FireCustomMissile ("M12Grenade",0,0,7,-3)
-		TNT1 A 0 A_PlaySound("weapons/m12/altfire")
-		SMGR A 35
-		goto ready
-	
-	DoExecution:
-		//unedited atm, edit later
-		TNT1 A 0 A_PlaySound("weapons/execution",CHAN_AUTO)
-		TNT1 A 0 A_SetPitch(65)
-		SMGR A 1
-		TNT1 A 0 A_ChangeFLag("NOPAIN", 1)
-		TNT1 A 0 A_ChangeFLag("PUSHABLE", 0)
-		TNT1 A 0 A_Stop
-		TNT1 A 0 SetPlayerProperty(0,1,4)
-		TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
-		TNT1 A 0 A_ChangeFlag("INVULNERABLE", 1)
-		KICK A 0 A_Takeinventory("Kicking",1)
-		KICK A 0 A_Takeinventory("ExecuteDownedEnemy",1)
-		
-		SMGR AAAAA 1 //A_SetPitch(70)
-		TNT1 A 0 A_Jump (226,2)
-		TNT1 A 0 A_PlaySound("demon/lines/execution", CHAN_AUTO)
-		//SMGR A 45
-		SMGR A 15
-		SMGR B 15
-		SMGR I 15
-        TNT1 A 0 A_Jump(256, "Execution")
-		//unedited atm, edit later
-	
-	Execution:
-		TNT1 A 0 A_JumpIfInventory ("M12ExecShotToken",3,"EFireFinish2")
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO)
-		//TNT1 A 0 A_FireCustomMissile("M12ExecShot",0,0,7,3)
-		TNT1 A 0 A_FireCustomMissile("M12ExecShot")
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
-		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
-		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,15,1)
-		//TNT1 A 0 A_Jump (256,"MF1","MF2","MF3","MF4","MF5")
-		TNT1 A 0 A_Jump (256,"EMF2","EMF3","EMF4","EMF5")
-	EMF2:
-		SMGR C 2 BRIGHT
-		Goto EFireFinish
-	EMF3:
-		SMGR D 2 BRIGHT
-		Goto EFireFinish
-	EMF4:
-		SMGR E 2 BRIGHT
-		Goto EFireFinish
-	EMF5:
-		SMGR F 2 BRIGHT
-		Goto EFireFinish
-	EFireFinish:
-		SMGR G 1
-		SMGR H 1
-		SMGR I 1
-		SMGR I 2
-		TNT1 A 0 A_GiveInventory("M12ExecShotToken",1)
-		Goto Execution
-	EFireFinish2:
-		TNT1 A 0 A_TakeInventory("M12ExecShotToken",3)
-		SMGR AAAAAAAA 1 A_SetPitch(Pitch-10)
-		TNT1 A 0 A_ChangeFLag("NOPAIN", 0)
-		TNT1 A 0 A_ChangeFLag("PUSHABLE", 1)
-		TNT1 A 0 SetPlayerProperty(0,0,4)
-		TNT1 A 0 A_ChangeFlag("NOGRAVITY", 0)
-		TNT1 A 0 A_ChangeFlag("INVULNERABLE", 0)
-		KICK A 0 A_Takeinventory("ExecuteDownedEnemy",1)
-        TNT1 A 0 A_Jump(256, "Ready")
+
+
   }
-}
-
-actor M12ExecShot: FastProjectile
-{
-    Speed 30
-    Projectile 
-    +NOEXTREMEDEATH
-	speed 100
-	DamageType M12
-	//Radius 20
-	//Height 20
-	Radius 13
-	Height 2
-	-ACTIVATEIMPACT
-	-ACTIVATEPCROSS
-	-ACTIVATEMCROSS
-	-CANUSEWALLS
-	damage (150)
-	States
-	{
-	Death:
-		TNT1 A 1
-		Stop
-	}
-}
-
-Actor STGrenadeTimer : Inventory
-{
-inventory.maxamount 20
-}
-
-ACTOR M12Grenade
-{
-    +MISSILE
-	Radius 4
-	Height 4
-	Speed 50
-	+BOUNCEONWALLS
-	+BOUNCEONFLOORS
-	+BOUNCEONCEILINGS
-	+BOUNCEAUTOOFFFLOORONLY
-	+DONTBOUNCEONSKY
-    BounceFactor 0.5
-	WallBounceFactor 0.35
-	Gravity 0.7
-	+SKYEXPLODE
-	+EXPLODEONWATER
-    +BLOODSPLATTER
-	-EXTREMEDEATH
-	+THRUSPECIES
-	Species "Player"
-	BounceSound "weapons/m12/nadebounce"
-	Obituary "$OB_MPROCKET"
-	Damage (1)
-	DamageType "Kick"
-	Decal "Scorch"
-	Obituary "$OB_MPROCKET"
-	States
-	{
-	Spawn:
-		GBPJ AAAAAAAAABBBBBBBCCCCCDDDDDEEEEEFFFFFGGGGGHHHHH 1 A_CustomMissile ("RocketSmokeTrail52", 2, 0, random (70, 110), 2, random (0, 360))
-		Loop
-	Death:
-		GBPJ A 16
-		Goto Explode
-	Explode:
-		TNT1 A 0 A_setScale (0.6)
-		TNT1 A 0 bright A_ChangeFlag("NOGRAVITY",1)
-		TNT1 A 1 bright A_PlaySound("Rocket/Explosion",CHAN_AUTO)
-		//to try to replicate how it was before i tried to make it have a delay so it doesnt bounce off of fucking nowhere(roof hitbox)
-		//nvm i removed actor roofs but i still honestly really like it like this so im keeping it
-		TNT1 A 0 A_Explode(150, 100, 1,1,0,0,0,0,"Explosive")
-		TNT1 A 2 bright A_Explode(50, 150, 1,1,0,0,0,0,"Explosive")
-		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
-        EXPL A 0 Radius_Quake (3, 8, 0, 15, 0)//(intensity, duration, damrad, tremrad, tid)
-		TNT1  AAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
-		FXPO ABCDEFGHIJKLM 1 bright 
-		stop
-	}
 }
