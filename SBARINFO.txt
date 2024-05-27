@@ -71,16 +71,12 @@ statusbar normal // Standard Doom Status bar
 	drawswitchableimage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 239, 181;
 	drawswitchableimage keyslot 1 && 4, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 239, 191;
 
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(RifleAmmo), 285, 173;
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Shell), 285, 179;
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(RocketAmmo), 285, 185;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(PlasmaAmmo), 285, 191;
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(GrenadeAmmo), 318, 191;
 
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(RifleAmmo), 305, 173;
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Shell), 305, 179;
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(RocketAmmo), 305, 185;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(PlasmaAmmo), 305, 191;
 	gamemode deathmatch, teamgame
 	{
 		drawnumber 2, DELTAFONT1, untranslated, frags, 138, 171;
