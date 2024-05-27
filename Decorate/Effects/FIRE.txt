@@ -1,3 +1,5 @@
+//bd shit ill replace soon
+
 ACTOR FlameTrails
 {
 	Radius 1
@@ -102,6 +104,9 @@ ACTOR TinyBurningPiece3: TinyBurningPiece2
 	Scale 0.5
 }
 
+//Not bd shit
+
+//based on sevaKSP's original explosion, graphics replacement imminant
 ACTOR PrldExplosion
 {
 	+NOCLIP
@@ -135,4 +140,100 @@ ACTOR PrldExplosion
 		TNT1 A 0 A_PlaySound("distantexp", 5)
 		Stop
 	}
+}
+
+//IDK what this actor is sevaKSP just used it for the original weapons so meh
+ACTOR Firetype
+{
+    Projectile
+	+MISSILE
+    +NOBLOCKMAP
+    +NOTELEPORT
+    +DONTSPLASH
+	+FORCEXYBILLBOARD
+	+THRUACTORS
+	+NOBLOOD
+	+NOBLOODDECALS
+	+BLOODLESSIMPACT
+	+NODAMAGETHRUST
+	-NOGRAVITY
+	-BLOODSPLATTER
+	-RIPPER
+}	
+
+
+ACTOR PRLD_BarrelFire : Firetype
+{
+  Radius 20
+  Height 20
+  Speed 2
+  Gravity 6
+  Projectile
+  RenderStyle Add
+  //Alpha 0.67
+  //Scale 1.2
+  -SOLID
+  +MISSILE
+  +NOBLOCKMAP
+  +NOCLIP
+  States
+  {
+	Spawn:
+		TNT1 A 0 A_SetScale(0.4)
+		FLME A 3 BRIGHT
+		TNT1 A 0 A_SetScale(0.6)
+		FLME B 3 BRIGHT
+		TNT1 A 0 A_SetScale(0.8)
+		FLME C 3 BRIGHT
+		TNT1 A 0 A_SetScale(1.0)
+		FLME D 3 BRIGHT
+		TNT1 A 0 A_SetScale(1.2)
+		TNT1 AA 0 A_SpawnItemEx("PRLD_BarrelFire2", random(-30, 30),random(-20, 20),Random(10, -10), 0, 0, 0, 0, 128 )
+	FLoop:
+		FLME ABCDABCDABCDABCDABCDABCDABCD 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		TNT1 A 0 A_Jump(168, "Death")
+		Loop
+	Death:
+		FLME ABCDAB 3 bright 
+		FLME C 1 bright A_FadeOut(0.2)
+		FLME C 1 bright A_SetScale(1.0)
+		FLME C 1 bright A_FadeOut(0.2)
+		FLME D 1 bright A_SetScale(0.8)
+		FLME D 1 A_FadeOut(0.2)
+		FLME D 1 A_SetScale(0.6)
+		FLME A 1 A_FadeOut(0.2)
+		FLME A 1 A_SetScale(0.4)
+		FLME A 1 A_FadeOut(0.2)
+		Stop
+  }
+}
+Actor PRLD_BarrelFire2 : PRLD_BarrelFire
+{
+  //Scale 0.6
+   States
+	{
+	Spawn:
+		TNT1 A 0 A_SetScale(0.2)
+		FLME A 1 BRIGHT
+		FLME A 1 BRIGHT A_SetScale(0.4)
+		FLME A 1 BRIGHT
+		TNT1 A 0 A_SetScale(0.6)
+		FLME B 3 BRIGHT
+	FLoop:
+		FLME CDABCDABCDABCDABCDABCDABCDAB 3 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		TNT1 A 0 A_Jump(168, "Death")
+		Loop
+	Death:
+		FLME CDABCD 3 bright 
+		FLME A 1 bright A_FadeOut(0.2)
+		FLME A 1 bright A_SetScale(0.5)
+		FLME A 1 bright A_FadeOut(0.2)
+		FLME B 1 bright A_SetScale(0.8)
+		FLME B 1 A_FadeOut(0.2)
+		FLME B 1 A_SetScale(0.4)
+		FLME C 1 A_FadeOut(0.2)
+		FLME C 1 A_SetScale(0.2)
+		FLME C 1 A_FadeOut(0.2)
+		Stop
+  }
 }
