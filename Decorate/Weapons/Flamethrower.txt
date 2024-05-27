@@ -516,7 +516,7 @@ Actor LargeFire2
 	-NOGRAVITY
 	-BLOODSPLATTER
 	-RIPPER
-}	
+}	*/
 
 
 Actor DecorFlame : Firetype
@@ -582,7 +582,7 @@ Actor DecorFlame2 : Firetype
     FRFX NO 2 bright
     Stop
   }
-}*/
+}
 
 
 ACTOR Magazine8 : Ammo
