@@ -73,7 +73,6 @@ statusbar normal // Standard Doom Status bar
 
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Shell), 285, 179;
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(RocketAmmo), 285, 185;
-	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(GrenadeAmmo), 318, 191;
 
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Shell), 305, 179;
 	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(RocketAmmo), 305, 185;
