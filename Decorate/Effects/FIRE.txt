@@ -142,6 +142,28 @@ ACTOR PrldExplosion
 	}
 }
 
+ACTOR PrldNapalmExplosion : PrldExplosion	
+{
+	Scale 1.7
+	States
+	{
+	Spawn:
+	Death:
+    TNT1 A 0 A_PLAYSOUND ("MDET",CHAN_AUTO)
+	TNT1 A 0 bright A_PlaySound("Canister/Explosion",CHAN_AUTO)
+	//TNT1 AAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("SpillDrop2",0,0,0,Random(-3,3),Random(-3,3),Random(5,10),random(-60,60),SXF_TRANSFERTRANSLATION)
+    //TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DropFire3", random (0, 120), random (0, 120), 0, 0, 0, 0, random (0, 360))
+	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
+    TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	//TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("DecorFlame", 0, 0, random (0, 360), 2, random (0, 360))
+	//TNT1 A 0 A_SpawnItemEx ("LargeFire2",1,1,1)
+	//TNT1 A 0 A_SetScale (1.7)
+	FXPO ABCDEFGHIJKLM 3 bright 
+    stop
+	}
+}
+
+
 //IDK what this actor is SevaKsP just used it for the original weapons so meh
 ACTOR Firetype
 {
@@ -217,21 +239,21 @@ ACTOR PRLD_BarrelFire : Firetype
 	
 	FLoop:
 		TNT1 A 0 A_PlaySound("FIRLOOP")
-		FLME BCDABCDABCDABCDABCDABCDA 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		FLME BCDABCDABCDA 4 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
 		TNT1 A 0 A_PlaySound("FIRLOOP")
-		FLME BCDABCDABCDABCDABCDABCDA 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		FLME BCDABCDABCDA 4 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
 		TNT1 A 0 A_Jump(168, "Death")
 		Loop
 	FLoop2:
 		TNT1 A 0 A_PlaySound("FIRLOOP")
-		FLME BCDABCDABCDABCDABCDABCDA 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		FLME BCDABCDABCDA 4 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
 		TNT1 A 0 A_PlaySound("FIRLOOP")
-		FLME BCDABCDABCDABCDABCDABCDA 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		FLME BCDABCDABCDA 4 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
 		TNT1 A 0 A_Jump(168, "Death")
 		Loop
 		
 	Death:
-		FLME ABCDABCD 2 bright 
+		/*FLME ABCDABCD 2 bright 
 		FLME A 1 bright A_FadeOut(0.2)
 		FLME A 1 bright A_SetScale(0.8,0.8)
 		FLME B 1 bright A_FadeOut(0.2)
@@ -239,18 +261,47 @@ ACTOR PRLD_BarrelFire : Firetype
 		FLME C 1 A_FadeOut(0.2)
 		FLME C 1 A_SetScale(0.3,0.3)
 		FLME D 1 A_FadeOut(0.2)
-		FLME D 1 A_SetScale(0.1,0.1)
+		FLME D 1 A_SetScale(0.1,0.1)*/
+		FLME BCDA 4 bright 
+		FLME B 1 bright A_FadeOut(0.1)
+		FLME B 1 bright A_SetScale(0.8,0.8)
+		FLME B 1 bright A_FadeOut(0.1)
+		FLME B 1 bright 
+		FLME C 1 bright A_FadeOut(0.1)
+		FLME C 1 bright A_SetScale(0.6,0.6)
+		FLME C 1 A_FadeOut(0.1)
+		FLME C 1 A_FadeOut(0.1)
+		FLME D 1 A_FadeOut(0.1)
+		FLME D 1 
+		FLME D 1 A_FadeOut(0.1)
+		FLME D 1 A_SetScale(0.4,0.4)
+		FLME A 1 A_FadeOut(0.1)
+		FLME A 1 
+		FLME A 1 A_FadeOut(0.1)
+		FLME A 1
+		FLME B 1 A_SetScale(0.2,0.2)
+		FLME B 1 A_FadeOut(0.1)
 		Stop
 	Death2:
-		FLME ABCDABCD 2 bright 
-		FLME A 1 bright A_FadeOut(0.2)
-		FLME A 1 bright A_SetScale(-0.8,0.8)
-		FLME B 1 bright A_FadeOut(0.2)
-		FLME B 1 A_SetScale(-0.6,0.6)
-		FLME C 1 A_FadeOut(0.2)
-		FLME C 1 A_SetScale(-0.3,0.3)
-		FLME D 1 A_FadeOut(0.2)
-		FLME D 1 A_SetScale(-0.1,0.1)
+		FLME BCDA 4 bright 
+		FLME B 1 bright A_FadeOut(0.1)
+		FLME B 1 bright A_SetScale(-0.8,0.8)
+		FLME B 1 bright A_FadeOut(0.1)
+		FLME B 1 bright 
+		FLME C 1 bright A_FadeOut(0.1)
+		FLME C 1 bright A_SetScale(-0.6,0.6)
+		FLME C 1 A_FadeOut(0.1)
+		FLME C 1 A_FadeOut(0.1)
+		FLME D 1 A_FadeOut(0.1)
+		FLME D 1 
+		FLME D 1 A_FadeOut(0.1)
+		FLME D 1 A_SetScale(-0.4,0.4)
+		FLME A 1 A_FadeOut(0.1)
+		FLME A 1 
+		FLME A 1 A_FadeOut(0.1)
+		FLME A 1
+		FLME B 1 A_SetScale(-0.2,0.2)
+		FLME B 1 A_FadeOut(0.1)
 		Stop
 		
 
@@ -280,16 +331,18 @@ Actor PRLD_BarrelFire2 : PRLD_BarrelFire
 		Goto FLoop2
 		
 	FLoop:
-		FLME CDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDAB 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		//FLME CDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDAB 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		FLME CDABCDABCDABCDABCDABCDAB 4 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
 		TNT1 A 0 A_Jump(168, "Death")
 		Loop
 	FLoop2:
-		FLME CDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDAB 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		//FLME CDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDABCDAB 2 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
+		FLME CDABCDABCDABCDABCDABCDAB 4 BRIGHT A_Explode(5,16,0, 0, 0, 0, 0, 0, "Fire")
 		TNT1 A 0 A_Jump(168, "Death2")
 		Loop
 		
 	Death:
-		FLME CDABCDAB 2 bright 
+		/*FLME CDABCDAB 2 bright 
 		FLME C 1 bright A_FadeOut(0.2)
 		FLME C 1 bright A_SetScale(0.3,0.3)
 		FLME D 1 bright A_FadeOut(0.1)
@@ -298,20 +351,48 @@ Actor PRLD_BarrelFire2 : PRLD_BarrelFire
 		FLME A 1 A_SetScale(0.1,0.1)
 		FLME B 1 A_FadeOut(0.2)
 		FLME B 1 A_FadeOut(0.1)
-		FLME C 1 A_FadeOut(0.2)
+		FLME C 1 A_FadeOut(0.2)*/
+		FLME CDAB 4 bright 
+		FLME C 1 bright A_FadeOut(0.1)
+		FLME C 1 bright A_SetScale(0.3,0.3)
+		FLME C 1 bright A_FadeOut(0.1)
+		FLME C 1 bright 
+		FLME D 1 bright A_FadeOut(0.1)
+		FLME D 1 bright 
+		FLME D 1 A_FadeOut(0.1)
+		FLME D 1 A_FadeOut(0.1)
+		FLME A 1 A_FadeOut(0.1)
+		FLME A 1 A_SetScale(0.2,0.2)
+		FLME A 1 A_FadeOut(0.1)
+		FLME A 1
+		FLME B 1 A_FadeOut(0.1)
+		FLME B 1 
+		FLME B 1 A_FadeOut(0.1)
+		FLME B 1
+		FLME C 1 A_SetScale(0.1,0.1)
+		FLME C 1 A_FadeOut(0.1)
 		Stop
 		
 	Death2:
-		FLME CDABCDAB 2 bright 
-		FLME C 1 bright A_FadeOut(0.2)
+		FLME CDAB 4 bright 
+		FLME C 1 bright A_FadeOut(0.1)
 		FLME C 1 bright A_SetScale(-0.3,0.3)
+		FLME C 1 bright A_FadeOut(0.1)
+		FLME C 1 bright 
 		FLME D 1 bright A_FadeOut(0.1)
-		FLME D 1 A_SetScale(-0.2,0.2)
-		FLME A 1 A_FadeOut(0.2)
-		FLME A 1 A_SetScale(-0.1,0.1)
-		FLME B 1 A_FadeOut(0.2)
+		FLME D 1 bright 
+		FLME D 1 A_FadeOut(0.1)
+		FLME D 1 A_FadeOut(0.1)
+		FLME A 1 A_FadeOut(0.1)
+		FLME A 1 A_SetScale(-0.2,0.2)
+		FLME A 1 A_FadeOut(0.1)
+		FLME A 1
 		FLME B 1 A_FadeOut(0.1)
-		FLME C 1 A_FadeOut(0.2)
+		FLME B 1 
+		FLME B 1 A_FadeOut(0.1)
+		FLME B 1
+		FLME C 1 A_SetScale(-0.1,0.1)
+		FLME C 1 A_FadeOut(0.1)
 		Stop
   }
 }
