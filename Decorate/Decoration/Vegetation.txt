@@ -2,7 +2,8 @@ ACTOR PRLD_SnowTree
 {
   radius 56
   height 225
-  +SOLID
+  //+SOLID
+  -SOLID
   States
   {
   Spawn:

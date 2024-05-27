@@ -1,10 +1,10 @@
 version "3.7.2"
 
 // Weather
-#include "ZScript/weather/weatherhandler.txt"
+/*#include "ZScript/weather/weatherhandler.txt"
 #include "ZScript/weather/weather.txt"
 #include "ZScript/weather/precipitation.txt"
-#include "ZScript/weather/rainandsnow.txt"
+#include "ZScript/weather/rainandsnow.txt"*///shit broke so i have to make patches for either version of gzdoom
 
 // QuakeMove
 #include "zscript/quake_move/quake_move.zs"
