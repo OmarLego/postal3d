@@ -349,35 +349,32 @@ ACTOR InjuredOfficer2 : InjuredSheriff1
 		TNT1 A 0
         TNT1 A 0 A_GiveInventory("IsDown", 1)
 		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
-		POH2 Q 1 A_Look
+		POH2 G 1 A_Look
 		Loop
 	See:
 		TNT1 A 0
 		TNT1 A 0 A_Pain
-		POH2 P 15 A_Chase
-		POH2 Q 15
-		POH2 P 15 A_Chase
-		POH2 Q 15
+		POH2 G 15 A_Chase
+		POH2 H 15
+		POH2 G 15 A_Chase
+		POH2 H 15
 		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-	    
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
-
-		POH2 P 15 A_Chase
-		POH2 Q 15
-		POH2 P 15 A_Chase
-		POH2 Q 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-	    
 		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
 		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
 		
-		POH2 P 15 A_Chase
-		POH2 Q 15
-		POH2 P 15 A_Chase
-		POH2 Q 15
+		POH2 G 15 A_Chase
+		POH2 H 15
+		POH2 G 15 A_Chase
+		POH2 H 15
 		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-	    
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		
+		POH2 G 15 A_Chase
+		POH2 H 15
+		POH2 G 15 A_Chase
+		POH2 H 15
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
 		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
 		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
 		Loop
@@ -390,7 +387,7 @@ ACTOR InjuredOfficer2 : InjuredSheriff1
 	XDeath:
 		TNT1 A 0
         TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 48, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerBlack",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
 		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFloorNRChunksSpawner",0,0,50,0,0,0,0,2)
 		TNT1 A 0 A_SetScale(0.55,0.55)
         AXZ5 BCDEFG 4

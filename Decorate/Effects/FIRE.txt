@@ -115,7 +115,8 @@ ACTOR PrldExplosion
 	Projectile
 	//xScale 0.9
 	//yScale 1.08
-	Scale 0.9
+	//Scale 0.9
+	Scale 1.5
 	+CLIENTSIDEONLY
 	+NOGRAVITY
 	DeathSound "Explosion"
@@ -136,7 +137,8 @@ ACTOR PrldExplosion
 		//EXP1 ABCDEFGHIJKLMNOPQRSTUV 2 Bright
 		//i fortgot if i made the weapons do the quake tbh
 		//TNT1 A 0 Radius_Quake(10,8,0,3200,0)
-		FXPO ABCDEFGHIJKLM 1 bright 
+		//FXPO ABCDEFGHIJKLM 1 bright 
+		FXPO ABC 5 bright 
 		TNT1 A 0 A_PlaySound("distantexp", 5)
 		Stop
 	}
@@ -191,7 +193,8 @@ ACTOR PRLD_BarrelFire : Firetype
   Gravity 6
   Projectile
   RenderStyle Add
-  Alpha 0.67
+  //Alpha 0.67
+  Alpha 0.8
   //Scale 1.2
   -SOLID
   +MISSILE

@@ -262,7 +262,7 @@ actor PrldGibAvgMale2Head : PrldGibHead
     States
     {
     Fly:
-        POH2 L 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        POH2 S 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
         TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
         loop
 		
@@ -271,13 +271,13 @@ actor PrldGibAvgMale2Head : PrldGibHead
         TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
         TNT1 AAA 0 A_SpawnProjectile("PRLD_BloodFlying", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
         TNT1 A 0 A_SetRoll(0)
-        POH2 L 1
+        POH2 S 1
         goto Lying
     Lying:
-        POH2 L 1
+        POH2 S 1
 		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
 		TNT1 A 0 A_QueueCorpse
-		POH2 L -1
+		POH2 S -1
 		Stop
     }
 }
