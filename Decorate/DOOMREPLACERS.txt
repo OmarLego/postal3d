@@ -9,6 +9,7 @@ ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 	Species Hostile
 	Radius 20
     Height 52
+	//3/4 normal cop 1/4 sheriff
 	DropItem "PistolOfficer1"
 	DropItem "PistolOfficer1_2"
 	DropItem "PistolOfficer1_3"
@@ -21,6 +22,12 @@ ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 	DropItem "PistolOfficer2_4"
 	DropItem "PistolOfficer2_5"
 	DropItem "PistolOfficer2_6"
+	DropItem "PistolOfficer3"
+	DropItem "PistolOfficer3_2"
+	DropItem "PistolOfficer3_3"
+	DropItem "PistolOfficer3_4"
+	DropItem "PistolOfficer3_5"
+	DropItem "PistolOfficer3_6"
 	DropItem "Sheriff1"
 	DropItem "Sheriff1_2"
 	DropItem "Sheriff1_3"

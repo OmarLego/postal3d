@@ -1,4 +1,4 @@
-//Sheriff1 (special moustache sheriff)
+//Sheriff1 (special moustache sheriff)(special my ass)(originally i was going to make the mustache be a variant alongisde clean shaved instead of just being there ont he sheriff but thats too much for me fuck that)
 
 
 
@@ -53,7 +53,7 @@ Actor Sheriff1Execute : PrldMonsterExecute
 //i love you too aaron <3
 //i should keep this in the code
 //:3
-//i apologize in advance dennis for you properly having to see this'
+//i apologize in advance ###### for you properly having to see this'
 //thats my bestie ok i have a right
 ACTOR InjuredSheriff1 : PrldInjuredMonster
 {
@@ -387,6 +387,75 @@ ACTOR InjuredOfficer2 : InjuredSheriff1
 	XDeath:
 		TNT1 A 0
         TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFloorNRChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 A 0 A_CustomMissile ("CorpsePRLD_BloodFloorNRNew", 0, 0, random (0, 360), 2, random (0, 90))
+		AXZ5 H -1
+	}
+}
+
+
+
+//Officer3 (brown male blue officer)
+
+
+
+ACTOR InjuredOfficer3 : InjuredSheriff1
+{
+    States
+    {
+	active:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
+		Stop
+	Spawn:
+		TNT1 A 0
+        TNT1 A 0 A_GiveInventory("IsDown", 1)
+		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+		POH3 G 1 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_Pain
+		POH3 G 15 A_Chase
+		POH3 H 15
+		POH3 G 15 A_Chase
+		POH3 H 15
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		
+		POH3 G 15 A_Chase
+		POH3 H 15
+		POH3 G 15 A_Chase
+		POH3 H 15
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		
+		POH3 G 15 A_Chase
+		POH3 H 15
+		POH3 G 15 A_Chase
+		POH3 H 15
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		Loop
+	Death1:
+		TNT1 A 0 A_SpawnItem ("DeadOfficer3_1", 0)
+		Stop
+	Death2:
+		TNT1 A 0 A_SpawnItem ("DeadOfficer3_2", 0)
+		Stop
+	XDeath:
+		TNT1 A 0
+        TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 48, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
 		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFloorNRChunksSpawner",0,0,50,0,0,0,0,2)
 		TNT1 A 0 A_SetScale(0.55,0.55)
