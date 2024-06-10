@@ -1,0 +1,41 @@
+player/land "sounds/player/land1.wav"
+
+$random player/step
+{
+    player/step1
+    player/step2
+    player/step3
+    player/step4
+}
+
+player/step1 "sounds/player/footsteps/step1.wav"
+player/step2 "sounds/player/footsteps/step2.wav"
+player/step3 "sounds/player/footsteps/step3.wav"
+player/step4 "sounds/player/footsteps/step4.wav"
+
+
+$random player/splash
+{
+    player/splash1
+    player/splash2
+    player/splash3
+    player/splash4
+}
+
+player/splash1 "sounds/player/footsteps/splash1.wav"
+player/splash2 "sounds/player/footsteps/splash2.wav"
+player/splash3 "sounds/player/footsteps/splash3.wav"
+player/splash4 "sounds/player/footsteps/splash4.wav"
+
+
+$playeralias    player  male    *land       player/land
+$playeralias    player  male    *step       player/step
+$playeralias    player  male    *splash     player/splash
+
+$playeralias    player  female  *land       player/land
+$playeralias    player  female  *step       player/step
+$playeralias    player  female  *splash     player/splash
+
+$playeralias    player  other   *land       player/land
+$playeralias    player  other   *step       player/step
+$playeralias    player  other   *splash     player/splash

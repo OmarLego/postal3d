@@ -10,19 +10,34 @@ dude/writhing1		"Sounds/Voiceovers/Dude/writhing2.ogg"
 dude/writhing2		"Sounds/Voiceovers/Dude/writhing3.ogg"
 dude/writhing3		"Sounds/Voiceovers/Dude/writhing4.ogg"
 $random dude/writhing { dude/writhing1 dude/writhing2 dude/writhing3 }
-player/land			"Sounds/Voiceovers/Dude/playerland.ogg"
-dude/
+//player/land			"Sounds/Voiceovers/Dude/playerland.ogg"
+
+$Random dude/pain { dude/pain1 dude/pain2 dude/pain3 dude/pain4 dude/pain5 dude/pain6 dude/pain7 }
+dude/pain1			"Sounds/Voiceovers/Dude/DudePain1.ogg"
+dude/pain2			"Sounds/Voiceovers/Dude/DudePain2.ogg"
+dude/pain3			"Sounds/Voiceovers/Dude/DudePain3.ogg"
+dude/pain4			"Sounds/Voiceovers/Dude/DudePain4.ogg"
+dude/pain5			"Sounds/Voiceovers/Dude/DudePain5.ogg"
+dude/pain6			"Sounds/Voiceovers/Dude/DudePain6.ogg"
+dude/pain7			"Sounds/Voiceovers/Dude/DudePain7.ogg"
+
+$Random dude/death { dude/death1 dude/death2 dude/death3 }
+dude/death1			"Sounds/Voiceovers/Dude/DudeDeath1.ogg"
+dude/death2			"Sounds/Voiceovers/Dude/DudeDeath2.ogg"
+dude/death3			"Sounds/Voiceovers/Dude/DudeDeath3.ogg"
 
 $playeralias	Dude	Dude	*usefail	dude/grunt3
 $playeralias	Dude	Dude	*jump	dude/grunt3
 $playeralias	Dude	Dude	*falling	dude/groanmale2
 $playeralias	Dude	Dude	*land	player/land
 $playeralias	Dude	Dude	*grunt	dude/grunt3
-$playeralias	Dude	Dude	*pain100 dude/groanmale1	
-$playeralias	Dude	Dude	*pain75	dude/groanmale1	
-$playeralias	Dude	Dude	*pain50	dude/groanmale1	
-$playeralias	Dude	Dude	*pain25	dude/groanmale1	
-$playeralias	Dude	Dude	*death	dude/writhing
+$playeralias	Dude	Dude	*pain100 dude/pain
+$playeralias	Dude	Dude	*pain75	dude/pain
+$playeralias	Dude	Dude	*pain50	dude/pain
+$playeralias	Dude	Dude	*pain25	dude/pain
+$playeralias	Dude	Dude	*death	dude/death
+$playeralias    Dude	Dude    *step       player/step
+$playeralias    Dude	Dude    *splash     player/splash
 
 
 
@@ -96,4 +111,4 @@ demon/killforamassage		"Sounds/Voiceovers/Demon/d2-k 25.ogg"
 $random demon/lines/execution { demon/die1 demon/die2 demon/inhell }
 //generic kill lines
 //$alias DudeTalk KillSeriesLines
-$random DudeTalk { KSL1 KSL2 KSL3 KSL4 KSL5 KSL6 demon/gopostal KSL9 demon/kickass demon/likeyou demon/postal KSL16 }
+$random DudeTalk { KSL1 KSL2 KSL3 KSL4 KSL5 KSL6 demon/gopostal demon/gopostal KSL9 demon/kickass demon/kickass demon/likeyou demon/likeyou demon/postal demon/postal KSL16 }

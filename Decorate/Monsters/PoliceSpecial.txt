@@ -63,7 +63,7 @@ ACTOR InjuredSheriff1 : PrldInjuredMonster
 	active:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		Stop
 	Spawn:
@@ -203,7 +203,7 @@ ACTOR SurpriseSheriff1
 	//active:
 		/*TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		Stop*/
 	BecomeAnHero:
@@ -260,6 +260,148 @@ ACTOR SurpriseSheriff1
 	}
 }
 
+ACTOR InjuredSheriff3_1 : PrldInjuredMonster
+{
+    PainSound "act1_agony"
+    States
+    {
+	active:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
+		Stop
+	Spawn:
+		TNT1 A 0
+        TNT1 A 0 A_GiveInventory("IsDown", 1)
+		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+		SHR3 G 7 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_Pain
+		SHR3 G 15 A_Chase
+		SHR3 H 15
+		SHR3 G 15 A_Chase
+		SHR3 H 15
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		
+		SHR3 G 15 A_Chase
+		SHR3 H 15
+		SHR3 G 15 A_Chase
+		SHR3 H 15
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		
+		SHR3 G 15 A_Chase
+		SHR3 H 15
+		SHR3 G 15 A_Chase
+		SHR3 H 15
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		Loop
+	Death1:
+		TNT1 A 0 A_SpawnItem ("DeadSheriff3_1", 0)
+		Stop
+	Death2:
+		TNT1 A 0 A_SpawnItem ("DeadSheriff3_2", 0)
+		Stop
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act1_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	XDeath:
+		TNT1 A 0
+        TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFloorNRChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 A 0 A_CustomMissile ("CorpsePRLD_BloodFloorNRNew", 0, 0, random (0, 360), 2, random (0, 90))
+		AXZ5 H -1
+	}
+}
+Actor InjuredSheriff3_2 : InjuredSheriff3_1
+{
+    PainSound "act2_agony"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act2_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredSheriff3_3 : InjuredSheriff3_1
+{
+    PainSound "act4_agony"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act4_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredSheriff3_4 : InjuredSheriff3_1
+{
+    PainSound "act5_agony"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act5_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredSheriff3_5 : InjuredSheriff3_1
+{
+    PainSound "act6_agony"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act6_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredSheriff3_6 : InjuredSheriff3_1
+{
+    PainSound "act8_agony"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act8_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+
 
 
 //Officer1 (white male blue officer)
@@ -273,7 +415,7 @@ ACTOR InjuredOfficer1 : InjuredSheriff1
 	active:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		Stop
 	Spawn:
@@ -342,7 +484,7 @@ ACTOR InjuredOfficer2 : InjuredSheriff1
 	active:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		Stop
 	Spawn:
@@ -411,7 +553,7 @@ ACTOR InjuredOfficer3 : InjuredSheriff1
 	active:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		Stop
 	Spawn:

@@ -19,7 +19,7 @@ ReloadAmmo:
 */
 //dont care enough to change the above desc to fit the mod you get the point
 //sorry in advance for being passive aggressive im just on my period rn
-ACTOR Postal3dWeapon : Weapon
+ACTOR Postal3dWeapon : PostalWeapon//Weapon
 {
     Weapon.AmmoUse1 0
     Weapon.AmmoUse2 0

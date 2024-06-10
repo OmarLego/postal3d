@@ -151,7 +151,7 @@ ACTOR PistolOfficer1 : Postal3dMonster
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -219,7 +219,7 @@ ACTOR PistolOfficer1 : Postal3dMonster
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
         POH1 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_PlaySound("bodydrop")
-        POH1 N 5
+        POH1 N 35
         TNT1 A 0 A_SpawnItem("InjuredOfficer1")
 		TNT1 A -1
 	DieBurn:
@@ -484,7 +484,7 @@ ACTOR PistolOfficer2 : PistolOfficer1
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -552,7 +552,7 @@ ACTOR PistolOfficer2 : PistolOfficer1
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
         POH2 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_PlaySound("bodydrop")
-        POH2 N 25
+        POH2 N 35
         TNT1 A 0 A_SpawnItem("InjuredOfficer2")
 		TNT1 A -1
 	DieBurn:
@@ -816,7 +816,7 @@ ACTOR PistolOfficer3 : PistolOfficer1
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("GoSpecial", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
@@ -884,7 +884,7 @@ ACTOR PistolOfficer3 : PistolOfficer1
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
         POH3 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_PlaySound("bodydrop")
-        POH3 N 5
+        POH3 N 35
         TNT1 A 0 A_SpawnItem("InjuredOfficer3")
 		TNT1 A -1
 	DieBurn:
@@ -1200,7 +1200,7 @@ ACTOR ShotgunOfficer1 : PistolOfficer1
 		TNT1 A 0 A_CustomMissile("PrldGibShellSling")
         POH1 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_PlaySound("bodydrop")
-        POH1 N 5
+        POH1 N 35
         TNT1 A 0 A_SpawnItem("InjuredOfficer1")
 		TNT1 A -1
 	DieBurn:
@@ -1433,7 +1433,7 @@ ACTOR Sheriff1 :  ShotgunOfficer1
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
         SHRF STYJ 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_PlaySound("bodydrop")
-        SHRF K 5
+        SHRF K 35
         TNT1 A 0 A_SpawnItem("InjuredSheriff1")
 		TNT1 A -1
     Raise:
@@ -1564,7 +1564,700 @@ Actor DeadSheriffHeadOff2 : DeadSheriffHeadOff1
 	YScale 0.58
 }
 
+ACTOR Sheriff2 : Sheriff1
+{
+	States
+	{
+	Spawn:
+		SHR2 E 10 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_AlertMonsters(200)
+		TNT1 A 0 A_Jump (170, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+	    TNT1 A 0 A_Jump (130, "MissileCheck")
+	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfTargetInLOS("SeeActual")
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		SHR2 AA 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		SHR2 BB 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		SHR2 CC 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		SHR2 DD 2 A_Wander
+		Loop
+	SeeActual:
+		TNT1 A 0 A_Jump (170, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+		SHR2 AABBCCDD 2 A_Chase
+		Loop
+	DodgeLeft:
+	    TNT1 A 0 A_FaceTarget
+	    SHR2 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		TNT1 A 0 A_Jump (50, "DodgeRight")
+		Goto SeeLoop+1
+	DodgeLeftF:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (-8,-3))
+	    SHR2 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		Goto SeeLoop+1
+    DodgeLeftB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    SHR2 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRight:
+	    TNT1 A 0 A_FaceTarget
+	    SHR2 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightF:
+	    TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (-8,-3)) 
+	    SHR2 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (3,8)) 
+	    SHR2 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	MissileCheck:
+		TNT1 A 0 A_JumpIfTargetInLos ("Missile", 0, JLOSF_DEADNOJUMP)
+		Goto SeeLoop
+	Missile:
+		SHR2 E 7 A_FaceTarget
+		TNT1 A 0 A_Jump (100, "8Fire", "4Fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		//GUYS I DID THE MUZZLE FLASH FRAME FINALLY
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+		Goto SeeLoop
+	8Fire:
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+	4Fire:
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR2 E 13 A_FaceTarget
+		Goto SeeLoop
+	Pain:   
+		SHR2 F 3
+		SHR2 F 3 A_Pain
+		Goto SeeLoop
+	Pain.Kick:
+	Pain.HeavyImpact:
+	Pain.Stomp:
+        TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		SHR2 X 3
+	FlyLoop:
+		SHR2 X 1 A_CheckFloor("BrainDamage")
+		Loop
+	BrainDamage:
+		TNT1 A 0 A_GiveInventory("IsDown")
+		TNT1 A 0 A_PlaySound("bodydrop")
+		SHR2 Y 35 A_Stop
+		SHR2 Z 10 
+		SHR0 F 10
+		TNT1 A 0 A_TakeInventory("IsDown")
+		Goto See
+		
+	Death:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_JumpIfInTargetInventory("PRLD_HomeToken",1,"DieHome")
+		TNT1 A 0 A_Jump(12, "DieFake")
+		TNT1 A 0 A_Jump(128, "DieCrawl")
+        TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
+    Death.Kick:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_JumpIfInTargetInventory("PRLD_HomeToken",1,"DieHome")
+		TNT1 A 0 A_Jump(12, "DieFake")
+		TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
+    DieNormal:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR2 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadSheriff2_1")
+		TNT1 A -1
+	DieNormal2:	
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR2 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadSheriff2_2")
+		TNT1 A -1
+    DieHeadOff1:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibSheriff2Head", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR2 PQR 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		SHR2 M 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadSheriff2_HeadOff1")
+		TNT1 A -1
+    DieHeadOff2:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibSheriff2Head", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR2 PQR 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		SHR2 M 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadSheriff2_HeadOff2")
+		TNT1 A -1
+    DieX:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		AXZ5 H -1
+	DieCrawl:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR2 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        SHR2 K 35
+        TNT1 A 0 A_SpawnItem("InjuredSheriff2")
+		TNT1 A -1
+    Raise:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 0)
+        SHR2 NMLKJ 5
+        Goto See
+	DieFake:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_Jump(128,1)
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR2 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        SHR2 K 128
+        TNT1 A 0 A_SpawnItem("SurpriseSheriff2")
+		TNT1 A -1
+	}
+}
+Actor Sheriff2_2 : Sheriff2
+{
+    SeeSound "act2_copspot"
+    PainSound "act2_pain"
+    ActiveSound "act2_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
+		TNT1 A -1
+	}
+}
+Actor Sheriff2_3 : Sheriff2
+{
+    SeeSound "act4_copspot"
+    PainSound "act4_pain"
+    ActiveSound "act4_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
+		TNT1 A -1
+	}
+}
+Actor Sheriff2_4 : Sheriff2
+{
+    SeeSound "act5_copspot"
+    PainSound "act5_pain"
+    ActiveSound "act5_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
+		TNT1 A -1
+	}
+}
+Actor Sheriff2_5 : Sheriff2
+{
+    SeeSound "act6_copspot"
+    PainSound "act6_pain"
+    ActiveSound "act6_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
+		TNT1 A -1
+	}
+}
+Actor Sheriff2_6 : Sheriff2
+{
+    SeeSound "act8_copspot"
+    PainSound "act8_pain"
+    ActiveSound "act8_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
+		TNT1 A -1
+	}
+}
+Actor DeadSheriff2_1 : DeadOfficer1_1
+{
+	States
+	{
+	Spawn:
+		SHR2 N -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriff2Head", 15, 0, random (0, 360), 2, random (0, 180))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+Actor DeadSheriff2_2 : DeadSheriff2_1
+{
+	XScale -0.5
+	YScale 0.5
+}
+Actor DeadSheriff2_HeadOff1 : DeadSheriff2_1
+{
+	States
+	{
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+Actor DeadSheriff2_HeadOff2 : DeadSheriff2_HeadOff1
+{
+	XScale -0.5
+	YScale 0.5
+}
 
+ACTOR Sheriff3 : Sheriff1
+{
+	States
+	{
+	Spawn:
+		SHR3 E 10 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_AlertMonsters(200)
+		TNT1 A 0 A_Jump (170, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+	    TNT1 A 0 A_Jump (130, "MissileCheck")
+	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfTargetInLOS("SeeActual")
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		SHR3 AA 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		SHR3 BB 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		SHR3 CC 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		SHR3 DD 2 A_Wander
+		Loop
+	SeeActual:
+		TNT1 A 0 A_Jump (170, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+		SHR3 AABBCCDD 2 A_Chase
+		Loop
+	DodgeLeft:
+	    TNT1 A 0 A_FaceTarget
+	    SHR3 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		TNT1 A 0 A_Jump (50, "DodgeRight")
+		Goto SeeLoop+1
+	DodgeLeftF:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (-8,-3))
+	    SHR3 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		Goto SeeLoop+1
+    DodgeLeftB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    SHR3 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRight:
+	    TNT1 A 0 A_FaceTarget
+	    SHR3 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightF:
+	    TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (-8,-3)) 
+	    SHR3 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (3,8)) 
+	    SHR3 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	MissileCheck:
+		TNT1 A 0 A_JumpIfTargetInLos ("Missile", 0, JLOSF_DEADNOJUMP)
+		Goto SeeLoop
+	Missile:
+		SHR3 E 7 A_FaceTarget
+		TNT1 A 0 A_Jump (100, "8Fire", "4Fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		//GUYS I DID THE MUZZLE FLASH FRAME FINALLY
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+		Goto SeeLoop
+	8Fire:
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+	4Fire:
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
+		SHR3 E 13 A_FaceTarget
+		Goto SeeLoop
+	Pain:   
+		SHR3 F 3
+		SHR3 F 3 A_Pain
+		Goto SeeLoop
+	Pain.Kick:
+	Pain.HeavyImpact:
+	Pain.Stomp:
+        TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		SHR3 X 3
+	FlyLoop:
+		SHR3 X 1 A_CheckFloor("BrainDamage")
+		Loop
+	BrainDamage:
+		TNT1 A 0 A_GiveInventory("IsDown")
+		TNT1 A 0 A_PlaySound("bodydrop")
+		SHR3 Y 35 A_Stop
+		SHR3 Z 10 
+		SHR0 H 10
+		TNT1 A 0 A_TakeInventory("IsDown")
+		Goto See
+		
+	Death:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_JumpIfInTargetInventory("PRLD_HomeToken",1,"DieHome")
+		TNT1 A 0 A_Jump(12, "DieFake")
+		TNT1 A 0 A_Jump(128, "DieCrawl")
+        TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
+    Death.Kick:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_JumpIfInTargetInventory("PRLD_HomeToken",1,"DieHome")
+		TNT1 A 0 A_Jump(12, "DieFake")
+		TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
+    DieNormal:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR3 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadSheriff3_1")
+		TNT1 A -1
+	DieNormal2:	
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR3 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadSheriff3_2")
+		TNT1 A -1
+    DieHeadOff1:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibSheriff3Head", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR3 PQR 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		SHR3 M 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadSheriff3_HeadOff1")
+		TNT1 A -1
+    DieHeadOff2:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibSheriff3Head", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR3 PQR 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		SHR3 M 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadSheriff3_HeadOff2")
+		TNT1 A -1
+    DieX:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		AXZ5 H -1
+	DieCrawl:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR3 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        SHR3 K 35
+		TNT1 A 0 A_Jump(256, "CrawlSpawn")
+	CrawlSpawn:
+        TNT1 A 0 A_SpawnItem("InjuredSheriff3_1")
+		TNT1 A -1
+    Raise:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 0)
+        SHR3 NMLKJ 5
+        Goto See
+	DieFake:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_Jump(128,1)
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 48, 0, random (0, 360), 2, random (0, 160))
+        SHR3 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        SHR3 K 128
+        TNT1 A 0 A_SpawnItem("SurpriseSheriff3")
+		TNT1 A -1
+	}
+}
+Actor Sheriff3_2 : Sheriff3
+{
+    SeeSound "act2_copspot"
+    PainSound "act2_pain"
+    ActiveSound "act2_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
+		TNT1 A -1
+	CrawlSpawn:
+        TNT1 A 0 A_SpawnItem("InjuredSheriff3_2")
+		TNT1 A -1
+	}
+}
+Actor Sheriff3_3 : Sheriff3
+{
+    SeeSound "act4_copspot"
+    PainSound "act4_pain"
+    ActiveSound "act4_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
+		TNT1 A -1
+	CrawlSpawn:
+        TNT1 A 0 A_SpawnItem("InjuredSheriff3_3")
+		TNT1 A -1
+	}
+}
+Actor Sheriff3_4 : Sheriff3
+{
+    SeeSound "act5_copspot"
+    PainSound "act5_pain"
+    ActiveSound "act5_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
+		TNT1 A -1
+	CrawlSpawn:
+        TNT1 A 0 A_SpawnItem("InjuredSheriff3_4")
+		TNT1 A -1
+	}
+}
+Actor Sheriff3_5 : Sheriff3
+{
+    SeeSound "act6_copspot"
+    PainSound "act6_pain"
+    ActiveSound "act6_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
+		TNT1 A -1
+	CrawlSpawn:
+        TNT1 A 0 A_SpawnItem("InjuredSheriff3_5")
+		TNT1 A -1
+	}
+}
+Actor Sheriff3_6 : Sheriff3
+{
+    SeeSound "act8_copspot"
+    PainSound "act8_pain"
+    ActiveSound "act8_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
+		TNT1 A -1
+	CrawlSpawn:
+        TNT1 A 0 A_SpawnItem("InjuredSheriff3_6")
+		TNT1 A -1
+	}
+}
+Actor DeadSheriff3_1 : DeadOfficer1_1
+{
+	States
+	{
+	Spawn:
+		SHR3 N -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriff3Head", 15, 0, random (0, 360), 2, random (0, 180))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+Actor DeadSheriff3_2 : DeadSheriff3_1
+{
+	XScale -0.5
+	YScale 0.5
+}
+Actor DeadSheriff3_HeadOff1 : DeadSheriff3_1
+{
+	States
+	{
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+Actor DeadSheriff3_HeadOff2 : DeadSheriff3_HeadOff1
+{
+	XScale -0.5
+	YScale 0.5
+}
 
 //Rifle Cops
 
@@ -1663,6 +2356,29 @@ ACTOR RifleOfficer1 : ShotgunOfficer1
 		ROH1 F 3
 		ROH1 F 3 A_Pain
 		Goto SeeLoop
+		
+	Pain.Kick:
+	Pain.HeavyImpact:
+	Pain.Stomp:
+        TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		ROH1 S 3
+	FlyLoop:
+		ROH1 S 1 A_CheckFloor("BrainDamage")
+		Loop
+	BrainDamage:
+		TNT1 A 0 A_GiveInventory("IsDown")
+		TNT1 A 0 A_PlaySound("bodydrop")
+		ROH1 T 35 A_Stop
+		ROH1 UV 10
+		TNT1 A 0
+		
     DieNormal:
 		TNT1 A 0
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
@@ -1724,7 +2440,7 @@ ACTOR RifleOfficer1 : ShotgunOfficer1
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
         ROH1 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
 		TNT1 A 0 A_PlaySound("bodydrop")
-        ROH1 N 5
+        ROH1 N 35
         TNT1 A 0 A_SpawnItem("InjuredOfficer1")
 		TNT1 A -1
 	DieBurn:
@@ -1848,7 +2564,597 @@ Actor RifleOfficer1_6 : RifleOfficer1
 	}
 }
 
+ACTOR RifleOfficer2 : RifleOfficer1
+{
+	States
+	{
+	Spawn:
+		ROH2 E 10 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_AlertMonsters(200)
+		TNT1 A 0 A_Jump (170, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+	    TNT1 A 0 A_Jump (130, "MissileCheck")
+	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfTargetInLOS("SeeActual")
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		ROH2 AA 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		ROH2 BB 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		ROH2 CC 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		ROH2 DD 2 A_Wander
+		Loop
+	SeeActual:
+		TNT1 A 0 A_Jump (170, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+		ROH2 AABBCCDD 2 A_Chase
+		Loop
+	DodgeLeft:
+	    TNT1 A 0 A_FaceTarget
+	    ROH2 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		TNT1 A 0 A_Jump (50, "DodgeRight")
+		Goto SeeLoop+1
+	DodgeLeftF:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (-8,-3))
+	    ROH2 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		Goto SeeLoop+1
+    DodgeLeftB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    ROH2 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRight:
+	    TNT1 A 0 A_FaceTarget
+	    ROH2 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightF:
+	    TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (-8,-3)) 
+	    ROH2 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (3,8)) 
+	    ROH2 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	MissileCheck:
+		TNT1 A 0 A_JumpIfTargetInLos ("Missile", 0, JLOSF_DEADNOJUMP)
+		Goto SeeLoop
+	Missile:
+		TNT1 A 0
+		ROH2 E 10 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		ROH2 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 32, 0, random(-2, 2), 1, random(-2, 2))
+		ROH2 E 1 A_FaceTarget
+        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		ROH2 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 32, 0, random(-2, 2), 1, random(-2, 2))
+		ROH2 E 1 A_FaceTarget
+        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		ROH2 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 32, 0, random(-2, 2), 1, random(-2, 2))
+		ROH2 E 1 A_FaceTarget
+		ROH2 E 2
+		Goto SeeLoop
+	Pain:   
+		ROH2 F 3
+		ROH2 F 3 A_Pain
+		Goto SeeLoop
+		
+	Pain.Kick:
+	Pain.HeavyImpact:
+	Pain.Stomp:
+        TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		ROH2 R 3
+	FlyLoop:
+		ROH2 R 1 A_CheckFloor("BrainDamage")
+		Loop
+	BrainDamage:
+		TNT1 A 0 A_GiveInventory("IsDown")
+		TNT1 A 0 A_PlaySound("bodydrop")
+		ROH2 S 35 A_Stop
+		ROH2 TU 10
+		TNT1 A 0
+		
+    DieNormal:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH2 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadVestCop2_1", 0)
+		TNT1 A -1
+	DieNormal2:	
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH2 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadVestCop2_2", 0)
+		TNT1 A -1
+    DieHeadOff1:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH2 OPQ 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		ROH2 M 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadVestCop2HeadOff1", 0)
+		TNT1 A -1
+    DieHeadOff2:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH2 OPQ 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		ROH2 M 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadVestCop2HeadOff2", 0)
+		TNT1 A -1
+    DieX:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		AXZ5 H -1
+	DieCrawl:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH2 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        ROH2 N 35
+        TNT1 A 0 A_SpawnItem("InjuredOfficer2")
+		TNT1 A -1
+	DieBurn:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_Jump(256, "DieBurning")
+    Raise:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 0)
+        ROH2 MLKJ 5
+        Goto See
+	}
+}
+Actor DeadVestCop2_1 : PrldDesructableDeadBody
+{
+	States
+	{
+	Spawn:
+		ROH2 N 1
+		ROH2 N -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 15, 0, random (0, 360), 2, random (0, 180))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+actor DeadVestCop2_2 : DeadVestCop2_1
+{
+	XScale -0.5
+	YScale 0.5
+}
+actor DeadVestCop2HeadOff1 : DeadVestCop2_1
+{
+	States
+	{
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+actor DeadVestCop2HeadOff2 : DeadVestCop2HeadOff1
+{
+	XScale -0.5
+	YScale 0.5
+}
+Actor RifleOfficer2_2 : RifleOfficer2
+{
+    SeeSound "act2_copspot"
+    PainSound "act2_pain"
+    ActiveSound "act2_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
+		TNT1 A -1
+	}
+}
+Actor RifleOfficer2_3 : RifleOfficer2
+{
+    SeeSound "act4_copspot"
+    PainSound "act4_pain"
+    ActiveSound "act4_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
+		TNT1 A -1
+	}
+}
+Actor RifleOfficer2_4 : RifleOfficer2
+{
+    SeeSound "act5_copspot"
+    PainSound "act5_pain"
+    ActiveSound "act5_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
+		TNT1 A -1
+	}
+}
+Actor RifleOfficer2_5 : RifleOfficer2
+{
+    SeeSound "act6_copspot"
+    PainSound "act6_pain"
+    ActiveSound "act6_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
+		TNT1 A -1
+	}
+}
+Actor RifleOfficer2_6 : RifleOfficer2
+{
+    SeeSound "act8_copspot"
+    PainSound "act8_pain"
+    ActiveSound "act8_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
+		TNT1 A -1
+	}
+}
 
+ACTOR RifleOfficer3 : RifleOfficer1
+{
+	States
+	{
+	Spawn:
+		ROH3 E 10 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_AlertMonsters(200)
+		TNT1 A 0 A_Jump (170, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+	    TNT1 A 0 A_Jump (130, "MissileCheck")
+	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfTargetInLOS("SeeActual")
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		ROH3 AA 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		ROH3 BB 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		ROH3 CC 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		ROH3 DD 2 A_Wander
+		Loop
+	SeeActual:
+		TNT1 A 0 A_Jump (170, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+		ROH3 AABBCCDD 2 A_Chase
+		Loop
+	DodgeLeft:
+	    TNT1 A 0 A_FaceTarget
+	    ROH3 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		TNT1 A 0 A_Jump (50, "DodgeRight")
+		Goto SeeLoop+1
+	DodgeLeftF:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (-8,-3))
+	    ROH3 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		Goto SeeLoop+1
+    DodgeLeftB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    ROH3 AABBCCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (120, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRight:
+	    TNT1 A 0 A_FaceTarget
+	    ROH3 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightF:
+	    TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (-8,-3)) 
+	    ROH3 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (3,8)) 
+	    ROH3 AABBCCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (100, "MissileCheck")
+		Goto SeeLoop+1
+	MissileCheck:
+		TNT1 A 0 A_JumpIfTargetInLos ("Missile", 0, JLOSF_DEADNOJUMP)
+		Goto SeeLoop
+	Missile:
+		TNT1 A 0
+		ROH3 E 10 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		ROH3 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 32, 0, random(-2, 2), 1, random(-2, 2))
+		ROH3 E 1 A_FaceTarget
+        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		ROH3 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 32, 0, random(-2, 2), 1, random(-2, 2))
+		ROH3 E 1 A_FaceTarget
+        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		ROH3 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 32, 0, random(-2, 2), 1, random(-2, 2))
+		ROH3 E 1 A_FaceTarget
+		ROH3 E 2
+		Goto SeeLoop
+	Pain:   
+		ROH3 F 3
+		ROH3 F 3 A_Pain
+		Goto SeeLoop
+		
+	Pain.Kick:
+	Pain.HeavyImpact:
+	Pain.Stomp:
+        TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		ROH3 R 3
+	FlyLoop:
+		ROH3 R 1 A_CheckFloor("BrainDamage")
+		Loop
+	BrainDamage:
+		TNT1 A 0 A_GiveInventory("IsDown")
+		TNT1 A 0 A_PlaySound("bodydrop")
+		ROH3 S 35 A_Stop
+		ROH3 TU 10
+		TNT1 A 0
+		
+    DieNormal:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH3 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadVestCop3_1", 0)
+		TNT1 A -1
+	DieNormal2:	
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH3 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadVestCop3_2", 0)
+		TNT1 A -1
+    DieHeadOff1:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH3 OPQ 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		ROH3 M 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadVestCop3HeadOff1", 0)
+		TNT1 A -1
+    DieHeadOff2:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH3 OPQ 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		ROH3 M 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        TNT1 A 0 A_SpawnItem ("DeadVestCop3HeadOff2", 0)
+		TNT1 A -1
+    DieX:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		AXZ5 H -1
+	DieCrawl:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+        ROH3 JKLM 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+        ROH3 N 35
+        TNT1 A 0 A_SpawnItem("InjuredOfficer3")
+		TNT1 A -1
+	DieBurn:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_Jump(256, "DieBurning")
+    Raise:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 0)
+        ROH3 MLKJ 5
+        Goto See
+	}
+}
+Actor DeadVestCop3_1 : PrldDesructableDeadBody
+{
+	States
+	{
+	Spawn:
+		ROH3 N 1
+		ROH3 N -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 15, 0, random (0, 360), 2, random (0, 180))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+actor DeadVestCop3_2 : DeadVestCop3_1
+{
+	XScale -0.5
+	YScale 0.5
+}
+actor DeadVestCop3HeadOff1 : DeadVestCop3_1
+{
+	States
+	{
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+actor DeadVestCop3HeadOff2 : DeadVestCop3HeadOff1
+{
+	XScale -0.5
+	YScale 0.5
+}
+Actor RifleOfficer3_2 : RifleOfficer3
+{
+    SeeSound "act2_copspot"
+    PainSound "act2_pain"
+    ActiveSound "act2_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
+		TNT1 A -1
+	}
+}
+Actor RifleOfficer3_3 : RifleOfficer3
+{
+    SeeSound "act4_copspot"
+    PainSound "act4_pain"
+    ActiveSound "act4_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
+		TNT1 A -1
+	}
+}
+Actor RifleOfficer3_4 : RifleOfficer3
+{
+    SeeSound "act5_copspot"
+    PainSound "act5_pain"
+    ActiveSound "act5_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
+		TNT1 A -1
+	}
+}
+Actor RifleOfficer3_5 : RifleOfficer3
+{
+    SeeSound "act6_copspot"
+    PainSound "act6_pain"
+    ActiveSound "act6_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
+		TNT1 A -1
+	}
+}
+Actor RifleOfficer3_6 : RifleOfficer3
+{
+    SeeSound "act8_copspot"
+    PainSound "act8_pain"
+    ActiveSound "act8_copact"
+	States
+	{
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
+		TNT1 A -1
+	}
+}
 
 //Spawners
 
@@ -1890,12 +3196,24 @@ ACTOR PRLD_SheriffSpawner: RandomSpawner
 	Species Hostile
 	Radius 16
     Height 56
-	DropItem "Sheriff1"
+	/*DropItem "Sheriff1"
 	DropItem "Sheriff1_2"
 	DropItem "Sheriff1_3"
 	DropItem "Sheriff1_4"
 	DropItem "Sheriff1_5"
 	DropItem "Sheriff1_6"
+	DropItem "Sheriff2"
+	DropItem "Sheriff2_2"
+	DropItem "Sheriff2_3"
+	DropItem "Sheriff2_4"
+	DropItem "Sheriff2_5"
+	DropItem "Sheriff2_6"*/
+	DropItem "Sheriff3"
+	DropItem "Sheriff3_2"
+	DropItem "Sheriff3_3"
+	DropItem "Sheriff3_4"
+	DropItem "Sheriff3_5"
+	DropItem "Sheriff3_6"
 	Scale 0.5
 	States
 	{
@@ -1929,6 +3247,18 @@ ACTOR PRLD_RifleCopSpawner: RandomSpawner
 	DropItem "RifleOfficer1_4"
 	DropItem "RifleOfficer1_5"
 	DropItem "RifleOfficer1_6"
+	DropItem "RifleOfficer2"
+	DropItem "RifleOfficer2_2"
+	DropItem "RifleOfficer2_3"
+	DropItem "RifleOfficer2_4"
+	DropItem "RifleOfficer2_5"
+	DropItem "RifleOfficer2_6"
+	DropItem "RifleOfficer3"
+	DropItem "RifleOfficer3_2"
+	DropItem "RifleOfficer3_3"
+	DropItem "RifleOfficer3_4"
+	DropItem "RifleOfficer3_5"
+	DropItem "RifleOfficer3_6"
 	Scale 0.5
 	States
 	{

@@ -49,7 +49,7 @@
 #include  "Decorate/monsters/Rocketeers.txt"
 
 //Player Classes
-#include "Decorate/Player/Player.txt"
+//#include "Decorate/Player/Player.txt" issazscriptnow
 
 //Replacers for Vanilla DOOM
 #include "Decorate/DOOMREPLACERS.txt"

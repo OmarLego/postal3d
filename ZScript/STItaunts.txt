@@ -1,0 +1,291 @@
+//i fucking love copy and pasting code i could never write myself you dont understand
+
+
+
+//                                  PLAYER FILE SHIT
+
+
+
+class PostalDude_Data : Inventory
+{
+	//bool lastground;
+	//double lastvelz, prevvelz, MoveSpeed;//probably not nneeded but just incase
+	
+	// Share The Doom variables
+	
+	
+	bool DudeLineTriggered;
+	int TimeBeforeDudeLine, DudeLineCooldown, DudeLineDelay;
+	//int InsultCooldown;//same thing
+	
+	//}//is this supposed to be here IDK brother
+
+}
+
+//7 layers of zscript libaries//basically the gc
+class PostalDude : QuakePlayer
+{
+	PostalDude_Data PlayerData;
+	
+	// Trigger killing lines
+	bool InitLine;
+	int ChanceLocal;
+	
+	
+	//Initial function for giving the Data inventory to the player.
+	//According to phantombeta if these are stored in the PlayerPawn the information will get lost eventually.
+	void DataInit()
+	{
+		if (!player || player.mo != self)
+			return;
+			
+		if (!PlayerData)
+		{
+			if (!(PlayerData = PostalDude_Data(FindInventory('PostalDude_Data'))))
+			{
+				GiveInventory('PostalDude_Data', 1);
+				PlayerData = PostalDude_Data(FindInventory('PostalDude_Data'));
+			}
+		}
+	}
+	
+	//This function triggers killing spree lines.
+	//Called by an EventHandler
+	bool KillWithGun, KillWithMelee, KillWithProj, QuickKillsinProgress, QuickKillVersion;
+	int QuickKillCount;
+	void A_TriggerDudeLine(int Chance = 0)
+	{
+		if (IsActorPlayingSound(CHAN_VOICE) && !PlayerData.DudeLineTriggered)
+		{
+			InitLine = false;
+			return;
+		}
+		
+		if (InitLine == true)
+		{
+			let nweapon = PostalWeapon(Weapon(Player.ReadyWeapon));
+			if (nweapon)
+			{
+				if (nweapon.STD_Melee)
+					KillWithMelee = true;
+				
+				if (nweapon.STD_Gun)
+					KillWithGun = true;
+				
+				if (nweapon.STD_Projectile)
+					KillWithProj = true;
+			}
+			
+			PlayerData.TimeBeforeDudeLine = level.time + 30;
+			PlayerData.DudeLineTriggered = true;
+			InitLine = false;
+		}
+		
+		if (PlayerData.DudeLineTriggered == true)
+		{
+			Chance = ChanceLocal;
+			Console.Printf("Chance: %d", Chance);
+			bool fail = true;
+			
+			// Corpses doesn't talk
+			if (self.bKILLED)
+			{
+				PlayerData.DudeLineTriggered = false;
+				return;
+			}
+			
+			if (Chance < 7 && !QuickKillsinProgress)
+			{
+				QuickKillsinProgress = true;
+				QuickKillVersion = random[ver](0,1);
+			}
+			
+			if (Chance < 200 && !QuickKillsinProgress && level.time > PlayerData.TimeBeforeDudeLine)
+			{
+				PlayerData.DudeLineCooldown = level.time + 35 * 2;
+				
+				if (KillWithGun)
+				{
+					int randomnumber = random[pickline](1,26);
+					sound Dude_KillWithGun = string.Format("Dude_KillWithGun%i",randomnumber);
+					A_StartSound(Dude_KillWithGun, CHAN_VOICE, CHANF_NOSTOP);
+					KillWithGun = false;
+					PlayerData.DudeLineTriggered = false;
+					fail = false;
+				}
+				
+				if (KillWithMelee)
+				{
+					int randomnumber = random[pickline](1,22);
+					sound Dude_KillWithMelee = string.Format("Dude_KillWithMelee%i",randomnumber);
+					A_StartSound(Dude_KillWithMelee, CHAN_VOICE, CHANF_NOSTOP);
+					KillWithMelee = false;
+					PlayerData.DudeLineTriggered = false;
+					fail = false;
+				}
+				
+				if (KillWithProj)
+				{
+					int randomnumber = random[pickline](1,22);
+					sound Dude_KillWithProjectile = string.Format("Dude_KillWithProjectile%i",randomnumber);
+					A_StartSound(Dude_KillWithProjectile, CHAN_VOICE, CHANF_NOSTOP);
+					KillWithProj = false;
+					PlayerData.DudeLineTriggered = false;
+					fail = false;
+				}
+			}
+			
+			if (QuickKillsinProgress && level.time > PlayerData.TimeBeforeDudeLine)
+			{
+				if (QuickKillVersion)
+				{
+					QuickKillCount++;
+					sound Dude_QuickKills = string.Format("Dude_QuickKills%i",QuickKillCount);
+					A_StartSound(Dude_QuickKills, CHAN_VOICE, CHANF_NOSTOP);
+					PlayerData.TimeBeforeDudeLine = level.time + 30;
+					PlayerData.DudeLineTriggered = false;
+					fail = false;
+				}
+				else
+				{
+					QuickKillCount++;
+					sound Dude_QuickKillsS = string.Format("Dude_QuickKillsS%i",QuickKillCount);
+					A_StartSound(Dude_QuickKillsS, CHAN_VOICE, CHANF_NOSTOP);
+					PlayerData.TimeBeforeDudeLine = level.time + 30;
+					PlayerData.DudeLineTriggered = false;
+					fail = false;
+				}
+				
+				if (QuickKillCount >= 7)
+				{
+					QuickKillsinProgress = false;
+					QuickKillCount = 0;
+				}
+			
+			}
+			
+			if (fail && level.time > PlayerData.TimeBeforeDudeLine)
+			{
+				PlayerData.DudeLineTriggered = false;
+			}
+		}
+	}
+	
+	// Removes (or atleast tries to) Doom bobbing
+	// This includes falling bob
+	void DoomDeletus()
+	{
+		// Disables Doom's falling bob
+		player.deltaviewheight = ViewHeight;
+		
+		
+		
+		// Disable bobbing when walking
+		if (PlayerData)
+			PlayerData.MoveSpeed = vel.xy.Length();
+			
+		if (PlayerData.MoveSpeed < 3 && PlayerData)
+			ViewBob = 0;
+		else
+			ViewBob = default.ViewBob; //might come in handy in the future: GetDefaultsByType (<class>)
+	}
+	
+	override void Tick()
+	{
+		Super.Tick();
+		if ( !player || (player.mo != self) ) return;
+		
+		//CheatDetector();
+		A_TriggerDudeLine();
+		//CheckForNonPostalWeapons();//IDK where these are located
+		DoomDeletus();
+		
+		/*// Kicking
+		if (Kick)
+			A_GiveInventory("PostKick", 1);*///could be useful maybe
+			
+	}
+	
+	
+	Default
+	{
+		Player.DisplayName "Postal Dude";
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 1;
+		Stop;
+	}
+}
+
+
+
+//                           EVENT HANDLER FILE SHIT
+
+
+
+class DudeCoreHandler : EventHandler 
+{
+	override void WorldUnloaded(WorldEvent e)
+	{
+		// Some data needs to be reset
+		for (uint i = 0; i < MAXPLAYERS; i++)
+		{
+			if (Players[i].mo && Players[i].mo is 'PostalDude')
+			{
+				let DudePawn = PostalDude(Players[i].mo);
+				if (DudePawn)
+				{
+					/*DudePawn.A_TakeInventory("PostKick",100);
+					DudePawn.Kick = false;
+					DudePawn.isinPain = false;
+					DudePawn.InitLine = false;
+					DudePawn.A_GiveInventory("HUDViewable",1);
+					DudePawn.A_TakeInventory("CameraRunner",1);
+					DudePawn.bDONTTHRUST = false;
+					DudePawn.Speed = DudePawn.Default.Speed;
+					DudePawn.JumpZ = DudePawn.Default.JumpZ;*/
+					if (DudePawn.PlayerData)
+					{
+						//DudePawn.PlayerData.InsultCooldown = 0;
+						DudePawn.PlayerData.DudeLineCooldown = 0;
+						DudePawn.PlayerData.DudeLineTriggered = false;
+						DudePawn.PlayerData.RunningStopCooldown = 0;
+						//DudePawn.PlayerData.SpawnedOnce = false;
+						//DudePawn.PlayerData.Suicide = false;
+					}
+				}
+			}
+		}
+	}
+	
+	// Used for initiating Dude's killing spree lines
+	// This is universal
+	override void WorldThingDied(WorldEvent e)
+	{	
+		if (e.Inflictor && e.Thing)
+		{
+			if (!(e.Thing is 'PostalDude'))
+			{
+				// todo: Give every monster an inventory item, and always store the last attacker there
+				if (e.Thing.target is 'PostalDude')
+				{
+					let DudePawn = PostalDude(e.Thing.target);
+					
+					if (DudePawn && !DudePawn.bKILLED)
+					{
+						let pa = PostalActor(e.Thing);
+						if (pa && pa.STD_NoKillLine) return;
+						
+						if (DudePawn.PlayerData && !DudePawn.PlayerData.DudeLineTriggered && level.time > DudePawn.PlayerData.DudeLineCooldown)
+						{
+							DudePawn.InitLine = true;
+							DudePawn.ChanceLocal = random[DudeLine](0,350);
+						}
+					}
+				}
+			}
+		}
+	}
+}

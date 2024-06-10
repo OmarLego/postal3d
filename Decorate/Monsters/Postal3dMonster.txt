@@ -226,7 +226,7 @@ Actor PrldInjuredMonster //: SwitchingDecoration
     Speed 5
 	Health 25
     PainSound "act1_agony"
-    DeathSound "NoSoundHax"
+    //DeathSound "NoSoundHax"
 	//damagefactor "Kick", 6.0
 	//PainChance "Kick", 255
 	+SHOOTABLE

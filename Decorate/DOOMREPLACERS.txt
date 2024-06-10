@@ -28,24 +28,59 @@ ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 	DropItem "PistolOfficer3_4"
 	DropItem "PistolOfficer3_5"
 	DropItem "PistolOfficer3_6"
-	DropItem "Sheriff1"
+	/*DropItem "Sheriff1"
 	DropItem "Sheriff1_2"
 	DropItem "Sheriff1_3"
 	DropItem "Sheriff1_4"
 	DropItem "Sheriff1_5"
 	DropItem "Sheriff1_6"
+	DropItem "Sheriff2"
+	DropItem "Sheriff2_2"
+	DropItem "Sheriff2_3"
+	DropItem "Sheriff2_4"
+	DropItem "Sheriff2_5"
+	DropItem "Sheriff2_6"
+	
+	//copy and paste to make the ratios correct
+	DropItem "PistolOfficer1"
+	DropItem "PistolOfficer1_2"
+	DropItem "PistolOfficer1_3"
+	DropItem "PistolOfficer1_4"
+	DropItem "PistolOfficer1_5"
+	DropItem "PistolOfficer1_6"
+	DropItem "PistolOfficer2"
+	DropItem "PistolOfficer2_2"
+	DropItem "PistolOfficer2_3"
+	DropItem "PistolOfficer2_4"
+	DropItem "PistolOfficer2_5"
+	DropItem "PistolOfficer2_6"
+	DropItem "PistolOfficer3"
+	DropItem "PistolOfficer3_2"
+	DropItem "PistolOfficer3_3"
+	DropItem "PistolOfficer3_4"
+	DropItem "PistolOfficer3_5"
+	DropItem "PistolOfficer3_6"*/
 }
 ACTOR PrldImpReplacer: RandomSpawner replaces DoomImp
 {
 	Species Hostile
 	Radius 20
     Height 52
-	//DropItem "Sheriff1"
-	//DropItem "Sheriff1_2"
-	//DropItem "Sheriff1_3"
-	//DropItem "Sheriff1_4"
-	//DropItem "Sheriff1_5"
-	//DropItem "Sheriff1_6"
+	//7/8 sheriff 1/8 grenader
+	//might be too much
+	DropItem "Sheriff1"
+	DropItem "Sheriff1_2"
+	DropItem "Sheriff1_3"
+	DropItem "Sheriff1_4"
+	DropItem "Sheriff1_5"
+	DropItem "Sheriff1_6"
+	DropItem "Sheriff2"
+	DropItem "Sheriff2_2"
+	DropItem "Sheriff2_3"
+	DropItem "Sheriff2_4"
+	DropItem "Sheriff2_5"
+	DropItem "Sheriff2_6"
+	DropItem "Grenader1"
 	DropItem "Grenader1"
 }
 ACTOR PrldShotgunnerReplacer: RandomSpawner replaces Shotgunguy

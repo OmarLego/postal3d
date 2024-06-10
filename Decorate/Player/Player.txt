@@ -1,4 +1,4 @@
-ACTOR PostalDudeSr : QuakePlayer
+ACTOR PostalDude : QuakePlayer//PlayerPawn
 {
 	Player.DisplayName "Angel of Death"
 	Player.SoundClass "Dude"
@@ -40,19 +40,19 @@ ACTOR PostalDudeSr : QuakePlayer
     Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Changeflag("NOPAIN", 0)
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialChecker")
+		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheck")
         DUDE E 1
 		TNT1 A 0 A_Changeflag("THRUSPECIES", 0)
 		Loop
     See:
         DUDE A 4
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialCheckerMoving")
+		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
         DUDE B 4
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialCheckerMoving")
+		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
 		DUDE C 4
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialCheckerMoving")
+		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
 		DUDE D 4
-		TNT1 A 0 A_JumpIfInventory("GoSpecial", 1, "SpecialCheckerMoving")
+		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
         Loop
 	Missile:
 		DUDE E 12
@@ -72,29 +72,29 @@ ACTOR PostalDudeSr : QuakePlayer
 		DUDE K -1
         Stop
 		
-	//Special Checkers
+	//Special Action Checkers
 	
-	SpecialChecker:
-		NULL A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
-        NULL A 0 A_TakeInventory("GoSpecial", 1)
-		NULL A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
-        NULL A 0 A_TakeInventory("GoSpecial", 1)
+	SpecialActionCheck:
+		TNT1 A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
+        TNT1 A 0 A_TakeInventory("SpecialAction", 1)
+		TNT1 A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
+        TNT1 A 0 A_TakeInventory("SpecialAction", 1)
         Goto Spawn
-	SpecialCheckerMoving:
-		NULL A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
-		NULL A 0 A_TakeInventory("GoSpecial", 1)
-		NULL A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
-		NULL A 0 A_TakeInventory("GoSpecial", 1)
+	SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro:
+		TNT1 A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
+		TNT1 A 0 A_TakeInventory("SpecialAction", 1)
+		TNT1 A 0 A_JumpIfInventory("ExecuteDownedSheriff1", 1, "ExecuteSheriff1")
+		TNT1 A 0 A_TakeInventory("SpecialAction", 1)
 		Goto See
 		
 	//Executions
 	
 	ExecuteSheriff1:
 		TNT1 A 0
-		NULL A 0 A_GiveInventory("Kicking", 1)
-		NULL A 0 A_GiveInventory("ExecuteDownedEnemy", 1)
-		NULL A 0 A_GiveInventory("ExecuteDownedEnemy", 1)
-		NULL A 0 A_TakeInventory("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_GiveInventory("Kicking", 1)
+		TNT1 A 0 A_GiveInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 0 A_GiveInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedSheriff1", 1)
 		
 		TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
 		TNT1 A 0 A_ChangeFlag("INVULNERABLE", 1)

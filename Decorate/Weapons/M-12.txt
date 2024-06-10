@@ -15,7 +15,7 @@ Weapon.AmmoType1 "Grenadee"
 Weapon.AmmoType2 ""
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
-  
+  PostalWeapon.PRLD_MGun 1
   States
   { 
 	Ready:
