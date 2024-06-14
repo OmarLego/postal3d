@@ -16,6 +16,8 @@ version "3.7.2"
 //the old one is still in the decorate folder if i need it later
 #include "zscript/WeaponZ.txt"
 #include "zscript/Player.txt"
+//One-Liners
+#include "ZScript/TauntEventHandler.zs"
 
 // Universal Weapon Sway
 #include "sway/sway.txt"

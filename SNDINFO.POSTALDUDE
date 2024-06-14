@@ -112,3 +112,10 @@ $random demon/lines/execution { demon/die1 demon/die2 demon/inhell }
 //generic kill lines
 //$alias DudeTalk KillSeriesLines
 $random DudeTalk { KSL1 KSL2 KSL3 KSL4 KSL5 KSL6 demon/gopostal demon/gopostal KSL9 demon/kickass demon/kickass demon/likeyou demon/likeyou demon/postal demon/postal KSL16 }
+
+WSL8	"Sounds/Demon/WeaponSelectionLines/Dude-MachineGun-TheGunKnows01.ogg"
+WSL9	"Sounds/Demon/WeaponSelectionLines/Dude-MachineGun-TheGunKnows02.ogg"
+WSL10	"Sounds/Demon/WeaponSelectionLines/Dude-MachineGun-WeaponUnderstands01.ogg"
+WSL11	"Sounds/Demon/WeaponSelectionLines/Dude-MachineGun-WeaponUnderstands02.ogg"
+
+$random DudeTalkBullet { WSL8 WSL9 WSL10 WSL11 }

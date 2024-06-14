@@ -19,7 +19,7 @@ ReloadAmmo:
 */
 //dont care enough to change the above desc to fit the mod you get the point
 //sorry in advance for being passive aggressive im just on my period rn
-ACTOR Postal3dWeapon : PostalWeapon//Weapon
+ACTOR Postal3dWeapon : Weapon
 {
     Weapon.AmmoUse1 0
     Weapon.AmmoUse2 0
@@ -27,9 +27,12 @@ ACTOR Postal3dWeapon : PostalWeapon//Weapon
     Weapon.AmmoGive2 0
     +FORCEXYBILLBOARD
     Weapon.BobStyle Inverse
-    Weapon.BobSpeed 2.5
-	Weapon.BobRangeX 0.6
-	Weapon.BobRangeY 0.3
+    //Weapon.BobSpeed 2.5
+	Weapon.BobSpeed 2.7
+	//Weapon.BobRangeX 0.6
+	//Weapon.BobRangeY 0.3
+	Weapon.BobRangeX 0.3
+	Weapon.BobRangeY 0.15
 	Inventory.PickupSound "weapons/pickup"
 	States
 	{
