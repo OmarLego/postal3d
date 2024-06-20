@@ -1,6 +1,5 @@
-ACTOR InjuredCivvie1 : PrldInjuredMonster
+ACTOR InjuredCivilian1_1 : PrldInjuredMonster
 {
-    PainSound "act1_agony"
     States
     {
 	active:
@@ -10,54 +9,44 @@ ACTOR InjuredCivvie1 : PrldInjuredMonster
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		Stop
 	Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
-		CIV1 G 7 A_Look
+		CV01 G 7 A_Look
 		Loop
 	See:
 		TNT1 A 0
 		TNT1 A 0 A_Pain
-		CIV1 G 15 A_Chase
-		CIV1 H 15
-		CIV1 G 15 A_Chase
-		CIV1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		CV01 G 15 A_Chase
+		CV01 H 15
+		CV01 G 15 A_Chase
+		CV01 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
-		CIV1 G 15 A_Chase
-		CIV1 H 15
-		CIV1 G 15 A_Chase
-		CIV1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		CV01 G 15 A_Chase
+		CV01 H 15
+		CV01 G 15 A_Chase
+		CV01 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
-		CIV1 G 15 A_Chase
-		CIV1 H 15
-		CIV1 G 15 A_Chase
-		CIV1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		CV01 G 15 A_Chase
+		CV01 H 15
+		CV01 G 15 A_Chase
+		CV01 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
-		TNT1 A 0 A_SpawnItem ("DeadSheriff1", 0)
+		TNT1 A 0 A_SpawnItem ("DeadCivilian1_1")
 		Stop
 	Death2:
-		TNT1 A 0 A_SpawnItem ("DeadSheriff2", 0)
+		TNT1 A 0 A_SpawnItem ("DeadCivilian1_2")
 		Stop
-    Death.fire:
-	Death.Flames:
-	Death.burn:
-	Death.flame:
-		TNT1 A 0
-		TNT1 A 0 A_PlaySound("act1_burn")
-		TNT1 A 0 A_Jump(256, "DieBurning")
 	XDeath:
 		TNT1 A 0
-        TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 48, 0, random (0, 360), 2, random (0, 160))
+        TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 48, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
 		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,50,0,0,0,0,2)
 		TNT1 A 0 A_SetScale(0.55,0.55)
@@ -66,5 +55,434 @@ ACTOR InjuredCivvie1 : PrldInjuredMonster
 		AXZ5 H 70
 		TNT1 A 0 A_CustomMissile ("CorpsePRLD_BloodFloorNRNew", 0, 0, random (0, 360), 2, random (0, 90))
 		AXZ5 H -1
+	}
+}
+Actor InjuredCivilian1_2 : InjuredCivilian1_1
+{
+    PainSound "act2_agony"
+	DeathSound"act2_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act2_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian1_3 : InjuredCivilian1_1
+{
+    PainSound "act4_agony"
+	DeathSound"act4_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act4_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian1_4 : InjuredCivilian1_1
+{
+    PainSound "act5_agony"
+	DeathSound"act5_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act5_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian1_5 : InjuredCivilian1_1
+{
+    PainSound "act6_agony"
+	DeathSound"act6_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act6_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian1_6 : InjuredCivilian1_1
+{
+    PainSound "act8_agony"
+	DeathSound"act8_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act8_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+
+ACTOR InjuredCivilian2_1 : InjuredCivilian1_1
+{
+    PainSound "act3_agony"
+	DeathSound"act3_mercy"
+    States
+    {
+	active:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
+		Stop
+	Spawn:
+		CV02 G 7 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_Pain
+		CV02 G 15 A_Chase
+		CV02 H 15
+		CV02 G 15 A_Chase
+		CV02 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		
+		CV02 G 15 A_Chase
+		CV02 H 15
+		CV02 G 15 A_Chase
+		CV02 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		
+		CV02 G 15 A_Chase
+		CV02 H 15
+		CV02 G 15 A_Chase
+		CV02 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		Loop
+	Death1:
+		TNT1 A 0 A_SpawnItem ("DeadCivilian2_1")
+		Stop
+	Death2:
+		TNT1 A 0 A_SpawnItem ("DeadCivilian2_2")
+		Stop
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act3_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	XDeath:
+		TNT1 A 0
+        TNT1 A 0 A_CustomMissile ("PrldGibFem1Head", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 A 0 A_CustomMissile ("CorpsePRLD_BloodFloorNRNew", 0, 0, random (0, 360), 2, random (0, 90))
+		AXZ5 H -1
+	}
+}
+Actor InjuredCivilian2_2 : InjuredCivilian2_1
+{
+    PainSound "act7_agony"
+	DeathSound"act7_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act7_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+
+ACTOR InjuredCivilian3_1 : InjuredCivilian1_1
+{
+    States
+    {
+	active:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
+		Stop
+	Spawn:
+		CV03 G 7 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_Pain
+		CV03 G 15 A_Chase
+		CV03 H 15
+		CV03 G 15 A_Chase
+		CV03 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		
+		CV03 G 15 A_Chase
+		CV03 H 15
+		CV03 G 15 A_Chase
+		CV03 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		
+		CV03 G 15 A_Chase
+		CV03 H 15
+		CV03 G 15 A_Chase
+		CV03 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		Loop
+	Death1:
+		TNT1 A 0 A_SpawnItem ("DeadCivilian3_1")
+		Stop
+	Death2:
+		TNT1 A 0 A_SpawnItem ("DeadCivilian3_2")
+		Stop
+	XDeath:
+		TNT1 A 0
+        TNT1 A 0 A_CustomMissile("PrldGibAvgMale2Head", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 A 0 A_CustomMissile ("CorpsePRLD_BloodFloorNRNew", 0, 0, random (0, 360), 2, random (0, 90))
+		AXZ5 H -1
+	}
+}
+Actor InjuredCivilian3_2 : InjuredCivilian3_1
+{
+    PainSound "act2_agony"
+	DeathSound"act2_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act2_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian3_3 : InjuredCivilian3_1
+{
+    PainSound "act4_agony"
+	DeathSound"act4_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act4_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian3_4 : InjuredCivilian3_1
+{
+    PainSound "act5_agony"
+	DeathSound"act5_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act5_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian3_5 : InjuredCivilian3_1
+{
+    PainSound "act6_agony"
+	DeathSound"act6_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act6_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian3_6 : InjuredCivilian3_1
+{
+    PainSound "act8_agony"
+	DeathSound"act8_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act8_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+
+ACTOR InjuredCivilian4_1 : InjuredCivilian1_1
+{
+    States
+    {
+	active:
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
+		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
+		Stop
+	Spawn:
+		CV04 G 7 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0 A_Pain
+		CV04 G 15 A_Chase
+		CV04 H 15
+		CV04 G 15 A_Chase
+		CV04 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		
+		CV04 G 15 A_Chase
+		CV04 H 15
+		CV04 G 15 A_Chase
+		CV04 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		
+		CV04 G 15 A_Chase
+		CV04 H 15
+		CV04 G 15 A_Chase
+		CV04 H 15
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		Loop
+	Death1:
+		TNT1 A 0 A_SpawnItem ("DeadCivilian4_1")
+		Stop
+	Death2:
+		TNT1 A 0 A_SpawnItem ("DeadCivilian4_2")
+		Stop
+	XDeath:
+		TNT1 A 0
+        TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+        AXZ5 BCDEFG 4
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		AXZ5 H 70
+		TNT1 A 0 A_CustomMissile ("CorpsePRLD_BloodFloorNRNew", 0, 0, random (0, 360), 2, random (0, 90))
+		AXZ5 H -1
+	}
+}
+Actor InjuredCivilian4_2 : InjuredCivilian4_1
+{
+    PainSound "act2_agony"
+	DeathSound"act2_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act2_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian4_3 : InjuredCivilian4_1
+{
+    PainSound "act4_agony"
+	DeathSound"act4_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act4_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian4_4 : InjuredCivilian4_1
+{
+    PainSound "act5_agony"
+	DeathSound"act5_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act5_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian4_5 : InjuredCivilian4_1
+{
+    PainSound "act6_agony"
+	DeathSound"act6_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act6_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
+	}
+}
+Actor InjuredCivilian4_6 : InjuredCivilian4_1
+{
+    PainSound "act8_agony"
+	DeathSound"act8_mercy"
+	States
+	{
+    Death.fire:
+	Death.Flames:
+	Death.burn:
+	Death.flame:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("act8_burn")
+		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }

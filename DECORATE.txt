@@ -41,6 +41,7 @@
 #include "decorate/monsters/Postal3dMonster.txt"
 //civilians
 #include "Decorate/monsters/Civilians.txt"
+#include "Decorate/monsters/CiviliansSPECIAL.txt"
 //hostiles
 #include "Decorate/monsters/Military.txt" //can you tell this the first thing made for the project?
 #include "Decorate/monsters/POLICEspecial.txt"
@@ -49,7 +50,7 @@
 #include  "Decorate/monsters/Rocketeers.txt"
 
 //Player Classes
-//#include "Decorate/Player/Player.txt" issazscriptnow
+#include "Decorate/Player/Player.txt"
 
 //Replacers for Vanilla DOOM
 #include "Decorate/DOOMREPLACERS.txt"

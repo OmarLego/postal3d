@@ -44,19 +44,19 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
     Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Changeflag("NOPAIN", 0)
-		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheck")
+		//TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheck")
         DUDE E 1
 		TNT1 A 0 A_Changeflag("THRUSPECIES", 0)
 		Loop
     See:
         DUDE A 4
-		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
+		//TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
         DUDE B 4
-		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
+		//TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
 		DUDE C 4
-		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
+		//TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
 		DUDE D 4
-		TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
+		//TNT1 A 0 A_JumpIfInventory("SpecialAction", 1, "SpecialActionCheckOnTheMoveThisStateNameIsReallyLongDamnBro")
         Loop
 	Missile:
 		DUDE E 12
@@ -102,7 +102,6 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 		
 		TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
 		TNT1 A 0 A_ChangeFlag("INVULNERABLE", 1)
-		//TNT1 A 0 A_SpawnItemEx("Sheriff1Execute",2,0,-10,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_SpawnItem("Sheriff1Execute", 4)
 		Goto Missile
 	}

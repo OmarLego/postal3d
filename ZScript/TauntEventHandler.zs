@@ -3,7 +3,7 @@ class SaySomethingOnKill : EventHandler
     const CHAN_TAUNT = 42; //taunt sound channel id
     
     const TAUNTDELAY = 200;
-    const TAUNTCHANCE = 85;    
+    const TAUNTCHANCE = 38;//85;    
     
     transient int lastTauntTic;
     transient int lastKillTic;
@@ -31,18 +31,39 @@ class SaySomethingOnKill : EventHandler
             
             if ((lastTauntTic <= 0 || level.time - lastTauntTic >= TAUNTDELAY) && random[tsnd](1, 100) <= TAUNTCHANCE)
             {
-				if(e.thing.target.FindInventory("PRLD_BulletsSelected"))
-				{
-					PlayTaunt("DudeTalkBullet", ppawn);
-					lastTauntTic = level.time;
-				}
 				if(e.thing.target.FindInventory("PRLD_MacheteSelected"))
 				{
+					//PlayTaunt("Dude/Machete/Kill", ppawn);
 					PlayTaunt("DudeTalk", ppawn);
 					lastTauntTic = level.time;
+					return;
 				}
-                /*PlayTaunt("DudeTalk", ppawn);
-                lastTauntTic = level.time;*/
+				if(e.thing.target.FindInventory("PRLD_PipebombSelected"))
+				{
+					PlayTaunt("Dude/Grenade/Kill", ppawn);
+					lastTauntTic = level.time;
+					return;
+				}
+				if(e.thing.target.FindInventory("PRLD_GrenadeSelected"))
+				{
+					PlayTaunt("Dude/Grenade/Kill", ppawn);
+					lastTauntTic = level.time;
+					return;
+				}
+				if(e.thing.target.FindInventory("PRLD_ExplosiveSelected"))
+				{
+					PlayTaunt("Dude/Explosive/Kill", ppawn);
+					lastTauntTic = level.time;
+					return;
+				}
+				if(e.thing.target.FindInventory("PRLD_PyrotechnicSelected"))
+				{
+					PlayTaunt("Dude/Pyrotechnic/Kill", ppawn);
+					lastTauntTic = level.time;
+					return;
+				}
+                PlayTaunt("DudeTalk", ppawn);
+                lastTauntTic = level.time;
             }
             
             lastKillTic = level.time;

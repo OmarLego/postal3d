@@ -36,86 +36,156 @@ $playeralias	Dude	Dude	*pain75	dude/pain
 $playeralias	Dude	Dude	*pain50	dude/pain
 $playeralias	Dude	Dude	*pain25	dude/pain
 $playeralias	Dude	Dude	*death	dude/death
+$playeralias	Dude	Dude	*xdeath	dude/groanmale2
 $playeralias    Dude	Dude    *step       player/step
 $playeralias    Dude	Dude    *splash     player/splash
 
-
-
-//Redux Voiceover (going to be replaced by the original lines upscaled to hq) (most of it is still in the normal sndinfo this is just the generic ones)
-$RANDOM KillSeriesLines { KSL1 KSL2 KSL3 KSL4 KSL5 KSL6 KSL7 KSL8 KSL9 KSL10 KSL11 KSL12 KSL13 KSL14 KSL15 KSL16 }
-KSL1	"Sounds/Demon/KillSeriesLines/Dude-DamnImGood01.ogg"
-KSL2	"Sounds/Demon/KillSeriesLines/Dude-DamnImGood02.ogg"
-KSL3	"Sounds/Demon/KillSeriesLines/Dude-DeathIsFriend01.ogg"
-KSL4	"Sounds/Demon/KillSeriesLines/Dude-DeathIsFriend02.ogg"
-KSL5	"Sounds/Demon/KillSeriesLines/Dude-DeathIsMaster01.ogg"
-KSL6	"Sounds/Demon/KillSeriesLines/Dude-ExterminatorsBack01.ogg"
-KSL7	"Sounds/Demon/KillSeriesLines/Dude-GoinPostal01.ogg"
-KSL8	"Sounds/Demon/KillSeriesLines/Dude-GoinPostal02.ogg"
-KSL9	"Sounds/Demon/KillSeriesLines/Dude-JudgeJury01.ogg"
-KSL10	"Sounds/Demon/KillSeriesLines/Dude-KickinAss01.ogg"
-KSL11	"Sounds/Demon/KillSeriesLines/Dude-KickinAss02.ogg"
-KSL12	"Sounds/Demon/KillSeriesLines/Dude-NeverLikedYou01.ogg"
-KSL13	"Sounds/Demon/KillSeriesLines/Dude-NeverLikedYou02.ogg"
-KSL14	"Sounds/Demon/KillSeriesLines/Dude-Postal01.ogg"
-KSL15	"Sounds/Demon/KillSeriesLines/Dude-Postal02.ogg"
-KSL16	"Sounds/Demon/KillSeriesLines/Dude-YoureTheMan01.ogg"
 
 
 //Dude Voiceover (Original) (and better) (only the "I regret nothing" line is upscaled atm)
 
 
 
-demon/burn				"Sounds/Voiceovers/Demon/burn 1-head.ogg"
-demon/burnbaby			"Sounds/Voiceovers/Demon/burnbaby 1-head.ogg"
-demon/buttsauce			"Sounds/Voiceovers/Demon/buttsauce 1-head.ogg"
-demon/chicken			"Sounds/Voiceovers/Demon/chicken 1-head.ogg"
-demon/die1				"Sounds/Voiceovers/Demon/die 1-head.ogg"
-demon/die2				"Sounds/Voiceovers/Demon/die 2-head.ogg"
-demon/dontbe			"Sounds/Voiceovers/Demon/dontbe 1-head.ogg"
-demon/evil				"Sounds/Voiceovers/Demon/evil 1-head.ogg"
-demon/feelheat			"Sounds/Voiceovers/Demon/feelheat 2-head.ogg"
-demon/getem1			"Sounds/Voiceovers/Demon/getem 1-head.ogg"
-demon/getem2			"Sounds/Voiceovers/Demon/getem 2-head.ogg"
-demon/gone1				"Sounds/Voiceovers/Demon/gone 1-head.ogg"
-demon/gone2				"Sounds/Voiceovers/Demon/gone 2-head.ogg"
-demon/good				"Sounds/Voiceovers/Demon/good 1-head.ogg"
-demon/goodone			"Sounds/Voiceovers/Demon/goodone 1-head.ogg"
-demon/gopostal			"Sounds/Voiceovers/Demon/gopostal 1-head.ogg"
-demon/ha				"Sounds/Voiceovers/Demon/ha 1-head.ogg"
-demon/hesout			"Sounds/Voiceovers/Demon/hesout 1-head.ogg"
-demon/inhell			"Sounds/Voiceovers/Demon/inhell 1-head.ogg"
-demon/ithot				"Sounds/Voiceovers/Demon/ithot 1-head.ogg"
-demon/kickass			"Sounds/Voiceovers/Demon/kickass 1-head.ogg"
-demon/laugh1			"Sounds/Voiceovers/Demon/laugh 1-head.ogg"
-demon/laugh2			"Sounds/Voiceovers/Demon/laugh 2-head.ogg"
-demon/likeyou			"Sounds/Voiceovers/Demon/likeyou 1-head.ogg"
-demon/ohbaby			"Sounds/Voiceovers/Demon/ohbaby 1-head.ogg"
-demon/oj				"Sounds/Voiceovers/Demon/oj 1-head.ogg"
-demon/onlyweapons		"Sounds/Voiceovers/Demon/onlyweapons 1-head.ogg"
-demon/postal			"Sounds/Voiceovers/Demon/postal 1-head.ogg"
-demon/noregrets			"Sounds/Voiceovers/Demon/noregrets 1-head.ogg"
-demon/sissy			 	"Sounds/Voiceovers/Demon/sissy 1-head.ogg"
-demon/bleed1			"Sounds/Voiceovers/Demon/bleed 1-head.ogg"
-demon/bleed2			"Sounds/Voiceovers/Demon/bleed 2-head.ogg"
-demon/blowup			"Sounds/Voiceovers/Demon/blowup 1-head.ogg"
-demon/buckweat			"Sounds/Voiceovers/Demon/buckweat 6-head.ogg"
-//unnamed voiceovers
-demon/holeinone			"Sounds/Voiceovers/Demon/d1-k 04.ogg"
-demon/hottowels			"Sounds/Voiceovers/Demon/d2-k 16.ogg"
-demon/effectmytip		"Sounds/Voiceovers/Demon/d2-k 19.ogg"
-demon/massageafter		"Sounds/Voiceovers/Demon/d2-k 21.ogg"
-demon/disneyland		"Sounds/Voiceovers/Demon/d2-k 25.ogg"
-demon/killforamassage		"Sounds/Voiceovers/Demon/d2-k 25.ogg"
-//29
-//execution Lines
-$random demon/lines/execution { demon/die1 demon/die2 demon/inhell }
-//generic kill lines
-//$alias DudeTalk KillSeriesLines
-$random DudeTalk { KSL1 KSL2 KSL3 KSL4 KSL5 KSL6 demon/gopostal demon/gopostal KSL9 demon/kickass demon/kickass demon/likeyou demon/likeyou demon/postal demon/postal KSL16 }
+/*demon/burn				"Sounds/Voiceovers/Demon/burn.ogg"
+demon/burnbaby			"Sounds/Voiceovers/Demon/burnbaby.ogg"
+demon/butsauce			"Sounds/Voiceovers/Demon/butsauce.ogg"
+demon/chicken			"Sounds/Voiceovers/Demon/chicken.ogg"
+demon/die1				"Sounds/Voiceovers/Demon/die1.ogg"
+demon/die2				"Sounds/Voiceovers/Demon/die2.ogg"
+demon/dontbe			"Sounds/Voiceovers/Demon/dontbe.ogg"
+demon/evil				"Sounds/Voiceovers/Demon/evil.ogg"
+demon/feelheat			"Sounds/Voiceovers/Demon/feelheat.ogg"
+demon/getem1			"Sounds/Voiceovers/Demon/getem1.ogg"
+demon/getem2			"Sounds/Voiceovers/Demon/getem2.ogg"
+demon/gone1				"Sounds/Voiceovers/Demon/gone1.ogg"
+demon/gone2				"Sounds/Voiceovers/Demon/gone2.ogg"
+demon/good				"Sounds/Voiceovers/Demon/good.ogg"
+demon/goodone			"Sounds/Voiceovers/Demon/goodone.ogg"
+demon/gopostal			"Sounds/Voiceovers/Demon/gopostal.ogg"
+demon/ha				"Sounds/Voiceovers/Demon/ha.ogg"
+demon/hesout			"Sounds/Voiceovers/Demon/hesout.ogg"
+demon/inhell			"Sounds/Voiceovers/Demon/inhell.ogg"
+demon/ithot				"Sounds/Voiceovers/Demon/ithot.ogg"
+demon/kickass			"Sounds/Voiceovers/Demon/kickass.ogg"
+demon/laugh1			"Sounds/Voiceovers/Demon/laugh1.ogg"
+demon/laugh2			"Sounds/Voiceovers/Demon/laugh2.ogg"
+demon/likeyou			"Sounds/Voiceovers/Demon/likeyou.ogg"
+demon/ohbaby			"Sounds/Voiceovers/Demon/ohbaby.ogg"
+demon/oj				"Sounds/Voiceovers/Demon/oj.ogg"
+demon/onlyweapons		"Sounds/Voiceovers/Demon/onlyweapons.ogg"
+demon/postal			"Sounds/Voiceovers/Demon/postal.ogg"
+demon/noregrets			"Sounds/Voiceovers/Demon/noregrets.ogg"
+demon/sissy			 	"Sounds/Voiceovers/Demon/sissy.ogg"
+demon/bleed1			"Sounds/Voiceovers/Demon/bleed1.ogg"
+demon/bleed2			"Sounds/Voiceovers/Demon/bleed2.ogg"
+demon/blowup			"Sounds/Voiceovers/Demon/blowup.ogg"
+demon/buckweat			"Sounds/Voiceovers/Demon/buckweat.ogg"*/
 
-WSL8	"Sounds/Demon/WeaponSelectionLines/Dude-MachineGun-TheGunKnows01.ogg"
-WSL9	"Sounds/Demon/WeaponSelectionLines/Dude-MachineGun-TheGunKnows02.ogg"
-WSL10	"Sounds/Demon/WeaponSelectionLines/Dude-MachineGun-WeaponUnderstands01.ogg"
-WSL11	"Sounds/Demon/WeaponSelectionLines/Dude-MachineGun-WeaponUnderstands02.ogg"
 
-$random DudeTalkBullet { WSL8 WSL9 WSL10 WSL11 }
+
+$random DudeTalk { demon/buckweat demon/casedismissed demon/damnigood1 demon/damnigood2 demon/damnigood3 demon/exterminator1 demon/exterminator2 demon/gopostal1 demon/gopostal2 demon/judgejury demon/kickass demon/likeyou1 demon/likeyou2 demon/likeyou3 demon/myfriend1 demon/myfriend2 demon/myfriend3 demon/mymaster demon/oj demon/postal1 demon/postal2 demon/postal3 demon/prosecution demon/satisfaction demon/youretheman }
+demon/buckweat			"Sounds/Voiceovers/Demon/buckweat.ogg"
+demon/casedismissed		"Sounds/Voiceovers/Demon/casedismissed.ogg"	
+demon/damnigood1		"Sounds/Voiceovers/Demon/damnigood1.ogg"
+demon/damnigood2		"Sounds/Voiceovers/Demon/damnigood2.ogg"
+demon/damnigood3		"Sounds/Voiceovers/Demon/damnigood3.ogg"
+demon/exterminator1		"Sounds/Voiceovers/Demon/exterminator1.ogg"
+demon/exterminator2		"Sounds/Voiceovers/Demon/exterminator2.ogg"
+demon/gopostal1			"Sounds/Voiceovers/Demon/gopostal1.ogg"
+demon/gopostal2			"Sounds/Voiceovers/Demon/gopostal2.ogg"
+demon/judgejury			"Sounds/Voiceovers/Demon/judgejury.ogg"
+demon/kickass			"Sounds/Voiceovers/Demon/kickass.ogg"
+demon/likeyou1			"Sounds/Voiceovers/Demon/likeyou1.ogg"
+demon/likeyou2			"Sounds/Voiceovers/Demon/likeyou2.ogg"
+demon/likeyou3			"Sounds/Voiceovers/Demon/likeyou3.ogg"
+demon/myfriend1			"Sounds/Voiceovers/Demon/myfriend1.ogg"
+demon/myfriend2			"Sounds/Voiceovers/Demon/myfriend2.ogg"
+demon/myfriend3			"Sounds/Voiceovers/Demon/myfriend3.ogg"
+demon/mymaster			"Sounds/Voiceovers/Demon/mymaster.ogg"
+demon/oj				"Sounds/Voiceovers/Demon/oj.ogg"
+demon/postal1			"Sounds/Voiceovers/Demon/postal1.ogg"
+demon/postal2			"Sounds/Voiceovers/Demon/postal2.ogg"
+demon/postal3			"Sounds/Voiceovers/Demon/postal3.ogg"
+demon/prosecution		"Sounds/Voiceovers/Demon/prosecution.ogg"
+demon/satisfaction		"Sounds/Voiceovers/Demon/satisfaction.ogg"
+demon/youretheman		"Sounds/Voiceovers/Demon/youretheman.ogg"
+
+
+$Random Dude/Explosive/Kill { demon/angelofdeath demon/butsauce	demon/goodone1 demon/goodone2 demon/ha demon/hesout demon/killingisgood	demon/seeyouinhell demon/waitthatwasme demon/whatamess }
+demon/angelofdeath		"Sounds/Voiceovers/Demon/Explosive/angelofdeath.ogg"
+demon/butsauce			"Sounds/Voiceovers/Demon/Explosive/butsauce.ogg"
+demon/goodone1			"Sounds/Voiceovers/Demon/Explosive/goodone1.ogg"
+demon/goodone2			"Sounds/Voiceovers/Demon/Explosive/goodone2.ogg"
+demon/ha				"Sounds/Voiceovers/Demon/Explosive/ha.ogg"
+demon/hesout			"Sounds/Voiceovers/Demon/Explosive/hesout.ogg"
+demon/killingisgood		"Sounds/Voiceovers/Demon/Explosive/killingisgood.ogg"
+demon/seeyouinhell		"Sounds/Voiceovers/Demon/Explosive/seeyouinhell.ogg"
+demon/waitthatwasme		"Sounds/Voiceovers/Demon/Explosive/waitthatwasme.ogg"
+demon/whatamess			"Sounds/Voiceovers/Demon/Explosive/whatamess.ogg"
+
+$Random Dude/Grenade/Kill { demon/grenadeworks demon/angelofdeath demon/butsauce demon/goodone1 demon/goodone2 demon/ha demon/hesout demon/killingisgood	demon/seeyouinhell demon/waitthatwasme demon/whatamess }
+demon/grenadeworks		"Sounds/Voiceovers/Demon/Explosive/grenade/grenadeworks.ogg"
+
+
+$Random Dude/Pyrotechnic/Kill { demon/burn demon/burnbaby1 demon/burnbaby2 demon/burnbaby3 demon/chicken1 demon/chicken2 demon/chicken3 demon/feelheat1 demon/feelheat2 demon/hotinhereorjust1 demon/hotinhereorjust2 demon/iloveagoodbbq1 demon/iloveagoodbbq2 demon/iloveagoodbbq3 demon/ithot demon/smellsomething demon/letemburn1 demon/letemburn2 demon/themwelldone demon/scorchedearth1 demon/scorchedearth2 demon/toasty1 demon/toasty2 }
+demon/burn				"Sounds/Voiceovers/Demon/Burn/burn.ogg"
+demon/burnbaby1			"Sounds/Voiceovers/Demon/Burn/burnbaby1.ogg"
+demon/burnbaby2			"Sounds/Voiceovers/Demon/Burn/burnbaby2.ogg"
+demon/burnbaby3			"Sounds/Voiceovers/Demon/Burn/burnbaby3.ogg"
+demon/chicken1			"Sounds/Voiceovers/Demon/Burn/chicken1.ogg"
+demon/chicken2			"Sounds/Voiceovers/Demon/Burn/chicken2.ogg"
+demon/chicken3			"Sounds/Voiceovers/Demon/Burn/chicken3.ogg"
+demon/feelheat1			"Sounds/Voiceovers/Demon/Burn/feelheat1.ogg"
+demon/feelheat2			"Sounds/Voiceovers/Demon/Burn/feelheat2.ogg"
+demon/hotinhereorjust1	"Sounds/Voiceovers/Demon/Burn/hotinhereorjust1.ogg"
+demon/hotinhereorjust2	"Sounds/Voiceovers/Demon/Burn/hotinhereorjust2.ogg"
+demon/iloveagoodbbq1	"Sounds/Voiceovers/Demon/Burn/iloveagoodbbq1.ogg"
+demon/iloveagoodbbq2	"Sounds/Voiceovers/Demon/Burn/iloveagoodbbq2.ogg"
+demon/iloveagoodbbq3	"Sounds/Voiceovers/Demon/Burn/iloveagoodbbq3.ogg"
+demon/ithot				"Sounds/Voiceovers/Demon/Burn/ithot.ogg"
+demon/smellsomething	"Sounds/Voiceovers/Demon/Burn/smellsomething.ogg"
+demon/letemburn1		"Sounds/Voiceovers/Demon/Burn/letemburn1.ogg"
+demon/letemburn2		"Sounds/Voiceovers/Demon/Burn/letemburn2.ogg"
+demon/themwelldone		"Sounds/Voiceovers/Demon/Burn/themwelldone.ogg"
+demon/scorchedearth1	"Sounds/Voiceovers/Demon/Burn/scorchedearth1.ogg"
+demon/scorchedearth2	"Sounds/Voiceovers/Demon/Burn/scorchedearth2.ogg"
+demon/toasty1			"Sounds/Voiceovers/Demon/Burn/toasty1.ogg"
+demon/toasty2			"Sounds/Voiceovers/Demon/Burn/toasty2.ogg"
+
+
+$Alias Dude/MG/Select demon/onlyweapons
+demon/onlyweapons		"Sounds/Voiceovers/Demon/MGun/onlyweapons.ogg"
+
+$random Dude/MG/Shooting { demon/die1 demon/die2 demon/eatleadsucker }
+demon/die1				"Sounds/Voiceovers/Demon/MGun/die1.ogg"
+demon/die2				"Sounds/Voiceovers/Demon/MGun/die2.ogg"
+demon/eatleadsucker		"Sounds/Voiceovers/Demon/MGun/eatleadsucker.ogg"
+
+
+$Alias Dude/DB/Select demon/madeinUSA
+demon/madeinUSA		"Sounds/Voiceovers/Demon/Shotgun/madeinUSA.ogg"
+
+
+$Random Dude/SprayCannon/Select { demon/laugh1 demon/laugh2 }
+demon/laugh1		"Sounds/Voiceovers/Demon/Shotgun/laugh1.ogg"
+demon/laugh2		"Sounds/Voiceovers/Demon/Shotgun/laugh2.ogg"
+$Alias Dude/DB/Select demon/madeinUSA
+demon/madeinUSA		"Sounds/Voiceovers/Demon/Shotgun/madeinUSA.ogg"
+
+
+/*$Random Dude/Execute { demon/begforthis demon/bleed1 demon/bleed2 demon/die1 demon/die2 demon/dieweakling demon/doitquietly demon/dontbe demon/feelmywrath demon/gooddaytodie demon/haveabooboo demon/inhell demon/pinneddown demon/sissy demon/stillwheninjured demon/thedogyouare demon/wussy }
+demon/begforthis
+demon/bleed1
+demon/bleed2
+demon/dieweakling
+demon/doitquietly
+demon/dontbe
+demon/feelmywrath
+demon/gooddaytodie
+demon/haveabooboo
+demon/inhell
+demon/pinneddown
+demon/sissy
+demon/stillwheninjured
+demon/thedogyouare
+demon/wussy

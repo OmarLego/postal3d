@@ -195,10 +195,10 @@ Skill nightmare
 Map PRLD01 "$TXT_PRLD01"
 {
 	music = ""
-	//music = "WNDLIGHT"
+	sky1 = "SKYHOME"
+	//LightMode = 3 //recommended but i like messing around with light settings so
 	fade = "2d9bba"
 	fogdensity = 2
-	sky1 = "SKYHOME"
 	MONSTERFALLINGDAMAGE
 	FALLINGDAMAGE
 }

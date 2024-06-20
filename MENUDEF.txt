@@ -83,7 +83,7 @@ OptionMenu "Postal3dMenu"
   //Option "Max Wall Decals", "cl_maxdecals", "maxdecals"
   //Option "Max Gibs and Blood Pools", "sv_corpsequeuesize", "maxgibs"
   Slider "Max Wall Decals", "cl_maxdecals", 0, 10000, 10, 0
-  Slider "Max Gibs/Blood Pools", "sv_corpsequeuesize", 0, 256, 10, 0
+  Slider "Max Gibs/Blood Pools", "sv_corpsequeuesize", 1, 3000, 10, 0
   
 	StaticText ""
 	StaticText "Weather Settings", Gold

@@ -1,8 +1,8 @@
-//Sheriff1 (special moustache sheriff)(special my ass)(originally i was going to make the mustache be a variant alongisde clean shaved instead of just being there ont he sheriff but thats too much for me fuck that)
+//              Sheriff (special moustache sheriff)(special my ass)(originally i was going to make the mustache be a variant alongisde clean shaved instead of just being there ont he sheriff but thats too much for me fuck that)
 
 
 
-Actor Sheriff1Execute : PrldMonsterExecute
+/*Actor Sheriff1Execute : PrldMonsterExecute
 {
 	painsound"act1_mercy"
 	States
@@ -49,7 +49,7 @@ Actor Sheriff1Execute : PrldMonsterExecute
 		TNT1 A 0 A_SpawnItem ("DeadSheriff2", 0)
 		Stop
 	}
-}
+}*/
 //i love you too aaron <3
 //i should keep this in the code
 //:3
@@ -57,7 +57,6 @@ Actor Sheriff1Execute : PrldMonsterExecute
 //thats my bestie ok i have a right
 ACTOR InjuredSheriff1 : PrldInjuredMonster
 {
-    PainSound "act1_agony"
     States
     {
 	active:
@@ -68,8 +67,8 @@ ACTOR InjuredSheriff1 : PrldInjuredMonster
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		SHRF G 7 A_Look
 		Loop
 	See:
@@ -79,25 +78,25 @@ ACTOR InjuredSheriff1 : PrldInjuredMonster
 		SHRF H 15
 		SHRF G 15 A_Chase
 		SHRF H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		SHRF G 15 A_Chase
 		SHRF H 15
 		SHRF G 15 A_Chase
 		SHRF H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		SHRF G 15 A_Chase
 		SHRF H 15
 		SHRF G 15 A_Chase
 		SHRF H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff1", 0)
@@ -105,13 +104,6 @@ ACTOR InjuredSheriff1 : PrldInjuredMonster
 	Death2:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff2", 0)
 		Stop
-    Death.fire:
-	Death.Flames:
-	Death.burn:
-	Death.flame:
-		TNT1 A 0
-		TNT1 A 0 A_PlaySound("act1_burn")
-		TNT1 A 0 A_Jump(256, "DieBurning")
 	XDeath:
 		TNT1 A 0
         TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 48, 0, random (0, 360), 2, random (0, 160))
@@ -128,6 +120,7 @@ ACTOR InjuredSheriff1 : PrldInjuredMonster
 Actor InjuredSheriff1_2 : InjuredSheriff1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -142,6 +135,7 @@ Actor InjuredSheriff1_2 : InjuredSheriff1
 Actor InjuredSheriff1_3 : InjuredSheriff1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -156,6 +150,7 @@ Actor InjuredSheriff1_3 : InjuredSheriff1
 Actor InjuredSheriff1_4 : InjuredSheriff1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -170,6 +165,7 @@ Actor InjuredSheriff1_4 : InjuredSheriff1
 Actor InjuredSheriff1_5 : InjuredSheriff1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -184,6 +180,7 @@ Actor InjuredSheriff1_5 : InjuredSheriff1
 Actor InjuredSheriff1_6 : InjuredSheriff1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
@@ -364,8 +361,8 @@ ACTOR InjuredSheriff2_1 : PrldInjuredMonster
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		SHR2 G 7 A_Look
 		Loop
 	See:
@@ -375,25 +372,25 @@ ACTOR InjuredSheriff2_1 : PrldInjuredMonster
 		SHR2 H 15
 		SHR2 G 15 A_Chase
 		SHR2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		SHR2 G 15 A_Chase
 		SHR2 H 15
 		SHR2 G 15 A_Chase
 		SHR2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		SHR2 G 15 A_Chase
 		SHR2 H 15
 		SHR2 G 15 A_Chase
 		SHR2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff2_1", 0)
@@ -401,13 +398,6 @@ ACTOR InjuredSheriff2_1 : PrldInjuredMonster
 	Death2:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff2_2", 0)
 		Stop
-    Death.fire:
-	Death.Flames:
-	Death.burn:
-	Death.flame:
-		TNT1 A 0
-		TNT1 A 0 A_PlaySound("act1_burn")
-		TNT1 A 0 A_Jump(256, "DieBurning")
 	XDeath:
 		TNT1 A 0
         TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 48, 0, random (0, 360), 2, random (0, 160))
@@ -424,6 +414,7 @@ ACTOR InjuredSheriff2_1 : PrldInjuredMonster
 Actor InjuredSheriff2_2 : InjuredSheriff2_1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -438,6 +429,7 @@ Actor InjuredSheriff2_2 : InjuredSheriff2_1
 Actor InjuredSheriff2_3 : InjuredSheriff2_1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -452,6 +444,7 @@ Actor InjuredSheriff2_3 : InjuredSheriff2_1
 Actor InjuredSheriff2_4 : InjuredSheriff2_1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -466,6 +459,7 @@ Actor InjuredSheriff2_4 : InjuredSheriff2_1
 Actor InjuredSheriff2_5 : InjuredSheriff2_1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -480,6 +474,7 @@ Actor InjuredSheriff2_5 : InjuredSheriff2_1
 Actor InjuredSheriff2_6 : InjuredSheriff2_1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
@@ -621,8 +616,8 @@ ACTOR InjuredSheriff3_1 : PrldInjuredMonster
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		SHR3 G 7 A_Look
 		Loop
 	See:
@@ -632,25 +627,25 @@ ACTOR InjuredSheriff3_1 : PrldInjuredMonster
 		SHR3 H 15
 		SHR3 G 15 A_Chase
 		SHR3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		SHR3 G 15 A_Chase
 		SHR3 H 15
 		SHR3 G 15 A_Chase
 		SHR3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		SHR3 G 15 A_Chase
 		SHR3 H 15
 		SHR3 G 15 A_Chase
 		SHR3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff3_1", 0)
@@ -658,13 +653,6 @@ ACTOR InjuredSheriff3_1 : PrldInjuredMonster
 	Death2:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff3_2", 0)
 		Stop
-    Death.fire:
-	Death.Flames:
-	Death.burn:
-	Death.flame:
-		TNT1 A 0
-		TNT1 A 0 A_PlaySound("act1_burn")
-		TNT1 A 0 A_Jump(256, "DieBurning")
 	XDeath:
 		TNT1 A 0
         TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 48, 0, random (0, 360), 2, random (0, 160))
@@ -681,6 +669,7 @@ ACTOR InjuredSheriff3_1 : PrldInjuredMonster
 Actor InjuredSheriff3_2 : InjuredSheriff3_1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -695,6 +684,7 @@ Actor InjuredSheriff3_2 : InjuredSheriff3_1
 Actor InjuredSheriff3_3 : InjuredSheriff3_1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -709,6 +699,7 @@ Actor InjuredSheriff3_3 : InjuredSheriff3_1
 Actor InjuredSheriff3_4 : InjuredSheriff3_1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -723,6 +714,7 @@ Actor InjuredSheriff3_4 : InjuredSheriff3_1
 Actor InjuredSheriff3_5 : InjuredSheriff3_1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -737,6 +729,7 @@ Actor InjuredSheriff3_5 : InjuredSheriff3_1
 Actor InjuredSheriff3_6 : InjuredSheriff3_1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
@@ -866,7 +859,7 @@ actor SurpriseSheriff3_6 : SurpriseSheriff3_1
 
 
 
-//Officer1 (white male blue officer)
+//                     Generic Cops/Officers/Whateverthefuck
 
 
 
@@ -882,8 +875,8 @@ ACTOR InjuredOfficer1 : InjuredSheriff1
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		POH1 G 1 A_Look
 		Loop
 	See:
@@ -893,25 +886,25 @@ ACTOR InjuredOfficer1 : InjuredSheriff1
 		POH1 H 15
 		POH1 G 15 A_Chase
 		POH1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		POH1 G 15 A_Chase
 		POH1 H 15
 		POH1 G 15 A_Chase
 		POH1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		POH1 G 15 A_Chase
 		POH1 H 15
 		POH1 G 15 A_Chase
 		POH1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadOfficer1_1", 0)
@@ -935,6 +928,7 @@ ACTOR InjuredOfficer1 : InjuredSheriff1
 Actor InjuredOfficer1_2 : InjuredOfficer1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -949,6 +943,7 @@ Actor InjuredOfficer1_2 : InjuredOfficer1
 Actor InjuredOfficer1_3 : InjuredOfficer1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -963,6 +958,7 @@ Actor InjuredOfficer1_3 : InjuredOfficer1
 Actor InjuredOfficer1_4 : InjuredOfficer1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -977,6 +973,7 @@ Actor InjuredOfficer1_4 : InjuredOfficer1
 Actor InjuredOfficer1_5 : InjuredOfficer1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -991,6 +988,7 @@ Actor InjuredOfficer1_5 : InjuredOfficer1
 Actor InjuredOfficer1_6 : InjuredOfficer1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
@@ -1002,12 +1000,6 @@ Actor InjuredOfficer1_6 : InjuredOfficer1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-
-
-
-//Officer2 (black male blue officer)
-
-
 
 ACTOR InjuredOfficer2_1 : InjuredSheriff1
 {
@@ -1021,8 +1013,8 @@ ACTOR InjuredOfficer2_1 : InjuredSheriff1
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		POH2 G 1 A_Look
 		Loop
 	See:
@@ -1032,25 +1024,25 @@ ACTOR InjuredOfficer2_1 : InjuredSheriff1
 		POH2 H 15
 		POH2 G 15 A_Chase
 		POH2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		POH2 G 15 A_Chase
 		POH2 H 15
 		POH2 G 15 A_Chase
 		POH2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		POH2 G 15 A_Chase
 		POH2 H 15
 		POH2 G 15 A_Chase
 		POH2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadOfficer2_1", 0)
@@ -1074,6 +1066,7 @@ ACTOR InjuredOfficer2_1 : InjuredSheriff1
 Actor InjuredOfficer2_2 : InjuredOfficer2_1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -1088,6 +1081,7 @@ Actor InjuredOfficer2_2 : InjuredOfficer2_1
 Actor InjuredOfficer2_3 : InjuredOfficer2_1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -1102,6 +1096,7 @@ Actor InjuredOfficer2_3 : InjuredOfficer2_1
 Actor InjuredOfficer2_4 : InjuredOfficer2_1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -1116,6 +1111,7 @@ Actor InjuredOfficer2_4 : InjuredOfficer2_1
 Actor InjuredOfficer2_5 : InjuredOfficer2_1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -1130,6 +1126,7 @@ Actor InjuredOfficer2_5 : InjuredOfficer2_1
 Actor InjuredOfficer2_6 : InjuredOfficer2_1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
@@ -1141,12 +1138,6 @@ Actor InjuredOfficer2_6 : InjuredOfficer2_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-
-
-
-//Officer3 (brown male blue officer)
-
-
 
 ACTOR InjuredOfficer3_1 : InjuredSheriff1
 {
@@ -1160,8 +1151,8 @@ ACTOR InjuredOfficer3_1 : InjuredSheriff1
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		POH3 G 1 A_Look
 		Loop
 	See:
@@ -1171,25 +1162,25 @@ ACTOR InjuredOfficer3_1 : InjuredSheriff1
 		POH3 H 15
 		POH3 G 15 A_Chase
 		POH3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		POH3 G 15 A_Chase
 		POH3 H 15
 		POH3 G 15 A_Chase
 		POH3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		POH3 G 15 A_Chase
 		POH3 H 15
 		POH3 G 15 A_Chase
 		POH3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadOfficer3_1", 0)
@@ -1213,6 +1204,7 @@ ACTOR InjuredOfficer3_1 : InjuredSheriff1
 Actor InjuredOfficer3_2 : InjuredOfficer3_1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -1227,6 +1219,7 @@ Actor InjuredOfficer3_2 : InjuredOfficer3_1
 Actor InjuredOfficer3_3 : InjuredOfficer3_1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -1241,6 +1234,7 @@ Actor InjuredOfficer3_3 : InjuredOfficer3_1
 Actor InjuredOfficer3_4 : InjuredOfficer3_1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -1255,6 +1249,7 @@ Actor InjuredOfficer3_4 : InjuredOfficer3_1
 Actor InjuredOfficer3_5 : InjuredOfficer3_1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -1269,6 +1264,7 @@ Actor InjuredOfficer3_5 : InjuredOfficer3_1
 Actor InjuredOfficer3_6 : InjuredOfficer3_1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
@@ -1283,7 +1279,7 @@ Actor InjuredOfficer3_6 : InjuredOfficer3_1
 
 
 
-//RifleOfficer1 (white male blue RifleOfficer)
+//            Rifle Cops
 
 
 
@@ -1299,8 +1295,8 @@ ACTOR InjuredRifleOfficer1 : InjuredSheriff1
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		ROH1 G 1 A_Look
 		Loop
 	See:
@@ -1310,25 +1306,25 @@ ACTOR InjuredRifleOfficer1 : InjuredSheriff1
 		ROH1 H 15
 		ROH1 G 15 A_Chase
 		ROH1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		ROH1 G 15 A_Chase
 		ROH1 H 15
 		ROH1 G 15 A_Chase
 		ROH1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		ROH1 G 15 A_Chase
 		ROH1 H 15
 		ROH1 G 15 A_Chase
 		ROH1 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer1_1", 0)
@@ -1352,6 +1348,7 @@ ACTOR InjuredRifleOfficer1 : InjuredSheriff1
 Actor InjuredRifleOfficer1_2 : InjuredRifleOfficer1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -1366,6 +1363,7 @@ Actor InjuredRifleOfficer1_2 : InjuredRifleOfficer1
 Actor InjuredRifleOfficer1_3 : InjuredRifleOfficer1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -1380,6 +1378,7 @@ Actor InjuredRifleOfficer1_3 : InjuredRifleOfficer1
 Actor InjuredRifleOfficer1_4 : InjuredRifleOfficer1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -1394,6 +1393,7 @@ Actor InjuredRifleOfficer1_4 : InjuredRifleOfficer1
 Actor InjuredRifleOfficer1_5 : InjuredRifleOfficer1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -1408,6 +1408,7 @@ Actor InjuredRifleOfficer1_5 : InjuredRifleOfficer1
 Actor InjuredRifleOfficer1_6 : InjuredRifleOfficer1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
@@ -1419,12 +1420,6 @@ Actor InjuredRifleOfficer1_6 : InjuredRifleOfficer1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-
-
-
-//RifleOfficer2 (black male blue RifleOfficer)
-
-
 
 ACTOR InjuredRifleOfficer2_1 : InjuredSheriff1
 {
@@ -1438,8 +1433,8 @@ ACTOR InjuredRifleOfficer2_1 : InjuredSheriff1
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		ROH2 G 1 A_Look
 		Loop
 	See:
@@ -1449,25 +1444,25 @@ ACTOR InjuredRifleOfficer2_1 : InjuredSheriff1
 		ROH2 H 15
 		ROH2 G 15 A_Chase
 		ROH2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		ROH2 G 15 A_Chase
 		ROH2 H 15
 		ROH2 G 15 A_Chase
 		ROH2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		ROH2 G 15 A_Chase
 		ROH2 H 15
 		ROH2 G 15 A_Chase
 		ROH2 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer2_1", 0)
@@ -1491,6 +1486,7 @@ ACTOR InjuredRifleOfficer2_1 : InjuredSheriff1
 Actor InjuredRifleOfficer2_2 : InjuredRifleOfficer2_1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -1505,6 +1501,7 @@ Actor InjuredRifleOfficer2_2 : InjuredRifleOfficer2_1
 Actor InjuredRifleOfficer2_3 : InjuredRifleOfficer2_1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -1519,6 +1516,7 @@ Actor InjuredRifleOfficer2_3 : InjuredRifleOfficer2_1
 Actor InjuredRifleOfficer2_4 : InjuredRifleOfficer2_1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -1533,6 +1531,7 @@ Actor InjuredRifleOfficer2_4 : InjuredRifleOfficer2_1
 Actor InjuredRifleOfficer2_5 : InjuredRifleOfficer2_1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -1547,6 +1546,7 @@ Actor InjuredRifleOfficer2_5 : InjuredRifleOfficer2_1
 Actor InjuredRifleOfficer2_6 : InjuredRifleOfficer2_1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
@@ -1558,12 +1558,6 @@ Actor InjuredRifleOfficer2_6 : InjuredRifleOfficer2_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-
-
-
-//RifleOfficer3 (brown male blue RifleOfficer)
-
-
 
 ACTOR InjuredRifleOfficer3_1 : InjuredSheriff1
 {
@@ -1577,8 +1571,8 @@ ACTOR InjuredRifleOfficer3_1 : InjuredSheriff1
 		Stop
 	Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_GiveInventory("IsDown", 1)
-		TNT1 A 0 A_GiveInventory("IsCrawling", 1)
+
+
 		ROH3 G 1 A_Look
 		Loop
 	See:
@@ -1588,25 +1582,25 @@ ACTOR InjuredRifleOfficer3_1 : InjuredSheriff1
 		ROH3 H 15
 		ROH3 G 15 A_Chase
 		ROH3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		ROH3 G 15 A_Chase
 		ROH3 H 15
 		ROH3 G 15 A_Chase
 		ROH3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		
 		ROH3 G 15 A_Chase
 		ROH3 H 15
 		ROH3 G 15 A_Chase
 		ROH3 H 15
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
+		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer3_1", 0)
@@ -1630,6 +1624,7 @@ ACTOR InjuredRifleOfficer3_1 : InjuredSheriff1
 Actor InjuredRifleOfficer3_2 : InjuredRifleOfficer3_1
 {
     PainSound "act2_agony"
+	DeathSound"act2_mercy"
 	States
 	{
     Death.fire:
@@ -1644,6 +1639,7 @@ Actor InjuredRifleOfficer3_2 : InjuredRifleOfficer3_1
 Actor InjuredRifleOfficer3_3 : InjuredRifleOfficer3_1
 {
     PainSound "act4_agony"
+	DeathSound"act4_mercy"
 	States
 	{
     Death.fire:
@@ -1658,6 +1654,7 @@ Actor InjuredRifleOfficer3_3 : InjuredRifleOfficer3_1
 Actor InjuredRifleOfficer3_4 : InjuredRifleOfficer3_1
 {
     PainSound "act5_agony"
+	DeathSound"act5_mercy"
 	States
 	{
     Death.fire:
@@ -1672,6 +1669,7 @@ Actor InjuredRifleOfficer3_4 : InjuredRifleOfficer3_1
 Actor InjuredRifleOfficer3_5 : InjuredRifleOfficer3_1
 {
     PainSound "act6_agony"
+	DeathSound"act6_mercy"
 	States
 	{
     Death.fire:
@@ -1686,6 +1684,7 @@ Actor InjuredRifleOfficer3_5 : InjuredRifleOfficer3_1
 Actor InjuredRifleOfficer3_6 : InjuredRifleOfficer3_1
 {
     PainSound "act8_agony"
+	DeathSound"act8_mercy"
 	States
 	{
     Death.fire:
