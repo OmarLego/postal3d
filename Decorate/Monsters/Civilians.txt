@@ -102,10 +102,10 @@ ACTOR Civilian1_1 : Postal3dMonster
 	Execute:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 72, RGF_PLAYERS | RGF_MISSILES, 1)
 		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_KickExec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 72, RGF_PLAYERS | RGF_MISSILES, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 72, RGF_PLAYERS | RGF_MISSILES, 1)
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		Stop	
@@ -169,10 +169,6 @@ ACTOR Civilian1_1 : Postal3dMonster
 	DieBurn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(256, "DieBurning")
-	DieBurning:
-		TNT1 A 0
-		TNT1 A 0 A_SpawnItem("PrldBurningActor1")
-		TNT1 A -1
     Raise:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(0.5,0.5)
@@ -389,10 +385,10 @@ ACTOR Civilian2_1 : Civilian1_1
 	Execute:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 72, RGF_PLAYERS | RGF_MISSILES, 1)
 		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_KickExec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 72, RGF_PLAYERS | RGF_MISSILES, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 72, RGF_PLAYERS | RGF_MISSILES, 1)
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		Stop	
@@ -577,10 +573,10 @@ ACTOR Civilian3_1 : Civilian1_1
 	Execute:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 72, RGF_PLAYERS | RGF_MISSILES, 1)
 		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_KickExec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 72, RGF_PLAYERS | RGF_MISSILES, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 72, RGF_PLAYERS | RGF_MISSILES, 1)
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		Stop	
@@ -834,10 +830,10 @@ ACTOR Civilian4_1 : Civilian1_1
 	Execute:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 72, RGF_PLAYERS | RGF_MISSILES, 1)
 		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_KickExec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 72, RGF_PLAYERS | RGF_MISSILES, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 72, RGF_PLAYERS | RGF_MISSILES, 1)
 		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		Stop	

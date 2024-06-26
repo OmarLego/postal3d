@@ -3,7 +3,7 @@ actor M12ExecShotToken : Inventory {
 	+UNDROPPABLE
 }
 actor M12ShotToken : Inventory {
-	Inventory.MaxAmount 9
+	Inventory.MaxAmount 30
 	+UNDROPPABLE
 }
 ACTOR PRLD_M12 : Postal3dWeapon
@@ -29,6 +29,8 @@ Weapon.AmmoType2 ""
 	TNT1 AAAAAAAAAAAAAAA 0 A_Raise
 	TNT1 A 1 Offset(119, 99)
 	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+	TNT1 A 0 A_Jump(226, 2)
+	TNT1 A 0 A_PlaySound("Dude/MG/Select", CHAN_VOICE)
 	SMGR A 1 Offset(119, 99)
 	SMGR A 1 Offset(76, 65)
 	SMGR A 1 Offset(46, 53)
@@ -72,19 +74,31 @@ Weapon.AmmoType2 ""
 		TNT1 A 0 A_Jump (30,"Quote")
 		goto FireStart
 	Quote:
-		TNT1 A 0 A_PlaySound ("Dude/MG/Shooting",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound ("Dude/MG/Shooting",CHAN_VOICE)
 		goto FireStart
 	FireStart:
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("P3D_DamagingTracer",0,0,7,3)
-		TNT1 A 0 A_JumpIfInventory("M12ShotToken", 9, "FireQuiet2")
-		TNT1 A 0 A_JumpIfInventory("M12ShotToken", 6, "FireQuiet1")
+		TNT1 A 0 A_JumpIfInventory("M12ShotToken", 30, "FireQuiet5")
+		TNT1 A 0 A_JumpIfInventory("M12ShotToken", 25, "FireQuiet4")
+		TNT1 A 0 A_JumpIfInventory("M12ShotToken", 20, "FireQuiet3")
+		TNT1 A 0 A_JumpIfInventory("M12ShotToken", 15, "FireQuiet2")
+		TNT1 A 0 A_JumpIfInventory("M12ShotToken", 10, "FireQuiet1")
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,1.0)
 		Goto FireStartCon
 	FireQuiet1:
-		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,0.63)
+		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,0.88)
 		Goto FireStartCon
 	FireQuiet2:
+		TNT1 A 0 A_PlaySound("SMG/Single", CHAN_AUTO,0.75)
+		Goto FireStartCon
+	FireQuiet3:
+		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,0.63)
+		Goto FireStartCon
+	FireQuiet4:
+		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,0.44)
+		Goto FireStartCon
+	FireQuiet5:
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,0.25)
 	FireStartCon:
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
@@ -120,7 +134,7 @@ Weapon.AmmoType2 ""
 		SMGR I 1 A_Refire ("FireStart")
 		SMGR I 2 A_WeaponReady(WRF_ALLOWZOOM)
 		//SMGR I 3 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_TakeInventory("M12ShotToken", 9)
+		TNT1 A 0 A_TakeInventory("M12ShotToken", 20)
 		goto ready
 		
 	//kathy additions (mwe :3 UwU nyaaaaa)
@@ -151,6 +165,9 @@ Weapon.AmmoType2 ""
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
 		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,15,1)
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_GiveInventory("ExecutionHealth", 6)
+		TNT1 A 0 A_Print("+6 health", 1)
 		SMGR C 2 BRIGHT
 		SMGR G 1
 		SMGR H 1
@@ -161,6 +178,7 @@ Weapon.AmmoType2 ""
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
 		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,15,1)
+		TNT1 A 0 A_AlertMonsters
 		SMGR D 2 BRIGHT
 		SMGR G 1
 		SMGR H 1
@@ -171,6 +189,7 @@ Weapon.AmmoType2 ""
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
 		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,15,1)
+		TNT1 A 0 A_AlertMonsters
 		SMGR F 2 BRIGHT
 		SMGR G 1
 		SMGR H 1
@@ -200,6 +219,7 @@ Weapon.AmmoType2 ""
 		TNT1 A 0 A_PlaySound("weapons/melee/kick")
 		KICK A 3
 		TNT1 A 0 A_PlaySound("weapons/melee/heavy", CHAN_AUTO)
+		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		KICK B 6
 		KICK CD 3
 		TNT1 A 5
@@ -207,13 +227,17 @@ Weapon.AmmoType2 ""
 		TNT1 A 0 A_PlaySound("weapons/melee/kick")
 		KICK A 3
 		TNT1 A 0 A_PlaySound("weapons/melee/heavy", CHAN_AUTO)
+		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		KICK B 6
 		KICK CD 3
 		TNT1 A 5
 		
 		TNT1 A 0 A_PlaySound("weapons/melee/kick")
 		KICK A 3
+		TNT1 A 0 A_GiveInventory("ExecutionHealth", 4)
+		TNT1 A 0 A_Print("+4 health",1)
 		TNT1 A 0 A_PlaySound("weapons/melee/heavy", CHAN_AUTO)
+		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		KICK B 6
 		KICK CD 3
 		TNT1 A 6

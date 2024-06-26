@@ -166,9 +166,7 @@ Deathtype "Shotgun"
 }
 Actor P3D_TempSprayTracer: P3D_ShotgunTracer
 {
-//speed 60 //too slow (i think)
-speed 90
-//damage (random(12,16))
+speed 60
 damage(14)
 }
 

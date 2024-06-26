@@ -22,13 +22,28 @@ Inventory.PickupMessage "\c[red]You got the \c[White]Spraycannon"
 	loop
 	
 	Select:
-	TNT1 A 0 A_PlaySound ("SCREL",CHAN_AUTO)
-	SPRR A 1 A_Raise
+	TNT1 A 1
+	TNT1 AAAAAAAAAAAAAAA 0 A_Raise
+	TNT1 A 1 Offset(119, 99)
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+	TNT1 A 0 A_Jump(226, 2)
+	TNT1 A 0 A_PlaySound ("Dude/SprayCannon/Select", CHAN_VOICE)
+	SPRR A 1 Offset(119, 99)
+	SPRR A 1 Offset(76, 65)
+	SPRR A 1 Offset(46, 53)
+	SPRR A 1 Offset(21, 39)
+	SPRR A 1 Offset(5, 35)
 	Goto Ready
 	
 	Deselect:
-	SPRR A 1 A_Lower
-	loop
+	SPRR A 1 Offset(5, 35)
+	SPRR A 1 Offset(21, 39)
+	SPRR A 1 Offset(46, 53)
+	SPRR A 1 Offset(76, 65)
+	SPRR A 1 Offset(119, 99)
+	TNT1 A 5
+	TNT1 AAAAAAAAAAAAAAA 0 A_Lower
+	Wait
 	
 	Spawn:
 	A12P A 1
@@ -45,6 +60,8 @@ Goto Reloading
 	FireStart:
 	TNT1 A 0 A_SetSpeed (1.82857142857143)
 	TNT1 A 0 A_Takeinventory("DoubleMagazine6",1)
+		TNT1 A 0 A_Jump(226, 2)
+		TNT1 A 0 A_PlaySound ("Dude/SprayCannon/Shooting", CHAN_VOICE)
 	TNT1 A 0 A_Jump (256,"MF1","MF2","MF3","MF4")
 	
 	MF1:

@@ -1,12 +1,12 @@
-player/land "sounds/player/land1.wav"
+//player/land "sounds/player/land1.wav"
 
-$random player/step
+/*$random player/step
 {
     player/step1
     player/step2
     player/step3
     player/step4
-}
+}*/
 
 player/step1 "sounds/player/footsteps/step1.wav"
 player/step2 "sounds/player/footsteps/step2.wav"

@@ -212,6 +212,62 @@ actor PrldGibOfficerBeret : PrldGibSheriffHat
 		Stop
     }
 }
+actor PrldGibRocketeerHat : PrldGibSheriffHat
+{
+    States
+    {
+    Spawn:
+		TNT1 A 0
+        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
+        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
+        TNT1 A 0 A_JumpIf(waterlevel >= 1, "Underwater")
+        TNT1 A 0 A_Jump(256, "Fly")
+    Fly:
+        RH01 V 4
+        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
+        loop
+		
+    Death:
+		TNT1 A 0
+        TNT1 A 0 A_SetRoll(0)
+        RH01 V 1
+        goto Lying
+    Lying:
+        RH01 V 1
+		TNT1 A 0 A_QueueCorpse
+		RH01 V -1
+		Stop
+    }
+}
+
+actor PrldGibGlasses : PrldGib
+{
+	Speed 1
+    States
+    {
+    Spawn:
+		TNT1 A 0
+        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
+        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
+        TNT1 A 0 A_JumpIf(waterlevel >= 1, "Underwater")
+        TNT1 A 0 A_Jump(256, "Fly")
+    Fly:
+        RH01 X 4
+        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
+        loop
+		
+    Death:
+		TNT1 A 0
+        TNT1 A 0 A_SetRoll(0)
+        RH01 X 1
+        goto Lying
+    Lying:
+        RH01 X 1
+		TNT1 A 0 A_QueueCorpse
+		RH01 X -1
+		Stop
+    }
+}
 
 actor PrldGibShellSling : PrldGib
 {
@@ -337,22 +393,22 @@ actor PrldGibGrenader1Head : PrldGibHead
     States
     {
     Fly:
-        GH01 U 4 A_SpawnProjectile("BloodTrail", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -360))
+        GH00 A 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
         TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
         loop
 		
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("FlyingBlood", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
+        TNT1 AAA 0 A_SpawnProjectile("PRLD_BloodFlying", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
         TNT1 A 0 A_SetRoll(0)
-        GH01 U 1
+        GH00 A 1
         goto Lying
     Lying:
-        GH01 U 1
+        GH00 A 1
 		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
 		TNT1 A 0 A_QueueCorpse
-		GH01 U -1
+		GH00 A -1
 		Stop
     }
 }
@@ -667,6 +723,35 @@ actor EmptyM16 : EmptyGlock17
         RIGI A 1
 		//TNT1 A 0 A_QueueCorpse
 		RIGI A -1
+		Stop
+    }
+}
+
+actor EmptyRL : EmptyGlock17
+{
+   DeathSound "PIPEFALL"
+   BounceSound "PIPEFALL"
+    States
+    {
+    Spawn:
+		TNT1 A 0
+       // TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
+        //TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
+        TNT1 A 0 A_Jump(256, "Fly")
+    Fly:
+        RH01 W 4
+        //TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
+        loop
+		
+    Death:
+		TNT1 A 0
+        //TNT1 A 0 A_SetRoll(0)
+        RH01 W 1
+        goto Lying
+    Lying:
+        RH01 W 1
+		TNT1 A 0 A_QueueCorpse
+		RH01 W -1
 		Stop
     }
 }

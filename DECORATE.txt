@@ -47,6 +47,7 @@
 #include "Decorate/monsters/POLICEspecial.txt"
 #include "Decorate/monsters/POLICE.txt"
 #include  "Decorate/monsters/Grenaders.txt"
+#include  "Decorate/monsters/GrenadersSPECIAL.txt"
 #include  "Decorate/monsters/Rocketeers.txt"
 
 //Player Classes
