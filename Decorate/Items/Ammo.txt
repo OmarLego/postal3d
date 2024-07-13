@@ -63,10 +63,12 @@ ACTOR Buckshot : Ammo
   Inventory.PickupMessage "Got 3 12ga shells"
   Inventory.Amount 3
   scale 0.5
-  Inventory.MaxAmount 50
+  //Inventory.MaxAmount 50
+  Inventory.MaxAmount 40
   Tag "12ga Shells"
   Ammo.BackpackAmount 16
-  Ammo.BackpackMaxAmount 100
+  //Ammo.BackpackMaxAmount 100
+  Ammo.BackpackMaxAmount 80
   Inventory.PickupSound "SLOAD"
     +FLOORCLIP
   States

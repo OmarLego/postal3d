@@ -30,7 +30,9 @@ $random subsonic/aggressive { subsonic/aggressive1 subsonic/aggressive2 subsonic
 //m16 (rifle guys)
 weapons/m16/fire1 "sounds/weapons/Hostile/m16-fire1.wav"
 weapons/m16/fire2 "sounds/weapons/Hostile/m16-fire2.wav"
-$random weapons/m16/fire { weapons/m16/fire1 weapons/m16/fire2 }
+//$random weapons/m16/fire { weapons/m16/fire1 weapons/m16/fire2 }
+$alias hostrifl AKFIR
+$alias weapons/m16/fire AKFIR
 //glock 17 (standard pistol guys)
 weapons/glock17/fire "sounds/weapons/Hostile/glock17-fire.wav"
 

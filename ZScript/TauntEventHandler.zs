@@ -3,7 +3,7 @@ class SaySomethingOnKill : EventHandler
     const CHAN_TAUNT = 42; //taunt sound channel id
     
     const TAUNTDELAY = 200;
-    const TAUNTCHANCE = 38;//85;    
+    const TAUNTCHANCE = 30;//85;    
     
     transient int lastTauntTic;
     transient int lastKillTic;

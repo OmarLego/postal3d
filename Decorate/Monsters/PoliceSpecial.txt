@@ -19,7 +19,7 @@
 		//21 tics in total
 		Death.M12:
 		TNT1 A 0
-		TNT1 A 0 A_GiveToTarget("ExecutionHealth",1)
+		TNT1 A 0 A_RadiusGive("ExecutionHealth",1)
 		
 		TNT1 A 0 A_Print ("+6 health",1)
 		TNT1 A 0 A_SpawnItemEx("Blood", 0, 0, 10, 0, 0)
@@ -62,9 +62,9 @@ ACTOR InjuredSheriff1 : PrldInjuredMonster
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -134,9 +134,9 @@ Actor InjuredSheriff1_2 : InjuredSheriff1
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor2Exec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	}
 }
@@ -156,9 +156,9 @@ Actor InjuredSheriff1_3 : InjuredSheriff1
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor4Exec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	}
 }
@@ -178,9 +178,9 @@ Actor InjuredSheriff1_4 : InjuredSheriff1
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor5Exec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	}
 }
@@ -200,9 +200,9 @@ Actor InjuredSheriff1_5 : InjuredSheriff1
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor6Exec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	}
 }
@@ -222,9 +222,9 @@ Actor InjuredSheriff1_6 : InjuredSheriff1
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor8Exec", 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	}
 }
@@ -391,9 +391,18 @@ ACTOR InjuredSheriff2_1 : PrldInjuredMonster
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
+		Stop
+		
+
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -453,6 +462,13 @@ Actor InjuredSheriff2_2 : InjuredSheriff2_1
 	DeathSound"act2_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -468,6 +484,13 @@ Actor InjuredSheriff2_3 : InjuredSheriff2_1
 	DeathSound"act4_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -483,6 +506,13 @@ Actor InjuredSheriff2_4 : InjuredSheriff2_1
 	DeathSound"act5_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -498,6 +528,13 @@ Actor InjuredSheriff2_5 : InjuredSheriff2_1
 	DeathSound"act6_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -513,6 +550,13 @@ Actor InjuredSheriff2_6 : InjuredSheriff2_1
 	DeathSound"act8_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -646,9 +690,9 @@ ACTOR InjuredSheriff3_1 : PrldInjuredMonster
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -708,6 +752,13 @@ Actor InjuredSheriff3_2 : InjuredSheriff3_1
 	DeathSound"act2_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -723,6 +774,13 @@ Actor InjuredSheriff3_3 : InjuredSheriff3_1
 	DeathSound"act4_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -738,6 +796,13 @@ Actor InjuredSheriff3_4 : InjuredSheriff3_1
 	DeathSound"act5_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -753,6 +818,13 @@ Actor InjuredSheriff3_5 : InjuredSheriff3_1
 	DeathSound"act6_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -768,6 +840,13 @@ Actor InjuredSheriff3_6 : InjuredSheriff3_1
 	DeathSound"act8_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -906,9 +985,9 @@ ACTOR InjuredOfficer1 : InjuredSheriff1
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -968,6 +1047,13 @@ Actor InjuredOfficer1_2 : InjuredOfficer1
 	DeathSound"act2_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -983,6 +1069,13 @@ Actor InjuredOfficer1_3 : InjuredOfficer1
 	DeathSound"act4_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -998,6 +1091,13 @@ Actor InjuredOfficer1_4 : InjuredOfficer1
 	DeathSound"act5_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1013,6 +1113,13 @@ Actor InjuredOfficer1_5 : InjuredOfficer1
 	DeathSound"act6_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1028,6 +1135,13 @@ Actor InjuredOfficer1_6 : InjuredOfficer1
 	DeathSound"act8_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1045,9 +1159,9 @@ ACTOR InjuredOfficer2_1 : InjuredSheriff1
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -1107,6 +1221,13 @@ Actor InjuredOfficer2_2 : InjuredOfficer2_1
 	DeathSound"act2_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1122,6 +1243,13 @@ Actor InjuredOfficer2_3 : InjuredOfficer2_1
 	DeathSound"act4_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1137,6 +1265,13 @@ Actor InjuredOfficer2_4 : InjuredOfficer2_1
 	DeathSound"act5_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Acto5Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1152,6 +1287,13 @@ Actor InjuredOfficer2_5 : InjuredOfficer2_1
 	DeathSound"act6_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1167,6 +1309,13 @@ Actor InjuredOfficer2_6 : InjuredOfficer2_1
 	DeathSound"act8_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1184,9 +1333,9 @@ ACTOR InjuredOfficer3_1 : InjuredSheriff1
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -1246,6 +1395,13 @@ Actor InjuredOfficer3_2 : InjuredOfficer3_1
 	DeathSound"act2_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1261,6 +1417,13 @@ Actor InjuredOfficer3_3 : InjuredOfficer3_1
 	DeathSound"act4_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1276,6 +1439,13 @@ Actor InjuredOfficer3_4 : InjuredOfficer3_1
 	DeathSound"act5_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1291,6 +1461,13 @@ Actor InjuredOfficer3_5 : InjuredOfficer3_1
 	DeathSound"act6_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1306,6 +1483,13 @@ Actor InjuredOfficer3_6 : InjuredOfficer3_1
 	DeathSound"act8_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1322,16 +1506,16 @@ Actor InjuredOfficer3_6 : InjuredOfficer3_1
 
 
 
-ACTOR InjuredRifleOfficer1 : InjuredSheriff1
+ACTOR InjuredVestCop1_1 : InjuredSheriff1
 {
     States
     {
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -1367,10 +1551,10 @@ ACTOR InjuredRifleOfficer1 : InjuredSheriff1
 		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
-		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer1_1", 0)
+		TNT1 A 0 A_SpawnItem ("DeadVestCop1_1", 0)
 		Stop
 	Death2:
-		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer1_2", 0)
+		TNT1 A 0 A_SpawnItem ("DeadVestCop1_2", 0)
 		Stop
 	XDeath:
 		TNT1 A 0
@@ -1385,12 +1569,19 @@ ACTOR InjuredRifleOfficer1 : InjuredSheriff1
 		AXZ5 H -1
 	}
 }
-Actor InjuredRifleOfficer1_2 : InjuredRifleOfficer1
+Actor InjuredVestCop1_2 : InjuredVestCop1_1
 {
     PainSound "act2_agony"
 	DeathSound"act2_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1400,12 +1591,19 @@ Actor InjuredRifleOfficer1_2 : InjuredRifleOfficer1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer1_3 : InjuredRifleOfficer1
+Actor InjuredVestCop1_3 : InjuredVestCop1_1
 {
     PainSound "act4_agony"
 	DeathSound"act4_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1415,12 +1613,19 @@ Actor InjuredRifleOfficer1_3 : InjuredRifleOfficer1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer1_4 : InjuredRifleOfficer1
+Actor InjuredVestCop1_4 : InjuredVestCop1_1
 {
     PainSound "act5_agony"
 	DeathSound"act5_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1430,12 +1635,19 @@ Actor InjuredRifleOfficer1_4 : InjuredRifleOfficer1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer1_5 : InjuredRifleOfficer1
+Actor InjuredVestCop1_5 : InjuredVestCop1_1
 {
     PainSound "act6_agony"
 	DeathSound"act6_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1445,12 +1657,19 @@ Actor InjuredRifleOfficer1_5 : InjuredRifleOfficer1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer1_6 : InjuredRifleOfficer1
+Actor InjuredVestCop1_6 : InjuredVestCop1_1
 {
     PainSound "act8_agony"
 	DeathSound"act8_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1461,16 +1680,16 @@ Actor InjuredRifleOfficer1_6 : InjuredRifleOfficer1
 	}
 }
 
-ACTOR InjuredRifleOfficer2_1 : InjuredSheriff1
+ACTOR InjuredVestCop2_1 : InjuredSheriff1
 {
     States
     {
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -1506,10 +1725,10 @@ ACTOR InjuredRifleOfficer2_1 : InjuredSheriff1
 		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
-		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer2_1", 0)
+		TNT1 A 0 A_SpawnItem ("DeadVestCop2_1", 0)
 		Stop
 	Death2:
-		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer2_2", 0)
+		TNT1 A 0 A_SpawnItem ("DeadVestCop2_2", 0)
 		Stop
 	XDeath:
 		TNT1 A 0
@@ -1524,12 +1743,19 @@ ACTOR InjuredRifleOfficer2_1 : InjuredSheriff1
 		AXZ5 H -1
 	}
 }
-Actor InjuredRifleOfficer2_2 : InjuredRifleOfficer2_1
+Actor InjuredVestCop2_2 : InjuredVestCop2_1
 {
     PainSound "act2_agony"
 	DeathSound"act2_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1539,12 +1765,19 @@ Actor InjuredRifleOfficer2_2 : InjuredRifleOfficer2_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer2_3 : InjuredRifleOfficer2_1
+Actor InjuredVestCop2_3 : InjuredVestCop2_1
 {
     PainSound "act4_agony"
 	DeathSound"act4_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1554,12 +1787,19 @@ Actor InjuredRifleOfficer2_3 : InjuredRifleOfficer2_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer2_4 : InjuredRifleOfficer2_1
+Actor InjuredVestCop2_4 : InjuredVestCop2_1
 {
     PainSound "act5_agony"
 	DeathSound"act5_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1569,12 +1809,19 @@ Actor InjuredRifleOfficer2_4 : InjuredRifleOfficer2_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer2_5 : InjuredRifleOfficer2_1
+Actor InjuredVestCop2_5 : InjuredVestCop2_1
 {
     PainSound "act6_agony"
 	DeathSound"act6_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1584,12 +1831,19 @@ Actor InjuredRifleOfficer2_5 : InjuredRifleOfficer2_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer2_6 : InjuredRifleOfficer2_1
+Actor InjuredVestCop2_6 : InjuredVestCop2_1
 {
     PainSound "act8_agony"
 	DeathSound"act8_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1600,16 +1854,16 @@ Actor InjuredRifleOfficer2_6 : InjuredRifleOfficer2_1
 	}
 }
 
-ACTOR InjuredRifleOfficer3_1 : InjuredSheriff1
+ACTOR InjuredVestCop3_1 : InjuredSheriff1
 {
     States
     {
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
-		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
 		Stop
 	Spawn:
 		TNT1 A 0
@@ -1645,10 +1899,10 @@ ACTOR InjuredRifleOfficer3_1 : InjuredSheriff1
 		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
 		Loop
 	Death1:
-		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer3_1", 0)
+		TNT1 A 0 A_SpawnItem ("DeadVestCop3_1", 0)
 		Stop
 	Death2:
-		TNT1 A 0 A_SpawnItem ("DeadRifleOfficer3_2", 0)
+		TNT1 A 0 A_SpawnItem ("DeadVestCop3_2", 0)
 		Stop
 	XDeath:
 		TNT1 A 0
@@ -1663,12 +1917,19 @@ ACTOR InjuredRifleOfficer3_1 : InjuredSheriff1
 		AXZ5 H -1
 	}
 }
-Actor InjuredRifleOfficer3_2 : InjuredRifleOfficer3_1
+Actor InjuredVestCop3_2 : InjuredVestCop3_1
 {
     PainSound "act2_agony"
 	DeathSound"act2_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1678,12 +1939,19 @@ Actor InjuredRifleOfficer3_2 : InjuredRifleOfficer3_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer3_3 : InjuredRifleOfficer3_1
+Actor InjuredVestCop3_3 : InjuredVestCop3_1
 {
     PainSound "act4_agony"
 	DeathSound"act4_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1693,12 +1961,19 @@ Actor InjuredRifleOfficer3_3 : InjuredRifleOfficer3_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer3_4 : InjuredRifleOfficer3_1
+Actor InjuredVestCop3_4 : InjuredVestCop3_1
 {
     PainSound "act5_agony"
 	DeathSound"act5_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1708,12 +1983,19 @@ Actor InjuredRifleOfficer3_4 : InjuredRifleOfficer3_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer3_5 : InjuredRifleOfficer3_1
+Actor InjuredVestCop3_5 : InjuredVestCop3_1
 {
     PainSound "act6_agony"
 	DeathSound"act6_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:
@@ -1723,12 +2005,19 @@ Actor InjuredRifleOfficer3_5 : InjuredRifleOfficer3_1
 		TNT1 A 0 A_Jump(256, "DieBurning")
 	}
 }
-Actor InjuredRifleOfficer3_6 : InjuredRifleOfficer3_1
+Actor InjuredVestCop3_6 : InjuredVestCop3_1
 {
     PainSound "act8_agony"
 	DeathSound"act8_mercy"
 	States
 	{
+	active:
+		TNT1 A 0
+		TNT1 A 0 A_StopSound
+		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
     Death.fire:
 	Death.Flames:
 	Death.burn:

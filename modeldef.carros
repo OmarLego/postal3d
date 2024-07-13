@@ -73,3 +73,30 @@ MODEL PRLD_CarBroke
    
 	FrameIndex BRLS B 0 0
 }
+
+
+
+//Cutscene
+
+
+
+MODEL PRLD_ArmoredCar1
+{
+	Path "Models/Cars"
+	Model 0 "armorpoliceinside.md3"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+Model PRLD_ArmoredCar2
+{
+	Path "Models/Cars"
+	Model 0 "armorpoliceinsideSTICK.md3"
+	Scale 1.0 1.0 1.0
+   
+    FrameIndex FLMD E 0 0
+	FrameIndex POH1 A 0 0
+	FrameIndex POH1 B 0 1
+	FrameIndex POH1 C 0 2
+	FrameIndex POH1 D 0 3
+}

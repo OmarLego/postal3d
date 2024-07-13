@@ -8,4 +8,5 @@ IWAD
 	IWADName = "PostalRLD.ipk3"
 	Mapinfo = "mapinfo/mindefaults.txt"
 	StartupType = "Hexen"
+	STARTUPSONG = "STARTUPSONG"
 }

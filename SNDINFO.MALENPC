@@ -2,8 +2,9 @@
 
 
 
-$Random burnvictim/male				{ burnvictim/male1 burnvictim/male1 burnvictim/male8 burnvictim/male9 }
-$Random burnvictim/maledc				{ burnvictim/male8 burnvictim/male9 }
+//$Random burnvictim/male				{ burnvictim/male1 burnvictim/male1 burnvictim/male8 burnvictim/male9 }
+//$Random burnvictim/maledc				{ burnvictim/male8 burnvictim/male9 }
+$Random burnvictim/male				{ burnvictim/male1 burnvictim/male2 burnvictim/male3 burnvictim/male4 burnvictim/male5 burnvictim/male6 burnvictim/male7 burnvictim/male8 burnvictim/male9 }
 burnvictim/male1			"Sounds/Voiceovers/Generic/wm_crying.wav"
 burnvictim/male2			"Sounds/Voiceovers/Generic/wm_crying1.wav"
 burnvictim/male3			"Sounds/Voiceovers/Generic/wm_crying2.wav"

@@ -49,6 +49,7 @@
 #include  "Decorate/monsters/Grenaders.txt"
 #include  "Decorate/monsters/GrenadersSPECIAL.txt"
 #include  "Decorate/monsters/Rocketeers.txt"
+#include  "Decorate/monsters/RocketeerSPECIAL.txt"
 
 //Player Classes
 #include "Decorate/Player/Player.txt"

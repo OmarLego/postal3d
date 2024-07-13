@@ -19,7 +19,8 @@ actor PSeq2 : Inventory
 ACTOR KickAttack: FastProjectile
 {
 	Radius 12
-	Height 12
+	//Height 12
+	Height 24
 	DamageType "Kick"
 	Projectile 
 	+FORCEXYBILLBOARD

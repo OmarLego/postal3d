@@ -1,3 +1,5 @@
+//                                                           HOME
+
 ACTOR PRLD_HomeSiren
 {
 	Radius 4
@@ -8,5 +10,64 @@ ACTOR PRLD_HomeSiren
 	TNT1 A 2
 	TNT1 A 0 A_PlaySound("policesiren2", CHAN_AUTO)
 	Stop
+	}
+}
+
+ACTOR PRLD_ArmoredCar1 //15008
+{
+	+NOCLIP
+	+NOGRAVITY
+	-SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_SelectBox
+{
+	Scale 0.25
+	+NOCLIP
+	+NOGRAVITY
+	-NOTELEPORT
+	+THRUACTORS
+	+FORCEXYBILLBOARD
+	States {
+		Spawn:
+			BHSP A 2
+			Stop
+	}
+}
+ACTOR PRLD_ArmoredCar2 : PrldInjuredMonster //15009
+{
+	PainSound ""
+	DeathSound""
+	Radius 4
+	Height 16
+	Speed 0
+	+NOCLIP
+	+NOGRAVITY
+	-SOLID
+    States
+    {
+	active:
+		POH1 A 0
+		POH1 A 5
+		POH1 AB 10
+		POH1 C 0 A_PlaySound ("MPMAGOUT",CHAN_WEAPON)
+		POH1 CD 10
+		POH1 D 10 A_RadiusGive("PRLD_CutsceneToken", 128, RGF_PLAYERS, 1)
+		POH1 D 1 ACS_NamedExecute("Da end")
+		POH1 D -1
+		Stop
+	//Pain.Cutscene:
+		//POH1 A 1 A_SpawnItem("PRLD_SelectBox")
+	Spawn:
+		POH1 A 10 A_Look
+		Loop
+	See:
+		POH1 A 10 A_Chase
+		Loop
+
 	}
 }

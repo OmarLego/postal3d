@@ -68,6 +68,16 @@ floor/dirt03			dsdirt3
 floor/dirt04			dsdirt4
 floor/dirt05			dsdirt5
 floor/dirt06			dsdirt6
+//actual one
+$Random floor/Dirt { floor/Dirt1 floor/Dirt2 floor/Dirt3 floor/Dirt4 floor/Dirt5 }
+floor/Dirt1				"Sounds/Footsteps/BFootstepDirt1.ogg"
+floor/Dirt2				"Sounds/Footsteps/BFootstepDirt2.ogg"
+floor/Dirt3				"Sounds/Footsteps/BFootstepDirt4.ogg"
+floor/Dirt4				"Sounds/Footsteps/BFootstepDirt5.ogg"
+floor/Dirt5				"Sounds/Footsteps/BFootstepDirt6.ogg"
+$Volume floor/Dirt 0.5
+$Limit floor/Dirt 0
+
 
 //Gravel - loose crunchy surface
 $random floor/gravel
@@ -92,14 +102,22 @@ floor/metl05			dsmet05
 floor/metl06			dsmet06
 
 //Metal2 - clanky metal
-$random floor/met2
+/*$random floor/met2
 	{
 	floor/met201 floor/met202 floor/met203 floor/met204
 	}		$limit floor/met2 20
 floor/met201			dsmet201
 floor/met202			dsmet202
 floor/met203			dsmet203
-floor/met204			dsmet204
+floor/met204			dsmet204*/
+$Random floor/met2 { floor/met2_1 floor/met2_2 floor/met2_3 floor/met2_4 floor/met2_5 }
+floor/met2_1				"Sounds/Footsteps/BFootstepMetal1.ogg"
+floor/met2_2				"Sounds/Footsteps/BFootstepMetal2.ogg"
+floor/met2_3				"Sounds/Footsteps/BFootstepMetal4.ogg"
+floor/met2_4				"Sounds/Footsteps/BFootstepMetal5.ogg"
+floor/met2_5				"Sounds/Footsteps/BFootstepMetal6.ogg"
+$Volume floor/met2 0.5
+$Limit floor/met2 0
 
 //Rock - Hard outdoor type floor
 $random floor/rock
@@ -116,7 +134,7 @@ floor/rock07			dsrock7
 floor/rock08			dsrock8
 
 //Snow
-$random floor/snow
+/*$random floor/snow
 	{
 	floor/snow01 floor/snow02 floor/snow03 floor/snow04 floor/snow05 floor/snow06
 	}		$limit floor/snow 20
@@ -125,10 +143,20 @@ floor/snow02			dssnow2
 floor/snow03			dssnow3
 floor/snow04			dssnow4
 floor/snow05			dssnow5
-floor/snow06			dssnow6
+floor/snow06			dssnow6*/
+//actual one
+$Random floor/Snow { floor/Snow1 floor/Snow2 floor/Snow3 floor/Snow4 floor/Snow5 floor/Snow6 }
+floor/Snow1				"Sounds/Footsteps/BFootstepSnow1.ogg"
+floor/Snow2				"Sounds/Footsteps/BFootstepSnow2.ogg"
+floor/Snow3				"Sounds/Footsteps/BFootstepSnow3.ogg"
+floor/Snow4				"Sounds/Footsteps/BFootstepSnow4.ogg"
+floor/Snow5				"Sounds/Footsteps/BFootstepSnow5.ogg"
+floor/Snow6				"Sounds/Footsteps/BFootstepSnow6.ogg"
+$Volume floor/Snow 0.5
+$Limit floor/Snow 0
 
 //Hard - generic hard floor
-$random floor/hard
+/*$random floor/hard
 	{
 	floor/hard01 floor/hard02 floor/hard03 floor/hard04 floor/hard05 floor/hard06
 	}		$limit floor/hard 20
@@ -137,7 +165,15 @@ floor/hard02			dshard2
 floor/hard03			dshard3
 floor/hard04			dshard4
 floor/hard05			dshard5
-floor/hard06			dshard6
+floor/hard06			dshard6*/
+$Random floor/hard { floor/hard1 floor/hard2 floor/hard3 floor/hard4 floor/hard5 }
+floor/hard1				"Sounds/Footsteps/footstep1h.ogg"
+floor/hard2				"Sounds/Footsteps/footstep2h.ogg"
+floor/hard3				"Sounds/Footsteps/footstep4h.ogg"
+floor/hard4				"Sounds/Footsteps/footstep5h.ogg"
+floor/hard5				"Sounds/Footsteps/footstep6h.ogg"
+$Volume floor/hard 0.5
+$Limit floor/hard 0
 
 //Tile - Hard indoor floor
 $random floor/tile
@@ -166,14 +202,29 @@ floor/tile207			dstile27
 floor/tile208			dstile28
 
 //Wood
-$random floor/wood
+/*$random floor/wood
 	{
 	floor/wood01 floor/wood02 floor/wood03 floor/wood04
 	}		$limit floor/wood 20
 floor/wood01			dswood1
 floor/wood02			dswood2
 floor/wood03			dswood3
-floor/wood04			dswood4
+floor/wood04			dswood4*/
+$Random floor/Wood { floor/Wood1 floor/Wood2 floor/Wood3 floor/Wood4 floor/Wood5 floor/Wood6 }
+/*floor/Wood1				"Sounds/Footsteps/BFootstepWood1.ogg"
+floor/Wood2				"Sounds/Footsteps/BFootstepWood2.ogg"
+floor/Wood3				"Sounds/Footsteps/BFootstepWood3.ogg"
+floor/Wood4				"Sounds/Footsteps/BFootstepWood4.ogg"
+floor/Wood5				"Sounds/Footsteps/BFootstepWood5.ogg"
+floor/Wood6				"Sounds/Footsteps/BFootstepWood6.ogg"*/
+floor/Wood1				"Sounds/Footsteps/BFootstepMutedWood1.wav"
+floor/Wood2				"Sounds/Footsteps/BFootstepMutedWood2.ogg"
+floor/Wood3				"Sounds/Footsteps/BFootstepMutedWood3.ogg"
+floor/Wood4				"Sounds/Footsteps/BFootstepMutedWood4.ogg"
+floor/Wood5				"Sounds/Footsteps/BFootstepMutedWood5.ogg"
+floor/Wood6				"Sounds/Footsteps/BFootstepMutedWood6.ogg"
+$Volume floor/Wood 0.5
+$Limit floor/Wood 0
 
 //Slimy - for the Doom snake floors
 $random floor/slimy

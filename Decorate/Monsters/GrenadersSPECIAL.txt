@@ -5,7 +5,7 @@ ACTOR InjuredGrenader1_1 : PrldInjuredMonster
 	active:
 		TNT1 A 0
 		TNT1 A 0 A_StopSound
-		TNT1 A 0 A_GiveToTarget("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_GiveToTarget("PRLD_ExecGrenader1", 1)
 		TNT1 A 0 A_GiveToTarget("ExecuteDownedEnemy", 1)
 		TNT1 A 0 A_GiveToTarget("PRLD_Actor1Exec", 1)
 		Stop

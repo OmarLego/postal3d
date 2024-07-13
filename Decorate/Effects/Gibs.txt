@@ -1,54 +1,36 @@
 Actor PrldGib
 {
-	
-    var int user_rotationspeed;
-
-    +NOBLOCKMAP
-    +NOTELEPORT
-    +FORCEXYBILLBOARD
-    +CLIENTSIDEONLY
     +MISSILE
-    -BLOODSPLATTER
-    +THRUACTORS
-	
     Radius 8
     Height 8
-    Speed 10
-    Gravity 0.6
-    Mass 4
-    BounceFactor 0.01
-	
-    +DOOMBOUNCE
-    +MOVEWITHSECTOR
+    +FORCEXYBILLBOARD
     +ROLLSPRITE
     +ROLLCENTER
-    -RANDOMIZE
-	
-	XScale 0.5
-	YScale 0.58
+    +NOBLOCKMAP
+    +NOTELEPORT
+    -BLOODSPLATTER
+    +THRUACTORS
+    +DOOMBOUNCE
+    +MOVEWITHSECTOR
+    Speed 10
+    Gravity 0.6
+    Mass 11
+    BounceFactor 0.01
+    +CLIENTSIDEONLY
+	Scale 0.5
     States
     {
     Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_JumpIf(waterlevel >= 1, "Underwater")
+        TNT1 A 0 A_JumpIf(WaterLevel >= 1, "Underwater")
         TNT1 A 0 A_Jump(256, "Fly")
     Underwater:
         TNT1 A 0
         Stop
-    Lying:
-        "----" A 1
-		TNT1 A 0 A_QueueCorpse
-		"----" A -1
-		Stop
     }
 }
-
 Actor PrldGibHead: PrldGib
 {
-	Mass 1
 	+EXPLODEONWATER
 	-DONTSPLASH
 
@@ -70,35 +52,28 @@ Actor PrldGibHead: PrldGib
 	+NORADIUSDMG
 	//Health 1
 }
-
 Actor PrldGibArm: PrldGib
 {
 	Speed 8
-	Mass 1
     gravity 0.5
-	//Decal BrutalBloodSplat
 	BounceFactor 0.2
 	wallbouncefactor 0.2
 	BounceCount 3
 	+EXPLODEONWATER
 	+SKYEXPLODE
 	-DONTSPLASH
-    seesound "bloood"
     deathsound "bloood"
 }
-
 Actor PrldGibLeg: PrldGibArm
 {
     Speed 8
 	Gravity 0.4
 }
-
 Actor PrldGibHand: PrldGib
 {
     Radius 2
     Height 8
 	Speed 6
-	Mass 1
     gravity 0.5
 	//Decal BrutalBloodSplat
 	+DONTSPLASH
@@ -106,7 +81,6 @@ Actor PrldGibHand: PrldGib
     seesound "bloood"
     deathsound "bloood"
 }
-
 
 Actor PrldGibDestructable
 {
@@ -116,18 +90,154 @@ Actor PrldGibDestructable
     Mass 1000
     Health 100
 	XScale 0.5
-	YScale 0.58
+	YScale 0.5
 	-SOLID
 	+SHOOTABLE
 	+NOTAUTOAIMED
 	+NOTELEPORT
 	+MOVEWITHSECTOR
+	DamageFactor "Kick", 12
 }
-
 Actor PrldGibDestructableLimb: PrldGibDestructable
 {
 	Radius 6
     Health 35
+}
+
+
+
+//                                                     ACTUAL GIBS START HERE
+
+
+
+ACTOR PRLD_HeadshotGib1 : PrldGib
+{
+	Speed 5
+    States
+    {
+    Fly:
+        HSGB A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		HSGB A -1
+		Stop
+    }
+}
+actor PRLD_HeadshotGib1_2 : PRLD_HeadshotGib1
+{
+    States
+    {
+    Fly:
+        HSGB D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		HSGB D -1
+		Stop
+    }
+}
+actor PRLD_HeadshotGib1_3 : PRLD_HeadshotGib1
+{
+    States
+    {
+    Fly:
+        HSGB E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		HSGB E -1
+		Stop
+    }
+}
+Actor PRLD_HeadshotGib2 : PRLD_HeadshotGib1
+{
+	Speed 4
+    States
+    {
+    Fly:
+        HSGB B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		HSGB B -1
+		Stop
+    }
+}
+actor PRLD_HeadshotGib2_2 : PRLD_HeadshotGib2
+{
+    States
+    {
+    Fly:
+        HSGB F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		HSGB F -1
+		Stop
+    }
+}
+actor PRLD_HeadshotGib2_3 : PRLD_HeadshotGib2
+{
+    States
+    {
+    Fly:
+        HSGB G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		HSGB G -1
+		Stop
+    }
+}
+Actor PRLD_HeadshotGib3 : PRLD_HeadshotGib1
+{
+	Speed 7
+    States
+    {
+    Fly:
+        HSGB C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		HSGB C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		HSGB C -1
+		Stop
+    }
 }
 
 actor PrldGibSheriffHat : PrldGib
@@ -135,24 +245,12 @@ actor PrldGibSheriffHat : PrldGib
 	-FORCEXYBILLBOARD
     States
     {
-    Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_JumpIf(waterlevel >= 1, "Underwater")
-        TNT1 A 0 A_Jump(256, "Fly")
     Fly:
-        SHRF L 4
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+        SHRF L 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SetRoll(0)
-        SHRF L 1
-        goto Lying
-    Lying:
-        SHRF L 1
 		TNT1 A 0 A_QueueCorpse
 		SHRF L -1
 		Stop
@@ -162,24 +260,12 @@ actor PrldGibOfficerHat : PrldGibSheriffHat
 {
     States
     {
-    Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_JumpIf(waterlevel >= 1, "Underwater")
-        TNT1 A 0 A_Jump(256, "Fly")
     Fly:
-        POH1 S 4
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+        POH1 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SetRoll(0)
-        POH1 S 1
-        goto Lying
-    Lying:
-        POH1 S 1
 		TNT1 A 0 A_QueueCorpse
 		POH1 S -1
 		Stop
@@ -189,24 +275,12 @@ actor PrldGibOfficerBeret : PrldGibSheriffHat
 {
     States
     {
-    Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_JumpIf(waterlevel >= 1, "Underwater")
-        TNT1 A 0 A_Jump(256, "Fly")
     Fly:
-        SOH1 L 4
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+        SOH1 L 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SetRoll(0)
-        SOH1 L 1
-        goto Lying
-    Lying:
-        SOH1 L 1
 		TNT1 A 0 A_QueueCorpse
 		SOH1 L -1
 		Stop
@@ -216,26 +290,31 @@ actor PrldGibRocketeerHat : PrldGibSheriffHat
 {
     States
     {
-    Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_JumpIf(waterlevel >= 1, "Underwater")
-        TNT1 A 0 A_Jump(256, "Fly")
     Fly:
-        RH01 V 4
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+        RH01 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SetRoll(0)
-        RH01 V 1
-        goto Lying
-    Lying:
-        RH01 V 1
 		TNT1 A 0 A_QueueCorpse
-		RH01 V -1
+		RH01 W -1
+		Stop
+    }
+}
+
+actor PrldGibRocketeerBag : PrldGib
+{
+	Speed 5
+    States
+    {
+    Fly:
+        RH01 Z 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+		TNT1 A 0
+        TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_QueueCorpse
+		RH00 A -1
 		Stop
     }
 }
@@ -245,26 +324,14 @@ actor PrldGibGlasses : PrldGib
 	Speed 1
     States
     {
-    Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_JumpIf(waterlevel >= 1, "Underwater")
-        TNT1 A 0 A_Jump(256, "Fly")
     Fly:
-        RH01 X 4
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+       RH01 Y 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SetRoll(0)
-        RH01 X 1
-        goto Lying
-    Lying:
-        RH01 X 1
 		TNT1 A 0 A_QueueCorpse
-		RH01 X -1
+		RH01 Y -1
 		Stop
     }
 }
@@ -275,65 +342,92 @@ actor PrldGibShellSling : PrldGib
     {
     Spawn:
 		TNT1 A 0
-        TNT1 A 0 A_Jump(256, "Fly")
-    Fly:
-		TNT1 A 0
 		TNT1 A 0 A_PlaySound("shellslingdetach")
         SOH1 M -1
 		
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SetRoll(0)
         TNT1 A 0 A_SpawnItem("ShotgunCopShellDrop2")
-        goto Lying
-    }
-}
-
-actor PrldGibAvgMale1Head : PrldGibHead
-{
-    States
-    {
-    Fly:
-        POH1 T 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
-    Death:
-		TNT1 A 0
-        TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        POH1 T 1
-        goto Lying
-    Lying:
-        POH1 T 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
-		TNT1 A 0 A_QueueCorpse
-		POH1 T -1
 		Stop
     }
 }
 
-actor PrldGibAvgMale2Head : PrldGibHead
+Actor PrldGibAvgMale1Head : PrldGibHead
 {
     States
     {
     Fly:
-        POH2 S 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+        POH1 T 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH1 T 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH1 T 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH1 T 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("PRLD_BloodFlying", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        POH2 S 1
-        goto Lying
-    Lying:
-        POH2 S 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibMale1HeadL")
+		Stop
+    }
+}
+actor PrldGibMale1HeadL : PrldGibDestructable
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_QueueCorpse
+		POH1 T -1
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("PrldGibAvgMale1Head", 15, 0, 180, CMF_AIMOFFSET, -80)
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
+		Stop
+    }
+}
+
+Actor PrldGibAvgMale2Head : PrldGibHead
+{
+    States
+    {
+    Fly:
+        POH2 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH2 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH2 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH2 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibMale2HeadL")
+		Stop
+    }
+}
+actor PrldGibMale2HeadL : PrldGibDestructable
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
 		TNT1 A 0 A_QueueCorpse
 		POH2 S -1
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("PrldGibAvgMale2Head", 15, 0, 180, CMF_AIMOFFSET, -80)
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
 		Stop
     }
 }
@@ -343,22 +437,37 @@ actor PrldGibMale3Head : PrldGibHead
     States
     {
     Fly:
-        POH3 S 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+        POH3 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH3 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH3 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		POH3 S 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("PRLD_BloodFlying", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        POH3 S 1
-        goto Lying
-    Lying:
-        POH3 S 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibMale3HeadL")
+		Stop
+    }
+}
+actor PrldGibMale3HeadL : PrldGibDestructable
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
 		TNT1 A 0 A_QueueCorpse
 		POH3 S -1
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("PrldGibMale3Head", 15, 0, 180, CMF_AIMOFFSET, -80)
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
 		Stop
     }
 }
@@ -369,21 +478,37 @@ actor PrldGibSheriffHead : PrldGibHead
     States
     {
     Fly:
-        SHRF N 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+        SHRF N 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		SHRF N 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		SHRF N 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		SHRF N 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        SHRF N 1
-        goto Lying
-    Lying:
-        SHRF N 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibSheriff1HeadL")
+		Stop
+    }
+}
+actor PrldGibSheriff1HeadL : PrldGibDestructable
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
 		TNT1 A 0 A_QueueCorpse
 		SHRF N -1
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("PrldGibSheriffHead", 15, 0, 180, CMF_AIMOFFSET, -80)
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
 		Stop
     }
 }
@@ -393,22 +518,37 @@ actor PrldGibGrenader1Head : PrldGibHead
     States
     {
     Fly:
-        GH00 A 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+        GH00 A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		GH00 A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		GH00 A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		GH00 A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("PRLD_BloodFlying", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        GH00 A 1
-        goto Lying
-    Lying:
-        GH00 A 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibGrenader1HeadL")
+		Stop
+    }
+}
+actor PrldGibGrenader1HeadL : PrldGibDestructable
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
 		TNT1 A 0 A_QueueCorpse
 		GH00 A -1
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("PrldGibGrenader1Head", 15, 0, 180, CMF_AIMOFFSET, -80)
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
 		Stop
     }
 }
@@ -418,34 +558,103 @@ actor PrldGibFem1Head : PrldGibHead
     States
     {
     Fly:
-        CV02 W 4 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
-		
+		CV02 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV02 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV02 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV02 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("PRLD_BloodFlying", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        CV02 W 1
-        goto Lying
-    Lying:
-        CV02 W 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
-		TNT1 A 0 A_QueueCorpse
-		CV02 W -1
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibFem1HeadL")
 		Stop
     }
 }
-
-actor PrldGibArmLyingWhite : PrldGibDestructableLimb
+actor PrldGibFem1HeadL : PrldGibDestructable
 {
     States
     {
 	Spawn:
-		RLDG C 1
+		TNT1 A 0
 		TNT1 A 0 A_QueueCorpse
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
+		CV02 W -1
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("PrldGibFem1Head", 15, 0, 180, CMF_AIMOFFSET, -80)
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
+		Stop
+    }
+}
+
+Actor PrldGibArmWhite : PrldGibArm
+{
+    States
+    {
+    Fly:
+		RLDG A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibArmWhiteL")
+		Stop
+    }
+}
+actor PrldGibArmWhiteL : PrldGibDestructableLimb
+{
+    States
+    {
+	
+	
+	Spawn:
+		TNT1 A 0 A_QueueCorpse
+		RLDG A -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
+		Stop
+    }
+}
+
+actor PrldGibArmBlack : PrldGibArm
+{
+    States
+    {
+    Fly:
+		RLDG C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibArmBlackL")
+		Stop
+    }
+}
+actor PrldGibArmBlackL : PrldGibDestructableLimb
+{
+    States
+    {
+	
+	
+	Spawn:
+		TNT1 A 0 A_QueueCorpse
 		RLDG C -1
 		Stop
 	Death:
@@ -455,105 +664,39 @@ actor PrldGibArmLyingWhite : PrldGibDestructableLimb
 		Stop
     }
 }
-actor PrldGibArmWhite : PrldGibArm
-{
-    States
-    {
-    Fly:
-        RLDG A 4 A_SpawnProjectile("BloodTrail", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -360))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed, SPF_INTERPOLATE)
-        loop
-		
-    Death:
-		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("FlyingBlood", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        RLDG C 1
-        goto Lying
-    Lying:
-        TNT1 A 0
-		TNT1 A 0 A_SpawnItem("PrldGibArmLyingWhite")
-		Stop
-    }
-}
 
-actor PrldGibArmLyingBlack : PrldGibDestructableLimb
-{
-    States
-    {
-	Spawn:
-		RLDG F 1
-		TNT1 A 0 A_QueueCorpse
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
-		RLDG F -1
-		Stop
-	Death:
-		TNT1 A 0
-		TNT1 A 0 A_PlaySound("misc/xdeath5")
-		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
-		Stop
-    }
-}
-actor PrldGibArmBlack : PrldGibArm
-{
-    States
-    {
-    Fly:
-        RLDG D 4 A_SpawnProjectile("BloodTrail", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -360))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed, SPF_INTERPOLATE)
-        loop
-		
-    Death:
-		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("FlyingBlood", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        RLDG F 1
-        goto Lying
-    Lying:
-        TNT1 A 0
-		TNT1 A 0 A_SpawnItem("PrldGibArmLyingWhite")
-		Stop
-    }
-}
-
-actor PrldGibArmLyingBrown : PrldGibDestructableLimb
-{
-    States
-    {
-	Spawn:
-		RLDG I 1
-		TNT1 A 0 A_QueueCorpse
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
-		RLDG I -1
-		Stop
-	Death:
-		TNT1 A 0
-		TNT1 A 0 A_PlaySound("misc/xdeath5")
-		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
-		Stop
-    }
-}
 actor PrldGibArmBrown : PrldGibArm
 {
     States
     {
     Fly:
-        RLDG H 4 A_SpawnProjectile("BloodTrail", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -360))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed, SPF_INTERPOLATE)
-        loop
-		
+		RLDG E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("FlyingBlood", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        RLDG I 1
-        goto Lying
-    Lying:
-        TNT1 A 0
-		TNT1 A 0 A_SpawnItem("PrldGibArmLyingWhite")
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+        TNT1 A 0 A_SpawnItem("PrldGibArmBrownL")
+		Stop
+    }
+}
+actor PrldGibArmBrownL : PrldGibDestructableLimb
+{
+    States
+    {
+	
+	
+	Spawn:
+		TNT1 A 0 A_QueueCorpse
+		RLDG E -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
 		Stop
     }
 }
@@ -563,20 +706,15 @@ actor PrldGibHandWhite : PrldGibHand
     States
     {
     Fly:
-        RLDG B 4 A_SpawnProjectile("BloodTrail", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -360))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed, SPF_INTERPOLATE)
-        loop
-		
+		RLDG B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("FlyingBlood", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        RLDG B 1
-        goto Lying
-    Lying:
-        RLDG B 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		TNT1 A 0 A_QueueCorpse
 		RLDG B -1
 		Stop
@@ -588,22 +726,17 @@ actor PrldGibHandBlack : PrldGibHand
     States
     {
     Fly:
-        RLDG E 4 A_SpawnProjectile("BloodTrail", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -360))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed, SPF_INTERPOLATE)
-        loop
-		
+		RLDG D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("FlyingBlood", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        RLDG E 1
-        goto Lying
-    Lying:
-        RLDG E 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		TNT1 A 0 A_QueueCorpse
-		RLDG E -1
+		RLDG D -1
 		Stop
     }
 }
@@ -613,22 +746,17 @@ actor PrldGibHandBrown : PrldGibHand
     States
     {
     Fly:
-        RLDG H 4 A_SpawnProjectile("BloodTrail", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -360))
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed, SPF_INTERPOLATE)
-        loop
-		
+		RLDG F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		RLDG F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
     Death:
 		TNT1 A 0
-        TNT1 A 0 A_SpawnItem("BloodSpot", 0, 0, 0, 1)
-        TNT1 AAA 0 A_SpawnProjectile("FlyingBlood", 0, 0, random(0, 360), CMF_AIMDIRECTION, random(0, -160))
-        TNT1 A 0 A_SetRoll(0)
-        RLDG H 1
-        goto Lying
-    Lying:
-        RLDG H 1
-		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		TNT1 A 0 A_QueueCorpse
-		RLDG H -1
+		RLDG F -1
 		Stop
     }
 }
@@ -647,28 +775,18 @@ actor EmptyGlock17 : PrldGib
    +NOTDMATCH
    +GHOST
    BounceFactor 0.01
-   Mass 1
+   Mass 11
    DeathSound "MagDrop"
    BounceSound "MagDrop"
     States
     {
     Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_Jump(256, "Fly")
-    Fly:
-        SHRF M 4
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
-        loop
+        SHRF M 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
 		
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SetRoll(0)
-        SHRF M 1
-        goto Lying
-    Lying:
-        SHRF M 1
 		//TNT1 A 0 A_QueueCorpse
 		SHRF M -1
 		Stop
@@ -680,22 +798,12 @@ actor EmptyCoachGun : EmptyGlock17
     States
     {
     Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_Jump(256, "Fly")
-    Fly:
-        SOH1 O 4
-        TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
+        SOH1 O 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
         loop
 		
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SetRoll(0)
-        SOH1 O 1
-        goto Lying
-    Lying:
-        SOH1 O 1
 		TNT1 A 0 A_QueueCorpse
 		SOH1 O -1
 		Stop
@@ -707,20 +815,12 @@ actor EmptyM16 : EmptyGlock17
     States
     {
     Spawn:
-		TNT1 A 0
-        TNT1 A 0 A_Jump(256, "Fly")
-    Fly:
-        RIGI A 4
-        TNT1 A 0 A_SetRoll(45)
-        loop
+        RIGI A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
 		
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SetRoll(0)
-        RIGI A 1
-        goto Lying
-    Lying:
-        RIGI A 1
 		//TNT1 A 0 A_QueueCorpse
 		RIGI A -1
 		Stop
@@ -735,23 +835,13 @@ actor EmptyRL : EmptyGlock17
     {
     Spawn:
 		TNT1 A 0
-       // TNT1 A 0 A_SetUserVar("user_rotationspeed", random(30, 50))
-        //TNT1 A 0 A_SetUserVar("user_rotationspeed", user_rotationspeed * randompick(-1, 1))
-        TNT1 A 0 A_Jump(256, "Fly")
-    Fly:
-        RH01 W 4
-        //TNT1 A 0 A_SetRoll(roll + user_rotationspeed)
+        RH01 X 100
         loop
 		
     Death:
 		TNT1 A 0
-        //TNT1 A 0 A_SetRoll(0)
-        RH01 W 1
-        goto Lying
-    Lying:
-        RH01 W 1
-		TNT1 A 0 A_QueueCorpse
-		RH01 W -1
+		//TNT1 A 0 A_QueueCorpse
+		RH01 X -1
 		Stop
     }
 }
@@ -1096,7 +1186,7 @@ ACTOR FxBloodChunks
 {
 	Radius 1
 	Height 1
-	Mass 1
+	Mass 11
 	Scale 0.5
 	Speed 0.23
 	-SOLID
@@ -1124,7 +1214,7 @@ ACTOR FxBloodFlying
 {
 	Radius 1
 	Height 1
-	Mass 1
+	Mass 11
 	Scale 0.3
 	Speed 0.23
 	-SOLID

@@ -171,9 +171,14 @@ ACTOR DoubleMagazine4 : Ammo
    Inventory.Icon "MP5KA0"
 }
 
-actor PRLD_MP5Spawner : RandomSpawner
+//it refuses to spawn in UDB when just spawning the actual actor or using a randomspawner i have no idea why
+actor PRLD_MP5KSpawner
 {
-	radius 24
-	height 24
-    DropItem "MP5K"
+	States
+	{
+	Spawn:
+		MP5K A 1
+		TNT1 A 1 A_SpawnItem("MP5K")
+		Stop
+	}
 }

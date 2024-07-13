@@ -1,6 +1,3 @@
-/** Tracers are a bit weird and inconsistent. The base class "Tracer" fired by the player is just decorative, so that hitscan weapons are actually hitscan and don't have a delay in crossing the map - however, enemy tracers actually do the damage directly and are used in place of firing hitscan bullets. I speculate that this is done so that the player doesn't get caught out by a hitscan attack that happens before the enemy fire reaches them visually.
-
-They're defined as models in modeldef.bdlite. */
 Actor P3D_Tracer: FastProjectile
 {
 	Projectile
@@ -27,51 +24,7 @@ Actor P3D_Tracer: FastProjectile
 		Stop
 	}
 }
-/*ACTOR P3D_Tracer : FastProjectile
-{
-	RenderStyle Add
-	Radius 2
-	Height 2
-	Speed 75
-	//+BLOODSPLATTER
-	+HITTRACER
-	Scale .3
-	MissileType TracerTrail
-	MissileHeight 8
-	Decal BulletChip
-	States
-	{
-	Spawn:
-		PUFF B 1 BRIGHT
-		Loop
-	Crash:
-	Death:
-		PUFF A 2 BRIGHT //A_SpawnDebris("TracerSpark")
-		PUFF B 1 BRIGHT A_SetTranslucent(0.9,0)
-		PUFF B 1 BRIGHT A_PlaySound("Impact",CHAN_AUTO)
-		PUFF CD 2 BRIGHT
-		Stop
-	XDeath:
-		TNT1 A 3 A_PlaySound("hitflesh",CHAN_AUTO)
-		Stop
-	}
-}
-ACTOR TracerTrail
-{
-	RenderStyle Add
-	+NOBLOCKMAP
-	+NOGRAVITY
-	+NOTELEPORT
-	+CANNOTPUSH
-	+NODAMAGETHRUST
-	Scale .3
-	States
-	{
-	Spawn:
-		PUFF B 3 BRIGHT
-		Stop
-	}
-}*/
+
 Actor P3D_DamagingTracer: P3D_Tracer
 {
 	+BLOODSPLATTER 
@@ -159,15 +112,20 @@ Actor P3D_ShotgunTracer: P3D_DamagingTracerBase
 speed 90
 //damage (random(12,16))
 //damage(13)
-damage(6)
+//damage(6)
+//damage(7)
+damage(11)
 Paintype "Shotgun"
 Damagetype "Shotgun"
 Deathtype "Shotgun"
 }
-Actor P3D_TempSprayTracer: P3D_ShotgunTracer
+Actor P3D_SprayTracer: P3D_ShotgunTracer
 {
 speed 60
 damage(14)
+Paintype "SprayCannon"
+Damagetype "SprayCannon"
+Deathtype "SprayCannon"
 }
 
 

@@ -47,6 +47,7 @@ DoomEdNums
 	10026 = Grenadee
 	10027 = PB
 	10029 = Molotovv
+	5010 = PRLD_MP5KSpawner
 	
 	//Monsters
 	//hostiles

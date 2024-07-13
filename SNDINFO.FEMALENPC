@@ -2,7 +2,7 @@
 
 
 
-$Random burnvictim/female				{ burnvictim/female2 burnvictim/female3 }
+$Random burnvictim/female				{ burnvictim/female1 burnvictim/female2 burnvictim/female3 burnvictim/female4 }
 burnvictim/female1			"Sounds/Voiceovers/Generic/wf_crying.wav"
 burnvictim/female2			"Sounds/Voiceovers/Generic/wf_deathcrawl1.wav"
 burnvictim/female3			"Sounds/Voiceovers/Generic/mf_beg_crying1.wav"

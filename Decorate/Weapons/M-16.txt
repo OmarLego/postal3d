@@ -82,7 +82,7 @@ Goto Reloading
 	    TNT1 A 0 A_Recoil (1)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("P3D_M16Tracer",0,0,5,1)
-		TNT1 A 0 A_setpitch(pitch-1)
+		//TNT1 A 0 A_setpitch(pitch-1)
 		TNT1 A 0 A_PlaySound("AKFIR",CHAN_AUTO)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,5,1)

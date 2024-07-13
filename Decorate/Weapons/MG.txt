@@ -87,7 +87,8 @@ Goto Reloading
 	goto OutOfAmmo
 	
 	FireStart:
-	TNT1 A 0 A_SetSpeed (1.82857142857143)
+	//TNT1 A 0 A_SetSpeed (1.82857142857143)
+	TNT1 A 0 A_SetSpeed (5.485714285714291)
 	TNT1 A 0 A_JumpIfInventory ("BeltToken",25,"FireStart2")
 	TNT1 A 0 A_Takeinventory("DoubleMagazine7",1)
 	TNT1 A 0 A_Jump (256,"MF1","MF2","MF3","MF4")
@@ -179,7 +180,8 @@ TNT1 A 0 A_JumpIfInventory ("Magazine7",50,"FinishReload")
 TNT1 A 0 A_JumpIfInventory ("AKMag",1,"StartReload")
 goto FinishReload
 StartReload:
-TNT1 A 0 A_setSpeed (0.9142857142857152)
+//TNT1 A 0 A_setSpeed (0.9142857142857152)
+	TNT1 A 0 A_SetSpeed (5.485714285714291)
 TNT1 A 0 A_JumpIfInventory ("Magazine7",50,"Ready")
 MGRL A 4 A_PlaySound ("AIM",CHAN_AUTO)
 MGRL BCDEFGHIJKLM 4

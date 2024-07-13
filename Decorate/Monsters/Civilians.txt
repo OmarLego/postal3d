@@ -38,6 +38,12 @@ ACTOR PRLD_CivilianSpawner : RandomSpawner
 		Stop
 	}
 }
+
+Actor PRLD_ExecCivilian1 : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR Civilian1_1 : Postal3dMonster
 {
 	Health 25
@@ -57,8 +63,11 @@ ACTOR Civilian1_1 : Postal3dMonster
 		Loop
 	See:
 	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 		CV01 AAA 2 A_Wander
 		CV01 BBB 2 A_Wander
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 		CV01 CCC 2 A_Wander
 		CV01 DDD 2 A_Wander
 		TNT1 A 0 A_GiveInventory("PRLD_BurnLife", 1)
@@ -98,17 +107,18 @@ ACTOR Civilian1_1 : Postal3dMonster
 		CV01 T 35 A_Stop
 		CV01 UV 10
 		TNT1 A 0 A_TakeInventory("IsDown")
-		Goto See
+		Goto See	
+		
 	Execute:
 		TNT1 A 0
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
-		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		Stop	
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
+		Stop
+		
     DieNormal:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 8, 33)
@@ -184,6 +194,15 @@ Actor Civilian1_2 : Civilian1_1
     ActiveSound "act2_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act2_civspot")
@@ -205,6 +224,15 @@ Actor Civilian1_3 : Civilian1_1
     ActiveSound "act4_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act4_civspot")
@@ -226,6 +254,15 @@ Actor Civilian1_4 : Civilian1_1
     ActiveSound "act5_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act5_civspot")
@@ -247,6 +284,15 @@ Actor Civilian1_5 : Civilian1_1
     ActiveSound "act6_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act6_civspot")
@@ -268,6 +314,15 @@ Actor Civilian1_6 : Civilian1_1
     ActiveSound "act8_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act8_civspot")
@@ -328,6 +383,11 @@ actor DeadCivilian1HeadOff2 : DeadCivilian1HeadOff1
 	YScale 0.5
 }
 
+Actor PRLD_ExecCivilian2 : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR Civilian2_1 : Civilian1_1
 {
     SeeSound "act3_civspot"
@@ -340,8 +400,11 @@ ACTOR Civilian2_1 : Civilian1_1
 		Loop
 	See:
 	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 		CV02 AAA 2 A_Wander
 		CV02 BBB 2 A_Wander
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 		CV02 CCC 2 A_Wander
 		CV02 DDD 2 A_Wander
 		TNT1 A 0 A_GiveInventory("PRLD_BurnLife", 1)
@@ -350,12 +413,12 @@ ACTOR Civilian2_1 : Civilian1_1
 	CheckYell:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(128, "Yell")
-		Goto SeeLoop
+		TNT1 A 0 A_Jump(256, "SeeLoop")
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act3_civspot")
 		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 8)
-		Goto SeeLoop
+		TNT1 A 0 A_Jump(256, "SeeLoop")
 	Pain:
 		CV02 F 3 A_Pain
 		CV02 F 4
@@ -382,16 +445,17 @@ ACTOR Civilian2_1 : Civilian1_1
 		CV02 UV 10
 		TNT1 A 0 A_TakeInventory("IsDown")
 		Goto See
+		
 	Execute:
 		TNT1 A 0
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
-		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		Stop	
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian2", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor3Exec", 100, RGF_PLAYERS, 1)
+		Stop
+		
     DieNormal:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 8, 33)
@@ -528,6 +592,11 @@ actor DeadCivilian2HeadOff2 : DeadCivilian2HeadOff1
 	YScale 0.5
 }
 
+Actor PRLD_ExecCivilian3 : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR Civilian3_1 : Civilian1_1
 {
 	States
@@ -537,8 +606,11 @@ ACTOR Civilian3_1 : Civilian1_1
 		Loop
 	See:
 	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 		CV03 AAA 2 A_Wander
 		CV03 BBB 2 A_Wander
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 		CV03 CCC 2 A_Wander
 		CV03 DDD 2 A_Wander
 		TNT1 A 0 A_GiveInventory("PRLD_BurnLife", 1)
@@ -570,16 +642,17 @@ ACTOR Civilian3_1 : Civilian1_1
 		CV03 UV 10
 		TNT1 A 0 A_TakeInventory("IsDown")
 		Goto See
+		
 	Execute:
 		TNT1 A 0
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
-		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		Stop	
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
+		Stop
+		
     DieNormal:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 8, 33)
@@ -641,6 +714,15 @@ Actor Civilian3_2 : Civilian3_1
     ActiveSound "act2_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act2_civspot")
@@ -662,6 +744,15 @@ Actor Civilian3_3 : Civilian3_1
     ActiveSound "act4_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act4_civspot")
@@ -683,6 +774,15 @@ Actor Civilian3_4 : Civilian3_1
     ActiveSound "act5_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act5_civspot")
@@ -704,6 +804,15 @@ Actor Civilian3_5 : Civilian3_1
     ActiveSound "act6_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act6_civspot")
@@ -725,6 +834,15 @@ Actor Civilian3_6 : Civilian3_1
     ActiveSound "act8_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian3", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act8_civspot")
@@ -785,6 +903,11 @@ actor DeadCivilian3HeadOff2 : DeadCivilian3HeadOff1
 	YScale 0.5
 }
 
+Actor PRLD_ExecCivilian4 : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR Civilian4_1 : Civilian1_1
 {
 	States
@@ -794,8 +917,11 @@ ACTOR Civilian4_1 : Civilian1_1
 		Loop
 	See:
 	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 		CV04 AAA 2 A_Wander
 		CV04 BBB 2 A_Wander
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 		CV04 CCC 2 A_Wander
 		CV04 DDD 2 A_Wander
 		TNT1 A 0 A_GiveInventory("PRLD_BurnLife", 1)
@@ -827,16 +953,17 @@ ACTOR Civilian4_1 : Civilian1_1
 		CV04 UV 10
 		TNT1 A 0 A_TakeInventory("IsDown")
 		Goto See
+		
 	Execute:
 		TNT1 A 0
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_GiveToTarget("SpecialAction", 1)
-		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 72, RGF_PLAYERS | RGF_MISSILES, 1)
-		TNT1 A 0 A_ChangeFlag("THRUACTORS", 1)
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
-		Stop	
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian4", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
+		Stop
+		
     DieNormal:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 8, 33)
@@ -898,6 +1025,15 @@ Actor Civilian4_2 : Civilian4_1
     ActiveSound "act2_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian4", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act2_civspot")
@@ -919,6 +1055,15 @@ Actor Civilian4_3 : Civilian4_1
     ActiveSound "act4_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian4", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act4_civspot")
@@ -940,6 +1085,15 @@ Actor Civilian4_4 : Civilian4_1
     ActiveSound "act5_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian4", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act5_civspot")
@@ -961,6 +1115,15 @@ Actor Civilian4_5 : Civilian4_1
     ActiveSound "act6_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian4", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act6_civspot")
@@ -982,6 +1145,15 @@ Actor Civilian4_6 : Civilian4_1
     ActiveSound "act8_civspot"
 	States
 	{
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian4", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
+		Stop
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act8_civspot")

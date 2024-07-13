@@ -40,7 +40,7 @@ Model P3D_ShotgunTracer // Name of actor in DECORATE
    
    FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
 }
-Model P3D_TempSprayTracer // Name of actor in DECORATE
+Model P3D_SprayTracer // Name of actor in DECORATE
 { 
    Path "models/Projectiles" // Path to model in PK3
    SKIN 0 "tracer1.tga" // Model index, model file
