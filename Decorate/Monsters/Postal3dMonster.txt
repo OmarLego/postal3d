@@ -505,8 +505,11 @@ ACTOR PRLD_BurnVictimM : PrldInjuredMonster
     {
 	active:
 		TNT1 A 0
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		TNT1 A 0 A_Jump(256, "Spawn")
 	Spawn:
-		BVIC A 7 A_Look
+		BVIC B 7 A_Look
 		Loop
 	See:
 		TNT1 A 0
@@ -515,8 +518,8 @@ ACTOR PRLD_BurnVictimM : PrldInjuredMonster
 		BVIC B 15
 		BVIC A 15 A_Chase
 		BVIC B 15
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		//TNT1 A 0 A_Jump(192, 2)
 		TNT1 A 0 A_Pain
@@ -524,15 +527,15 @@ ACTOR PRLD_BurnVictimM : PrldInjuredMonster
 		BVIC B 15
 		BVIC A 15 A_Chase
 		BVIC B 15
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		BVIC A 15 A_Chase
 		BVIC B 15
 		BVIC A 15 A_Chase
 		BVIC B 15
-		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
-		TNT1 A 0 A_JumpIfInventory("DeathTimer1", 6, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 6, "GotoDeath")
 		Loop
 	Death1:
 	Death2:
@@ -543,4 +546,40 @@ ACTOR PRLD_BurnVictimM : PrldInjuredMonster
 ACTOR PRLD_BurnVictimF : PRLD_BurnVictimM
 {
     PainSound "burnvictim/female"
+	States
+	{
+	Spawn:
+		BVIC D 7 A_Look
+		Loop
+	See:
+		TNT1 A 0
+		TNT1 A 0
+		BVIC C 15 A_Chase
+		BVIC D 15
+		BVIC C 15 A_Chase
+		BVIC D 15
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		
+		//TNT1 A 0 A_Jump(192, 2)
+		TNT1 A 0 A_Pain
+		BVIC C 15 A_Chase
+		BVIC D 15
+		BVIC C 15 A_Chase
+		BVIC D 15
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
+		
+		BVIC C 15 A_Chase
+		BVIC D 15
+		BVIC C 15 A_Chase
+		BVIC D 15
+		TNT1 A 0 A_GiveInventory("DeathTimer1", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 6, "GotoDeath")
+		Loop
+	Death1:
+	Death2:
+		BVIC D -1
+		Stop
+	}
 }

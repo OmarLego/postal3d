@@ -80,24 +80,24 @@ ACTOR InjuredSheriff1 : PrldInjuredMonster
 		SHRF G 15 A_Chase
 		SHRF H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		SHRF G 15 A_Chase
 		SHRF H 15
 		SHRF G 15 A_Chase
 		SHRF H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		SHRF G 15 A_Chase
 		SHRF H 15
 		SHRF G 15 A_Chase
 		SHRF H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff1", 0)
@@ -418,24 +418,24 @@ ACTOR InjuredSheriff2_1 : PrldInjuredMonster
 		SHR2 G 15 A_Chase
 		SHR2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		SHR2 G 15 A_Chase
 		SHR2 H 15
 		SHR2 G 15 A_Chase
 		SHR2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		SHR2 G 15 A_Chase
 		SHR2 H 15
 		SHR2 G 15 A_Chase
 		SHR2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff2_1", 0)
@@ -708,24 +708,24 @@ ACTOR InjuredSheriff3_1 : PrldInjuredMonster
 		SHR3 G 15 A_Chase
 		SHR3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		SHR3 G 15 A_Chase
 		SHR3 H 15
 		SHR3 G 15 A_Chase
 		SHR3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		SHR3 G 15 A_Chase
 		SHR3 H 15
 		SHR3 G 15 A_Chase
 		SHR3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadSheriff3_1", 0)
@@ -1003,24 +1003,24 @@ ACTOR InjuredOfficer1 : InjuredSheriff1
 		POH1 G 15 A_Chase
 		POH1 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		POH1 G 15 A_Chase
 		POH1 H 15
 		POH1 G 15 A_Chase
 		POH1 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		POH1 G 15 A_Chase
 		POH1 H 15
 		POH1 G 15 A_Chase
 		POH1 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadOfficer1_1", 0)
@@ -1177,24 +1177,24 @@ ACTOR InjuredOfficer2_1 : InjuredSheriff1
 		POH2 G 15 A_Chase
 		POH2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		POH2 G 15 A_Chase
 		POH2 H 15
 		POH2 G 15 A_Chase
 		POH2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		POH2 G 15 A_Chase
 		POH2 H 15
 		POH2 G 15 A_Chase
 		POH2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadOfficer2_1", 0)
@@ -1351,24 +1351,24 @@ ACTOR InjuredOfficer3_1 : InjuredSheriff1
 		POH3 G 15 A_Chase
 		POH3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		POH3 G 15 A_Chase
 		POH3 H 15
 		POH3 G 15 A_Chase
 		POH3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		POH3 G 15 A_Chase
 		POH3 H 15
 		POH3 G 15 A_Chase
 		POH3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadOfficer3_1", 0)
@@ -1531,24 +1531,24 @@ ACTOR InjuredVestCop1_1 : InjuredSheriff1
 		ROH1 G 15 A_Chase
 		ROH1 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		ROH1 G 15 A_Chase
 		ROH1 H 15
 		ROH1 G 15 A_Chase
 		ROH1 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		ROH1 G 15 A_Chase
 		ROH1 H 15
 		ROH1 G 15 A_Chase
 		ROH1 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadVestCop1_1", 0)
@@ -1705,24 +1705,24 @@ ACTOR InjuredVestCop2_1 : InjuredSheriff1
 		ROH2 G 15 A_Chase
 		ROH2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		ROH2 G 15 A_Chase
 		ROH2 H 15
 		ROH2 G 15 A_Chase
 		ROH2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		ROH2 G 15 A_Chase
 		ROH2 H 15
 		ROH2 G 15 A_Chase
 		ROH2 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadVestCop2_1", 0)
@@ -1879,24 +1879,24 @@ ACTOR InjuredVestCop3_1 : InjuredSheriff1
 		ROH3 G 15 A_Chase
 		ROH3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		ROH3 G 15 A_Chase
 		ROH3 H 15
 		ROH3 G 15 A_Chase
 		ROH3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		
 		ROH3 G 15 A_Chase
 		ROH3 H 15
 		ROH3 G 15 A_Chase
 		ROH3 H 15
 		TNT1 A 0 A_SpawnItem("PRLD_BloodFloorNR")
-		TNT1 A 0 A_GiveInventory("PRLD_BloodFloorNR", 1)
-		TNT1 A 0 A_JumpIfInventory("PRLD_BloodFloorNR", 13, "GotoDeath")
+		TNT1 A 0 A_GiveInventory("PRLD_InjuredTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
 		TNT1 A 0 A_SpawnItem ("DeadVestCop3_1", 0)
