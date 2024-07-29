@@ -195,17 +195,18 @@ Radius 10
   Death:
   Goto Explode
   Explode:
-   TNT1 A  0 bright A_ChangeFlag("NOGRAVITY",1)
-    TNT1 A 0 A_PLAYSOUND ("MDET",CHAN_AUTO)
-	TNT1 A 0 bright A_PlaySound("Canister/Explosion",CHAN_AUTO)
+  // TNT1 A  0 bright A_ChangeFlag("NOGRAVITY",1)
+    //TNT1 A 0 A_PLAYSOUND ("MDET",CHAN_AUTO)
+	//TNT1 A 0 bright A_PlaySound("Canister/Explosion",CHAN_AUTO)
 	TNT1 AAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("SpillDrop2",0,0,0,Random(-3,3),Random(-3,3),Random(5,10),random(-60,60),SXF_TRANSFERTRANSLATION)
     TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("DropFire3", random (0, 120), random (0, 120), 0, 0, 0, 0, random (0, 360))
-	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
-    TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	//TNT1 A 0 Radius_Quake(10,8,0,3200,0)
+   // TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
 	TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("DecorFlame", 0, 0, random (0, 360), 2, random (0, 360))
 	TNT1 A 0 A_SpawnItemEx ("LargeFire2",1,1,1)
-	TNT1 A 0 A_SetScale (1.7)
-	FXPO ABCDEFGHIJKLM 3 bright 
+	//TNT1 A 0 A_SetScale (1.7)
+	//FXPO ABCDEFGHIJKLM 3 bright 
+		TNT1 A 0 A_SpawnItem("PrldNapalmExplosion")
     stop
   }
 }

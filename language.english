@@ -8,7 +8,8 @@ SKILL_NORMAL = "Normal";
 SKILL_HARD = "Hard";
 SKILL_NIGHTMARE = "Nightmare";
 
-CNTRLMNU_ZOOM = "Kick";
+//CNTRLMNU_ZOOM = "Kick";
+CNTRLMNU_ZOOM = "Execute";
 
 
 

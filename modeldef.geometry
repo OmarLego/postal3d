@@ -59,8 +59,6 @@ model PRLD_HomeLongRoofC
 	//same as above
 	Scale 2.0 2.0 2.4
 	ZOffset -104
-	SurfaceSkin 0 2 "HMEPC01"
-	SurfaceSkin 0 0 "HMEWD2"
    
 	FrameIndex BRLS A 0 0
 }

@@ -10,3 +10,8 @@ Script 363 (VOID) NET
 {
  GiveInventory("YouRegretNothing", 1);
 }
+
+script "PrldJanny" (void)
+{
+    if(GetCVar("PRLD_Janny") == 1) { SetActorState (0, "JanDeath"); }
+}

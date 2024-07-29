@@ -79,6 +79,7 @@ weapons/m12/nadebounce     "sounds/weapons/m-12/m12-nadebounce.ogg"
 
 //Double Barrel
 weapons/dbshotgun/fire SSHOT
+$Volume weapons/dbshotgun/fire 0.75
 weapons/dbshotgun/altfire DSHOT
 $random weapons/db/insert { ssgin1 ssgin2 ssgin3 }
 ssgin1 ssgin1
@@ -286,6 +287,7 @@ $Random Frag { FRAG1 FRAG2 FRAG3 FRAG4 }
 //Gore
 
 hitflesh	HFLESH
+//$random hitflesh { weapons/melee/heavy1 weapons/melee/heavy2 weapons/melee/heavy3 weapons/melee/heavy4 weapons/melee/heavy5 }
 
 blood/drop				BLODDROP
 $limit blood/drop 5
@@ -427,6 +429,7 @@ glass/break	DSGLASS
 $limit 	glass/break 0
 $pitchshift 	glass/break 3
 $rolloff 	glass/break 1000 2000
+fencebreak "Sounds/Environment/fencebreak.ogg"
 
 //doors
 WDOPN WDOPN

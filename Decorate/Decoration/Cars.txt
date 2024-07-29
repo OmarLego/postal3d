@@ -6,7 +6,7 @@ ACTOR PRLD_Car1
 	+NOBLOOD
     -PUSHABLE
 	+NOTAUTOAIMED
-	Health	400
+	Health	300
 	//Height	40
 	Height	23
 	Radius	44
@@ -31,15 +31,17 @@ ACTOR PRLD_Car1
 		BRLS A 10 A_JumpIFHealthLower(200, "Damaged")
 		Loop
 	Damaged:
-		BRLS A 10 A_SpawnItemEx("DamagedCarSmokeSpawner", 50, 0)
-		TNT1 A 0 A_SpawnItem("PrldExplosion")
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItemEx("DamagedCarSmokeSpawner", 50, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire1", 22, 25)
+		BRLS A 84
 		TNT1 A 0 A_JumpIFHealthLower(120, "HeavyDamaged")
 		Loop
 	HeavyDamaged:
-	TNT1 A 0 A_SpawnItem("PrldExplosion")
-	BRLS A 35
-	TNT1 A 0 A_SpawnItem("PrldExplosion")
-		BRLS A 40 A_SpawnItemEx("HeavyDamagedCarSmokeSpawner", 50, 0)
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire2", 22, 25)
+		BRLS A 0 A_SpawnItemEx("HeavyDamagedCarSmokeSpawner", 50, 0)
+		BRLS A 84
 		Loop	
 	Death:
 	    BRLS A 0
@@ -63,7 +65,7 @@ ACTOR PRLD_Car1
 		TNT1 AAAAA 0 A_CustomMissile ("SFXGlassParticle4", 50, random (-20, 20), random (0, 360), 2, random (30, 60))
         TNT1 A 0 A_ALertMonsters
 		BRLS A 0 A_Explode(100, 250)
-		TNT1 A 0 A_SpawnItem("PrldExplosion")
+		TNT1 A 0 A_SpawnItem("PrldExplosion", 0, 35)
 		TNT1 A 0 A_SpawnItemEx("PRLD_CarBroke",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERTRANSLATION, 0)
 		//TNT1 AAAAAAAAAAAAAAAAAAA 15 A_CustomMissile ("InfernoDemonFireballExplosion", 10, 10, random (0, 360), 2, random (70, 130))
     Stop
@@ -153,5 +155,8 @@ Actor PRLD_Car6 : PRLD_Car1
 {
 }
 Actor PRLD_Car7 : PRLD_Car1
+{
+}
+Actor PRLD_Car8 : PRLD_Car1
 {
 }

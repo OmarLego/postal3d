@@ -76,12 +76,12 @@ ACTOR Civilian1_1 : Postal3dMonster
 	CheckYell:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(128, "Yell")
-		Goto SeeLoop
+		TNT1 A 0 A_Jump(256, "SeeLoop")
 	Yell:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("act1_civspot")
 		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 8)
-		Goto SeeLoop
+		TNT1 A 0 A_Jump(256, "SeeLoop")
 	Pain:
 		CV01 F 3 A_Pain
 		CV01 F 4

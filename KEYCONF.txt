@@ -1,7 +1,7 @@
 	addkeysection "POSTAL: Red Letter Day Custom Controls" Postal3dActions    
 
-	addmenukey "Execute" kickem
-	alias kickem "puke 301"
+	addmenukey "Kick" kickem
+	alias kickem "puke 301; wait 3; +use; wait 1; -use;"
 	defaultbind Q kickem
 
 	addmenukey "Suicide" suicide

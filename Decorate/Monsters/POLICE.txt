@@ -17,7 +17,7 @@ ACTOR PistolOfficer1 : Postal3dMonster
     ActiveSound "act1_copact"
     Obituary "%o was shot by a Pistol Officer. Must've been a lucky shot."
 	//+RANDOMIZE
-	DropItem "Clip"
+	DropItem "9MM"
 	Tag "Pistol Officer"
 	Speed 8
 	States
@@ -1320,7 +1320,7 @@ ACTOR ShotgunOfficer1 : PistolOfficer1
 {
     Obituary "%o got a nice circular hole through their chest by a Shotgun Officer. Maybe a little rough but it still counts."
 	Tag "Shotgun Officer"
-	//DropItem "ShotgunCopShellDrop"
+	DropItem ""
 	States
 	{
 	Spawn:
@@ -1710,7 +1710,7 @@ ACTOR Sheriff1 :  ShotgunOfficer1
 {
     Obituary "%o was shot by a Sheriff. They must know what they're doing."
 	Tag "Sheriff"
-	DropItem "9MMMag"
+	DropItem "9MM"
 	Speed 8
 	States
 	{
@@ -1759,7 +1759,7 @@ ACTOR Sheriff1 :  ShotgunOfficer1
 		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
 	    SHRF AABB 2 ThrustThing(angle*256/360+192, 1, 0, 0)
 		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
-		POH3 CCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		SHRF CCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
 		TNT1 A 0 A_Jump (120, "MissileCheck")
 		Goto SeeLoop+1
     DodgeLeftB:
@@ -3136,7 +3136,7 @@ ACTOR RifleOfficer1 : ShotgunOfficer1
 	Tag "Rifle Officer"
 	Health 75
 	DamageFactor "Shotgun", 0.64
-	DropItem "9MMMag"
+	DropItem "AKBullets"
 	States
 	{
 	Spawn:

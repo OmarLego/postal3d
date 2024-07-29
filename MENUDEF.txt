@@ -80,10 +80,10 @@ OptionMenu "Postal3dMenu"
 
   StaticText "How much blood you want to see?"
   StaticText " "
-  //Option "Max Wall Decals", "cl_maxdecals", "maxdecals"
-  //Option "Max Gibs and Blood Pools", "sv_corpsequeuesize", "maxgibs"
   Slider "Max Wall Decals", "cl_maxdecals", 0, 10000, 10, 0
   Slider "Max Gibs/Blood Pools", "sv_corpsequeuesize", 1, 3000, 10, 0
+  
+  Option "Mind Janitor (Cleans Up Non-Bodily Debris in 30 Seconds After Appearing)", "PRLD_Janny", "OnOff"
   
 	StaticText ""
 	StaticText "Weather Settings", Gold
@@ -123,32 +123,6 @@ OptionValue "YesOrNoFalse"
 {
 	1, "No"
 	0, "Yes"
-}
-
-OptionValue "maxdecals"
-{
-	1, "0"
-	128, "128"
-	512, "512"
-	1024, "1024"
-	2056, "2056"
-	5102, "5102"
-	9999, "9999"
-}
-
-
-OptionValue "maxgibs"
-{
-	1, "0"
-	64, "64"
-	100, "100"
-	500, "500"
-	1000, "1000"
-	2000, "2000"
-	5000, "5000"
-	10000, "10000"
-	25000, "25000"
-	50000, "50000"
 }
 
 AddOptionMenu "OptionsMenu"

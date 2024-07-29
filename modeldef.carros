@@ -62,6 +62,15 @@ Model PRLD_Car7
    
 	FrameIndex BRLS A 0 0
 }
+Model PRLD_Car8
+{
+	Path "Models/Cars"
+	Model 0 "car.md3"
+	Skin 0 "ncar8.png"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
 
 //broken car
 MODEL PRLD_CarBroke

@@ -3,6 +3,8 @@ monospacefonts true, "0";
 
 statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 {
+InInventory Not PRLD_CutsceneWeap, 1
+{
 	//health
 	drawimage "HEALTH1", 20, -2, centerbottom, 25, 35;
 	drawnumber 2147483647, STATUSFONT, untranslated, health, drawshadow, 82, -20;
@@ -54,6 +56,7 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 		// let's hope no mod ever uses 100 keys...
 		drawkeybar 100, vertical, reverserows, auto, -10, 2, 0, 3, auto;
 	}
+}
 }
 
 statusbar normal // Standard Doom Status bar

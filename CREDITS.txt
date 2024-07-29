@@ -12,8 +12,10 @@ Running With Scissors - POSTAL
 [GRAPHICS]
 
 katherinecode - Main Sprite, Texture, and Model Artist
-//dennis will hopefully become a bigger part of the project in the future, just right now i want to hog all the work xddd
+
 SevaKsP - Spriting, Texturing, and Modeling Help
+
+N4h - HUD Font, Edits to "Home" Level's Skybox, Edits to Vehicles
 
 Running With Scissors - Various POSTAL Titles
 
@@ -25,6 +27,14 @@ https://polyhaven.com/a/beige_wall_002
 =============
 [SOUNDS]
 
+BigStronk - Main Sound Designer
+
+katherinecode - Sound Designer
+
+Immorpher - Sound Upscaling
+
+Running With Scissors - Various POSTAL Titles
+
 Pixabay - Belt Buckle (https://pixabay.com/sound-effects/belt-buckle-103410/)
 
 
@@ -32,7 +42,7 @@ Pixabay - Belt Buckle (https://pixabay.com/sound-effects/belt-buckle-103410/)
                           [BRAIN DEAD ARTS IS]
 
 katherinecode - Project Lead, Artist, Mapper, and Coder
-SevaKsP - Artist and Coder
+SevaKsP - Artist and Coder, Original Weapon Creator
 BigStronk - Sound Designer
 
 unsorted
@@ -69,3 +79,22 @@ https://pixabay.com/sound-effects/shotgun-03-38220/
 https://pixabay.com/sound-effects/080902-shotgun-39753/
 https://film-empire.weebly.com/free-fe-downloads.html
 http://rapidteria.com/8CYZ
+
+
+
+
+
+sounds i have no idea if i will use
+
+
+https://pixabay.com/sound-effects/explosion-80108/
+https://pixabay.com/sound-effects/distant-explosion-47562/
+https://pixabay.com/sound-effects/large-realistic-explosion-08-190269/
+https://pixabay.com/sound-effects/cannon-fire-161072/
+https://pixabay.com/sound-effects/explosion-6055/
+https://pixabay.com/sound-effects/distant-explosion-80398/
+https://pixabay.com/sound-effects/medium-explosion-40472/
+https://pixabay.com/sound-effects/wood-break-40011/                                       (used)
+https://pixabay.com/sound-effects/window-breaking-105533/
+https://pixabay.com/sound-effects/explosion-80108/
+https://pixabay.com/sound-effects/clean-revolver-reload-6889/
