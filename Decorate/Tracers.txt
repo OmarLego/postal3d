@@ -54,7 +54,7 @@ Death:
 		PUFF D 2 BRIGHT
 		Stop
 		XDeath:
-		TNT1 A 3 A_PlaySound("hitflesh")
+		TNT1 A 3 A_PlaySound("hitflesh", 4, 0.75)
 		Stop
 	}
 }
@@ -182,15 +182,14 @@ Actor PrldHostileTracer: P3D_Tracer
 	States
 	{
     Spawn:
-        TRAC A 1 BRIGHT A_PlaySound ("subsonic/aggressive", 0, 1.0, true, 2.0)
+		//TRAC A 1 BRIGHT A_PlaySound ("subsonic/aggressive", 0, 1.0, true, 2.0)
+        TRAC A 1 BRIGHT A_JumpIfCloser(200, "Matrix")
 		Loop
-	/*Spawn:
-		TRAC A 1 BRIGHT
-		TRAC A 1 BRIGHT A_CheckSightOrRange(192,"Whiz")
-		Loop
-	Whiz:
-		TRAC A 1 BRIGHT A_PlaySound ("subsonic/aggressive", 0, 1.0, true, 2.0)
-        Loop*/ //idk if it does anything tbh i have to test more
+	Matrix:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("subsonic/aggressive", 0, 1.0, true, 2.0)
+		TRAC A 16 BRIGHT
+		Goto Spawn
 	Death:
 		PUFF A 1 BRIGHT A_Scream
 		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
@@ -198,7 +197,7 @@ Actor PrldHostileTracer: P3D_Tracer
 		PUFF D 2 BRIGHT
 		Stop
 	XDeath:
-		TNT1 A 3 A_PlaySound("hitflesh")
+		TNT1 A 3 A_PlaySound("hitflesh", 4, 0.75)
 		Stop
 	}
 }

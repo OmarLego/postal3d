@@ -1,23 +1,52 @@
-ACTOR PRLD_HealthBox : Medikit
+ACTOR PRLD_HealthBox : Medikit Replaces Medikit
 {
-  Inventory.PickupMessage "$GOTHEALBOX"
-  Health.LowMessage 25, "$GOTHBOXNEED"
-  States
-  {
-  Spawn:
-    HEBO A -1
-    Stop
-  }
-}
-
-ACTOR PRLD_Kevlar : BlueArmor
-{
-	//Armor.SavePercent 85
-	Armor.SaveAmount 100
+	Inventory.PickupMessage "$GOTHEALBOX"
+	Health.LowMessage 25, "$GOTHBOXNEED"
+	Scale 0.5
+	Radius 8
 	States
 	{
 	Spawn:
-		ARM1 A 100
-		Loop
+		HEBO A -1
+		Stop
+	}
+}
+ACTOR PRLD_HealthBoxS : Stimpack Replaces Stimpack
+{
+	Inventory.PickupMessage "$GOTHEALBOX"
+	Health.LowMessage 25, "$GOTHBOXNEED"
+	YScale 0.3
+	XScale 0.5
+	Radius 12
+	States
+	{
+	Spawn:
+		HEBO A -1
+		Stop
+	}
+}
+
+ACTOR PRLD_Kevlar : GreenArmor Replaces GreenArmor
+{
+	//Armor.SavePercent 85 //postal 2 armor //literal tank armor jesus
+	Inventory.Icon "PARMA0"
+	Scale 0.5
+	States
+	{
+	Spawn:
+		PARM A -1
+		Stop
+	}
+}
+
+ACTOR PRLD_HKevlar : BlueArmor Replaces BlueArmor
+{
+	Inventory.Icon "PARMB0"
+	Scale 0.5
+	States
+	{
+	Spawn:
+		PARM B -1
+		Stop
 	}
 }

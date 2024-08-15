@@ -1,16 +1,23 @@
 ACTOR CasingBase
 {
-	Height 6
-	Radius 6
-	Scale 0.15
-	Bouncetype Doom
-	Bouncesound "CASING"
-	+MISSILE
+	BounceType Doom
+	PROJECTILE
+	-NOGRAVITY
+	//-NOBLOCKMAP
+	-ACTIVATEIMPACT
 	+NOTELEPORT
-	+NOTRIGGER
-	+DROPOFF
+	-TELESTOMP
+	//+SOLID
+	+ROLLSPRITE
+	+ROLLCENTER
+	Radius 2
+	bouncefactor 0.7
+	gravity 0.5
+	Speed 3
+	scale 0.2
+	BounceSound "CasBounce"
+	DeathSound "CasDie"
 	+FORCEXYBILLBOARD
-	+CLIENTSIDEONLY
 	States
 	{
 	Spawn:
@@ -47,7 +54,8 @@ ACTOR 9MMCasingSpawnerTemp : 9MMCasingSpawner
 	{
 	Spawn:
         TNT1 A 0
-		TNT1 A 0 A_SpawnItemEx("9MMCasing", 25, 6, 0, frandom(1,3), frandom(-2,-4), frandom(1,3))
+		//TNT1 A 0 A_SpawnItemEx("9MMCasing", 25, 6, 0, frandom(1,3), frandom(-2,-4), frandom(1,3))
+		TNT1 A 0 A_SpawnItemEx("9MMCasing", 7, 6, 0, frandom(1,3), frandom(-2,-4), frandom(1,3))
 		TNT1 A 1
 		TNT1 A 1
 		Stop
@@ -108,48 +116,25 @@ ACTOR MagnumCasingSpawner
 }
 ACTOR 9MMCasing : CasingBase
 {
-	Height 5
-	Radius 5
-	Scale 0.2
-	BounceSound "CasBounce"
-	DeathSound "CasDie"
+	XScale -0.2
 	States
 	{
 	Spawn:
-		CAS1 ABCDEFGH 1 A_CustomMissile("CasingSmoke", 0, 0, random(0, 360), 2, random(85, 90))
+		CAS1 AABBCBAA 1 {
+		A_SetRoll(roll + 45, SPF_INTERPOLATE); 
+		A_CustomMissile("CasingSmoke", 0, 0, random(0, 360), 2, random(85, 90));
+		}
 		Loop
 	Death:
-	TNT1 A 0 A_Jump (256,"D1","D2","D3","D4","D5","D6")
-	D1:
-	CAS1 IIIII 3
-	TNT1 A 0 A_SpawnItem("MicroSmokeColumn")
-		CAS1 I 2000
-		Loop
-	D2:
-	CAS1 JJJJJ 3
-	TNT1 A 0 A_SpawnItem("MicroSmokeColumn")
-		CAS1 J 2000
-		Loop	
-	D3:
-	CAS1 KKKKKK 3
-	TNT1 A 0 A_SpawnItem("MicroSmokeColumn")
-		CAS1 K 2000
-		Loop
-	D4:
-	CAS1 LLLLLL 3
-	TNT1 A 0 A_SpawnItem("MicroSmokeColumn")
-		CAS1 L 2000
-		Loop	
-	D5:
-	CAS1 MMMMMM 3
-	TNT1 A 0 A_SpawnItem("MicroSmokeColumn")
-		CAS1 M 2000
-		Loop	
-	D6:
-	CAS1 NNNNNN 3
-	TNT1 A 0 A_SpawnItem("MicroSmokeColumn")
-		CAS1 N 2000
-		Loop	
+		"####" # 15
+		"####" # 0 A_SpawnItem("MicroSmokeColumn")
+		"####" # 0 ACS_NamedExecuteAlways("PrldJanny")
+		"####" # -1
+		Stop
+    JanDeath:
+		"####" # 0
+		"####" # 1050//30 seconds
+		Stop
 	}
 }
 

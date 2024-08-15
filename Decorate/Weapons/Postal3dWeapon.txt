@@ -66,12 +66,14 @@ ACTOR Postal3dWeapon : Weapon
     Weapon.AmmoGive1 0
     Weapon.AmmoGive2 0
     +FORCEXYBILLBOARD
-    Weapon.BobStyle Inverse
-	Weapon.BobSpeed 2.7
+    //Weapon.BobStyle Inverse
+	//Weapon.BobSpeed 2.7
+	
 	//Weapon.BobRangeX 0.3
 	//Weapon.BobRangeY 0.15
-	Weapon.BobRangeX 30.0
-	Weapon.BobRangeY 15.0
+	//new bob
+	//Weapon.BobRangeX 30.0
+	//Weapon.BobRangeY 15.0
 	Inventory.PickupSound "weapons/pickup"
 	+weapon.NoAutoaim
 	+Weapon.NoAutoFire
@@ -88,32 +90,25 @@ ACTOR Postal3dWeapon : Weapon
         TNT1 AA 0 A_Raise
         Wait
 		
-	Kick:
-		TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
+	Zoom: //Kick(more responsive on the zoom key
 		TNT1 A 0 A_PlaySound("weapons/melee/kick")
 		TNT1 A 0 SetPlayerProperty(0, 1, PROP_FROZEN)
-		//If the player has been punching, end the combo here
-		TNT1 A 0 A_TakeInventory("PSeq1", 2)
-		TNT1 A 0 A_TakeInventory("PSeq2", 1)
 		TNT1 A 0 A_GunFlash("KickFlash")
 		KICK A 3
-		TNT1 A 0 A_Takeinventory("Kicking",1)
 		TNT1 A 0 A_FireCustomMissile("KickAttack", 0, 0, 0, -7)
 		//13 tics in total
-		//KICK BBB 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		KICK B 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		KICK B 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		KICK B 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		KICK CD 3
 		TNT1 A 1
 		TNT1 A 0 SetPlayerProperty(0,0, PROP_FROZEN)
-		TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
-		//TNT1 A 0 A_Takeinventory("Kicking",1)
 		TNT1 A 0 A_Jump(256, "Ready")
 		
-	Zoom: //Execute
+	Kick: //Execute
 		TNT1 A 0
 		TNT1 A 0 A_FireCustomMissile("PRLD_UseAttack", 0, 0, 0, 0, 0, 0)
+		TNT1 A 0 A_TakeInventory("Kicking", 1)
 		TNT1 A 0 A_Jump(256, "Ready")
 		
 		
@@ -289,6 +284,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadOfficer1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop1_Mcht:
@@ -306,26 +302,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadOfficer1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop1_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE1 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE1 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE1 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		POE1 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecCop1", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadOfficer1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop1_DB:
 		POE1 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Cop1_Headshot
 		
 		
@@ -420,6 +418,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadCop2_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop2_Mcht:
@@ -437,26 +436,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadOfficer2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop2_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE2 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE2 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE2 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		POE2 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecCop2", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadOfficer2_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop2_DB:
 		POE2 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Cop2_Headshot
 		
 
@@ -551,6 +552,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadOfficer3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop3_Mcht:
@@ -568,26 +570,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadOfficer3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop3_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE3 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE3 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE3 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		POE3 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecCop3", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadOfficer3_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Cop3_DB:
 		POE3 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Cop3_Headshot
 	
 	
@@ -687,6 +691,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadSheriffHeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff1_Mcht:
@@ -704,26 +709,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadSheriffHeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff1_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE1 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE1 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE1 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		SHE1 E 3
 		TNT1 A 0 A_TakeInventory("ExecuteDownedSheriff1", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadSheriff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff1_DB:
 		SHE1 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Sheriff1_Headshot
 		
 		
@@ -818,6 +825,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadSheriff2_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff2_Mcht:
@@ -834,27 +842,29 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff2", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
-        TNT1 A 0 A_SpawnItem("DeadSheriff2HeadOff1")
+        TNT1 A 0 A_SpawnItem("DeadSheriff2_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff2_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE2 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE2 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE2 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		SHE2 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff2", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadSheriff2_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff2_DB:
 		SHE2 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Sheriff2_Headshot
 		
 		
@@ -949,6 +959,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadSheriff3_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff3_Mcht:
@@ -965,27 +976,29 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff3", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
-        TNT1 A 0 A_SpawnItem("DeadSheriff3HeadOff1")
+        TNT1 A 0 A_SpawnItem("DeadSheriff3_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff3_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE3 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE3 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		SHE3 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		SHE3 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff3", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadSheriff3_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Sheriff3_DB:
 		SHE3 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Sheriff3_Headshot
 		
 		
@@ -1082,6 +1095,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadVestCop1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop1_Mcht:
@@ -1099,26 +1113,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadVestCop1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop1_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE4 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE4 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE4 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		POE4 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop1", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadVestCop1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop1_DB:
 		POE4 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto VestCop1_Headshot
 		
 		
@@ -1213,6 +1229,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadVestCop2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop2_Mcht:
@@ -1230,26 +1247,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadVestCop2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop2_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE5 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE5 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE5 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		POE5 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop2", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadVestCop2_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop2_DB:
 		POE5 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto VestCop2_Headshot
 		
 		
@@ -1344,6 +1363,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadVestCop3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop3_Mcht:
@@ -1361,26 +1381,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadVestCop3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop3_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE6 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE6 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		POE6 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		POE6 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop3", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
-        TNT1 A 0 A_SpawnItem("DeadVestCop33_1")
+        TNT1 A 0 A_SpawnItem("DeadVestCop3_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	VestCop3_DB:
 		POE6 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto VestCop3_Headshot
 		
 		
@@ -1478,6 +1500,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadCivilian1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian1_Mcht:
@@ -1495,26 +1518,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadCivilian1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian1_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE01 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE01 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE01 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		CE01 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian1", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadCivilian1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian1_DB:
 		CE01 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Civilian1_Headshot
 		
 		
@@ -1565,6 +1590,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadCivilian2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian2_Mcht:
@@ -1581,27 +1607,29 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian2", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
-        TNT1 A 0 A_SpawnItem("DeadCivilian2_1")
+        TNT1 A 0 A_SpawnItem("DeadCivilian2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian2_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE02 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE02 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE02 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		CE02 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian2", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadCivilian2_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian2_DB:
 		CE02 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Civilian2_Headshot
 		
 		
@@ -1696,6 +1724,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadCivilian3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian3_Mcht:
@@ -1713,26 +1742,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadCivilian3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian3_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE03 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE03 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE03 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		CE03 E 3
 		TNT1 A 0 A_TakeInventory("ExecuteDownedCivilian3", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadCivilian3_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian3_DB:
 		CE03 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Civilian3_Headshot		
 		
 
@@ -1827,6 +1858,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadCivilian4HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian4_Mcht:
@@ -1844,25 +1876,27 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadCivilian4HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian4_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE04 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE04 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		CE04 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		CE04 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian4", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadCivilian4_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Civilian4_DB:
 		CE04 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Civilian4_Headshot	
 		
 		
@@ -1960,6 +1994,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadGrenader1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Grenader1_Mcht:
@@ -1977,26 +2012,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadGrenader1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Grenader1_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		GE01 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		GE01 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		GE01 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		GE01 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecGrenader1", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadGrenader1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Grenader1_DB:
 		GE01 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Grenader1_Headshot
 		
 		
@@ -2094,6 +2131,7 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8 Offset(119, 99)
         TNT1 A 0 A_SpawnItem("DeadRocketeer1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Rocketeer1_Mcht:
@@ -2111,26 +2149,28 @@ ACTOR Postal3dWeapon : Weapon
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadRocketeer1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Rocketeer1_MGun:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		RE01 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		RE01 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		RE01 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		RE01 E 3
 		TNT1 A 0 A_TakeInventory("PRLD_ExecRocketeer1", 1)
 		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
 		TNT1 A 8
         TNT1 A 0 A_SpawnItem("DeadRocketeer1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		
 		TNT1 A 0 A_Jump(256, "ExecutionFinish")
 	Rocketeer1_DB:
 		RE01 F 56
-		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto Rocketeer1_Headshot
 		
 		
@@ -2194,7 +2234,7 @@ ACTOR PRLD_CutsceneWeap : Postal3dWeapon
 		//Goto Ready
     Ready:
 		//TNT1 A 1 A_CustomBulletAttack(0, 0, 1, 0, "CutscenePuff", 128, CBAF_NORANDOM)
-		TNT1 A 1
+		TNT1 A 1 A_WeaponReady
 		Loop
 	Spawn:
 		TNT1 A 1

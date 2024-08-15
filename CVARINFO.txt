@@ -19,7 +19,8 @@ server float fs_delay_mul = 1.0;
 //QuakeMove
 //bob has issues so its removed by default :(
 //i dunno how to fix this code out of my league
-user bool CG_QuakeBob = false;
+//not anymore
+user bool PCG_QuakeBob = true;//P is for postal
 
 user float CG_RunPitch = 0.002;
 user float CG_RunRoll = 0.005;

@@ -3,7 +3,7 @@ monospacefonts true, "0";
 
 statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 {
-InInventory Not PRLD_CutsceneWeap, 1
+InInventory Not PRLD_CutsceneWeap || PRLD_M12Spawn, 1
 {
 	//health
 	drawimage "HEALTH1", 20, -2, centerbottom, 25, 35;

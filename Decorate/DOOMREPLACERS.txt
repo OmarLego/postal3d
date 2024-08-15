@@ -94,6 +94,17 @@ ACTOR PrldShotgunnerReplacer: RandomSpawner replaces Shotgunguy
 	Radius 20
     Height 52
 	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1"
 }
 ACTOR PrldChaingunnerReplacer: RandomSpawner replaces Chaingunguy
 {
@@ -112,6 +123,12 @@ ACTOR PrldChaingunnerReplacer: RandomSpawner replaces Chaingunguy
 	DropItem "RifleOfficer2_4"
 	DropItem "RifleOfficer2_5"
 	DropItem "RifleOfficer2_6"
+	DropItem "RifleOfficer3"
+	DropItem "RifleOfficer3_2"
+	DropItem "RifleOfficer3_3"
+	DropItem "RifleOfficer3_4"
+	DropItem "RifleOfficer3_5"
+	DropItem "RifleOfficer3_6"
 }
 ACTOR PrldRevenantReplacer: RandomSpawner replaces Revenant
 {

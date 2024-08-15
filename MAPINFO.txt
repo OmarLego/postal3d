@@ -43,7 +43,7 @@ DoomEdNums
 	2004 = Flammenwerfer
 	2005 = MacheteAmmo
 	2006 = NapalmLauncher
-	10025 = PRLD_M12
+	10025 = PRLD_M12Spawner
 	10026 = Grenadee
 	10027 = PB
 	10029 = Molotovv
@@ -51,14 +51,11 @@ DoomEdNums
 	
 	//Monsters
 	//hostiles
-	//10003 = PRLD_PistolCopSpawner
 	15010 = PRLD_PistolCopSpawner
 	10006 = PRLD_SheriffSpawner
 	10004 = PRLD_ShotgunCopSpawner
 	10005 = PRLD_RifleCopSpawner
-	//10001 = PRLD_GrenaderSpawner
 	15008 = PRLD_GrenaderSpawner
-	//10002 = PRLD_RocketeerSpawner
 	15009 = PRLD_RocketeerSpawner
 	//civilians
 	16045 = PRLD_CivilianSpawner
@@ -67,6 +64,7 @@ DoomEdNums
 	//power-ups
 	2012 = PRLD_HealthBox
 	2018 = PRLD_Kevlar
+	2019 = PRLD_HKevlar
 	//ammo
 	10009 = ShotgunCopShellDrop
 	
@@ -90,7 +88,6 @@ DoomEdNums
 	
 	//destructable (combined with actual map stuff)
 	10016 = PRLD_FenceDestruct
-	//10030 = PRLD_GlassDestruct
 	15012 = PRLD_GlassDestruct
 	
 	//geometry
@@ -114,19 +111,17 @@ DoomEdNums
 	15007 = PRLD_PropaneC
 	//roofs
 	10010 = PRLD_DudeRoof
-	//10011 = PRLD_HomeRoof1
 	15011 = PRLD_HomeRoof1
 	10018 = PRLD_HomeRoof1Red
 	10012 = PRLD_HomeRoof2
 	10013 = PRLD_HomeLongRoof
 	10014 = PRLD_HomeLongRoofC
 	10015 = PRLD_DonutShopRoof
-	//10040 = PRLD_PoliceRoof1
 	15013 = PRLD_PoliceRoof1
 	10043 = PRLD_ResturantRoof1
 	10044 = PRLD_BathRoof1
 	//I DIDNT KNOW HEXEN ACTORS WERE IN THE THE 10000-10040 RANGES BRO anyways too lazy to change everything right now but ill probably have to do it eventually
-	//THE New era starts now (15000-30000 100% free)
+	//THE New era starts now (15000-30000 100% free)                                                         //now i did
 	15000 = PRLD_GunRoof1
 	
 	//gameplay
@@ -161,8 +156,23 @@ Skill baby
 	AmmoFactor = 2
 	DamageFactor = 0.5
 	EasyBossBrain
-	SpawnFilter = Baby
+	//SpawnFilter = Baby
+	SpawnFilter = Nightmare
 	Name = "$SKILL_BABY"
+	ReplaceActor = "PRLD_PistolCopSpawner", "PRLD_CivilianSpawner"
+	ReplaceActor = "PRLD_SheriffSpawner", "PRLD_CivilianSpawner"
+	ReplaceActor = "PRLD_ShotgunCopSpawner", "PRLD_CivilianSpawner"
+	ReplaceActor = "PRLD_RifleCopSpawner", "PRLD_CivilianSpawner"
+	ReplaceActor = "PRLD_GrenaderSpawner", "PRLD_CivilianSpawner"
+	ReplaceActor = "PRLD_RocketeerSpawner", "PRLD_CivilianSpawner"
+	
+	//da doom
+	
+	ReplaceActor = "Zombieman", "PRLD_CivilianSpawner"
+	ReplaceActor = "Shotgunguy", "PRLD_CivilianSpawner"
+	ReplaceActor = "Chaingunguy", "PRLD_CivilianSpawner"
+	ReplaceActor = "DoomImp", "PRLD_CivilianSpawner"
+	ReplaceActor = "Revenant", "PRLD_CivilianSpawner"
 }
 
 Skill easy
@@ -204,7 +214,7 @@ Map PRLD01 "$TXT_PRLD01"
 {
 	music = ""
 	sky1 = "SKYHOME"
-	//LightMode = 3 //recommended but i like messing around with light settings so
+	LightMode = 3
 	fade = "2d9bba"
 	fogdensity = 2
 	MONSTERFALLINGDAMAGE

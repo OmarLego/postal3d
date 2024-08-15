@@ -8,14 +8,12 @@ SKILL_NORMAL = "Normal";
 SKILL_HARD = "Hard";
 SKILL_NIGHTMARE = "Nightmare";
 
-//CNTRLMNU_ZOOM = "Kick";
-CNTRLMNU_ZOOM = "Execute";
 
 
 
 //Power-ups
 GOTHEALBOX = "Picked up a health box.";
-GOTHBOXNEED = "Picked up a health box that you really needed to continue.";
+GOTHBOXNEED = "Picked up a health box that you REALLY needed.";//does gzdoom even do caps
 
 
 

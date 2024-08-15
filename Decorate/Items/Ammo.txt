@@ -214,7 +214,8 @@ ACTOR 9MM : Ammo
 {
   Inventory.PickupMessage "Got 4 light cartridges"
   Inventory.Amount 4
-  scale 0.5
+  //scale 0.5
+  scale 0.3
   Inventory.MaxAmount 180
   Ammo.BackpackAmount 20
   Ammo.BackpackMaxAmount 270
@@ -430,7 +431,8 @@ ACTOR Molotovv : Ammo
 {
   Inventory.PickupMessage "Got 1 Molotov"
   Inventory.Amount 1
-  scale 0.3
+  //scale 0.3
+  scale 0.6
   Inventory.MaxAmount 4
   Ammo.BackpackAmount 1
   Ammo.BackpackMaxAmount 9
@@ -448,7 +450,8 @@ ACTOR MolotovBox : Molotovv
 {
   Inventory.PickupMessage "Got a box of 3 Molotovs"
   Inventory.Amount 3
-  scale 0.9
+  //scale 0.9
+  scale 0.6
   Inventory.MaxAmount 4
   Ammo.BackpackAmount 1
   Ammo.BackpackMaxAmount 9
@@ -561,7 +564,8 @@ ACTOR MacheteAmmo : Ammo
   States
   {
   Spawn:
-  MCHP A -1
+  //MCHP A -1
+  MCHA C -1
       loop
   }
 }
@@ -570,7 +574,8 @@ ACTOR MacheteBloodAmmo : MacheteAmmo
   States
   {
   Spawn:
-  MCHP B -1
+  //MCHP B -1
+  MCHB C -1
       loop
   }
 }

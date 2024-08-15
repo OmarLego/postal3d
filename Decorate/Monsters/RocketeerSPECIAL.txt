@@ -45,9 +45,13 @@ ACTOR InjuredRocketeer1_1 : PrldInjuredMonster
 		TNT1 A 0 A_JumpIfInventory("PRLD_InjuredTimer", 13, "GotoDeath")
 		Loop
 	Death1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		TNT1 A 0 A_SpawnItem ("DeadGrenader1_1", 0)
 		Stop
 	Death2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
 		TNT1 A 0 A_SpawnItem ("DeadGrenader1_2", 0)
 		Stop
 	XDeath:

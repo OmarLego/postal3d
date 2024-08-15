@@ -30,7 +30,7 @@ class QuakePlayer : PlayerPawn
     }
 
 
-    const quakeBobCVar = "CG_QuakeBob";
+    const quakeBobCVar = "PCG_QuakeBob";
     const runPitchCVar = "CG_RunPitch";
     const runRollCVar = "CG_RunRoll";
     const bobPitchCVar = "CG_BobPitch";
@@ -778,7 +778,8 @@ class QuakePlayer : PlayerPawn
 		// move viewheight
 		if (player.playerstate == PST_LIVE)
         {
-            player.viewHeight += player.deltaViewHeight * 8 / stepReturnTics;
+            //player.viewHeight += player.deltaViewHeight * 8 / stepReturnTics;
+			player.viewHeight += player.deltaViewHeight * 900 / stepReturnTics;//makes height change instant, looks worse but you cant exploit it as i have no idea how to fix the normal height change function lma
 
             if (player.deltaViewHeight < 0 && player.ViewHeight < defaultViewHeight
                 || player.deltaViewHeight > 0 && player.ViewHeight > defaultViewHeight)
@@ -814,6 +815,8 @@ class QuakePlayer : PlayerPawn
 
         let weapon = player.readyWeapon;
 		if (weapon == null || weapon.bDontBob) return (0, 0);
+		double BobIntensity = (player.WeaponState & WF_WEAPONBOBBING) ? 1. : player.GetWBobFire();//pasted from gzdoom.pk3 xd
+		if (BobIntensity == 0) return (0, 0);//when firing, dont bob(thanks to bullet streams not changing placement even when the gun does)
 
         Vector2 offset = (0, 0);
 

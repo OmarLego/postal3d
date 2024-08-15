@@ -4,11 +4,9 @@ $volume NoSoundHax 0.01
 
 //Monsters
 
-//bodydrop1 "sounds/monsters/bodydrop1.wav"
-//bodydrop2 "sounds/monsters/bodydrop2.wav"
-//$random bodydrop { bodydrop1 bodydrop2 }
-$random bodydrop { monster_bodydrop1 monster_bodydrop2 monster_bodydrop3
-monster_bodydrop4 monster_bodydrop5 }
+$random bodydrop { weapons/melee/heavy1 weapons/melee/heavy4 weapons/melee/heavy5 }
+$volume bodydrop 0.75
+//$random bodydrop { monster_bodydrop1 monster_bodydrop2 monster_bodydrop3 monster_bodydrop4 monster_bodydrop5 }
 monster_bodydrop1 Sounds/Monsters/monster_bodydrop1.ogg
 monster_bodydrop2 Sounds/Monsters/monster_bodydrop2.ogg
 monster_bodydrop3 Sounds/Monsters/monster_bodydrop3.ogg
@@ -34,7 +32,7 @@ weapons/m16/fire2 "sounds/weapons/Hostile/m16-fire2.wav"
 $alias hostrifl AKFIR
 $alias weapons/m16/fire AKFIR
 //glock 17 (standard pistol guys)
-weapons/glock17/fire "sounds/weapons/Hostile/glock17-fire.wav"
+weapons/glock17/fire "sounds/weapons/Hostile/glock17-fire.ogg"
 
 //Weapons
 weapons/execution 		"sounds/weapons/execution.ogg"
@@ -286,8 +284,7 @@ $Random Frag { FRAG1 FRAG2 FRAG3 FRAG4 }
 
 //Gore
 
-hitflesh	HFLESH
-//$random hitflesh { weapons/melee/heavy1 weapons/melee/heavy2 weapons/melee/heavy3 weapons/melee/heavy4 weapons/melee/heavy5 }
+$alias hitflesh weapons/melee/heavy2
 
 blood/drop				BLODDROP
 $limit blood/drop 5
@@ -422,7 +419,7 @@ THND4 THND4
 THND5 THND5
 THND6 THND6
 wind/light WNDLIGHT
-$ambient 1 wind/light surround continuous 0.2
+$ambient 1 wind/light point continuous 1.0//surround continuous 0.2
 
 //glass
 glass/break	DSGLASS

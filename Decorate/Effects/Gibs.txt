@@ -240,7 +240,7 @@ Actor PRLD_HeadshotGib3 : PRLD_HeadshotGib1
     }
 }
 
-actor PrldGibSheriffHat : PrldGib
+ACTOR PrldGibSheriffHat : PrldGib
 {
 	-FORCEXYBILLBOARD
     States
@@ -256,7 +256,17 @@ actor PrldGibSheriffHat : PrldGib
 		Stop
     }
 }
-actor PrldGibOfficerHat : PrldGibSheriffHat
+actor PrldGibSheriffHatD : PrldGibSheriffHat
+{
+    States
+    {
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("SmallFlame")
+		Stop
+    }
+}
+Actor PrldGibOfficerHat : PrldGibSheriffHat
 {
     States
     {
@@ -271,7 +281,17 @@ actor PrldGibOfficerHat : PrldGibSheriffHat
 		Stop
     }
 }
-actor PrldGibOfficerBeret : PrldGibSheriffHat
+actor PrldGibOfficerHatD : PrldGibOfficerHat
+{
+    States
+    {
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("SmallFlame")
+		Stop
+    }
+}
+Actor PrldGibOfficerBeret : PrldGibSheriffHat
 {
     States
     {
@@ -283,6 +303,16 @@ actor PrldGibOfficerBeret : PrldGibSheriffHat
         TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_QueueCorpse
 		SOH1 L -1
+		Stop
+    }
+}
+actor PrldGibOfficerBeretD : PrldGibOfficerBeret
+{
+    States
+    {
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("SmallFlame")
 		Stop
     }
 }
@@ -301,6 +331,16 @@ actor PrldGibRocketeerHat : PrldGibSheriffHat
 		Stop
     }
 }
+actor PrldGibRocketeerHatD : PrldGibRocketeerHat
+{
+    States
+    {
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("SmallFlame")
+		Stop
+    }
+}
 
 actor PrldGibRocketeerBag : PrldGib
 {
@@ -315,6 +355,16 @@ actor PrldGibRocketeerBag : PrldGib
         TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_QueueCorpse
 		RH00 A -1
+		Stop
+    }
+}
+actor PrldGibRocketeerBagD : PrldGibRocketeerBag
+{
+    States
+    {
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("SmallFlame")
 		Stop
     }
 }
@@ -365,7 +415,8 @@ Actor PrldGibAvgMale1Head : PrldGibHead
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibMale1HeadL")
 		Stop
     }
@@ -405,7 +456,8 @@ Actor PrldGibAvgMale2Head : PrldGibHead
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibMale2HeadL")
 		Stop
     }
@@ -445,7 +497,8 @@ actor PrldGibMale3Head : PrldGibHead
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibMale3HeadL")
 		Stop
     }
@@ -486,7 +539,8 @@ actor PrldGibSheriffHead : PrldGibHead
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibSheriff1HeadL")
 		Stop
     }
@@ -526,7 +580,8 @@ actor PrldGibGrenader1Head : PrldGibHead
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibGrenader1HeadL")
 		Stop
     }
@@ -566,7 +621,8 @@ actor PrldGibFem1Head : PrldGibHead
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibFem1HeadL")
 		Stop
     }
@@ -606,7 +662,8 @@ Actor PrldGibArmWhite : PrldGibArm
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibArmWhiteL")
 		Stop
     }
@@ -642,7 +699,8 @@ actor PrldGibArmBlack : PrldGibArm
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibArmBlackL")
 		Stop
     }
@@ -678,7 +736,8 @@ actor PrldGibArmBrown : PrldGibArm
         Loop
     Death:
 		TNT1 A 0
-		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
         TNT1 A 0 A_SpawnItem("PrldGibArmBrownL")
 		Stop
     }

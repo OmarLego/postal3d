@@ -3,7 +3,7 @@ ACTOR Molotov : Postal3dWeapon
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 1
 	Weapon.AmmoUse2 0
-	Weapon.AmmoGive2 1
+	//Weapon.AmmoGive2 1
 	Weapon.AmmoType1 "Molotovv"
 	Weapon.AmmoType2 "Magazine11"
 Scale 0.3
@@ -26,6 +26,14 @@ Loop
 	TNT1 A 0 A_JumpIfInventory("ExecuteDownedEnemy", 1, "DoExecution")
 	MOLR A 1 A_WeaponReady(WRF_ALLOWZOOM)
 	loop
+	
+
+	KickFlash:
+	TNT1 A 0 A_JumpIfInventory ("Magazine11",1,"KickFlashA")
+	Stop
+	KickFlashA:
+	MOLR A 16
+	Stop
 
 	Select:
 	TNT1 A 0
@@ -65,9 +73,6 @@ Loop
 	MOLP A 1
 	loop
 
-	Reload:
-TNT1 A 0 A_JumpIfInventory ("Magazine11",1,"Ready")
-Goto Reloading
 
 	Fire:
 	TNT1 A 0 A_JumpIfInventory ("Magazine11",1,"Firestart")
@@ -78,49 +83,50 @@ Goto Reloading
 	TNT1 A 0 A_Takeinventory("DoubleMagazine11",1)
 	FireFinish:
 	    TNT1 A 0 A_TakeInventory ("Magazine11",1)
-		MLTT ABCDEFG 4
-		MLTT G 4
-		{
-		A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate);
-		A_PlaySound ("LITUP",CHAN_AUTO);
-		}
-		MLTT GGGGGG 3 BRIGHT A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
-		MLTT H 3 BRIGHT A_PlaySound ("MOLFIR",CHAN_AUTO)
-		MLTT IJKLMNOP 3 BRIGHT 
-		MLTT Q 2 A_PlaySound ("Throw",CHAN_AUTO)
+		MOLR BCDE 3
+		MOLR F 9
+		MOLR FFF 4  A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound ("LITUP",CHAN_AUTO)
+		MOLR GGGG 3 A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound ("MOLFIR",CHAN_AUTO)
+		MOLR HH 3 A_WeaponOffset(Random(-1, 1), Random(35, 40), WOF_Interpolate)
+	MOLR H 1 Offset(5, 35)
+	MOLR H 1 Offset(21, 39)
+	MOLR H 1 Offset(46, 53)
+	MOLR H 1 Offset(76, 65)
+	MOLR H 1 Offset(119, 99)
+	TNT1 A 5 Offset(1, 32)
+	Hold:
+		TNT1 A 1
+		TNT1 A 1 A_Refire
+		//MOLR I 3
+		TNT1 A 0 A_PlaySound ("Throw",CHAN_AUTO)
+		MOLR I 2
+		//TNT1 A 0 A_PlaySound ("Throw",CHAN_AUTO)
+		MOLR J 2
 		TNT1 A 0 A_FireCustomMissile ("MolotovFly",1,0,11,12)
-		MLTT RS 2
+		MCHT N 3
+		TNT1 A 1 Offset(119, 99)
  		goto Ready
 		
 
-Reloading:
-TNT1 A 0 A_JumpIfInventory ("Magazine11",1,"FinishReload")
-TNT1 A 0 A_JumpIfInventory ("Molotovv",1,"StartReload")
-goto FinishReload
-StartReload:
+	Reload:
 TNT1 A 0 A_JumpIfInventory ("Magazine11",1,"Ready")
-TNT1 A 0
-goto Bulletin
+TNT1 A 0 A_JumpIfInventory ("Molotovv",1,"ReloadContinue")
+goto Ready
 
 ReloadContinue:
-MOLE ABCD 2
-goto FinishReload
-
-Bulletin:
-TNT1 AAAA 0
-		TNT1 A 0 A_JumpIfInventory("Magazine11",1,"ReloadContinue")
-		TNT1 A 0 A_JumpIfInventory("Molotovv",1,"Bulletin2")
-	   goto FinishReload
-		Bulletin2:
-        TNT1 AAAAAA 0
+	TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
 		TNT1 A 0 A_Giveinventory("Magazine11",1)
 		TNT1 A 0 A_Giveinventory("DoubleMagazine11",1)
 		TNT1 A 0 A_Takeinventory("Molotovv",1)
-		Goto Bulletin
-		
-		FinishReload:
-		MOLR A 1  
-		Goto Ready
+	TNT1 A 1 Offset(119, 99)
+	MOLR A 1 Offset(119, 99)
+	MOLR A 1 Offset(76, 65)
+	MOLR A 1 Offset(46, 53)
+	MOLR A 1 Offset(21, 39)
+	MOLR A 1 Offset(5, 35)
+	goto Ready
 
 
   }
@@ -133,7 +139,8 @@ Radius 4
 	Projectile
 	Speed 20
     Gravity 0.6
-	Scale 0.3
+	//Scale 0.3
+  scale 0.6
     -NOGRAVITY
     -BLOODSPLATTER
 	-EXTREMEDEATH
@@ -149,7 +156,8 @@ States
 	MOLZ A 1 A_PlaySound ("MLLOOP",CHAN_AUTO)
 	MOLZ  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 BRIGHT
 		{
-   A_SetRoll(roll - 10, SPF_INTERPOLATE);
+   //A_SetRoll(roll - 10, SPF_INTERPOLATE);
+   A_SetRoll(roll + 10, SPF_INTERPOLATE);
    A_CustomMissile("DecorFlame", 0, 0, random (0, 360), 2, random (0, 360));
 }
 	Loop
