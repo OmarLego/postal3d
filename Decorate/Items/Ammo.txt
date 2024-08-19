@@ -493,6 +493,17 @@ actor ClipReplacer : RandomSpawner replaces Clip
 	DropItem "SpeedLoader", 255, 2
 	
 }
+actor PRLD_9mmDrop : RandomSpawner
+{
+	DropItem "9MM", 255, 4
+	DropItem "9MMMag", 255, 3
+}
+actor PRLD_AkDrop : RandomSpawner
+{
+    DropItem "AKBullets", 255, 4
+    DropItem "AKMAG", 255, 2
+	
+}
 
 
 

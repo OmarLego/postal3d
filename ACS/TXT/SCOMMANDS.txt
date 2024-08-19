@@ -1,6 +1,10 @@
 #library "commands"
 #include "zcommon.acs"
 
+Global Int 56:PrldPopulation;
+Global Int 55:PrldPopulationP;
+Global Int 54:PrldPopulationK;
+
 Script 301 (VOID) NET
 {
  GiveInventory("Kicking", 1);
@@ -14,4 +18,19 @@ Script 363 (VOID) NET
 script "PrldJanny" (void)
 {
     if(GetCVar("PRLD_Janny") == 1) { SetActorState (0, "JanDeath"); }
+}
+
+script "Not Actual Population IDK how to count civvies without fucking up the normal levels progression" ENTER
+{
+	While (1)
+	{
+		Int PopA = GetLevelINfo(LEVELINFO_TOTAL_MONSTERS);
+		Int PopK = GetLevelINfo(LEVELINFO_KILLED_MONSTERS);
+	
+		PrldPopulationP = 100 - ((PopK * 100) / PopA);
+	
+		PrldPopulation = PopA;
+		PrldPopulationK = PopA - PopK;
+		delay(1);
+	}
 }

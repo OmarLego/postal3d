@@ -58,6 +58,10 @@ Actor PRLD_CutsceneFUCK : Inventory
 Inventory.MaxAmount 1
 +UNDROPPABLE
 }
+ACTOR PRLD_HomeToken2 : Inventory
+{
+Inventory.maxamount 1
+}
 ACTOR PostalDude : QuakePlayer//PlayerPawn
 {
 	Player.DisplayName "Angel of Death"

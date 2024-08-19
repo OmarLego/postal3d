@@ -95,7 +95,8 @@ Loop
 	MOLR H 1 Offset(46, 53)
 	MOLR H 1 Offset(76, 65)
 	MOLR H 1 Offset(119, 99)
-	TNT1 A 5 Offset(1, 32)
+	//TNT1 A 5 Offset(1, 32)
+	TNT1 A 1 Offset(1, 32)
 	Hold:
 		TNT1 A 1
 		TNT1 A 1 A_Refire

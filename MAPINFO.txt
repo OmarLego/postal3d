@@ -210,7 +210,7 @@ Skill nightmare
 //
 //-------------------------------------------------------------------------------------------
 
-Map PRLD01 "$TXT_PRLD01"
+Map PRLD01 "Home"//"$TXT_PRLD01"
 {
 	music = ""
 	sky1 = "SKYHOME"

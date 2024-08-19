@@ -608,7 +608,7 @@ actor PrldGibGrenader1HeadL : PrldGibDestructable
     }
 }
 
-actor PrldGibFem1Head : PrldGibHead
+Actor PrldGibFem1Head : PrldGibHead
 {
     States
     {
@@ -640,6 +640,86 @@ actor PrldGibFem1HeadL : PrldGibDestructable
 		TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("PrldGibFem1Head", 15, 0, 180, CMF_AIMOFFSET, -80)
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
+		Stop
+    }
+}
+Actor PrldGibFem2Head : PrldGibHead
+{
+    States
+    {
+    Fly:
+		CV08 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV08 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV08 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV08 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
+        TNT1 A 0 A_SpawnItem("PrldGibFem2HeadL")
+		Stop
+    }
+}
+actor PrldGibFem2HeadL : PrldGibDestructable
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_QueueCorpse
+		CV08 W -1
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("PrldGibFem2Head", 15, 0, 180, CMF_AIMOFFSET, -80)
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("misc/xdeath5")
+		TNT1 A 0 A_SpawnItemEx("GibFxBloodChunksSpawner",0,0,8,0,0,0,0,2)
+		Stop
+    }
+}
+Actor PrldGibFem3Head : PrldGibHead
+{
+    States
+    {
+    Fly:
+		CV09 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV09 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV09 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		CV09 W 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        Loop
+    Death:
+		TNT1 A 0
+		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodCircle")
+        TNT1 A 0 A_SpawnItem("PrldGibFem3HeadL")
+		Stop
+    }
+}
+actor PrldGibFem3HeadL : PrldGibDestructable
+{
+    States
+    {
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_QueueCorpse
+		CV09 W -1
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("PrldGibFem3Head", 15, 0, 180, CMF_AIMOFFSET, -80)
 		Stop
 	Death:
 		TNT1 A 0

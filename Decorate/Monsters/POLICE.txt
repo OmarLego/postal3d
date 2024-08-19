@@ -17,7 +17,7 @@ ACTOR PistolOfficer1 : Postal3dMonster
     ActiveSound "act1_copact"
     Obituary "%o was shot by a Pistol Officer. Must've been a lucky shot."
 	//+RANDOMIZE
-	DropItem "9MM"
+	DropItem "PRLD_9mmDrop"
 	Tag "Pistol Officer"
 	Speed 8
 	States
@@ -1723,7 +1723,7 @@ ACTOR Sheriff1 :  ShotgunOfficer1
 {
     Obituary "%o was shot by a Sheriff. They must know what they're doing."
 	Tag "Sheriff"
-	DropItem "9MM"
+	DropItem "PRLD_9mmDrop"
 	Speed 8
 	States
 	{

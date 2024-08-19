@@ -120,13 +120,13 @@ actor PRLD_GrenadeKicked : PRLD_HostileGrenade //4th grenade actor of the projec
 	Speed 25
 	States
 	{
-	Death:
+	/*Death:
 	XDeath:
 		GRNT A 25
 		//TNT1 A 0 A_Explode(55,128, 0 ,0,60)
 		TNT1 A 0 A_Explode(55, 500, 1,1,0,0,0,0)
 		TNT1 A 0 A_SpawnItem("PrldGrenadeExplosion")
-		Stop
+		Stop*/
 	}
 }
 

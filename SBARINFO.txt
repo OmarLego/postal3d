@@ -5,30 +5,50 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 {
 InInventory Not PRLD_CutsceneWeap || PRLD_M12Spawn, 1
 {
-	//health
-	drawimage "HEALTH1", 20, -2, centerbottom, 25, 35;
-	drawnumber 2147483647, STATUSFONT, untranslated, health, drawshadow, 82, -20;
+	//KILLCOUNT
+	
+	drawstring SMALLFONT, untranslated, "Hostiles:   /   (   %)", 4, -222, 1, drawshadow(2, 1);
+	//killEd
+	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 54, drawshadow(2, 1), -79, -222;
+	//total hostiles
+	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 56, drawshadow(2, 1), -49, -222;
+	//killEd percent
+	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 55, drawshadow(2, 1), -21, -222;
+	//time
+	drawstring SMALLFONT, untranslated, "Time:", -70, -211, 1, drawshadow(2, 1);
+	drawstring SMALLFONT, untranslated, Time, -70, -211, 1, drawshadow(2, 1);
+	
+	
+	InInventory PRLD_HomeToken2, 1
+	{
+		drawstring SMALLFONT, untranslated, "You must kill 90% of the hostiles. ", 4, -200, 0, drawshadow(1, 1);
+	}
 
 	//armor
-	drawimage "ARMOR1", 20, -24, centerbottom, 25, 35;
-	drawnumber 2147483647, STATUSFONT, untranslated, armor, drawshadow, whennotzero, 82, -39;
+	drawimage "FSHUD2", 58, -14, centerbottom, 64, 53;
+	drawimage armoricon, 59, -32, centerbottom, 32, 27;
+	drawnumber 2147483647, STATUSFONT, untranslated, armor, drawshadow, whennotzero, 98, -32;
+	
+	//health
+	drawimage "FSHUD3", 25, -3, centerbottom, 64, 53;
+	drawimage "FSHUD4", 25, -23, centerbottom, 32, 27;
+	drawnumber 2147483647, STATUSFONT, untranslated, health, drawshadow,  60, -20;
 
 	//ammo
-	drawimage "AMMO1", -14, -4, centerbottom, 25, 35;
-	drawimage ammoicon1, -14, -4, centerbottom;
-	drawnumber 2147483647, STATUSFONT, untranslated, ammo1, drawshadow, -25, -20;
-	drawimage "AMMO1", -14, -22, centerbottom, 25, 35;
+	drawimage "FSHUD1", -25, -3, centerbottom, 64, 53;
+	drawimage ammoicon1, -25, -28, centerbottom;
+	drawnumber 2147483647, STATUSFONT, untranslated, ammo1, drawshadow, -32, -20;
 
 	usesammo
 	{
 		//secondary ammo and inventory
 		usessecondaryammo
 		{
-			drawimage ammoicon2, -14, -22, centerbottom;
-			drawnumber 2147483647, STATUSFONT, untranslated, ammo2, drawshadow, -25, -38;
+			//drawimage ammoicon2, -14, -22, centerbottom;
+			drawnumber 2147483647, SMALLFONT, untranslated, ammo2, drawshadow, -42, -28;
 			inventorybarnotvisible
 			{
-				drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, STATUSFONT, -14, -39, -26, -56, untranslated;
+				drawselectedinventory centerbottom, drawshadow(1, 1), alwaysshowcounter, STATUSFONT, -14, -39, -26, -56, untranslated;
 			}
 		}
 		else //no secondary ammo

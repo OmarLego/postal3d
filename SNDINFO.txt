@@ -6,14 +6,14 @@ $volume NoSoundHax 0.01
 
 $random bodydrop { weapons/melee/heavy1 weapons/melee/heavy4 weapons/melee/heavy5 }
 $volume bodydrop 0.75
-//$random bodydrop { monster_bodydrop1 monster_bodydrop2 monster_bodydrop3 monster_bodydrop4 monster_bodydrop5 }
-monster_bodydrop1 Sounds/Monsters/monster_bodydrop1.ogg
-monster_bodydrop2 Sounds/Monsters/monster_bodydrop2.ogg
-monster_bodydrop3 Sounds/Monsters/monster_bodydrop3.ogg
-monster_bodydrop4 Sounds/Monsters/monster_bodydrop4.ogg
-monster_bodydrop5 Sounds/Monsters/monster_bodydrop5.ogg
-
 shellslingdetach "sounds/monsters/shellslingdetach.mp3"
+
+bodysizzle "sounds/monsters/BodySizzling-01.ogg"
+$volume bodysizzle 0.5
+$random bodyignite { bodyignite1 bodyignite2 bodyignite3 }
+bodyignite1 "sounds/monsters/Body-Ignite01.ogg"
+bodyignite2 "sounds/monsters/Body-Ignite02.ogg"
+bodyignite3 "sounds/monsters/Body-Ignite03.ogg"
 
 //Hostiles' Weapons
 //tracer flyby
@@ -198,7 +198,8 @@ GCSTART GCSTART
 FTUP FTUP
 FTIN FTIN
 CBNC CBNC
-FHIT FHIT
+//FHIT FHIT
+$alias FHIT bodyignite
 NLOAD NLOAD
 NINS NINS
 FIRLOOP FIRLOOP
@@ -434,10 +435,11 @@ WDCLO WDCLO
 
 //objects
 policesiren2 "Sounds/Environment/Objects/PoliceSiren2.wav"
-
-//truck
-truck/open "Sounds/MapEffects/truck-open.mp3"
-truck/close "Sounds/MapEffects/truck-close.mp3"
+caralarm01 "Sounds/Environment/Objects/CarAlarm01.ogg"
+carengines01 "Sounds/Environment/Objects/CarEngine-01.ogg"
+truck/open "Sounds/Environment/Objects/truck-open.ogg"
+truck/close "Sounds/Environment/Objects/truck-close.ogg"
+truck/drive "Sounds/Environment/Objects/truck-drive.ogg"
 
 
 //Menu

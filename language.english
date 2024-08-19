@@ -11,16 +11,26 @@ SKILL_NIGHTMARE = "Nightmare";
 
 
 
-//Power-ups
-GOTHEALBOX = "Picked up a health box.";
-GOTHBOXNEED = "Picked up a health box that you REALLY needed.";//does gzdoom even do caps
+//Pick-ups
+GOTHEALBOX = "Picked up a health box";
+GOTHBOXNEED = "Picked up a health box that you REALLY needed";//does gzdoom even do caps
+GOTHOMEKEY = "Got a key";
+PGOTKEVLAR = "Got kevlar";
+PGOTHKEVLAR = "Got a Heavy kevlar vest";
 
 
 
 //Level Names
 TXT_PRLD01 = "Home";
 
-
+//Options
+OPTMNU_ENGOPT = "Advanced Options";
+QUERY_ENGOPT1 = "Are you sure you want to open advanced options?";
+QUERY_ENGOPT2 = "You should ONLY open these if you know the engine inside-out";
+CNTRLMNU_KICK = "Kick";
+CNTRLMNU_EXEC = "Execute";
+CNTRLMNU_ANHERO = "Suicide";
+OPTMNU_ENGDIS = "Engine Display Options";
 
 //Universal Weapon Sway
 MENU_TITLE = "Weapon Sway Options";

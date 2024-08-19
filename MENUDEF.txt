@@ -8,18 +8,14 @@ DefaultListMenu
 
 ListMenu "MainMenu"
 {
-  	StaticPatch 54, -1, "POSTPIC"
- 	Position 105, 87
-    //PatchItem "D_NGAME", "n", "PlayerclassMenu"
-	//PatchItem "D_OPTION", "o", "OptionsMenu"
+	StaticPatch 94, 2, "M_DOOM"
+	Position 97, 72
     TextItem "START", "n", "SPMenu"
-	TextItem "OPTIONS", "o", "OptionsMenu"
-	TextItem "TC OPTIONS", "b", "Postal3dMenu"
-	//PatchItem "D_LOADG", "l", "LoadGameMenu"
-	//PatchItem "D_SAVEG", "s", "SaveGameMenu"
-	TextItem "TC CREDITS", "c", "Postal3dCreditsMenu"
-   //PatchItem "D_QUITG", "q", "QuitMenu"
-   TextItem "QUIT", "q", "QuitMenu"
+	//TextItem "OPTIONS", "o", "OptionsMenu"
+	TextItem "OPTIONS", "o", "PRLD_OptionsMenu"
+	//TextItem "TC OPTIONS", "b", "Postal3dMenu"
+	TextItem "CREDITS", "c", "Postal3dCreditsMenu"
+	TextItem "QUIT", "q", "QuitMenu"
 }
 
 ListMenu "SPMenu"
@@ -183,4 +179,115 @@ OptionValue "Toggle"
 {
 	0, "$VALUE_DISABLED"
 	1, "$VALUE_ENABLED"
+}
+
+
+
+//                           VKDOOM OPTIONS
+
+
+OptionMenu "PRLD_OptionsMenu"
+{
+	Title "$OPTMNU_TITLE"
+	Submenu "$OPTMNU_INPUT",			"InputMenu"
+	Submenu "$OPTMNU_DISPLAY",			"PRLD_Display"//"VideoOptions"
+	Submenu "$OPTMNU_SOUND",			"SoundOptions"
+	Submenu "$OPTMNU_SYSTEM",			"SystemMenu"
+	StaticText " "
+	Submenu "$OPTMNU_ENGOPT",			"PRLD_QueryEngOpt"
+}
+
+OptionMenu "PRLD_Display"
+{
+	Submenu "$OPTMNU_ENGDIS",			"VideoOptions"
+  Slider "Max Wall Decals", "cl_maxdecals", 0, 10000, 10, 0
+  Slider "Max Gibs/Blood Pools", "sv_corpsequeuesize", 1, 3000, 10, 0
+  Option "Mind Janitor", "PRLD_Janny", "OnOff"
+  StaticText "(Cleans Up Non-Bodily Debris in 30 Seconds After Appearing)"
+}
+
+
+OptionMenu "PRLD_SystemMenu"
+{
+	Title "$OPTMNU_SYSTEM"
+
+	SafeCommand	"$OPTMNU_DEFAULTS",		"reset2defaults"
+	SafeCommand	"$OPTMNU_RESETTOSAVED",	"reset2saved"
+	SafeCommand	"$OPTMNU_WRITEINI",		"writeini"
+	
+	Command "$OPTMNU_CONSOLE",			"menuconsole"
+	Command "$OPTMNU_OPENCONFIG",		"openconfig"
+	Command "$OPTMNU_OPENSCREENSHOTS",	"openscreenshots"
+	Command "$OPTMNU_OPENSAVES",		"opensaves"
+
+	StaticText " "
+}
+
+
+OptionMenu "PRLD_InputMenu"
+{
+	Title "$OPTMNU_INPUT"
+	Submenu "$OPTMNU_CONTROLS",			"PRLD_Keyboard"
+	Submenu "$OPTMNU_MOUSE",			"MouseOptions"
+	Submenu "$OPTMNU_JOYSTICK",			"JoystickOptions"
+
+	IfOption(Windows)
+	{
+		StaticText ""
+		Option "$MISCMNU_MERGEKEYS", 			"k_mergekeys", "OnOff"
+		Option "$MISCMNU_WINFULLSCREENTOGGLE",	"k_allowfullscreentoggle", "OnOff"
+	}
+	IfOption(Mac)
+	{
+		StaticText ""
+		Option "$MISCMNU_MACFULLSCREENTOGGLE",	"k_allowfullscreentoggle", "OnOff"
+	}
+
+	StaticText ""
+	Option "$CNTRLMNU_LAYOUT",			"cl_defaultconfiguration", "Layouts"
+	SafeCommand "$OPTMNU_DEFAULTS",		"resetb2defaults"
+
+	StaticText " "
+}
+
+
+OptionMenu "PRLD_QueryEngOpt"
+{
+	StaticText "$QUERY_ENGOPT1"
+	StaticText "$QUERY_ENGOPT2"
+	//SubMenu "$TXT_NO",			"PRLD_OptionsMenu"
+	SubMenu "$TXT_YES",			"OptionsMenu"
+}
+
+
+OptionMenu "PRLD_Keyboard"
+{
+	Title "$CNTRLMNU_ACTION_TITLE"
+	ScrollTop 2
+	StaticTextSwitchable "$CNTRLMNU_SWITCHTEXT1", "$CNTRLMNU_SWITCHTEXT2", "ControlMessage"
+
+	StaticText ""
+	Control    "$CNTRLMNU_ATTACK"           , "+attack"
+	Control    "$CNTRLMNU_ALTATTACK"        , "+altattack"
+	Control    "$CNTRLMNU_RELOAD"           , "+reload"
+	Control    "$CNTRLMNU_KICK"             , "prld_kick"
+	Control    "$CNTRLMNU_DROPWEAPON"   , "weapdrop"
+
+	StaticText ""
+	Control    "$CNTRLMNU_USE"              , "+use"
+	Control    "$CNTRLMNU_EXEC"             , "prld_cartel"
+	Control    "$CNTRLMNU_ANHERO"           , "suicide"
+
+	StaticText ""
+	Control    "$CNTRLMNU_FORWARD"          , "+forward"
+	Control    "$CNTRLMNU_BACK"             , "+back"
+	Control    "$CNTRLMNU_MOVELEFT"         , "+moveleft"
+	Control    "$CNTRLMNU_MOVERIGHT"        , "+moveright"
+
+	StaticText ""
+	Control    "$CNTRLMNU_JUMP"             , "+jump"
+	Control    "$CNTRLMNU_CROUCH"           , "+crouch"
+	Control    "$CNTRLMNU_TOGGLECROUCH"     , "crouch"
+	Control    "$CNTRLMNU_RUN"              , "+speed"
+	Control    "$CNTRLMNU_TOGGLERUN"        , "toggle cl_run"
 }

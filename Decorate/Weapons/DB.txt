@@ -22,7 +22,8 @@ Weapon.AmmoUse1 0
 	Weapon.AmmoType1 "Buckshot"
 	Weapon.AmmoType2 "Magazine2"
 Scale 0.5
-Inventory.PickupMessage "\c[red]You got the \c[Orange]Double-Barrel Shotgun"
+//Inventory.PickupMessage "\c[red]You got the \c[Orange]Double-Barrel Shotgun"
+Inventory.PickupMessage "You got the \c[Orange]Double-Barrel Shotgun"
   //Inventory.PickupSound "SCLOS"
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
