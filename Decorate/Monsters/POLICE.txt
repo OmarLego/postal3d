@@ -177,12 +177,12 @@ ACTOR PistolOfficer1 : Postal3dMonster
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 		
     DieNormal:
 		TNT1 A 0
@@ -283,12 +283,12 @@ Actor PistolOfficer1_2 : PistolOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -310,12 +310,12 @@ Actor PistolOfficer1_3 : PistolOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -337,12 +337,12 @@ Actor PistolOfficer1_4 : PistolOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -364,12 +364,12 @@ Actor PistolOfficer1_5 : PistolOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
@@ -391,12 +391,12 @@ Actor PistolOfficer1_6 : PistolOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -413,7 +413,7 @@ Actor DeadOfficer1_1 : PrldDesructableDeadBody
 	Spawn:
 		POH1 N 1
 		POH1 N -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -616,12 +616,12 @@ ACTOR PistolOfficer2 : PistolOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 		
     DieNormal:
 		TNT1 A 0
@@ -718,12 +718,12 @@ Actor PistolOfficer2_2 : PistolOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -745,12 +745,12 @@ Actor PistolOfficer2_3 : PistolOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -772,12 +772,12 @@ Actor PistolOfficer2_4 : PistolOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -799,12 +799,12 @@ Actor PistolOfficer2_5 : PistolOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
@@ -826,12 +826,12 @@ Actor PistolOfficer2_6 : PistolOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -847,7 +847,7 @@ Actor DeadOfficer2_1 : DeadOfficer1_1
 	{
 	Spawn:
 		POH2 N -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -1050,12 +1050,12 @@ ACTOR PistolOfficer3 : PistolOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 		
     DieNormal:
 		TNT1 A 0
@@ -1152,12 +1152,12 @@ Actor PistolOfficer3_2 : PistolOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -1179,12 +1179,12 @@ Actor PistolOfficer3_3 : PistolOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -1206,12 +1206,12 @@ Actor PistolOfficer3_4 : PistolOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -1233,12 +1233,12 @@ Actor PistolOfficer3_5 : PistolOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
@@ -1260,12 +1260,12 @@ Actor PistolOfficer3_6 : PistolOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -1281,7 +1281,7 @@ Actor DeadOfficer3_1 : DeadOfficer1_1
 	{
 	Spawn:
 		POH3 N -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -1469,13 +1469,13 @@ ACTOR ShotgunOfficer1 : PistolOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerBeret", 48, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyCoachGunSpawner", 38, 0, random(-11, 11), 0)
 		TNT1 A 0 A_CustomMissile("PrldGibShellSling")
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 		
     DieNormal:
 		TNT1 A 0
@@ -1583,13 +1583,13 @@ Actor ShotgunOfficer1_2 : ShotgunOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerBeret", 48, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyCoachGunSpawner", 38, 0, random(-11, 11), 0)
 		TNT1 A 0 A_CustomMissile("PrldGibShellSling")
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -1611,13 +1611,13 @@ Actor ShotgunOfficer1_3 : ShotgunOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerBeret", 48, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyCoachGunSpawner", 38, 0, random(-11, 11), 0)
 		TNT1 A 0 A_CustomMissile("PrldGibShellSling")
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -1639,13 +1639,13 @@ Actor ShotgunOfficer1_4 : ShotgunOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerBeret", 48, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyCoachGunSpawner", 38, 0, random(-11, 11), 0)
 		TNT1 A 0 A_CustomMissile("PrldGibShellSling")
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -1667,13 +1667,13 @@ Actor ShotgunOfficer1_5 : ShotgunOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerBeret", 48, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyCoachGunSpawner", 38, 0, random(-11, 11), 0)
 		TNT1 A 0 A_CustomMissile("PrldGibShellSling")
 		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
@@ -1695,13 +1695,13 @@ Actor ShotgunOfficer1_6 : ShotgunOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerBeret", 48, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyCoachGunSpawner", 38, 0, random(-11, 11), 0)
 		TNT1 A 0 A_CustomMissile("PrldGibShellSling")
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -1883,12 +1883,12 @@ ACTOR Sheriff1 :  ShotgunOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop	
+		TNT1 A 0 A_DamageSelf(999, Execution)	
 		
 	Death:
 		TNT1 A 0
@@ -2028,12 +2028,12 @@ Actor Sheriff1_2 : Sheriff1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_GiveToTarget("PRLD_Actor2Exec", 1)
-		Stop	
+		TNT1 A 0 A_DamageSelf(999, Execution)	
 	}
 }
 Actor Sheriff1_3 : Sheriff1
@@ -2058,12 +2058,12 @@ Actor Sheriff1_3 : Sheriff1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_GiveToTarget("PRLD_Actor4Exec", 1)
-		Stop	
+		TNT1 A 0 A_DamageSelf(999, Execution)	
 	}
 }
 Actor Sheriff1_4 : Sheriff1
@@ -2088,12 +2088,12 @@ Actor Sheriff1_4 : Sheriff1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_GiveToTarget("PRLD_Actor5Exec", 1)
-		Stop	
+		TNT1 A 0 A_DamageSelf(999, Execution)	
 	}
 }
 Actor Sheriff1_5 : Sheriff1
@@ -2118,12 +2118,12 @@ Actor Sheriff1_5 : Sheriff1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_GiveToTarget("PRLD_Actor6Exec", 1)
-		Stop	
+		TNT1 A 0 A_DamageSelf(999, Execution)	
 	}
 }
 Actor Sheriff1_6 : Sheriff1
@@ -2148,12 +2148,12 @@ Actor Sheriff1_6 : Sheriff1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("ExecuteDownedSheriff1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_GiveToTarget("PRLD_Actor8Exec", 1)
-		Stop	
+		TNT1 A 0 A_DamageSelf(999, Execution)	
 	}
 }
 Actor DeadSheriff1 : DeadOfficer1_1
@@ -2163,7 +2163,7 @@ Actor DeadSheriff1 : DeadOfficer1_1
 	Spawn:
 		SHRF K 1
 		SHRF K -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -2366,12 +2366,12 @@ ACTOR Sheriff2 : Sheriff1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop	
+		TNT1 A 0 A_DamageSelf(999, Execution)	
 		
 	Death:
 		TNT1 A 0
@@ -2496,12 +2496,12 @@ Actor Sheriff2_2 : Sheriff2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -2526,12 +2526,12 @@ Actor Sheriff2_3 : Sheriff2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -2556,12 +2556,12 @@ Actor Sheriff2_4 : Sheriff2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -2586,12 +2586,12 @@ Actor Sheriff2_5 : Sheriff2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
@@ -2616,12 +2616,12 @@ Actor Sheriff2_6 : Sheriff2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -2640,7 +2640,7 @@ Actor DeadSheriff2_1 : DeadOfficer1_1
 	{
 	Spawn:
 		SHR2 N -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -2843,12 +2843,12 @@ ACTOR Sheriff3 : Sheriff1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 		
 	Death:
 		TNT1 A 0
@@ -2973,12 +2973,12 @@ Actor Sheriff3_2 : Sheriff3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -3003,12 +3003,12 @@ Actor Sheriff3_3 : Sheriff3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -3033,12 +3033,12 @@ Actor Sheriff3_4 : Sheriff3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -3063,12 +3063,12 @@ Actor Sheriff3_5 : Sheriff3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
@@ -3093,12 +3093,12 @@ Actor Sheriff3_6 : Sheriff3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecSheriff3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -3117,7 +3117,7 @@ Actor DeadSheriff3_1 : DeadOfficer1_1
 	{
 	Spawn:
 		SHR3 N -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -3297,12 +3297,12 @@ ACTOR RifleOfficer1 : ShotgunOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 		
 		
     DieNormal:
@@ -3400,7 +3400,7 @@ Actor DeadVestCop1_1 : PrldDesructableDeadBody
 	Spawn:
 		ROH1 N 1
 		ROH1 N -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -3448,12 +3448,12 @@ Actor RifleOfficer1_2 : RifleOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -3475,12 +3475,12 @@ Actor RifleOfficer1_3 : RifleOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -3502,12 +3502,12 @@ Actor RifleOfficer1_4 : RifleOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -3529,12 +3529,12 @@ Actor RifleOfficer1_5 : RifleOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
@@ -3556,12 +3556,12 @@ Actor RifleOfficer1_6 : RifleOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop1", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -3698,12 +3698,12 @@ ACTOR RifleOfficer2 : RifleOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 		
     DieNormal:
 		TNT1 A 0
@@ -3794,7 +3794,7 @@ Actor DeadVestCop2_1 : PrldDesructableDeadBody
 	Spawn:
 		ROH2 N 1
 		ROH2 N -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -3842,12 +3842,12 @@ Actor RifleOfficer2_2 : RifleOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -3869,12 +3869,12 @@ Actor RifleOfficer2_3 : RifleOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -3896,12 +3896,12 @@ Actor RifleOfficer2_4 : RifleOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -3939,12 +3939,12 @@ Actor RifleOfficer2_6 : RifleOfficer2
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop2", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -4059,12 +4059,12 @@ ACTOR RifleOfficer3 : RifleOfficer1
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 		
 	Pain.Kick:
 	Pain.HeavyImpact:
@@ -4178,7 +4178,7 @@ Actor DeadVestCop3_1 : PrldDesructableDeadBody
 	Spawn:
 		ROH3 N 1
 		ROH3 N -1
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	Death:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
@@ -4226,12 +4226,12 @@ Actor RifleOfficer3_2 : RifleOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor2Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor2")
@@ -4253,12 +4253,12 @@ Actor RifleOfficer3_3 : RifleOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor4Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor4")
@@ -4280,12 +4280,12 @@ Actor RifleOfficer3_4 : RifleOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor5Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor5")
@@ -4307,12 +4307,12 @@ Actor RifleOfficer3_5 : RifleOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor6Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor6")
@@ -4334,12 +4334,12 @@ Actor RifleOfficer3_6 : RifleOfficer3
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
-		TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
 		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 32, 0, random (0, 360), 2, random (0, 160))
 		TNT1 A 0 A_RadiusGive("PRLD_ExecVestCop3", 100, RGF_PLAYERS, 1)
 		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 22, 0, random(-11, 11), 0)
 		TNT1 A 0 A_RadiusGive("PRLD_Actor8Exec", 100, RGF_PLAYERS, 1)
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	DieBurning:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItem("PrldBurningActor8")
@@ -4382,7 +4382,7 @@ ACTOR PRLD_PistolCopSpawner: RandomSpawner
 	{
 	Spawn:
 		POH1 E 0
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	}
 }
 ACTOR PRLD_SheriffSpawner: RandomSpawner
@@ -4413,7 +4413,7 @@ ACTOR PRLD_SheriffSpawner: RandomSpawner
 	{
 	Spawn:
 		SHRF E 0
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	}
 }
 ACTOR PRLD_ShotgunCopSpawner: RandomSpawner
@@ -4432,7 +4432,7 @@ ACTOR PRLD_ShotgunCopSpawner: RandomSpawner
 	{
 	Spawn:
 		SOH1 E 0
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	}
 }
 ACTOR PRLD_RifleCopSpawner: RandomSpawner
@@ -4463,6 +4463,6 @@ ACTOR PRLD_RifleCopSpawner: RandomSpawner
 	{
 	Spawn:
 		ROH1 E 0
-		Stop
+		TNT1 A 0 A_DamageSelf(999, Execution)
 	}
 }

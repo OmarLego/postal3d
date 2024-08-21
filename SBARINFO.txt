@@ -7,21 +7,21 @@ InInventory Not PRLD_CutsceneWeap || PRLD_M12Spawn, 1
 {
 	//KILLCOUNT
 	
-	drawstring SMALLFONT, untranslated, "Hostiles:   /   (   %)", 4, -222, 1, drawshadow(2, 1);
+	drawstring SMALLFONT, untranslated, "Hostiles:   /   (   %)", 4, -222, 1, drawshadow(2, 0);
 	//killEd
-	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 54, drawshadow(2, 1), -79, -222;
+	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 54, drawshadow(2, 0), -79, -222;
 	//total hostiles
-	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 56, drawshadow(2, 1), -49, -222;
+	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 56, drawshadow(2, 0), -49, -222;
 	//killEd percent
-	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 55, drawshadow(2, 1), -21, -222;
+	drawnumber 2147483647, SMALLFONT, untranslated, globalvar 55, drawshadow(2, 0), -21, -222;
 	//time
-	drawstring SMALLFONT, untranslated, "Time:", -70, -211, 1, drawshadow(2, 1);
-	drawstring SMALLFONT, untranslated, Time, -70, -211, 1, drawshadow(2, 1);
+	drawstring SMALLFONT, untranslated, "Time:", -70, -211, 1, drawshadow(2, 0);
+	drawstring SMALLFONT, untranslated, Time, -70, -211, 1, drawshadow(2, 0);
 	
 	
 	InInventory PRLD_HomeToken2, 1
 	{
-		drawstring SMALLFONT, untranslated, "You must kill 90% of the hostiles. ", 4, -200, 0, drawshadow(1, 1);
+		drawstring SMALLFONT, untranslated, "You must kill 90% of the hostiles. ", 4, -200, 0, drawshadow(1, 0);
 	}
 
 	//armor

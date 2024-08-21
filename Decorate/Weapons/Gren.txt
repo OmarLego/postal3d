@@ -137,8 +137,8 @@ Radius 4
     Gravity 0.7
 	Scale 0.3
     -NOGRAVITY
-    -BLOODSPLATTER
-	-EXTREMEDEATH
+    //-BLOODSPLATTER
+	//-EXTREMEDEATH
 	+EXPLODEONWATER
 	+SKYEXPLODE
 	+ROLLSPRITE
@@ -175,7 +175,7 @@ States
     TNT1 A 0 A_PlaySound("Rocket/Explosion",CHAN_AUTO)
 	TNT1 A 0 A_SpawnItemEx ("GrenSmoke",1,1,1)
     //TNT1 A 2 bright A_Explode(50, 500, 1,1,0,0,0,0,"MisBoom")
-	TNT1 A 0 A_Explode(50, 500, 1,1,0,0,0,0,"MisBoom")
+	TNT1 A 0 A_Explode(60, 500, 1,1,0,0,0,0,"MisBoom")
 	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
     TNT1  AAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
 	//FXPO ABCDEFGHIJKLM 1 bright 

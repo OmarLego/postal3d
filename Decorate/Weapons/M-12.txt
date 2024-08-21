@@ -414,26 +414,108 @@ ACTOR M12Grenade
 	DamageType "Kick"
 	Decal "Scorch"
 	Obituary "$OB_MPROCKET"
+	Scale 0.5
+	//me trying to make it damagable
+	Health 999
+	//big numbers
+	DamageFactor "Kick", 9999
+	+SHOOTABLE
+	+NOBLOOD
+	+NOTARGETSWITCH
 	States
 	{
 	Spawn:
 		GBPJ AAAAAAAAABBBBBBBCCCCCDDDDDEEEEEFFFFFGGGGGHHHHH 1 A_CustomMissile ("RocketSmokeTrail52", 2, 0, random (70, 110), 2, random (0, 360))
 		Loop
 	Death:
-		GBPJ A 16
+		/*GBPJ A 16
 		Goto Explode
 	Explode:
+		TNT1 A 0
 		//TNT1 A 0 A_setScale (0.6)
 		//TNT1 A 0 bright A_ChangeFlag("NOGRAVITY",1)
 		//TNT1 A 1 bright A_PlaySound("Rocket/Explosion",CHAN_AUTO)
-		TNT1 A 0 A_Explode(150, 100, 1,1,0,0,0,0,"Explosive")
+		/*TNT1 A 0 A_Explode(150, 100, 1,1,0,0,0,0,"Explosive")
 		TNT1 A 0 A_Explode(50, 150, 1,1,0,0,0,0,"Explosive")
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
         EXPL A 0 Radius_Quake (3, 8, 0, 15, 0)//(intensity, duration, damrad, tremrad, tid)
 		TNT1  AAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
 		//FXPO ABCDEFGHIJKLM 1 bright 
 	TNT1 A 0 A_SpawnItem("PrldGrenadeExplosion")
+		stop*/
+		TNT1 A 0 A_SpawnItemEx("M12GrenadeG",1,1,1,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
+	Death.Kick:
+		TNT1 A 0
+		//TNT1 A 0 A_SpawnProjectile("M12GrenadeK", 0, 0, 0, CMF_AIMDIRECTION | CMF_TRACKOWNER, 35)
+		TNT1 A 0 A_RadiusGive("PRLD_KickNade", 100, RGF_PLAYERS, 1)
+		Stop
+	}
+}	
+Actor M12GrenadeG
+{
+	Radius 12
+	Height 12
+    Gravity 0.7
+	Scale 0.5
+	//me trying to make it damagable
+	Health 999
+	//big numbers
+	DamageFactor "Kick", 99999
+	-NOBLOCKMAP
+	+SHOOTABLE
+	+NOBLOOD
+	+NOTARGETSWITCH
+    +BLOODSPLATTER
+	-NOGRAVITY
+	+EXPLODEONWATER
+	+SKYEXPLODE
+	+NOTELEPORT
+	+STRIFEDAMAGE //strife rng is way less bullshit than doom rng
+	Species "Player"
+	States
+    {
+	Death.Kick:
+		TNT1 A 0
+		//TNT1 A 0 A_SpawnProjectile("M12GrenadeK", 0, 0, 0, CMF_AIMDIRECTION | CMF_TRACKOWNER, -35)
+		TNT1 A 0 A_RadiusGive("PRLD_KickNade", 100, RGF_PLAYERS, 1)
+		Stop
+	Spawn:
+		GBPJ A 32
+	Explode:
+		TNT1 A 0
+		TNT1 A 0 A_Explode(110, 150, 1,1,0,0,0,0,"Explosive")
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+        EXPL A 0 Radius_Quake (3, 8, 0, 15, 0)//(intensity, duration, damrad, tremrad, tid)
+		TNT1  AAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	TNT1 A 0 A_SpawnItem("PrldGrenadeExplosion")
 		stop
+	}
+}	
+actor M12GrenadeG2 : M12GrenadeG
+{
+	States
+	{
+	Explode:
+		TNT1 A 0
+		TNT1 A 0 A_Explode(110, 350, 1,1,0,0,0,0,"Explosive")
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE", 0)
+        EXPL A 0 Radius_Quake (3, 8, 0, 15, 0)//(intensity, duration, damrad, tremrad, tid)
+		TNT1  AAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	TNT1 A 0 A_SpawnItem("PrldGrenadeExplosion")
+		stop
+	}
+}
+Actor M12GrenadeK : M12Grenade //fucking 20th at this point
+{
+	//Speed 25
+	Speed 41
+	States
+	{
+
+	Death:
+		TNT1 A 0 A_SpawnItemEx("M12GrenadeG2",1,1,1,0,0,0,0,SXF_TRANSFERPOINTERS)
+		Stop
 	}
 }
 

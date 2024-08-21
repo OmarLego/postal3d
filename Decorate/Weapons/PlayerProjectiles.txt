@@ -37,7 +37,7 @@ ACTOR KickAttack: FastProjectile
 	{
 	Spawn:
 		TNT1 A 1 BRIGHT
-        TNT1 A 1 //A_PlaySound("weapons/gswing")
+		TNT1 A 1
 		Stop
 	Death:
 	XDEath:

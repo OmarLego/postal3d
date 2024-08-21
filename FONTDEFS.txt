@@ -57,3 +57,26 @@ DELTAFONT2
        - STTMINUS    
        NOTRANSLATION 109	// don't touch the shadow color!
    }
+   
+   
+   
+//targetspy
+/*CyberFnt
+{
+  Template CYBFT%03d
+}
+
+JenocideFontRed
+{
+  Template JNCRD%03d
+}*/
+
+XHAIRPCS
+{
+  Template XHRPC%03d
+}
+
+XHAIRPCSNB
+{
+  Template XHRNB%03d
+}

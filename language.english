@@ -87,3 +87,17 @@ HELP_ACCURACY = "Defines a deadzone in degrees for the sway where angle changes 
 HELP_HSWAY = "Disables horizontal swaying from movement";
 HELP_VSWAY = "Disables vertical swaying from movement";
 HELP_FSWAY = "Disables vertical swaying from falling";
+
+//Target Spy(po is for POSTAL)
+poTS_OPTIONS_TITLE = "\cd⌖\c- Target Spy Options";
+
+poTS_BACKGROUND = "Background";
+poTS_CROSSHAIR_SHOW_TARGET_COLOR = "Show target color";
+
+poTS_NAME_NOTHING       = "Nothing";
+poTS_NAME_TAG           = "Tag";
+poTS_NAME_CLASS         = "Class";
+poTS_NAME_TAG_AND_CLASS = "Tag (Class)";
+poTS_NAME_TAG_AND_CLASS_IF_DIFFERENT = "Tag (Class, only if different)";
+
+poTS_REMAINS = "Remains of ";

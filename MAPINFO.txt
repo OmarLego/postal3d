@@ -13,7 +13,7 @@ gameinfo
 	MenuFontColor_Highlight = "White"
 	MenuFontColor_Selection = "Gray"
 	FullscreenAutoAspect = 4
-	DimColor = "1a0300"
+	DimColor = "570000"
 	DimAmount = 0.5
 	//el weather
 	AddEventHandlers = "WeatherHandler", "RainAndSnowHandler"
@@ -27,6 +27,8 @@ gameinfo
 	//el dude
 	AddEventHandlers 	= "SaySomethingOnKill"
 	playerclasses = "PostalDude"
+	//el targetspy
+	AddEventHandlers = "ts_EventHandler"
 }
 
 //-------------------------------------------------------------------------------------------

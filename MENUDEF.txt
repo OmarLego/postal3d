@@ -8,6 +8,7 @@ DefaultListMenu
 
 ListMenu "MainMenu"
 {
+	StaticPatch 94, 2, "M_BACKT"
 	StaticPatch 94, 2, "M_DOOM"
 	Position 97, 72
     TextItem "START", "n", "SPMenu"
@@ -20,7 +21,9 @@ ListMenu "MainMenu"
 
 ListMenu "SPMenu"
 {
-    Position 50, 90
+	StaticPatch 94, 2, "M_BACKT"
+   // Position 50, 90
+	Position 97, 72
     TextItem "NEW GAME", "n", "PlayerclassMenu"
 	TextItem "LOAD GAME", "l", "LoadGameMenu"
 	TextItem "SAVE GAME", "s", "SaveGameMenu"
@@ -28,6 +31,7 @@ ListMenu "SPMenu"
 
 ListMenu "SkillMenu"
 {
+	StaticPatch 94, 2, "M_BACKT"
 		Linespacing 16
 
 		StaticPatch 75, 42, "D_SKILL"
@@ -189,10 +193,10 @@ OptionValue "Toggle"
 OptionMenu "PRLD_OptionsMenu"
 {
 	Title "$OPTMNU_TITLE"
-	Submenu "$OPTMNU_INPUT",			"InputMenu"
+	Submenu "$OPTMNU_INPUT",			"PRLD_InputMenu"
 	Submenu "$OPTMNU_DISPLAY",			"PRLD_Display"//"VideoOptions"
 	Submenu "$OPTMNU_SOUND",			"SoundOptions"
-	Submenu "$OPTMNU_SYSTEM",			"SystemMenu"
+	Submenu "$OPTMNU_SYSTEM",			"PRLD_SystemMenu"
 	StaticText " "
 	Submenu "$OPTMNU_ENGOPT",			"PRLD_QueryEngOpt"
 }

@@ -443,18 +443,20 @@ truck/drive "Sounds/Environment/Objects/truck-drive.ogg"
 
 
 //Menu
-menu/option/choose		"Sounds/Menu/MenuOptionChoose.ogg"
+menu/option/open		"Sounds/Menu/MenuOptionChoose.ogg"
 menu/option/select		"Sounds/Menu/MenuOptionSelect.ogg"
+menu/option/choose		"Sounds/Menu/menuchoose.ogg"
+menu/option/back		"Sounds/Menu/menuback.ogg"
 
-$alias Menu/activate					menu/option/choose //Open Menu
+$alias Menu/activate					menu/option/open //Open Menu
 $alias Menu/clear						menu/option/choose //Close Menu	
 $alias Menu/choose						menu/option/choose //Confirm
 $alias Menu/cursor						menu/option/select //Up and Down
 $alias Menu/invalid					menu/option/select //Invalid
-$alias Menu/backup						menu/option/choose //Back to previous
+$alias Menu/backup						menu/option/back //Back to previous
 $alias Menu/change						menu/option/select //Change Values
-$alias Menu/quit1						menu/option/choose //Menu Quit 1
-$alias Menu/quit2						menu/option/choose //Menu Quit 2
+$alias Menu/quit1						menu/option/open //Menu Quit 1
+$alias Menu/quit2						menu/option/open //Menu Quit 2
 
 //FMV Audio
 Movies/RWSINTRO "Movies/RWSINTRO.ogg"

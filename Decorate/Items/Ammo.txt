@@ -62,7 +62,7 @@ ACTOR Buckshot : Ammo
 {
   Inventory.PickupMessage "Got 3 12ga shells"
   Inventory.Amount 3
-  scale 0.5
+  scale 0.4
   //Inventory.MaxAmount 50
   Inventory.MaxAmount 40
   Tag "12ga Shells"
@@ -89,6 +89,8 @@ ACTOR BuckshotBandolier : Buckshot
   Ammo.BackpackMaxAmount 100
   Inventory.PickupSound "SLOAD"
     +FLOORCLIP
+  //SCale 0.9
+  scale 0.5
   States
   {
   Spawn:
@@ -114,6 +116,8 @@ ACTOR ShotgunCopShellDrop : RandomSpawner
 actor Buckshot2 : Buckshot
 {
 	Tag "12ga Sling"
+  //SCale 0.9
+  scale 0.5
   States
   {
   Spawn:
@@ -572,6 +576,7 @@ ACTOR MacheteAmmo : Ammo
   Ammo.BackpackMaxAmount 1
   Inventory.PickupSound "weapons/machete/pickup"
     +FLOORCLIP
+   Inventory.Icon "MCHAC2C8"
   States
   {
   Spawn:

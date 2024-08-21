@@ -132,7 +132,14 @@ ACTOR Postal3dMonster {
         TNT1 A 0 A_Jump(256, "DieNormal", "DieNormal2")
 	DieBurning:
 		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_SpawnItem("PrldBurningActor1")
+		TNT1 A -1
+    Death.Execution:
+		TNT1 A 0
+        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
+        TNT1 A 0 A_NoBlocking
 		TNT1 A -1
 	XDeath.Fire:
 	XDeath.Burn:

@@ -82,3 +82,84 @@ user float ws_swayvaccuracy = 3;
 user bool ws_nohmove = false;
 user bool ws_novmove = false;
 user bool ws_nofmove = false;
+
+//Target Spy(PO is for postal)
+// options
+user float  m8f_POts_y             = 0.02;
+user float  m8f_POts_y_offset      = 0.0;
+user bool   m8f_POts_enabled       = true;
+user int    m8f_POts_min_health    = 0;
+user int    m8f_POts_show_numbers  = 0;
+user bool   m8f_POts_show_bar      = false;
+user bool   m8f_POts_show_info     = false;
+user string m8f_POts_pip           = "#";
+user string m8f_POts_empty_pip     = "-";
+user string m8f_POts_font          = "MM2SFNTO";
+user bool   m8f_POts_crosshair_on  = true;
+user string m8f_POts_crosshair     = "Y";
+user string m8f_POts_cross_top     = "";
+user string m8f_POts_cross_bottom  = "";
+user bool   m8f_POts_bar_log_scale = false;
+user int    m8f_POts_def_color_crs = 3; // green
+user int    m8f_POts_def_color_tag = 9; // white
+user int    m8f_POts_def_cl_tag_wk = 9; // white
+user bool   m8f_POts_alt_hp_color  = false;
+user bool   m8f_POts_show_hidden   = true;
+user bool   m8f_POts_show_friends  = true;
+user int    m8f_POts_show_objects  = 1;
+user bool   m8f_POts_show_dormant  = false;
+user bool   m8f_POts_cross_only_tg = false;
+user bool   m8f_POts_show_confirm  = false;
+user bool   m8f_POts_named_confirm = false;
+user bool   m8f_POts_show_corpses  = false;
+user bool   m8f_POts_alm_dead_cr   = false;
+
+user int    POts_name = 1; // 0 - nothing, 1 - tag, 2 - class, 3 - both, 4 - both if different.
+
+user int    POts_cross_top_offset    = 0;
+user int    POts_cross_middle_offset = -8;
+user int    POts_cross_bottom_offset = 0;
+user int    POts_cross_x_adjustment  = 1;
+
+user int    m8f_POts_green_color   = 3;
+user int    m8f_POts_red_color     = 6;
+user float  m8f_POts_cross_scale   = 2.2;
+user bool   m8f_POts_hit_confirm   = false;
+user int    m8f_POts_hit_color     = 6; // red
+user float  m8f_POts_text_scale    = 1.0;
+user bool   m8f_POts_no_cross_on_1 = false;
+user bool   m8f_POts_show_idle     = true;
+user bool   m8f_POts_hide_in_dark  = false;
+user int    m8f_POts_light_level   = 120;
+user float  m8f_POts_opacity       = 1.0;
+user bool   POts_background        = false;
+user bool   POts_cross_show_target = true;
+
+user int    m8f_POts_cr_0          =  6; // red
+user int    m8f_POts_cr_1          =  6; // red
+user int    m8f_POts_cr_2          =  6; // red
+user int    m8f_POts_cr_3          =  8; // orange
+user int    m8f_POts_cr_4          =  8; // orange
+user int    m8f_POts_cr_5          =  8; // orange
+user int    m8f_POts_cr_6          =  5; // gold
+user int    m8f_POts_cr_7          =  5; // gold
+user int    m8f_POts_cr_8          =  5; // gold
+user int    m8f_POts_cr_9          =  3; //green
+user int    m8f_POts_cr_10         =  3; //green
+user int    m8f_POts_cr_11         = 21; // cyan
+
+user int    m8f_POts_cr_alm_dead   = 12; // black
+user string m8f_POts_cr_font       = "XHAIRPCSNB";
+user float  m8f_POts_cr_opacity    = 1.0;
+user float  m8f_POts_length_mult   = 1.0;
+
+// see m8f_POts_Settings for frame styles enumeration
+user int    m8f_POts_frame_style   = 0;
+user float  m8f_POts_frame_scale   = 1.0;
+user float  m8f_POts_frame_size    = 1.0;
+
+// interface for other mods
+user bool   m8f_POts_has_target;
+user bool   m8f_POts_friendly_target;
+
+user string POts_extra_character = "❤";

@@ -49,6 +49,16 @@ Actor PRLD_EmptyWeapon : Inventory
 Inventory.MaxAmount 1
 +UNDROPPABLE
 }
+Actor PRLD_KickNade : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
+Actor PRLD_KickHGrenade : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR ExecutionHealth : Health
 {
 	Inventory.Amount 1
@@ -99,11 +109,21 @@ ACTOR Postal3dWeapon : Weapon
 		//13 tics in total
 		KICK B 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		KICK B 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickNade", 1, "KickNade")
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickHGrenade", 1, "KickHGrenade")
+	KickCont:
 		KICK B 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		KICK CD 3
-		TNT1 A 1
+		TNT1 A 0 A_TakeInventory("PRLD_KickHGrenade", 1)
+		TNT1 A 1 A_TakeInventory("PRLD_KickNade", 1)
 		TNT1 A 0 SetPlayerProperty(0,0, PROP_FROZEN)
 		TNT1 A 0 A_Jump(256, "Ready")
+	KickNade:
+		TNT1 A 0 A_FireCustomMissile ("M12GrenadeK",0,0,0,0)
+		Goto KickCont
+	KickHGrenade:
+		TNT1 A 0 A_FireCustomMissile ("PRLD_GrenadeKicked",0,0,0,0)
+		Goto KickCont
 		
 	Kick: //Execute
 		TNT1 A 0
