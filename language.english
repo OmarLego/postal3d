@@ -31,6 +31,12 @@ CNTRLMNU_KICK = "Kick";
 CNTRLMNU_EXEC = "Execute";
 CNTRLMNU_ANHERO = "Suicide";
 OPTMNU_ENGDIS = "Engine Display Options";
+OPTMNU_ENGHUD = "Engine HUD Options";
+OPTMNU_CROSS1 = "Crosshair Colors";
+OPTMNU_CROSS2 = "Crosshair Setup";
+//vk
+OPTMNU_INPUT = "Input Options";
+OPTMNU_SYSTEM = "System Options";
 
 //Universal Weapon Sway
 MENU_TITLE = "Weapon Sway Options";

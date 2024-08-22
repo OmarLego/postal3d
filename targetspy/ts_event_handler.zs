@@ -450,6 +450,35 @@ class ts_EventHandler : EventHandler
     [located, slot, priority] = player.weapons.locateWeapon(w.getClassName());
     return (slot == 1);
   }
+  
+  private
+  bool isSlot8Weapon() const
+  {
+    PlayerInfo player = players[consolePlayer];
+    Weapon w = player.readyWeapon;
+    if (w == NULL) return true;
+
+    int located;
+    int slot;
+    int priority;
+    [located, slot, priority] = player.weapons.locateWeapon(w.getClassName());
+    return (slot == 8);
+  }
+  
+  private
+  bool isSlot9Weapon() const
+  {
+    PlayerInfo player = players[consolePlayer];
+    Weapon w = player.readyWeapon;
+    if (w == NULL) return true;
+
+    int located;
+    int slot;
+    int priority;
+    [located, slot, priority] = player.weapons.locateWeapon(w.getClassName());
+    return (slot == 9);
+  }
+  
 
   private
   bool isLastTargetExisting() const
@@ -460,8 +489,11 @@ class ts_EventHandler : EventHandler
   private ui
   void drawCrosshairs(Actor target, int crosshairColor) const
   {
+	
     if (!_uiSettings.crossOn()) return;
-    if (_uiSettings.noCrossOnSlot1() && isSlot1Weapon()) return;
+    if (_uiSettings.noCrossOnSlot1() && isSlot1Weapon()) return;//checkpoint
+    if (_uiSettings.noCrossOnSlot1() && isSlot8Weapon()) return;
+    if (isSlot9Weapon()) return;
 
     if (_uiSettings.hitConfirmation()
         && isLastTargetExisting()

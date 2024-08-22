@@ -150,27 +150,27 @@ ACTOR Postal3dMonster {
         TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
 		TNT1 A 0 A_NoBlocking
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM F 8 A_SetSpriteRotation(45)
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM F 8 A_SetSpriteRotation(90)
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM F 8 A_SetSpriteRotation(135)
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM F 8 A_SetSpriteRotation(180)
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM F 8 A_SetSpriteRotation(225)
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM F 8 A_SetSpriteRotation(360)
 		Stop
@@ -337,19 +337,19 @@ ACTOR PrldBurningGeneric
 		TNT1 A 0 A_PlaySound("bodyignite", CHAN_AUTO)
 	SufferLoop:	   
 		TNT1 A 0
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM AAAA 1 Bright A_Wander
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM BBBB 1 Bright A_Wander
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM CCCC 1 Bright A_Wander
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM DDDD 1 Bright A_Wander
 		
@@ -364,32 +364,32 @@ ACTOR PrldBurningGeneric
 		TNT1 A 0 A_PlaySound("FIRLOOP", CHAN_AUTO)
 		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 4)
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM F 8 Bright
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM F 8 Bright
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM I 8 Bright
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM I 8 Bright
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM J 8 Bright
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM J 8 Bright
 		
 		TNT1 A 0 A_SetSize(16, 20)
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM K 8 Bright
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIM K 8 Bright
 		
@@ -485,19 +485,19 @@ TNT1 A 0 A_PlaySound("act3_burn")
 
 	SufferLoop:	   
 		TNT1 A 0
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF AAAA 1 Bright A_Wander
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF BBBB 1 Bright A_Wander
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF CCCC 1 Bright A_Wander
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF DDDD 1 Bright A_Wander
 		
@@ -512,32 +512,32 @@ TNT1 A 0 A_PlaySound("act3_burn")
 		TNT1 A 0 A_PlaySound("FIRLOOP", CHAN_AUTO)
 		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 4)
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF F 8 Bright
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF F 8 Bright
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF I 8 Bright
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF I 8 Bright
 		
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF J 8 Bright
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF J 8 Bright
 		
 		TNT1 A 0 A_SetSize(16, 20)
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF K 8 Bright
-		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,32),  random (0, 1), random(0, 1), random (0,3))
+		TNT1 AAA 0 A_SpawnItemEx ("PersonFlameFire", random (-10,10), random (-10,10), random (10,48),  random (0, 1), random(0, 1), random (0,3))
 		TNT1 A 0 A_Explode(7,30,0, 0, 0, 0, 0, 0, "Fire")
 		BVIF K 8 Bright
 		
@@ -640,7 +640,7 @@ States
 Spawn:
 TNT1 A 0
 TNT1 A 0 A_PlaySound("act7_burn")
-Goto Suffer
+TNT1 A 0 A_Jump(256, "Suffer")
 }
 }
 ACTOR PrldBurningActor8: PrldBurningGeneric

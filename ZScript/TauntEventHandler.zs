@@ -31,13 +31,13 @@ class SaySomethingOnKill : EventHandler
             
             if ((lastTauntTic <= 0 || level.time - lastTauntTic >= TAUNTDELAY) && random[tsnd](1, 100) <= TAUNTCHANCE)
             {
-				if(e.thing.target.FindInventory("PRLD_MacheteSelected"))
+				/*if(e.thing.target.FindInventory("PRLD_MacheteSelected"))
 				{
 					//PlayTaunt("Dude/Machete/Kill", ppawn);
 					PlayTaunt("DudeTalk", ppawn);
 					lastTauntTic = level.time;
 					return;
-				}
+				}*///idk how to make this shit work properly xdddd
 				if(e.thing.target.FindInventory("PRLD_PipebombSelected"))
 				{
 					PlayTaunt("Dude/Grenade/Kill", ppawn);

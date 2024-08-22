@@ -3099,6 +3099,7 @@ actor CutscenePuff : BulletPuff
 }
 ACTOR PRLD_CutsceneWeap : Postal3dWeapon
 {
+	Weapon.SlotNumber 9
 	States
 	{
 	Select:

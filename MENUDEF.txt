@@ -31,7 +31,8 @@ ListMenu "SPMenu"
 
 ListMenu "SkillMenu"
 {
-	StaticPatch 94, 2, "M_BACKT"
+	//StaticPatch 94, 2, "M_BACKT"
+	StaticPatch 30, 2, "M_BACKT"
 		Linespacing 16
 
 		StaticPatch 75, 42, "D_SKILL"
@@ -204,6 +205,11 @@ OptionMenu "PRLD_OptionsMenu"
 OptionMenu "PRLD_Display"
 {
 	Submenu "$OPTMNU_ENGDIS",			"VideoOptions"
+	Submenu "$OPTMNU_ENGHUD",			"HudOptions"
+StaticText ""
+	SubMenu    "$OPTMNU_CROSS1"             , POts_ColorSetup
+	SubMenu    "$OPTMNU_CROSS2"           , POts_Crosshairs
+StaticText ""
   Slider "Max Wall Decals", "cl_maxdecals", 0, 10000, 10, 0
   Slider "Max Gibs/Blood Pools", "sv_corpsequeuesize", 1, 3000, 10, 0
   Option "Mind Janitor", "PRLD_Janny", "OnOff"
