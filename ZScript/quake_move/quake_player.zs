@@ -28,6 +28,50 @@ class QuakePlayer : PlayerPawn
 
         +NoFriction
     }
+	
+	//da
+	override void PlayIdle ()
+	{
+		if (InStateSequence(CurState, GetRunState()))
+		{
+			// Switch to standing from running
+			SetState(SpawnState);
+		}
+		else
+		{
+			Super.PlayIdle();
+		}
+	}
+
+	override void PlayRunning ()
+	{
+		if (IsRunning2() && (InStateSequence(CurState, SpawnState) || InStateSequence(CurState, SeeState)))
+		{
+			// Switch to running from standing or walking
+			SetState(GetRunState());
+		}
+		else if (!IsRunning2() && InStateSequence(CurState, GetRunState()))
+		{
+			// Switch to walking from running
+			SetState(SeeState);
+		}
+		else
+		{
+			// Base class behavior (switches to walking from standing)
+			Super.PlayRunning();
+		}
+	}
+
+	private bool IsRunning2()
+	{
+		return player != null && (player.cmd.buttons & BT_RUN);
+	}
+	
+	private state GetRunState()
+	{
+		return ResolveState('See.Run');
+	}
+	//da
 
 
     const quakeBobCVar = "PCG_QuakeBob";

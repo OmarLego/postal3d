@@ -1,17 +1,15 @@
 // Option values ///////////////////////////////////////////////////////////////
 
-OptionValue POts_y_values
+OptionValue ts_y_values
 {
-  -2,   "Above target"
-  -1,   "Below target"
-  0.02, "Screen top"
-  0.10, "Below screen top"
+  0.02, "Top"
+  0.10, "Below top"
   0.35, "Above crosshair"
   0.60, "Below crosshair"
-  0.90, "Screen bottom"
+  0.90, "Bottom"
 }
 
-OptionString POts_font_values
+OptionString ts_font_values
 {
   "SmallFont"       , "Small font"
   "BigFont"         , "Big font"
@@ -25,7 +23,7 @@ OptionString POts_font_values
   "NewSmallFont"    , "New small font"
 }
 
-OptionString POts_crosshair_font_values
+OptionString ts_crosshair_font_values
 {
   "SmallFont"       , "Small font"
   "BigFont"         , "Big font"
@@ -41,7 +39,7 @@ OptionString POts_crosshair_font_values
   "NewSmallFont"    , "New small font"
 }
 
-OptionValue POts_health_numbers_values
+OptionValue ts_health_numbers_values
 {
   0, "Off"
   1, "On: current/max"
@@ -50,7 +48,7 @@ OptionValue POts_health_numbers_values
   4, "On: 100.00%"
 }
 
-OptionValue POts_show_objecPOts_values
+OptionValue ts_show_objects_values
 {
   0, "Off"
   1, "Shootable only"
@@ -59,16 +57,13 @@ OptionValue POts_show_objecPOts_values
   4, "EVERYTHING"
 }
 
-OptionValue POts_name_values
+OptionValue ts_class_as_tag_values
 {
-  0, "$POts_NAME_NOTHING"
-  1, "$POts_NAME_TAG"
-  2, "$POts_NAME_CLASS"
-  3, "$POts_NAME_TAG_AND_CLASS"
-  4, "$POts_NAME_TAG_AND_CLASS_IF_DIFFERENT"
+  0, "Tags"
+  1, "Class Names"
 }
 
-OptionValue POts_frame_style_values
+OptionValue ts_frame_style_values
 {
   0, "Disabled"
   1, "//"
@@ -80,7 +75,14 @@ OptionValue POts_frame_style_values
   7, "Red frame"
 }
 
-OptionString POts_extra_character_values
+OptionValue ts_on_target_values
+{
+  0, "Disabled"
+  1, "Above"
+  2, "Below"
+}
+
+OptionString ts_extra_character_values
 {
   "❤" , "❤"
   "♡" , "♡"
@@ -96,179 +98,191 @@ OptionString POts_extra_character_values
   "●" , "●"
   "☰" , "☰"
   "⚰" , "⚰"
-  "☐" , "☐"
-  "☒" , "☒"
-  "☑" , "☑"
-  "⚙" , "⚙"
 }
 
 // Option menus ////////////////////////////////////////////////////////////////
 
-OptionMenu POts_VisualOptions
+OptionMenu ts_VisualOptions
 {
   Title      "Target Spy Visual Options"
 
-  Option     "Font"                , m8f_POts_font         , POts_font_values
+  StaticText ""
+  Option     "Font"               , m8f_POts_font         , ts_font_values
+  Slider     "Newline step"       , m8f_POts_step_mult    , 0.1, 10.0, 0.1, 1
+  Slider     "Scale"              , m8f_POts_text_scale   , 0.5, 3.0, 0.05, 2
+  Option     "Names:"             , m8fPO_class_as_tag    , ts_class_as_tag_values
 
-  BlankLine
+  StaticText ""
   StaticText "Show:"               , 1
   Option "Health bar"              , m8f_POts_show_bar     , OnOff
-  Option "Health numbers"          , m8f_POts_show_numbers , POts_health_numbers_values
-  Option "Name"                    , POts_name             , POts_name_values
+  Option "Health numbers"          , m8f_POts_show_numbers , ts_health_numbers_values
+  Option "Name"                    , m8f_POts_show_name    , OnOff
+  Option "And class name, if different" , m8f_POts_show_name_tag, OnOff
   Option "Kill Confirmation"       , m8f_POts_show_confirm , OnOff
   Option "Named Confirmation"      , m8f_POts_named_confirm, OnOff
   Option "Additional info"         , m8f_POts_show_info    , OnOff
   StaticText "Includes: friendly, invulnerable, boss,"     , Black
   StaticText "dormant, buddha, nodamage, DoomRPG level."   , Black
 
-  BlankLine
+  StaticText ""
   StaticText "Health bar"          , 1
   TextField "Filled bar symbol"    , m8f_POts_pip
   TextField "Empty bar symbol"     , m8f_POts_empty_pip
-  Submenu   "Extra characters"     , POts_ExtraCharactersOptions
+  Submenu   "Extra characters"     , ts_ExtraCharactersOptions
 
-  BlankLine
+  StaticText ""
   Option     "Health bar log scale" , m8f_POts_bar_log_scale , OnOff
-  Option     "Vertical position"    , m8f_POts_y             , POts_y_values
+  Option     "Vertical position"    , m8f_POts_y             , ts_y_values
   Slider     "Offset"               , m8f_POts_y_offset      , -0.2, 0.2, 0.0025, 4
-  Slider     "Scale"                , m8f_POts_text_scale    , 0.5, 4.0, 0.1, 1
   Slider     "Opacity"              , m8f_POts_opacity       , 0.0, 1.0, 0.05, 2
   Slider     "Length Multiplier"    , m8f_POts_length_mult   , 0.5, 10.0, 0.1
-  Option     "$POts_BACKGROUND"       , POts_background        , OnOff
+  Option     "Position on target"   , m8f_POts_on_target     , ts_on_target_values
+
+  StaticText ""
+  StaticText "Target Frame", 1
+  Option     "Style" , m8f_POts_frame_style , ts_frame_style_values
+  Slider     "Scale" , m8f_POts_frame_scale , 0.5,  3.0, 0.05, 2
+  Slider     "Size"  , m8f_POts_frame_size  , 0.25, 4.0, 0.25, 2
+
+  StaticText ""
 }
 
-OptionMenu POts_Frame
-{
-  Title      "Target Spy Frame Options"
-
-  Option     "Style" , m8f_POts_frame_style , POts_frame_style_values
-  Slider     "Scale" , m8f_POts_frame_scale , 0.5,  4.0, 0.1, 1
-  Slider     "Size"  , m8f_POts_frame_size  , 0.25, 4.0, 0.1, 1
-}
-
-OptionMenu POts_ExtraCharactersOptions
+OptionMenu ts_ExtraCharactersOptions
 {
   Title "Extra Characters"
 
   StaticText "These characters work only for New Small Font"
-  Command    "Set New Small Font", POts_set_new_small_font
+  Command    "Set New Small Font", ts_set_new_small_font
 
-  BlankLine
-  Option     "Select character", POts_extra_character, POts_extra_character_values
-  Command    "Use selected character as filled bar symbol" , POts_set_selected_as_filled
-  Command    "Use selected character as empty bar symbol"  , POts_set_selected_as_empty
+  StaticText ""
+  Option     "Select character", ts_extra_character, ts_extra_character_values
+  Command    "Use selected character as filled bar symbol" , ts_set_selected_as_filled
+  Command    "Use selected character as empty bar symbol"  , ts_set_selected_as_empty
 }
 
-OptionMenu POts_Filters
+OptionMenu ts_Filters
 {
   Title "Target Filters"
 
+  StaticText ""
   Option "Stealth/shadow monsters" , m8f_POts_show_hidden  , OnOff
   Option "Friendly targets"        , m8f_POts_show_friends , OnOff
   Option "Dormant targets"         , m8f_POts_show_dormant , OnOff
-  Option "Objects"                 , m8f_POts_show_objects , POts_show_objecPOts_values
+  Option "Objects"                 , m8f_POts_show_objects , ts_show_objects_values
   Option "Corpses"                 , m8f_POts_show_corpses , OnOff
   Option "Idle targets"            , m8f_POts_show_idle    , OnOff
   StaticText "Recommended: OFF if the game contains mimics.", Black
 
-  BlankLine
+  StaticText ""
   Option "Hide targets in darkness", m8f_POts_hide_in_dark , OnOff
   Slider "Minimal light level"     , m8f_POts_light_level  , 0, 250, 10, 0
   StaticText "Targets are hidden if the light level is less than this.", Black
 }
 
-OptionMenu POts_BehaviorOptions
+OptionMenu ts_BehaviorOptions
 {
   Title      "Target Spy Behavior Options"
 
+  StaticText ""
   TextField  "Minimal health"                   , m8f_POts_min_health
   StaticText "Target spy will hide for targets" , Black
   StaticText "with max health less than this."  , Black
 }
 
-OptionMenu POts_Controls
+OptionMenu ts_CrossOptions
+{
+  Title      "Target Spy Cross-mod Options"
+
+  StaticText ""
+  Option     "Special names for Champions" , m8f_POts_show_champion, OnOff
+  StaticText "Champions is a monster mod by Mikk-.", Black
+}
+
+OptionMenu ts_Controls
 {
   Title      "Target Spy Controls"
   StaticTextSwitchable "$CNTRLMNU_SwitchText1", "$CNTRLMNU_SwitchText2", ControlMessage
 
-  BlankLine
+  StaticText ""
   Control    "Toggle"       , "m8f_POts_toggle"
   Control    "Hold to show" , "+m8f_POts_hold"
 }
 
-OptionMenu POts_Options
+OptionMenu ts_Options
 {
   Title      "Target Spy Options"
 
+  StaticText ""
   Option     "Target Spy enabled" , m8f_POts_enabled , OnOff
 
-  BlankLine
-  //SubMenu    "Visuals"            , POts_VisualOptions
-  //SubMenu    "Target Filters"     , POts_Filters
-  SubMenu    "Colors"             , POts_ColorSetup
-  SubMenu    "Behavior"           , POts_BehaviorOptions
-
-  BlankLine
-  //SubMenu    "Frame"              , POts_Frame
-  SubMenu    "Crosshairs"         , POts_Crosshairs
-  SubMenu    "Controls"           , POts_Controls
+  StaticText ""
+  SubMenu    "Visuals"            , ts_VisualOptions
+  SubMenu    "Target Filters"     , ts_Filters
+  SubMenu    "Colors"             , ts_ColorSetup
+  SubMenu    "Behavior"           , ts_BehaviorOptions
+  SubMenu    "Crosshairs Setup"   , ts_Crosshairs
+  SubMenu    "Controls"           , ts_Controls
+  SubMenu    "Cross-mod options"  , ts_CrossOptions
 }
 
-OptionMenu POts_Crosshairs
+OptionMenu ts_Crosshairs
 {
   Title "Target Spy Crosshairs Setup"
 
+  StaticText ""
   Option "Enabled"             , m8f_POts_crosshair_on  , OnOff
   Option "Only on target"      , m8f_POts_cross_only_tg , OnOff
   Option "Hide for Slot 1"     , m8f_POts_no_cross_on_1 , OnOff
   Option "Change color on hit" , m8f_POts_hit_confirm   , OnOff
   Option "Hit color"           , m8f_POts_hit_color     , TextColors
-  Option "$POts_CROSSHAIR_SHOW_TARGET_COLOR" , POts_cross_show_target , OnOff
 
-  BlankLine
-  Slider "Scale"               , m8f_POts_cross_scale  , 0.5, 4.0, 0.1, 1
+  Slider "Top part offset"     , m8f_POts_top_offset   , -0.1, 0.1, 0.005, 3
+  Slider "Middle part offset"  , m8f_POts_cross_offset , -0.1, 0.1, 0.005, 3
+  Slider "Bottom part offset"  , m8f_POts_bot_offset   , -0.1, 0.1, 0.005, 3
+  Slider "X Adjustment"        , m8f_POts_x_adjustment , -50, 50, 0.5, 1
+  Slider "Scale"               , m8f_POts_cross_scale  , 0.5, 3.0, 0.05, 2
   Slider "Opacity"             , m8f_POts_cr_opacity   , 0.0, 1.0, 0.05, 2
-  Option "Font"                , m8f_POts_cr_font      , POts_crosshair_font_values
-  SubMenu "Crosshair Pieces Reference", POts_cr_pieces_ref
+  Option "Font"                , m8f_POts_cr_font      , ts_crosshair_font_values
+  SubMenu "Crosshair Pieces Reference", ts_cr_pieces_ref
 
-  BlankLine
-  Slider "Top part offset"       , POts_cross_top_offset    , -50, 50, 1, 0
-  Slider "Middle part offset"    , POts_cross_middle_offset , -50, 50, 1, 0
-  Slider "Bottom part offset"    , POts_cross_bottom_offset , -50, 50, 1, 0
-  Slider "Horizontal adjustment" , POts_cross_x_adjustment  , -50, 50, 1, 0
+  StaticText ""
+  StaticText ""
+  StaticText ""
+  StaticText ""
 
-  BlankLine
+  StaticText ""
   TextField "Top"    , m8f_POts_cross_top
   Command "Clear"    , "m8f_POts_cross_top \"\""
+  StaticText ""
 
-  BlankLine
   TextField "Center" , m8f_POts_crosshair
   Command "Clear"    , "m8f_POts_crosshair \"\""
+  StaticText ""
 
-  BlankLine
   TextField "Bottom" , m8f_POts_cross_bottom
   Command "Clear"    , "m8f_POts_cross_bottom \"\""
 }
 
-ListMenu POts_cr_pieces_ref
+ListMenu ts_cr_pieces_ref
 {
   StaticTextCentered  160,  0, "Crosshair Pieces Reference"
   StaticPatchCentered 160, 40, "tscp_graph_scaled"
 }
 
-OptionMenu POts_ColorSetup
+OptionMenu ts_ColorSetup
 {
   Title "Target Spy Color Setup"
 
+  StaticText ""
   Option "Default crosshair color" , m8f_POts_def_color_crs , TextColors
   Option "Tag color"               , m8f_POts_def_color_tag , TextColors
   Option "Weaker enemy tag color"  , m8f_POts_def_cl_tag_wk , TextColors
 
-  BlankLine
+  StaticText ""
   Option "Show special color for almost dead" , m8f_POts_alm_dead_cr, OnOff
   Option "Dead/Almost dead color", m8f_POts_cr_alm_dead, TextColors
 
-  BlankLine
+  StaticText ""
   StaticText "Color for %", 1
   Option "  0%"       , m8f_POts_cr_0  , TextColors
   Option " 10%"       , m8f_POts_cr_1  , TextColors
@@ -283,7 +297,7 @@ OptionMenu POts_ColorSetup
   Option "100%"       , m8f_POts_cr_10 , TextColors
   Option "Overhealed" , m8f_POts_cr_11 , TextColors
 
-  BlankLine
+  StaticText ""
   StaticText "Alternative two-color theme", 1
   Option "Enabled"      , m8f_POts_alt_hp_color , OnOff
   Option "Filled color" , m8f_POts_green_color  , TextColors
@@ -294,10 +308,10 @@ OptionMenu POts_ColorSetup
 
 AddOptionMenu OptionsMenu
 {
-  Submenu "$POts_OPTIONS_TITLE", POts_Options
+  Submenu "$TS_OPTIONS_TITLE", ts_Options
 }
 
 AddOptionMenu OptionsMenuSimple
 {
-  Submenu "$POts_OPTIONS_TITLE", POts_Options
+  Submenu "$TS_OPTIONS_TITLE", ts_Options
 }

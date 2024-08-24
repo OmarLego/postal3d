@@ -26,12 +26,28 @@ ACTOR PRLD_HealthBoxS : Stimpack Replaces Stimpack
 	}
 }
 
+ACTOR PRLD_FlakJack : GreenArmor
+{
+	Armor.SavePercent 100//second health
+	Inventory.Amount 33
+	Inventory.Icon "PARMC0"
+	Scale 0.35
+	Inventory.PickupMessage "$GOTFLAKJACK"
+	States
+	{
+	Spawn:
+		PARM C -1
+		Stop
+	}
+}
 ACTOR PRLD_Kevlar : GreenArmor Replaces GreenArmor
 {
 	//Armor.SavePercent 85 //postal 2 armor //literal tank armor jesus
+	Armor.SavePercent 43
 	Inventory.Icon "PARMA0"
 	Scale 0.5
 	Inventory.PickupMessage "$PGOTKEVLAR"
+	Inventory.PickupSound "kevlarpickup"
 	States
 	{
 	Spawn:
@@ -39,12 +55,13 @@ ACTOR PRLD_Kevlar : GreenArmor Replaces GreenArmor
 		Stop
 	}
 }
-
 ACTOR PRLD_HKevlar : BlueArmor Replaces BlueArmor
 {
 	Inventory.Icon "PARMB0"
 	Scale 0.5
-	Inventory.PickupMessage "$PGOTHKEVLAR"
+	Inventory.PickupMessage "$PGOTHKEVLAR"//goth kevlar
+	Armor.SavePercent 66//MAYBE i will add fire resistance to this too, just atm theres no fire enemies so xdd
+	Inventory.PickupSound "hkevlarpickup"
 	States
 	{
 	Spawn:

@@ -207,8 +207,8 @@ OptionMenu "PRLD_Display"
 	Submenu "$OPTMNU_ENGDIS",			"VideoOptions"
 	Submenu "$OPTMNU_ENGHUD",			"HudOptions"
 StaticText ""
-	SubMenu    "$OPTMNU_CROSS1"             , POts_ColorSetup
-	SubMenu    "$OPTMNU_CROSS2"           , POts_Crosshairs
+	SubMenu    "$OPTMNU_CROSS1"             , ts_ColorSetup
+	SubMenu    "$OPTMNU_CROSS2"           , ts_Crosshairs
 StaticText ""
   Slider "Max Wall Decals", "cl_maxdecals", 0, 10000, 10, 0
   Slider "Max Gibs/Blood Pools", "sv_corpsequeuesize", 1, 3000, 10, 0

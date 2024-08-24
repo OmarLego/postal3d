@@ -1,4 +1,4 @@
-/* Copyright Alexander Kromm (mmaulwurff@gmail.com) 2019-2022
+/* Copyright Alexander Kromm (mmaulwurff@gmail.com) 2019-2021
  *
  * This file is part of Target Spy.
  *
@@ -43,37 +43,44 @@ class ts_ActorInfo
     return result;
   }
 
-  static
+  static ui
   int getActorMaxHealth(Actor a)
   {
-    if (a == NULL) { return 0; }
+    if (a == null)     { return 0; }
+    if (!a.bSHOOTABLE) { return 0; }
 
     if (a.player && a.player.mo) { return a.player.mo.getMaxHealth(); }
 
     int maxHealth = a.spawnHealth();
 
     string drpgToken = "DRPGMonsterStatsHandler";
-    bool isDRPG = (a.countInv(drpgToken) > 0);
-    if (isDRPG)
+    if (a.countInv(drpgToken) > 0)
     {
       ts_ActorInfoHelper helper;
       maxHealth = helper.getDrpgMaxHealth(a);
     }
 
     string legendaryToken = "LDLegendaryMonsterToken";
-    bool isLegenDoom = (a.countInv(legendaryToken) > 0);
-    if (isLegenDoom && !isDRPG)
+    if (a.countInv(legendaryToken) > 0)
     {
-      maxHealth *= Cvar.getCvar("LD_legendaryHealth").getInt() / 100;
+      maxHealth = maxHealth * Cvar.getCvar("LD_legendaryHealth").getInt() / 100;
     }
 
     return maxHealth;
   }
 
-  static
+  static ui
   bool isIdle(Actor a)
   {
-    return a.target == NULL;
+    return a.target == null;
+  }
+
+  static ui
+  int customTargetColor(Actor target)
+  {
+    string customColorTokenClass = "tr_color_token";
+    int customColor = target.countInv(customColorTokenClass);
+    return customColor;
   }
 
 } // class ts_ActorInfo

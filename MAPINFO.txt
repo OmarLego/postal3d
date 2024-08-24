@@ -29,6 +29,7 @@ gameinfo
 	playerclasses = "PostalDude"
 	//el targetspy
 	AddEventHandlers = "ts_EventHandler"
+	TitleMusic = "D_DM2TTL"
 }
 
 //-------------------------------------------------------------------------------------------

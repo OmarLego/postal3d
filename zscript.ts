@@ -6,8 +6,10 @@ version 4.5
 #include "targetspy/ts_settings.zs"
 
 #include "targetspy/ts_api.zs"
+#include "targetspy/ts_external_actor_info_provider.zs"
 
 #include "targetspy/ts_last_target_info.zs"
+#include "targetspy/ts_play_to_ui_translator.zs"
 
 #include "targetspy/ts_string.zs"
 #include "targetspy/ts_game.zs"
@@ -15,7 +17,7 @@ version 4.5
 
 #include "targetspy/ts_noblockmap_detection.zs"
 
-#include "targetspy/ts_blank_line.zs"
+#include "targetspy/ts_cvar.zs"
 
 // libeye by KeksDose //////////////////////////////////////////////////////////
 // https://forum.zdoom.org/viewtopic.php?f=105&t=64566#p1102157

@@ -1,4 +1,4 @@
-/* Copyright Alexander Kromm (mmaulwurff@gmail.com) 2019-2022
+/* Copyright Alexander Kromm (mmaulwurff@gmail.com) 2019-2021
  *
  * This file is part of Target Spy.
  *
@@ -22,17 +22,17 @@ class ts_Api
   ts_Api from()
   {
     let result = new("ts_Api");
-    result._hasTarget        = Cvar.getCvar("m8f_POts_has_target",      players[consolePlayer]);
-    result._isFriendlyTarget = Cvar.getCvar("m8f_POts_friendly_target", players[consolePlayer]);
+    result._hasTarget        = ts_Cvar.from("m8f_POts_has_target");
+    result._isFriendlyTarget = ts_Cvar.from("m8f_POts_friendly_target");
     return result;
   }
 
-  void setHasTarget       (bool hasTarget)        { _hasTarget.setInt(hasTarget); }
-  void setIsFriendlyTarget(bool isFriendlyTarget) { _isFriendlyTarget.setInt(isFriendlyTarget); }
+  void setHasTarget       (bool hasTarget)        { _hasTarget.setBool(hasTarget); }
+  void setIsFriendlyTarget(bool isFriendlyTarget) { _isFriendlyTarget.setBool(isFriendlyTarget); }
 
 // private: ////////////////////////////////////////////////////////////////////////////////////////
 
-  private Cvar _hasTarget;
-  private Cvar _isFriendlyTarget;
+  private ts_Cvar _hasTarget;
+  private ts_Cvar _isFriendlyTarget;
 
 } // class ts_Api

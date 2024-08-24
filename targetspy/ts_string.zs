@@ -1,4 +1,4 @@
-/* Copyright Alexander Kromm (mmaulwurff@gmail.com) 2019-2022
+/* Copyright Alexander Kromm (mmaulwurff@gmail.com) 2019-2021
  *
  * This file is part of Target Spy.
  *
@@ -41,12 +41,12 @@ class ts_String
     int nPips;
     if (maxHealth < 1)
     {
-      nPips = 0;
+      nPips = 1;
     }
     else
     {
       nPips = int(round(double(health) * length / maxHealth));
-      nPips = clamp(nPips, 0, length);
+      nPips = clamp(nPips, 1, length);
     }
 
     string pipColor;

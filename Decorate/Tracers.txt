@@ -121,8 +121,9 @@ Deathtype "Shotgun"
 }
 Actor P3D_SprayTracer: P3D_ShotgunTracer
 {
-speed 60
-damage(14)
+//speed 60
+//damage(14)
+damage(25)
 Paintype "SprayCannon"
 Damagetype "SprayCannon"
 Deathtype "SprayCannon"

@@ -572,6 +572,7 @@ endif
 
 
 floor HMESNW1 Snow
+floor HMESNW3 Snow
 floor HMWOD1 Wood
 floor HMERD1 Dirt
 floor HMEWD6 Wood

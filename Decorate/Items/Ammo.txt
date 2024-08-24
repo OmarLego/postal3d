@@ -325,7 +325,7 @@ ACTOR 1Missile : Ammo
       loop
   }
 }
-ACTOR 1HSMissile : Ammo
+ACTOR OneHSMissile : Ammo
 {
   Inventory.PickupMessage "Got 1 Heat-Seeking missile"
   Inventory.Amount 1
@@ -377,7 +377,7 @@ ACTOR MissileBox : 1Missile
       loop
   }
 }
-ACTOR 1HSMissileBox : 1HSmissile
+ACTOR OneHSMissileBox : OneHSMissile
 {
   Inventory.PickupMessage "Got a box of 4 Heat-Seeking missiles"
   Inventory.Amount 4
@@ -552,7 +552,7 @@ actor RKReplacer : RandomSpawner replaces RocketAmmo
 {
     DropItem "1Missile", 255, 4
 	DropItem "NapCan", 255, 1
-	DropItem "1HSMissile", 255, 2
+	DropItem "OneHSMissile", 255, 2
 	DropItem "Grenadee", 255, 3
 	DropItem "Molotovv", 255, 2
 	DropItem "PB", 255, 2
@@ -562,7 +562,7 @@ actor RKBoxReplacer : RandomSpawner replaces RocketBox
 {
     DropItem "MissileBox", 255, 4
 	DropItem "NapCan", 255, 1
-	DropItem "1HSMissileBox", 255, 2
+	DropItem "OneHSMissileBox", 255, 2
 	DropItem "GrenadeBox", 255, 3
 	DropItem "MolotovBox", 255, 2
 }

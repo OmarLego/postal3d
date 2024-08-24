@@ -37,6 +37,9 @@ weapons/glock17/fire "sounds/weapons/Hostile/glock17-fire.ogg"
 //Weapons
 weapons/execution 		"sounds/weapons/execution.ogg"
 
+kevlarpickup 		"sounds/weapons/kevlar-pickup.ogg"
+hkevlarpickup		"sounds/weapons/hkevlar-pickup.ogg"
+
 weapons/melee/swing     "sounds/weapons/melee/melee-swing.wav"
 weapons/melee/punch     "sounds/weapons/melee/melee-punch.wav"
 weapons/melee/draw      "sounds/weapons/melee/melee-draw.wav"
@@ -68,10 +71,16 @@ weapons/machete/throw        "sounds/weapons/machete/machetethrow.wav"
 
 //M-12
 SMGSHOT1 SMGSHOT1
-SMGSHOT2 SMGSHOT2
+/*$alias SMGSHOT2 SMGSHOT1
+$pitchset SMGSHOT2 1.5
+$alias SMGSHOT3 SMGSHOT1
+$pitchset SMGSHOT3 0.5
+$alias SMGSHOT4 SMGSHOT3*/
+SMG/Single SMGSHOT1
+/*SMGSHOT2 SMGSHOT2
 SMGSHOT3 SMGSHOT3
-SMGSHOT4 SMGSHOT4
-$Random SMG/Single { SMGSHOT1 SMGSHOT2 SMGSHOT3 SMGSHOT4 }
+SMGSHOT4 SMGSHOT4*/
+//$Random SMG/Single { SMGSHOT1 SMGSHOT2 SMGSHOT3 SMGSHOT4 }
 weapons/m12/altfire     "sounds/weapons/m-12/m12-altfire.ogg"
 weapons/m12/nadebounce     "sounds/weapons/m-12/m12-nadebounce.ogg"
 
@@ -350,6 +359,13 @@ CASDIE7 CASDIE7
 CASDIE8 CASDIE8
 CASDIE9 CASDIE9
 CASDIE10 CASDIE10
+
+
+$alias CasBounceQ CasBounce
+$Volume CasBounceQ 0.44
+
+$alias CasDieQ CasDie
+$Volume CasDieQ 0.44
 
 
 MAGDROP1 MAGDROP1
