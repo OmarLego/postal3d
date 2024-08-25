@@ -274,24 +274,33 @@ ACTOR MonotoneAttack: FastProjectile
     Speed 50
 	SeeSound "none"
 	DeathSound "none"
-  renderstyle Translucent
-  alpha 0.5
-  Scale 1.5
+  //renderstyle Translucent
+  //alpha 0.5
+  //Scale 1.5
 	decal "MacheteHorizontal"
+	
+	renderstyle ADD
+	scale .15
 	States
 	{
     Spawn:
-        "####" A 1
+        TNT1 A 1
         stop
 	Death:
 		"####" A 0 A_PlaySound("weapons/machete/hitwall",CHAN_AUTO)
-		"####" A 0 A_giveToTarget("MacheteHit", 1)
+		//"####" A 0 A_giveToTarget("MacheteHit", 1)
 		"####" A 0 Radius_Quake (2, 6, 0, 5, 0)//(intensity, duration, damrad, tremrad, tid)
-        "####" A 0 A_SpawnItem ("Sparks", 0)
+			EXPL AAAAAA 0 A_CustomMissile ("MeleeSmoke", 0, 0, random (0, 360), 2, random (0, 360))
+		//TNT1 A 0 A_PlaySound("Impact", CHAN_AUTO)
+		PUFF A 1 BRIGHT A_Scream
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+        //"####" A 0 A_SpawnItem ("Sparks", 0)
         "####" AAAAAA 0 A_CustomMissile ("SparkX", 2, 0, random (0, 360), 2, random (30, 170))
 		"####" A 0 A_ALertMonsters(400)
-		MPUF A 3
-		MPUF BCD 3
+		//MPUF A 3
+		//MPUF BCD 3
 		Stop
 	XDeath:
 		"####" A 0 A_PlaySound("weapons/machete/hit",CHAN_AUTO)
@@ -306,7 +315,7 @@ ACTOR MonotoneAttack: FastProjectile
 ACTOR MonotoneAttackVertical: MonotoneAttack
 {
 	decal "MacheteVertical"
-	States
+	/*States
 	{
     Spawn:
         "####" A 1
@@ -328,7 +337,7 @@ ACTOR MonotoneAttackVertical: MonotoneAttack
 		"####" A 0 A_ALertMonsters(400)
 		"####" A 1
 		Stop
-	}
+	}*/
 }
 
 ACTOR ThrowedMachete
@@ -425,12 +434,14 @@ ACTOR ThrowedMachete
 		MCHB H 2
 		Loop
 	Bounce:
-	"####" A 0 A_SpawnItem ("Sparks", 0)
+	//"####" A 0 A_SpawnItem ("Sparks", 0)
+		"####" A 0 A_SpawnDebris("TracerSpark")
 	Goto Spawn
 	
 	Death:	
 		"####" A 0
-		"####" A 0 A_SpawnItem ("Sparks", 0)
+		//"####" A 0 A_SpawnItem ("Sparks", 0)
+		"####" A 0 A_SpawnDebris("TracerSpark")
 		"####" A 0 A_StopSound
 		"####" A 0 A_PlaySound("weapons/machete/hitwall")
 	XDeath:
