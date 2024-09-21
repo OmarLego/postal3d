@@ -35,6 +35,7 @@ OPTMNU_ENGHUD = "Engine HUD Options";
 OPTMNU_CROSS1 = "Crosshair Colors";
 OPTMNU_CROSS2 = "Crosshair Setup";
 CNTRLMNU_USE = "Use (Open doors, Execute, etc)";
+OPTMNU_HESOUT = "DISABLE THESE!";
 //vk
 OPTMNU_SWRENDERER = "Software Renderer";
 OPTMNU_INPUT = "Input Options";
