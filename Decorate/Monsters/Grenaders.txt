@@ -122,10 +122,13 @@ actor PRLD_GrenadeG2 : PRLD_GrenadeFUCKINGLETTHEPLAYERHITYOUPLEASE
 	Species "Player"
 	States
     {
+	Spawn:
+		GRNT A 22
+		Goto Explode
 	Explode:
 		TNT1 A 0
 		GRNT A 1
-		TNT1 A 0 A_Explode(60,500, 0 ,0,60, 0, 0, "Explosive")
+		TNT1 A 0 A_Explode(60,256, 0 ,0,60, 0, 0, "Explosive")
 		TNT1 A 0 A_SpawnItem("PrldGrenadeExplosion")
 		Stop
 	}

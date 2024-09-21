@@ -34,3 +34,20 @@ script "Not Actual Population IDK how to count civvies without fucking up the no
 		delay(1);
 	}
 }
+
+script "da use attack to attack and use" ENTER
+{
+ int buttons;
+
+ while (TRUE)
+ {
+   buttons = GetPlayerInput(-1, INPUT_BUTTONS);
+
+   if (buttons & BT_USE)
+   {
+     GiveInventory("Kicking", 1);
+   }
+   
+   delay(1);
+ }
+}

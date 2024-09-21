@@ -34,9 +34,17 @@ OPTMNU_ENGDIS = "Engine Display Options";
 OPTMNU_ENGHUD = "Engine HUD Options";
 OPTMNU_CROSS1 = "Crosshair Colors";
 OPTMNU_CROSS2 = "Crosshair Setup";
+CNTRLMNU_USE = "Use (Open doors, Execute, etc)";
 //vk
+OPTMNU_SWRENDERER = "Software Renderer";
 OPTMNU_INPUT = "Input Options";
+OPTMNU_MULTIPLAYER = "Multiplayer Options";
 OPTMNU_SYSTEM = "System Options";
+OPTMNU_LIGHT = "Light Options";
+OPTMNU_SPRITE = "Sprite Options";
+GLPREFMNU_CORONAS = "Coronas";
+DSPLYMNU_APPEARANCE = "Appearance";
+DSPLYMNU_ADVANCED = "Advanced Display Options";
 
 //Universal Weapon Sway
 MENU_TITLE = "Weapon Sway Options";

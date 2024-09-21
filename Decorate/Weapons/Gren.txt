@@ -53,6 +53,7 @@ Loop
 	Deselect:
 	TNT1 A 0 A_JumpIfInventory ("Magazine10",1,"DeselectCont")
 	TNT1 A 10
+	TNT1 A 0 A_TakeInventory("PRLD_GrenadeSelected", 1)
 	TNT1 AAAAAAAAAAAAAAA 0 A_Lower
 	Wait
 	DeselectCont:
@@ -179,7 +180,8 @@ States
 	TNT1 A 0 Radius_Quake(10,8,0,3200,0)
     TNT1  AAAAAAA 0 A_SpawnItemEx("BigSmokeSpawner", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
 	//FXPO ABCDEFGHIJKLM 1 bright 
-	TNT1 A 0 A_SpawnItem("PrldGrenadeExplosion")
+	//TNT1 A 0 A_SpawnItem("PrldGrenadeExplosion")
+	TNT1 A 0 A_SpawnItem("PrldGrenade2Explosion")
     stop
 		Bounce:
 	TNT1 A 0

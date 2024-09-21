@@ -74,7 +74,8 @@ Actor P3D_M16Tracer: P3D_DamagingTracerBase
 //speed 70 //also too slow
 speed 80
 //damage (random(7,13))
-Damage(9)
+//damage (9)
+Damage(10)
 Paintype "SMG"
 Damagetype "SMG"
 Deathtype "SMG"
@@ -101,7 +102,8 @@ speed 100
 //damage (random(5,12))
 //damage (random(6,13))
 //change for right now i wanna make all the damage values plain (not random) damage (its better tenfold)
-damage (8)
+//damage (8)
+damage (9)
 Paintype "MP5"
 Damagetype "MP5"
 Deathtype "MP5"
