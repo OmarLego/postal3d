@@ -8,8 +8,8 @@ ACTOR PRLD_HomeKey : CustomInventory
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_Teleport("Spawn2", "KeySpot")
+		HKEY A 1
+		TNT1 A 0 A_Teleport("Spawn2", "KeySpot", "TeleportFog", TF_NOFOG)
 		Loop
 	Spawn2:
 		HKEY A 10

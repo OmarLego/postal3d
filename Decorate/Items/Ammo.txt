@@ -237,7 +237,9 @@ ACTOR 9MMMag : 9MM
 {
   Inventory.PickupMessage "Got a magazine of light ammo"
   Inventory.Amount 16
-  scale 0.3
+  //scale 0.3
+  xscale 0.3
+  yscale 0.25
   Inventory.MaxAmount 180
   Ammo.BackpackAmount 10
   Ammo.BackpackMaxAmount 270
