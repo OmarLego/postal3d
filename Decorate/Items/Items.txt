@@ -5,6 +5,7 @@ ACTOR PRLD_HomeKey : CustomInventory
 	//Inventory.Icon "HOMEKEYI"
 	Radius 20
 	Height 16
+	+BRIGHT
 	States
 	{
 	Spawn:

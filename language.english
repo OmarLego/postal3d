@@ -14,7 +14,7 @@ SKILL_NIGHTMARE = "Nightmare";
 //Pick-ups
 GOTHEALBOX = "Picked up a health box";
 GOTHBOXNEED = "Picked up a health box that you REALLY needed";//does gzdoom even do caps
-GOTHOMEKEY = "Got a key";
+GOTHOMEKEY = "Got a key, whats beeping outside?";
 PGOTKEVLAR = "Got kevlar";
 PGOTHKEVLAR = "Got a Heavy kevlar vest";
 
@@ -46,6 +46,8 @@ OPTMNU_SPRITE = "Sprite Options";
 GLPREFMNU_CORONAS = "Coronas";
 DSPLYMNU_APPEARANCE = "Appearance";
 DSPLYMNU_ADVANCED = "Advanced Display Options";
+
+
 
 //Universal Weapon Sway
 MENU_TITLE = "Weapon Sway Options";

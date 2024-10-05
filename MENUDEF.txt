@@ -300,17 +300,6 @@ OptionMenu "PRLD_Keyboard"
 	Control    "$CNTRLMNU_MOVERIGHT"        , "+moveright"
 
 	StaticText ""
-	Control    "$CNTRLMNU_JUMP"             , "+jump"
-	Control    "$CNTRLMNU_CROUCH"           , "+crouch"
-	Control    "$CNTRLMNU_TOGGLECROUCH"     , "crouch"
-	Control    "$CNTRLMNU_RUN"              , "+speed"
-	Control    "$CNTRLMNU_TOGGLERUN"        , "toggle cl_run"
-	
-	StaticText ""
-	Control    "$CNTRLMNU_NEXTWEAPON"     , "weapnext"
-	Control    "$CNTRLMNU_PREVIOUSWEAPON" , "weapprev"
-
-	StaticText ""
 	Control    "$CNTRLMNU_SLOT1"          , "slot 1"
 	Control    "$CNTRLMNU_SLOT2"          , "slot 2"
 	Control    "$CNTRLMNU_SLOT3"          , "slot 3"
@@ -319,4 +308,15 @@ OptionMenu "PRLD_Keyboard"
 	Control    "$CNTRLMNU_SLOT6"          , "slot 6"
 	Control    "$CNTRLMNU_SLOT7"          , "slot 7"
 	Control    "Throwables"          , "slot 8"
+	
+	StaticText ""
+	Control    "$CNTRLMNU_NEXTWEAPON"     , "weapnext"
+	Control    "$CNTRLMNU_PREVIOUSWEAPON" , "weapprev"
+	
+	StaticText ""
+	Control    "$CNTRLMNU_JUMP"             , "+jump"
+	Control    "$CNTRLMNU_CROUCH"           , "+crouch"
+	Control    "$CNTRLMNU_TOGGLECROUCH"     , "crouch"
+	Control    "$CNTRLMNU_RUN"              , "+speed"
+	Control    "$CNTRLMNU_TOGGLERUN"        , "toggle cl_run"
 }

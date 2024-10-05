@@ -45,6 +45,8 @@ katherinecode - Main Coder
 
 SevaKsP - Scripting Consultant, Original Weapons
 
+Nomakh Thunder - Hell From Earth's Monster AI
+
 dodopod - QuakeMove
 
 LossForWords - POSTAL: Running With Chainsaws' One-Liners
@@ -68,6 +70,8 @@ BigStronk - Sound Designer
 Cannoli Meister, Ivan, Artificial Reflection, Nia, Zombi, Dapper Capper, QCDE + D4T Discord,
 Running With Scissors Discord, DOOM 64 Discord,
 My IRL Friends(you know who you are <3) - PlayTesting and Feedback
+
+TDRR - ACS Scripting Help
 
 IttravVFX - Hair Modeling Help
 
