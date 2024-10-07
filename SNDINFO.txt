@@ -4,8 +4,16 @@ $volume NoSoundHax 0.01
 
 //Monsters
 
-$random bodydrop { weapons/melee/heavy1 weapons/melee/heavy4 weapons/melee/heavy5 }
-$volume bodydrop 0.75
+//evp
+$random bodydrop { monster_bodydrop1 monster_bodydrop2 monster_bodydrop3
+monster_bodydrop4 monster_bodydrop5 }
+monster_bodydrop1 Sounds/Monsters/monster_bodydrop1.ogg
+monster_bodydrop2 Sounds/Monsters/monster_bodydrop2.ogg
+monster_bodydrop3 Sounds/Monsters/monster_bodydrop3.ogg
+monster_bodydrop4 Sounds/Monsters/monster_bodydrop4.ogg
+monster_bodydrop5 Sounds/Monsters/monster_bodydrop5.ogg
+/*$random bodydrop { weapons/melee/heavy1 weapons/melee/heavy4 weapons/melee/heavy5 }
+$volume bodydrop 0.75*/
 shellslingdetach "sounds/monsters/shellslingdetach.mp3"
 
 bodysizzle "sounds/monsters/BodySizzling-01.ogg"
@@ -288,8 +296,11 @@ $Random Frag { FRAG1 FRAG2 FRAG3 FRAG4 }
 
 //Gore
 
-$alias hitflesh weapons/melee/heavy2
+//dn3doom
+hitflesh HFLESH
+//$alias hitflesh weapons/melee/heavy2
 
+//reblood
 blood/drop				BLODDROP
 $limit blood/drop 5
 $volume blood/drop 0.5
@@ -316,6 +327,27 @@ misc/xdeath4a			dsxdth4a
 misc/xdeath4b			dsxdth4b
 $random misc/xdeath5		{ misc/xdeath4a misc/xdeath4b misc/xdeath2a misc/xdeath2b misc/xdeath2e}
 $limit misc/xdeath5 2
+
+
+//brutal doom 64
+LQDRIP1 LQDRIP1
+LQDRIP2 LQDRIP2
+LQDRIP3 LQDRIP3
+LQDRIP4 LQDRIP4
+LQDRIP5 LQDRIP5
+LQDRIP6 LQDRIP6
+LQDRIP7 LQDRIP7
+LQDRIP8 LQDRIP8
+LQDRIP9 LQDRIP9
+LQDRIP10 LQDRIP10
+LQDRIP11 LQDRIP11
+LQDRIP12 LQDRIP12
+LQDRIP13 LQDRIP13
+LQDRIP14 LQDRIP14
+$random blooddrop {LQDRIP1 LQDRIP2 LQDRIP3}
+$random blooddrop2 {LQDRIP4 LQDRIP5 LQDRIP6 LQDRIP7}
+$random blooddrop3 {LQDRIP8 LQDRIP9 LQDRIP10 LQDRIP11 LQDRIP12 LQDRIP13 LQDRIP14 LQDRIP14}
+$random blooddropAll {LQDRIP1 LQDRIP2 LQDRIP3 LQDRIP4 LQDRIP5 LQDRIP6 LQDRIP7 LQDRIP8 LQDRIP9 LQDRIP10 LQDRIP11 LQDRIP12 LQDRIP13 LQDRIP14}
 
 //Other effects
 

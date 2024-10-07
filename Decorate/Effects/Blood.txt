@@ -148,6 +148,7 @@ ACTOR PRLD_BloodFloor
 	{
 	Spawn:
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound("blooddropAll", CHAN_AUTO)
 		//TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloorNR", random(-7,7), random(-7,7), 1, 0, 0, 0, random(0,360))
 		TNT1 A 0 A_Jump(256, "Variant1", "Variant2", "Variant3")
 	Variant1:
@@ -221,6 +222,7 @@ actor PRLD_BloodFloorNR : PRLD_BloodFloor
 	{
 	Spawn:
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound("blooddropAll", CHAN_AUTO)
 		TNT1 A 0 A_Jump(256, "Variant1", "Variant2", "Variant3")
 	}
 }
