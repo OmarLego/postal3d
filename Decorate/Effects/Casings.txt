@@ -1,3 +1,8 @@
+actor PRLD_OnSnow : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR CasingBase
 {
 	BounceType Doom
@@ -15,9 +20,12 @@ ACTOR CasingBase
 	//gravity 0.5
 	//Speed 3
 	scale 0.2
-	BounceSound "CasBounce"
-	DeathSound "CasDie"
+	+USEBOUNCESTATE
+	//BounceSound "CasBounce" //now its played on the actor
+	//DeathSound "CasDie"
 	+FORCEXYBILLBOARD
+	Health 999
+	+SHOOTABLE
 	States
 	{
 	Spawn:
@@ -115,13 +123,35 @@ ACTOR 9MMCasing : CasingBase
 	XScale -0.2
 	States
 	{
+	Bounce:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("PRLD_OnSnow", 1, 2)
+		TNT1 A 0 A_PlaySound("CasBounce", CHAN_BODY)
+		Goto Spawn
+	SnowBounce:
+		TNT1 A 0
+		//TNT1 A 0 A_PlaySound("floor/snow", CHAN_BODY, 0.25)
+		TNT1 A 0 A_Jump(128, 3)
+		CAS1 A 0
+		TNT1 A 0 A_Jump(256, 4)
+		"####" # 0 A_Jump(128, 3)
+		CAS1 B 0
+		"####" # 0 A_Jump(256, 2)
+		CAS1 C 0
+		"####" # 0 A_Die
 	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_TakeInventory("PRLD_OnSnow", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("whats that casing sound?")
 		CAS1 AABBCBAA 1 {
 		A_SetRoll(roll + 45, SPF_INTERPOLATE); 
 		A_CustomMissile("CasingSmoke", 0, 0, random(0, 360), 2, random(85, 90));
 		}
 		Loop
 	Death:
+		"####" # 0
+		"####" # 0 A_JumpIfInventory("PRLD_OnSnow", 1, 2)
+		"####" # 0 A_PlaySound("CasDie", CHAN_BODY)
 		"####" # 15
 		"####" # 0 A_SpawnItem("MicroSmokeColumn")
 		"####" # 0 ACS_NamedExecuteAlways("PrldJanny")
@@ -286,14 +316,27 @@ ACTOR ShotgunCasing : CasingBase
 	Height 5
 	Radius 5
 	Scale 0.2
-	BounceSound "ShellBounce"
-	DeathSound "ShellDie"
+	//BounceSound "ShellBounce"
+	//DeathSound "ShellDie"
 	States
 	{
+	Bounce:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("PRLD_OnSnow", 1, 2)
+		TNT1 A 0 A_PlaySound("ShellBounce", CHAN_BODY)
+		Goto Spawn
+	SnowBounce:
+		TNT1 A 0 A_Die
 	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_TakeInventory("PRLD_OnSnow", 1)
+		TNT1 A 0 ACS_NamedExecuteAlways("whats that casing sound?")
 		CAS2 ABCDEFGH 1 A_CustomMissile("CasingSmoke", 0, 0, random(0, 360), 2, random(85, 90))
 		Loop
 	Death:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("PRLD_OnSnow", 1, 2)
+		TNT1 A 0 A_PlaySound("ShellDie", CHAN_BODY)
 	TNT1 A 0 A_Jump (256,"D1","D2","D3","D4","D5","D6")
 	D1:
 	CAS2 IIIII 3

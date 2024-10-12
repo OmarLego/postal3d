@@ -51,3 +51,34 @@ script "da use attack to attack and use" ENTER
    delay(1);
  }
 }
+
+Script "whats that casing sound?" (Void)
+{
+	if (CheckActorFloorTexture(0, "HMESNW1")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "HMESNW3")) GiveInventory("PRLD_OnSnow", 1);
+	//dirt
+	if (CheckActorFloorTexture(0, "HMERD1")) GiveInventory("PRLD_OnSnow", 1);//its not snow doe
+	if (CheckActorFloorTexture(0, "PBED01")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED02")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED03")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED04")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED05")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED06")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED07")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED08")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED09")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED10")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED11")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PBED12")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "GRENDIRT")) GiveInventory("PRLD_OnSnow", 1);
+	
+	if (CheckActorFloorTexture(0, "FLAT10")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+	if (CheckActorFloorTexture(0, "GRASS1")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+	if (CheckActorFloorTexture(0, "GRASS2")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+	if (CheckActorFloorTexture(0, "MFLR8_4")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+	if (CheckActorFloorTexture(0, "RROCK16")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+	if (CheckActorFloorTexture(0, "RROCK17")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+	if (CheckActorFloorTexture(0, "RROCK18")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+	if (CheckActorFloorTexture(0, "RROCK19")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+	if (CheckActorFloorTexture(0, "RROCK20")) GiveInventory("PRLD_OnSnow", 1);//doom texture
+}

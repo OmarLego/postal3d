@@ -185,7 +185,7 @@ Bulletin:
 		"####" F 2
 		//actual hit happens here
 		TNT1 A 0 A_GiveInventory("ExecutionHealth", 6)
-		TNT1 A 0 A_Log("+6 health", 1)
+		TNT1 A 0 A_Log("\cl+6 health", 1)
 		//TNT1 A 0 A_PlaySound("weapons/machete/swing",CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/machete/hit",CHAN_AUTO)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
@@ -238,7 +238,7 @@ Bulletin:
 		TNT1 A 0 A_PlaySound("weapons/melee/kick")
 		KICK A 3
 		TNT1 A 0 A_GiveInventory("ExecutionHealth", 4)
-		TNT1 A 0 A_Log("+4 health",1)
+		TNT1 A 0 A_Log("\cl+4 health",1)
 		TNT1 A 0 A_PlaySound("weapons/melee/heavy", CHAN_AUTO)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
 		KICK B 6

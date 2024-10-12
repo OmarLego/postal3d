@@ -298,7 +298,6 @@ decalgroup BloodSplat
 	PBloodSplat1 1
 	PBloodSplat2 1
 	PBloodSplat3 1
-	//PBloodSplat4 1 i forgot to make it ill get to it later I Hope
 	PBloodSplat5 1
 	PBloodSplat6 1
 }

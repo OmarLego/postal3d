@@ -292,6 +292,7 @@ OptionMenu "PRLD_Keyboard"
 	Control    "$CNTRLMNU_USE"              , "+use"
 	//Control    "$CNTRLMNU_EXEC"             , "prld_cartel"
 	Control    "$CNTRLMNU_ANHERO"           , "suicide"
+	Control    "$CNTRLMNU_READWJRN"      , "invuse"
 
 	StaticText ""
 	Control    "$CNTRLMNU_FORWARD"          , "+forward"

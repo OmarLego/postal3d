@@ -118,6 +118,7 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
     See.Run:
 		TNT1 A 0
+		//TNT1 A 0 A_PlaySound("ClothRustle", CHAN_AUTO, 0.5)
         DUDE A 6 A_JumpIf(VelZ != 0, "Jump")
 		
         TNT1 A 0 A_JumpIf(VelX == 0, "Spawn")
@@ -128,6 +129,7 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 		
         DUDE B 6 A_JumpIf(VelZ != 0, "Jump")
 		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		//TNT1 A 0 A_PlaySound("ClothRustle", CHAN_AUTO, 0.5)
 		DUDE C 6 A_JumpIf(VelZ != 0, "Jump")
 		
         TNT1 A 0 A_JumpIf(VelX == 0, "Spawn")

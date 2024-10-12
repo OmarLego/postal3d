@@ -2,6 +2,15 @@
 
 
 
+$Random ClothRustle { ClothRustle1 ClothRustle2 ClothRustle3 ClothRustle4 ClothRustle5 ClothRustle6 }
+ClothRustle1 "Sounds/Voiceovers/Dude/ClothRustle01-01.ogg"
+ClothRustle2 "Sounds/Voiceovers/Dude/ClothRustle01-02.ogg"
+ClothRustle3 "Sounds/Voiceovers/Dude/ClothRustle01-03.ogg"
+ClothRustle4 "Sounds/Voiceovers/Dude/ClothRustle01-04.ogg"
+ClothRustle5 "Sounds/Voiceovers/Dude/ClothRustle01-05.ogg"
+ClothRustle6 "Sounds/Voiceovers/Dude/ClothRustle01-06.ogg"
+//$Limit ClothRustle 1
+
 dude/groanmale2		"Sounds/Voiceovers/Dude/groan_male2.ogg"
 $random dude/writhing { dude/writhing1 dude/writhing2 dude/writhing3 }
 //player/land			"Sounds/Voiceovers/Dude/playerland.ogg"
