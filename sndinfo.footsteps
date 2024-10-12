@@ -73,6 +73,15 @@ floor/Dirt8				"Sounds/Footsteps/FTPlant8.ogg"
 //$Volume floor/Dirt 0.5
 $Limit floor/Dirt 0
 
+//actual one
+$Random floor/gDirt { floor/gDirt1 floor/gDirt2 floor/gDirt3 floor/gDirt4 floor/gDirt5 }
+floor/gDirt1				"Sounds/Footsteps/BFootstepDirt1.ogg"
+floor/gDirt2				"Sounds/Footsteps/BFootstepDirt2.ogg"
+floor/gDirt3				"Sounds/Footsteps/BFootstepDirt4.ogg"
+floor/gDirt4				"Sounds/Footsteps/BFootstepDirt5.ogg"
+floor/gDirt5				"Sounds/Footsteps/BFootstepDirt6.ogg"
+$Volume floor/gDirt 0.5
+
 
 //Gravel - loose crunchy surface
 $random floor/gravel

@@ -36,6 +36,7 @@
 #include "Decorate/Weapons/Mol.txt"
 #include "Decorate/Weapons/PB.txt"
 #include "Decorate/Weapons/Machete.txt"
+#include "Decorate/Weapons/MoreThan8Pages.txt"
 
 //Monsters
 #include "decorate/monsters/Postal3dMonster.txt"

@@ -17,6 +17,7 @@ GOTHBOXNEED = "Picked up a health box that you REALLY needed";//does gzdoom even
 GOTHOMEKEY = "Got a key, whats beeping outside?";
 PGOTKEVLAR = "Got kevlar";
 PGOTHKEVLAR = "Got a Heavy kevlar vest";
+TAG_WARBOOK = "Diary";
 
 
 

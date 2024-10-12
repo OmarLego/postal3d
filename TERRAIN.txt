@@ -147,6 +147,21 @@ chunkbasezvel	0
 sound			njmt
 NoAlert
 }
+splash gdirt
+{
+smallclass		None
+smallclip		0
+smallsound		floor/gdirt
+
+baseclass		None
+chunkclass		None
+chunkxvelshift	0
+chunkyvelshift	0
+chunkzvelshift	0
+chunkbasezvel	0
+sound			njmt
+NoAlert
+}
 
 splash gravel
 {
@@ -574,7 +589,7 @@ endif
 floor HMESNW1 Snow
 floor HMESNW3 Snow
 floor HMWOD1 Wood
-floor HMERD1 Dirt
+floor HMERD1 gDirt
 floor HMEWD6 Wood
 
 

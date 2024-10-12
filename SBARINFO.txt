@@ -23,6 +23,9 @@ InInventory Not PRLD_CutsceneWeap || PRLD_M12Spawn, 1
 	{
 		drawstring SMALLFONT, untranslated, "You must kill 90% of the hostiles. ", 4, -200, 0, drawshadow(1, 0);
 	}
+	
+
+	//tactical inventory hide
 
 	//armor
 	drawimage "FSHUD2", 58, -14, centerbottom, 64, 53;
@@ -55,14 +58,14 @@ InInventory Not PRLD_CutsceneWeap || PRLD_M12Spawn, 1
 			drawnumber 2147483647, SMALLFONT, untranslated, ammo2, drawshadow, -42, -28;
 			inventorybarnotvisible
 			{
-				drawselectedinventory centerbottom, drawshadow(1, 1), alwaysshowcounter, STATUSFONT, -14, -39, -26, -56, untranslated;
+				drawselectedinventory centerbottom, drawshadow(1, 1), STATUSFONT, -14, -39, -26, -56, untranslated;
 			}
 		}
 		else //no secondary ammo
 		{
 			inventorybarnotvisible
 			{
-				drawselectedinventory centerbottom, drawshadow, alwaysshowcounter, STATUSFONT, -14, -21, -26, -38, untranslated;
+				drawselectedinventory centerbottom, drawshadow, STATUSFONT, -14, -21, -26, -38, untranslated;
 			}
 		}
 	}
