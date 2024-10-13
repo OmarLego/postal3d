@@ -114,6 +114,7 @@ ACTOR Postal3dWeapon : Weapon
 	KickCont:
 		KICK B 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		KICK CD 3
+		TNT1 A 0 A_TakeInventory("Kicking", 1)
 		TNT1 A 0 A_TakeInventory("PRLD_KickHGrenade", 1)
 		TNT1 A 1 A_TakeInventory("PRLD_KickNade", 1)
 		TNT1 A 0 SetPlayerProperty(0,0, PROP_FROZEN)

@@ -503,5 +503,4 @@ $alias Menu/quit1						menu/option/open //Menu Quit 1
 $alias Menu/quit2						menu/option/open //Menu Quit 2
 
 //FMV Audio
-Movies/RWSINTRO "Movies/RWSINTRO.ogg"
-Movies/burningparadisetest "Movies/burningparadisetest.ogg"
+Movies/PRLDINTRO "Movies/PRLDINTRO.ogg"
