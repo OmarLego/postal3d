@@ -222,4 +222,7 @@ Map PRLD01 "Home"//"$TXT_PRLD01"
 	fogdensity = 2
 	MONSTERFALLINGDAMAGE
 	FALLINGDAMAGE
+	NoIntermission
+	InterMusic = "D_DM2INT"
+	next = map02
 }

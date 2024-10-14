@@ -84,6 +84,7 @@ ACTOR Postal3dMonster {
 	Death.Cut:
 	Death.Saw:
 		TNT1 A 0
+		TNT1 A 0 A_StopSound
         TNT1 A 0 A_XScream
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_FaceTarget

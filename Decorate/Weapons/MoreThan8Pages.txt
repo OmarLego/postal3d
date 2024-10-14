@@ -31,6 +31,7 @@ ACTOR PRLD_Book : Postal3dWeapon
 	+weapon.NoAutoaim
 	+Weapon.NoAutoFire
 	Weapon.SlotNumber 9
+	+Inventory.UNDROPPABLE
 	States
 	{
 	Select:
