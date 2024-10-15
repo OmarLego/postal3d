@@ -1,0 +1,52 @@
+#library "test"
+#import "zcommon.bcs"
+
+strict namespace {
+
+Script "lol" enter
+{
+    fixed trunc (fixed a)
+    {
+        return fixed(int(a));
+    }
+
+    void DrawIMG (str img, fixed x, fixed y, fixed alpha)
+    {
+        SetFont(img);
+        HudMessage(s:"A"; HUDMSG_PLAIN|HUDMSG_ALPHA, 0, CR_UNTRANSLATED, trunc(x), trunc(y), (fixed)1873, alpha);
+    }
+
+    enum : fixed
+    {
+        dist = 8.0,
+        bgAlpha = 0.5,
+        bgX = 160.0,
+        bgY = 100.0
+    };
+
+    int startTime = Timer();
+    fixed seconds, time, timeInOut;
+
+    SetHudSize(320, 200, true);
+    SetHudClipRect(32, 37, 253, 125);
+
+    while(true)
+    {
+        // time, in seconds
+        seconds = fixed(Timer() - startTime) / 120.0;
+        // spin timer
+        time = seconds % (raw)1.0;
+        // ease in/out
+        timeInOut = (time * 2.0) - 1.0;
+
+        if(timeInOut < 0.0)
+            timeInOut = -timeInOut;
+
+        DrawIMG("PRLDHOME", (Cos(time) * (dist * timeInOut)) + bgX, (Sin(time) * (dist * timeInOut)) + bgY, bgAlpha);
+        DrawIMG("PRLDHOME", (Cos(time) * (dist * -timeInOut)) + bgX, (Sin(time) * (dist * -timeInOut)) + bgY, bgAlpha);
+
+        Delay(1);
+    }
+}
+
+}
