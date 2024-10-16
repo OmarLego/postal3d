@@ -25,6 +25,8 @@ Freedoom Project - SmallFont
 
 SGtMarkIV - Simple Decal Enhancement Addon
 
+LossForWords - (Placeholder) Win-Screen Images
+
 Various people from Polyhaven, Sketchfab, Pixabay, and Wikimedia Commons
 
 =============
