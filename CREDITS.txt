@@ -25,6 +25,8 @@ Freedoom Project - SmallFont
 
 SGtMarkIV - Simple Decal Enhancement Addon
 
+Maxi Clouds - Re-Blood's Gibs
+
 LossForWords - (Placeholder) Win-Screen Images
 
 Various people from Polyhaven, Sketchfab, Pixabay, and Wikimedia Commons
@@ -58,6 +60,8 @@ dodopod - QuakeMove
 LossForWords - POSTAL: Running With Chainsaws' One-Liners
 
 m8f - Target Spy
+
+Maxi Clouds - Re-Blood's Gibs
 
 Boondorl - Universal Weapon Sway, Weather Spawner, Universal Rain and Snow
 
