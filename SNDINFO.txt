@@ -34,6 +34,7 @@ subsonic/aggressive6 "sounds/weapons/Hostile/subsonic_aggressive_06.ogg"
 subsonic/aggressive7 "sounds/weapons/Hostile/subsonic_aggressive_07.ogg"
 $random subsonic/aggressive { subsonic/aggressive1 subsonic/aggressive2 subsonic/aggressive3 subsonic/aggressive4 subsonic/aggressive5 subsonic/aggressive6 subsonic/aggressive7 }
 //m16 (rifle guys)
+<<<<<<< HEAD
 weapons/m16/fire1 "sounds/weapons/Hostile/m16-fire1.wav"
 weapons/m16/fire2 "sounds/weapons/Hostile/m16-fire2.wav"
 //$random weapons/m16/fire { weapons/m16/fire1 weapons/m16/fire2 }
@@ -41,6 +42,17 @@ $alias hostrifl AKFIR
 $alias weapons/m16/fire AKFIR
 //glock 17 (standard pistol guys)
 weapons/glock17/fire "sounds/weapons/Hostile/glock17-fire.ogg"
+=======
+weapons/m16/fire1 "sounds/weapons/Hostile/RIFLFIR1.ogg"
+weapons/m16/fire2 "sounds/weapons/Hostile/RIFLFIR2.ogg"
+//$random weapons/hostile/RIFLFIR { weapons/hostile/RIFLFIR1.ogg weapons/hostile/RIFLFIR2.ogg }
+$alias hostrifl AKFIR
+$alias weapons/m16/fire AKFIR
+//glock 17 (standard pistol guys)
+weapons/glock17/fire "sounds/weapons/Hostile/PISTLFIR.ogg"
+//DB (shotgun guys)
+weapons/db/fire "sounds/weapons/Hostile/DBFIR.ogg"
+>>>>>>> 7053d70 (Working unique weapon sounds for npcs)
 
 //Weapons
 weapons/execution 		"sounds/weapons/execution.ogg"
