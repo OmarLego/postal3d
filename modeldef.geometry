@@ -159,11 +159,29 @@ MODEL PRLD_Table2
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_Table3
+{
+	Path "Models/Geometry"
+	Model 0 "table1.md3"
+	SurfaceSkin 0 0 "simwood2"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
 
 MODEL PRLD_Chair1
 {
 	Path "Models/Geometry"
 	Model 0 "chair.md3"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_Chair2
+{
+	Path "Models/Geometry"
+	Model 0 "chair.md3"
+	SurfaceSkin 0 0 "simwood3"
 	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS A 0 0
@@ -213,6 +231,16 @@ MODEL PRLD_StreetLamp1
 {
 	Path "Models/Geometry"
 	Model 0 "streetlamp.md3"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_StreetLamp3
+{
+	Path "Models/Geometry"
+	Model 0 "streetlamp.md3"
+	SurfaceSkin 0 0 "PSTLAMP4"
+	SurfaceSkin 0 1 "PSTLAMP5"
 	Scale 1.0 1.0 1.2
    
 	FrameIndex BRLS A 0 0

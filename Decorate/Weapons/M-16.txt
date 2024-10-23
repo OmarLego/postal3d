@@ -10,7 +10,7 @@ actor BurstShotToken : Inventory {
 
 
 
-ACTOR M-16 : Postal3dWeapon
+ACTOR PRLD_M16 : Postal3dWeapon
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 10
@@ -23,6 +23,7 @@ Inventory.PickupMessage "\c[red]You got the \c[yellow]*Unmistakable*\c[red] M-16
   Inventory.PickupSound "AKBACK"
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
+  tag "M-16"
   
   States
   { 

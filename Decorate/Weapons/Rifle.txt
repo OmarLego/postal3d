@@ -4,7 +4,7 @@ actor AimToken : Inventory {
 	+UNDROPPABLE
 }
 
-ACTOR Lever-Action : Postal3dWeapon
+ACTOR PRLD_LeverAction : Postal3dWeapon
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 9
@@ -17,6 +17,7 @@ Inventory.PickupMessage "\c[red]You got the \c[Green]Lever-Action Rifle"
   Inventory.PickupSound "RCOCK"
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
+  Tag "Lever-Action"
   
   States
   { 

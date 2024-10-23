@@ -160,11 +160,19 @@ Actor PRLD_Table1C //the C is meant to signal collision, but i just used it the 
 			Stop
 	}
 }
-ACTOR PRLD_Table2 : PRLD_Table1
+ACTOR PRLD_Table2 : PRLD_Table1//small
 {
 	Radius 20
 	-NOCLIP
 	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+ACTOR PRLD_Table3 : PRLD_Table1//white
+{
 	States {
 		Spawn:
 			BRLS A -1
@@ -178,6 +186,14 @@ ACTOR PRLD_Chair1
 	Height 15
 	+NOGRAVITY
 	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_Chair2 : PRLD_Chair1//red
+{
 	States {
 		Spawn:
 			BRLS A -1
@@ -250,6 +266,14 @@ ACTOR PRLD_StreetLamp1
 	}
 }
 Actor PRLD_StreetLamp2 : PRLD_StreetLamp1
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_StreetLamp3 : PRLD_StreetLamp1//yellow verison of 1
 {
 	States {
 		Spawn:
