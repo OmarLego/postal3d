@@ -90,8 +90,8 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.StartItem "MoreThan8Pages", 1
     Player.WeaponSlot 1, "Machete"
     Player.Weaponslot 2, "PRLD_M12", "MP5K", "Magnum"
-    Player.Weaponslot 3, "DoubleBarrel", "Lever-Action"
-    Player.Weaponslot 4, "M-16", "Spraycannon", "Machinegun"
+    Player.Weaponslot 3, "DoubleBarrel", "PRLD_LeverAction"
+    Player.Weaponslot 4, "PRLD_M16", "Spraycannon", "Machinegun"
     Player.Weaponslot 5, "MissileLauncher"
     Player.Weaponslot 6, "Flammenwerfer"
     Player.Weaponslot 7, "NapalmLauncher"

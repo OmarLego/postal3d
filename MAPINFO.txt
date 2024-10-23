@@ -51,6 +51,13 @@ DoomEdNums
 	10027 = PB
 	10029 = Molotovv
 	5010 = PRLD_MP5KSpawner
+	15018 = PRLD_M16
+	15019 = Magnum
+	15020 = Machinegun
+	15021 = PRLD_LeverAction
+	15022 = SprayCannon
+	15023 = PipeBombWeap
+	15024 = GGrenade
 	
 	//Monsters
 	//hostiles
@@ -100,14 +107,17 @@ DoomEdNums
 	10022 = PRLD_Toliet
 	10023 = PRLD_Table1
 	10024 = PRLD_Table1C
+	15001 = PRLD_Table2
+	15016 = PRLD_Table3
 	10028 = PRLD_Chair1
+	15017 = PRLD_Chair2
 	10031 = PRLD_BathFaucet
 	10033 = PRLD_DogHouse
 	10008 = PRLD_Computer
 	10041 = PRLD_OfficeChair
-	15001 = PRLD_Table2
 	15002 = PRLD_StreetLamp1
 	15003 = PRLD_StreetLamp2
+	15015 = PRLD_StreetLamp3
 	15005 = PRLD_TruckStopSign
 	15004 = PRLD_USTallFlag
 	15006 = PRLD_Propane

@@ -15,6 +15,7 @@ Weapon.AmmoType1 "Grenadee"
 Weapon.AmmoType2 ""
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
+  tag "Natalie"
   States
   { 
 	Ready:
