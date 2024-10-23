@@ -322,3 +322,18 @@ actor PRLD_PropaneC : PRLD_Table1C
 			Stop
 	}
 }
+
+ACTOR PRLD_HomeRay
+{
+	Radius 24
+	Height 3
+	+NOCLIP
+	+NOGRAVITY
+	Alpha 0.64
+	RenderStyle Add
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

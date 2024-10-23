@@ -282,3 +282,12 @@ MODEL PRLD_Propane
    
 	FrameIndex BRLS A 0 0
 }
+
+MODEL PRLD_HomeRay
+{
+	Path "Models/Geometry"
+	Model 0 "homegodray.md3"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
