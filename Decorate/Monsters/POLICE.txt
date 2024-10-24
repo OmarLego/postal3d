@@ -1424,7 +1424,7 @@ ACTOR ShotgunOfficer1 : PistolOfficer1
 		TNT1 A 0
 		SOH1 E 25 A_FaceTarget
 		TNT1 A 0 A_JumpIfTargetInLos ("Accuracy", 0, JLOSF_CLOSENOJUMP | JLOSF_DEADNOJUMP, 0, 1200)
-		TNT1 A 0 A_PlaySound("weapons/dbshotgun/fire")
+		TNT1 A 0 A_PlaySound("weapons/hostile/db-fire")
 		TNT1 AAAAAAAAA 0 A_CustomMissile ("HostileShotgunTracer", 35, 3, random (-5,5))
 		SOH1 F 2 Bright
 		SOH1 E 18
@@ -1432,7 +1432,7 @@ ACTOR ShotgunOfficer1 : PistolOfficer1
 	Accuracy:
 		TNT1 A 0
 		SOH1 E 10 A_FaceTarget
-		TNT1 A 0 A_PlaySound("weapons/dbshotgun/fire")
+		TNT1 A 0 A_PlaySound("weapons/hostile/db-fire")
 		TNT1 AAAAAAAAA 0 A_CustomMissile ("HostileShotgunTracer", 35, 3,random (-3,3))
 		SOH1 F 2 Bright
 		SOH1 E 18
@@ -3255,13 +3255,13 @@ ACTOR RifleOfficer1 : ShotgunOfficer1
 	Missile:
 		TNT1 A 0
 		ROH1 E 10 A_FaceTarget
-		TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire1")
 		ROH1 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH1 E 1 A_FaceTarget
-        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire1")
 		ROH1 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH1 E 1 A_FaceTarget
-        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire2")
 		ROH1 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH1 E 1 A_FaceTarget
 		ROH1 E 2
@@ -3656,13 +3656,13 @@ ACTOR RifleOfficer2 : RifleOfficer1
 	Missile:
 		TNT1 A 0
 		ROH2 E 10 A_FaceTarget
-		TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire1")
 		ROH2 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH2 E 1 A_FaceTarget
-        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire2")
 		ROH2 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH2 E 1 A_FaceTarget
-        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire1")
 		ROH2 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH2 E 1 A_FaceTarget
 		ROH2 E 2
@@ -4039,13 +4039,13 @@ ACTOR RifleOfficer3 : RifleOfficer1
 	Missile:
 		TNT1 A 0
 		ROH3 E 10 A_FaceTarget
-		TNT1 A 0 A_PlaySound("weapons/m16/fire")
+		TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire1")
 		ROH3 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH3 E 1 A_FaceTarget
-        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire2")
 		ROH3 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH3 E 1 A_FaceTarget
-        TNT1 A 0 A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_PlaySound("weapons/hostile/m16-fire1")
 		ROH3 I 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		ROH3 E 1 A_FaceTarget
 		ROH3 E 2
