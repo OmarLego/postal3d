@@ -82,6 +82,8 @@ DoomEdNums
 	
 	28473 = Weather
 	30105 = PRLD_SnowTree
+	30100 = PRLD_Tree
+	10713 = rwldecBush//only RWLDEC asset that actually looks pretty good
 	10019 = PRLD_Snowman
 	10032 = PRLD_DeadTree1
 	10042 = PRLD_HomeSiren

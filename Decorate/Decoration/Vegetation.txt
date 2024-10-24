@@ -11,6 +11,15 @@ ACTOR PRLD_SnowTree
     loop
   }
 }
+Actor PRLD_Tree : PRLD_SnowTree
+{
+  States
+  {
+  Spawn:
+    TRDE A 1
+    loop
+  }
+}
 
 ACTOR PRLD_DeadTree1
 {
@@ -68,4 +77,18 @@ Actor PRLD_SnowParticles
 		SNOW AAAAAAAAAA 1 Bright A_SetTranslucent(.2,1)
 		Stop
 	}
+}
+
+ACTOR rwldecBush
+{
+  height 64
+  radius 0.5
+  scale 0.5
+  -SOLID
+  STATES
+  {
+  Spawn:
+  BUSH I 1
+  loop
+  }
 }
