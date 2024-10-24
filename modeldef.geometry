@@ -299,3 +299,32 @@ MODEL PRLD_HomeRay2
    
 	FrameIndex BRLS A 0 0
 }
+
+MODEL PRLD_Bush1
+{
+	Path "Models/Geometry"
+	Model 0 "bush.md3"
+	Scale 1.0 -1.0 1.2
+	ZOffset -16
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_Rock1
+{
+	Path "Models/Geometry"
+	Model 0 "rock.md3"
+	Scale 1.0 1.0 1.2
+	ZOffset -16
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_Rock2
+{
+	Path "Models/Geometry"
+	Model 0 "rock.md3"
+	SurfaceSkin 0 0 "HMEROCK1"
+	Scale 1.0 1.0 1.2
+	ZOffset -16
+   
+	FrameIndex BRLS A 0 0
+}

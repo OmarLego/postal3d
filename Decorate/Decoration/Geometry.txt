@@ -346,3 +346,35 @@ Actor PRLD_HomeRay2 : PRLD_HomeRay
 			Stop
 	}
 }
+
+ACTOR PRLD_Bush1
+{
+	Radius 24
+	Height 24
+	//+NOCLIP
+	+NOGRAVITY
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_Rock1 : PRLD_Bush1
+{
+	Radius 16
+	Height 8
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_Rock2 : PRLD_Rock1
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
