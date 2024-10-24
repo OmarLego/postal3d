@@ -123,6 +123,7 @@ DoomEdNums
 	15006 = PRLD_Propane
 	15007 = PRLD_PropaneC
 	15025 = PRLD_HomeRay
+	15026 = PRLD_HomeRay2
 	//roofs
 	10010 = PRLD_DudeRoof
 	15011 = PRLD_HomeRoof1

@@ -329,8 +329,17 @@ ACTOR PRLD_HomeRay
 	Height 3
 	+NOCLIP
 	+NOGRAVITY
-	Alpha 0.64
+	//Alpha 0.4
+	Alpha 0.2
 	RenderStyle Add
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_HomeRay2 : PRLD_HomeRay
+{
 	States {
 		Spawn:
 			BRLS A -1

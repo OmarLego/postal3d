@@ -291,3 +291,11 @@ MODEL PRLD_HomeRay
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_HomeRay2
+{
+	Path "Models/Geometry"
+	Model 0 "homegodray.md3"
+	Scale 1.0 -1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
