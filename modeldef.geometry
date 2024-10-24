@@ -186,6 +186,14 @@ MODEL PRLD_Chair2
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_Bench1
+{
+	Path "Models/Geometry"
+	Model 0 "chair.md3"
+	Scale 1.0 5.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
 MODEL PRLD_BathFaucet
 {
 	Path "Models/Geometry"

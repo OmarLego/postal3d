@@ -200,6 +200,24 @@ Actor PRLD_Chair2 : PRLD_Chair1//red
 			Stop
 	}
 }
+ACTOR PRLD_Bench1 : PRLD_Chair1
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_Bench1C : PRLD_Table1C
+{
+	Radius 8
+	Height 15
+	States {
+		Spawn:
+			TNT1 A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_BathFaucet
 {

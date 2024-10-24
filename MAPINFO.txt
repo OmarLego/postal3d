@@ -111,6 +111,8 @@ DoomEdNums
 	15016 = PRLD_Table3
 	10028 = PRLD_Chair1
 	15017 = PRLD_Chair2
+	15030 = PRLD_Bench1
+	15031 = PRLD_Bench1C
 	10031 = PRLD_BathFaucet
 	10033 = PRLD_DogHouse
 	10008 = PRLD_Computer
