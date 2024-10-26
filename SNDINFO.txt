@@ -429,9 +429,11 @@ $volume ShellDie 0.4
 
 //First sound. Very sharp, like exploding next to you.
 
-$random Explosion {Explode1 Explode2}
-Explode1 Explode1 
-Explode2 Explode2 
+$random Explosion {Explode1 Explode2 Explode3 Explode4}
+Explode1 Explode1
+Explode2 Explode2
+Explode3 Explode3
+Explode4 Explode4
 $limit Explosion 4
 $rolloff  Explosion 900 1400
 
