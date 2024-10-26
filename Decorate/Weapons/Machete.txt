@@ -136,13 +136,15 @@ ACTOR Machete : Postal3dWeapon Replaces Chainsaw
 		MCHT A 0 A_FireCustomMissile("ThrowedMachete", 0, 0, 0, 0)
 		MCHT N 3
 	TNT1 A 0 A_GiveInventory("PRLD_EmptyWeapon", 1)
-		TNT1 A 1
+		//TNT1 A 1
+		TNT1 A 5 Offset(119, 99)
 		goto Ready
 	ThrowBlood:
 		MCH2 A 0 A_FireCustomMissile("BloodMachete", 0, 0, 0, 0)
 		MCHT N 3
 	TNT1 A 0 A_GiveInventory("PRLD_EmptyWeapon", 1)
-		TNT1 A 1
+		//TNT1 A 1
+		TNT1 A 5 Offset(119, 99)
 		goto Ready
 	Reload:
 "####" A 0 A_JumpIfInventory ("MacheteAmmoLoaded",1,"Ready")
