@@ -20,6 +20,11 @@ Actor PRLD_Tree : PRLD_SnowTree
     loop
   }
 }
+actor PRLD_Tree2 : PRLD_Tree
+{
+  radius 42
+	XScale 0.75
+}
 
 ACTOR PRLD_DeadTree1
 {
@@ -91,4 +96,8 @@ ACTOR rwldecBush
   BUSH I 1
   loop
   }
+}
+actor rwldecBush2 : rwldecBush
+{
+	Scale 0.6
 }
