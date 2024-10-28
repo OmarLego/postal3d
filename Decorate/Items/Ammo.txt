@@ -583,7 +583,7 @@ ACTOR MacheteAmmo : Ammo
   {
   Spawn:
   //MCHP A -1
-  MCHA C -1
+  MCHP C -1
       loop
   }
 }
@@ -593,7 +593,7 @@ ACTOR MacheteBloodAmmo : MacheteAmmo
   {
   Spawn:
   //MCHP B -1
-  MCHB C -1
+  MCHP D -1
       loop
   }
 }
