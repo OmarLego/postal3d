@@ -110,7 +110,7 @@ ACTOR Civilian1_1 : Postal3dMonster
 	Health 25
 	+FRIGHTENED
 	-COUNTKILL
-	+LOOKALLAROUND
+	//+LOOKALLAROUND
 	Speed 12
 	Obituary "%o fainted with the realization of what theyve done, or soem shit idk how do you die to a fucking civvie"
 	SeeSound "act1_civspot"

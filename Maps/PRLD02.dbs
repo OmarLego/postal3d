@@ -52,10 +52,10 @@ maps
 			}
 		}
 		defaultfloortexture = "HMECC01";
-		defaultceiltexture = "1HOMETRE";
-		defaulttoptexture = "1HOMETRE";
-		defaultwalltexture = "1HOMETRE";
-		defaultbottomtexture = "1HOMETRE";
+		defaultceiltexture = "GREY129";
+		defaulttoptexture = "GREY129";
+		defaultwalltexture = "GREY129";
+		defaultbottomtexture = "GREY129";
 		custombrightness = 196;
 		customfloorheight = 0;
 		customceilheight = 128;
@@ -68,9 +68,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 3.935267f;
-		viewpositiony = 963.1514f;
-		viewscale = 0.2155483f;
+		viewpositionx = 1411.593f;
+		viewpositiony = 1083.555f;
+		viewscale = 0.1658064f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid

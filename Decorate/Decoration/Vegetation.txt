@@ -99,5 +99,6 @@ ACTOR rwldecBush
 }
 actor rwldecBush2 : rwldecBush
 {
-	Scale 0.6
+	YScale 0.6
+	XScale -0.6
 }
