@@ -90,9 +90,9 @@ weapons/m12/nadebounce     "sounds/weapons/m-12/m12-nadebounce.ogg"
 
 //Double Barrel
 weapons/dbshotgun/fire DB_FireB
-//$Volume weapons/dbshotgun/fire 1//uncomment when hvellor shotgun is back
-$Volume weapons/dbshotgun/fire  0.75//comment when hvellor shotgun is back
+$Volume weapons/dbshotgun/fire 1
 weapons/dbshotgun/altfire DB_Fire
+$Volume weapons/dbshotgun/altfire 2
 $random weapons/db/insert { ssgin1 ssgin2 ssgin3 }
 ssgin1 ssgin1
 ssgin2 ssgin2
