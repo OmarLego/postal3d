@@ -1,3 +1,17 @@
+ACTOR PRLD_MilitarySpawner: RandomSpawner
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "Military1"
+	Scale 0.5
+	States
+	{
+	Spawn:
+		MILI E 0
+		Stop
+	}
+}
 ACTOR Military1 : Postal3dMonster
 {
 	Health 120
@@ -7,10 +21,10 @@ ACTOR Military1 : Postal3dMonster
 	FastSpeed 4
     Mass 100
     PainChance 200
-    SeeSound "grunt/sight"
+    /*SeeSound "grunt/sight"
     PainSound "grunt/pain"
     DeathSound ""
-    ActiveSound "grunt/active"
+    ActiveSound "grunt/active"*/
     DropItem "Clip"
     Obituary "%o was shot by the Military."
 	+FLOORCLIP

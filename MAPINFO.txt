@@ -67,6 +67,8 @@ DoomEdNums
 	10005 = PRLD_RifleCopSpawner
 	15008 = PRLD_GrenaderSpawner
 	15009 = PRLD_RocketeerSpawner
+	15033 = PRLD_MinerSpawner
+	15034 = PRLD_MilitarySpawner
 	//civilians
 	16045 = PRLD_CivilianSpawner
 	
