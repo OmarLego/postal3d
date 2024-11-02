@@ -1,5 +1,54 @@
 //===========================================================================
 //
+// Postal Dude Firing Dynamic Light
+//
+//===========================================================================
+
+PointLight MuzzleFlash1
+{
+	color 1.0 1.0 0.8
+	size 70
+	offset 0 60 0
+	attenuate 1
+}
+
+PointLight MuzzleFlash2
+{
+	color 1.0 1.0 0.8
+	size 100
+	offset 0 60 0
+	attenuate 1
+}
+
+PointLight MuzzleFlash3
+{
+	color 1.0 1.0 0.8
+	size 130
+	offset 0 60 0
+	attenuate 1
+}
+
+//===========================================================================
+// Muzzle Flashes
+//===========================================================================
+
+object PRLD_MuzzleFlash1
+{
+	Frame MUZLA { light MuzzleFlash1 }
+}
+
+object PRLD_MuzzleFlash2
+{
+	Frame MUZLA { light MuzzleFlash2 }
+}
+
+object PRLD_MuzzleFlash3
+{
+	Frame MUZLA { light MuzzleFlash3 }
+}
+
+//===========================================================================
+//
 // Enemy Firing Dynamic Light
 //
 //===========================================================================
