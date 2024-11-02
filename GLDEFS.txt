@@ -1,14 +1,253 @@
 //===========================================================================
 //
+// Enemy Firing Dynamic Light
+//
+//===========================================================================
+
+PointLight EnemyPistolFire
+{
+	color 1.0 1.0 0.8
+	size 70
+	offset 0 60 0
+	attenuate 1
+}
+
+PointLight EnemyPistolDownedFire
+{
+	color 1.0 1.0 0.8
+	size 70
+	offset 0 25 0
+	attenuate 1
+}
+
+PointLight EnemyShotgunFire
+{
+	color 1.0 1.0 0.8
+	size 100
+	offset 0 40 0
+	attenuate 1
+}
+
+PointLight EnemyRifleFire
+{
+	color 1.0 1.0 0.8
+	size 100
+	offset 0 50 0
+	attenuate 1
+}
+
+PointLight EnemyRocketLauncherFire
+{
+	color 1.0 1.0 0.8
+	size 150
+	offset 0 70 0
+	attenuate 1
+}
+
+//===========================================================================
+// Pistol Officers
+//===========================================================================
+
+object PistolOfficer1
+{
+	Frame POH1I { light EnemyPistolFire }
+}
+
+object PistolOfficer2
+{
+	Frame POH2I { light EnemyPistolFire }
+}
+
+object PistolOfficer3
+{
+	Frame POH3I { light EnemyPistolFire }
+}
+
+//===========================================================================
+// Sherrifs
+//===========================================================================
+
+// Sherrif Normal
+
+object Sheriff1
+{
+	Frame SHRFI { light EnemyPistolFire }
+}
+
+object Sheriff2
+{
+	Frame SHR2I { light EnemyPistolFire }
+}
+
+object Sheriff3
+{
+	Frame SHR3I { light EnemyPistolFire }
+}
+
+// Sherrif Hero / Suicide
+
+object SurpriseSheriff1_1
+{
+	Frame SHRFU { light EnemyPistolFire }
+	Frame SHRFZ { light EnemyPistolFire }
+}
+
+object SurpriseSheriff1_2
+{
+	Frame SHRFU { light EnemyPistolFire }
+	Frame SHRFZ { light EnemyPistolFire }
+}
+
+object SurpriseSheriff1_3
+{
+	Frame SHRFU { light EnemyPistolFire }
+	Frame SHRFZ { light EnemyPistolFire }
+}
+
+object SurpriseSheriff1_4
+{
+	Frame SHRFU { light EnemyPistolFire }
+	Frame SHRFZ { light EnemyPistolFire }
+}
+
+object SurpriseSheriff1_5
+{
+	Frame SHRFU { light EnemyPistolFire }
+	Frame SHRFZ { light EnemyPistolFire }
+}
+
+object SurpriseSheriff1_6
+{
+	Frame SHRFU { light EnemyPistolFire }
+	Frame SHRFZ { light EnemyPistolFire }
+}
+
+object SurpriseSheriff2_1
+{
+	Frame SHR2S { light EnemyPistolFire }
+	Frame SHR2S { light EnemyPistolFire }
+}
+
+object SurpriseSheriff2_2
+{
+	Frame SHR2S { light EnemyPistolFire }
+	Frame SHR2S { light EnemyPistolFire }
+}
+
+object SurpriseSheriff2_3
+{
+	Frame SHR2S { light EnemyPistolFire }
+	Frame SHR2S { light EnemyPistolFire }
+}
+
+object SurpriseSheriff2_4
+{
+	Frame SHR2S { light EnemyPistolFire }
+	Frame SHR2S { light EnemyPistolFire }
+}
+
+object SurpriseSheriff2_5
+{
+	Frame SHR2S { light EnemyPistolFire }
+	Frame SHR2W { light EnemyPistolFire }
+}
+
+object SurpriseSheriff2_6
+{
+	Frame SHR2S { light EnemyPistolFire }
+	Frame SHR2W { light EnemyPistolFire }
+}
+
+object SurpriseSheriff3_1
+{
+	Frame SHR3S { light EnemyPistolFire }
+	Frame SHR3S { light EnemyPistolFire }
+}
+
+object SurpriseSheriff3_2
+{
+	Frame SHR3S { light EnemyPistolFire }
+	Frame SHR3S { light EnemyPistolFire }
+}
+
+object SurpriseSheriff3_3
+{
+	Frame SHR3S { light EnemyPistolFire }
+	Frame SHR3S { light EnemyPistolFire }
+}
+
+object SurpriseSheriff3_4
+{
+	Frame SHR3S { light EnemyPistolFire }
+	Frame SHR3S { light EnemyPistolFire }
+}
+
+object SurpriseSheriff3_5
+{
+	Frame SHR3S { light EnemyPistolFire }
+	Frame SHR3W { light EnemyPistolFire }
+}
+
+object SurpriseSheriff3_6
+{
+	Frame SHR3S { light EnemyPistolFire }
+	Frame SHR3W { light EnemyPistolFire }
+}
+
+//===========================================================================
+// Shotgun Officer
+//===========================================================================
+
+object ShotgunOfficer1
+{
+	Frame SOH1F { light EnemyShotgunFire }
+}
+
+//===========================================================================
+// Rifle Officer
+//===========================================================================
+
+object RifleOfficer1
+{
+	Frame ROH1I { light EnemyRifleFire }
+}
+
+object RifleOfficer3
+{
+	Frame ROH3I { light EnemyRifleFire }
+}
+
+
+object RifleOfficer2
+{
+	Frame ROH2I { light EnemyRifleFire }
+}
+
+object RifleOfficer3
+{
+	Frame ROH3I { light EnemyRifleFire }
+}
+
+//===========================================================================
+// Rocketeer
+//===========================================================================
+
+object Rocketeer1_1
+{
+	Frame RH01F { light EnemyRocketLauncherFire }
+}
+
+//===========================================================================
+//
 // Miner Dynamic Light (Balkan Rage)
 //
 //===========================================================================
 
-pointlight LightPuff
+PointLight LightPuff
 {
-	offset 60 50 0
     color 0.5 0.5 1.0
     size 120
+	offset 60 50 0 //X Y Z
 	attenuate 1
 }
 

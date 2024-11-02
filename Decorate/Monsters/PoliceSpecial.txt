@@ -315,7 +315,7 @@ actor SurpriseSheriff1_1
 		TNT1 A 0 A_PlaySound("MFIR", CHAN_AUTO)//more impact i think
 		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
 		TNT1 A 0 A_FaceTarget
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 9, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 32)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 28, 0, random (0, 360), 2, random (0, 40))
 		SHRF Z 6
 		//SHR0 E 12
@@ -641,7 +641,7 @@ actor SurpriseSheriff2_1 : SurpriseSheriff1_1
 		TNT1 A 0 A_PlaySound("MFIR", CHAN_AUTO)//more impact i think
 		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
 		TNT1 A 0 A_FaceTarget
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 9, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 32)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 28, 0, random (0, 360), 2, random (0, 40))
 		SHR2 W 6
 		//SHR0 E 12
@@ -935,7 +935,7 @@ actor SurpriseSheriff3_1 : SurpriseSheriff1_1
 		TNT1 A 0 A_PlaySound("MFIR", CHAN_AUTO)//more impact i think
 		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
 		TNT1 A 0 A_FaceTarget
-		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 9, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 32)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 28, 0, random (0, 360), 2, random (0, 40))
 		SHR3 W 6
 		//SHR0 E 12

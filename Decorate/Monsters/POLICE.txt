@@ -3166,7 +3166,7 @@ Inventory.MaxAmount 1
 }
 ACTOR RifleOfficer1 : ShotgunOfficer1
 {
-    Obituary "%o was lighten up by a Rifle Officer. They must have had fun with that one."
+    Obituary "%o was lit up by a Rifle Officer. They must have had fun with that one."
 	Tag "Rifle Officer"
 	Health 75
 	DamageFactor "Shotgun", 0.64
