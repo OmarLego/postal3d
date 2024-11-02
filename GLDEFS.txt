@@ -1,11 +1,27 @@
+//===========================================================================
+//
+// Miner Dynamic Light (Balkan Rage)
+//
+//===========================================================================
+
 pointlight LightPuff
 {
+	offset 60 50 0
     color 0.5 0.5 1.0
     size 120
 	attenuate 1
 }
 
-object PRLD_LightPuff
+//===========================================================================
+// Miner
+//===========================================================================
+
+object Miner1_1
 {
-	Frame TNT1 { light LightPuff }
+	Frame MNR1 { light LightPuff }
 }
+
+// object PRLD_LightPuff
+// {
+// 	Frame TNT1 { light LightPuff }
+// }
