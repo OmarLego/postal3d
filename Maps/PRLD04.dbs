@@ -57,8 +57,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 318.197f;
-		viewpositionx = 1153.781f;
+		viewpositiony = 91.96585f;
+		viewpositionx = 1218.841f;
 		
 		testprecommand
 		{
@@ -78,11 +78,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 64;
+			gridsize = 32;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.3660528f;
+		viewscale = 0.6186293f;
 		
 		reloadresourceprecommand
 		{
