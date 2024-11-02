@@ -1,0 +1,11 @@
+pointlight LightPuff
+{
+    color 0.5 0.5 1.0
+    size 120
+	attenuate 1
+}
+
+object PRLD_LightPuff
+{
+	Frame TNT1 { light LightPuff }
+}

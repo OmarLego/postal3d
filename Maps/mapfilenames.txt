@@ -1,0 +1,4 @@
+PRLD03 - alexbrigeMAP01_10-27-24.wad
+PRLD04 - MADM-Mines_10-29-24.wad
+PRLD05 - Trainyardroughdraft.wad - made by Grungo on 12/29/22, meant to be used with COMTEX and Realm667 "BLOOD" texture pack
+PRLD06 - AirForceBase.wad - made by NastyAndBrutal on 12/7/22, meant to be used with COMTEX and RWLDEC
