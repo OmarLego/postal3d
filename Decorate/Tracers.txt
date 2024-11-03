@@ -108,7 +108,7 @@ Paintype "MP5"
 Damagetype "MP5"
 Deathtype "MP5"
 }
-Actor P3D_ShotgunTracer: P3D_DamagingTracerBase
+Actor P3D_ShotgunTracerSingle: P3D_DamagingTracerBase
 {
 //speed 60 //too slow (i think)
 speed 90
@@ -120,8 +120,37 @@ damage(11)
 Paintype "Shotgun"
 Damagetype "Shotgun"
 Deathtype "Shotgun"
+States
+{
+    Spawn:
+		TRAC A 9 BRIGHT
+        Stop   
+		}
 }
-Actor P3D_SprayTracer: P3D_ShotgunTracer
+Actor P3D_ShotgunTracerDouble: P3D_DamagingTracerBase
+{
+//speed 60 //too slow (i think)
+ProjectileKickBack 500
+speed 90
+//damage (random(12,16))
+//damage(13)
+//damage(6)
+//damage(7)
+damage(11)
+// Paintype "Shotgun"
+// Damagetype "Shotgun"
+// Deathtype "Shotgun"
+-NOEXTREMEDEATH
++EXTREMEDEATH
+States
+{
+    Spawn:
+		TRAC A 2 BRIGHT A_ChangeFlag("EXTREMEDEATH", True)
+		TRAC A 7 BRIGHT A_ChangeFlag("EXTREMEDEATH", False)
+        Stop
+		}
+}
+Actor P3D_SprayTracer: P3D_ShotgunTracerSingle
 {
 //speed 60
 //damage(14)
@@ -129,10 +158,13 @@ damage(25)
 Paintype "SprayCannon"
 Damagetype "SprayCannon"
 Deathtype "SprayCannon"
+States
+{
+    Spawn:
+		TRAC A 9 BRIGHT
+        Stop   
+		}
 }
-
-
-
 Actor P3D_MagnumTracer: P3D_DamagingTracerBase
 {
 speed 100
