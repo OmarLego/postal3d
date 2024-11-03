@@ -260,37 +260,47 @@ BloodBig10 1
 decal PBloodSplat1
 {
 	Pic BSPLAT1
+	OpaqueBlood
 	X-Scale 0.5
 	Y-Scale 0.5
 	RandomFlipX
+// 	shade "BloodDefault"
 }
 decal PBloodSplat2
 {
 	Pic BSPLAT2
+	OpaqueBlood
 	X-Scale 0.5
 	Y-Scale 0.5
 	RandomFlipX
+// 	shade "BloodDefault"
 }
 decal PBloodSplat3
 {
 	Pic BSPLAT3
+	OpaqueBlood
 	X-Scale 0.5
 	Y-Scale 0.5
 	RandomFlipX
+// 	shade "BloodDefault"
 }
 decal PBloodSplat5
 {
 	Pic BSPLAT5
+	OpaqueBlood
 	X-Scale 0.5
 	Y-Scale 0.5
 	RandomFlipX
+// 	shade "BloodDefault"
 }
 decal PBloodSplat6
 {
 	Pic BSPLAT6
+	OpaqueBlood
 	X-Scale 0.5
 	Y-Scale 0.5
 	RandomFlipX
+// 	shade "BloodDefault"
 }
 
 decalgroup BloodSplat
