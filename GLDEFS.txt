@@ -294,9 +294,23 @@ object Rocketeer1_1
 
 PointLight LightPuff
 {
-    color 0.5 0.5 1.0
+    //color 0.5 0.5 1.0
+	color 0.75 0.75 0.75
     size 120
 	offset 60 50 0 //X Y Z
+	attenuate 1
+}
+PointLight LightPuff2
+{
+    //color 0.5 0.5 1.0
+	color 0.75 0.75 0.75
+    size 120
+	attenuate 1
+}
+PointLight DynamiteLight
+{
+    color 1.0 0.7 0.4
+    size 96
 	attenuate 1
 }
 
@@ -307,6 +321,14 @@ PointLight LightPuff
 object Miner1_1
 {
 	Frame MNR1 { light LightPuff }
+}
+object PRLD_Dynamite
+{
+	Frame MOLZ { light DynamiteLight }
+}
+object PRLD_HardHat
+{
+	Frame MNR1 { light LightPuff2 }
 }
 
 // object PRLD_LightPuff

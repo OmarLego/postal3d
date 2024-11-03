@@ -341,6 +341,23 @@ actor PrldGibRocketeerHatD : PrldGibRocketeerHat
 		Stop
     }
 }
+actor PRLD_HardHat : PrldGibSheriffHat
+{
+   DeathSound "MagDrop"
+   BounceSound "MagDrop"
+    States
+    {
+    Fly:
+        MNR1 Y 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+		TNT1 A 0
+        TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_QueueCorpse
+		MNR1 Y -1
+		Stop
+    }
+}
 
 actor PrldGibRocketeerBag : PrldGib
 {
