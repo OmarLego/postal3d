@@ -18,7 +18,6 @@ maps
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
-				requiredarchives = "";
 			}
 		}
 		defaultfloortexture = "HMECC01";
@@ -38,9 +37,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = -1219.576f;
-		viewpositiony = 453.7388f;
-		viewscale = 5.427986f;
+		viewpositionx = -1151.795f;
+		viewpositiony = 446.0092f;
+		viewscale = 2.971519f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -51,7 +50,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 8;
+			gridsize = 16;
 			gridrotate = 0;
 			gridoriginx = 0;
 			gridoriginy = 0;
