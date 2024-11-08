@@ -54,9 +54,10 @@ Goto Reloading
 	goto OutOfAmmo
 	
 	FireStart:
-	TNT1 A 0 A_Takeinventory("DoubleMagazine4",1)
+		TNT1 A 0 A_Takeinventory("DoubleMagazine4",1)
 	    TNT1 A 0 A_TakeInventory ("Magazine4",1)
 		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
 		TNT1 A 0 A_FireCustomMissile("P3D_MP5Tracer",0,0,5,3)
 		TNT1 A 0 A_PlaySound("MP5FIR",CHAN_AUTO)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAss", 0, 0, 0, 0)
@@ -108,15 +109,15 @@ Goto Reloading
 		TNT1 A 0 A_Jump(256, "FireFinish1", "FireFinish2", "FireFinish3")
 	FireFinish1:
 		MP5F B 2 
-		MP5F A 1 A_Refire ("FireStart")
+		MP5F A 1 A_Refire ("Fire")
 		goto Ready
 	FireFinish2:
 		MP5F D 2 
-		MP5F C 1 A_Refire ("FireStart")
+		MP5F C 1 A_Refire ("Fire")
 		goto Ready
 	FireFinish3:
 		MP5F B 2 
-		MP5F E 1 A_Refire ("FireStart")
+		MP5F E 1 A_Refire ("Fire")
 		goto Ready
 		
 OutOfAmmo:
