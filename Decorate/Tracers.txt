@@ -178,7 +178,7 @@ Deathtype "SMG"
 
 Actor P3D_LeverActionTracer: P3D_DamagingTracerBase
 {
-speed 100
+speed 200
 //damage (random(160,230))
 damage (195)
 Paintype "SMG"
