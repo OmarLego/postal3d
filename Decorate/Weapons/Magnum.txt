@@ -40,12 +40,9 @@ Inventory.PickupMessage "\c[red]You got the \c[Purple]Magnum Revolver"
 	AltFire:
 	TNT1 A 0 A_JumpIfInventory("MagnumLoadedToken", 1, "AltFireUnload")
 // 	TNT1 A 0 A_PlaySound ("MHAM1",CHAN_AUTO)
-	MAGR A 2 
 	MAGR A 2
 	MAGR B 2
-	MAGR B 2
 	TNT1 A 0 A_PlaySound ("MHAM2",CHAN_AUTO)
-	MAGR C 2 
 	MAGR C 2
 	TNT1 A 0 A_GiveInventory("MagnumLoadedToken",1)
 	Goto Ready
@@ -53,11 +50,8 @@ Inventory.PickupMessage "\c[red]You got the \c[Purple]Magnum Revolver"
 	AltFireUnload:
 // 	TNT1 A 0 A_PlaySound ("MHAM1",CHAN_AUTO)
 	MAGR C 2 
-	MAGR C 2
-	MAGR B 2
 	MAGR B 2
 	TNT1 A 0 A_PlaySound ("MHAM1",CHAN_AUTO)
-	MAGR A 2 
 	MAGR A 2
 	TNT1 A 0 A_TakeInventory("MagnumLoadedToken",1)
 	Goto Ready
@@ -82,21 +76,21 @@ Goto Reloading
 	Fire:
 	TNT1 A 0 A_JumpIfInventory("MagnumLoadedToken", 1, "Fire4RemoveLoaded")
 // 	TNT1 A 0 A_PlaySound ("MHAM1",CHAN_AUTO)
-	MAGR A 2 
-	MAGR A 2 A_refire ("Fire2")
+	MAGR A 1
+	MAGR A 1 A_refire ("Fire2")
 	Goto Ready
 	Fire2:
-	MAGR B 2 
-	MAGR B 2 A_Refire ("Fire3")
+	MAGR B 1 
+	MAGR B 1 A_Refire ("Fire3")
 	MAGR A 1
 	Goto Ready
 	Fire3:
 	TNT1 A 0 A_PlaySound ("MHAM2",CHAN_AUTO)
-	MAGR C 2 
-	MAGR C 2 A_Refire ("Fire4")
-	MAGR C 2
-	MAGR B 2
-	MAGR A 2
+	MAGR C 1 
+	MAGR C 1 A_Refire ("Fire4")
+	MAGR C 1
+	MAGR B 1
+	MAGR A 1
 	Goto Ready
 	Fire4RemoveLoaded:
 	TNT1 A 0 A_TakeInventory("MagnumLoadedToken",1)

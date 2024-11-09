@@ -67,7 +67,7 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.DisplayName "Angel of Death"
 	Player.SoundClass "Dude"
     Species "Player"
-	Scale 0.53
+	Scale 0.57 // Scale 0.53
 	//Speed 0.7
 	Player.StartItem "PRLD_M12", 1
 	Player.StartItem "Machete", 1
