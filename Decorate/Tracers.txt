@@ -28,7 +28,7 @@ Actor P3D_Tracer: FastProjectile
 Actor P3D_DamagingTracer: P3D_Tracer
 {
 	+BLOODSPLATTER 
-	+THRUGHOST
+	//+THRUGHOST
 	+PAINLESS
 	-DONTSPLASH
 	+MISSILE

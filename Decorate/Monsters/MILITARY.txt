@@ -25,14 +25,18 @@ ACTOR Military1 : Postal3dMonster
     PainSound "grunt/pain"
     DeathSound ""
     ActiveSound "grunt/active"*/
+    SeeSound "act1_copspot"
+    PainSound "act1_pain"
+    ActiveSound "act1_copact"
     DropItem "Clip"
     Obituary "%o was shot by the Military."
 	+FLOORCLIP
 	+MISSILEMORE
-    Species Hostile
+	Species "Hostiles"
 	SCALE 0.60
 	//XScale 0.58
 	//YScale 0.58
+	Tag "Military"
 	States
 	{
 	Spawn:
@@ -53,29 +57,31 @@ ACTOR Military1 : Postal3dMonster
 		MILI D 1
 		Loop
 		
+
+
 	Missile:
 		TNT1 A 0
 		TNT1 A 0 A_Recoil(-4)
 		TNT1 A 0 A_Jump(192, "MissileLeft", "MissileRight")
 		MILI E 10 A_FaceTarget
-		MILI E 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI E 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI E 2 A_Facetarget
 		
-		MILI E 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI E 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI E 2 A_Facetarget
 		
-		MILI E 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI E 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI E 2 A_Facetarget
 		
-		MILI E 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI E 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI E 6 A_Facetarget
 		Goto ChasePlayer
 		
@@ -83,40 +89,40 @@ ACTOR Military1 : Postal3dMonster
 		TNT1 A 0
 		MILI ABCA 3 A_FaceTarget
 		TNT1 A 0 ThrustThing(angle*256/360+192, 9, 0, 0)
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI C 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI A 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI C 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI A 3 A_Facetarget
 		
 		TNT1 A 0 ThrustThing(angle*256/360+192, 9, 0, 0)
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI C 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI A 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI C 3 A_Facetarget
 		
 		MILI B 4 A_Facetarget
@@ -127,40 +133,40 @@ ACTOR Military1 : Postal3dMonster
 		TNT1 A 0
 		MILI ABCA 3 A_FaceTarget
 		TNT1 A 0 ThrustThing(angle*256/360+64, 9, 0, 0)
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI C 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI A 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI C 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI A 3 A_Facetarget
 		
 		TNT1 A 0 ThrustThing(angle*256/360+64, 9, 0, 0)
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI C 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI A 3 A_Facetarget
 		
-		MILI B 2 BRIGHT A_PlaySound("hostrif")
-        "####" A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
-		TNT1 A 0 A_CustomMissile("ZombiemanTracer",35,0,0,0)
+		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
+        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		MILI C 3 A_Facetarget
 		
 		MILI B 4 A_Facetarget
