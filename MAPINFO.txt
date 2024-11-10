@@ -224,10 +224,23 @@ Skill hard
 Skill nightmare
 {
 	FastMonsters
-	SpawnFilter = Nightmare
+	//SpawnFilter = Nightmare
+	SpawnFilter = Easy
 	Name = "$SKILL_NIGHTMARE"
 	MustConfirm
 	DamageFactor = 7.0
+	//MonsterHealth = 0.5
+	//FriendlyHealth = 0.5
+}
+Skill Mobile //pulled from D4T ayy lmaooooo
+{
+	SpawnFilter = Hard
+	DamageFactor = 0.5
+	Aggressiveness = 0
+	EasyBossBrain
+	Name = "$SKILL_MOBILE"
+	EasyKey
+	AmmoFactor = 1.5
 }
 
 //-------------------------------------------------------------------------------------------

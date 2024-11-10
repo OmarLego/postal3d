@@ -7,6 +7,7 @@ SKILL_EASY = "Easy";
 SKILL_NORMAL = "Normal";
 SKILL_HARD = "Hard";
 SKILL_NIGHTMARE = "Nightmare";
+SKILL_MOBILE = "Mobile";
 
 
 
