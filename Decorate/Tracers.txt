@@ -254,3 +254,8 @@ Actor HostileShotgunTracer: PrldHostileTracer
 {
 damage (3)
 }
+
+Actor HRevolverTracer: PrldHostileTracer
+{
+damage (35)
+}

@@ -8,7 +8,7 @@ ACTOR PRLD_SwatSpawner: RandomSpawner
 	States
 	{
 	Spawn:
-		"####" E 0
+		SWT1 E 0
 		Stop
 	}
 }

@@ -43,6 +43,9 @@ $alias weapons/m16/fire AKFIR
 weapons/glock17/fire "sounds/weapons/Hostile/PISTLFIR.ogg"
 //DB (shotgun guys)
 weapons/db/fire "sounds/weapons/Hostile/DBFIR.ogg"
+$Random weapons/hrevolver/fire { PODBFIR1 PODBFIR2 }
+PODBFIR1 PODBFIR1
+PODBFIR2 PODBFIR2
 
 //Weapons
 weapons/execution 		"sounds/weapons/execution.ogg"
