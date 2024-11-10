@@ -15,7 +15,7 @@ ACTOR PRLD_SwatSpawner: RandomSpawner
 
 ACTOR PRLD_ShieldSmoke
 {
-	Scale 1.5
+	Scale 1
 	+NOGRAVITY
 	-NOTELEPORT
 	+THRUACTORS
@@ -44,7 +44,7 @@ ACTOR PRLD_ShieldSmoke
 }
 ACTOR PRLD_ShieldJunk : PrldGib
 {
-	Scale 0.25
+	Scale 0.5
     States
     {
     Spawn:
@@ -144,7 +144,7 @@ Actor PRLD_SwatShield
 		//TNT1 A 0 A_RadiusGive("PRLD_Formal", 72, RGF_MONSTERS|RGF_NOMASTER, -9)
 		TNT1 A 0 A_PlaySound("fencebreak", CHAN_AUTO)
 		TNT1 AAAAAA 0 A_CustomMissile("PRLD_ShieldJunk", random(8, 56), random(-48, 48), random(0, 360), 2, random(0,360))
-		TNT1 A 0 A_SpawnItemEX("PRLD_ShieldSmoke", 0, 0, -20)
+		TNT1 A 0 A_SpawnItemEX("PRLD_ShieldSmoke", 0, 0, 20)
 		Stop
 	}
 }
@@ -263,9 +263,10 @@ ACTOR SWAT1_1 : Postal3dMonster
 		"####" A 0
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
-		"####" E 10 A_FaceTarget
+		"####" E 10
 	Shoot:
-		"####" A 0
+		"####" A 0 
+		"####" A 0 A_FaceTarget
 		"####" A 0 A_Jump(128, "ShootLeft", "ShootRight")
 		Goto ShootCon
 	ShootLeft:
@@ -275,10 +276,10 @@ ACTOR SWAT1_1 : Postal3dMonster
 		"####" AAAAAAAA 0 ThrustThing(angle*256/360+64, 1, 0, 0)
 	ShootCon:
 		"####" A 0 A_PlaySound("weapons/m16/fire1")
-        "####" A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
+        "####" A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
-		"####" E 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
+		"####" E 1 BRIGHT A_CustomMissile("HostileRifleTracer", 40, 6, random(-2, 2), 1, random(-2, 2))
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
 		"####" E 1 A_FaceTarget

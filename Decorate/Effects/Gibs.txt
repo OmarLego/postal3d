@@ -1465,3 +1465,17 @@ Actor GibHumanSpawnerBlack : GibHumanSpawnerWhite
 		Stop
 	}
 }
+
+Actor PRLD_GibSpawner : GibHumanSpawnerWhite
+{
+	States
+	{
+		Spawn:
+		TNT1 A 0
+		//TNT1 A 0 A_SpawnItemEx("FxGib2",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("FxGib4",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		//TNT1 A 0 A_SpawnItemEx("FxGib5",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("FxGib6",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		Stop
+	}
+}

@@ -92,9 +92,9 @@ Actor P3D_MGTracer: P3D_DamagingTracerBase
 {
 speed 70
 damage (random(16,25))
-Paintype "SMG"
-Damagetype "SMG"
-Deathtype "SMG"
+Paintype "Minigun"
+Damagetype "Minigun"
+Deathtype "Minigun"
 }
 Actor P3D_MP5Tracer: P3D_DamagingTracerBase
 {
@@ -129,17 +129,13 @@ States
 }
 Actor P3D_ShotgunTracerDouble: P3D_DamagingTracerBase
 {
-//speed 60 //too slow (i think)
 ProjectileKickBack 500
 speed 90
-//damage (random(12,16))
-//damage(13)
-//damage(6)
 //damage(7)
 damage(11)
-// Paintype "Shotgun"
-// Damagetype "Shotgun"
-// Deathtype "Shotgun"
+Paintype "Shotgun"
+Damagetype "Shotgun"
+Deathtype "Shotgun"
 -NOEXTREMEDEATH
 +EXTREMEDEATH
 States

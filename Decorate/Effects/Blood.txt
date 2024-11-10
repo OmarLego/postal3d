@@ -109,6 +109,10 @@ ACTOR PRLD_BloodMist
 		STOp
 	}
 }
+Actor PRLD_BloodMistBig : PRLD_BloodMist
+{
+	Scale 1.5
+}
 
 
 
