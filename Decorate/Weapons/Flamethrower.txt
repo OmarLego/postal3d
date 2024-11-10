@@ -589,7 +589,7 @@ Actor FlameFire
   Radius 2
   Height 4
   Speed 20
-  Damage 1
+  Damage (20)
   Projectile
   RenderStyle Add
   DamageType Fire

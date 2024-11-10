@@ -160,7 +160,7 @@ Radius 10
 	Height 10
 	Speed 35
 	Scale 0.2
-	Damage 20
+	Damage (2500)
 	BounceSound "CanBounce"
 	-FULLVOLDEATH
 	+BLOODSPLATTER
