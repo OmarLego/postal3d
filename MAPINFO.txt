@@ -263,5 +263,16 @@ Map PRLD01 "Home"//"$TXT_PRLD01"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = map02
+	next = prld02
+}
+
+Map PRLD02 "Parade of Disasters"//going to be PRLD03 later
+{
+	music = ""
+	sky1 = "SKYPNIGH", 0.1
+	MONSTERFALLINGDAMAGE
+	FALLINGDAMAGE
+	//NoIntermission
+	InterMusic = "D_DM2INT"
+	next = prld03
 }
