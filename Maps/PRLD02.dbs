@@ -13,8 +13,38 @@ maps
 			
 			resource0
 			{
+				type = 2;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d\\PostalRLD-GZDpost4-11Patch.pk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource1
+			{
 				type = 1;
-				location = "C:\\Users\\arijo\\Documents\\GitHub\\postal3d";
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource2
+			{
+				type = 2;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.ipk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource3
+			{
+				type = 0;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -22,7 +52,7 @@ maps
 			}
 		}
 		defaultfloortexture = "HMECC01";
-		defaultceiltexture = "F_SKY1";
+		defaultceiltexture = "PODWD01";
 		defaulttoptexture = "TRDWL3.";
 		defaultwalltexture = "TRDWL3.";
 		defaultbottomtexture = "TRDWL3.";
@@ -38,15 +68,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-<<<<<<< Updated upstream
-		viewpositionx = 3335.284f;
-		viewpositiony = 216.8075f;
-		viewscale = 0.8650174f;
-=======
-		viewpositionx = -400.3719f;
-		viewpositiony = 659.3974f;
-		viewscale = 0.5118446f;
->>>>>>> Stashed changes
+		viewpositionx = -884.1004f;
+		viewpositiony = 764.5329f;
+		viewscale = 0.3642766f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -57,7 +81,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 32;
+			gridsize = 64;
 			gridrotate = 0;
 			gridoriginx = 0;
 			gridoriginy = 0;
@@ -91,52 +115,12 @@ maps
 			stderriserror = true;
 		}
 		
-		plugins
-		{
-			
-			threedfloormode
-			{
-				
-				controlsectorarea
-				{
-					usecustomtagrange = false;
-					outerleft = -3776;
-					outerright = 4800;
-					outertop = 11712;
-					outerbottom = 3200;
-				}
-			}
-		}
-		
 		fieldtypes
 		{
 			
 			sector
 			{
 				user_managed_3d_floor = 3;
-			}
-		}
-		
-		scriptdocuments
-		{
-			
-			document0
-			{
-				filename = "DIALOGUE";
-				hash = 3588187714;
-				resource;
-				tabtype = 0;
-				scripttype = 18;
-			}
-			
-			document1
-			{
-				filename = "SCRIPTS";
-				hash = 3469170009;
-				resource;
-				tabtype = 0;
-				scripttype = 1;
-				activetab = true;
 			}
 		}
 	}
