@@ -173,6 +173,15 @@ ACTOR SWAT1_1 : Postal3dMonster
 	Speed 8
 	States
 	{
+	Spawn:
+		SWT1 E 0 //make it show up in jmod please
+		SWT1 E 0
+		"####" A 0
+		"####" A 0 A_SpawnItemEx("PRLD_SwatShield",0,0,0, 0,0,0, 0,SXF_NOCHECKPOSITION)
+	SpawnLoop:
+		SWT1 E 10 A_Look
+		Loop
+		
 	Pain.UseAttack:
 		"####" A 0
 		"####" A 0 A_JumpIfHealthLower(40, "Precute")
@@ -181,12 +190,6 @@ ACTOR SWAT1_1 : Postal3dMonster
 		"####" A 0
 		"####" A 0 A_JumpIfInventory("IsDown", 1, "ExecStart")
 		"####" A 0 A_Jump(256, "SeeLoop")
-	Spawn:
-		"####" A 0
-		"####" A 0 A_SpawnItemEx("PRLD_SwatShield",0,0,0, 0,0,0, 0,SXF_NOCHECKPOSITION)
-	SpawnLoop:
-		SWT1 E 10 A_Look
-		Loop
 	See:
 		"####" A 0
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)

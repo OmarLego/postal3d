@@ -23,6 +23,14 @@ bodyignite1 "sounds/monsters/Body-Ignite01.ogg"
 bodyignite2 "sounds/monsters/Body-Ignite02.ogg"
 bodyignite3 "sounds/monsters/Body-Ignite03.ogg"
 
+//PARADESMEN
+Parade/Sax sax
+$limit Parade/Sax 0
+//$volume Parade/Sax 150
+Parade/Drums drum
+$limit Parade/Drums 0
+//$volume Parade/Drums 150
+
 //Hostiles' Weapons
 //tracer flyby
 subsonic/aggressive1 "sounds/weapons/Hostile/subsonic_aggressive_01.ogg"

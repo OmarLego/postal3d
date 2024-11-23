@@ -74,6 +74,8 @@ DoomEdNums
 	15036 = PRLD_SheriffBoss
 	//civilians
 	16045 = PRLD_CivilianSpawner
+	15037 = PRLD_SaxSpawner
+	15038 = PRLD_DrumSpawner
 	
 	//Items
 	//power-ups
