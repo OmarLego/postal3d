@@ -27,9 +27,16 @@ bodyignite3 "sounds/monsters/Body-Ignite03.ogg"
 Parade/Sax sax
 $limit Parade/Sax 0
 //$volume Parade/Sax 150
+//$rolloff Parade/Sax 900 1400
 Parade/Drums drum
 $limit Parade/Drums 0
 //$volume Parade/Drums 150
+//$rolloff Parade/Drums 900 1400
+$Random Parade/March { Parade/March1 Parade/March2 Parade/March3 }
+Parade/March1 March1
+Parade/March2 March2
+Parade/March3 March3
+$Limit Parade/March 0
 
 //Hostiles' Weapons
 //tracer flyby
