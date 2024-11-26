@@ -65,6 +65,12 @@ Maxi Clouds - Re-Blood's Gibs
 
 Boondorl - Universal Weapon Sway, Weather Spawner, Universal Rain and Snow
 
+Gerodium - Damage Direction Overlay
+
+Officer D - Doom Exp's Damage Direction Overlay
+
+Caligari87 - Universal fade-to-black on death
+
 Nash - Standalone Game Template
 
                          ======================

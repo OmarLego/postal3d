@@ -163,3 +163,14 @@ user bool   m8f_POts_has_target;
 user bool   m8f_POts_friendly_target;
 
 user string ts_extra_character = "❤";
+
+//Damage Direction Overlay
+user int ddo_type = 2;
+user int ddo_mode = 1;
+user int ddo_maxangle;
+user int ddo_mindmg;
+user bool ddo_accudmg;
+user bool ddo_selfinpa = true;
+user bool ddo_noshadow;
+user int ddo_font = 2;
+user int ddo_scale = 2;

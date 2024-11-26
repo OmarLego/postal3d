@@ -16,3 +16,6 @@ version "3.7.2"
 // Universal Weapon Sway
 #include "sway/sway.txt"
 #include "sway/menu.txt"
+
+//Damage Direction Overlay
+#include "zscript/DmgDirHandler.txt"

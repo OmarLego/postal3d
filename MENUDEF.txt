@@ -72,6 +72,58 @@ OptionValue "WeatherIntensity"
 	2, "Heavy"
 }
 
+optionValue "DDODispType"
+{
+	0, "Damage Taken"
+	1, "\"X\" Character"
+	2, "Visual Indicators (Display Mode must be Circular)"
+}
+optionValue "DDODispMode"
+{
+	0, "Screen Edges"
+	1, "Circular"
+}
+OptionValue "DDOMaxAngle"
+{
+	0, "None"
+	1, "Rear 90 degrees"
+	2, "Rear 135 degrees"
+	3, "Rear 180 degrees"
+	4, "Rear 225 degrees"
+	5, "Front 90 degrees"
+	6, "Front 135 degrees"
+	7, "Front 180 degrees"
+	8, "Front 225 degrees"
+}
+OptionValue "DDOFonts"
+{
+	0, "SmallFont"
+	1, "ConFont"
+	2, "BigFont"
+}
+
+OptionMenu "DmgDirOvOpt"
+{
+	Title "Damage Direction Overlay"
+	StaticText "Settings", 1
+	Option "Display as", "ddo_type", "DDODispType"
+	Option "Display Mode", "ddo_mode", "DDODispMode"
+	Option "Angle restriction", "ddo_maxangle", "DDOMaxAngle"
+	ScaleSlider "Min damage treshold", "ddo_mindmg", 0, 100, 1, "None"
+	Option "Accu. dmg if same source", "ddo_accudmg", "YesNo"
+	Option "Ignore Shadow* monsters", "ddo_noshadow", "YesNo"
+	Option "Self-dmg in parentheses", "ddo_selfinpa", "YesNo"
+	Option "Dmg Taken/\"X\" Font", "ddo_font", "DDOFonts"
+	Slider "Scaling", "ddo_scale", 1, 8, 1, 0
+	StaticText ""
+	StaticText "Changes won't apply 'til next map, unless:", 1
+	Command "[During play] Apply now", "netevent ddo_apply"
+	StaticText ""
+	StaticText ""
+	StaticText "*shadow monsters refers to the Spectre in", "DarkGrey"
+	staticText "Doom, and all ghost variants in Heretic.", "DarkGrey"
+}
+
 OptionMenu "Postal3dMenu"
 {
   Title "POSTAL: Red Letter Day Options"
@@ -111,6 +163,24 @@ OptionMenu "Postal3dMenu"
 	Control "Next Intensity", "NextIntensity"
 	Control "Previous Intensity", "PrevIntensity"
 	StaticText ""
+	
+	StaticText "Damage Direction Overlay Settings", 1
+	Option "Display as", "ddo_type", "DDODispType"
+	Option "Display Mode", "ddo_mode", "DDODispMode"
+	Option "Angle restriction", "ddo_maxangle", "DDOMaxAngle"
+	ScaleSlider "Min damage treshold", "ddo_mindmg", 0, 100, 1, "None"
+	Option "Accu. dmg if same source", "ddo_accudmg", "YesNo"
+	Option "Ignore Shadow* monsters", "ddo_noshadow", "YesNo"
+	Option "Self-dmg in parentheses", "ddo_selfinpa", "YesNo"
+	Option "Dmg Taken/\"X\" Font", "ddo_font", "DDOFonts"
+	Slider "Scaling", "ddo_scale", 1, 8, 1, 0
+	StaticText ""
+	StaticText "Changes to overlay won't apply 'til next map, unless:", 1
+	Command "[During play] Apply now", "netevent ddo_apply"
+	StaticText ""
+	StaticText ""
+	StaticText "*shadow monsters refers to the Spectre in", "DarkGrey"
+	staticText "Doom, and all ghost variants in Heretic.", "DarkGrey"
 }
 
 OptionValue "YesOrNo"
@@ -212,8 +282,10 @@ OptionMenu "PRLD_Display"
 	Submenu "$OPTMNU_ENGDIS",			"VideoOptions"
 	Submenu "$OPTMNU_ENGHUD",			"HudOptions"
 StaticText ""
-	SubMenu    "$OPTMNU_CROSS1"             , ts_ColorSetup
+	StaticText "Engine Crosshair isn't supported, change/turn off the crosshair using the options below"
 	SubMenu    "$OPTMNU_CROSS2"           , ts_Crosshairs
+	SubMenu    "$OPTMNU_CROSS1"             , ts_ColorSetup
+	SubMenu "Damage Direction Overlay", "DmgDirOvOpt"
 StaticText ""
   Slider "Max Wall Decals", "cl_maxdecals", 0, 10000, 10, 0
   Slider "Max Gibs/Blood Pools", "sv_corpsequeuesize", 1, 3000, 10, 0

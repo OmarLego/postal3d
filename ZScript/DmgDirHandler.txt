@@ -1,0 +1,514 @@
+//====================================================================//
+// Damage Direction Overlay v1.01 for GZDoom 2.4+
+// a ZScript mod by Gerodium (gerodium@gmx.com)
+// created on: 08/06/2017 - last updated: 08/14/2017 (MM/DD/YYYY)
+//====================================================================//
+class DmgDirOvEH : EventHandler
+{
+	struct DamageData {
+		Actor src;
+		vector2 vect;
+		string txt;
+		uint8 lifespan;
+		bool bHiddenAngle, bIsSelfDmg;
+		uint endAccuTime; // used to accumulate instant multi-hit attack like from the shotguy
+		uint16 dmgAmount;
+	}
+	const MUM_DMG_DATA = 4; // max num of simultaneous data on screen from different source
+	DamageData dataList[MUM_DMG_DATA]; // no dynamic arrays support for struct
+	bool bDrawOverlay, bStatusBarHUD, bBlinkSwap;
+	uint16 rayDist;
+	uint8 blinkTimer;
+	color blinkClr;
+	// self-damage
+	vector2 selfDmgPos;
+	Array<Actor> selfDmgPointers;
+	// draw as main menu icon
+	TextureId texSelIcon;
+	int16 selIconH, selIconW;
+	// set by user
+	uint8 displayType, displayMode, maxAngle, minTreshold, fontId, scaling;
+	bool bAccuDmg, bIgnoreShadow, bSelfDmgInP;
+
+	//================================================================//
+	// Set config settings
+	//================================================================//
+	void CVarsSetup()
+	{
+		CVar cv = CVar.FindCVar("ddo_type");
+		displayType = (cv && cv.GetInt() >= 0 && cv.GetInt() <= 2) ? cv.GetInt() : 0;
+		cv = CVar.FindCVar("ddo_mode");
+		displayMode = (cv && cv.GetInt() >= 0 && cv.GetInt() <= 1) ? cv.GetInt() : 0;
+		cv = CVar.FindCVar("ddo_maxangle");
+		maxAngle = (cv && cv.GetInt() >= 0 && cv.GetInt() <= 8) ? cv.GetInt() : 0;
+		cv = CVar.FindCVar("ddo_mindmg");
+		minTreshold = (cv && cv.GetInt() >= 0 && cv.GetInt() <= 255) ? cv.GetInt() : 0;
+		cv = CVar.FindCVar("ddo_accudmg");
+		bAccuDmg = (cv && cv.GetInt() != 0); // no getbool so I assume thats the proper way
+		cv = CVar.FindCVar("ddo_noshadow");
+		bIgnoreShadow = (cv && cv.GetInt() != 0);
+		cv = CVar.FindCVar("ddo_selfinpa");
+		bSelfDmgInP = (cv && cv.GetInt() != 0);
+		cv = CVar.FindCVar("ddo_font");
+		fontId = (cv && cv.GetInt() >= 0 && cv.GetInt() <= 2) ? cv.GetInt() : 2;
+		cv = CVar.FindCVar("ddo_scale");
+		scaling = (cv && cv.GetInt() >= 0 && cv.GetInt() <= 8) ? cv.GetInt() : 4;
+	}
+
+	//================================================================//
+	// Parsing "netevent x" console command - used for ui to play scope interactions
+	//================================================================//
+	override void NetworkProcess(ConsoleEvent e)
+	{
+		if (e.name == "ddo_apply") {
+			Console.Printf("Updating overlay settings...");
+			CVarsSetup();
+		}
+	}
+
+	//================================================================//
+	// On map loaded - initialization
+	//================================================================//
+	override void WorldLoaded(WorldEvent e)
+	{
+		CVarsSetup();
+		if (gameinfo.gametype & GAME_Raven) {
+			blinkClr = Font.CR_GOLD; // orange/yellow are looking bad in heretic and black in hexen
+			texSelIcon = TexMan.CheckForTexture("M_SKL00", TexMan.Type_MiscPatch);
+		} else {
+			blinkClr = Font.CR_ORANGE;
+			texSelIcon = TexMan.CheckForTexture("Shape2D", TexMan.Type_MiscPatch);
+		}
+		if (texSelIcon.isValid()) {
+			[selIconH, selIconW] = TexMan.GetSize(texSelIcon);
+		}
+	}
+
+	//================================================================//
+	// Calculates the angle pointing to the enemy/pos direction
+	//================================================================//
+	void UpdateData(int dataId)
+	{
+		if (dataList[dataId].src != null && players[consoleplayer].mo != null) {
+			double deltaX, deltaY;
+			if (dataList[dataId].bIsSelfDmg) {
+				deltaX = selfDmgPos.x - players[consoleplayer].mo.pos.x;
+				deltaY = selfDmgPos.y - players[consoleplayer].mo.pos.y;
+			} else {
+				deltaX = dataList[dataId].src.pos.x - players[consoleplayer].mo.pos.x;
+				deltaY = dataList[dataId].src.pos.y - players[consoleplayer].mo.pos.y;
+			}
+			// get the diff between the curr player angle and the angle to the enemy/pos dir
+			double dAngle = players[consoleplayer].mo.DeltaAngle(players[consoleplayer].mo.Angle, atan2(deltaY, deltaX));
+			dAngle = players[consoleplayer].mo.DeltaAngle(dAngle, 270); // the front would shown on the right without this
+			// transformed angle here go from 0 to 180 for back side and -0 to -180 for front side
+			if (maxAngle > 0) {
+				switch(maxAngle) {
+				case 1: // back 90d
+					dataList[dataId].bHiddenAngle = (dAngle < 0 || dAngle < 45 || dAngle > 135); break;
+				case 2: // back 135d
+					dataList[dataId].bHiddenAngle = (dAngle < 0 || dAngle < 22.5 || dAngle > 157.5); break;
+				case 3: // back 180d
+					dataList[dataId].bHiddenAngle = (dAngle < 0); break;
+				case 4: // back 225d
+					dataList[dataId].bHiddenAngle = (dAngle < -22.5 && dAngle > -157.5); break;
+				case 5: // front 90d
+					dataList[dataId].bHiddenAngle = (dAngle > 0 || dAngle > -45 || dAngle < -135); break;
+				case 6: // front 135d
+					dataList[dataId].bHiddenAngle = (dAngle > 0 || dAngle > -22.5 || dAngle < -157.5); break;
+				case 7: // front 180d
+					dataList[dataId].bHiddenAngle = (dAngle > 0); break;
+				case 8: // front 225d
+					dataList[dataId].bHiddenAngle = (dAngle > 22.5 && dAngle < 157.5); break;
+				}
+			}
+			if (!dataList[dataId].bHiddenAngle) { // convert the final angle into a 2d point
+				dataList[dataId].vect = players[consoleplayer].mo.AngleToVector(dAngle, rayDist);
+			}
+		}
+	}
+
+	//================================================================//
+	// Detects the rockets shots by the player and adds the ref to a
+	// list because there is no way to know from where occurs a self-
+	// damage in the ThingDamaged event. (Target = projectile owner)
+	//================================================================//
+	override void WorldThingSpawned(WorldEvent e)
+	{
+		if (e.Thing.Target == null)
+			return;
+
+		bool bCanSelfDmg = false;
+		if (gameinfo.gametype == GAME_Doom) {
+			bCanSelfDmg = (e.Thing.bMISSILE && e.Thing is "Rocket");
+		} else if (gameinfo.gametype == GAME_Heretic) {
+			bCanSelfDmg = (e.Thing.bMISSILE && e.Thing is "PhoenixFX1");
+		} else if (gameinfo.gametype == GAME_Hexen) {
+			if (e.Thing.bMISSILE) {
+				bCanSelfDmg = (e.Thing is "ThrowingBomb"); // fighter bomb
+			} else if (e.Thing.bNOGRAVITY && e.Thing is "FireBomb") { // mage bomb
+				bCanSelfDmg = true;
+			} // cleric bomb (PoisonBag->PoisonCloud) do poison damage, and poison doesn't seems to trigger ThingDamaged event for the player - thus no support planned for now
+		} else {
+			return;
+		}
+		if (bCanSelfDmg && players[consoleplayer].mo != null && e.Thing.Target == players[consoleplayer].mo) {
+			selfDmgPointers.Push(e.Thing);
+		}
+	}
+
+	//================================================================//
+	// Detects the explosivebarrels destroyed by the player because the
+	// one destroying a explosive barrel will deal the damage.
+	//================================================================//
+	override void WorldThingDied(WorldEvent e)
+	{
+		if (gameinfo.gametype == GAME_Doom && e.Thing is "ExplosiveBarrel" && e.Thing.Target != null
+		&& players[consoleplayer].mo != null && e.Thing.Target == players[consoleplayer].mo) {
+			selfDmgPointers.Push(e.Thing);
+		}
+	}
+
+	//================================================================//
+	// Removing a player's rocket/barrel ref from the list - cannot
+	// check any property flag here, they all seems false in this event.
+	//================================================================//
+	override void WorldThingDestroyed(WorldEvent e)
+	{
+		bool bCanSelfDmg = false;
+		if (gameinfo.gametype == GAME_Doom) {
+			bCanSelfDmg = (e.Thing is "Rocket" || e.Thing is "ExplosiveBarrel");
+		} else if (gameinfo.gametype == GAME_Heretic) {
+			bCanSelfDmg = (e.Thing is "PhoenixFX1");
+		} else if (gameinfo.gametype == GAME_Hexen) {
+			bCanSelfDmg = (e.Thing is "ThrowingBomb" || e.Thing is "FireBomb"); // || e.Thing is "PoisonCloud");
+		} else {
+			return;
+		}
+		if (bCanSelfDmg) {
+			for (int i=0; i<selfDmgPointers.Size(); i++) {
+				if (selfDmgPointers[i] == e.Thing) {
+					selfDmgPointers.Delete(i);
+					break;
+				}
+			}
+		}
+	}
+
+	//================================================================//
+	// When something is damaged
+	//================================================================//
+	override void WorldThingDamaged(WorldEvent e)
+	{
+		// local player damaged by some non-level thing
+		if (players[consoleplayer].mo != null && e.Thing == players[consoleplayer].mo && e.DamageSource != null) {
+			if (e.Damage < minTreshold || (bIgnoreShadow && e.DamageSource.bSHADOW)) // cannot retrieve renderstyle for better support (cf. hexen mash monsters)
+				return;
+
+			bool bDataRefresh = false;
+			int dataId = -1;
+			// first check if the dmgsource already have a data to refresh it
+			for (int i=0; i<MUM_DMG_DATA; i++) {
+				if (dataList[i].src != null && dataList[i].src == e.DamageSource) {
+					if (bAccuDmg || level.time <= dataList[i].endAccuTime) {
+						dataList[i].dmgAmount += e.Damage;
+					} else {
+						dataList[i].dmgAmount = e.Damage;
+					}
+					bDataRefresh = true;
+					dataId = i;
+					break;
+				}
+			}
+			// or get the first dmg data available
+			if (dataId == -1) {
+				for (int i=0; i<MUM_DMG_DATA; i++) {
+					if (dataList[i].lifespan == 0) {
+						dataId = i;
+						break;
+					}
+				}
+			}
+			// if none available erase the one with the less lifespan left
+			if (dataId == -1) { 
+				dataId = 0;
+				int bestLifespan = dataList[0].lifespan;
+				for (int i=1; i<MUM_DMG_DATA; i++) {
+					if (dataList[i].lifespan < bestLifespan) {
+						bestLifespan = dataList[i].lifespan;
+						dataId = i;
+					}
+				}
+			}
+
+			dataList[dataId].src = e.DamageSource;
+			dataList[dataId].bIsSelfDmg = (e.Thing == e.DamageSource);
+			if (dataList[dataId].bIsSelfDmg) {
+				selfDmgPos.x = selfDmgPos.y = 0;
+				// get the closest player's rocket/barrel - both use the same default aoe range
+				int bestId = -1;
+				int bestRange;
+				for (int i=0; i<selfDmgPointers.Size(); i++) {
+					if (selfDmgPointers[i] != null) {
+						int dist = players[consoleplayer].mo.Distance3D(selfDmgPointers[i]);
+						if (bestId == -1 || dist < bestRange) {
+							bestId = i;
+							bestRange = dist;
+						}
+					}
+				}
+				if (bestId != -1) {
+					selfDmgPos.x = selfDmgPointers[bestId].pos.x;
+					selfDmgPos.y = selfDmgPointers[bestId].pos.y;
+				}
+				// should only happen when you shoot a rocket point blank - no event is going to registers anything except for the damage here
+				if (selfDmgPos.x == 0 && selfDmgPos.y == 0) {
+					selfDmgPos.x = players[consoleplayer].mo.pos.x;
+					selfDmgPos.y = players[consoleplayer].mo.pos.y;
+				}
+			}
+
+			// min duration is 1.5sec, extended up to 3secs at 100 damage taken
+			float extraLength = float(e.Damage) * 0.52;
+			if (extraLength > 52) extraLength = 52;
+			dataList[dataId].lifespan = 53 + int(extraLength);
+			dataList[dataId].endAccuTime = level.time + 1; // up to one more tick
+			if (!bDataRefresh) dataList[dataId].dmgAmount = e.Damage;
+
+			if (displayType == 2 && !texSelIcon.IsValid()) {
+				displayType = 0;
+				Console.Printf("\cgDmgDirOv Warning: Menu Selection Icon Texture wasn\'t detected! Display Type has been set to \"0\".");
+			}
+			if (displayType == 0) {
+				if (dataList[dataId].bIsSelfDmg && bSelfDmgInP) {
+					dataList[dataId].txt = (dataList[dataId].dmgAmount > 0) ? "(-"..(dataList[dataId].dmgAmount)..")" : "(+"..(dataList[dataId].dmgAmount)..")";
+				} else {
+					dataList[dataId].txt = (dataList[dataId].dmgAmount > 0) ? "-"..(dataList[dataId].dmgAmount) : "+"..(dataList[dataId].dmgAmount); // no idea if nagative dmg can happen in this event
+				}
+			} else if (displayType == 1) {
+				dataList[dataId].txt = (dataList[dataId].bIsSelfDmg && bSelfDmgInP) ? "(X)" : "X";
+			}
+
+			// cannot get the hud state from outside the statusbar class for live update - see usedVirH in renderoverlay()
+			CVar cv = CVar.FindCVar("screenblocks");
+			bStatusBarHUD = (cv && cv.GetInt() <= 10);
+
+			// pre-calc the ray dist
+			if (displayMode == 0) { // screen edges
+				int virtualW = Screen.GetWidth() / scaling;
+				int virtualH = Screen.GetHeight() / scaling;
+				if (displayType < 2) {
+					Font fnt;
+					switch(fontId) {
+						case 0: fnt = smallfont; break;
+						case 1: fnt = confont; break;
+						case 2: fnt = bigfont; break;
+					}
+					virtualW -= fnt.StringWidth(dataList[dataId].txt);
+					virtualH -= fnt.GetHeight();
+				} else {
+					virtualW -= selIconW;
+					virtualH -= selIconH;
+				} // calculate the exact half-screen diagonal including what is drawn - no interpolation in renderoverlay() for statusbar mode, the corners may feel slightly sticky
+				rayDist = Sqrt((virtualW * virtualW) + (virtualH * virtualH)) / 2;
+			} else { // circular
+				if (displayType < 2) {
+					int fntHeight;
+					switch(fontId) {
+						case 0: fntHeight = smallfont.GetHeight(); break;
+						case 1: fntHeight = confont.GetHeight(); break;
+						case 2: fntHeight = bigfont.GetHeight(); break;
+					} // cannot get statusbar.GetTopOfStatusBar() in play scope here for the right dist in statusbar mode without the interpolation in renderoverlay()
+					rayDist = ((Screen.GetHeight() / 2) / scaling) - (fntHeight / 2);
+				} else {
+					rayDist = ((Screen.GetHeight() / 2) / scaling) - (selIconH / 2);
+				}
+			}
+			UpdateData(dataId); // v1.01 fix: moved this at the end of the block where it was supposed to be since the beginning
+			bDrawOverlay = true;
+		}
+	}
+
+	//================================================================//
+	// Play scope logics loop on pre-update - 35 fixed/max calls per sec
+	//================================================================//
+	override void WorldTick()
+	{
+		if (bDrawOverlay) {
+			bool bKeepDrawing = false; // must init this to def val for some reason - had few issues like this in zscript
+			for (int i=0; i<MUM_DMG_DATA; i++) {
+				if (dataList[i].lifespan == 0)
+					continue;
+
+				if (--dataList[i].lifespan > 0) {
+					UpdateData(i);
+					bKeepDrawing = true;
+				} else { // data expired - clearing the struct
+					dataList[i].src = null; // must reset
+					dataList[i].vect.x = dataList[i].vect.y = 0;
+					dataList[i].txt = "";
+					dataList[i].bHiddenAngle = false;
+					dataList[i].endAccuTime = 0;
+					dataList[i].dmgAmount = 0;
+				}
+			}
+			if (!bKeepDrawing) {
+				bDrawOverlay = false;
+				return;
+			}
+			if (displayType < 2 && ++blinkTimer > 4) {
+				bBlinkSwap = !bBlinkSwap;
+				blinkTimer = 0;
+			}
+		}
+	}
+
+	//================================================================//
+	// UI scope drawing loop - shitload of calls per sec depending of
+	// your current fps (~<200 cap w/o vsync), so must be optimized af.
+	//================================================================//
+
+	// create a square shape (not usable until calling MoveSquare)
+    static clearscope Shape2D MakeSquare()
+    {
+        // the shape that will be drawn
+        Shape2D square = new("Shape2D");
+        // texture coordinates of each corner
+        square.PushCoord((0, 0));
+        square.PushCoord((1, 0));
+        square.PushCoord((0, 1));
+        square.PushCoord((1, 1));
+        // two triangles make up the square
+        // the points have to be in counter-clockwise order
+        square.PushTriangle(0, 3, 1);
+        square.PushTriangle(0, 2, 3);
+        return square;
+    }
+
+    // set the positions of an existing square shape's vertices
+    static clearscope void MoveSquare(Shape2D shape, Vector2 size, Vector2 pos, double angle)
+    {
+        // clear any vertices already set
+        shape.Clear(Shape2D.C_Verts);
+        // corners of a square centered on 0,0
+        Vector2 points[4];
+        points[0] = (-0.5 * size.X, -0.5 * size.Y);
+        points[1] = (0.5 * size.X, -0.5 * size.Y);
+        points[2] = (-0.5 * size.X, 0.5 * size.Y);
+        points[3] = (0.5 * size.X, 0.5 * size.Y);
+        // apply a 2D rotation matrix:
+        //
+        // ┌               ┐   ┌   ┐
+        // │ cos θ  -sin θ │   │ X │
+        // │               │ * │   │
+        // │ sin θ   cos θ │   │ Y │
+        // └               ┘   └   ┘
+        //
+        // then move the points by the set offset
+        for (int i = 0; i < 4; i++)
+        {
+            Vector2 oldpos = points[i];
+            points[i].X = oldpos.X * cos(angle) - oldpos.Y * sin(angle) + pos.X;
+            points[i].Y = oldpos.X * sin(angle) + oldpos.Y * cos(angle) + pos.Y;
+            shape.PushVertex(points[i]);
+        }
+    }
+	
+	override void RenderOverlay(RenderEvent e)
+	{
+		if (!bDrawOverlay)
+			return;
+
+		// downscaled virtual canvas to actually draw bigger
+		int virtualW = Screen.GetWidth() / scaling;
+		int virtualH = Screen.GetHeight() / scaling;
+		int usedVirH = (bStatusBarHUD) ? statusbar.GetTopOfStatusBar() / scaling : virtualH; // I don't wanna draw anything over the statusbar
+		int xpos, ypos, txtH;
+		Font fnt;
+		if (displayType < 2) { // text based
+			switch(fontId) { // just pointing to already existing fonts
+				case 0: fnt = smallfont; break;
+				case 1: fnt = confont; break;
+				case 2: fnt = bigfont; break;
+			}
+			txtH = fnt.GetHeight();
+		}
+
+		// draw the damage datas on screen
+		for (int i=0; i<MUM_DMG_DATA; i++) {
+			if (dataList[i].lifespan == 0 || dataList[i].bHiddenAngle)
+				continue;
+
+			if (displayMode == 0) { // screen edges
+				if (displayType < 2) {
+					int txtW = fnt.StringWidth(dataList[i].txt);
+					xpos = (virtualW - txtW) / 2 + dataList[i].vect.x;
+					ypos = (usedVirH - txtH) / 2 + dataList[i].vect.y;
+					if (xpos < 0) xpos = 0;
+					else if (xpos + txtW > virtualW) xpos = virtualW - txtW;
+					if (ypos < 0) ypos = 0;
+					else if (ypos + txtH > usedVirH) ypos = usedVirH - txtH;
+					Screen.DrawText(fnt, (bBlinkSwap) ? blinkClr : Font.CR_RED, xpos, ypos, dataList[i].txt,
+						DTA_Alpha, (dataList[i].lifespan < 35) ? float(dataList[i].lifespan) / 35 : 1.0f, // fading out last sec
+						DTA_VirtualWidth, virtualW, DTA_VirtualHeight, virtualH, DTA_KeepRatio, true);
+				} else {
+					xpos = (virtualW - selIconW) / 2 + dataList[i].vect.x;
+					ypos = (usedVirH - selIconH) / 2 + dataList[i].vect.y;
+					if (xpos < 0) xpos = 0;
+					else if (xpos + selIconW > virtualW) xpos = virtualW - selIconW;
+					if (ypos < 0) ypos = 0;
+					else if (ypos + selIconH > usedVirH) ypos = usedVirH - selIconH;
+					Screen.DrawTexture(texSelIcon, true, xpos, ypos,
+						DTA_Alpha, (dataList[i].lifespan < 35) ? float(dataList[i].lifespan) / 35 : 1.0f,
+						DTA_VirtualWidth, virtualW, DTA_VirtualHeight, virtualH, DTA_KeepRatio, true);
+				}
+			} else { // circular
+				if (displayType < 2) {
+					if (bStatusBarHUD) { // vect size interpolation for reduced hud height in statusbar mode
+						float vectMult = 100 / float(Screen.GetHeight()) * statusbar.GetTopOfStatusBar() / 100;
+						xpos = (virtualW - fnt.StringWidth(dataList[i].txt)) / 2 + (dataList[i].vect.x * vectMult);
+						ypos = (usedVirH - txtH) / 2 + (dataList[i].vect.y * vectMult);
+					} else {
+						xpos = (virtualW - fnt.StringWidth(dataList[i].txt)) / 2 + dataList[i].vect.x;
+						ypos = (usedVirH - txtH) / 2 + dataList[i].vect.y;
+					}
+					Screen.DrawText(fnt, (bBlinkSwap) ? blinkClr : Font.CR_RED, xpos, ypos, dataList[i].txt,
+						DTA_Alpha, (dataList[i].lifespan < 35) ? float(dataList[i].lifespan) / 35 : 1.0f,
+						DTA_VirtualWidth, virtualW, DTA_VirtualHeight, virtualH, DTA_KeepRatio, true);
+				} else {
+					if (bStatusBarHUD) {
+						float vectMult = 100 / float(Screen.GetHeight()) * statusbar.GetTopOfStatusBar() / 100;
+						xpos = (virtualW - selIconW) / 2 + (dataList[i].vect.x * vectMult);
+						ypos = (usedVirH - selIconH) / 2 + (dataList[i].vect.y * vectMult);
+					} else {
+						xpos = (virtualW - selIconW) / 2 + dataList[i].vect.x;
+						ypos = (usedVirH - selIconH) / 2 + dataList[i].vect.y;
+					}
+					//Screen.DrawTexture(texSelIcon, true, xpos, ypos,
+                    //    DTA_Alpha, (dataList[i].lifespan < 35) ? float(dataList[i].lifespan) / 35 : 1.0f,
+                    //    DTA_VirtualWidth, virtualW, DTA_VirtualHeight, virtualH, DTA_KeepRatio, true);
+                    
+                    // make 2D shape
+                    let shape = MakeSquare();
+                    // get texture size and scale it
+                    Vector2 size = TexMan.GetScaledSize(texSelIcon);
+                    size.X *= scaling;
+                    size.Y *= scaling;
+                    // scale coordinates
+                    // (some compensation for the Y coordinate to center the graphic properly)
+                    Vector2 dpos = (xpos, ypos + ((size.Y / 2) / scaling));
+                    dpos.X *= scaling;
+                    dpos.Y *= scaling;
+                    // calculate angle of texture rotation
+                    Vector2 center = (Screen.GetWidth() / 2, Screen.GetHeight() / 2);
+                    double ang = atan2(center.Y - dpos.Y, center.X - dpos.X) - 90;
+                    // draw rotated texture
+                    MoveSquare(shape, size, dpos, ang);
+                    Screen.DrawShape(texSelIcon, true, shape,
+                        DTA_Alpha, (dataList[i].lifespan < 35) ? float(dataList[i].lifespan) / 35 : 1.0f,
+                        DTA_VirtualWidth, virtualW, DTA_VirtualHeight, virtualH, DTA_KeepRatio, true);
+				}
+			}
+		}
+	}
+}

@@ -31,6 +31,8 @@ gameinfo
 	AddEventHandlers = "ts_EventHandler"
 	//el deathfade https://forum.zdoom.org/viewtopic.php?t=65028
 	AddEventHandlers = "DeathFadeBootstrap"
+	//el damage direction
+	AddEventHandlers = "DmgDirOvEH"
 	TitleMusic = "D_DM2TTL"
 }
 
