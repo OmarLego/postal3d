@@ -75,7 +75,7 @@ DoomEdNums
 	15034 = PRLD_MilitarySpawner
 	15035 = PRLD_SwatSpawner
 	//bosses
-	15036 = PRLD_SheriffBoss
+	//15036 = PRLD_SheriffBoss            15036 IS FREE
 	//civilians
 	16045 = PRLD_CivilianSpawner
 	15037 = PRLD_SaxSpawner

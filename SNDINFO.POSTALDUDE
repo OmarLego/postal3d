@@ -212,19 +212,9 @@ demon/shownomercy2		"Sounds/Voiceovers/Demon/Shotgun/shownomercy2.ogg"
 
 
 
-/*$Random Dude/Execute { demon/begforthis demon/bleed1 demon/bleed2 demon/die1 demon/die2 demon/dieweakling demon/doitquietly demon/dontbe demon/feelmywrath demon/gooddaytodie demon/haveabooboo demon/inhell demon/pinneddown demon/sissy demon/stillwheninjured demon/thedogyouare demon/wussy }
-demon/begforthis
-demon/bleed1
-demon/bleed2
-demon/dieweakling
-demon/doitquietly
-demon/dontbe
-demon/feelmywrath
-demon/gooddaytodie
-demon/haveabooboo
-demon/inhell
-demon/pinneddown
-demon/sissy
-demon/stillwheninjured
-demon/thedogyouare
-demon/wussy
+//                            CUTSCENES
+
+
+
+demon/haveaniceday		"Sounds/Voiceovers/Demon/Cutscene/haveaniceday.ogg"
+demon/hithere		"Sounds/Voiceovers/Demon/Cutscene/hithere.ogg"
