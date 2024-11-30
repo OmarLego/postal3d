@@ -118,9 +118,9 @@ maps
 	
 	PRLD05
 	{
-		defaultwalltexture = "GREY129";
+		defaultwalltexture = "JYRDRCK1";
 		overridemiddletexture = false;
-		defaultceiltexture = "HMEWD4";
+		defaultceiltexture = "1NTRUCK1";
 		overrideceiltexture = false;
 		custombrightness = 196;
 		scriptcompiler = "zdoom_acs.cfg";
@@ -168,8 +168,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 1621.698f;
-		viewpositionx = -232.9923f;
+		viewpositiony = 1571.833f;
+		viewpositionx = -9.828574f;
 		
 		testprecommand
 		{
@@ -189,11 +189,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 32;
+			gridsize = 64;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.8042147f;
+		viewscale = 0.2802133f;
 		
 		reloadresourceprecommand
 		{
@@ -201,9 +201,9 @@ maps
 			exitcodeiserror = true;
 			stderriserror = true;
 		}
-		defaulttoptexture = "GREY129";
+		defaulttoptexture = "JYRDRCK1";
 		overridebottomtexture = false;
-		defaultbottomtexture = "GREY129";
+		defaultbottomtexture = "JYRDRCK1";
 		defaultfloortexture = "HMERD1";
 		overrideceilheight = false;
 		overridebrightness = false;

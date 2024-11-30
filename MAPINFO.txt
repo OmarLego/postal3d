@@ -75,7 +75,7 @@ DoomEdNums
 	15034 = PRLD_MilitarySpawner
 	15035 = PRLD_SwatSpawner
 	//bosses
-	//15036 = PRLD_SheriffBoss            15036 IS FREE
+	//= PRLD_SheriffBoss
 	//civilians
 	16045 = PRLD_CivilianSpawner
 	15037 = PRLD_SaxSpawner
@@ -95,6 +95,7 @@ DoomEdNums
 	30105 = PRLD_SnowTree
 	30100 = PRLD_Tree
 	30101 = PRLD_Tree2
+	15036 = PRLD_Tree3
 	10713 = rwldecBush//only RWLDEC asset that actually looks pretty good
 	15032 = rwldecBush2
 	10019 = PRLD_Snowman

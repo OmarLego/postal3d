@@ -25,6 +25,13 @@ actor PRLD_Tree2 : PRLD_Tree
   radius 42
 	XScale 0.75
 }
+actor PRLD_Tree3 : PRLD_Tree
+{
+  radius 28
+  height 112
+	XScale 0.375
+	YScale 0.5
+}
 
 ACTOR PRLD_DeadTree1
 {
