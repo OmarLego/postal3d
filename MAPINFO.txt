@@ -272,7 +272,7 @@ Map PRLD01 "Home"//"$TXT_PRLD01"
 	next = prld02
 }
 
-Map PRLD02 "Parade of Disasters"//going to be PRLD03 later
+Map PRLD02 "Parade of Disasters"//going to be PRLD03 later //maybe not? ill see
 {
 	music = ""
 	sky1 = "SKYPNIGH", 0.1
@@ -280,5 +280,17 @@ Map PRLD02 "Parade of Disasters"//going to be PRLD03 later
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld03
+	//next = prld03
+	next = prld05
+}
+
+Map PRLD05 "The Junkyard"//going to be PRLD03 later
+{
+	music = ""
+	sky1 = "SKYJYARD"
+	MONSTERFALLINGDAMAGE
+	FALLINGDAMAGE
+	//NoIntermission
+	InterMusic = "D_DM2INT"
+	next = prld06
 }
