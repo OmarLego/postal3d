@@ -507,6 +507,7 @@ truck/close "Sounds/Environment/Objects/truck-close.ogg"
 truck/drive "Sounds/Environment/Objects/truck-drive.ogg"
 jail/open "Sounds/Environment/Objects/door_prison_cell_LP.wav"
 jail/close "Sounds/Environment/Objects/door_prison_cell_close.wav"
+world/bounce		tire//action doom 2
 
 
 //Menu

@@ -207,3 +207,188 @@ actor NoGlassJunk : GlassJunk Replaces GlassJunk
 	Stop
 	}
 }
+
+
+
+//                I LOVE ACTION DOOM 2
+
+
+
+ACTOR Tire //13376
+{
+	Health		1000
+	Radius		12
+	Height		16
+	Mass		100
+	Speed		0
+	Painchance	0
+	Scale		0.5
+
+	//-SOLID
+	+DONTSPLASH
+	Species "Enemy"
+	+THRUSPECIES
+	DamageFactor "Bowling",0
+	DamageFactor "CollisionChk",0
+	//added
+	+NOGRAVITY
+	+SOLID
+	States
+	{
+		Spawn:
+			TIRE A 8
+			Loop
+	}
+}
+
+ACTOR Tire2
+{
+	Health		1000
+	Radius		2
+	Height		4
+	Mass		100
+	Speed		12
+	Painchance	0
+	Scale		0.5
+	
+	SpawnID		246
+	
+	+MISSILE
+	+DOOMBOUNCE
+	+DONTSPLASH
+	//Species "Enemy"
+	+THRUSPECIES
+	//DamageFactor "Bowling",0
+	//DamageFactor "CollisionChk",0
+
+	SeeSound	"world/bounce"
+
+	States
+	{
+		Spawn:
+			TIRE A 1 
+			TIRE A 1 ThrustThing(random(140,360),4,0,0)
+		SpawnLoop:
+			TIRE A 8
+			Loop
+		Death:
+			TIRE A 8
+			Loop
+	}
+}
+
+Actor TiresTaken : Inventory 
+{
+ inventory.amount 1
+ inventory.maxamount 5
+}
+
+ACTOR TireStack //13377
+{
+	Health		20
+	Radius		12
+	Height		56
+	Mass		100
+	Speed		0
+	Painchance	0
+	Scale		0.5
+	
+
+	+SOLID
+	+SHOOTABLE
+	+NOBLOOD
+	+QUICKTORETALIATE
+	+NOTAUTOAIMED
+	
+	/*DamageFactor "CollisionChk",0
+	DamageFactor "Grabber",0
+	PainChance "Grabber",256
+	DamageFactor "Bowling", 0.1
+	PainChance "Bowling",0
+	DamageFactor "Uppercut",5.0
+	Species "Enemy"*/
+	
+	//added
+	+NOGRAVITY
+	States
+	{
+		Spawn:
+			TIRE B 8 A_Look
+			Loop
+		See:
+			TIRE B 8
+			Loop
+		Pain.Grabber:
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",4,"DeathNoTireSpawn")
+			TNT1 A 0 ACS_NamedExecuteAlways("AD2_Melee_GrabAndThrow_Move",0,0,0,0)
+			Goto 4Tires
+		GrabberPainInvi:
+			TNT1 A 10
+			Loop
+		4Tires:
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",2,"3Tires")
+			TIRE E 8
+			Loop
+		3Tires:
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",3,"2Tires")
+			TIRE D 8
+			Loop
+		2Tires:
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",4,"DeathNoTireSpawn")
+			TIRE C 8
+			Loop
+		DeathNoTireSpawn:
+			TIRE A 1 DamageThing(9999,0)
+			TIRE A 1 A_Fall
+			Goto DeathLoop
+		Pain:
+			//TNT1 A 0 ACS_NamedExecuteAlways("AD2_Melee_GrabAndThrow_PropState")
+		Death:
+			//TNT1 A 0 ACS_NamedExecuteAlways("AD2_Melee_GrabAndThrow_PropState")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",4,"DeathNoTireSpawn")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",3,"SpawnTire_3")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",2,"SpawnTire_2")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",1,"SpawnTire_1")
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TIRE A 10
+			Goto DeathLoop
+		XDeath:
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",4,"DeathNoTireSpawn")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",3,"SpawnTire_3")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",2,"SpawnTire_2")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",1,"SpawnTire_1")
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TIRE A 10
+			Goto DeathLoop
+		Crash:
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",4,"DeathNoTireSpawn")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",3,"SpawnTire_3")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",2,"SpawnTire_2")
+			TNT1 A 0 A_JumpIfInventory("TiresTaken",1,"SpawnTire_1")
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TIRE A 10
+			Goto DeathLoop
+		SpawnTire_3:
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TNT1 B 1 A_Fall
+			TIRE A 10
+			Goto DeathLoop
+		SpawnTire_2:
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TNT1 B 1 A_Fall
+			TIRE A 10
+			Goto DeathLoop
+		SpawnTire_1:
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TNT1 B 0 A_SpawnItemEX ("Tire2",0,0,50,0,0,0,random(0,256))
+			TNT1 B 1 A_Fall
+			TIRE A 10
+			Goto DeathLoop
+		DeathLoop:
+			TIRE A 10
+			Loop
+	}
+}

@@ -101,6 +101,8 @@ DoomEdNums
 	10019 = PRLD_Snowman
 	10032 = PRLD_DeadTree1
 	10042 = PRLD_HomeSiren
+	13376 = Tire//action doom 2
+	13377 = TireStack//ation ddoom 2
 	
 	//cars
 	10017 = PRLD_Car1
