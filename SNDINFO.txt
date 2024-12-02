@@ -41,12 +41,19 @@ $Limit Parade/March 0
 //Hostiles' Weapons
 //tracer flyby
 subsonic/aggressive1 "sounds/weapons/Hostile/subsonic_aggressive_01.ogg"
+$Volume subsonic/aggressive1 0.25
 subsonic/aggressive2 "sounds/weapons/Hostile/subsonic_aggressive_02.ogg"
+$Volume subsonic/aggressive2 0.25
 subsonic/aggressive3 "sounds/weapons/Hostile/subsonic_aggressive_03.ogg"
+$Volume subsonic/aggressive3 0.25
 subsonic/aggressive4 "sounds/weapons/Hostile/subsonic_aggressive_04.ogg"
+$Volume subsonic/aggressive4 0.25
 subsonic/aggressive5 "sounds/weapons/Hostile/subsonic_aggressive_05.ogg"
+$Volume subsonic/aggressive5 0.25
 subsonic/aggressive6 "sounds/weapons/Hostile/subsonic_aggressive_06.ogg"
+$Volume subsonic/aggressive6 0.25
 subsonic/aggressive7 "sounds/weapons/Hostile/subsonic_aggressive_07.ogg"
+$Volume subsonic/aggressive8 0.25
 $random subsonic/aggressive { subsonic/aggressive1 subsonic/aggressive2 subsonic/aggressive3 subsonic/aggressive4 subsonic/aggressive5 subsonic/aggressive6 subsonic/aggressive7 }
 //m16 (rifle guys)
 weapons/m16/fire1 "sounds/weapons/Hostile/RIFLFIR1.ogg"
@@ -55,7 +62,8 @@ weapons/m16/fire2 "sounds/weapons/Hostile/RIFLFIR2.ogg"
 $alias hostrifl AKFIR
 $alias weapons/m16/fire AKFIR
 //glock 17 (standard pistol guys)
-weapons/glock17/fire "sounds/weapons/Hostile/PISTLFIR.ogg"
+weapons/glock17/fire "sounds/weapons/Hostile/PISTFIR.ogg"
+$random weapons/hostile/PISTFIR { weapons/hostile/PISTFIR1.ogg weapons/hostile/PISTFIR2.ogg weapons/hostile/PISTFIR3.ogg }
 //DB (shotgun guys)
 weapons/db/fire "sounds/weapons/Hostile/DBFIR.ogg"
 $Random weapons/hrevolver/fire { PODBFIR1 PODBFIR2 }
