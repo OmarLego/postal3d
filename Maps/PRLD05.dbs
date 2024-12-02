@@ -120,7 +120,7 @@ maps
 	{
 		defaultwalltexture = "JYRDRCK1";
 		overridemiddletexture = false;
-		defaultceiltexture = "1NTRUCK1";
+		defaultceiltexture = "1JYRDRCK";
 		overrideceiltexture = false;
 		custombrightness = 196;
 		scriptcompiler = "zdoom_acs.cfg";
@@ -135,6 +135,7 @@ maps
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
+				requiredarchives = "";
 			}
 			
 			resource1
@@ -167,8 +168,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 815.1427f;
-		viewpositionx = 5.082974f;
+		viewpositiony = 524.58f;
+		viewpositionx = 530.2309f;
 		
 		testprecommand
 		{
@@ -192,7 +193,7 @@ maps
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.6156286f;
+		viewscale = 1.04041f;
 		
 		reloadresourceprecommand
 		{
