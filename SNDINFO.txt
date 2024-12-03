@@ -79,7 +79,8 @@ $Limit weapons/glock17/dist 0
 $RollOff weapons/glock17/dist 3000 6000
 
 //DB (shotgun guys)
-weapons/db/fire "sounds/weapons/Hostile/DBFIR.ogg"
+//weapons/db/fire "sounds/weapons/Hostile/DBFIR.ogg"
+$Alias weapons/db/fire weapons/dbshotgun/fire
 weapons/db/dist sg_dist
 $Limit weapons/db/dist 0
 $RollOff weapons/db/dist 3000 6000
@@ -267,6 +268,13 @@ $alias FHIT bodyignite
 NLOAD NLOAD
 NINS NINS
 FIRLOOP FIRLOOP
+$Alias fire/body FIRLOOP
+$Limit fire/body 0
+fire/small1 "Sounds/Weapons/Flamethrower/fire_small_loop1.wav"
+fire/small2 "Sounds/Weapons/Flamethrower/fire_small_loop2.wav"
+$Random fire/small { fire/small1 fire/small2 }
+$Limit fire/small 0//1
+$Volume fire/small 0.1//375
 HSSHOT HSSHOT
 MSSHOT MSSHOT
 RLPICK RLPICK

@@ -279,6 +279,7 @@ ACTOR SWAT1_1 : Postal3dMonster
 		"####" AAAAAAAA 0 ThrustThing(angle*256/360+64, 1, 0, 0)
 	ShootCon:
 		"####" A 0 A_PlaySound("weapons/m16/fire1")
+		"####" A 0 A_PlaySound("weapons/m16/dist", 1)
         "####" A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
@@ -287,6 +288,7 @@ ACTOR SWAT1_1 : Postal3dMonster
 		SWT1 A 0
 		"####" E 1 A_FaceTarget
         "####" A 0 A_PlaySound("weapons/m16/fire2")
+		"####" A 0 A_PlaySound("weapons/m16/dist", 1)
         "####" A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
@@ -295,6 +297,7 @@ ACTOR SWAT1_1 : Postal3dMonster
 		SWT1 A 0
 		"####" E 1 A_FaceTarget
         "####" A 0 A_PlaySound("weapons/m16/fire1")
+		"####" A 0 A_PlaySound("weapons/m16/dist", 1)
         "####" A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
