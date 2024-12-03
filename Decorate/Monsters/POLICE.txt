@@ -114,33 +114,42 @@ ACTOR PistolOfficer1 : Postal3dMonster
 		POH1 E 7 A_FaceTarget
 		TNT1 A 0 A_Jump (100, "8Fire", "4Fire")
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 		Goto SeeLoop
 	8Fire:
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 	4Fire:
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire")
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", 1)
 		POH1 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
 		POH1 E 13 A_FaceTarget
 		Goto SeeLoop

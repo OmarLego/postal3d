@@ -55,17 +55,41 @@ $Volume subsonic/aggressive6 0.25
 subsonic/aggressive7 "sounds/weapons/Hostile/subsonic_aggressive_07.ogg"
 $Volume subsonic/aggressive8 0.25
 $random subsonic/aggressive { subsonic/aggressive1 subsonic/aggressive2 subsonic/aggressive3 subsonic/aggressive4 subsonic/aggressive5 subsonic/aggressive6 subsonic/aggressive7 }
+
 //m16 (rifle guys)
 weapons/m16/fire1 "sounds/weapons/Hostile/RIFLFIR1.ogg"
 weapons/m16/fire2 "sounds/weapons/Hostile/RIFLFIR2.ogg"
 //$random weapons/hostile/RIFLFIR { weapons/hostile/RIFLFIR1.ogg weapons/hostile/RIFLFIR2.ogg }
 $alias hostrifl AKFIR
 $alias weapons/m16/fire AKFIR
+$Random weapons/m16/dist { r_dist1 r_dist2 }
+r_dist1 r_dist1
+r_dist2 r_dist2
+$Limit weapons/m16/dist 0
+$RollOff weapons/m16/dist 3000 6000
+
 //glock 17 (standard pistol guys)
 weapons/glock17/fire "sounds/weapons/Hostile/PISTFIR.ogg"
 $random weapons/hostile/PISTFIR { weapons/hostile/PISTFIR1.ogg weapons/hostile/PISTFIR2.ogg weapons/hostile/PISTFIR3.ogg }
+$random weapons/glock17/dist { p_dist1 p_dist2 p_dist3 }
+p_dist1 p_dist1
+p_dist2 p_dist2
+p_dist3 p_dist3
+$Limit weapons/glock17/dist 0
+$RollOff weapons/glock17/dist 3000 6000
+
 //DB (shotgun guys)
 weapons/db/fire "sounds/weapons/Hostile/DBFIR.ogg"
+weapons/db/dist sg_dist
+$Limit weapons/db/dist 0
+$RollOff weapons/db/dist 3000 6000
+
+//rocketeer
+weapons/rl/dist rl_dist
+$Limit weapons/rl/dist 0
+$RollOff weapons/rl/dist 3000 6000
+
+//revolver (dale)
 $Random weapons/hrevolver/fire { PODBFIR1 PODBFIR2 }
 PODBFIR1 PODBFIR1
 PODBFIR2 PODBFIR2
