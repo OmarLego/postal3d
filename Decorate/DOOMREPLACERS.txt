@@ -137,6 +137,20 @@ ACTOR PrldRevenantReplacer: RandomSpawner replaces Revenant
     Height 52
 	DropItem "Rocketeer1_1"
 }
+ACTOR PrldFatReplacer: RandomSpawner replaces Fatso
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "PRLD_Dale"
+}
+ACTOR PrldBabyReplacer: RandomSpawner replaces Arachnotron
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "PRLD_SwatSpawner"
+}
 
 
 
