@@ -241,6 +241,7 @@ Actor DropFire
     Loop
   Death:
   FLME ABCDEFGHIJKLMN 2 A_FadeOut
+	TNT1 A 0 A_StopSound(7)
     TNT1 A 1
     Stop
   }
@@ -298,6 +299,7 @@ Actor DropFire3
     Loop
   Death:
   FLME ABCDEFGHIJKLMN 2 A_FadeOut
+	TNT1 A 0 A_StopSound(7)
     TNT1 A 1
     Stop
   }
@@ -350,6 +352,7 @@ Actor SmallFlame
 	TNT1 A 0
 	TNT1 A 0 A_Playsound ("fire/small",7,1.0,true)
   FLME ABCDEFGHIJKLMN 2 A_FadeOut
+	TNT1 A 0 A_StopSound(7)
     TNT1 A 1
     Stop
   }
@@ -419,6 +422,7 @@ Actor LargeFire
     Loop
   Death:
   FLME ABCDEFGHIJKLMN 2 A_FadeOut
+	TNT1 A 0 A_StopSound(7)
     TNT1 A 1
     Stop
   }
@@ -489,6 +493,7 @@ Actor LargeFire2
     Loop
   Death:
   FLME ABCDEFGHIJKLMN 2 A_FadeOut
+	TNT1 A 0 A_StopSound(7)
     TNT1 A 1
     Stop
   }
@@ -741,7 +746,7 @@ Actor PersonFlameFire : FlameFire
 {
   Speed 1
   Damage 0
-  Alpha 0.99
+  //Alpha 0.99
   States
   {
    Spawn:
