@@ -144,7 +144,7 @@ ACTOR Rocketeer1_1 : Postal3dMonster
 		RH01 E 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile ("PrldHostileMissile", 48, 8)
 		TNT1 A 0 A_PlaySound("MSSHOT",CHAN_AUTO)
-		TNT1 A 0 A_PlaySound("weapons/rl/dist", 1)
+		TNT1 A 0 A_PlaySound("weapons/rl/dist", CHAN_AUTO)
 		RH01 F 2 BRIGHT
 		RH01 E 12
 		RH01 H 19 //A_PlaySound ("RTAKE",CHAN_AUTO) //barely hearable lmao
