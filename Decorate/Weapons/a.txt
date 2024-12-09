@@ -1,0 +1,2742 @@
+		"####" A 0 A_TakeInventory("PRLD_ExecCop1", 1)
+		"####" A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		"####" A 8 Offset(119, 99)
+        "####" A 0 A_SpawnItem("DeadOfficer1HeadOff1")
+		"####" A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		"####" A 0 A_Jump(256, "ExecutionFinish")
+	ActualPerson_Mcht:
+		"####" F 29
+		"####" A 0 A_StopSound(CHAN_WEAPON)
+		"####" A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		"####" A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		"####" A 0 A_CustomMissile ("PrldGibAvgMale1Head", 24, 0, 0, 2)
+		"####" A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		"####" A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		"####" A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		"####" A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		"####" G 24
+		"####" A 0 A_TakeInventory("PRLD_ExecCop1", 1)
+		"####" A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		"####" A 8
+        "####" A 0 A_SpawnItem("DeadOfficer1HeadOff1")
+		"####" A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		"####" A 0 A_Jump(256, "ExecutionFinish")
+	ActualPerson_MGun:
+		"####" A 0 A_StopSound(CHAN_WEAPON)
+		"####" A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		"####" B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		"####" A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		"####" C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		"####" A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		"####" D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		"####" E 3
+		"####" A 0 A_TakeInventory("PRLD_ExecCop1", 1)
+		"####" A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		"####" A 8
+        "####" A 0 A_SpawnItem("DeadOfficer1_1")
+		"####" A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		"####" A 0 A_Jump(256, "ExecutionFinish")
+	ActualPerson_DB:
+		"####" F 56
+		"####" A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto ActualPerson_Headshot
+		
+		
+		
+	Cop2:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Cop2_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Cop2_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Cop2_DB")
+		POE2 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Cop2_MGun")
+	Cop2_Kick:
+		POE2 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		POE2 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 F 11
+		POE2 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		POE2 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 F 11
+		POE2 F 3
+	Cop2_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_2", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		POE2 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCop2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCop2_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Cop2_Mcht:
+		POE2 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		POE2 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCop2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadOfficer2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Cop2_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE2 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE2 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE2 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE2 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCop2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadOfficer2_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Cop2_DB:
+		POE2 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Cop2_Headshot
+		
+
+	Cop3:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Cop3_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Cop3_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Cop3_DB")
+		POE3 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Cop3_MGun")
+	Cop3_Kick:
+		POE3 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		POE3 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 F 11
+		POE3 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		POE3 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 F 11
+		POE3 F 3
+	Cop3_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		POE3 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCop3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadOfficer3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Cop3_Mcht:
+		POE3 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		POE3 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCop3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadOfficer3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Cop3_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE3 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE3 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE3 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE3 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCop3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadOfficer3_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Cop3_DB:
+		POE3 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Cop3_Headshot
+	
+	
+	
+	
+	Sheriff1:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Sheriff1_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Sheriff1_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Sheriff1_DB")
+		SHE1 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Sheriff1_MGun")
+	Sheriff1_Kick:
+		SHE1 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		SHE1 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 F 11
+		SHE1 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		SHE1 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 F 11
+		SHE1 F 3
+	Sheriff1_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		//TNT1 A 0 A_SpawnItemEx("PRLD_HeadshotGib1", 30, 25, 16, 5)
+		//TNT1 A 0 A_SpawnItemEx("PRLD_HeadshotGib2", 20, 5, 16, 5)
+		//TNT1 A 0 A_SpawnItemEx("PRLD_HeadshotGib3", 15, -5, 16, 5)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		SHE1 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 G 11
+		TNT1 A 0 A_TakeInventory("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadSheriffHeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff1_Mcht:
+		SHE1 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		SHE1 G 24
+		TNT1 A 0 A_TakeInventory("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadSheriffHeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff1_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE1 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE1 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE1 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE1 E 3
+		TNT1 A 0 A_TakeInventory("ExecuteDownedSheriff1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadSheriff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff1_DB:
+		SHE1 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Sheriff1_Headshot
+		
+		
+	Sheriff2:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Sheriff2_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Sheriff2_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Sheriff2_DB")
+		SHE2 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Sheriff2_MGun")
+	Sheriff2_Kick:
+		SHE2 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		SHE2 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 F 11
+		SHE2 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		SHE2 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 F 11
+		SHE2 F 3
+	Sheriff2_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_2", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		SHE2 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadSheriff2_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff2_Mcht:
+		SHE2 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		SHE2 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadSheriff2_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff2_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE2 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE2 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE2 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE2 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadSheriff2_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff2_DB:
+		SHE2 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Sheriff2_Headshot
+		
+		
+	Sheriff3:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Sheriff3_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Sheriff3_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Sheriff3_DB")
+		SHE3 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Sheriff3_MGun")
+	Sheriff3_Kick:
+		SHE3 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		SHE3 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 F 11
+		SHE3 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		SHE3 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 F 11
+		SHE3 F 3
+	Sheriff3_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_2", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		SHE3 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadSheriff3_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff3_Mcht:
+		SHE3 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		SHE3 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadSheriff3_HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff3_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE3 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE3 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		SHE3 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		SHE3 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecSheriff3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadSheriff3_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Sheriff3_DB:
+		SHE3 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Sheriff3_Headshot
+		
+		
+		
+		
+	VestCop1:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "VestCop1_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "VestCop1_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "VestCop1_DB")
+		POE4 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "VestCop1_MGun")
+	VestCop1_Kick:
+		POE4 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		POE4 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 F 11
+		POE4 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		POE4 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 F 11
+		POE4 F 3
+	VestCop1_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		POE4 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadVestCop1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop1_Mcht:
+		POE4 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		POE4 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadVestCop1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop1_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE4 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE4 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE4 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE4 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadVestCop1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop1_DB:
+		POE4 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto VestCop1_Headshot
+		
+		
+	VestCop2:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "VestCop2_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "VestCop2_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "VestCop2_DB")
+		POE5 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "VestCop2_MGun")
+	VestCop2_Kick:
+		POE5 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		POE5 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 F 11
+		POE5 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		POE5 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 F 11
+		POE5 F 3
+	VestCop2_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_2", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		POE5 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadVestCop2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop2_Mcht:
+		POE5 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		POE5 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadVestCop2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop2_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE5 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE5 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE5 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE5 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadVestCop2_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop2_DB:
+		POE5 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto VestCop2_Headshot
+		
+		
+	VestCop3:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "VestCop3_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "VestCop3_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "VestCop3_DB")
+		POE6 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "VestCop3_MGun")
+	VestCop3_Kick:
+		POE6 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		POE6 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 F 11
+		POE6 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		POE6 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 F 11
+		POE6 F 3
+	VestCop3_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_3", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_3", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		POE6 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadVestCop3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop3_Mcht:
+		POE6 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		POE6 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadVestCop3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop3_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE6 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE6 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		POE6 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		POE6 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecVestCop3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadVestCop3_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	VestCop3_DB:
+		POE6 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto VestCop3_Headshot
+		
+		
+		
+		
+		
+	Civilian1:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian1_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian1_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian1_DB")
+		CE01 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian1_MGun")
+	Civilian1_Kick:
+		CE01 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		CE01 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 F 11
+		CE01 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		CE01 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 F 11
+		CE01 F 3
+	Civilian1_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE01 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian1_Mcht:
+		CE01 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE01 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian1_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE01 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE01 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE01 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE01 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian1_DB:
+		CE01 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian1_Headshot
+		
+		
+	Civilian2:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian2_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian2_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian2_DB")
+		CE02 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian2_MGun")
+	Civilian2_Kick:
+		CE02 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+
+		CE02 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 F 11
+		CE02 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+		
+		CE02 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 F 11
+		CE02 F 3
+	Civilian2_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE02 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian2_Mcht:
+		CE02 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibFem1Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE02 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian2HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian2_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE02 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE02 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE02 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE02 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian2", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian2_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian2_DB:
+		CE02 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian2_Headshot
+		
+		
+	Civilian3:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian3_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian3_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian3_DB")
+		CE03 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian3_MGun")
+	Civilian3_Kick:
+		CE03 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		CE03 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 F 11
+		CE03 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		CE03 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 F 11
+		CE03 F 3
+	Civilian3_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_2", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE03 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian3_Mcht:
+		CE03 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE03 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian3HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian3_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE03 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE03 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE03 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE03 E 3
+		TNT1 A 0 A_TakeInventory("ExecuteDownedCivilian3", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian3_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian3_DB:
+		CE03 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian3_Headshot		
+		
+
+	Civilian4:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian4_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian4_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian4_DB")
+		CE04 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian4_MGun")
+	Civilian4_Kick:
+		CE04 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		CE04 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 F 11
+		CE04 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		CE04 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 F 11
+		CE04 F 3
+	Civilian4_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_3", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_3", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE04 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian4", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian4HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian4_Mcht:
+		CE04 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE04 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian4", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian4HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian4_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE04 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE04 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE04 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE04 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian4", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian4_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian4_DB:
+		CE04 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian4_Headshot	
+		
+		
+	Civilian5:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian5_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian5_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian5_DB")
+		CE05 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian5_MGun")
+	Civilian5_Kick:
+		CE05 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		CE05 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 F 11
+		CE05 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		CE05 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 F 11
+		CE05 F 3
+	Civilian5_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE05 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian5", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian5HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian5_Mcht:
+		CE05 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE05 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian5", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian5HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian5_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE05 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE05 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE05 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE05 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian5", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian5_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian5_DB:
+		CE05 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian5_Headshot	
+		
+		
+	Civilian6:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian6_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian6_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian6_DB")
+		CE06 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian6_MGun")
+	Civilian6_Kick:
+		CE06 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		CE06 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 F 11
+		CE06 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		CE06 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 F 11
+		CE06 F 3
+	Civilian6_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_2", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE06 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian6", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian6HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian6_Mcht:
+		CE06 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale2Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE06 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian6", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian6HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian6_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE06 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE06 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE06 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE06 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian6", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian6_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian6_DB:
+		CE06 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian6_Headshot	
+		
+		
+	Civilian7:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian7_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian7_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian7_DB")
+		CE07 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian7_MGun")
+	Civilian7_Kick:
+		CE07 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		CE07 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 F 11
+		CE07 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		CE07 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 F 11
+		CE07 F 3
+	Civilian7_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_3", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_3", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE07 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian7", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian7HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian7_Mcht:
+		CE07 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibMale3Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE07 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian7", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian7HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian7_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE07 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE07 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE07 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE07 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian7", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian7_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian7_DB:
+		CE07 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian7_Headshot	
+		
+		
+	Civilian8:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian8_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian8_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian8_DB")
+		CE08 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian8_MGun")
+	Civilian8_Kick:
+		CE08 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+
+		CE08 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 F 11
+		CE08 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+		
+		CE08 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 F 11
+		CE08 F 3
+	Civilian8_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_2", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE08 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian8", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian8HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian8_Mcht:
+		CE08 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibFem2Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE08 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian8", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian8HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian8_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE08 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE08 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE08 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE08 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian8", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian8_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian8_DB:
+		CE08 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian8_Headshot
+		
+		
+	Civilian9:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian9_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian9_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian9_DB")
+		CE09 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian9_MGun")
+	Civilian9_Kick:
+		CE09 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+
+		CE09 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 F 11
+		CE09 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+		
+		CE09 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 F 11
+		CE09 F 3
+	Civilian9_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_3", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_3", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE09 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian9", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian9HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian9_Mcht:
+		CE09 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibFem3Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE09 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian9", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian9HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian9_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE09 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE09 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE09 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE09 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian9", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian9_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian9_DB:
+		CE09 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian9_Headshot
+		
+		
+	Civilian10:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian10_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian10_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian10_DB")
+		CE10 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian10_MGun")
+	Civilian10_Kick:
+		CE10 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+
+		CE10 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 F 11
+		CE10 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+		
+		CE10 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 F 11
+		CE10 F 3
+	Civilian10_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE10 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian10", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian10HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian10_Mcht:
+		CE10 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibFem1Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE10 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian10", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian10HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian10_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE10 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE10 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE10 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE10 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian10", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian10_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian10_DB:
+		CE10 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian10_Headshot
+		
+		
+	Civilian11:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian11_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian11_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian11_DB")
+		CE11 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian11_MGun")
+	Civilian11_Kick:
+		CE11 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+
+		CE11 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 F 11
+		CE11 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+		
+		CE11 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 F 11
+		CE11 F 3
+	Civilian11_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_2", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE11 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian11", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian11HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian11_Mcht:
+		CE11 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibFem2Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE11 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian11", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian11HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian11_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE11 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE11 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE11 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE11 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian11", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian11_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian11_DB:
+		CE11 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian11_Headshot
+		
+		
+	Civilian12:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Civilian12_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Civilian12_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Civilian12_DB")
+		CE12 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Civilian12_MGun")
+	Civilian12_Kick:
+		CE12 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+
+		CE12 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 F 11
+		CE12 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor7Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act3_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act7_pain", CHAN_WEAPON)
+		
+		CE12 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 F 11
+		CE12 F 3
+	Civilian12_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1_3", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2_3", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		CE12 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian12", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadCivilian12HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian12_Mcht:
+		CE12 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibFem3Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		CE12 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian12", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian12HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian12_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE12 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE12 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		CE12 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		CE12 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecCivilian12", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadCivilian12_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Civilian12_DB:
+		CE12 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Civilian12_Headshot
+		
+		
+		
+		
+		
+	Grenader1:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Grenader1_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Grenader1_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Grenader1_DB")
+		GE01 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Grenader1_MGun")
+	Grenader1_Kick:
+		GE01 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		GE01 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 F 11
+		GE01 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		GE01 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 F 11
+		GE01 F 3
+	Grenader1_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		GE01 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecGrenader1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadGrenader1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Grenader1_Mcht:
+		GE01 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibSheriffHead", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		GE01 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecGrenader1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadGrenader1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Grenader1_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		GE01 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		GE01 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		GE01 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		GE01 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecGrenader1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadGrenader1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Grenader1_DB:
+		GE01 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Grenader1_Headshot
+		
+		
+		
+		
+		
+	Rocketeer1:
+		TNT1 A 0 A_JumpIfInventory("PRLD_KickExec", 1, "Rocketeer1_Kick")
+		TNT1 A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "Rocketeer1_Mcht")
+		TNT1 A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "Rocketeer1_DB")
+		RE01 A 46
+		TNT1 A 0 A_JumpIfInventory("M12ExecShotToken", 1, "Rocketeer1_MGun")
+	Rocketeer1_Kick:
+		RE01 F 29
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+
+		RE01 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 F 11
+		RE01 F 3
+		
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor2Exec", 1, 11)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 15)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 18)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 21)
+		TNT1 A 0 A_PlaySound("act1_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 20)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor4Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 12)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 15)
+		TNT1 A 0 A_PlaySound("act2_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 14)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor5Exec", 1, 7)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 10)
+		TNT1 A 0 A_PlaySound("act4_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 9)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor6Exec", 1, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 6)
+		TNT1 A 0 A_PlaySound("act5_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 5)
+		TNT1 A 0 A_JumpIfInventory("PRLD_Actor8Exec", 1, 3)
+		TNT1 A 0 A_PlaySound("act6_pain", CHAN_WEAPON)
+		TNT1 A 0 A_Jump(256, 2)
+		TNT1 A 0 A_PlaySound("act8_pain", CHAN_WEAPON)
+		
+		RE01 F 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 F 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 F 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 F 11
+		RE01 F 3
+	Rocketeer1_Headshot:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib1", 24, Random(0, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib2", 24, Random(2, 3), Random(-3.0,3.0), 2, Random(-3.0,3.0))
+		TNT1 A 0 A_CustomMissile ("PRLD_HeadshotGib3", 24, 3, FRandom(-3.0,3.0), 2, Random(-3.0,3.0))
+		RE01 G 1 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 G 2 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 G 3 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 G 11
+		TNT1 A 0 A_TakeInventory("PRLD_ExecRocketeer1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8 Offset(119, 99)
+        TNT1 A 0 A_SpawnItem("DeadRocketeer1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Rocketeer1_Mcht:
+		RE01 F 29
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("misc/gibbed", CHAN_AUTO)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 10, -5, 32)
+		TNT1 A 0 A_CustomMissile ("PrldGibGrenader1Head", 24, 0, 0, 2)
+		TNT1 A 0 A_GiveInventory("PRLD_BloodyWeapons", 1)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 30, 25, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 20, 5, 16)
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying", 15, -5, 16)
+		RE01 G 24
+		TNT1 A 0 A_TakeInventory("PRLD_ExecRocketeer1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadRocketeer1HeadOff1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Rocketeer1_MGun:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		RE01 B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		RE01 C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		RE01 D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		RE01 E 3
+		TNT1 A 0 A_TakeInventory("PRLD_ExecRocketeer1", 1)
+		TNT1 A 0 A_TakeInventory("ExecuteDownedEnemy", 1)
+		TNT1 A 8
+        TNT1 A 0 A_SpawnItem("DeadRocketeer1_1")
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		
+		TNT1 A 0 A_Jump(256, "ExecutionFinish")
+	Rocketeer1_DB:
+		RE01 F 56
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
+		Goto Rocketeer1_Headshot

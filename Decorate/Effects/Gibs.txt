@@ -1641,86 +1641,102 @@ Scale 0.75
 		C1GS A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
         Loop
     Death:
-		TNT1 A 0
+		TNT1 A 0  A_SetRoll(0)
 		C1GS A -1
 		Stop
     }
 }
 
-actor Cop1Gib1 : PRLD_HeadshotGib1
+actor Cop1Gib1 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        C1GS B 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS B -1
 		Stop
     }
 }
 
-actor Cop1Gib2 : PRLD_HeadshotGib1
+actor Cop1Gib2 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS C 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS C -1
 		Stop
     }
 }
 
-actor Cop1Gib3 : PRLD_HeadshotGib1
+actor Cop1Gib3 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS D 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS D -1
 		Stop
     }
 }
 
-actor Cop1Gib4 : PRLD_HeadshotGib1
+actor Cop1Gib4 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+        C1GS E 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
-    Death:
+     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS E -1
 		Stop
@@ -1728,60 +1744,72 @@ Scale 0.75
 }
 
 
-actor Cop1Gib5 : PRLD_HeadshotGib1
+actor Cop1Gib5 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS F 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS F -1
 		Stop
     }
 }
 
-actor Cop1Gib6 : PRLD_HeadshotGib1
+actor Cop1Gib6 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS G 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS G -1
 		Stop
     }
 }
 
-actor Cop1Gib7 : PRLD_HeadshotGib1
+actor Cop1Gib7 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS H 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS H 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS H 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS H 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS H 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS H -1
 		Stop
@@ -1789,199 +1817,234 @@ Scale 0.75
 }
 
 
-actor Cop1Gib8 : PRLD_HeadshotGib1
+actor Cop1Gib8 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS I 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS I 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS I 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS I 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS I 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS I -1
 		Stop
     }
 }
 
-actor Cop1Gib9 : PRLD_HeadshotGib1
+actor Cop1Gib9 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS J 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS J 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS J 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS J 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS J 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
-    Death:
+     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS J -1
 		Stop
     }
 }
 
-actor Cop1Gib10 : PRLD_HeadshotGib1
+actor Cop1Gib10 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS K 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS K 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS K 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS K 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS K 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS K -1
 		Stop
     }
 }
 
-actor Cop1Gib11 : PRLD_HeadshotGib1
+actor Cop1Gib11 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS L 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS L 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS L 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS L 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS L 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS L -1
 		Stop
     }
 }
-actor Cop1Gib12 : PRLD_HeadshotGib1
+actor Cop1Gib12 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS M 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS M 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS M 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS M 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS M 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS M -1
 		Stop
     }
 }
 
-actor Cop1Gib13 : PRLD_HeadshotGib1
+actor Cop1Gib13 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS N 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS N 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS N 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS N 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS N 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS N -1
 		Stop
     }
 }
 
-actor Cop1Gib14 : PRLD_HeadshotGib1
+actor Cop1Gib14 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS O 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS O 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS O 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS O 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS O 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS O -1
 		Stop
     }
 }
 
-actor Cop1Gib15 : PRLD_HeadshotGib1
+actor Cop1Gib15 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS P 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS P 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS P 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS P 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS P 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS P -1
 		Stop
     }
 }
 
-actor Cop1Gib16 : PRLD_HeadshotGib1
+actor Cop1Gib16 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS Q 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS Q 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS Q 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS Q 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS Q 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS Q -1
 		Stop
     }
 }
 
-actor Cop1Gib17 : PRLD_HeadshotGib1
+actor Cop1Gib17 : PrldGib
 {
 Scale 0.75
     States
     {
     Fly:
-        C1GS R 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS R 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS R 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		C1GS R 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
-		TNT1 A 0 A_CustomMissile ("PRLD_BloodFlying", 0, 0, random (0, 360), 0, random (0, 40))
+         C1GS R 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
         Loop
     Death:
+	    TNT1 A 0
 		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)		TNT1 A 0 A_SetRoll(0)
 		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
 		C1GS R -1
 		Stop
@@ -2002,11 +2065,6 @@ Actor Cop1GibSpawner
 		TNT1 A 0
 		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("PRLD_BloodMist",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
 		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("FxBloodDrip",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
-		TNT1 AA 0 A_SpawnItemEx("GibGeneric1",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
-		TNT1 AA 0 A_SpawnItemEx("GibGeneric2",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
-		TNT1 AA 0 A_SpawnItemEx("GibGeneric3",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
-		TNT1 AA 0 A_SpawnItemEx("GibGeneric4",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
-		TNT1 AA 0 A_SpawnItemEx("GibGeneric5",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
 		TNT1 A 0 A_SpawnItemEx("CopGibHat",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
 		TNT1 A 0 A_SpawnItemEx("Cop1Gib1",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
 		TNT1 A 0 A_SpawnItemEx("Cop1Gib2",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
@@ -2025,7 +2083,8 @@ Actor Cop1GibSpawner
 		TNT1 A 0 A_SpawnItemEx("Cop1Gib15",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
 		TNT1 A 0 A_SpawnItemEx("Cop1Gib16",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
 		TNT1 A 0 A_SpawnItemEx("Cop1Gib17",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
-		TNT1 A 0 A_SpawnItemEx("Cop1Gib18",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0
+		TNT1 A 0
 		Stop
 	}
 }
