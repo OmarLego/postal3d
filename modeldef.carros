@@ -82,6 +82,15 @@ MODEL PRLD_CarBroke
    
 	FrameIndex BRLS B 0 0
 }
+MODEL PRLD_CarBrokeP
+{
+	Path "Models/Cars"
+	Model 0 "car.md3"
+	Skin 0 "carbroke.png"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS B 0 0
+}
 
 
 

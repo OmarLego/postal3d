@@ -109,6 +109,18 @@ Actor PRLD_CarBroke
 		Stop	
 	}
 }
+actor PRLD_CarBrokeP : PRLD_CarBroke //placed
+{
+	States
+	{
+	Spawn:
+        BRLS B 1
+		TNT1 A 0 A_SpawnItemEx("CarColision1", -97)
+		TNT1 A 0 A_SpawnItemEx("CarColision2", -60)
+        BRLS B -1
+		Stop
+	}
+}
 
 ACTOR PRLD_Car2 : PRLD_Car1
 {

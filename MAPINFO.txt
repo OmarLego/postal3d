@@ -62,6 +62,8 @@ DoomEdNums
 	15022 = SprayCannon
 	15023 = PipeBombWeap
 	15024 = GGrenade
+	2010 = RKReplacer
+	15040 = 1Missile
 	
 	//Monsters
 	//hostiles
@@ -113,7 +115,7 @@ DoomEdNums
 	10038 = PRLD_Car6
 	10039 = PRLD_Car7
 	15014 = PRLD_Car8
-	15039 = PRLD_CarBroke
+	15039 = PRLD_CarBrokeP
 	
 	//destructable (combined with actual map stuff)
 	10016 = PRLD_FenceDestruct
