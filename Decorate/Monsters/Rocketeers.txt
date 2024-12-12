@@ -245,20 +245,15 @@ ACTOR Rocketeer1_1 : Postal3dMonster
         TNT1 A 0 A_SpawnItem("DeadRocketeer1HeadOff2")
 		TNT1 A -1
     DieX:
-		TNT1 A 0
+		C1GS S 1 A_PlaySound ("misc/gibbed",CHAN_AUTO)
+		C1GS S 2 A_SpawnItemEx("PRLD_BloodSplashBoom",1,1,1)
 		TNT1 A 0 A_CustomMissile("EmptyRLSpawner", 38, 0, random(-11, 11), 0)
-		TNT1 A 0 A_CustomMissile ("PrldGibGlasses", 52, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_CustomMissile ("PrldGibRocketeerHat", 48, 0, random (0, 360), 2, random (0, 160))
-        TNT1 A 0 A_CustomMissile ("PrldGibGrenader1Head", 48, 0, random (0, 360), 2, random (0, 160))
-		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("RocketeerGibSpawner",0,0,50,0,0,0,0,2)
 		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,50,0,0,0,0,2)
 		TNT1 A 0 A_SetScale(0.55,0.55)
-        AXZ5 BCDEFG 4
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
-		AXZ5 H 70
-		//TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160)) 
-		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
-		AXZ5 H -1
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A -1
 	DieCrawl:
 		TNT1 A 0
 		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 26)

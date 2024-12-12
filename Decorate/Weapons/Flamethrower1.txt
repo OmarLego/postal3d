@@ -833,3 +833,100 @@ Reverse:
     Stop
   }
 }
+
+Actor PersonFlameFireSmall : FlameFire
+{
+  Speed 1
+  Damage 0
+  States
+  {
+   Spawn:
+    TNT1 A 0
+    TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)	
+	
+	TNT1 A 0 A_SetScale(0.2)
+	TNT1 A 0 A_Jump(128, "reverse")
+	FIR3 A 1 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetScale(0.5)
+	TNT1 A 0
+	FIR3 A 1 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	TNT1 A 0 A_SetScale(0.2)
+	FIR3 A 1 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetScale(0.5)
+	TNT1 A 0
+	FIR3 A 1 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	TNT1 A 0 A_SetScale(0.2)
+	FIR3 A 1 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetScale(0.5)
+	FIR3 A 1 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	TNT1 A 0 A_SetScale(0.2)
+	FIR3 A 1 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetScale(0.5)
+	FIR3 A 1 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 A 2 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	FIR3 A 2 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 A 2 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	FIR3 A 2 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	FIR3 B 2 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	FIR3 B 2 Bright A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	FIR3 C 2 A_FadeOut(0.2)
+	TNT1 A 0 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+	FIR3 C 2 A_FadeOut(0.5)
+    Stop
+Reverse:
+	FIR3 A 1 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetScale(0.2)
+	TNT1 A 0
+	FIR3 A 1 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	TNT1 A 0 A_SetScale(0.5)
+	FIR3 A 1 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetScale(0.2)
+	TNT1 A 0
+	FIR3 A 1 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	TNT1 A 0 A_SetScale(0.5)
+	FIR3 A 1 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetScale(0.2)
+	FIR3 A 1 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	TNT1 A 0 A_SetScale(0.5)
+	FIR3 A 1 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetScale(0.2)
+	FIR3 A 1 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 A 2 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	FIR3 A 2 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	
+	FIR3 A 2 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	FIR3 A 2 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SpawnItemEx("SmokeSpawner",0,0,0,+random(-3,3),+random(-3,3),8+random(-4,2),0,SXF_CLIENTSIDE)
+	FIR3 B 2 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	FIR3 B 2 Bright A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	TNT1 A 0 A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	FIR3 C 2 A_FadeOut(0.5)
+	TNT1 A 0 A_SetRoll(roll + 10, SPF_INTERPOLATE)
+	FIR3 C 2 A_FadeOut(0.2)
+    Stop
+  Death:
+	TNT1 A 0
+    Stop
+  }
+}

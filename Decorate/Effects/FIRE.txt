@@ -207,6 +207,9 @@ Reverse:
 	Stop
   }
 }
+
+
+
 Actor ExplodeFlameFireG : ExplodeFlameFire
 {
   Scale 0.1
