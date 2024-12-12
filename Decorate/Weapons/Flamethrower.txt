@@ -747,6 +747,7 @@ Actor PersonFlameFire : FlameFire
   Speed 1
   Damage 0
   //Alpha 0.99
+  Alpha 0.83
   States
   {
    Spawn:
