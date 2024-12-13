@@ -4897,3 +4897,383 @@ Actor ThrowerGibSpawner
 	
 	}
 }
+
+//MINORS!!!!!!//
+
+actor MinerGib1 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB B 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB B -1
+		Stop
+    }
+}
+
+actor MinerGib2 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB C 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB C -1
+		Stop
+    }
+}
+
+actor MinerGib3 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB D 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB D -1
+		Stop
+    }
+}
+
+actor MinerGib4 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB E 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB E -1
+		Stop
+    }
+}
+
+actor MinerGib5 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		MNGB F -1
+		Stop
+    }
+}
+
+actor MinerGib6 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB G 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB G -1
+		Stop
+    }
+}
+
+actor MinerGib7 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB H 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB H -1
+		Stop
+    }
+}
+
+actor MinerGib8 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB I 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB I -1
+		Stop
+    }
+}
+
+actor MinerGib9 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB J 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB J -1
+		Stop
+    }
+}
+
+actor MinerGib10 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB K 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB K -1
+		Stop
+    }
+}
+
+actor MinerGib11 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB L 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB L -1
+		Stop
+    }
+}
+
+actor MinerGib12 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB M 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB M -1
+		Stop
+    }
+}
+
+actor MinerGib13 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB N 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB N -1
+		Stop
+    }
+}
+
+actor MinerGib14 : PrldGib
+{
+Scale 0.75
+    States
+    {
+    Fly:
+        MNGB O 1
+		{
+		A_SetRoll(roll - 10, SPF_INTERPOLATE);
+		A_SpawnItemEx("PRLD_BloodTrailSmall",0,0,0,0,0,0,0);
+	    A_CustomMissile ("FxloodFlying", 0, 0, random (0, 360), 0, random (0, 40));
+		}
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound ("HEDBON",chan_auto)
+		TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		MNGB O -1
+		Stop
+    }
+}
+
+Actor MinerGibSpawner
+{
+	Radius 5
+	Height 10
+	+NOCLIP
+	+NOGRAVITY
+	-SOLID
+	+NOBLOCKMAP
+	States
+	{
+		Spawn:
+		TNT1 A 0
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("PRLD_BloodMist",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("FxBloodDrip",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("GibGeneric1",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("GibGeneric2",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 AAA 0 A_SpawnItemEx("GibGeneric3",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 AA 0 A_SpawnItemEx("GibGeneric4",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("GibGeneric5",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 AAA 0 A_SpawnItemEx("GibGeneric6",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 AA 0 A_SpawnItemEx("GibGeneric7",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 AA 0 A_SpawnItemEx("GibGeneric8",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("GibGeneric9",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("GibGeneric10",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib1",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib2",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib3",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib4",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib5",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib6",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib7",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib8",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib9",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib10",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib11",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib12",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib13",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MinerGib14",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("PrldGrenade2Explosion",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("PrldGrenade2Explosion",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("PrldGrenade2Explosion",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("PrldGrenade2Explosion",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+	    TNT1 A 0
+		TNT1 A 0
+		Stop
+	
+	}
+}
