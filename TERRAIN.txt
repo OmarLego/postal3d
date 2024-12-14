@@ -591,6 +591,8 @@ floor HMESNW3 Snow
 floor HMWOD1 Wood
 floor HMERD1 gDirt
 floor PODRD1 gDirt
+floor JYDRD1 gDirt
+floor JYDRD2 gDirt
 floor HMEWD6 Wood
 floor HMEWD14 Wood
 
