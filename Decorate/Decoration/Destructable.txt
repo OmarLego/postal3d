@@ -224,15 +224,15 @@ ACTOR Tire //13376
 	Painchance	0
 	Scale		0.5
 
-	//-SOLID
+	-SOLID
 	+DONTSPLASH
 	Species "Enemy"
 	+THRUSPECIES
 	DamageFactor "Bowling",0
 	DamageFactor "CollisionChk",0
 	//added
-	+NOGRAVITY
-	+SOLID
+	//+NOGRAVITY
+	//+SOLID
 	States
 	{
 		Spawn:
@@ -309,7 +309,7 @@ ACTOR TireStack //13377
 	Species "Enemy"*/
 	
 	//added
-	+NOGRAVITY
+	//+NOGRAVITY
 	States
 	{
 		Spawn:
