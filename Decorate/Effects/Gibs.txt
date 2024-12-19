@@ -6136,3 +6136,260 @@ Actor SWATGibSpawner
 		Stop
 	}
 }
+
+
+
+///Molotov shards///
+
+actor MolGib1 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD A 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD A -1
+		Stop
+    }
+}
+
+actor MolGib2 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD B 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD B -1
+		Stop
+    }
+}
+
+actor MolGib3 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD C -1
+		Stop
+    }
+}
+
+actor MolGib4 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD D 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD D -1
+		Stop
+    }
+}
+
+actor MolGib5 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD E 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD E -1
+		Stop
+    }
+}
+
+actor MolGib6 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD F 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD F -1
+		Stop
+    }
+}
+
+actor MolGib7 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD G 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD G -1
+		Stop
+    }
+}
+
+actor MolGib8 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD H 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD H -1
+		Stop
+    }
+}
+
+actor MolGib9 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD I 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD I -1
+		Stop
+    }
+}
+
+actor MolGib10 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+    States
+    {
+    Fly:
+        SHRD J 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD J -1
+		Stop
+    }
+}
+
+actor MolGib11 : PrldGib
+{
+Scale 1
+BounceFactor 0.4
+wallbouncefactor 0.4
+Bouncecount 2
+
+
+
+
+    States
+    {
+    Fly:
+        SHRD K 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+	    TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_SetRoll(0)
+		SHRD K -1
+		Stop
+    }
+}
+
+Actor MolShardSpawner
+{
+	Radius 5
+	Height 10
+	+NOCLIP
+	+NOGRAVITY
+	-SOLID
+	+NOBLOCKMAP
+	States
+	{
+		Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("MolGib1",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MolGib2",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MolGib3",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MolGib4",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MolGib5",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MolGib6",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MolGib7",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MolGib8",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0 A_SpawnItemEx("MolGib9",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MolGib10",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("MolGib11",random(-14,14),random(-14,14),random(-10,10),random(-7,7),random(-7,7),random(0,10),random(0,360),2,20)
+		TNT1 A 0
+		TNT1 A 0
+		Stop
+	}
+}
