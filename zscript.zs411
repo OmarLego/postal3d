@@ -1,0 +1,5 @@
+version "4.11"
+
+#include "rainsnow/weather/include.zs"
+#include "rainsnow/rainandsnow.zs"
+#include "rainsnow/patternhandler.zs"

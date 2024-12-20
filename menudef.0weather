@@ -1,0 +1,37 @@
+OptionValue "WeatherPrecipitationAmount"
+{
+	0.0, "$OPTVAL_OFF"
+	1.0, "$OPTVAL_LOW"
+	2.0, "$OPTVAL_MEDIUM"
+	3.0, "$OPTVAL_HIGH"
+	4.0, "$OPTVAL_EXTREME"
+}
+
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "$WTHRMNU_TITLE", "WeatherOptions"
+}
+
+AddOptionMenu "OptionsMenuSimple"
+{
+	Submenu "$WTHRMNU_TITLE", "WeatherOptions"
+}
+
+OptionMenu "WeatherOptions"
+{
+	Title "$WTHRMNU_TITLE"
+	
+	StaticText "$WTHRMNU_SETTINGS", Gold
+	StaticText ""
+	
+	Option "$WTHRMNU_AMOUNT", "weather_amount", "WeatherPrecipitationAmount"
+	StaticText ""
+	
+	Slider "$WTHRMNU_PRECIPVOL", "weather_precip_vol", 0.0, 1.0, 0.05, 2
+	Slider "$WTHRMNU_WINDVOL", "weather_wind_vol", 0.0, 1.0, 0.05, 2
+	Slider "$WTHRMNU_THUNDERVOL", "weather_thunder_vol", 0.0, 1.0, 0.05, 2
+	StaticText ""
+	
+	Option "$WTHRMNU_LIGHTNING", "weather_no_lightning", "OnOff"
+	Option "$WTHRMNU_FOG", "weather_no_fog", "OnOff"
+}

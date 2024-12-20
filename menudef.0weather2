@@ -1,0 +1,34 @@
+OptionValue "WeatherType"
+{
+	0, "$OPTVAL_SUNNY"
+	1, "$OPTVAL_RAIN"
+	2, "$OPTVAL_SNOW"
+	3, "$OPTVAL_BLRAIN"
+	4, "$OPTVAL_ASH"
+}
+
+OptionValue "WeatherIntensity"
+{
+	0, "$OPTVAL_LIGHT"
+	1, "$OPTVAL_MOD"
+	2, "$OPTVAL_HEAVY"
+}
+
+AddOptionMenu "WeatherOptions"
+{
+	StaticText ""
+	StaticText "$WTHRMNU_CONTROLS", Gold
+	StaticText ""
+	
+	Option "$WTHRMNU_TYPE", "rs_weather", "WeatherType"
+	Option "$WTHRMNU_INTENSITY", "rs_intensity", "WeatherIntensity"
+	StaticText ""
+	
+	Control "$WTHRMNU_NEXTWTHR", "netevent NextWeather"
+	Control "$WTHRMNU_PREVWTHR", "netevent PrevWeather"
+	Control "$WTHRMNU_NEXTINTEN", "netevent NextIntensity"
+	Control "$WTHRMNU_PREVINTEN", "netevent PrevIntensity"
+	
+	StaticText ""
+	Option "$WTHRMNU_DISABLEPATTERNS", "rs_disablepatterns", "OnOff"
+}

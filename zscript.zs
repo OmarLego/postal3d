@@ -7,7 +7,9 @@ version "3.7.2"
 /*#include "ZScript/weather/weatherhandler.txt"
 #include "ZScript/weather/weather.txt"
 #include "ZScript/weather/precipitation.txt"
-#include "ZScript/weather/rainandsnow.txt"*///shit broke so i have to make patches for either version of gzdoom
+#include "ZScript/weather/rainandsnow.txt"*/
+//uncomment above and delete the "zscript.zs411" file if using with a gzdoom version below 4.11
+
 
 
 // QuakeMove

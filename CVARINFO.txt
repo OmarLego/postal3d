@@ -11,6 +11,8 @@ user bool weather_no_lightning = false;
 //rain and snow specific
 user int rs_weather = 0;
 user int rs_intensity = 0;
+//4.11 update
+user bool rs_disablepatterns = false;
 
 //Footsteps
 server float fs_volume_mul = 1.0;
@@ -173,4 +175,4 @@ user bool ddo_accudmg;
 user bool ddo_selfinpa = true;
 user bool ddo_noshadow;
 user int ddo_font = 2;
-user int ddo_scale = 2;
+user int ddo_scale = 4;

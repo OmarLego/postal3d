@@ -34,6 +34,10 @@ gameinfo
 	//el damage direction
 	AddEventHandlers = "DmgDirOvEH"
 	TitleMusic = "D_DM2TTL"
+	
+	//if playing with gzdoom versions older than 4.11, delete the 2 lines below
+	AddEventHandlers = "WeatherPatternHandler"
+	Intro {video = "Movies/PRLDINTRO.ivf" sound = "Movies/PRLDINTRO"}
 }
 
 //-------------------------------------------------------------------------------------------

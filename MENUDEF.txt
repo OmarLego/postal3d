@@ -56,7 +56,7 @@ OptionValue "WeatherPrecipitationAmount"
 	4, "Very High"
 }
 
-OptionValue "WeatherType"
+/*OptionValue "WeatherType"
 {
 	0, "Sunny"
 	1, "Rain"
@@ -70,7 +70,7 @@ OptionValue "WeatherIntensity"
 	0, "Light"
 	1, "Moderate"
 	2, "Heavy"
-}
+}*/
 
 optionValue "DDODispType"
 {

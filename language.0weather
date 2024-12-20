@@ -1,0 +1,57 @@
+[enu default]
+
+// Menu
+
+WTHRMNU_TITLE = "Weather Options";
+
+WTHRMNU_SETTINGS = "Weather Settings";
+
+WTHRMNU_AMOUNT = "Precipitation Amount";
+WTHRMNU_PRECIPVOL = "Precipitation Volume";
+WTHRMNU_WINDVOL = "Wind Volume";
+WTHRMNU_THUNDERVOL = "Thunder Volume";
+WTHRMNU_LIGHTNING = "Disable Lightning";
+WTHRMNU_FOG = "Disable Fog";
+
+// In-game messages
+
+WTHR_SUNNY = "Sunny";
+
+WTHR_LIGHTRAIN = "Drizzle";
+WTHR_RAIN = "Rainy";
+WTHR_HEAVYRAIN = "Thunderstorm";
+
+WTHR_LIGHTSNOW = "Flurry";
+WTHR_SNOW = "Snowy";
+WTHR_HEAVYSNOW = "Blizzard";
+
+WTHR_LIGHTBLOOD = "Approaching Storm";
+WTHR_BLOOD = "Downpour";
+WTHR_HEAVYBLOOD = "Hell";
+
+WTHR_LIGHTASH = "Abandoned";
+WTHR_ASH = "Melancholic";
+WTHR_HEAVYASH = "Volcanic";
+
+// Menu
+
+WTHRMNU_CONTROLS = "Rain and Snow Controls";
+
+WTHRMNU_TYPE = "Weather Type";
+WTHRMNU_INTENSITY = "Weather Intensity";
+WTHRMNU_NEXTWTHR = "Next Weather";
+WTHRMNU_PREVWTHR = "Previous Weather";
+WTHRMNU_NEXTINTEN = "Next Intensity";
+WTHRMNU_PREVINTEN = "Previous Intensity";
+
+WTHRMNU_DISABLEPATTERNS = "Disable Weather Patterns";
+
+OPTVAL_SUNNY = "Sunny";
+OPTVAL_RAIN = "Rain";
+OPTVAL_SNOW = "Snow";
+OPTVAL_BLRAIN = "Blood Rain";
+OPTVAL_ASH = "Ash";
+
+OPTVAL_LIGHT = "Light";
+OPTVAL_MOD = "Moderate";
+OPTVAL_HEAVY = "Heavy";
