@@ -81,7 +81,7 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.StartItem "Magazine6", 15
 	Player.StartItem "Molotov",1
 	Player.StartItem "PipeBombWeap",1
-	//Player.StartItem "Grenadee", 3
+	Player.StartItem "Grenadee", 3
 	Player.StartItem "Molotovv",1
 	Player.StartItem "PB",1
 	Player.StartItem "DBMag", 2
