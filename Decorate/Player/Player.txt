@@ -77,11 +77,11 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.StartItem "Magazine10", 1
 	Player.StartItem "Magazine11", 1
 	Player.StartItem "Magazine12", 1
-	Player.StartItem "GGrenade",1
+	//Player.StartItem "GGrenade",1
 	Player.StartItem "Magazine6", 15
 	Player.StartItem "Molotov",1
 	Player.StartItem "PipeBombWeap",1
-	Player.StartItem "Grenadee", 3
+	//Player.StartItem "Grenadee", 3
 	Player.StartItem "Molotovv",1
 	Player.StartItem "PB",1
 	Player.StartItem "DBMag", 2
@@ -91,7 +91,7 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
     Player.WeaponSlot 1, "Machete"
     Player.Weaponslot 2, "PRLD_M12", "MP5K", "Magnum"
     Player.Weaponslot 3, "DoubleBarrel", "PRLD_LeverAction"
-    Player.Weaponslot 4, "PRLD_M16", "Spraycannon", "Machinegun"
+    Player.Weaponslot 4, "PRLD_M16", "Spraycannon"//, "Machinegun"
     Player.Weaponslot 5, "MissileLauncher"
     Player.Weaponslot 6, "Flammenwerfer"
     Player.Weaponslot 7, "NapalmLauncher"

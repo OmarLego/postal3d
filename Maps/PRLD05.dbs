@@ -140,16 +140,6 @@ maps
 			
 			resource1
 			{
-				type = 2;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d\\PostalRLD-GZDpost4-11Patch.pk3";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-				requiredarchives = "";
-			}
-			
-			resource2
-			{
 				type = 0;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
 				option1 = 0;
@@ -158,7 +148,7 @@ maps
 				requiredarchives = "";
 			}
 			
-			resource3
+			resource2
 			{
 				type = 2;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.ipk3";
@@ -168,8 +158,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 1461.638f;
-		viewpositionx = 1070.574f;
+		viewpositiony = 1206.397f;
+		viewpositionx = -52.42739f;
 		
 		testprecommand
 		{
@@ -189,11 +179,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 64;
+			gridsize = 16;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.2802128f;
+		viewscale = 1.352533f;
 		
 		reloadresourceprecommand
 		{

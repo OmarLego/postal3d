@@ -486,7 +486,7 @@ ACTOR EmptyAKMag
    +GHOST
    BounceFactor 0.5
    scale 0.7
-   Mass 1
+   Mass 11
    DeathSound "MagDrop"
    BounceSound "MagDrop"
    States
@@ -530,7 +530,7 @@ ACTOR EmptyMPMag
    +GHOST
    BounceFactor 0.5
    scale 0.3
-   Mass 1
+   Mass 11
    DeathSound "MagDrop"
    BounceSound "MagDrop"
    States
