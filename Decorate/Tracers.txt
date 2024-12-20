@@ -151,9 +151,12 @@ Actor P3D_SprayTracer: P3D_ShotgunTracerSingle
 //speed 60
 //damage(14)
 damage(25)
-Paintype "SprayCannon"
+/*Paintype "SprayCannon"
 Damagetype "SprayCannon"
-Deathtype "SprayCannon"
+Deathtype "SprayCannon"*/
+Paintype "Minigun"
+Damagetype "Minigun"
+Deathtype "Minigun"
 States
 {
     Spawn:

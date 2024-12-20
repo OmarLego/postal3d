@@ -303,4 +303,6 @@ Map PRLD05 "The Junkyard"//going to be PRLD03 later
 	//NoIntermission
 	InterMusic = "D_DM2INT"
 	next = prld06
+	fogdensity = 35
+	fade = "4c677a"
 }
