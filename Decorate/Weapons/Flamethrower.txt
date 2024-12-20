@@ -550,6 +550,44 @@ Actor DecorFlame : Firetype
     Stop
   }
 }
+
+Actor SmallDecorFlame : Firetype
+{
+  Radius 20
+  Height 20
+  Speed 2
+  Gravity 0.9
+  Projectile
+  RenderStyle Add
+  Alpha 0.67
+  Scale 0.2
+  -SOLID
+  +MISSILE
+  +NOBLOCKMAP
+  +NOCLIP
+  States
+  {
+  Spawn:
+    FRFX A 4
+    FRFX BCD 2 bright 
+    FRFX EFG 2 bright
+    FRFX HIJ 2 bright 
+    FRFX KLM 2 bright 
+    FRFX NO 2 bright
+    Stop
+	
+  Death:
+    FRFX HIJ 2 bright 
+    FRFX KLM 2 bright 
+    FRFX NO 2 bright
+    Stop
+  }
+}
+
+
+
+
+
 Actor DecorFlame2 : Firetype
 {
   Radius 20
