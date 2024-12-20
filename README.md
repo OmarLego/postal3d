@@ -4,6 +4,6 @@ You get to see everything up close and personal and answer the question: What We
 
 HOW TO RUN THE GAME IN DEVELOPMENT:
 
-1. Download the zip from github (If you're working on the project, perferably you would clone the folder with github desktop so all the latest changes apply instantly.)
+1. Download the zip from github (If you're working on the project, perferably you would clone the folder with GitHub Desktop ( https://desktop.github.com/download/ ) so all the latest changes apply instantly.)
 
 2. Drag the zip/folder to GZDoom Engine .exe
