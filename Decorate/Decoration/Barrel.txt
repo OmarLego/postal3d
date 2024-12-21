@@ -21,10 +21,11 @@ ACTOR PRLD_ExplosiveBarrel : ExplosiveBarrel REPLACES ExplosiveBarrel
 		BRLS A 3 BRIGHT
 		TNT1 A 0 A_Explode(160,200,XF_HURTSOURCE,true,0,0,0,0,"Fire")
 		TNT1 A 0 A_SpawnItem("PrldNapalmExplosion")
-		TNT1 A 0 A_SpawnItemEx ("LargeFire",1,1,1)
+		/*TNT1 A 0 A_SpawnItemEx ("LargeFire",1,1,1)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("SpillDrop",0,0,0,Random(-3,3),Random(-3,3),Random(5,10),random(-60,60),SXF_TRANSFERTRANSLATION)
 		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("DecorFlame", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 0 A_Explode(10, 150, 1,1,0,0,0,0,"Fire")
+		TNT1 A 0 A_Explode(10, 150, 1,1,0,0,0,0,"Fire")*/
+		TNT1 A 0 A_CustomMissile("MolotovFly", 5, 0, 360, CMF_AIMDIRECTION, -90)
 		//BRLS B -1
 		Stop
 	DeathPostal:
@@ -72,15 +73,17 @@ Actor PRLD_FlyingBarrel
 	Explode:
 		TNT1 A 0
 		TNT1 A 0 A_NoBlocking
-		//TNT1 A 0 A_Explode(100,150)
-		//TNT1 A 0 A_SpawnItem("PrldExplosion")
 		TNT1 A 0 A_SpawnItem("PrldNapalmExplosion")
-		//TNT1 AAAAAAAAAAAAAAAA 0 A_SpawnItemEx("PRLD_BarrelFire", random (0, 120), random (0, 120), 0, 0, 0, 0, random (0, 360)) 
-		TNT1 A 0 A_SpawnItemEx ("LargeFire",1,1,1)
+		/*TNT1 A 0 A_SpawnItemEx ("LargeFire",1,1,1)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("SpillDrop",0,0,0,Random(-3,3),Random(-3,3),Random(5,10),random(-60,60),SXF_TRANSFERTRANSLATION)
 		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("DecorFlame", 0, 0, random (0, 360), 2, random (0, 360))
-		TNT1 A 0 A_Explode(10, 150, 1,1,0,0,0,0,"Fire")
-        //TNT1 A 0 Radius_Quake (6, 54, 0, 15, 0)
+		TNT1 A 0 A_Explode(10, 150, 1,1,0,0,0,0,"Fire")*/
+		TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("MolotovFly", 5, 0, 360, CMF_AIMDIRECTION, -90)
+		TNT1 A 0
+		TNT1 A 0
+		TNT1 A 0
 		Stop
 	}
 }
