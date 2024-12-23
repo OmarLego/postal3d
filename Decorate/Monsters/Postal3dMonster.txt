@@ -18,6 +18,7 @@ ACTOR Postal3dMonster {
     DamageFactor "CauseObjectsToSplash", 0.0
 	damagefactor "UseAttack", 0.0
     damagefactor "Flak", 2.5
+	DamageFactor "HFire", 0.0
 	PainChance 256
     //PainChance "SkillIssue", 256
 	//PainChance "M12", 0

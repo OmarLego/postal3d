@@ -80,6 +80,7 @@ DoomEdNums
 	15033 = PRLD_MinerSpawner
 	15034 = PRLD_MilitarySpawner
 	15035 = PRLD_SwatSpawner
+	15043 = PRLD_Swat2Spawner
 	//bosses
 	//= PRLD_SheriffBoss
 	//civilians
