@@ -336,3 +336,11 @@ MODEL PRLD_Rock2
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_RoadBlocker
+{
+	Path "Models/Geometry"
+	Model 0 "roadblocker.md3"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}

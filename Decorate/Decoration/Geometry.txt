@@ -218,6 +218,26 @@ Actor PRLD_Bench1C : PRLD_Table1C
 			Stop
 	}
 }
+ACTOR PRLD_RoadBlocker : PRLD_Chair1
+{
+	Radius 4
+	Height 7
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_RoadBlockC : PRLD_Table1C
+{
+	Radius 4
+	Height 7
+	States {
+		Spawn:
+			TNT1 A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_BathFaucet
 {

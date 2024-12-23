@@ -154,6 +154,8 @@ DoomEdNums
 	15027 = PRLD_Bush1
 	15028 = PRLD_Rock1
 	15029 = PRLD_Rock2
+	15041 = PRLD_RoadBlocker
+	15042 = PRLD_RoadBlockC
 	//roofs
 	10010 = PRLD_DudeRoof
 	15011 = PRLD_HomeRoof1
