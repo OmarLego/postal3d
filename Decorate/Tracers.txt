@@ -170,19 +170,18 @@ Actor P3D_MagnumTracer: P3D_DamagingTracerBase
 speed 100
 //damage (random(160,230))
 damage (130)
-Paintype "SMG"
+/*Paintype "SMG"
 Damagetype "SMG"
-Deathtype "SMG"
+Deathtype "SMG"*/
+Paintype "Minigun"
+Damagetype "Minigun"
+Deathtype "Minigun"
 }
 
-Actor P3D_LeverActionTracer: P3D_DamagingTracerBase
+Actor P3D_LeverActionTracer: P3D_MagnumTracer
 {
 speed 200
-//damage (random(160,230))
 damage (200)
-Paintype "SMG"
-Damagetype "SMG"
-Deathtype "SMG"
 }
 
 ACTOR TracerSpark
