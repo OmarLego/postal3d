@@ -68,6 +68,7 @@ DoomEdNums
 	15024 = GGrenade
 	2010 = RKReplacer
 	15040 = 1Missile
+	2008 = ShellsReplacer
 	
 	//Monsters
 	//hostiles
