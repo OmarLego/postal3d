@@ -571,3 +571,9 @@ $alias Menu/quit2						menu/option/open //Menu Quit 2
 
 //FMV Audio
 Movies/PRLDINTRO "Movies/PRLDINTRO.ogg"
+
+//Thermite grenade
+THERBOOM THERBOOM
+THEREND THEREND
+THERIG THERIG
+THERLOOP THERLOOP
