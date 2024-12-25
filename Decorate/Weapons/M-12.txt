@@ -130,7 +130,7 @@ Weapon.AmmoType2 ""
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,0.25)
 	FireStartCon:*/
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
-		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
+		TNT1 A 0 A_FireProjectile("NewMuzzleSmokeSpawner",0,0,6,2)
 		//TNT1 A 0 A_Jump (256,"MF1","MF2","MF3","MF4","MF5")
 		TNT1 A 0 A_Jump (256,"MF2","MF3","MF4","MF5")
 		//TNT1 A 0 A_Jump (256,"MF2","MF3","MF4")
@@ -219,7 +219,7 @@ Weapon.AmmoType2 ""
 		
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,1.0)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
-		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
+		TNT1 A 0 A_FireProjectile("NewMuzzleSmokeSpawner",0,0,6,2)
 		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,11,1)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_GiveInventory("ExecutionHealth", 6)
@@ -231,7 +231,7 @@ Weapon.AmmoType2 ""
 		
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,1.0)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
-		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
+		TNT1 A 0 A_FireProjectile("NewMuzzleSmokeSpawner",0,0,6,2)
 		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,11,1)
 		TNT1 A 0 A_AlertMonsters
 		SMGR D 1 BRIGHT
@@ -241,7 +241,7 @@ Weapon.AmmoType2 ""
 		
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,1.0)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
-		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
+		TNT1 A 0 A_FireProjectile("NewMuzzleSmokeSpawner",0,0,6,2)
 		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,11,1)
 		TNT1 A 0 A_AlertMonsters
 		SMGR F 1 BRIGHT

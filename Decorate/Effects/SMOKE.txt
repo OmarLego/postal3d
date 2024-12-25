@@ -229,6 +229,118 @@ ACTOR MicroSmokeColumn: BarrelExplosionSmokeColumn
 		}
 }
 
+actor NewMuzzleSmokeSpawner
+{
+	Speed 20
+	+NOCLIP
+	states
+	{
+	spawn:
+	TNT1 A 1
+	TNT1 A 0 A_Jump (256,"Spawn1","Spawn2","Spawn3")
+	stop
+	
+	Spawn1:
+	TNT1 A 0 A_CustomMissile("NewMuzzlesmoke1", 0, 0, random (0, 360), 2, random (0, 180)) 
+	stop
+	
+	Spawn2:
+	TNT1 A 0 A_CustomMissile("NewMuzzlesmoke2", 0, 0, random (0, 360), 2, random (0, 180)) 
+	stop
+	
+	Spawn3:
+	TNT1 A 0 A_CustomMissile("NewMuzzlesmoke3", 0, 0, random (0, 360), 2, random (0, 180)) 
+	stop
+	}
+}
+
+Actor NewMuzzleSmoke1
+{
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+FLOORCLIP
+	+FORCEXYBILLBOARD
+	+NOINTERACTION
+	+DONTSPLASH
+	Speed 0
+	RenderStyle Add
+	Alpha		0.5
+	+CLIENTSIDEONLY
+	Radius		0
+	Height		0
+	Scale		0.6
+	States
+	{
+	Spawn:
+    NULL A 1 A_SetTranslucent(0.25)	
+	SM1K ABCDEFG 1
+	SM1K H 1 A_FadeOut(0.1)
+	SM1K IJKLMNOPQRSTUVWXYZ 1
+	goto death
+	Death:
+	TNT1 A 0
+	stop
+}	
+}
+
+Actor NewMuzzleSmoke2
+{
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+FLOORCLIP
+	+FORCEXYBILLBOARD
+	+NOINTERACTION
+	+DONTSPLASH
+	Speed 0
+	RenderStyle Add
+	Alpha		0.5
+	+CLIENTSIDEONLY
+	Radius		0
+	Height		0
+	Scale		0.6
+	States
+	{
+	Spawn:
+    NULL A 1 A_SetTranslucent(0.25)	
+	SM4K ABCDEFG 1
+	SM4K H 1 A_FadeOut(0.1)
+	SM4K IJKLMNOPQRSTUVWXYZ 1
+	goto death
+	Death:
+	TNT1 A 0
+	stop
+}	
+}
+
+Actor NewMuzzleSmoke3
+{
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+FLOORCLIP
+	+FORCEXYBILLBOARD
+	+NOINTERACTION
+	+DONTSPLASH
+	Speed 0
+	RenderStyle Add
+	Alpha		0.5
+	+CLIENTSIDEONLY
+	Radius		0
+	Height		0
+	Scale		0.6
+	States
+	{
+	Spawn:
+    NULL A 1 A_SetTranslucent(0.25)	
+	SM7K ABCDEFG 1
+	SM7K H 1 A_FadeOut(0.1)
+	SM7K IJKLMNOPQRSTUVWXYZ 1
+	goto death
+	Death:
+	TNT1 A 0
+	stop
+}	
+}
+
 
 ACTOR ShotSmoke
 {
