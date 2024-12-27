@@ -69,8 +69,10 @@ $Limit weapons/m16/dist 0
 $RollOff weapons/m16/dist 3000 6000
 
 //glock 17 (standard pistol guys)
-weapons/glock17/fire "sounds/weapons/Hostile/PISTFIR.ogg"
-$random weapons/hostile/PISTFIR { weapons/hostile/PISTFIR1.ogg weapons/hostile/PISTFIR2.ogg weapons/hostile/PISTFIR3.ogg }
+$Random weapons/glock17/fire { PISTFIR1 PISTFIR2 PISTFIR3 }
+PISTFIR1 PISTFIR1
+PISTFIR2 PISTFIR2
+PISTFIR3 PISTFIR3
 $random weapons/glock17/dist { p_dist1 p_dist2 p_dist3 }
 p_dist1 p_dist1
 p_dist2 p_dist2
