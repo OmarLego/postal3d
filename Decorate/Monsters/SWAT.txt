@@ -207,123 +207,34 @@ Actor BigGrowingFlameT : BigGrowingFlame
   {
   Spawn:
 	TNT1 A 0
-	TNT1 A 0 A_Playsound ("fire/small",7,1.0,true)
-  FLME A 1 Bright A_SetScale (0.01)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME B 1 Bright A_SetScale (0.02)
-  FLME C 1 Bright A_SetScale (0.03)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME D 1 Bright A_SetScale (0.04)
-  FLME E 1 Bright A_SetScale (0.05)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME F 1 Bright A_SetScale (0.06)
-  FLME G 1 Bright A_SetScale (0.07)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME H 1 Bright A_SetScale (0.08)
-  FLME I 1 Bright A_SetScale (0.09)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME J 1 Bright A_SetScale (0.10)
+	TNT1 A 0 A_CustomMissile ("PRLD_Sparkle", random (0, 32), 0, random (0, 360), 2, random (0, 180))
   FLME K 1 Bright A_SetScale (0.11)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME L 1 Bright A_SetScale (0.12)
-  FLME M 1 Bright A_SetScale (0.13)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME N 1 Bright A_SetScale (0.14)
-  FLME A 1 Bright A_SetScale (0.15)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME B 1 Bright A_SetScale (0.16)
-  FLME C 1 Bright A_SetScale (0.17)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME D 1 Bright A_SetScale (0.18)
-  FLME E 1 Bright A_SetScale (0.19)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME F 1 Bright A_SetScale (0.20)
-  FLME G 1 Bright A_SetScale (0.21)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME H 1 Bright A_SetScale (0.22)
+	TNT1 A 0 A_CustomMissile ("PRLD_Sparkle", random (0, 32), 0, random (0, 360), 2, random (0, 180))
   FLME I 1 Bright A_SetScale (0.23)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME J 1 Bright A_SetScale (0.24)
-  FLME K 1 Bright A_SetScale (0.25)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME L 1 Bright A_SetScale (0.26)
-  FLME M 1 Bright A_SetScale (0.27)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME N 1 Bright A_SetScale (0.28)
-  FLME A 2 Bright A_SetScale (0.29)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME B 2 Bright A_SetScale (0.30)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME C 2 Bright A_SetScale (0.31)
-  FLME D 2 Bright A_SetScale (0.32)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME E 2 Bright A_SetScale (0.33)
-  FLME F 2 Bright A_SetScale (0.34)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME G 2 Bright A_SetScale (0.35)
-  FLME H 2 Bright A_SetScale (0.36)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME I 2 Bright A_SetScale (0.37)
-  FLME J 2 Bright A_SetScale (0.38)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME K 2 Bright A_SetScale (0.39)
-  FLME L 2 Bright A_SetScale (0.40)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME M 2 Bright A_SetScale (0.41)
-  FLME N 2 Bright A_SetScale (0.42)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME A 2 Bright A_SetScale (0.43)
-  FLME B 2 Bright A_SetScale (0.44)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME C 2 Bright A_SetScale (0.45)
-  FLME D 2 Bright A_SetScale (0.46)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME E 2 Bright A_SetScale (0.47)
-  FLME F 2 Bright A_SetScale (0.48)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME G 2 Bright A_SetScale (0.49)
-  FLME H 2 Bright A_SetScale (0.50)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME I 2 Bright A_SetScale (0.55)
+	TNT1 A 0 A_CustomMissile ("PRLD_Sparkle", random (0, 32), 0, random (0, 360), 2, random (0, 180))
   FLME J 2 Bright A_SetScale (0.60)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME K 2 Bright A_SetScale (0.65)
-  FLME L 2 Bright A_SetScale (0.70)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME M 2 Bright A_SetScale (0.75)
-  FLME N 2 Bright A_SetScale (0.80)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME A 2 Bright A_SetScale (0.85)
-  FLME B 2 Bright A_SetScale (0.90)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME C 2 Bright A_SetScale (0.95)
-  FLME D 2 Bright A_SetScale (1)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
+	TNT1 A 0 A_CustomMissile ("PRLD_Sparkle", random (0, 32), 0, random (0, 360), 2, random (0, 180))
   FLME E 2 Bright A_SetScale (1.1)
-  FLME F 2 Bright A_SetScale (1.2)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME G 2 Bright A_SetScale (1.3)
-  FLME H 2 Bright A_SetScale (1.4)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-  FLME I 2 Bright A_SetScale (1.5)
+	TNT1 A 0 A_CustomMissile ("PRLD_Sparkle", random (0, 32), 0, random (0, 360), 2, random (0, 180))
   FLME J 2 Bright A_SetScale (1.6)
-  TNT1 A 0 A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
+	TNT1 A 0 A_CustomMissile ("PRLD_Sparkle", random (0, 32), 0, random (0, 360), 2, random (0, 180))
   FLME K 2 Bright A_SetScale (1.7)
-  FLME LMN 2 BRIGHT A_SetScale (1.7)
+  FLME LMN 2 BRIGHT A_CustomMissile ("PRLD_Sparkle", random (0, 32), 0, random (0, 360), 2, random (0, 180))
   goto FYAAA
   
   FYAAA:
-	TNT1 A 0 A_Playsound ("fire/small",7,1.0,true)
-    FLME A 2 bright A_Explode(40, 32, 0, 0, 0,0 ,0 ,0 ,"HFire")
-    FLME BCDEFGHIJKLMN 2 bright A_Explode(40, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-	//TNT1 A 0 A_PlaySound("FIRLOOP")
-    FLME A 2 bright A_Explode(40, 32, 0)
-    FLME BCDEFGHIJKLMN 2 bright A_Explode(1, 16, 0, 0, 0,0 ,0 ,0 ,"HFire")
-	//TNT1 A 0 A_PlaySound("FIRLOOP")
-    FLME A 2 bright A_Explode(40, 32, 0, 0, 0,0 ,0 ,0 ,"HFire")
-    FLME BCDEFGHIJKLMN 2 bright A_Explode(40, 32, 0, 0, 0,0 ,0 ,0 ,"HFire")
-    TNT1 A 0 A_Jump(120, "Death","FYAAA")
-    goto FYAAA
+	TNT1 A 0
+	TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",14,"Death")
+    FLME A 2 bright //A_Explode(30, 32, 0, 0, 0,0 ,0 ,0 ,"HFire")
+    FLME BCDEFGHIJKLMN 2 bright {
+	A_CustomMissile ("PRLD_Sparkle", random (0, 56), 0, random (0, 360), 2, random (0, 180));
+	A_CustomMissile ("PRLD_Sparkle", random (0, 56), 0, random (0, 360), 2, random (0, 180));
+	A_CustomMissile ("PRLD_Sparkle", random (0, 56), 0, random (0, 360), 2, random (0, 180));
+	A_CustomMissile ("PRLD_Sparkle", random (0, 56), 0, random (0, 360), 2, random (0, 180));
+	//A_Explode(1, 72, 0, 0, 0,0 ,0 ,0 ,"HFire"); //the single time i will use anonymous functions im too lazy to do otherwise
+	}
+	TNT1 A 0 A_GiveInventory ("SpielMitMir-RammsteinOfficial",1)
+    Loop
   }
 }
 
@@ -336,6 +247,7 @@ ACTOR ThermiteSWAT : MolotovFly
 {
 	Species "Hostiles"
 	Scale 0.5
+	//+STRIFEDAMAGE
 	States
 	{
 	Spawn:
@@ -353,25 +265,19 @@ ACTOR ThermiteSWAT : MolotovFly
 	
 	Explode:
 	TNT1 A 0
-    TNT1 A 0 A_setScale (1.3)
+	TNT1 A 0 A_SpawnItemEx ("BigGrowingFlameT",1,1,1,0,0,0,0,SXF_TRANSFERPOINTERS)
 	TNT1 A 0 A_PlaySound ("THERIG",CHAN_AUTO)
 	TNT1 A 0 A_PlaySoundEx("THERLOOP","weapon",true)
-	/*TNT1 A 0 A_SpawnItemEx("TherSplash1",0,0,12,0,0,0,0,SXF_SETMASTER)
-	TNT1 A 0 A_SpawnItemEx("TherSplash2",0,0,12,0,0,0,0,SXF_SETMASTER)
-	TNT1 A 0 A_SpawnItemEx("TherSplash3",0,0,12,0,0,0,0,SXF_SETMASTER*/
 	Goto Burn
 	
 	Burn:
 	TNT1 A 0
-	TNT1 A 0 A_SpawnItemEx("TherSplash1",0,0,12,0,0,0,0,SXF_SETMASTER)
-	TNT1 A 0 A_SpawnItemEx("TherSplash2",0,0,12,0,0,0,0,SXF_SETMASTER)
-	TNT1 A 0 A_SpawnItemEx("TherSplash3",0,0,12,0,0,0,0,SXF_SETMASTER)
 	//TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",35,"BurnOut")
 	TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",29,"BurnOut")
 	TNT1 A 0 A_Explode(19, 72, 0, 0, 0,0 ,0 ,0 ,"HFire")
-	TNT1 A 0 A_SpawnItemEx("SmallDecorFlame", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
+	//TNT1 A 0 A_SpawnItemEx("SmallDecorFlame", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
 	TNT1 A 0 A_GiveInventory ("SpielMitMir-RammsteinOfficial",1)
-	TNT1 A 11
+	TNT1 A 14
 	loop
 	
 	BurnOut:
@@ -382,61 +288,6 @@ ACTOR ThermiteSWAT : MolotovFly
 	TNT1 A 0 A_KillChildren("bob",1,"TherSplash3")*/
 	Stop
 	}
-}
-
-ACTOR TherSplash1
-{
-+NOGRAVITY
-  Radius 7
-  Height 8
-  Speed 4
-  Scale 1
-  States
-  {
-  Spawn:
-    EXP6 ABCDEFGHIJKLMNOP 1 BRIGHT
-    //loop
-	Death:
-	TNT1 A 1
-	stop
-  }
-}
-
-ACTOR TherSplash2
-{
-+NOGRAVITY
-  Radius 7
-  Height 8
-  Speed 4
-  Scale 0.9
-  States
-  {
-  Spawn:
-    FX33 ABCDEFGHIJK 1 BRIGHT
-    //loop
-	Death:
-	TNT1 A 1
-	stop
-  }
-}
-
-ACTOR TherSplash3
-{
-+NOGRAVITY
-  Radius 7
-  Height 8
-  Speed 4
-  Scale 0.9
-  States
-  {
-  Spawn:
-    FX34 ABCDEFGHIJK 1 BRIGHT
-    //loop
-	
-	Death:
-	TNT1 A 1
-	stop
-  }
 }
 
 ACTOR PRLD_ShieldSmoke
