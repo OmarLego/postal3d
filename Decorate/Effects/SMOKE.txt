@@ -437,3 +437,20 @@ SMK3 CDEFGHIJKLM 1
 Stop
 }
 }
+
+
+ACTOR BlackSmokeHitTheGround: ExplosionSmoke
+{
+Speed 4
+Alpha 0.3
+Scale 0.3
+Gravity 0.1
+States
+{
+Spawn:
+TNT1 A 2
+SMK3 B 20
+SMK3 CDEFGHIJKLM 1
+Stop
+}
+}

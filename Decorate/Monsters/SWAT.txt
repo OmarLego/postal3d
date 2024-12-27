@@ -255,8 +255,10 @@ ACTOR ThermiteSWAT : MolotovFly
 	Loop
 	Death:
 	XDeath:
+	TNT1 A 0 A_PlaySound ("THERDROP",CHAN_AUTO)
 	TRMG BBBBB 4 A_SetRoll (0)
 	TRMG B 4 A_PlaySound ("THERSTART",CHAN_AUTO)
+	TNT1 A 0 A_PlaySoundEx ("THERFIZZ","Voice",false)
 	TRMG CCCC 5 A_CustomMissile("SmokeSpawner", 0, 0, random (0, 360), 2, random (0, 180))
 	TRMG DDDEEE 5 A_CustomMissile("SmokeSpawner", 0, 0, random (0, 360), 2, random (0, 180))
 	TRMG FFGGHHI 2 BRIGHT A_CustomMissile("SmokeSpawner", 0, 0, random (0, 360), 2, random (0, 180))
@@ -265,6 +267,7 @@ ACTOR ThermiteSWAT : MolotovFly
 	
 	Explode:
 	TNT1 A 0
+	TNT1 A 0 A_StopSoundEx ("Voice")
 	TNT1 A 0 A_SpawnItemEx ("BigGrowingFlameT",1,1,1,0,0,0,0,SXF_TRANSFERPOINTERS)
 	TNT1 A 0 A_PlaySound ("THERIG",CHAN_AUTO)
 	TNT1 A 0 A_PlaySoundEx("THERLOOP","weapon",true)
@@ -276,6 +279,7 @@ ACTOR ThermiteSWAT : MolotovFly
 	TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",29,"BurnOut")
 	TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("DecorFlame", 0, 0, random (0, 360), 2, random (0, 360))
 	TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SmokeSpawner", 0, 0, random (0, 360), 2, random (0, 360))
+	TNT1 AAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("BlackSmokeHitTheGround", 0, 0, random (0, 360), 2, random (0, 360))
 	TNT1 A 0 A_Explode(19, 72, 0, 0, 0,0 ,0 ,0 ,"HFire")
 	//TNT1 A 0 A_SpawnItemEx("SmallDecorFlame", Random(-30, 30), Random(-20, 20), Random(10, -10), 0, 0, 0, 0, 128)
 	TNT1 A 0 A_GiveInventory ("SpielMitMir-RammsteinOfficial",1)
