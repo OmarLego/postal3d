@@ -13,23 +13,17 @@ Running With Scissors - POSTAL
 
 katherinecode - Main Sprite, Texture, and Model Artist
 
-SevaKsP - Special Effects, Sprite Artist, Texturing and Modeling Help
+SevaKsP - Spriting, Texturing, and Modeling Help
 
-N4h - BigFont, Edits to Vehicles
+N4h - BigFont, Edits to "Home" level's Skybox, Edits to Vehicles
 
-https://ko-fi.com/franart - Natalie's Muzzleflashes, Muzzleflashes from QC:DE
-
-Hvellor - Muzzleflash States for Weapons that aren't Natalie
-
-BennyBunny - Texture Artist, Blood Pools
-
-MedicalEngineer - Texture Artist
+https://ko-fi.com/franart - M-12 Muzzleflashes
 
 Running With Scissors - Various POSTAL Titles
 
 Freedoom Project - SmallFont
 
-SGtMarkIV - Many effects from Brutal DOOM, Simple Decal Enhancement Addon
+SGtMarkIV - Simple Decal Enhancement Addon
 
 Maxi Clouds - Re-Blood's Gibs
 
@@ -40,11 +34,11 @@ Various people from Polyhaven, Sketchfab, Pixabay, and Wikimedia Commons
 =============
 [SOUNDS]
 
-Hvellor - Main Sound Designer
+BigStronk - Main Sound Designer
 
-BigStronk - Sound Designer
+katherinecode - Sound Designer
 
-katherinecode - Puts sounds together-er
+Immorpher - Sound Upscaling
 
 Running With Scissors - Various POSTAL Titles
 
@@ -55,7 +49,7 @@ Various people from Pixabay, Soundbible, and Youtube
 
 katherinecode - Main Coder
 
-SevaKsP - Special Effects Coder, Original Weapons
+SevaKsP - Scripting Consultant, Original Weapons
 
 TDRR - Loading Screen BCC
 
@@ -71,28 +65,13 @@ Maxi Clouds - Re-Blood's Gibs
 
 Boondorl - Universal Weapon Sway, Weather Spawner, Universal Rain and Snow
 
-Gerodium - Damage Direction Overlay
-
-Officer D - Doom Exp's Damage Direction Overlay
-
-Caligari87 - Universal fade-to-black on death
-
 Nash - Standalone Game Template
 
                          ======================
                           [BRAIN DEAD ARTS IS]
 
 katherinecode - Project Lead, Artist, Mapper, and Coder
-SevaKsP - Project Lead, Writer, Artist, Coder, Original Weapon Creator
-ALEX - Mapper
-Many_A_Dead_Mackerels - Mapper
-Knighty - Mapper
-BennyBunny - Artist
-MedicalBag - Artist
-xenomy. - Artist
-Mirog - Artist
-Christian Hunter - Voice Actor
-Hvellor - Sound Designer
+SevaKsP - Artist and Coder, Original Weapon Creator
 BigStronk - Sound Designer
 
                          =======================
@@ -136,12 +115,6 @@ https://sketchfab.com/3d-models/cc0-lighter-d27743ef88c44e76a294be09f7d162ef
 https://sketchfab.com/3d-models/ak47-3df7a102290140058223f5bc186d92bd
 https://sketchfab.com/3d-models/key-car-photoscan-93bc60b977874347a7afb1fe2e00b633
 https://polyhaven.com/a/rusty_metal_03
-https://polyhaven.com/a/brick_wall_08
-https://polyhaven.com/a/pebble_ground_01
-https://polyhaven.com/a/cliff_side
-https://sketchfab.com/3d-models/smith-wesson-combat-magnum-f35e4819ed5145c593e4d118fe3207d7
-https://sketchfab.com/3d-models/smith-wessons-629-classic-44-magnum-e1b965f3d9d3486f91c97253301846cd
-https://sketchfab.com/3d-models/357-bullet-d15a23bc4ae240ae90759992e06e12e5
 
                                  SOUNDS
 
@@ -155,5 +128,7 @@ https://pixabay.com/sound-effects/grenade-launcher-106342/
 https://www.youtube.com/watch?v=D6-HHNPur7M
 https://pixabay.com/sound-effects/flame-thrower-128555/
 https://pixabay.com/sound-effects/metal-03-108358/
+https://pixabay.com/sound-effects/shotgun-03-38220/
+https://pixabay.com/sound-effects/080902-shotgun-39753/
 
 Apologies for not writing all names, I just want to not be here forever, nor make the main credits list hyper-long. :P
