@@ -165,7 +165,8 @@ StartReload:
 MAGL A 3 A_PlaySound ("AKMOV",CHAN_AUTO)
 MAGL B 3
 TNT1 A 0 A_PlaySound ("MOPN",CHAN_AUTO)
-MAGL CDE 3
+MAGL CDEFGHI 3
+TNT1 A 0 A_playSound ("MFLY",CHAN_AUTO)
 TNT1 A 0 A_JumpIfInventory("Magazine3",5,"1BulletOut")
 TNT1 A 0 A_JumpIfInventory("Magazine3",4,"2BulletOut")
 TNT1 A 0 A_JumpIfInventory("Magazine3",3,"3BulletOut")
