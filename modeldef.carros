@@ -94,6 +94,18 @@ MODEL PRLD_CarBrokeP
 
 
 
+//oTHER VEHICLES
+MODEL PRLD_Excavator
+{
+	Path "Models/Cars"
+	Model 0 "excavator.md3"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+
+
+
 //Cutscene
 
 

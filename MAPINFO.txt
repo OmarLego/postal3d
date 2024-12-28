@@ -122,6 +122,8 @@ DoomEdNums
 	10039 = PRLD_Car7
 	15014 = PRLD_Car8
 	15039 = PRLD_CarBrokeP
+	//other vehicles
+	15044 = PRLD_Excavator
 	
 	//destructable (combined with actual map stuff)
 	10016 = PRLD_FenceDestruct

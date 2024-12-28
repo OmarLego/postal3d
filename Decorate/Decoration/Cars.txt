@@ -143,3 +143,19 @@ Actor PRLD_Car7 : PRLD_Car1
 Actor PRLD_Car8 : PRLD_Car1
 {
 }
+
+
+
+//Other Vehicles
+ACTOR PRLD_Excavator
+{
+	Radius 24
+	Height 45
+	+NOGRAVITY
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
