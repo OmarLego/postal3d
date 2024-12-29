@@ -178,19 +178,27 @@ ACTOR PRLD_ExcavatorD
 	+NOBLOOD
 	States {
 		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySound("TANK2",7,1.0,true)
 			BRLS A 10 A_Look
 			Loop
 		See:
 			//BRLS AAAAAAAAAA 1 A_FaceTarget//10 each
 			TNT1 A 0
-			//TN1 A 0 A_SpawnItemEx("BigRigs", 100, 0, 40)
+			TNT1 A 0 A_PlaySound("TANK3",7)
+			//TNT1 A 0 A_SpawnItemEx("BigRigs", 100, 0, 40)
 			BRLS A 10 A_FaceTarget
 			TNT1 A 0 A_CustomMissile("BigRigs", 40)
 			TNT1 A 0 A_CustomMissile("BigRigs2", 16)
 			BRLS A 10 A_FaceTarget
-			BRLS AAAA 10 A_FaceTarget
+			
+			BRLS A 10 A_FaceTarget
+			TNT1 A 0 A_PlaySound("TANK2",7,1.0,true)
+			BRLS AAA 10 A_FaceTarget
 			BRLS A 10
 		Wario:
+			TNT1 A 0
+			TNT1 A 0 A_PlaySound("TANK1",7,1.0,true)
 			BRLS A 1 A_Recoil(-1)
 			TNT1 A 0 A_CustomMissile("BigRigs", 40)
 			TNT1 A 0 A_CustomMissile("BigRigs2", 16)

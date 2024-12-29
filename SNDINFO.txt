@@ -554,6 +554,9 @@ truck/drive "Sounds/Environment/Objects/truck-drive.ogg"
 jail/open "Sounds/Environment/Objects/door_prison_cell_LP.wav"
 jail/close "Sounds/Environment/Objects/door_prison_cell_close.wav"
 world/bounce		tire//action doom 2
+TANK1 TANK1//brutal doom
+TANK2 TANK2
+TANK3 TANK3//doom burtal
 
 
 //Menu
