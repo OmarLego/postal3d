@@ -113,6 +113,7 @@ ACTOR Postal3dMonster {
         TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
         TNT1 A 0 A_NoBlocking
         TNT1 A 0 A_Jump(256, "DieFall", "DieFallReverse")
+    Death.HFire://they arent meant to die with this type but if they do
     Death.Fire:
 	Death.Burn:
 	Death.Flame:

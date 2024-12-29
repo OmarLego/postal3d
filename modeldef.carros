@@ -98,7 +98,15 @@ MODEL PRLD_CarBrokeP
 MODEL PRLD_Excavator
 {
 	Path "Models/Cars"
-	Model 0 "excavator.md3"
+	Model 0 "excavatorDRIVE.md3"//.md3"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_ExcavatorD
+{
+	Path "Models/Cars"
+	Model 0 "excavatordrive.md3"
 	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS A 0 0

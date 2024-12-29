@@ -6,6 +6,7 @@ ACTOR PRLD_DestructSpawn
 	+SHOOTABLE
 	+NOBLOOD
 	+NOGRAVITY
+	Species "Destruct"
 	States
 	{
 	Spawn:
@@ -20,6 +21,23 @@ Actor PRLD_FenceDestruct: PRLD_DestructSpawn
 	States
 	{
 	Death:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("fencebreak", CHAN_AUTO)
+		TNT1 AAAAAA 0 A_CustomMissile("PRLD_FenceJunk", random(8, 56), random(-48, 48), random(0, 360), 2, random(0,360))
+		TNT1 A 0 A_SpawnItemEX("PRLD_FenceSmoke", 0, 0, -20)
+		Stop
+	}
+}
+Actor PRLD_FenceDestruct2: PRLD_FenceDestruct//junkyard excavator puzzle
+{
+	Height 56
+	Radius 16
+	Health 999
+	DamageFactor "Stomp", 99999
+	States
+	{
+	Pain:
+	Pain.Stomp:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("fencebreak", CHAN_AUTO)
 		TNT1 AAAAAA 0 A_CustomMissile("PRLD_FenceJunk", random(8, 56), random(-48, 48), random(0, 360), 2, random(0,360))

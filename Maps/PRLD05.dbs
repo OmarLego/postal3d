@@ -5,117 +5,6 @@ strictpatches = 0;
 maps
 {
 	
-	PRLD04
-	{
-		defaultwalltexture = "1HOMEFEN";
-		overridemiddletexture = false;
-		defaultceiltexture = "1HOMEFEN";
-		overrideceiltexture = false;
-		custombrightness = 196;
-		scriptcompiler = "zdoom_acs.cfg";
-		
-		resources
-		{
-			
-			resource0
-			{
-				type = 1;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-				requiredarchives = "";
-			}
-			
-			resource1
-			{
-				type = 2;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d\\PostalRLD-GZDpost4-11Patch.pk3";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-				requiredarchives = "";
-			}
-			
-			resource2
-			{
-				type = 0;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-				requiredarchives = "";
-			}
-			
-			resource3
-			{
-				type = 2;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.ipk3";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-				requiredarchives = "";
-			}
-		}
-		viewpositiony = 564.0992f;
-		viewpositionx = 1240.718f;
-		
-		testprecommand
-		{
-			autocloseonsuccess = true;
-			exitcodeiserror = true;
-			stderriserror = true;
-		}
-		customceilheight = 128;
-		customfloorheight = 0;
-		
-		grid
-		{
-			backoffsetx = 0;
-			backsource = 0;
-			gridoriginy = 0;
-			backscaley = 100;
-			gridrotate = 0;
-			backscalex = 100;
-			gridoriginx = 0;
-			gridsize = 256;
-			background = "";
-			backoffsety = 0;
-		}
-		viewscale = 0.1281653f;
-		
-		reloadresourceprecommand
-		{
-			autocloseonsuccess = true;
-			exitcodeiserror = true;
-			stderriserror = true;
-		}
-		defaulttoptexture = "1HOMEFEN";
-		overridebottomtexture = false;
-		defaultbottomtexture = "1HOMEFEN";
-		defaultfloortexture = "1HOMEFEN";
-		overrideceilheight = false;
-		overridebrightness = false;
-		
-		testpostcommand
-		{
-			autocloseonsuccess = true;
-			exitcodeiserror = true;
-			stderriserror = true;
-		}
-		overridefloorheight = false;
-		overridetoptexture = false;
-		uselongtexturenames = false;
-		overridefloortexture = false;
-		
-		reloadresourcepostcommand
-		{
-			autocloseonsuccess = true;
-			exitcodeiserror = true;
-			stderriserror = true;
-		}
-	}
-	
 	PRLD05
 	{
 		defaultwalltexture = "JYRDRCK1";
@@ -158,8 +47,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 1569.094f;
-		viewpositionx = 912.9242f;
+		viewpositiony = 741.0543f;
+		viewpositionx = 1538.244f;
 		
 		testprecommand
 		{
@@ -179,11 +68,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 64;
+			gridsize = 16;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.2802056f;
+		viewscale = 1.758293f;
 		
 		reloadresourceprecommand
 		{
@@ -214,6 +103,31 @@ maps
 			autocloseonsuccess = true;
 			exitcodeiserror = true;
 			stderriserror = true;
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 578;
+				firstvisibleline = 15;
+				activetab = true;
+			}
 		}
 	}
 }

@@ -127,6 +127,7 @@ DoomEdNums
 	
 	//destructable (combined with actual map stuff)
 	10016 = PRLD_FenceDestruct
+	15045 = PRLD_FenceDestruct2
 	15012 = PRLD_GlassDestruct
 	
 	//geometry (3d models)
