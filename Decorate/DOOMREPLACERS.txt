@@ -162,7 +162,7 @@ actor PrldSuperShotgunReplacer : RandomSpawner replaces SuperShotgun
 {
 	radius 24
 	height 24
-    DropItem "Lever-Action", 255, 3
+    DropItem "PRLD_LeverAction", 255, 3
 	DropItem "Magnum", 255, 5
 }
 actor PrldChaingunReplacer : RandomSpawner replaces Chaingun
@@ -170,7 +170,7 @@ actor PrldChaingunReplacer : RandomSpawner replaces Chaingun
 	radius 24
 	height 24
 	DropItem "MP5K"
-	DropItem "M-16"
+	DropItem "PRLD_M16"
 	DropItem "SprayCannon"
 	DropItem "Machinegun"
 }
