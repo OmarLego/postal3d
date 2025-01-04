@@ -8,7 +8,7 @@ Weapon.AmmoUse1 0
 	Weapon.AmmoType2 "Magazine4"
 Scale 1
 Inventory.PickupMessage "\c[red]You got the \c[Blue]MP5K"
-  Inventory.PickupSound "MP5BACK"
+  //Inventory.PickupSound "MP5BACK"
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
   

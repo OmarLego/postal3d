@@ -142,7 +142,7 @@ ACTOR PrldFatReplacer: RandomSpawner replaces Fatso
 	Species Hostile
 	Radius 20
     Height 52
-	DropItem "PRLD_Dale"
+	DropItem "PRLD_Dale2"
 }
 ACTOR PrldBabyReplacer: RandomSpawner replaces Arachnotron
 {
@@ -150,6 +150,13 @@ ACTOR PrldBabyReplacer: RandomSpawner replaces Arachnotron
 	Radius 20
     Height 52
 	DropItem "PRLD_SwatSpawner"
+}
+ACTOR PrldKnightyReplacer: RandomSpawner replaces HellKnight
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "PRLD_Swat2Spawner"
 }
 
 
@@ -171,6 +178,13 @@ actor PrldChaingunReplacer : RandomSpawner replaces Chaingun
 	height 24
 	DropItem "MP5K"
 	DropItem "PRLD_M16"
+	//DropItem "SprayCannon"
+	//DropItem "Machinegun"
+}
+actor PrldFutureReplacer : RandomSpawner Replaces PlasmaRifle
+{
+	radius 24
+	height 24
 	DropItem "SprayCannon"
-	DropItem "Machinegun"
+	DropItem "Flammenwerfer"
 }

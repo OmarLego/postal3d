@@ -3,11 +3,13 @@ ACTOR PRLD_Dale : Sheriff1
     Obituary "%o visited the wrong park."
 	Tag "Dale Brodworth"
 	Speed 21
-	Health 200
 	DropItem "Magnum"
 	XScale 0.7
 	YScale 0.55
     SeeSound "NoSoundHax"
+	//Health 200
+	Health 223
+	DamageFactor "Shotgun", 0.75
 	States
 	{
 	Spawn:
@@ -254,5 +256,15 @@ ACTOR PRLD_Dale : Sheriff1
 		SHR0 CD 10
 		TNT1 A 0 A_TakeInventory("IsDown")
 		Goto See
+	}
+}
+actor PRLD_Dale2 : PRLD_Dale //DOOM mode version
+{
+    SeeSound "act5_copspot"
+	States
+	{
+	Spawn:
+		SHRF E 1
+		Goto Spawn2
 	}
 }

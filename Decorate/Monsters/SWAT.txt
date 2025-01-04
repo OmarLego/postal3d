@@ -561,30 +561,33 @@ ACTOR SWAT1_1 : Postal3dMonster
 	ShootRight:
 		"####" AAAAAAAA 0 ThrustThing(angle*256/360+64, 1, 0, 0)
 	ShootCon:
-		"####" A 0 A_PlaySound("weapons/glock17/fire")
+		//"####" A 0 A_PlaySound("weapons/glock17/fire")
+		"####" A 0 A_PlaySound("MP5FIR")
 		"####" A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
         "####" A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
-		"####" E 1 BRIGHT A_CustomMissile("PrldHostileTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
+		"####" E 1 BRIGHT A_CustomMissile("HostileShotgunTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
 		"####" E 1 A_FaceTarget
- 		"####" A 0 A_PlaySound("weapons/glock17/fire")
+		//"####" A 0 A_PlaySound("weapons/glock17/fire")
+		"####" A 0 A_PlaySound("MP5FIR")
 		"####" A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
         "####" A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
-		"####" E 1 BRIGHT A_CustomMissile("PrldHostileTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
+		"####" E 1 BRIGHT A_CustomMissile("HostileShotgunTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
 		"####" E 1 A_FaceTarget
-		"####" A 0 A_PlaySound("weapons/glock17/fire")
+		//"####" A 0 A_PlaySound("weapons/glock17/fire")
+		"####" A 0 A_PlaySound("MP5FIR")
 		"####" A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
         "####" A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
-		"####" E 1 BRIGHT A_CustomMissile("PrldHostileTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
+		"####" E 1 BRIGHT A_CustomMissile("HostileShotgunTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
 		SWT2 A 0 A_JumpIfInventory ("PRLD_Formal", 1, 2)
 		SWT1 A 0
 		"####" E 1 A_FaceTarget

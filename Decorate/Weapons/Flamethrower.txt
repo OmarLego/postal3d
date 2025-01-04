@@ -2,7 +2,7 @@ actor PRLD_PyrotechnicSelected : Inventory {
 	Inventory.MaxAmount 1
 	+UNDROPPABLE
 }
-ACTOR Flammenwerfer : Postal3dWeapon Replaces PlasmaRifle
+ACTOR Flammenwerfer : Postal3dWeapon //Replaces PlasmaRifle
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 50

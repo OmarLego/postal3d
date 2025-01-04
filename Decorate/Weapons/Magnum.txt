@@ -18,7 +18,7 @@ Weapon.AmmoUse1 0
 	Weapon.AmmoType2 "Magazine3"
 Scale 0.7
 Inventory.PickupMessage "\c[red]You got the \c[Purple]Magnum Revolver"
-  Inventory.PickupSound "MCLOS"
+  //Inventory.PickupSound "MCLOS"
   +weapon.NoAutoaim
   +Weapon.NoAutoFire
   

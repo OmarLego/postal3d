@@ -91,6 +91,7 @@ BennyBunny - Artist
 MedicalBag - Artist
 xenomy. - Artist
 Mirog - Artist
+beefbrain - Artist
 Christian Hunter - Voice Actor
 Hvellor - Sound Designer
 BigStronk - Sound Designer
