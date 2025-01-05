@@ -13,8 +13,8 @@ maps
 			
 			resource0
 			{
-				type = 2;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d\\PostalRLD-GZDpost4-11Patch.pk3";
+				type = 1;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -22,15 +22,6 @@ maps
 			}
 			
 			resource1
-			{
-				type = 1;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-			}
-			
-			resource2
 			{
 				type = 2;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.ipk3";
@@ -40,7 +31,7 @@ maps
 				requiredarchives = "";
 			}
 			
-			resource3
+			resource2
 			{
 				type = 0;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
@@ -67,9 +58,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 578.9868f;
-		viewpositiony = 590.8581f;
-		viewscale = 0.1658064f;
+		viewpositionx = 651.0977f;
+		viewpositiony = 846.1711f;
+		viewscale = 0.1275434f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
