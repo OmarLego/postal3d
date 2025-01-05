@@ -9,7 +9,7 @@ maps
 	{
 		defaultwalltexture = "HOMETRE2";
 		overridemiddletexture = false;
-		defaultceiltexture = "F_SKY1";
+		defaultceiltexture = "HMESNW1";
 		overrideceiltexture = false;
 		custombrightness = 196;
 		scriptcompiler = "zdoom_acs.cfg";
@@ -19,15 +19,36 @@ maps
 			
 			resource0
 			{
-				type = 1;
-				location = "C:\\Users\\arijo\\Documents\\GitHub\\postal3d";
+				type = 2;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.ipk3";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource1
+			{
+				type = 0;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource2
+			{
+				type = 1;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
 			}
 		}
-		viewpositiony = -5698.55f;
-		viewpositionx = -1079.789f;
+		viewpositiony = -1393.348f;
+		viewpositionx = -2835.794f;
 		
 		testprecommand
 		{
@@ -47,11 +68,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 512;
+			gridsize = 128;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.07687031f;
+		viewscale = 0.2195492f;
 		
 		reloadresourceprecommand
 		{
