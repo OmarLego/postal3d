@@ -1,4 +1,7 @@
-PRLD03 - alexbrigeMAP01_10-27-24.wad
-PRLD04 - MADM-Mines_10-29-24.wad
-PRLD05 - Trainyardroughdraft.wad - made by Grungo on 12/29/22, meant to be used with COMTEX and Realm667 "BLOOD" texture pack
-PRLD06 - AirForceBase.wad - made by NastyAndBrutal on 12/7/22, meant to be used with COMTEX and RWLDEC
+PRLD01 - Home
+PRLD03 - Parade of Disasters
+PRLD04 - The Bridge ( alexbrigeMAP01_1-12-25.wad )
+PRLD05 - The Mines ( MADM-Mines_10-29-24.wad )
+PRLD06 - The Junkyard
+PRLD12 - The Train Station ( Trainyardroughdraft.wad - made by Grungo on 12/29/22, meant to be used with COMTEX and Realm667 "BLOOD" texture pack )
+PRLD25 - The Air Force Base ( AirForceBase.wad - made by NastyAndBrutal on 12/7/22, meant to be used with COMTEX and RWLDEC )

@@ -5,11 +5,11 @@ strictpatches = 0;
 maps
 {
 	
-	PRLD05
+	PRLD04
 	{
-		defaultwalltexture = "JYRDRCK1";
+		defaultwalltexture = "DEV1";
 		overridemiddletexture = false;
-		defaultceiltexture = "HMESNW1";
+		defaultceiltexture = "HMEWD4";
 		overrideceiltexture = false;
 		custombrightness = 196;
 		scriptcompiler = "zdoom_acs.cfg";
@@ -29,6 +29,16 @@ maps
 			
 			resource1
 			{
+				type = 2;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d\\PostalRLD-GZDpost4-11Patch.pk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource2
+			{
 				type = 0;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
 				option1 = 0;
@@ -37,7 +47,7 @@ maps
 				requiredarchives = "";
 			}
 			
-			resource2
+			resource3
 			{
 				type = 2;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.ipk3";
@@ -47,8 +57,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 1671.27f;
-		viewpositionx = 690.8871f;
+		viewpositiony = 91.96585f;
+		viewpositionx = 1218.841f;
 		
 		testprecommand
 		{
@@ -68,11 +78,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 64;
+			gridsize = 32;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.4735591f;
+		viewscale = 0.6186293f;
 		
 		reloadresourceprecommand
 		{
@@ -80,10 +90,10 @@ maps
 			exitcodeiserror = true;
 			stderriserror = true;
 		}
-		defaulttoptexture = "JYRDRCK1";
+		defaulttoptexture = "DEV1";
 		overridebottomtexture = false;
-		defaultbottomtexture = "JYRDRCK1";
-		defaultfloortexture = "GRASS1";
+		defaultbottomtexture = "DEV1";
+		defaultfloortexture = "WATR1";
 		overrideceilheight = false;
 		overridebrightness = false;
 		
@@ -103,31 +113,6 @@ maps
 			autocloseonsuccess = true;
 			exitcodeiserror = true;
 			stderriserror = true;
-		}
-		
-		scriptdocuments
-		{
-			
-			document0
-			{
-				filename = "DIALOGUE";
-				hash = 3588187714;
-				resource;
-				tabtype = 0;
-				scripttype = 18;
-			}
-			
-			document1
-			{
-				filename = "SCRIPTS";
-				hash = 3469170009;
-				resource;
-				tabtype = 0;
-				scripttype = 1;
-				caretposition = 644;
-				firstvisibleline = 14;
-				activetab = true;
-			}
 		}
 	}
 }

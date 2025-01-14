@@ -286,10 +286,10 @@ Map PRLD01 "Home"//"$TXT_PRLD01"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld02
+	next = prld03//2 not yet i havent made it xd
 }
 
-Map PRLD02 "Parade of Disasters"//going to be PRLD03 later //maybe not? ill see
+Map PRLD03 "Parade of Disasters"
 {
 	music = ""
 	sky1 = "SKYPNIGH", 0.1
@@ -297,11 +297,10 @@ Map PRLD02 "Parade of Disasters"//going to be PRLD03 later //maybe not? ill see
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	//next = prld03
-	next = prld05
+	next = prld06//4
 }
 
-Map PRLD05 "The Junkyard"//going to be PRLD03 later
+Map PRLD06 "The Junkyard"
 {
 	music = ""
 	sky1 = "SKYJYARD"
@@ -309,7 +308,7 @@ Map PRLD05 "The Junkyard"//going to be PRLD03 later
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld06
+	next = prld12//07
 	fogdensity = 35
 	fade = "4c677a"
 }
