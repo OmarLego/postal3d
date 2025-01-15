@@ -297,7 +297,28 @@ Map PRLD03 "Parade of Disasters"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld06//4
+	next = prld04
+}
+
+Map PRLD04 "The Bridge"
+{
+	music = ""
+	MONSTERFALLINGDAMAGE
+	FALLINGDAMAGE
+	//NoIntermission
+	InterMusic = "D_DM2INT"
+	next = prld06//5
+}
+
+Map PRLD05 "The Mines"
+{
+	music = ""
+	sky1 = "SKYPNIGH", 0.1
+	MONSTERFALLINGDAMAGE
+	FALLINGDAMAGE
+	//NoIntermission
+	InterMusic = "D_DM2INT"
+	next = prld06
 }
 
 Map PRLD06 "The Junkyard"
