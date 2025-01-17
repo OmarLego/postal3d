@@ -284,7 +284,7 @@ Map PRLD01 "Home"//"$TXT_PRLD01"
 	fogdensity = 2
 	MONSTERFALLINGDAMAGE
 	FALLINGDAMAGE
-	//NoIntermission
+	NoIntermission
 	InterMusic = "D_DM2INT"
 	next = prld03//2 not yet i havent made it xd
 }
@@ -303,7 +303,7 @@ Map PRLD03 "Parade of Disasters"
 Map PRLD04 "The Bridge"
 {
 	music = ""
-	MONSTERFALLINGDAMAGE
+	//MONSTERFALLINGDAMAGE
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
