@@ -112,6 +112,7 @@ DoomEdNums
 	10042 = PRLD_HomeSiren
 	13376 = Tire//action doom 2
 	13377 = TireStack//ation ddoom 2
+	85 = TechLamp //placeholder for mines
 	
 	//cars
 	10017 = PRLD_Car1

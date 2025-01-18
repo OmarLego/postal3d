@@ -118,9 +118,9 @@ maps
 	
 	PRLD05
 	{
-		defaultwalltexture = "DEV1";
+		defaultwalltexture = "ROCKSS";
 		overridemiddletexture = false;
-		defaultceiltexture = "HMEWD4";
+		defaultceiltexture = "F_SKY1";
 		overrideceiltexture = false;
 		custombrightness = 196;
 		scriptcompiler = "zdoom_acs.cfg";
@@ -150,16 +150,6 @@ maps
 			
 			resource2
 			{
-				type = 0;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\IWADs\\freedoom2.wad";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-				requiredarchives = "";
-			}
-			
-			resource3
-			{
 				type = 1;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
 				option1 = 0;
@@ -168,8 +158,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 131.7216f;
-		viewpositionx = 32.17087f;
+		viewpositiony = 146.3911f;
+		viewpositionx = 985.7635f;
 		
 		testprecommand
 		{
@@ -189,11 +179,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 32;
+			gridsize = 64;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.7040867f;
+		viewscale = 0.4166187f;
 		
 		reloadresourceprecommand
 		{
@@ -201,33 +191,10 @@ maps
 			exitcodeiserror = true;
 			stderriserror = true;
 		}
-		defaulttoptexture = "DEV1";
+		defaulttoptexture = "ROCKSS";
 		overridebottomtexture = false;
-		defaultbottomtexture = "DEV1";
-		
-		scriptdocuments
-		{
-			
-			document1
-			{
-				filename = "SCRIPTS";
-				hash = 3469170009;
-				resource;
-				tabtype = 0;
-				scripttype = 1;
-				activetab = true;
-			}
-			
-			document0
-			{
-				filename = "DIALOGUE";
-				hash = 3588187714;
-				resource;
-				tabtype = 0;
-				scripttype = 18;
-			}
-		}
-		defaultfloortexture = "WATR1";
+		defaultbottomtexture = "ROCKSS";
+		defaultfloortexture = "PFLOOR7_";
 		overrideceilheight = false;
 		overridebrightness = false;
 		
@@ -247,6 +214,29 @@ maps
 			autocloseonsuccess = true;
 			exitcodeiserror = true;
 			stderriserror = true;
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				activetab = true;
+			}
 		}
 	}
 }
