@@ -414,6 +414,9 @@ ACTOR Grenadee : Ammo
       loop
   }
 }
+ACTOR GGrenade : Grenadee//potention phasing out of the actual weapon (GGrenade is the weapon, Grenadee is ammo)
+{
+}
 
 ACTOR GrenadeBox : Grenadee
 {

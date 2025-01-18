@@ -344,3 +344,11 @@ MODEL PRLD_RoadBlocker
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_Pallet
+{
+	Path "Models/Geometry"
+	Model 0 "pallet.md3"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}

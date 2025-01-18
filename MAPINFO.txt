@@ -94,6 +94,7 @@ DoomEdNums
 	2012 = PRLD_HealthBox
 	2018 = PRLD_Kevlar
 	2019 = PRLD_HKevlar
+	2011 = PRLD_HealthBoxS
 	//ammo
 	10009 = ShotgunCopShellDrop
 	
@@ -129,6 +130,7 @@ DoomEdNums
 	10016 = PRLD_FenceDestruct
 	15045 = PRLD_FenceDestruct2
 	15012 = PRLD_GlassDestruct
+	15046 = PRLD_Pallet
 	
 	//geometry (3d models)
 	//props
