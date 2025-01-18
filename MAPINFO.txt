@@ -311,7 +311,7 @@ Map PRLD04 "The Bridge"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld06//5
+	next = prld05
 }
 
 Map PRLD05 "The Mines"
