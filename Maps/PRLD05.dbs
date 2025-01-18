@@ -140,26 +140,15 @@ maps
 			
 			resource1
 			{
-				type = 0;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-				requiredarchives = "";
-			}
-			
-			resource2
-			{
 				type = 1;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
-				requiredarchives = "";
 			}
 		}
-		viewpositiony = 140.9888f;
-		viewpositionx = 1211.302f;
+		viewpositiony = 50.7485f;
+		viewpositionx = 2738.825f;
 		
 		testprecommand
 		{
@@ -179,11 +168,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 64;
+			gridsize = 128;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.2465196f;
+		viewscale = 0.1458691f;
 		
 		reloadresourceprecommand
 		{
@@ -235,7 +224,7 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 72;
+				caretposition = 37;
 				activetab = true;
 			}
 		}

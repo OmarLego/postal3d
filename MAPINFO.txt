@@ -317,7 +317,7 @@ Map PRLD04 "The Bridge"
 Map PRLD05 "The Mines"
 {
 	music = ""
-	sky1 = "SKYPNIGH", 0.1
+	sky1 = "SKYPNIG2", 0.1
 	MONSTERFALLINGDAMAGE
 	FALLINGDAMAGE
 	//NoIntermission

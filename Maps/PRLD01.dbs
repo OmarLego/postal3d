@@ -29,16 +29,6 @@ maps
 			
 			resource1
 			{
-				type = 0;
-				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-				requiredarchives = "";
-			}
-			
-			resource2
-			{
 				type = 1;
 				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
 				option1 = 0;
@@ -47,8 +37,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = -1393.348f;
-		viewpositionx = -2835.794f;
+		viewpositiony = 362.6612f;
+		viewpositionx = -486.8586f;
 		
 		testprecommand
 		{
@@ -68,11 +58,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 128;
+			gridsize = 16;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.2195492f;
+		viewscale = 1.059721f;
 		
 		reloadresourceprecommand
 		{
@@ -103,6 +93,31 @@ maps
 			autocloseonsuccess = true;
 			exitcodeiserror = true;
 			stderriserror = true;
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 6913;
+				firstvisibleline = 310;
+				activetab = true;
+			}
 		}
 	}
 }

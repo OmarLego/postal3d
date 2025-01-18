@@ -234,19 +234,19 @@ Weapon.AmmoType2 ""
 		SMGR A 1 Offset(19,51)
 		SMGR A 1 Offset(18,50)
 		SMGR A 1 Offset(17,49)
-		SMGR A 1 Offset(16,48)
-		SMGR A 1 Offset(14,46)
-		SMGR A 1 Offset(12,44)
-		SMGR A 1 Offset(10,42)
-		SMGR A 1 Offset(8,40)
-		SMGR A 1 Offset(7,39)
-		SMGR A 1 Offset(6,38)
-		SMGR A 1 Offset(5,37)
-		SMGR A 1 Offset(4,36)
-		SMGR A 1 Offset(3,35)
-		SMGR A 1 Offset(2,34)
-		SMGR A 1 Offset(1,33)
-		SMGR A 1 Offset(0,32)
+		SMGR A 1 Offset(16,48) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(14,46) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(12,44) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(10,42) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(8,40) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(7,39) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(6,38) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(5,37) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(4,36) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(3,35) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(2,34) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(1,33) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
+		SMGR A 1 Offset(0,32) A_WeaponReady(WRF_NOBOB|WRF_NOFIRE|WRF_ALLOWZOOM)
 		goto ready
 	
 	ExecuteFlash:
@@ -349,71 +349,6 @@ Weapon.AmmoType2 ""
 		TNT1 A 1 A_SetPitch(Pitch-1)//24
 		SMGR A 5
 		Stop
-	
-	/*DoExecution:
-		//unedited atm, edit later
-		TNT1 A 0 A_PlaySound("weapons/execution",CHAN_AUTO)
-		TNT1 A 0 A_SetPitch(65)
-		SMGR A 1
-		TNT1 A 0 A_ChangeFLag("NOPAIN", 1)
-		TNT1 A 0 A_ChangeFLag("PUSHABLE", 0)
-		TNT1 A 0 A_Stop
-		TNT1 A 0 SetPlayerProperty(0,1,4)
-		TNT1 A 0 A_ChangeFlag("NOGRAVITY", 1)
-		TNT1 A 0 A_ChangeFlag("INVULNERABLE", 1)
-		KICK A 0 A_Takeinventory("Kicking",1)
-		KICK A 0 A_Takeinventory("ExecuteDownedEnemy",1)
-		
-		SMGR AAAAA 1 //A_SetPitch(70)
-		TNT1 A 0 A_Jump (226,2)
-		TNT1 A 0 A_PlaySound("demon/lines/execution", CHAN_AUTO)
-		//SMGR A 45
-		SMGR A 15
-		SMGR B 15
-		SMGR I 15
-        TNT1 A 0 A_Jump(256, "Execution")
-		//unedited atm, edit later
-	
-	Execution:
-		TNT1 A 0 A_JumpIfInventory ("M12ExecShotToken",3,"EFireFinish2")
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO)
-		//TNT1 A 0 A_FireCustomMissile("M12ExecShot",0,0,7,3)
-		TNT1 A 0 A_FireCustomMissile("M12ExecShot")
-		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
-		TNT1 A 0 A_FireProjectile("SmokeSpawner",0,0,6,2)
-		TNT1 A 0 A_FireCustomMissile ("9MMCasingSpawner",0,0,15,1)
-		//TNT1 A 0 A_Jump (256,"MF1","MF2","MF3","MF4","MF5")
-		TNT1 A 0 A_Jump (256,"EMF2","EMF3","EMF4","EMF5")
-	EMF2:
-		SMGR C 2 BRIGHT
-		Goto EFireFinish
-	EMF3:
-		SMGR D 2 BRIGHT
-		Goto EFireFinish
-	EMF4:
-		SMGR E 2 BRIGHT
-		Goto EFireFinish
-	EMF5:
-		SMGR F 2 BRIGHT
-		Goto EFireFinish
-	EFireFinish:
-		SMGR G 1
-		SMGR H 1
-		SMGR I 1
-		SMGR I 2
-		TNT1 A 0 A_GiveInventory("M12ExecShotToken",1)
-		Goto Execution
-	EFireFinish2:
-		TNT1 A 0 A_TakeInventory("M12ExecShotToken",3)
-		SMGR AAAAAAAA 1 A_SetPitch(Pitch-10)
-		TNT1 A 0 A_ChangeFLag("NOPAIN", 0)
-		TNT1 A 0 A_ChangeFLag("PUSHABLE", 1)
-		TNT1 A 0 SetPlayerProperty(0,0,4)
-		TNT1 A 0 A_ChangeFlag("NOGRAVITY", 0)
-		TNT1 A 0 A_ChangeFlag("INVULNERABLE", 0)
-		KICK A 0 A_Takeinventory("ExecuteDownedEnemy",1)
-        TNT1 A 0 A_Jump(256, "Ready")*/
   }
 }
 

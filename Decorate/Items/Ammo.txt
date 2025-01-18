@@ -401,7 +401,8 @@ ACTOR Grenadee : Ammo
 {
   Inventory.PickupMessage "Got 1 grenade"
   Inventory.Amount 1
-  scale 0.3
+  //scale 0.3
+  scale 0.5//BD placeholder
   Inventory.MaxAmount 6
   Ammo.BackpackAmount 1
   Ammo.BackpackMaxAmount 15
@@ -410,7 +411,8 @@ ACTOR Grenadee : Ammo
   States
   {
   Spawn:
-  GRNS A -1
+  //GRNS A -1
+  GBPJ G -1
       loop
   }
 }

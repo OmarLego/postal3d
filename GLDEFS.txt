@@ -1,4 +1,54 @@
 //===========================================================================
+// Burning guys
+//===========================================================================
+flickerlight2 FireMans
+{
+    color 1.0 0.9 0.2
+    size 90
+    secondarySize 99
+    interval 0.1
+    offset 0 60 0
+	attenuate 1
+}
+
+object PrldBurningGeneric
+{
+	Frame BVIM { light FireMans }
+}
+object PrldBurningActor1
+{
+	Frame BVIM { light FireMans }
+}
+object PrldBurningActor2
+{
+	Frame BVIM { light FireMans }
+}
+object PrldBurningActor3
+{
+	Frame BVIF { light FireMans }
+}
+object PrldBurningActor4
+{
+	Frame BVIM { light FireMans }
+}
+object PrldBurningActor5
+{
+	Frame BVIM { light FireMans }
+}
+object PrldBurningActor6
+{
+	Frame BVIM { light FireMans }
+}
+object PrldBurningActor7
+{
+	Frame BVIF { light FireMans }
+}
+object PrldBurningActor8
+{
+	Frame BVIM { light FireMans }
+}
+
+//===========================================================================
 //
 // Postal Dude Firing Dynamic Light
 //
