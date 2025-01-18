@@ -364,7 +364,7 @@ ACTOR PRLD_Pallet : PRLD_DestructSpawn
 			Stop
 	}
 }
-ACTOR PRLD_SpawnShit : PRLD_FenceDestruct
+actor PRLD_SpawnShit : PRLD_FenceDestruct
 {
 	States {
 		Spawn:
@@ -374,4 +374,9 @@ ACTOR PRLD_SpawnShit : PRLD_FenceDestruct
 		TNT1 A 0 A_SpawnItemEX("PRLD_FenceSmoke", 0, 0, -20)
 		Stop
 	}
+}
+Actor PRLD_Pallet2 : PRLD_Pallet
+{
+	Radius 16
+	Height 54
 }

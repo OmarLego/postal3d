@@ -131,6 +131,7 @@ DoomEdNums
 	15045 = PRLD_FenceDestruct2
 	15012 = PRLD_GlassDestruct
 	15046 = PRLD_Pallet
+	15047 = PRLD_Pallet2
 	
 	//geometry (3d models)
 	//props

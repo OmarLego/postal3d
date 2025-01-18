@@ -352,3 +352,11 @@ MODEL PRLD_Pallet
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_Pallet2
+{
+	Path "Models/Geometry"
+	Model 0 "pallet2.md3"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}

@@ -115,4 +115,138 @@ maps
 			stderriserror = true;
 		}
 	}
+	
+	PRLD05
+	{
+		defaultwalltexture = "DEV1";
+		overridemiddletexture = false;
+		defaultceiltexture = "HMEWD4";
+		overrideceiltexture = false;
+		custombrightness = 196;
+		scriptcompiler = "zdoom_acs.cfg";
+		
+		resources
+		{
+			
+			resource0
+			{
+				type = 2;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.ipk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource1
+			{
+				type = 0;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\PostalRLD\\PostalRLD.wad";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource2
+			{
+				type = 0;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\IWADs\\freedoom2.wad";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+			
+			resource3
+			{
+				type = 1;
+				location = "C:\\Users\\HP\\Downloads\\Doom Stuff\\Mods\\.BrainDeadArts porject stuff\\postal3d";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+				requiredarchives = "";
+			}
+		}
+		viewpositiony = 131.7216f;
+		viewpositionx = 32.17087f;
+		
+		testprecommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		customceilheight = 128;
+		customfloorheight = 0;
+		
+		grid
+		{
+			backoffsetx = 0;
+			backsource = 0;
+			gridoriginy = 0;
+			backscaley = 100;
+			gridrotate = 0;
+			backscalex = 100;
+			gridoriginx = 0;
+			gridsize = 32;
+			background = "";
+			backoffsety = 0;
+		}
+		viewscale = 0.7040867f;
+		
+		reloadresourceprecommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		defaulttoptexture = "DEV1";
+		overridebottomtexture = false;
+		defaultbottomtexture = "DEV1";
+		
+		scriptdocuments
+		{
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				activetab = true;
+			}
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+		}
+		defaultfloortexture = "WATR1";
+		overrideceilheight = false;
+		overridebrightness = false;
+		
+		testpostcommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+		overridefloorheight = false;
+		overridetoptexture = false;
+		uselongtexturenames = false;
+		overridefloortexture = false;
+		
+		reloadresourcepostcommand
+		{
+			autocloseonsuccess = true;
+			exitcodeiserror = true;
+			stderriserror = true;
+		}
+	}
 }
