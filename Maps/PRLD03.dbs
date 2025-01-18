@@ -216,41 +216,7 @@ maps
 		}
 		defaulttoptexture = "TRDWL3.";
 		overridebottomtexture = false;
-		
-		fieldtypes
-		{
-			
-			sector
-			{
-				user_managed_3d_floor = 3;
-			}
-		}
 		defaultbottomtexture = "TRDWL3.";
-		
-		scriptdocuments
-		{
-			
-			document1
-			{
-				filename = "SCRIPTS";
-				hash = 3469170009;
-				resource;
-				tabtype = 0;
-				scripttype = 1;
-				caretposition = 414;
-				firstvisibleline = 12;
-				activetab = true;
-			}
-			
-			document0
-			{
-				filename = "DIALOGUE";
-				hash = 3588187714;
-				resource;
-				tabtype = 0;
-				scripttype = 18;
-			}
-		}
 		defaultfloortexture = "HMECC01";
 		overrideceilheight = false;
 		overridebrightness = false;
@@ -271,6 +237,40 @@ maps
 			autocloseonsuccess = true;
 			exitcodeiserror = true;
 			stderriserror = true;
+		}
+		
+		fieldtypes
+		{
+			
+			sector
+			{
+				user_managed_3d_floor = 3;
+			}
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 546;
+				firstvisibleline = 12;
+				activetab = true;
+			}
 		}
 	}
 }

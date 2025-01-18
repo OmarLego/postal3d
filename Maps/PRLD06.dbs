@@ -5,7 +5,7 @@ strictpatches = 0;
 maps
 {
 	
-	PRLD05
+	PRLD06
 	{
 		defaultwalltexture = "JYRDRCK1";
 		overridemiddletexture = false;
@@ -124,7 +124,7 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 644;
+				caretposition = 628;
 				firstvisibleline = 14;
 				activetab = true;
 			}
