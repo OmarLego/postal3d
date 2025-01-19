@@ -2,7 +2,7 @@ actor PRLD_GrenadeSelected : Inventory {
 	Inventory.MaxAmount 1
 	+UNDROPPABLE
 }
-ACTOR GGrenadeButLikeBeforeDoe : Postal3dWeapon//GGrenade : Postal3dWeapon
+ACTOR GGrenade : Postal3dWeapon//GGrenade : Postal3dWeapon
 {
 Weapon.AmmoUse1 0
 	Weapon.AmmoGive1 1

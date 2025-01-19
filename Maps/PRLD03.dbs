@@ -267,7 +267,7 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 546;
+				caretposition = 571;
 				firstvisibleline = 12;
 				activetab = true;
 			}

@@ -82,8 +82,8 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.StartItem "Molotov",1
 	Player.StartItem "PipeBombWeap",1
 	Player.StartItem "Grenadee", 4//3 //removed grenadeweap but the "magainze" made it 4
-	Player.StartItem "Molotovv",1
-	Player.StartItem "PB",1
+	Player.StartItem "Molotovv",2
+	Player.StartItem "PB",2
 	Player.StartItem "DBMag", 2
 	Player.StartItem "MacheteAmmoLoaded", 1
 	Player.StartItem "PRLD_CutsceneFUCK", 1

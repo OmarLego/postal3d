@@ -55,8 +55,10 @@ DoomEdNums
 	2005 = MacheteAmmo
 	2006 = NapalmLauncher
 	10025 = PRLD_M12Spawner
-	10026 = Grenadee
-	10027 = PB
+	15024 = Grenadee
+	15023 = PipeBombWeap
+	//10026 = GGrenade
+	//10027 = PB
 	10029 = Molotovv
 	5010 = PRLD_MP5KSpawner
 	15018 = PRLD_M16
@@ -64,11 +66,10 @@ DoomEdNums
 	15020 = Machinegun
 	15021 = PRLD_LeverAction
 	15022 = SprayCannon
-	15023 = PipeBombWeap
-	15024 = GGrenade
 	2010 = RKReplacer
 	15040 = 1Missile
 	2008 = ShellsReplacer
+	2007 = ClipReplacer
 	
 	//Monsters
 	//hostiles
