@@ -95,7 +95,7 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
     Player.Weaponslot 5, "MissileLauncher"
     Player.Weaponslot 6, "Flammenwerfer"
     Player.Weaponslot 7, "NapalmLauncher"
-	Player.Weaponslot 8, "GGrenade", "PipeBombWeap", "Molotov"
+	Player.Weaponslot 8, "PipeBombWeap", "Molotov"//"GGrenade", "PipeBombWeap", "Molotov"
     +SOLID
     +THRUSPECIES
     +THRUGHOST
