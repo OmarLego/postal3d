@@ -403,6 +403,33 @@ actor PrldGibGlasses : PrldGib
     }
 }
 
+actor CDCpatch : PrldGib
+{
+	Speed 1
+    States
+    {
+    Fly:
+       CDC0 C 1 A_SetRoll(roll - 10, SPF_INTERPOLATE)
+        Loop
+    Death:
+		TNT1 A 0
+        TNT1 A 0 A_SetRoll(0)
+		TNT1 A 0 A_QueueCorpse
+		CDC0 C -1
+		Stop
+    }
+}
+actor CDCpatchD : CDCpatch
+{
+    States
+    {
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("SmallFlame")
+		Stop
+    }
+}
+
 actor PrldGibShellSling : PrldGib
 {
     States
@@ -410,11 +437,46 @@ actor PrldGibShellSling : PrldGib
     Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("shellslingdetach")
-        SOH1 M -1
-		
+        SOH1 M 1
+	SPawn2:
+        SOH1 M 100
+		Loop
     Death:
 		TNT1 A 0
         TNT1 A 0 A_SpawnItem("ShotgunCopShellDrop2")
+		Stop
+    }
+}
+actor PRLD_ChestRig : PrldGib
+{
+	Speed 7
+    States
+    {
+    Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("shellslingdetach")
+        CDC0 A 1
+	SPawn2:
+        CDC0 A 100
+		Loop
+    Death:
+		TNT1 A 0
+		TNT1 A 0 ACS_NamedExecuteAlways("PrldJanny")
+		CDC0 B -1
+		Stop
+    JanDeath:
+		TNT1 A 0
+		CDC0 B 1050//30 seconds
+		Stop
+    }
+}
+actor PRLD_ChestRigD : PRLD_ChestRig
+{
+    States
+    {
+    Death:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("SmallFlame")
 		Stop
     }
 }
