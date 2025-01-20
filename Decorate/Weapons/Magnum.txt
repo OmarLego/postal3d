@@ -305,8 +305,8 @@ TNT1 AAAA 0
 	Dont:
 		MAGR Q 56
 	ExecuteFlashCont://start
-		TNT1 A 0 A_GiveInventory("ExecutionHealth", 18)
-		TNT1 A 0 A_Log("\cl+18 health", 1)
+		TNT1 A 0 A_GiveInventory("ExecutionHealth", 19)
+		TNT1 A 0 A_Log("\cl+19 health", 1)
 		
 		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 	TNT1 A 0 A_GiveInventory ("MagnumToken",1)
