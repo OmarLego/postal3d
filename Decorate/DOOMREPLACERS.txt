@@ -3,30 +3,100 @@
 //just copy and paste them verbatim
 
 
-
+actor DPistolOfficer1: PistolOfficer1
+{
+Health 25
+}
+actor DPistolOfficer1_2: PistolOfficer1_2
+{
+Health 25
+}
+actor DPistolOfficer1_3: PistolOfficer1_3
+{
+Health 25
+}
+actor DPistolOfficer1_4: PistolOfficer1_4
+{
+Health 25
+}
+actor DPistolOfficer1_5: PistolOfficer1_5
+{
+Health 25
+}
+actor DPistolOfficer1_6: PistolOfficer1_6
+{
+Health 25
+}actor DPistolOfficer2: PistolOfficer2
+{
+Health 25
+}
+actor DPistolOfficer2_2: PistolOfficer2_2
+{
+Health 25
+}
+actor DPistolOfficer2_3: PistolOfficer2_3
+{
+Health 25
+}
+actor DPistolOfficer2_4: PistolOfficer2_4
+{
+Health 25
+}
+actor DPistolOfficer2_5: PistolOfficer2_5
+{
+Health 25
+}
+actor DPistolOfficer2_6: PistolOfficer2_6
+{
+Health 25
+}
+actor DPistolOfficer3: PistolOfficer3
+{
+Health 25
+}
+actor DPistolOfficer3_2: PistolOfficer3_2
+{
+Health 25
+}
+actor DPistolOfficer3_3: PistolOfficer3_3
+{
+Health 25
+}
+actor DPistolOfficer3_4: PistolOfficer3_4
+{
+Health 25
+}
+actor DPistolOfficer3_5: PistolOfficer3_5
+{
+Health 25
+}
+actor DPistolOfficer3_6: PistolOfficer3_6
+{
+Health 25
+}
 ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 {
 	Species Hostile
 	Radius 20
     Height 52
-	DropItem "PistolOfficer1"
-	DropItem "PistolOfficer1_2"
-	DropItem "PistolOfficer1_3"
-	DropItem "PistolOfficer1_4"
-	DropItem "PistolOfficer1_5"
-	DropItem "PistolOfficer1_6"
-	DropItem "PistolOfficer2"
-	DropItem "PistolOfficer2_2"
-	DropItem "PistolOfficer2_3"
-	DropItem "PistolOfficer2_4"
-	DropItem "PistolOfficer2_5"
-	DropItem "PistolOfficer2_6"
-	DropItem "PistolOfficer3"
-	DropItem "PistolOfficer3_2"
-	DropItem "PistolOfficer3_3"
-	DropItem "PistolOfficer3_4"
-	DropItem "PistolOfficer3_5"
-	DropItem "PistolOfficer3_6"
+	DropItem "DPistolOfficer1"
+	DropItem "DPistolOfficer1_2"
+	DropItem "DPistolOfficer1_3"
+	DropItem "DPistolOfficer1_4"
+	DropItem "DPistolOfficer1_5"
+	DropItem "DPistolOfficer1_6"
+	DropItem "DPistolOfficer2"
+	DropItem "DPistolOfficer2_2"
+	DropItem "DPistolOfficer2_3"
+	DropItem "DPistolOfficer2_4"
+	DropItem "DPistolOfficer2_5"
+	DropItem "DPistolOfficer2_6"
+	DropItem "DPistolOfficer3"
+	DropItem "DPistolOfficer3_2"
+	DropItem "DPistolOfficer3_3"
+	DropItem "DPistolOfficer3_4"
+	DropItem "DPistolOfficer3_5"
+	DropItem "DPistolOfficer3_6"
 }
 ACTOR PrldImpReplacer: RandomSpawner replaces DoomImp
 {
@@ -61,17 +131,23 @@ ACTOR PrldShotgunnerReplacer: RandomSpawner replaces Shotgunguy
 	Radius 20
     Height 52
 	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
-	DropItem "ShotgunOfficer1"
+	DropItem "ShotgunOfficer1_2"
+	DropItem "ShotgunOfficer1_3"
+	DropItem "ShotgunOfficer1_4"
+	DropItem "ShotgunOfficer1_5"
+	DropItem "ShotgunOfficer1_6"
+	DropItem "ShotgunOfficer2"
+	DropItem "ShotgunOfficer2_2"
+	DropItem "ShotgunOfficer2_3"
+	DropItem "ShotgunOfficer2_4"
+	DropItem "ShotgunOfficer2_5"
+	DropItem "ShotgunOfficer2_6"
+	DropItem "ShotgunOfficer3"
+	DropItem "ShotgunOfficer3_2"
+	DropItem "ShotgunOfficer3_3"
+	DropItem "ShotgunOfficer3_4"
+	DropItem "ShotgunOfficer3_5"
+	DropItem "ShotgunOfficer3_6"
 }
 ACTOR PrldChaingunnerReplacer: RandomSpawner replaces Chaingunguy
 {

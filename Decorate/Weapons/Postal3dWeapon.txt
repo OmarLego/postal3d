@@ -327,7 +327,7 @@ ACTOR Postal3dWeapon : Weapon
 		
 		
 		
-//  		                                       VARIANTS BEGIN
+//  		                                       ACTUAL CODE BEGIN
 		
 		
 	
@@ -335,6 +335,7 @@ ACTOR Postal3dWeapon : Weapon
 		"####" A 0 A_JumpIfInventory("PRLD_KickExec", 1, "ActualPerson_Kick")
 		"####" A 0 A_JumpIfInventory("PRLD_MacheteSelected", 1, "ActualPerson_Mcht")
 		"####" A 0 A_JumpIfInventory("PRLD_DBSelected", 1, "ActualPerson_DB")
+		"####" A 0 A_JumpIfInventory("PRLD_MagnumSelected", 1, "ActualPerson_Magnum")
 		"####" A 46
 		"####" A 0 A_JumpIfInventory("M12ExecShotToken", 1, "ActualPerson_MGun")
 	ActualPerson_Kick:
@@ -470,12 +471,9 @@ ACTOR Postal3dWeapon : Weapon
 		"####" A 0 A_Jump(256, "ExecutionFinish")
 	ActualPerson_MGun:
 		"####" A 0 A_StopSound(CHAN_WEAPON)
-		"####" A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
-		"####" B 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		"####" A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
-		"####" C 7 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
-		"####" A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
-		"####" D 4 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		"####" B 7 //A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		"####" C 7 //A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		"####" D 4 //A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
 		"####" E 3
 		TNT1 A 8
 		
@@ -484,6 +482,16 @@ ACTOR Postal3dWeapon : Weapon
 		"####" F 56
 		"####" A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		Goto ActualPerson_Headshot
+	ActualPerson_Magnum:
+		"####" A 56
+		"####" A 0 A_StopSound(CHAN_WEAPON)
+		//"####" A 0 A_SpawnItemEx("PRLD_BloodMistBig", 0, 0, 36)
+		"####" A 0 A_SpawnItemEx("PRLD_BloodMist", 5, 0, 38)
+		"####" A 0 A_SpawnItemEx("PRLD_GibSpawner", 40, 0, 1)
+		"####" B 7 //A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		"####" B 24 //A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 8
+		"####" A 0 A_Jump(256, "ExecutionFinish")
 		
 		
 		

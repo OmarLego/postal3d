@@ -255,6 +255,8 @@ Weapon.AmmoType2 ""
 		SMGR B 15
 		SMGR I 15
 		
+		TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,1.0)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
 		//TNT1 A 0 A_FireProjectile("NewMuzzleSmokeSpawner",0,0,6,2)
@@ -268,6 +270,8 @@ Weapon.AmmoType2 ""
 		SMGR H 1
 		SMGR I 4
 		
+		TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,1.0)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
 		//TNT1 A 0 A_FireProjectile("NewMuzzleSmokeSpawner",0,0,6,2)
@@ -279,6 +283,8 @@ Weapon.AmmoType2 ""
 		SMGR L 1
 		SMGR I 4
 		
+		TNT1 A 0 A_WeaponOffset(Random(-2, 2), Random(35, 40), WOF_Interpolate)
+		TNT1 A 0 A_PlaySound("hitflesh", CHAN_AUTO, 0.45)
 		TNT1 A 0 A_PlaySound("SMG/Single",CHAN_AUTO,1.0)
 		TNT1 A 0 A_FireCustomMissile("ShakeYourAssMinor", 0, 0, 0, 0)
 		//TNT1 A 0 A_FireProjectile("NewMuzzleSmokeSpawner",0,0,6,2)
