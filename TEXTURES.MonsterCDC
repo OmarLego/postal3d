@@ -1,0 +1,2164 @@
+Sprite CDC1A1, 40, 100
+{
+    Patch CDC1A1, 0, 0
+    Offset 26, 100
+}
+
+Sprite CDC1A2, 104, 100
+{
+    Patch CDC1A2, 0, 0
+    Offset 69, 100
+}
+
+Sprite CDC1A3, 125, 97
+{
+    Patch CDC1A3, 0, 0
+    Offset 75, 97
+}
+
+Sprite CDC1A4, 78, 95
+{
+    Patch CDC1A4, 0, 0
+    Offset 39, 95
+}
+
+Sprite CDC1A5, 40, 95
+{
+    Patch CDC1A5, 0, 0
+    Offset 14, 95
+}
+
+Sprite CDC1A6, 99, 95
+{
+    Patch CDC1A6, 0, 0
+    Offset 36, 95
+}
+
+Sprite CDC1A7, 124, 97
+{
+    Patch CDC1A7, 0, 0
+    Offset 47, 97
+}
+
+Sprite CDC1A8, 84, 99
+{
+    Patch CDC1A8, 0, 0
+    Offset 34, 99
+}
+
+Sprite CDC1B1, 40, 99
+{
+    Patch CDC1B1, 0, 0
+    Offset 26, 99
+}
+
+Sprite CDC1B2, 84, 98
+{
+    Patch CDC1B2, 0, 0
+    Offset 68, 98
+}
+
+Sprite CDC1B3, 98, 97
+{
+    Patch CDC1B3, 0, 0
+    Offset 76, 97
+}
+
+Sprite CDC1B4, 58, 96
+{
+    Patch CDC1B4, 0, 0
+    Offset 41, 96
+}
+
+Sprite CDC1B5, 39, 96
+{
+    Patch CDC1B5, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC1B6, 76, 97
+{
+    Patch CDC1B6, 0, 0
+    Offset 18, 97
+}
+
+Sprite CDC1B7, 98, 98
+{
+    Patch CDC1B7, 0, 0
+    Offset 21, 98
+}
+
+Sprite CDC1B8, 67, 100
+{
+    Patch CDC1B8, 0, 0
+    Offset 15, 100
+}
+
+Sprite CDC1C1, 38, 102
+{
+    Patch CDC1C1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC1C2, 103, 102
+{
+    Patch CDC1C2, 0, 0
+    Offset 72, 102
+}
+
+Sprite CDC1C3, 137, 100
+{
+    Patch CDC1C3, 0, 0
+    Offset 80, 100
+}
+
+Sprite CDC1C4, 98, 98
+{
+    Patch CDC1C4, 0, 0
+    Offset 42, 98
+}
+
+Sprite CDC1C5, 37, 97
+{
+    Patch CDC1C5, 0, 0
+    Offset 13, 97
+}
+
+Sprite CDC1C6, 99, 97
+{
+    Patch CDC1C6, 0, 0
+    Offset 39, 97
+}
+
+Sprite CDC1C7, 140, 99
+{
+    Patch CDC1C7, 0, 0
+    Offset 61, 99
+}
+
+Sprite CDC1C8, 102, 101
+{
+    Patch CDC1C8, 0, 0
+    Offset 51, 101
+}
+
+Sprite CDC1D1, 38, 98
+{
+    Patch CDC1D1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC1D2, 83, 98
+{
+    Patch CDC1D2, 0, 0
+    Offset 69, 98
+}
+
+Sprite CDC1D3, 97, 97
+{
+    Patch CDC1D3, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC1D4, 62, 97
+{
+    Patch CDC1D4, 0, 0
+    Offset 41, 97
+}
+
+Sprite CDC1D5, 38, 96
+{
+    Patch CDC1D5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC1D6, 75, 96
+{
+    Patch CDC1D6, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC1D7, 98, 95
+{
+    Patch CDC1D7, 0, 0
+    Offset 20, 95
+}
+
+Sprite CDC1D8, 72, 97
+{
+    Patch CDC1D8, 0, 0
+    Offset 21, 97
+}
+
+Sprite CDC1E1, 39, 98
+{
+    Patch CDC1E1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC1E2, 77, 97
+{
+    Patch CDC1E2, 0, 0
+    Offset 60, 97
+}
+
+Sprite CDC1E3, 99, 95
+{
+    Patch CDC1E3, 0, 0
+    Offset 64, 95
+}
+
+Sprite CDC1E4, 69, 95
+{
+    Patch CDC1E4, 0, 0
+    Offset 32, 95
+}
+
+Sprite CDC1E5, 41, 96
+{
+    Patch CDC1E5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC1E6, 74, 96
+{
+    Patch CDC1E6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC1E7, 102, 98
+{
+    Patch CDC1E7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC1E8, 74, 98
+{
+    Patch CDC1E8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC1F1, 38, 98
+{
+    Patch CDC1F1, 0, 0
+    Offset 25, 98
+}
+
+Sprite CDC1F2, 96, 97
+{
+    Patch CDC1F2, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC1F3, 122, 95
+{
+    Patch CDC1F3, 0, 0
+    Offset 87, 95
+}
+
+Sprite CDC1F4, 84, 95
+{
+    Patch CDC1F4, 0, 0
+    Offset 47, 95
+}
+
+Sprite CDC1F5, 41, 96
+{
+    Patch CDC1F5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC1F6, 88, 96
+{
+    Patch CDC1F6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC1F7, 126, 98
+{
+    Patch CDC1F7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC1F8, 92, 98
+{
+    Patch CDC1F8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC1G1, 38, 102
+{
+    Patch CDC1G1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC1G2, 76, 101
+{
+    Patch CDC1G2, 0, 0
+    Offset 62, 101
+}
+
+Sprite CDC1G3, 95, 100
+{
+    Patch CDC1G3, 0, 0
+    Offset 63, 100
+}
+
+Sprite CDC1G4, 65, 100
+{
+    Patch CDC1G4, 0, 0
+    Offset 32, 100
+}
+
+Sprite CDC1G5, 35, 102
+{
+    Patch CDC1G5, 0, 0
+    Offset 12, 102
+}
+
+Sprite CDC1G6, 71, 102
+{
+    Patch CDC1G6, 0, 0
+    Offset 17, 102
+}
+
+Sprite CDC1G7, 99, 102
+{
+    Patch CDC1G7, 0, 0
+    Offset 34, 102
+}
+
+Sprite CDC1G8, 70, 101
+{
+    Patch CDC1G8, 0, 0
+    Offset 32, 101
+}
+
+Sprite CDC1H0, 43, 59
+{
+    Patch CDC1H0, 0, 0
+    Offset 24, 84
+}
+
+Sprite CDC1I0, 50, 22
+{
+    Patch CDC1I0, 0, 0
+    Offset 25, 18
+}
+
+Sprite CDC1J0, 67, 50
+{
+    Patch CDC1J0, 0, 0
+    Offset 27, 47
+}
+
+Sprite CDC1K0, 56, 70
+{
+    Patch CDC1K0, 0, 0
+    Offset 28, 68
+}
+
+Sprite CDC2A1, 40, 100
+{
+    Patch CDC2A1, 0, 0
+    Offset 26, 100
+}
+
+Sprite CDC2A2, 104, 100
+{
+    Patch CDC2A2, 0, 0
+    Offset 69, 100
+}
+
+Sprite CDC2A3, 125, 97
+{
+    Patch CDC2A3, 0, 0
+    Offset 75, 97
+}
+
+Sprite CDC2A4, 78, 95
+{
+    Patch CDC2A4, 0, 0
+    Offset 39, 95
+}
+
+Sprite CDC2A5, 40, 95
+{
+    Patch CDC2A5, 0, 0
+    Offset 14, 95
+}
+
+Sprite CDC2A6, 99, 95
+{
+    Patch CDC2A6, 0, 0
+    Offset 36, 95
+}
+
+Sprite CDC2A7, 124, 97
+{
+    Patch CDC2A7, 0, 0
+    Offset 47, 97
+}
+
+Sprite CDC2A8, 84, 99
+{
+    Patch CDC2A8, 0, 0
+    Offset 34, 99
+}
+
+Sprite CDC2B1, 40, 99
+{
+    Patch CDC2B1, 0, 0
+    Offset 26, 99
+}
+
+Sprite CDC2B2, 84, 98
+{
+    Patch CDC2B2, 0, 0
+    Offset 68, 98
+}
+
+Sprite CDC2B3, 98, 97
+{
+    Patch CDC2B3, 0, 0
+    Offset 76, 97
+}
+
+Sprite CDC2B4, 58, 96
+{
+    Patch CDC2B4, 0, 0
+    Offset 41, 96
+}
+
+Sprite CDC2B5, 39, 96
+{
+    Patch CDC2B5, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC2B6, 76, 97
+{
+    Patch CDC2B6, 0, 0
+    Offset 18, 97
+}
+
+Sprite CDC2B7, 98, 98
+{
+    Patch CDC2B7, 0, 0
+    Offset 21, 98
+}
+
+Sprite CDC2B8, 67, 100
+{
+    Patch CDC2B8, 0, 0
+    Offset 15, 100
+}
+
+Sprite CDC2C1, 38, 102
+{
+    Patch CDC2C1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC2C2, 103, 102
+{
+    Patch CDC2C2, 0, 0
+    Offset 72, 102
+}
+
+Sprite CDC2C3, 137, 100
+{
+    Patch CDC2C3, 0, 0
+    Offset 80, 100
+}
+
+Sprite CDC2C4, 98, 98
+{
+    Patch CDC2C4, 0, 0
+    Offset 42, 98
+}
+
+Sprite CDC2C5, 37, 97
+{
+    Patch CDC2C5, 0, 0
+    Offset 13, 97
+}
+
+Sprite CDC2C6, 99, 97
+{
+    Patch CDC2C6, 0, 0
+    Offset 39, 97
+}
+
+Sprite CDC2C7, 140, 99
+{
+    Patch CDC2C7, 0, 0
+    Offset 61, 99
+}
+
+Sprite CDC2C8, 102, 101
+{
+    Patch CDC2C8, 0, 0
+    Offset 51, 101
+}
+
+Sprite CDC2D1, 38, 98
+{
+    Patch CDC2D1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC2D2, 83, 98
+{
+    Patch CDC2D2, 0, 0
+    Offset 69, 98
+}
+
+Sprite CDC2D3, 97, 97
+{
+    Patch CDC2D3, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC2D4, 62, 97
+{
+    Patch CDC2D4, 0, 0
+    Offset 41, 97
+}
+
+Sprite CDC2D5, 38, 96
+{
+    Patch CDC2D5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC2D6, 75, 96
+{
+    Patch CDC2D6, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC2D7, 98, 95
+{
+    Patch CDC2D7, 0, 0
+    Offset 20, 95
+}
+
+Sprite CDC2D8, 72, 97
+{
+    Patch CDC2D8, 0, 0
+    Offset 21, 97
+}
+
+Sprite CDC2E1, 39, 98
+{
+    Patch CDC2E1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC2E2, 77, 97
+{
+    Patch CDC2E2, 0, 0
+    Offset 60, 97
+}
+
+Sprite CDC2E3, 99, 95
+{
+    Patch CDC2E3, 0, 0
+    Offset 64, 95
+}
+
+Sprite CDC2E4, 69, 95
+{
+    Patch CDC2E4, 0, 0
+    Offset 32, 95
+}
+
+Sprite CDC2E5, 41, 96
+{
+    Patch CDC2E5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC2E6, 74, 96
+{
+    Patch CDC2E6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC2E7, 102, 98
+{
+    Patch CDC2E7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC2E8, 74, 98
+{
+    Patch CDC2E8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC2F1, 38, 98
+{
+    Patch CDC2F1, 0, 0
+    Offset 25, 98
+}
+
+Sprite CDC2F2, 96, 97
+{
+    Patch CDC2F2, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC2F3, 122, 95
+{
+    Patch CDC2F3, 0, 0
+    Offset 87, 95
+}
+
+Sprite CDC2F4, 84, 95
+{
+    Patch CDC2F4, 0, 0
+    Offset 47, 95
+}
+
+Sprite CDC2F5, 41, 96
+{
+    Patch CDC2F5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC2F6, 88, 96
+{
+    Patch CDC2F6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC2F7, 126, 98
+{
+    Patch CDC2F7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC2F8, 92, 98
+{
+    Patch CDC2F8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC2G1, 38, 102
+{
+    Patch CDC2G1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC2G2, 76, 101
+{
+    Patch CDC2G2, 0, 0
+    Offset 62, 101
+}
+
+Sprite CDC2G3, 95, 100
+{
+    Patch CDC2G3, 0, 0
+    Offset 63, 100
+}
+
+Sprite CDC2G4, 65, 100
+{
+    Patch CDC2G4, 0, 0
+    Offset 32, 100
+}
+
+Sprite CDC2G5, 35, 102
+{
+    Patch CDC2G5, 0, 0
+    Offset 12, 102
+}
+
+Sprite CDC2G6, 71, 102
+{
+    Patch CDC2G6, 0, 0
+    Offset 17, 102
+}
+
+Sprite CDC2G7, 99, 102
+{
+    Patch CDC2G7, 0, 0
+    Offset 34, 102
+}
+
+Sprite CDC2G8, 70, 101
+{
+    Patch CDC2G8, 0, 0
+    Offset 32, 101
+}
+
+Sprite CDC2H0, 43, 59
+{
+    Patch CDC2H0, 0, 0
+    Offset 24, 84
+}
+
+Sprite CDC2I0, 50, 22
+{
+    Patch CDC2I0, 0, 0
+    Offset 25, 18
+}
+
+Sprite CDC2J0, 67, 50
+{
+    Patch CDC2J0, 0, 0
+    Offset 27, 47
+}
+
+Sprite CDC2K0, 56, 70
+{
+    Patch CDC2K0, 0, 0
+    Offset 28, 68
+}
+
+Sprite CDC3A1, 40, 100
+{
+    Patch CDC3A1, 0, 0
+    Offset 26, 100
+}
+
+Sprite CDC3A2, 104, 100
+{
+    Patch CDC3A2, 0, 0
+    Offset 69, 100
+}
+
+Sprite CDC3A3, 125, 97
+{
+    Patch CDC3A3, 0, 0
+    Offset 75, 97
+}
+
+Sprite CDC3A4, 78, 95
+{
+    Patch CDC3A4, 0, 0
+    Offset 39, 95
+}
+
+Sprite CDC3A5, 40, 95
+{
+    Patch CDC3A5, 0, 0
+    Offset 14, 95
+}
+
+Sprite CDC3A6, 99, 95
+{
+    Patch CDC3A6, 0, 0
+    Offset 36, 95
+}
+
+Sprite CDC3A7, 124, 97
+{
+    Patch CDC3A7, 0, 0
+    Offset 47, 97
+}
+
+Sprite CDC3A8, 84, 99
+{
+    Patch CDC3A8, 0, 0
+    Offset 34, 99
+}
+
+Sprite CDC3B1, 40, 99
+{
+    Patch CDC3B1, 0, 0
+    Offset 26, 99
+}
+
+Sprite CDC3B2, 84, 98
+{
+    Patch CDC3B2, 0, 0
+    Offset 68, 98
+}
+
+Sprite CDC3B3, 98, 97
+{
+    Patch CDC3B3, 0, 0
+    Offset 76, 97
+}
+
+Sprite CDC3B4, 58, 96
+{
+    Patch CDC3B4, 0, 0
+    Offset 41, 96
+}
+
+Sprite CDC3B5, 39, 96
+{
+    Patch CDC3B5, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC3B6, 76, 97
+{
+    Patch CDC3B6, 0, 0
+    Offset 18, 97
+}
+
+Sprite CDC3B7, 98, 98
+{
+    Patch CDC3B7, 0, 0
+    Offset 21, 98
+}
+
+Sprite CDC3B8, 67, 100
+{
+    Patch CDC3B8, 0, 0
+    Offset 15, 100
+}
+
+Sprite CDC3C1, 38, 102
+{
+    Patch CDC3C1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC3C2, 103, 102
+{
+    Patch CDC3C2, 0, 0
+    Offset 72, 102
+}
+
+Sprite CDC3C3, 137, 100
+{
+    Patch CDC3C3, 0, 0
+    Offset 80, 100
+}
+
+Sprite CDC3C4, 98, 98
+{
+    Patch CDC3C4, 0, 0
+    Offset 42, 98
+}
+
+Sprite CDC3C5, 37, 97
+{
+    Patch CDC3C5, 0, 0
+    Offset 13, 97
+}
+
+Sprite CDC3C6, 99, 97
+{
+    Patch CDC3C6, 0, 0
+    Offset 39, 97
+}
+
+Sprite CDC3C7, 140, 99
+{
+    Patch CDC3C7, 0, 0
+    Offset 61, 99
+}
+
+Sprite CDC3C8, 102, 101
+{
+    Patch CDC3C8, 0, 0
+    Offset 51, 101
+}
+
+Sprite CDC3D1, 38, 98
+{
+    Patch CDC3D1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC3D2, 83, 98
+{
+    Patch CDC3D2, 0, 0
+    Offset 69, 98
+}
+
+Sprite CDC3D3, 97, 97
+{
+    Patch CDC3D3, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC3D4, 62, 97
+{
+    Patch CDC3D4, 0, 0
+    Offset 41, 97
+}
+
+Sprite CDC3D5, 38, 96
+{
+    Patch CDC3D5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC3D6, 75, 96
+{
+    Patch CDC3D6, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC3D7, 98, 95
+{
+    Patch CDC3D7, 0, 0
+    Offset 20, 95
+}
+
+Sprite CDC3D8, 72, 97
+{
+    Patch CDC3D8, 0, 0
+    Offset 21, 97
+}
+
+Sprite CDC3E1, 39, 98
+{
+    Patch CDC3E1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC3E2, 77, 97
+{
+    Patch CDC3E2, 0, 0
+    Offset 60, 97
+}
+
+Sprite CDC3E3, 99, 95
+{
+    Patch CDC3E3, 0, 0
+    Offset 64, 95
+}
+
+Sprite CDC3E4, 69, 95
+{
+    Patch CDC3E4, 0, 0
+    Offset 32, 95
+}
+
+Sprite CDC3E5, 41, 96
+{
+    Patch CDC3E5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC3E6, 74, 96
+{
+    Patch CDC3E6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC3E7, 102, 98
+{
+    Patch CDC3E7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC3E8, 74, 98
+{
+    Patch CDC3E8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC3F1, 38, 98
+{
+    Patch CDC3F1, 0, 0
+    Offset 25, 98
+}
+
+Sprite CDC3F2, 96, 97
+{
+    Patch CDC3F2, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC3F3, 122, 95
+{
+    Patch CDC3F3, 0, 0
+    Offset 87, 95
+}
+
+Sprite CDC3F4, 84, 95
+{
+    Patch CDC3F4, 0, 0
+    Offset 47, 95
+}
+
+Sprite CDC3F5, 41, 96
+{
+    Patch CDC3F5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC3F6, 88, 96
+{
+    Patch CDC3F6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC3F7, 126, 98
+{
+    Patch CDC3F7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC3F8, 92, 98
+{
+    Patch CDC3F8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC3G1, 38, 102
+{
+    Patch CDC3G1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC3G2, 76, 101
+{
+    Patch CDC3G2, 0, 0
+    Offset 62, 101
+}
+
+Sprite CDC3G3, 95, 100
+{
+    Patch CDC3G3, 0, 0
+    Offset 63, 100
+}
+
+Sprite CDC3G4, 65, 100
+{
+    Patch CDC3G4, 0, 0
+    Offset 32, 100
+}
+
+Sprite CDC3G5, 35, 102
+{
+    Patch CDC3G5, 0, 0
+    Offset 12, 102
+}
+
+Sprite CDC3G6, 71, 102
+{
+    Patch CDC3G6, 0, 0
+    Offset 17, 102
+}
+
+Sprite CDC3G7, 99, 102
+{
+    Patch CDC3G7, 0, 0
+    Offset 34, 102
+}
+
+Sprite CDC3G8, 70, 101
+{
+    Patch CDC3G8, 0, 0
+    Offset 32, 101
+}
+
+Sprite CDC3H0, 43, 59
+{
+    Patch CDC3H0, 0, 0
+    Offset 24, 84
+}
+
+Sprite CDC3I0, 50, 22
+{
+    Patch CDC3I0, 0, 0
+    Offset 25, 18
+}
+
+Sprite CDC3J0, 67, 50
+{
+    Patch CDC3J0, 0, 0
+    Offset 27, 47
+}
+
+Sprite CDC3K0, 56, 70
+{
+    Patch CDC3K0, 0, 0
+    Offset 28, 68
+}
+
+
+Sprite CDC4A1, 40, 100
+{
+    Patch CDC4A1, 0, 0
+    Offset 26, 100
+}
+
+Sprite CDC4A2, 104, 100
+{
+    Patch CDC4A2, 0, 0
+    Offset 69, 100
+}
+
+Sprite CDC4A3, 125, 97
+{
+    Patch CDC4A3, 0, 0
+    Offset 75, 97
+}
+
+Sprite CDC4A4, 78, 95
+{
+    Patch CDC4A4, 0, 0
+    Offset 39, 95
+}
+
+Sprite CDC4A5, 40, 95
+{
+    Patch CDC4A5, 0, 0
+    Offset 14, 95
+}
+
+Sprite CDC4A6, 99, 95
+{
+    Patch CDC4A6, 0, 0
+    Offset 36, 95
+}
+
+Sprite CDC4A7, 124, 97
+{
+    Patch CDC4A7, 0, 0
+    Offset 47, 97
+}
+
+Sprite CDC4A8, 84, 99
+{
+    Patch CDC4A8, 0, 0
+    Offset 34, 99
+}
+
+Sprite CDC4B1, 40, 99
+{
+    Patch CDC4B1, 0, 0
+    Offset 26, 99
+}
+
+Sprite CDC4B2, 84, 98
+{
+    Patch CDC4B2, 0, 0
+    Offset 68, 98
+}
+
+Sprite CDC4B3, 98, 97
+{
+    Patch CDC4B3, 0, 0
+    Offset 76, 97
+}
+
+Sprite CDC4B4, 58, 96
+{
+    Patch CDC4B4, 0, 0
+    Offset 41, 96
+}
+
+Sprite CDC4B5, 39, 96
+{
+    Patch CDC4B5, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC4B6, 76, 97
+{
+    Patch CDC4B6, 0, 0
+    Offset 18, 97
+}
+
+Sprite CDC4B7, 98, 98
+{
+    Patch CDC4B7, 0, 0
+    Offset 21, 98
+}
+
+Sprite CDC4B8, 67, 100
+{
+    Patch CDC4B8, 0, 0
+    Offset 15, 100
+}
+
+Sprite CDC4C1, 38, 102
+{
+    Patch CDC4C1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC4C2, 103, 102
+{
+    Patch CDC4C2, 0, 0
+    Offset 72, 102
+}
+
+Sprite CDC4C3, 137, 100
+{
+    Patch CDC4C3, 0, 0
+    Offset 80, 100
+}
+
+Sprite CDC4C4, 98, 98
+{
+    Patch CDC4C4, 0, 0
+    Offset 42, 98
+}
+
+Sprite CDC4C5, 37, 97
+{
+    Patch CDC4C5, 0, 0
+    Offset 13, 97
+}
+
+Sprite CDC4C6, 99, 97
+{
+    Patch CDC4C6, 0, 0
+    Offset 39, 97
+}
+
+Sprite CDC4C7, 140, 99
+{
+    Patch CDC4C7, 0, 0
+    Offset 61, 99
+}
+
+Sprite CDC4C8, 102, 101
+{
+    Patch CDC4C8, 0, 0
+    Offset 51, 101
+}
+
+Sprite CDC4D1, 38, 98
+{
+    Patch CDC4D1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC4D2, 83, 98
+{
+    Patch CDC4D2, 0, 0
+    Offset 69, 98
+}
+
+Sprite CDC4D3, 97, 97
+{
+    Patch CDC4D3, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC4D4, 62, 97
+{
+    Patch CDC4D4, 0, 0
+    Offset 41, 97
+}
+
+Sprite CDC4D5, 38, 96
+{
+    Patch CDC4D5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC4D6, 75, 96
+{
+    Patch CDC4D6, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC4D7, 98, 95
+{
+    Patch CDC4D7, 0, 0
+    Offset 20, 95
+}
+
+Sprite CDC4D8, 72, 97
+{
+    Patch CDC4D8, 0, 0
+    Offset 21, 97
+}
+
+Sprite CDC4E1, 39, 98
+{
+    Patch CDC4E1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC4E2, 77, 97
+{
+    Patch CDC4E2, 0, 0
+    Offset 60, 97
+}
+
+Sprite CDC4E3, 99, 95
+{
+    Patch CDC4E3, 0, 0
+    Offset 64, 95
+}
+
+Sprite CDC4E4, 69, 95
+{
+    Patch CDC4E4, 0, 0
+    Offset 32, 95
+}
+
+Sprite CDC4E5, 41, 96
+{
+    Patch CDC4E5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC4E6, 74, 96
+{
+    Patch CDC4E6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC4E7, 102, 98
+{
+    Patch CDC4E7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC4E8, 74, 98
+{
+    Patch CDC4E8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC4F1, 38, 98
+{
+    Patch CDC4F1, 0, 0
+    Offset 25, 98
+}
+
+Sprite CDC4F2, 96, 97
+{
+    Patch CDC4F2, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC4F3, 122, 95
+{
+    Patch CDC4F3, 0, 0
+    Offset 87, 95
+}
+
+Sprite CDC4F4, 84, 95
+{
+    Patch CDC4F4, 0, 0
+    Offset 47, 95
+}
+
+Sprite CDC4F5, 41, 96
+{
+    Patch CDC4F5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC4F6, 88, 96
+{
+    Patch CDC4F6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC4F7, 126, 98
+{
+    Patch CDC4F7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC4F8, 92, 98
+{
+    Patch CDC4F8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC4G1, 38, 102
+{
+    Patch CDC4G1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC4G2, 76, 101
+{
+    Patch CDC4G2, 0, 0
+    Offset 62, 101
+}
+
+Sprite CDC4G3, 95, 100
+{
+    Patch CDC4G3, 0, 0
+    Offset 63, 100
+}
+
+Sprite CDC4G4, 65, 100
+{
+    Patch CDC4G4, 0, 0
+    Offset 32, 100
+}
+
+Sprite CDC4G5, 35, 102
+{
+    Patch CDC4G5, 0, 0
+    Offset 12, 102
+}
+
+Sprite CDC4G6, 71, 102
+{
+    Patch CDC4G6, 0, 0
+    Offset 17, 102
+}
+
+Sprite CDC4G7, 99, 102
+{
+    Patch CDC4G7, 0, 0
+    Offset 34, 102
+}
+
+Sprite CDC4G8, 70, 101
+{
+    Patch CDC4G8, 0, 0
+    Offset 32, 101
+}
+
+Sprite CDC4H0, 43, 59
+{
+    Patch CDC4H0, 0, 0
+    Offset 24, 84
+}
+
+Sprite CDC4I0, 50, 22
+{
+    Patch CDC4I0, 0, 0
+    Offset 25, 18
+}
+
+Sprite CDC4J0, 67, 50
+{
+    Patch CDC4J0, 0, 0
+    Offset 27, 47
+}
+
+Sprite CDC4K0, 56, 70
+{
+    Patch CDC4K0, 0, 0
+    Offset 28, 68
+}
+
+
+Sprite CDC5A1, 40, 100
+{
+    Patch CDC5A1, 0, 0
+    Offset 26, 100
+}
+
+Sprite CDC5A2, 104, 100
+{
+    Patch CDC5A2, 0, 0
+    Offset 69, 100
+}
+
+Sprite CDC5A3, 125, 97
+{
+    Patch CDC5A3, 0, 0
+    Offset 75, 97
+}
+
+Sprite CDC5A4, 78, 95
+{
+    Patch CDC5A4, 0, 0
+    Offset 39, 95
+}
+
+Sprite CDC5A5, 40, 95
+{
+    Patch CDC5A5, 0, 0
+    Offset 14, 95
+}
+
+Sprite CDC5A6, 99, 95
+{
+    Patch CDC5A6, 0, 0
+    Offset 36, 95
+}
+
+Sprite CDC5A7, 124, 97
+{
+    Patch CDC5A7, 0, 0
+    Offset 47, 97
+}
+
+Sprite CDC5A8, 84, 99
+{
+    Patch CDC5A8, 0, 0
+    Offset 34, 99
+}
+
+Sprite CDC5B1, 40, 99
+{
+    Patch CDC5B1, 0, 0
+    Offset 26, 99
+}
+
+Sprite CDC5B2, 84, 98
+{
+    Patch CDC5B2, 0, 0
+    Offset 68, 98
+}
+
+Sprite CDC5B3, 98, 97
+{
+    Patch CDC5B3, 0, 0
+    Offset 76, 97
+}
+
+Sprite CDC5B4, 58, 96
+{
+    Patch CDC5B4, 0, 0
+    Offset 41, 96
+}
+
+Sprite CDC5B5, 39, 96
+{
+    Patch CDC5B5, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC5B6, 76, 97
+{
+    Patch CDC5B6, 0, 0
+    Offset 18, 97
+}
+
+Sprite CDC5B7, 98, 98
+{
+    Patch CDC5B7, 0, 0
+    Offset 21, 98
+}
+
+Sprite CDC5B8, 67, 100
+{
+    Patch CDC5B8, 0, 0
+    Offset 15, 100
+}
+
+Sprite CDC5C1, 38, 102
+{
+    Patch CDC5C1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC5C2, 103, 102
+{
+    Patch CDC5C2, 0, 0
+    Offset 72, 102
+}
+
+Sprite CDC5C3, 137, 100
+{
+    Patch CDC5C3, 0, 0
+    Offset 80, 100
+}
+
+Sprite CDC5C4, 98, 98
+{
+    Patch CDC5C4, 0, 0
+    Offset 42, 98
+}
+
+Sprite CDC5C5, 37, 97
+{
+    Patch CDC5C5, 0, 0
+    Offset 13, 97
+}
+
+Sprite CDC5C6, 99, 97
+{
+    Patch CDC5C6, 0, 0
+    Offset 39, 97
+}
+
+Sprite CDC5C7, 140, 99
+{
+    Patch CDC5C7, 0, 0
+    Offset 61, 99
+}
+
+Sprite CDC5C8, 102, 101
+{
+    Patch CDC5C8, 0, 0
+    Offset 51, 101
+}
+
+Sprite CDC5D1, 38, 98
+{
+    Patch CDC5D1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC5D2, 83, 98
+{
+    Patch CDC5D2, 0, 0
+    Offset 69, 98
+}
+
+Sprite CDC5D3, 97, 97
+{
+    Patch CDC5D3, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC5D4, 62, 97
+{
+    Patch CDC5D4, 0, 0
+    Offset 41, 97
+}
+
+Sprite CDC5D5, 38, 96
+{
+    Patch CDC5D5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC5D6, 75, 96
+{
+    Patch CDC5D6, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC5D7, 98, 95
+{
+    Patch CDC5D7, 0, 0
+    Offset 20, 95
+}
+
+Sprite CDC5D8, 72, 97
+{
+    Patch CDC5D8, 0, 0
+    Offset 21, 97
+}
+
+Sprite CDC5E1, 39, 98
+{
+    Patch CDC5E1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC5E2, 77, 97
+{
+    Patch CDC5E2, 0, 0
+    Offset 60, 97
+}
+
+Sprite CDC5E3, 99, 95
+{
+    Patch CDC5E3, 0, 0
+    Offset 64, 95
+}
+
+Sprite CDC5E4, 69, 95
+{
+    Patch CDC5E4, 0, 0
+    Offset 32, 95
+}
+
+Sprite CDC5E5, 41, 96
+{
+    Patch CDC5E5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC5E6, 74, 96
+{
+    Patch CDC5E6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC5E7, 102, 98
+{
+    Patch CDC5E7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC5E8, 74, 98
+{
+    Patch CDC5E8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC5F1, 38, 98
+{
+    Patch CDC5F1, 0, 0
+    Offset 25, 98
+}
+
+Sprite CDC5F2, 96, 97
+{
+    Patch CDC5F2, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC5F3, 122, 95
+{
+    Patch CDC5F3, 0, 0
+    Offset 87, 95
+}
+
+Sprite CDC5F4, 84, 95
+{
+    Patch CDC5F4, 0, 0
+    Offset 47, 95
+}
+
+Sprite CDC5F5, 41, 96
+{
+    Patch CDC5F5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC5F6, 88, 96
+{
+    Patch CDC5F6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC5F7, 126, 98
+{
+    Patch CDC5F7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC5F8, 92, 98
+{
+    Patch CDC5F8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC5G1, 38, 102
+{
+    Patch CDC5G1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC5G2, 76, 101
+{
+    Patch CDC5G2, 0, 0
+    Offset 62, 101
+}
+
+Sprite CDC5G3, 95, 100
+{
+    Patch CDC5G3, 0, 0
+    Offset 63, 100
+}
+
+Sprite CDC5G4, 65, 100
+{
+    Patch CDC5G4, 0, 0
+    Offset 32, 100
+}
+
+Sprite CDC5G5, 35, 102
+{
+    Patch CDC5G5, 0, 0
+    Offset 12, 102
+}
+
+Sprite CDC5G6, 71, 102
+{
+    Patch CDC5G6, 0, 0
+    Offset 17, 102
+}
+
+Sprite CDC5G7, 99, 102
+{
+    Patch CDC5G7, 0, 0
+    Offset 34, 102
+}
+
+Sprite CDC5G8, 70, 101
+{
+    Patch CDC5G8, 0, 0
+    Offset 32, 101
+}
+
+Sprite CDC5H0, 43, 59
+{
+    Patch CDC5H0, 0, 0
+    Offset 24, 84
+}
+
+Sprite CDC5I0, 50, 22
+{
+    Patch CDC5I0, 0, 0
+    Offset 25, 18
+}
+
+Sprite CDC5J0, 67, 50
+{
+    Patch CDC5J0, 0, 0
+    Offset 27, 47
+}
+
+Sprite CDC5K0, 56, 70
+{
+    Patch CDC5K0, 0, 0
+    Offset 28, 68
+}
+
+
+Sprite CDC6A1, 40, 100
+{
+    Patch CDC6A1, 0, 0
+    Offset 26, 100
+}
+
+Sprite CDC6A2, 104, 100
+{
+    Patch CDC6A2, 0, 0
+    Offset 69, 100
+}
+
+Sprite CDC6A3, 125, 97
+{
+    Patch CDC6A3, 0, 0
+    Offset 75, 97
+}
+
+Sprite CDC6A4, 78, 95
+{
+    Patch CDC6A4, 0, 0
+    Offset 39, 95
+}
+
+Sprite CDC6A5, 40, 95
+{
+    Patch CDC6A5, 0, 0
+    Offset 14, 95
+}
+
+Sprite CDC6A6, 99, 95
+{
+    Patch CDC6A6, 0, 0
+    Offset 36, 95
+}
+
+Sprite CDC6A7, 124, 97
+{
+    Patch CDC6A7, 0, 0
+    Offset 47, 97
+}
+
+Sprite CDC6A8, 84, 99
+{
+    Patch CDC6A8, 0, 0
+    Offset 34, 99
+}
+
+Sprite CDC6B1, 40, 99
+{
+    Patch CDC6B1, 0, 0
+    Offset 26, 99
+}
+
+Sprite CDC6B2, 84, 98
+{
+    Patch CDC6B2, 0, 0
+    Offset 68, 98
+}
+
+Sprite CDC6B3, 98, 97
+{
+    Patch CDC6B3, 0, 0
+    Offset 76, 97
+}
+
+Sprite CDC6B4, 58, 96
+{
+    Patch CDC6B4, 0, 0
+    Offset 41, 96
+}
+
+Sprite CDC6B5, 39, 96
+{
+    Patch CDC6B5, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC6B6, 76, 97
+{
+    Patch CDC6B6, 0, 0
+    Offset 18, 97
+}
+
+Sprite CDC6B7, 98, 98
+{
+    Patch CDC6B7, 0, 0
+    Offset 21, 98
+}
+
+Sprite CDC6B8, 67, 100
+{
+    Patch CDC6B8, 0, 0
+    Offset 15, 100
+}
+
+Sprite CDC6C1, 38, 102
+{
+    Patch CDC6C1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC6C2, 103, 102
+{
+    Patch CDC6C2, 0, 0
+    Offset 72, 102
+}
+
+Sprite CDC6C3, 137, 100
+{
+    Patch CDC6C3, 0, 0
+    Offset 80, 100
+}
+
+Sprite CDC6C4, 98, 98
+{
+    Patch CDC6C4, 0, 0
+    Offset 42, 98
+}
+
+Sprite CDC6C5, 37, 97
+{
+    Patch CDC6C5, 0, 0
+    Offset 13, 97
+}
+
+Sprite CDC6C6, 99, 97
+{
+    Patch CDC6C6, 0, 0
+    Offset 39, 97
+}
+
+Sprite CDC6C7, 140, 99
+{
+    Patch CDC6C7, 0, 0
+    Offset 61, 99
+}
+
+Sprite CDC6C8, 102, 101
+{
+    Patch CDC6C8, 0, 0
+    Offset 51, 101
+}
+
+Sprite CDC6D1, 38, 98
+{
+    Patch CDC6D1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC6D2, 83, 98
+{
+    Patch CDC6D2, 0, 0
+    Offset 69, 98
+}
+
+Sprite CDC6D3, 97, 97
+{
+    Patch CDC6D3, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC6D4, 62, 97
+{
+    Patch CDC6D4, 0, 0
+    Offset 41, 97
+}
+
+Sprite CDC6D5, 38, 96
+{
+    Patch CDC6D5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC6D6, 75, 96
+{
+    Patch CDC6D6, 0, 0
+    Offset 15, 96
+}
+
+Sprite CDC6D7, 98, 95
+{
+    Patch CDC6D7, 0, 0
+    Offset 20, 95
+}
+
+Sprite CDC6D8, 72, 97
+{
+    Patch CDC6D8, 0, 0
+    Offset 21, 97
+}
+
+Sprite CDC6E1, 39, 98
+{
+    Patch CDC6E1, 0, 0
+    Offset 26, 98
+}
+
+Sprite CDC6E2, 77, 97
+{
+    Patch CDC6E2, 0, 0
+    Offset 60, 97
+}
+
+Sprite CDC6E3, 99, 95
+{
+    Patch CDC6E3, 0, 0
+    Offset 64, 95
+}
+
+Sprite CDC6E4, 69, 95
+{
+    Patch CDC6E4, 0, 0
+    Offset 32, 95
+}
+
+Sprite CDC6E5, 41, 96
+{
+    Patch CDC6E5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC6E6, 74, 96
+{
+    Patch CDC6E6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC6E7, 102, 98
+{
+    Patch CDC6E7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC6E8, 74, 98
+{
+    Patch CDC6E8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC6F1, 38, 98
+{
+    Patch CDC6F1, 0, 0
+    Offset 25, 98
+}
+
+Sprite CDC6F2, 96, 97
+{
+    Patch CDC6F2, 0, 0
+    Offset 79, 97
+}
+
+Sprite CDC6F3, 122, 95
+{
+    Patch CDC6F3, 0, 0
+    Offset 87, 95
+}
+
+Sprite CDC6F4, 84, 95
+{
+    Patch CDC6F4, 0, 0
+    Offset 47, 95
+}
+
+Sprite CDC6F5, 41, 96
+{
+    Patch CDC6F5, 0, 0
+    Offset 13, 96
+}
+
+Sprite CDC6F6, 88, 96
+{
+    Patch CDC6F6, 0, 0
+    Offset 19, 96
+}
+
+Sprite CDC6F7, 126, 98
+{
+    Patch CDC6F7, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC6F8, 92, 98
+{
+    Patch CDC6F8, 0, 0
+    Offset 37, 98
+}
+
+Sprite CDC6G1, 38, 102
+{
+    Patch CDC6G1, 0, 0
+    Offset 25, 102
+}
+
+Sprite CDC6G2, 76, 101
+{
+    Patch CDC6G2, 0, 0
+    Offset 62, 101
+}
+
+Sprite CDC6G3, 95, 100
+{
+    Patch CDC6G3, 0, 0
+    Offset 63, 100
+}
+
+Sprite CDC6G4, 65, 100
+{
+    Patch CDC6G4, 0, 0
+    Offset 32, 100
+}
+
+Sprite CDC6G5, 35, 102
+{
+    Patch CDC6G5, 0, 0
+    Offset 12, 102
+}
+
+Sprite CDC6G6, 71, 102
+{
+    Patch CDC6G6, 0, 0
+    Offset 17, 102
+}
+
+Sprite CDC6G7, 99, 102
+{
+    Patch CDC6G7, 0, 0
+    Offset 34, 102
+}
+
+Sprite CDC6G8, 70, 101
+{
+    Patch CDC6G8, 0, 0
+    Offset 32, 101
+}
+
+Sprite CDC6H0, 43, 59
+{
+    Patch CDC6H0, 0, 0
+    Offset 24, 84
+}
+
+Sprite CDC6I0, 50, 22
+{
+    Patch CDC6I0, 0, 0
+    Offset 25, 18
+}
+
+Sprite CDC6J0, 67, 50
+{
+    Patch CDC6J0, 0, 0
+    Offset 27, 47
+}
+
+Sprite CDC6K0, 56, 70
+{
+    Patch CDC6K0, 0, 0
+    Offset 28, 68
+}
+
+
