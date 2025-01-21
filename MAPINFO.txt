@@ -294,6 +294,17 @@ Map PRLD01 "Home"//"$TXT_PRLD01"
 	next = prld03//2 not yet i havent made it xd
 }
 
+Map PRLD02 "The Outskirts"
+{
+	music = ""
+	sky1 = "SKYOUTSK"
+	MONSTERFALLINGDAMAGE
+	FALLINGDAMAGE
+	//NoIntermission
+	InterMusic = "D_DM2INT"
+	next = prld04
+}
+
 Map PRLD03 "Parade of Disasters"
 {
 	music = ""
