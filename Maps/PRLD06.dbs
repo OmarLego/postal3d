@@ -73,7 +73,7 @@ maps
 		defaulttoptexture = "JYRDRCK1";
 		overridebottomtexture = false;
 		defaultbottomtexture = "JYRDRCK1";
-		defaultfloortexture = "GRASS1";
+		defaultfloortexture = "JYRDFENC";
 		overrideceilheight = false;
 		overridebrightness = false;
 		
