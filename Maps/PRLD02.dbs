@@ -28,11 +28,10 @@ maps
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
-				requiredarchives = "";
 			}
 		}
 		defaultfloortexture = "GRBRG1";
-		defaultceiltexture = "1JYRDRCK";
+		defaultceiltexture = "GREY129";
 		defaulttoptexture = "JYRDRCK1";
 		defaultwalltexture = "JYRDRCK1";
 		defaultbottomtexture = "JYRDRCK1";
@@ -48,9 +47,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = -1058.978f;
-		viewpositiony = 1040.686f;
-		viewscale = 0.2958573f;
+		viewpositionx = -145.8828f;
+		viewpositiony = 270.2911f;
+		viewscale = 0.2958571f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
