@@ -653,6 +653,8 @@ ACTOR SWAT1_1 : Postal3dMonster
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -666,6 +668,8 @@ ACTOR SWAT1_1 : Postal3dMonster
 		SWT1 T 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop", CHAN_AUTO)
 		SWT1 U 35 A_Stop

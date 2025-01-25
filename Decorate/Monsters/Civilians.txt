@@ -150,6 +150,8 @@ ACTOR Civilian1_1 : Postal3dMonster
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -163,6 +165,8 @@ ACTOR Civilian1_1 : Postal3dMonster
 		CV01 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV01 T 35 A_Stop
@@ -488,6 +492,8 @@ ACTOR Civilian2_1 : Civilian1_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -501,6 +507,8 @@ ACTOR Civilian2_1 : Civilian1_1
 		CV02 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV02 T 35 A_Stop
@@ -686,6 +694,8 @@ ACTOR Civilian3_1 : Civilian1_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -699,6 +709,8 @@ ACTOR Civilian3_1 : Civilian1_1
 		CV03 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV03 T 35 A_Stop
@@ -1000,6 +1012,8 @@ ACTOR Civilian4_1 : Civilian1_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -1013,6 +1027,8 @@ ACTOR Civilian4_1 : Civilian1_1
 		CV04 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV04 T 35 A_Stop
@@ -1314,6 +1330,8 @@ ACTOR Civilian5_1 : Civilian1_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -1327,6 +1345,8 @@ ACTOR Civilian5_1 : Civilian1_1
 		CV05 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV05 T 35 A_Stop
@@ -1628,6 +1648,8 @@ ACTOR Civilian6_1 : Civilian1_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -1641,6 +1663,8 @@ ACTOR Civilian6_1 : Civilian1_1
 		CV06 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV06 T 35 A_Stop
@@ -1942,6 +1966,8 @@ ACTOR Civilian7_1 : Civilian1_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -1955,6 +1981,8 @@ ACTOR Civilian7_1 : Civilian1_1
 		CV07 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV07 T 35 A_Stop
@@ -2266,6 +2294,8 @@ ACTOR Civilian8_1 : Civilian2_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -2279,6 +2309,8 @@ ACTOR Civilian8_1 : Civilian2_1
 		CV08 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV08 T 35 A_Stop
@@ -2469,6 +2501,8 @@ ACTOR Civilian9_1 : Civilian2_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -2482,6 +2516,8 @@ ACTOR Civilian9_1 : Civilian2_1
 		CV09 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV09 T 35 A_Stop
@@ -2672,6 +2708,8 @@ ACTOR Civilian10_1 : Civilian2_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -2685,6 +2723,8 @@ ACTOR Civilian10_1 : Civilian2_1
 		CV10 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV10 T 35 A_Stop
@@ -2875,6 +2915,8 @@ ACTOR Civilian11_1 : Civilian2_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -2888,6 +2930,8 @@ ACTOR Civilian11_1 : Civilian2_1
 		CV11 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV11 T 35 A_Stop
@@ -3078,6 +3122,8 @@ ACTOR Civilian12_1 : Civilian2_1
 	Pain.Kick:
 	Pain.HeavyImpact:
 	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
         TNT1 A 0
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
@@ -3091,6 +3137,8 @@ ACTOR Civilian12_1 : Civilian2_1
 		CV12 S 1 A_CheckFloor("BrainDamage")
 		Loop
 	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
 		TNT1 A 0 A_GiveInventory("IsDown")
 		TNT1 A 0 A_PlaySound("bodydrop")
 		CV12 T 35 A_Stop
