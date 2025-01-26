@@ -4,7 +4,48 @@ version "4.11"
 #include "rainsnow/rainandsnow.zs"
 #include "rainsnow/patternhandler.zs"
 
-//fmv classes are below all of this(it inherits from the base class here)
+class FMVActor : MapSpot
+{
+	//$Title "Cutscene"
+	//$Category "Special"
+	
+	//$UserDefaultValue "Movies/prldINTRO.ivf"
+	string user_video;
+	
+	Default
+	{
+		+NOTIMEFREEZE
+	}
+	
+	override void Activate(Actor activator)
+	{
+		for (int i=0; i < MAXPLAYERS; i++)
+		{
+			if (playerInGame[i] && players[i].health > 0)
+			{
+				let f = FMV(Spawn('FMV'));
+				f.fmv_fn = user_video;
+				f.bNoTeleportFreeze = true;
+				f.bAutoActivate = true;
+				f.bAlwaysPickup = true;
+				
+				if(!f.CallTryPickup(players[i].mo))
+				{
+					f.Destroy();
+					Destroy();
+					return;
+				}
+				
+				break;
+			}
+		}
+		
+		Destroy();
+	}
+}
+
+//$GZDB_SKIP
+
 class FMV : Inventory
 {
 	string fmv_fn;
@@ -16,7 +57,7 @@ class FMV : Inventory
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.ALWAYSPICKUP
 		
-		FMV.File "videos/test.ivf";
+		FMV.File "Movies/prldINTRO.ivf";
 	}
 	
 	private void SetFrozen(bool set)
@@ -49,8 +90,6 @@ class FMV : Inventory
 					players[i].cheats &= ~CF_GODMODE;
 				}
 			}
-			else
-				break;
 		}
     }
 	
@@ -66,7 +105,6 @@ class FMV : Inventory
     {
         SetFrozen(false);
     }
-	
 }
 
 class FMVHandler : StaticEventHandler
@@ -100,7 +138,7 @@ class FMVHandler : StaticEventHandler
 		for (int i=0; i < MAXPLAYERS; i++)
 		{
 			if (playerInGame[i] && players[i].mo)
-				players[consoleplayer].mo.TakeInventory("FMV", 1);
+				players[i].mo.TakeInventory("FMV", 1);
 		}
 		
 	}
@@ -185,16 +223,5 @@ class FMVHandler : StaticEventHandler
 	{
 		if (!(mp && red)) return;
 		Screen.DrawTexture(mptex, false, 0, 0, DTA_Fullscreen, true);
-	}
-}
-
-
-
-//here
-class FMVparade : FMV
-{
-	Default
-	{
-		FMV.File "movies/mold.ivf";
 	}
 }

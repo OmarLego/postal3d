@@ -1,4 +1,4 @@
-version 4.5
+version "4.5"
 
 #include "targetspy/ts_event_handler.zs"
 

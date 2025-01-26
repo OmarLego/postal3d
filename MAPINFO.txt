@@ -58,7 +58,6 @@ DoomEdNums
 	10025 = PRLD_M12Spawner
 	15024 = Grenadee
 	15023 = PipeBombWeap
-	//10027 = PB
 	10029 = Molotovv
 	5010 = PRLD_MP5KSpawner
 	15018 = PRLD_M16
@@ -102,6 +101,7 @@ DoomEdNums
 	
 	//Decoration
 	
+	10027 = FMVActor //has special shit to activate proper FMV movies once activated in ACS
 	28473 = Weather
 	30105 = PRLD_SnowTree
 	30100 = PRLD_Tree
