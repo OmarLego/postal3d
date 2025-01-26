@@ -3,3 +3,198 @@ version "4.11"
 #include "rainsnow/weather/include.zs"
 #include "rainsnow/rainandsnow.zs"
 #include "rainsnow/patternhandler.zs"
+
+//fmv classes are below all of this(it inherits from the base class here)
+class FMV : Inventory
+{
+	string fmv_fn;
+	property File: fmv_fn;
+
+	Default
+	{
+		+INVENTORY.NOTELEPORTFREEZE
+		+INVENTORY.AUTOACTIVATE
+		+INVENTORY.ALWAYSPICKUP
+		
+		FMV.File "videos/test.ivf";
+	}
+	
+	private void SetFrozen(bool set)
+    {
+        ThinkerIterator it = ThinkerIterator.Create("Actor");
+        Actor mo;
+        while (mo = Actor(it.Next()))
+        {
+            if (mo.bIsMonster || mo.player)
+            {
+                int t = !set ? 0 : int.max;
+                mo.freezetics = t;
+            }
+			
+        }
+		
+		for (int i=0; i < MAXPLAYERS;i++)
+		{
+			if (playerInGame[i] && players[i].mo)
+			{
+				if (set) players[i].vel = (0,0);
+				if (set)
+				{
+					players[i].cheats |= CF_FROZEN;
+					players[i].cheats |= CF_GODMODE;
+				}
+				else
+				{
+					players[i].cheats &= ~CF_FROZEN;
+					players[i].cheats &= ~CF_GODMODE;
+				}
+			}
+			else
+				break;
+		}
+    }
+	
+	override void AttachToOwner(Actor other)
+    {
+        Super.AttachToOwner(other);
+        EventHandler.SendInterfaceEvent(consoleplayer, String.Format("_STARTFMV|%s", fmv_fn));
+
+        SetFrozen(true);
+    }
+
+    override void DetachFromOwner(void)
+    {
+        SetFrozen(false);
+    }
+	
+}
+
+class FMVHandler : StaticEventHandler
+{
+
+	static const String SKIPKEYS[] =
+	{
+		"+use",
+		"+jump"
+	};
+	
+	static const int SPECIALKEYS[] =
+	{
+		0x01,
+		0x1c,
+		0xc5,
+		0x1B8
+	};
+	
+	const fmvev = "_SKIPFMV";
+	
+	ui MoviePlayer mp;
+	ui TextureID mptex;
+	ui bool red;
+
+	override void NetworkProcess(ConsoleEvent e)
+	{
+		if (e.Name != fmvev)
+			return;
+		
+		for (int i=0; i < MAXPLAYERS; i++)
+		{
+			if (playerInGame[i] && players[i].mo)
+				players[consoleplayer].mo.TakeInventory("FMV", 1);
+		}
+		
+	}
+
+	ui void DestroyMP(bool sendev=false)
+	{
+		if (mp)
+		{
+			red = false;
+			mp.Destroy();
+			mp = null;
+			S_PauseSound(true, true);
+			if (sendev) EventHandler.SendNetworkEvent(fmvev);
+		}
+	}
+
+	override void InterfaceProcess(ConsoleEvent e)
+	{
+		if (e.IsManual || (mp))
+			return;
+		Array<String> param;
+		e.Name.Split(param, "|", TOK_SKIPEMPTY);
+		if (param.Size() != 2 || param[0] != "_STARTFMV")
+			return;
+		
+		Array<int> emp;
+		mp = MoviePlayer.Create(param[1], emp, 0, 1, -1, -1);
+		mp.Start();
+	}
+
+	override bool InputProcess(InputEvent e)
+	{
+		if ((mp) && e.Type == InputEvent.Type_KeyDown)
+		{
+			int i;
+			for (i=0; i < SPECIALKEYS.Size(); i++)
+			{
+				if (e.KeyScan == SPECIALKEYS[i])
+				{
+					DestroyMP(true);
+					return true;
+				}
+			}
+		
+			for (i=0; i < SKIPKEYS.Size(); i++)
+			{
+				if (bindings.GetBinding(e.KeyScan) == SKIPKEYS[i])
+				{
+					DestroyMP(true);
+					return true;
+				}
+			}
+			
+			return true;
+		}
+		return false;
+	}
+
+
+	override void UiTick()
+	{
+		if (mp)
+		{
+			if (level.maptime <= 1)
+			{
+				DestroyMP();
+				return;
+			}
+			
+			if (mp.Frame(1.0))
+			{
+				mptex = mp.GetTexture();
+				red = true;
+				S_PauseSound(false, false);
+			}
+			else
+				DestroyMP(true);
+		}
+	}
+
+	override void RenderOverlay(RenderEvent e)
+	{
+		if (!(mp && red)) return;
+		Screen.DrawTexture(mptex, false, 0, 0, DTA_Fullscreen, true);
+	}
+}
+
+
+
+//here
+class FMVparade : FMV
+{
+	Default
+	{
+		FMV.File "movies/mold.ivf";
+	}
+}

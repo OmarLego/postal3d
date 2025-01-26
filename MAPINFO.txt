@@ -35,9 +35,10 @@ gameinfo
 	AddEventHandlers = "DmgDirOvEH"
 	TitleMusic = "D_DM2TTL"
 	
-	//if playing with gzdoom versions older than 4.11, delete the 2 lines below
+	//if playing with gzdoom versions older than 4.11, delete the 3 lines below
 	AddEventHandlers = "WeatherPatternHandler"
 	Intro {video = "Movies/PRLDINTRO.ivf" sound = "Movies/PRLDINTRO"}
+	AddEventHandlers = "FMVHandler"
 }
 
 //-------------------------------------------------------------------------------------------
