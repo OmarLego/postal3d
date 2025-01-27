@@ -55,6 +55,7 @@
 #include  "Decorate/monsters/SWAT.txt"
 #include  "Decorate/monsters/SwatSPECIAL.txt"
 #include "Decorate/monsters/CDC.txt"
+#include "Decorate/monsters/RBMilita.txt"
 //bosses
 #include  "Decorate/monsters/SheriffBoss.txt"
 

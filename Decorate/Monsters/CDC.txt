@@ -59,6 +59,7 @@ ACTOR CDC1_1 : Civilian1_1
     //ActiveSound "act1_copact"
 	SeeSound ""
 	ActiveSound ""
+	DamageFactor "HFire", 0.0
 	States
 	{
   	Spawn:
