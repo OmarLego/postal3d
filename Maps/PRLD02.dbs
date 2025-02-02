@@ -28,6 +28,7 @@ maps
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
+				requiredarchives = "";
 			}
 		}
 		defaultfloortexture = "GRBRG1";
@@ -47,9 +48,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 1714.849f;
-		viewpositiony = 775.6564f;
-		viewscale = 0.364274f;
+		viewpositionx = 1525.637f;
+		viewpositiony = 475.6556f;
+		viewscale = 0.4735561f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -60,7 +61,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 64;
+			gridsize = 32;
 			gridrotate = 0;
 			gridoriginx = 0;
 			gridoriginy = 0;
