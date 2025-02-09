@@ -229,7 +229,8 @@ ACTOR MolotovRB : MolotovFly
 
 	Death:
 	XDeath:	
-	TNT1 A 0 A_Explode(39, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
+	//TNT1 A 0 A_Explode(39, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
+	TNT1 A 0 A_Explode(23, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
 	Explode:
 	TNT1 A 0
     TNT1 A 0 A_PlaySound("MBREAK",CHAN_AUTO)
@@ -316,6 +317,7 @@ ACTOR RBMUA : CDC1_1
 		RBUA F 1 BRIGHT A_CustomMissile("HostileRifleTracer2", 40, 4, random(-2, 2), 1, random(-2, 2))
 		RBUA E 1 A_FaceTarget
 		RBUA E 2
+		//TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 1)
 		Goto SeeLoop
   GrenadeCheck:
 		TNT1 A 0 
@@ -334,10 +336,12 @@ ACTOR RBMUA : CDC1_1
 		TNT1 A 0 A_SpawnProjectile("MolotovRB",32,0,0,CMF_OFFSETPITCH,-5)
 		TNT1 A 0 A_GiveInventory ("PRLD_GrenadeCoolDown", 3)
 		RBUA I 8
+		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 1)
 		Goto SeeLoop	
 	Pain:
 		RBUA J 3 A_Pain
 		RBUA J 4
+		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 1)
 		Goto See
 	Pain.Kick:
 	Pain.HeavyImpact:
