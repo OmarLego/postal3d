@@ -1,3 +1,32 @@
+//FOOTSTEPS BELOW
+/*
+----------------------------
+MetaDoom
+Terrain Definitions
+----------------------------
+*/
+
+// Based off Enjay's terrain definitions WAD, which at this point I'm pretty sure
+// is older than most ZScript experts. (truth)
+
+splash MetaWater
+{
+	smallclass		WaterSplash
+	smallclip		12
+	smallsound		world/drip
+
+	baseclass		WaterSplashBase
+	chunkclass		WaterSplash
+	chunkxvelshift	8
+	chunkyvelshift	8
+	chunkzvelshift	8
+	chunkbasezvel	2
+	sound			world/watersplash
+	noalert
+}
+floor WATR1 MetaWater
+floor WATR2 MetaWater
+
 //********** Splashes **********
 splash nukage
 {
