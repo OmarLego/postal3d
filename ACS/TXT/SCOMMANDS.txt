@@ -12,7 +12,39 @@ Script 301 (VOID) NET
 
 Script 363 (VOID) NET
 {
- GiveInventory("YouRegretNothing", 1);
+ //GiveInventory("YouRegretNothing", 1);
+	PlaySound(0, "Dude/Hero", CHAN_AUTO);
+	SetPlayerProperty(1, 1,  PROP_FROZEN);
+	SetPlayerProperty(1, 1,  PROP_INVULNERABILITY);
+	//Delay(35);
+	FadeTo(0, 0, 0, 4.0, 1.0);
+	Delay(35);
+	//Delay(20);
+	Delay(35);
+	Delay(20);
+	SetPlayerProperty(1, 0,  PROP_INVULNERABILITY);
+	Delay(1);
+	PlaySound(0, "MFIR", CHAN_AUTO);
+	PlaySound(0, "misc/gibbed", CHAN_AUTO);
+	Thing_Damage2(0, 500, "Suicide");
+	FadeTo(0, 0, 0, 4.0, 0.1);
+	Delay(1);
+	FadeTo(0, 0, 0, 4.0, 0.1);
+	
+	Delay(1);
+	FadeTo(0, 0, 0, 4.0, 0.1);
+	Delay(1);
+	FadeTo(0, 0, 0, 4.0, 0.1);
+	Delay(1);
+	FadeTo(0, 0, 0, 4.0, 0.1);
+	Delay(1);
+	FadeTo(0, 0, 0, 4.0, 0.1);
+	Delay(1);
+	FadeTo(0, 0, 0, 4.0, 0.1);
+	Delay(1);
+	FadeTo(0, 0, 0, 4.0, 0.1);
+	Delay(3);
+	//PlaySound(0, "misc/gibbed", CHAN_AUTO);
 }
 
 script "PrldJanny" (void)

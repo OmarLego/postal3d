@@ -181,5 +181,13 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 		DUDE K 6
 		DUDE L -1
         Stop
+    Death.Suicide:
+		DUDE G 6
+		DUDE H 6
+		DUDE I 6 A_NoBlocking
+		DUDE J 6
+		DUDE K 6
+		DUDE L -1
+        Stop
 	}
 }

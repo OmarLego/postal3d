@@ -211,6 +211,13 @@ demon/shownomercy1		"Sounds/Voiceovers/Demon/Shotgun/shownomercy1.ogg"
 demon/shownomercy2		"Sounds/Voiceovers/Demon/Shotgun/shownomercy2.ogg"
 
 
+$Random Dude/Hero
+{ demon/hero1 demon/hero2 demon/hero3 }
+demon/hero1		"Sounds/Voiceovers/Demon/AnHero/noregrets1.ogg"
+demon/hero2		"Sounds/Voiceovers/Demon/AnHero/noregrets2.ogg"
+demon/hero3		"Sounds/Voiceovers/Demon/AnHero/noregrets3.ogg"
+
+
 
 //                            CUTSCENES
 
