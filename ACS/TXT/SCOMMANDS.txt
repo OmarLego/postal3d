@@ -106,6 +106,10 @@ Script "whats that casing sound?" (Void)
 	if (CheckActorFloorTexture(0, "PBED11")) GiveInventory("PRLD_OnSnow", 1);
 	if (CheckActorFloorTexture(0, "PBED12")) GiveInventory("PRLD_OnSnow", 1);
 	if (CheckActorFloorTexture(0, "GRENDIRT")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PGRASS1")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PGRASS2")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PGRASS3")) GiveInventory("PRLD_OnSnow", 1);
+	if (CheckActorFloorTexture(0, "PODRD2")) GiveInventory("PRLD_OnSnow", 1);
 	
 	if (CheckActorFloorTexture(0, "FLAT10")) GiveInventory("PRLD_OnSnow", 1);//doom texture
 	if (CheckActorFloorTexture(0, "GRASS1")) GiveInventory("PRLD_OnSnow", 1);//doom texture
