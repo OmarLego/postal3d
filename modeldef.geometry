@@ -109,6 +109,15 @@ model PRLD_BathRoof1
    
 	FrameIndex BRLS A 0 0
 }
+model PRLD_OutsRoof1
+{
+	Path "Models/Geometry/Roofs"
+	Model 0 "outsroof1.md3"
+	Scale 1.0 1.0 1.2
+	ZOffset -104
+   
+	FrameIndex BRLS A 0 0
+}
 
 //           PROPS
 

@@ -95,6 +95,14 @@ actor PRLD_BathRoof1 : PRLD_DudeRoof
 			Stop
 	}
 }
+actor PRLD_OutsRoof1 : PRLD_DudeRoof
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_Sink
 {
