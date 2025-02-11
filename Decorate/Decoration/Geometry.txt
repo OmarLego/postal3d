@@ -111,6 +111,22 @@ actor PRLD_OutsRoof2 : PRLD_DudeRoof
 			Stop
 	}
 }
+actor PRLD_OutsRoof3 : PRLD_DudeRoof
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_OutsRoof4 : PRLD_DudeRoof
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_Sink
 {
