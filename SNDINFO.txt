@@ -61,7 +61,8 @@ weapons/m16/fire1 "sounds/weapons/Hostile/RIFLFIR1.ogg"
 weapons/m16/fire2 "sounds/weapons/Hostile/RIFLFIR2.ogg"
 //$random weapons/hostile/RIFLFIR { weapons/hostile/RIFLFIR1.ogg weapons/hostile/RIFLFIR2.ogg }
 $alias hostrifl AKFIR
-$alias weapons/m16/fire AKFIR
+//$alias weapons/m16/fire AKFIR
+$Random weapons/m16/fire { weapons/m16/fire1 weapons/m16/fire2 }
 $Random weapons/m16/dist { r_dist1 r_dist2 }
 r_dist1 r_dist1
 r_dist2 r_dist2
