@@ -1024,7 +1024,6 @@ STMEPA05 STMEPA05
 STMEPA06 STMEPA06
 STMEPA07 STMEPA07
 STMEPA08 STMEPA08
-//$random Banderite/Death { STMEDE01 STMEDE02 STMEDE03 STMEDE04 STMEDE05 STMEDE06 STMEDE07 }
 STMEDE01 STMEDE01
 STMEDE02 STMEDE02
 STMEDE03 STMEDE03
@@ -1032,9 +1031,30 @@ STMEDE04 STMEDE04
 STMEDE05 STMEDE05
 STMEDE06 STMEDE06
 STMEDE07 STMEDE07
+$random Banderite/Death { SLAVDE1 SLAVDE2 SLAVDE3 SLAVDE4 SLAVDE5 SLAVDE6 }
 SLAVDE1 SLAVDE1 //bandit
 SLAVDE2 SLAVDE2
 SLAVDE3 SLAVDE3
 SLAVDE4 SLAVDE4
 SLAVDE5 SLAVDE6
 SLAVDE6 SLAVDE6
+$random Banderite/CivSpot 
+{ Banderite/CivSpot1 Banderite/CivSpot2 Banderite/CivSpot3 Banderite/CivSpot4
+Banderite/CivSpot5 Banderite/CivSpot6 Banderite/CivSpot7 Banderite/CivSpot8
+Banderite/CivSpot9 Banderite/CivSpot10 Banderite/Backup1 Banderite/Backup2
+Banderite/Backup3 Banderite/Backup4 }
+
+Banderite/CivSpot1			"Sounds/Voiceovers/Banderites/SLAVPANIC1.ogg"
+Banderite/CivSpot2			"Sounds/Voiceovers/Banderites/SLAVPANIC2.ogg"
+Banderite/CivSpot3			"Sounds/Voiceovers/Banderites/SLAVPANIC3.ogg"
+Banderite/CivSpot4			"Sounds/Voiceovers/Banderites/SLAVPANIC4.ogg"
+Banderite/CivSpot5			"Sounds/Voiceovers/Banderites/SLAVPANIC5.ogg"
+Banderite/CivSpot6			"Sounds/Voiceovers/Banderites/SLAVPANIC6.ogg"
+Banderite/CivSpot7			"Sounds/Voiceovers/Banderites/SLAVPANIC7.ogg"
+Banderite/CivSpot8			"Sounds/Voiceovers/Banderites/SLAVPANIC8.ogg"
+Banderite/CivSpot9			"Sounds/Voiceovers/Banderites/SLAVPANIC9.ogg"
+Banderite/CivSpot10			"Sounds/Voiceovers/Banderites/SLAVPANIC10.ogg"
+Banderite/Backup1			"Sounds/Voiceovers/Banderites/backup1.ogg"
+Banderite/Backup2			"Sounds/Voiceovers/Banderites/backup2.ogg"
+Banderite/Backup3			"Sounds/Voiceovers/Banderites/backup3.ogg"
+Banderite/Backup4			"Sounds/Voiceovers/Banderites/backup4.ogg"
