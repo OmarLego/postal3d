@@ -308,6 +308,11 @@ Actor PRLD_SwatShield
 //////////////////////////////////////            ////////////////////////////////////////////
 
 
+Actor PRLD_ExecSWAT1 : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR SWAT1_1 : Postal3dMonster
 {
 	//PainChance 200
@@ -316,7 +321,7 @@ ACTOR SWAT1_1 : Postal3dMonster
     SeeSound "act1_copspot"
     PainSound "act1_pain"
     ActiveSound "act1_copact"
-    Obituary "%o was shot by a SWAT team member."
+    Obituary "%o was a fly and got SWATted."
 	Health 40
 	DropItem "AKBullets"
 	Tag "SWAT"

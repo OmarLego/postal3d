@@ -261,12 +261,23 @@ ACTOR MolotovRB : MolotovFly
 	}
 }
 
+
+
+//           actual monsters
+
+
+
+Actor PRLD_ExecRBMUA : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR RBMUA : CDC1_1
 {
 	seesound "Banderite/See"
 	painsound "Banderite/Pain"
 	activesound "Banderite/Active"
-	Obituary "%o, add mario"
+	Obituary "%o had a hero's ((liberation))."
 	Species "Hostiles"
 	States
 	{

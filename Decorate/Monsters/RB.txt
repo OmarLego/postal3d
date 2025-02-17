@@ -1,0 +1,261 @@
+ACTOR PRLD_RBspawn : RandomSpawner
+{
+	Species Civilian
+	Radius 20
+    Height 52
+	
+	DropItem "RBUA"
+	Scale 0.5
+	States
+	{
+	Spawn:
+		RCUA E 0
+		Stop
+	}
+}
+ACTOR PRLD_RBspawnGun : RandomSpawner
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	
+	DropItem "RBUAgun"
+	Scale 0.5
+	States
+	{
+	Spawn:
+		RCUA F 0
+		Stop
+	}
+}
+ACTOR PRLD_RBspawnRandom : RandomSpawner//not used in the main campaign
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	
+	DropItem "PRLD_RBspawn"
+	DropItem "PRLD_RBspawnGun"
+}
+
+
+
+
+Actor PRLD_ExecRBUA : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
+ACTOR RBUA : Civilian1_1
+{
+	//seesound "Banderite/See"
+	seesound ""
+	//activesound "Banderite/Active"
+	activesound ""
+	painsound "Banderite/Pain"
+	Obituary "%o's blood wasn't in unity."
+	States
+	{
+  	Spawn:
+		RCUA E 10 A_Look
+		Loop
+	See:
+	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		RCUA AAA 2 A_Wander
+		RCUA BBB 2 A_Wander
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		RCUA CCC 2 A_Wander
+		RCUA DDD 2 A_Wander
+		TNT1 A 0 A_GiveInventory("PRLD_BurnLife", 1)
+		TNT1 A 0 A_JumpIfInventory("PRLD_BurnLife", 8, "CheckYell")
+		Loop
+	CheckYell:
+		TNT1 A 0
+		TNT1 A 0 A_Jump(128, "Yell")
+		TNT1 A 0 A_Jump(256, "SeeLoop")
+	Yell:
+		TNT1 A 0
+		//TNT1 A 0 A_PlaySound("act3_civspot")
+		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 8)
+		TNT1 A 0 A_Jump(256, "SeeLoop")
+	Pain:
+		RCUA H 3 A_Pain
+		RCUA H 4
+		Goto See
+	Pain.Kick:
+	Pain.HeavyImpact:
+	Pain.Stomp:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
+        TNT1 A 0
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		RCUA R 3
+	FlyLoop:
+		RCUA R 1 A_CheckFloor("BrainDamage")
+		Loop
+	BrainDamage:
+		TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
+		TNT1 A 0 A_GiveInventory("IsDown")
+		TNT1 A 0 A_PlaySound("bodydrop")
+		RCUA S 35 A_Stop
+		RCUA TU 10
+		TNT1 A 0 A_TakeInventory("IsDown")
+		Goto See
+		
+	Execute:
+		TNT1 A 0
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_RadiusGive("ExecuteDownedEnemy", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_KickExec", 100, RGF_PLAYERS, 1)
+		//TNT1 A 0 A_ChangeFlag("COUNTKILL", 0)
+		TNT1 A 0 A_RadiusGive("PRLD_ExecCivilian1", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_RadiusGive("PRLD_Actor1Exec", 100, RGF_PLAYERS, 1)
+		TNT1 A 0 A_DamageSelf(999, Execution)
+		
+    DieNormal:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 26)
+        RCUA KLMN 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+		TNT1 A 0 A_SetScale(0.5,0.43)
+		RCUA O 5
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+        TNT1 A 0 A_SpawnItem ("DeadUA_1", 0)
+		TNT1 A -1
+	DieNormal2:	
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 26)
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+        RCUA KLMN 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+		TNT1 A 0 A_SetScale(-0.5,0.43)
+		RCUA O 5
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+        TNT1 A 0 A_SpawnItem ("DeadUA_2", 0)
+		TNT1 A -1
+    DieHeadOff1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 6, 50)
+		//gotta be one of the worst actor names
+        TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 48, 0, random (0, 360), 2, random (0, 160))
+        RCUA PQMN 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+		TNT1 A 0 A_SetScale(0.5,0.43)
+		RCUA O 5
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+        TNT1 A 0 A_SpawnItem ("DeadUAHeadOff1", 0)
+		TNT1 A -1
+    DieHeadOff2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 6, 50)
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+        TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 48, 0, random (0, 360), 2, random (0, 160))
+        RCUA PQMN 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+		TNT1 A 0 A_SetScale(-0.5,0.43)
+		RCUA O 5
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+        TNT1 A 0 A_SpawnItem ("DeadUAHeadOff2", 0)
+		TNT1 A -1
+	DieCrawl:
+		TNT1 A 0
+        RCUA KLMN 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop")
+		TNT1 A 0 A_SetScale(0.5,0.43)
+		RCUA O 5
+		TNT1 A 0 A_SetScale(0.5,0.5)
+        RCUA O 35
+		TNT1 A 0 A_Jump(256, "SpawnCrawl")
+	SpawnCrawl:
+        TNT1 A 0 A_SpawnItem("InjuredUA")
+		TNT1 A -1
+	DieBurning:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItem("PrldBurningActor3")
+		TNT1 A -1
+    Raise:
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 0)
+        RCUA JIHG 6
+        Goto See
+	}
+}
+ACTOR RBUAgun : RBUA
+{
+	States
+	{
+	Yell:
+		TNT1 A 0
+		RCUA E 10 A_FaceTarget
+		RCUA F 10 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
+		RCUA G 1 BRIGHT A_CustomMissile("HostileShotgunTracer", 48, 0, FRandom(-11.25, 11.25))
+		RCUA F 6 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
+		RCUA G 1 BRIGHT A_CustomMissile("HostileShotgunTracer", 48, 0, FRandom(-11.25, 11.25))
+		RCUA F 6 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
+		RCUA G 1 BRIGHT A_CustomMissile("HostileShotgunTracer", 48, 0, FRandom(-11.25, 11.25))
+		RCUA F 6 A_FaceTarget
+		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
+		RCUA G 1 BRIGHT A_CustomMissile("HostileShotgunTracer", 48, 0, FRandom(-11.25, 11.25))
+		TNT1 A 0 A_TakeInventory("PRLD_BurnLife", 8)
+		TNT1 A 0 A_Jump(256, "SeeLoop")
+	}
+}
+Actor DeadUA_1 : PrldDesructableDeadBody
+{
+	States
+	{
+	Spawn:
+		RCUA O -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_CustomMissile ("PrldGibGrenader1Head", 15, 0, random (0, 360), 2, random (0, 180))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+actor DeadUA_2 : DeadUA_1
+{
+	XScale -0.5
+	YScale 0.5
+}
+actor DeadUAHeadOff1 : DeadUA_1
+{
+	States
+	{
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+actor DeadUAHeadOff2 : DeadUAHeadOff1
+{
+	XScale -0.5
+	YScale 0.5
+}
