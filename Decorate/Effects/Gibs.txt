@@ -1267,6 +1267,7 @@ Actor FxGib4
 	+MISSILE
 	BounceFactor 0.3
 	BounceCount 4
+    +FORCEXYBILLBOARD
 	States
 	{
 		Spawn:
@@ -1302,6 +1303,7 @@ Actor Gib4 21004
 	+NOTAUTOAIMED
 	+NOTELEPORT
 	+MOVEWITHSECTOR
+    +FORCEXYBILLBOARD
 	States
 	{
 		Spawn:
@@ -1401,6 +1403,7 @@ Actor FxGib6
 	+MISSILE
 	BounceFactor 0.3
 	BounceCount 4
+    +FORCEXYBILLBOARD
 	States
 	{
 		Spawn:
@@ -1436,6 +1439,7 @@ Actor Gib6 21006
 	+NOTAUTOAIMED
 	+NOTELEPORT
 	+MOVEWITHSECTOR
+    +FORCEXYBILLBOARD
 	States
 	{
 		Spawn:

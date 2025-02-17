@@ -995,7 +995,7 @@ $random act8_pain { act8_death act8_hit }
 
 
 $random Banderite/See { STMESE01 STMESE02 STMESE03 STMESE04 STMESE05 STMESE06 STMESE07 }
-STMESE01 STMESE01
+STMESE01 STMESE01 //milita
 STMESE02 STMESE02
 STMESE03 STMESE03
 STMESE04 STMESE04
@@ -1031,30 +1031,54 @@ STMEDE04 STMEDE04
 STMEDE05 STMEDE05
 STMEDE06 STMEDE06
 STMEDE07 STMEDE07
-$random Banderite/Death { SLAVDE1 SLAVDE2 SLAVDE3 SLAVDE4 SLAVDE5 SLAVDE6 }
+//$random Banderite/Death { SLAVDE1 SLAVDE2 SLAVDE3 SLAVDE4 SLAVDE5 SLAVDE6 }
 SLAVDE1 SLAVDE1 //bandit
 SLAVDE2 SLAVDE2
 SLAVDE3 SLAVDE3
 SLAVDE4 SLAVDE4
 SLAVDE5 SLAVDE6
 SLAVDE6 SLAVDE6
-$random Banderite/CivSpot 
-{ Banderite/CivSpot1 Banderite/CivSpot2 Banderite/CivSpot3 Banderite/CivSpot4
-Banderite/CivSpot5 Banderite/CivSpot6 Banderite/CivSpot7 Banderite/CivSpot8
-Banderite/CivSpot9 Banderite/CivSpot10 Banderite/Backup1 Banderite/Backup2
-Banderite/Backup3 Banderite/Backup4 }
 
-Banderite/CivSpot1			"Sounds/Voiceovers/Banderites/SLAVPANIC1.ogg"
-Banderite/CivSpot2			"Sounds/Voiceovers/Banderites/SLAVPANIC2.ogg"
-Banderite/CivSpot3			"Sounds/Voiceovers/Banderites/SLAVPANIC3.ogg"
-Banderite/CivSpot4			"Sounds/Voiceovers/Banderites/SLAVPANIC4.ogg"
-Banderite/CivSpot5			"Sounds/Voiceovers/Banderites/SLAVPANIC5.ogg"
-Banderite/CivSpot6			"Sounds/Voiceovers/Banderites/SLAVPANIC6.ogg"
-Banderite/CivSpot7			"Sounds/Voiceovers/Banderites/SLAVPANIC7.ogg"
-Banderite/CivSpot8			"Sounds/Voiceovers/Banderites/SLAVPANIC8.ogg"
-Banderite/CivSpot9			"Sounds/Voiceovers/Banderites/SLAVPANIC9.ogg"
-Banderite/CivSpot10			"Sounds/Voiceovers/Banderites/SLAVPANIC10.ogg"
-Banderite/Backup1			"Sounds/Voiceovers/Banderites/backup1.ogg"
-Banderite/Backup2			"Sounds/Voiceovers/Banderites/backup2.ogg"
-Banderite/Backup3			"Sounds/Voiceovers/Banderites/backup3.ogg"
-Banderite/Backup4			"Sounds/Voiceovers/Banderites/backup4.ogg"
+
+$random Banderite2/Panic 
+{ Banderite2/Panic1 Banderite2/Panic2 Banderite2/Panic3 Banderite2/Panic4
+Banderite2/Panic5 } //civilians
+
+Banderite2/Panic1			"Sounds/Voiceovers/Banderite2/UAPANIC1.ogg"
+Banderite2/Panic2			"Sounds/Voiceovers/Banderite2/UAPANIC2.ogg"
+Banderite2/Panic3			"Sounds/Voiceovers/Banderite2/UAPANIC3.ogg"
+Banderite2/Panic4			"Sounds/Voiceovers/Banderite2/UAPANIC4.ogg"
+Banderite2/Panic5			"Sounds/Voiceovers/Banderite2/UAPANIC5.ogg"
+
+
+$random Banderite2/Pain
+{ Banderite2/Pain1 Banderite2/Pain2 Banderite2/Pain3 Banderite2/Pain4
+Banderite2/Pain5 Banderite2/Death1 Banderite2/Death2 }
+
+Banderite2/Pain1			"Sounds/Voiceovers/Banderite2/UAPAIN1.ogg"
+Banderite2/Pain2			"Sounds/Voiceovers/Banderite2/UAPAIN2.ogg"
+Banderite2/Pain3			"Sounds/Voiceovers/Banderite2/UAPAIN3.ogg"
+Banderite2/Pain4			"Sounds/Voiceovers/Banderite2/UAPAIN4.ogg"
+Banderite2/Pain5			"Sounds/Voiceovers/Banderite2/UAPAIN5.ogg"
+Banderite2/Death1			"Sounds/Voiceovers/Banderite2/UADEATH1.ogg"
+Banderite2/Death2			"Sounds/Voiceovers/Banderite2/UADEATH2.ogg"
+
+
+$random Banderite2/Pull
+{ Banderite2/Pull1 Banderite2/Pull2 Banderite2/Pull3 Banderite2/Pull4 } //blicky
+
+Banderite2/Pull1			"Sounds/Voiceovers/Banderite2/UAPULL1.ogg"
+Banderite2/Pull2			"Sounds/Voiceovers/Banderite2/UAPULL2.ogg"
+Banderite2/Pull3			"Sounds/Voiceovers/Banderite2/UAPULL3.ogg"
+Banderite2/Pull4			"Sounds/Voiceovers/Banderite2/UAPULL4.ogg"
+
+
+$random Banderite2/Injured
+{ Banderite2/Injured1 Banderite2/Injured2 Banderite2/Injured3 Banderite2/Injured4
+Banderite2/Injured5 }
+
+Banderite2/Injured1			"Sounds/Voiceovers/Banderite2/UASUF1.ogg"
+Banderite2/Injured2			"Sounds/Voiceovers/Banderite2/UASUF2.ogg"
+Banderite2/Injured3			"Sounds/Voiceovers/Banderite2/UASUF3.ogg"
+Banderite2/Injured4			"Sounds/Voiceovers/Banderite2/UASUF4.ogg"
+Banderite2/Injured5			"Sounds/Voiceovers/Banderite2/UASUF5.ogg"
