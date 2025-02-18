@@ -52,6 +52,7 @@ Inventory.MaxAmount 1
 }
 ACTOR RBUA : Civilian1_1
 {
+  	Species "Hostiles"
 	seesound "Banderite2/Panic"
 	activesound "Banderite2/Panic"
 	painsound "Banderite2/Pain"

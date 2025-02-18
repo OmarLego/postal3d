@@ -1,6 +1,6 @@
 ACTOR PRLD_RBMspawn : RandomSpawner
 {
-	Species Civilian
+	Species Hostile
 	Radius 20
     Height 52
 	
