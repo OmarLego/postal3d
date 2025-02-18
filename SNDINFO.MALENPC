@@ -1082,3 +1082,11 @@ Banderite2/Injured2			"Sounds/Voiceovers/Banderite2/UASUF2.ogg"
 Banderite2/Injured3			"Sounds/Voiceovers/Banderite2/UASUF3.ogg"
 Banderite2/Injured4			"Sounds/Voiceovers/Banderite2/UASUF4.ogg"
 Banderite2/Injured5			"Sounds/Voiceovers/Banderite2/UASUF5.ogg"
+
+//uses actor8 as a base, needed to pull something together quickly for these guys
+//the capital r is intentional
+$Random ARyan/Panic { act8_recog act8_house_02 act8_house_03 act8_house_04 }
+$Random ARyan/Pull 
+{ act8_fight_01 act8_fight_02 act8_fight_03 act8_fight_05 
+act8_fight_07 act8_fight_09 act8_fight_10 act8_fight_12 act8_fight_13 act8_fight_14
+ act8_fight_15 act8_fight_16 act8_house_05 act8_house_07 }
