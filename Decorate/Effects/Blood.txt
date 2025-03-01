@@ -1,3 +1,8 @@
+Actor PRLD_HeadShot : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
 ACTOR PRLD_Blood Replaces Blood
 {
 	Radius 4
@@ -19,12 +24,21 @@ ACTOR PRLD_Blood Replaces Blood
 	{
 	Spawn:
 		TNT1 A 0
+		TNT1 A 0 A_JumpIf((Z - FloorZ) > 42, "BoomHeadShotYourFavoriteMartian")
+		Goto Spawn2
+	BoomHeadShotYourFavoriteMartian:
+	   TNT1 A 0
+	   TNT1 A 0 A_RadiusGive("PRLD_HeadShot", 128, RGF_MONSTERS, 1)
+	Spawn2:
+		TNT1 A 0
 		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION )
 		//TNT1 A 0 A_SpawnItemEx("PRLD_BloodWeapGiver")
 		TNT1 A 0 A_RadiusGive("PRLD_BloodyWeapons", 128, RGF_PLAYERS | RGF_MISSILES, 1)
 		//TNT1 A 0 A_RadiusGive("PRLD_BloodyWeapons", 256, RGF_MISSILES, 1)
 	Stasis:
-		TNT1 A 35
+		TNT1 A 1
+		TNT1 A 0 A_RadiusGive("PRLD_HeadShot", 128, RGF_MONSTERS, -1)
+		TNT1 A 34
 		Loop
 	Death:
 		TNT1 A 0
