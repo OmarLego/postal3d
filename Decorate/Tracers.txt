@@ -29,7 +29,7 @@ Actor P3D_DamagingTracer: P3D_Tracer
 {
 	+BLOODSPLATTER 
 	//+THRUGHOST
-	+PAINLESS
+	//+PAINLESS//removed so civilians can pain, kind of messes up custom monsters but it is what it is
 	-DONTSPLASH
 	+MISSILE
 	speed 95

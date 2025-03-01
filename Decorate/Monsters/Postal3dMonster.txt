@@ -21,7 +21,7 @@ ACTOR Postal3dMonster {
 	DamageFactor "HFire", 0.0
 	PainChance 256
     //PainChance "SkillIssue", 256
-	//PainChance "M12", 0
+	PainChance "M12", 0
 	+NODROPOFF
 	MaxDropoffHeight 69
 	MinMissileChance 88
