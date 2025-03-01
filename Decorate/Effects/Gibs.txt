@@ -1200,6 +1200,7 @@ Actor FxGib2
 	+MISSILE
 	BounceFactor 0.3
 	BounceCount 4
+    +FORCEXYBILLBOARD
 	States
 	{
 		Spawn:
@@ -1336,6 +1337,7 @@ Actor FxGib5
 	+MISSILE
 	BounceFactor 0.3
 	BounceCount 4
+    +FORCEXYBILLBOARD
 	States
 	{
 		Spawn:

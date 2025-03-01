@@ -372,12 +372,25 @@ hitflesh HFLESH
 blood/drop				BLODDROP
 $limit blood/drop 5
 $volume blood/drop 0.5
+
 $volume meat/headshot 0.6
 $random meat/headshot	{ meat/headshot1 meat/headshot2  meat/headshot3 }
 meat/headshot1					HEAD1
 meat/headshot2					HEAD2
 meat/headshot3					HEAD3
-$alias misc/gibbed meat/headshot
+$random Enemy/Gibbed { Enemy/Gibbed1 Enemy/Gibbed2 Enemy/Gibbed3 Enemy/Gibbed4 }
+
+Enemy/Gibbed1 "Sounds/Gore/GenericBloodSplashBig1.ogg"
+Enemy/Gibbed2 "Sounds/Gore/GenericBloodSplashBig2.ogg"
+Enemy/Gibbed3 "Sounds/Gore/GenericBloodSplashBig3.ogg"
+Enemy/Gibbed4 "Sounds/Gore/GenericBloodSplashBig4.ogg"
+
+$rolloff Enemy/Gibbed 250 1250
+$volume Enemy/Gibbed 0.8
+
+//$alias misc/gibbed meat/headshot
+$Random misc/gibbed { Enemy/Gibbed meat/headshot }
+
 $random HEDBON { HEDBON1 HEDBON2 HEDBON3 }
 HEDBON1 HEDBON1
 HEDBON2 HEDBON2
