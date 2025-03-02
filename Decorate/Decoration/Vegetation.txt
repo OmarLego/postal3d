@@ -109,3 +109,51 @@ actor rwldecBush2 : rwldecBush
 	YScale 0.6
 	XScale -0.6
 }
+ACTOR rwldecTree1
+{
+  radius 15
+  height 225
+  +SOLID
+  States
+  {
+  Spawn:
+    DDTR A 1
+    loop
+  }
+}
+ACTOR rwldecTree2
+{
+  radius 15
+  height 225
+  +SOLID
+  States
+  {
+  Spawn:
+    DDTR B 1
+    loop
+  }
+}
+ACTOR rwldecTree3
+{
+  radius 15
+  height 225
+  +SOLID
+  States
+  {
+  Spawn:
+    DDTR D 1
+    loop
+  }
+}
+ACTOR rwldecTree4
+{
+  radius 15
+  height 225
+  +SOLID
+  States
+  {
+  Spawn:
+    DDTR F 1
+    loop
+  }
+}

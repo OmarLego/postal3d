@@ -114,6 +114,10 @@ DoomEdNums
 	15032 = rwldecBush2
 	10019 = PRLD_Snowman
 	10032 = PRLD_DeadTree1
+	30200 = rwldecTree1 //maybe lied
+	30202 = rwldecTree2
+	30204 = rwldecTree3
+	30206 = rwldecTree4
 	10042 = PRLD_HomeSiren
 	13376 = Tire//action doom 2
 	13377 = TireStack//ation ddoom 2
