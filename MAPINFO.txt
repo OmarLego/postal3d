@@ -33,6 +33,8 @@ gameinfo
 	AddEventHandlers = "DeathFadeBootstrap"
 	//el damage direction
 	AddEventHandlers = "DmgDirOvEH"
+	//el monster genetics edited to remove the gameplay part
+	AddEventHandlers = 	"FilipinoSimHandler"
 	TitleMusic = "D_DM2TTL"
 	
 	//if playing with gzdoom versions older than 4.11, delete the 3 lines below

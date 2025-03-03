@@ -1,0 +1,65 @@
+version "4.7.1"
+
+class FilipinoSimHandler : EventHandler
+{
+	override void WorldThingSpawned(WorldEvent e)
+	{
+		if (!e.Thing) return;
+		Actor mo = e.Thing;
+		if (!mo.bIsMonster) return;
+		FilipinoSim.Process(mo);
+	}
+}
+		
+
+class FilipinoSim : Actor
+{
+	Default
+	{
+		+NOINTERACTION
+	}
+
+	static void Process(Actor mo)
+	{
+		//double	spawnHealth = getDefault(mo).Health;
+		double	spawnSpeed = getDefault(mo).Speed;
+		//double	spawnMass = getDefault(mo).Mass;
+		double	spawnScaleX = getDefault(mo).Scale.X;
+		double	spawnScaleY = getDefault(mo).Scale.Y;
+		//int		newSpeed   = spawnSpeed * (random(100, 200) * 0.01);
+		/*int		darkSpeed   = spawnSpeed * (random(120, 160) * 0.01);
+		int		nightmareSpeed   = spawnSpeed * (random(161, 200) * 0.01);
+		int		newDemonSpeed   = spawnSpeed * (random(95, 125) * 0.01);
+		int		youngDemonSpeed   = spawnSpeed * (random(115, 145) * 0.01);
+		int		elderDemonSpeed   = spawnSpeed * (random(70, 100) * 0.01);*/
+		//int		newHealth   = spawnHealth * (random(95, 130) * 0.01);
+		class<Actor> actorClass	= mo.GetClassName();
+		bool 	isPostalHuman = (actorClass is "Postal3dMonster"); //|| actorClass is "ShotgunGuy" || actorClass is "ChaingunGuy" || actorClass is "WolfensteinSS");
+		
+		//mo.MaxStepHeight = 24;
+		//mo.MaxDropOffHeight = 46;
+		//mo.bAVOIDHAZARDS = true;
+
+		//if (mo.Mass < 450 && mo.Speed < 10 && !isImp && !isCaco) mo.Speed = newSpeed;
+		//if (mo.Mass < 250 && mo.Health < 200 && !isSoul) mo.Health = newHealth;
+
+		if (isPostalHuman && mo.Speed < spawnSpeed * (13 * 0.1))
+		{
+			mo.Scale.Y = spawnScaleY * (random(96, 104) * 0.01);
+			mo.Scale.X = spawnScaleX * (random(104, 112) * 0.01);
+		}
+		if (isPostalHuman && mo.Speed > spawnSpeed * (17 * 0.1))
+		{
+			mo.Scale.Y = spawnScaleY * (random(104, 112) * 0.01);
+			mo.Scale.X = spawnScaleX * (random(96, 104) * 0.01);
+		}
+	}
+
+	private static readonly<Actor> getDefault(Actor thing)
+	{
+		class<Actor> type = thing.GetClassName();
+		let          tmp  = GetDefaultByType(type);
+
+		return tmp;
+	}
+}
