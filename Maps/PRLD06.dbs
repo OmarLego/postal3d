@@ -37,8 +37,8 @@ maps
 				requiredarchives = "";
 			}
 		}
-		viewpositiony = 1465.958f;
-		viewpositionx = 31.82106f;
+		viewpositiony = 328f;
+		viewpositionx = 860f;
 		
 		testprecommand
 		{
@@ -58,11 +58,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 16;
+			gridsize = 32;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 1.040409f;
+		viewscale = 0.7646104f;
 		
 		reloadresourceprecommand
 		{
@@ -73,7 +73,7 @@ maps
 		defaulttoptexture = "JYRDRCK1";
 		overridebottomtexture = false;
 		defaultbottomtexture = "JYRDRCK1";
-		defaultfloortexture = "JYRDFENC";
+		defaultfloortexture = "PGRASS1";
 		overrideceilheight = false;
 		overridebrightness = false;
 		

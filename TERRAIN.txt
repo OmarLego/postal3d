@@ -628,6 +628,7 @@ floor PGRASS1 Dirt
 floor PGRASS2 Dirt
 floor PGRASS3 Dirt
 floor PODRD2 gDirt
+floor HMEWD4 Wood
 
 
 

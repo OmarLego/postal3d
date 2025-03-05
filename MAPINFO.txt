@@ -328,6 +328,8 @@ Map PRLD03 "Parade of Disasters"
 	//NoIntermission
 	InterMusic = "D_DM2INT"
 	next = prld04
+	fogdensity = 35
+	fade = "101926"
 }
 
 Map PRLD04 "The Bridge"
