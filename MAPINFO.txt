@@ -305,7 +305,7 @@ Map PRLD01 "Home"//"$TXT_PRLD01"
 	FALLINGDAMAGE
 	NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld03//2 not yet i havent made it xd
+	next = prld02
 }
 
 Map PRLD02 "The Outskirts"
@@ -316,7 +316,7 @@ Map PRLD02 "The Outskirts"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld04
+	next = prld03
 }
 
 Map PRLD03 "Parade of Disasters"
@@ -361,7 +361,7 @@ Map PRLD06 "The Junkyard"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld12//07
+	next = prld07
 	fogdensity = 35
 	fade = "4c677a"
 }
