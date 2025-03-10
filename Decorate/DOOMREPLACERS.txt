@@ -173,6 +173,7 @@ ACTOR PrldChaingunnerReplacer: RandomSpawner replaces Chaingunguy
 	DropItem "RifleOfficer3_5"
 	DropItem "RifleOfficer3_6"
 	DropItem "Grenader1_1"
+	DropItem "Grenader1_1"
 }
 ACTOR PrldDemonReplacer: RandomSpawner replaces Demon
 {
