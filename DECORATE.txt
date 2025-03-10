@@ -29,7 +29,7 @@
 #include "Decorate/Weapons/Rifle.txt"
 #include "Decorate/Weapons/SprayCannon.txt"
 #include "Decorate/Weapons/MG.txt"
-#include "Decorate/Weapons/Flamethrower.txt"
+#include "Decorate/Weapons/Flamethrowerr.txt"
 #include "Decorate/Weapons/RL.txt"
 #include "Decorate/Weapons/NL.txt"
 #include "Decorate/Weapons/Gren.txt"
