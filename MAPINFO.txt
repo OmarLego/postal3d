@@ -361,7 +361,16 @@ Map PRLD06 "The Junkyard"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld07
+	next = prld07b
 	fogdensity = 35
 	fade = "4c677a"
+}
+Map PRLD07B "Blickster"
+{
+	music = ""
+	sky1 = "SKYOUTSK"
+	MONSTERFALLINGDAMAGE
+	FALLINGDAMAGE
+	//NoIntermission
+	InterMusic = "D_DM2INT"
 }

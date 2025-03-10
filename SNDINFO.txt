@@ -547,6 +547,11 @@ THND6 THND6
 wind/light WNDLIGHT
 $ambient 1 wind/light point continuous 1.0//surround continuous 0.2
 
+//ambient
+JNGL01 "sounds/Environment/84.ogg"
+$ambient 2 JNGL01 point continuous 1.0
+
+
 //glass
 glass/break	DSGLASS
 $limit 	glass/break 0
