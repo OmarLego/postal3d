@@ -14,28 +14,18 @@ ACTOR PRLD_MilitarySpawner: RandomSpawner
 }
 ACTOR Military1 : Postal3dMonster
 {
-	Health 120
-    Radius 16
-    Height 56
+	Health 446
+	DamageFactor "Shotgun", 0.75
+	
 	Speed 5
-	FastSpeed 4
-    Mass 100
+    Mass 100//idk what this does im just keeping it from 2022
     PainChance 200
-    /*SeeSound "grunt/sight"
-    PainSound "grunt/pain"
-    DeathSound ""
-    ActiveSound "grunt/active"*/
     SeeSound "act1_copspot"
     PainSound "act1_pain"
     ActiveSound "act1_copact"
-    DropItem "Clip"
-    Obituary "%o was shot by the Military."
-	+FLOORCLIP
-	+MISSILEMORE
+	DropItem "AKBullets"
+    Obituary "Just like old times."
 	Species "Hostiles"
-	SCALE 0.60
-	//XScale 0.58
-	//YScale 0.58
 	Tag "Military"
 	States
 	{
