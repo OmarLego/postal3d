@@ -147,10 +147,20 @@ weapons/dbshotgun/fire DB_FireB
 $Volume weapons/dbshotgun/fire 1
 weapons/dbshotgun/altfire DB_Fire
 $Volume weapons/dbshotgun/altfire 2
-$random weapons/db/insert { ssgin1 ssgin2 ssgin3 }
+
+$random weapons/db/insert { brtload1 brtload2 brtload4 }//{ ssgin1 ssgin2 ssgin3 }
 ssgin1 ssgin1
 ssgin2 ssgin2
 ssgin3 ssgin3
+brtload1 brtload1
+brtload2 brtload2
+brtload3 brtload3
+brtload4 brtload4
+brtstugl brtstugl
+
+SOPN SOPN
+SLOAD SLOAD
+SCLOS SCLOS
 
 //The Unmistakable M-16
 AKFIR AKFIR
@@ -163,9 +173,6 @@ AKEMPT AKEMPT
 
 //im too lazy to label the weapon sounds just guess what they are idk man im tired i dont feel good
 
-SOPN SOPN
-SLOAD SLOAD
-SCLOS SCLOS
 WEPDESEL WEPDESEL
 MHAM1 MHAM1
 MHAM2 MHAM2
