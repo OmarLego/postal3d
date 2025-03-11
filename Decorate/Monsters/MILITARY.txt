@@ -12,13 +12,17 @@ ACTOR PRLD_MilitarySpawner: RandomSpawner
 		Stop
 	}
 }
+
+Actor PRLD_M16CoolDown : Inventory
+{
+Inventory.Maxamount 30
+}
 ACTOR Military1 : Postal3dMonster
 {
 	Health 446
 	DamageFactor "Shotgun", 0.75
-	
-	Speed 5
-    Mass 100//idk what this does im just keeping it from 2022
+	Speed 10
+    Mass 100
     PainChance 200
     SeeSound "act1_copspot"
     PainSound "act1_pain"
@@ -27,185 +31,353 @@ ACTOR Military1 : Postal3dMonster
     Obituary "Just like old times."
 	Species "Hostiles"
 	Tag "Military"
+	+ROLLSPRITE
+	YScale 0.6
 	States
 	{
+	Pain.UseAttack:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfHealthLower(40, "Precute")
+		TNT1 A 0 A_Jump(256, "SeeLoop")
+	Precute:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfInventory("IsDown", 1, "ExecStart")
+		TNT1 A 0 A_Jump(256, "SeeLoop")
 	Spawn:
-		MILI EE 10 A_Look
+		MILI E 10 A_Look
 		Loop
 	See:
 		TNT1 A 0
-		Goto ChasePlayer
-	ChasePlayer:
-		MILI AA 1 A_Chase("","")
-		MILI AA 1 A_Chase//("","")
-		TNT1 A 0 A_Recoil(-2)
-		MILI BBBB 1 A_Chase
-		TNT1 A 0 A_Recoil(-2)
-		MILI CCCC 1 A_Chase
-		TNT1 A 0 A_Recoil(-2)
-		MILI DDD 1 A_Chase
-		MILI D 1
+		TNT1 A 0 A_AlertMonsters(200)
+		TNT1 A 0 A_Jump (70, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+	    TNT1 A 0 A_Jump (180, "MissileCheck")
+	SeeLoop:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIfTargetInLOS("SeeActual")
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI AA 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		MILI BB 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI CC 2 A_Wander
+		TNT1 A 0 A_JumpIfCloser(763, "SeeActual")
+		MILI DD 2 A_Wander
 		Loop
+	SeeActual:
+		TNT1 A 0 A_CheckSight ("CheckReload")
+		TNT1 A 0 A_JumpIfInventory ("PRLD_M16CoolDown", 30, "Reload")
+		TNT1 A 0 A_Jump (199, "DodgeLeft", "DodgeRight", "DodgeLeftF", "DodgeLeftB", "DodgeRightF", "DodgeRightB")
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI AABB 2 A_Chase
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI CCDD 2 A_Chase
+		TNT1 A 0 A_TakeInventory ("PRLD_GrenadeCoolDown", 1)
+		Loop
+  CheckReload:
+		TNT1 A 0 A_Jump (150, "CheckReload2")
+		Goto SeeActual+1
+  CheckReload2:
+		TNT1 A 0 A_JumpIfInventory ("PRLD_M16CoolDown", 30, "Reload")
+		Goto SeeActual+1
+	
+	DodgeLeft:
+	    TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+	    MILI AABB 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI CCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (228, "MissileCheck")
+		TNT1 A 0 A_Jump (50, "DodgeRight")
+		Goto SeeLoop+1
+	DodgeLeftF:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (-8,-3))
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+	    MILI AABB 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI CCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (228, "MissileCheck")
+		Goto SeeLoop+1
+    DodgeLeftB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+	    MILI AABB 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI CCDD 2 ThrustThing(angle*256/360+192, 1, 0, 0)
+		TNT1 A 0 A_Jump (228, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRight:
+	    TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+	    MILI AABB 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI CCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (228, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightF:
+	    TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (-8,-3)) 
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+	    MILI AABB 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI CCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (228, "MissileCheck")
+		Goto SeeLoop+1
+	DodgeRightB:
+	    TNT1 A 0 A_FaceTarget
+	    TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil ( random (3,8)) 
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+	    MILI AABB 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
+		MILI CCDD 2 ThrustThing(angle*256/360+64, 1, 0, 0)
+		TNT1 A 0 A_Jump (228, "MissileCheck")
+		Goto SeeLoop+1
 		
-
-
-	Missile:
+	MissileCheck:
+		TNT1 A 0 A_JumpIfInventory ("PRLD_GrenadeCoolDown", 1, 2)
+		TNT1 A 0 A_Jump (169, "GrenadeCheck")
+		TNT1 A 0 A_JumpIfTargetInLos ("Missile", 0, JLOSF_DEADNOJUMP)
+		Goto SeeLoop		
+  Missile:
+    TNT1 A 0 A_TakeInventory ("GrenadeCoolDown", 1)
+    MILI E 7 A_FaceTarget
+	TNT1 A 0 A_JumpIfTargetInLos ("TriShot", 0, JLOSF_CLOSENOJUMP | JLOSF_DEADNOJUMP, 0, 950)
+	TNT1 A 0 A_JumpIfTargetInLos ("Accuracy", 0, JLOSF_CLOSENOJUMP | JLOSF_DEADNOJUMP, 0, 1500)
+  MissileLoop:
+    TNT1 A 0 A_PlaySound("weapons/m16/fire", CHAN_AUTO)
+	TNT1 A 0 A_PlaySound("weapons/m16/dist", CHAN_AUTO)
+    TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
+	MILI E 2 BRIGHT A_CustomMissile ("HostileRifleTracer",42,0,random (-4,4))
+	TNT1 A 0 A_GiveInventory ("PRLD_M16CoolDown", 1)
+	TNT1 A 0 A_JumpIfInventory ("PRLD_M16CoolDown", 30, "Reload")
+	TNT1 A 0
+    MILI E 3 A_CposRefire
+	TNT1 A 0 A_Jump (3, "SeeLoop")
+	goto MissileLoop
+  Trishot:
+    TNT1 A 0 A_PlaySound("weapons/m16/fire", CHAN_AUTO)
+	TNT1 A 0 A_PlaySound("weapons/m16/dist", CHAN_AUTO)
+    TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
+	MILI E 2 BRIGHT A_CustomMissile ("HostileRifleTracer",42,0,random (-1,0))
+	TNT1 A 0 A_GiveInventory ("PRLD_M16CoolDown", 1)
+	TNT1 A 0 A_JumpIfInventory ("PRLD_M16CoolDown", 30, "Reload")
+	MILI E 3 A_FaceTarget 
+	TNT1 A 0 A_PlaySound("weapons/m16/fire", CHAN_AUTO)
+	TNT1 A 0 A_PlaySound("weapons/m16/dist", CHAN_AUTO)
+    TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
+	MILI E 2 BRIGHT A_CustomMissile ("HostileRifleTracer",42,0,random (-1,1))
+	TNT1 A 0 A_GiveInventory ("PRLD_M16CoolDown", 1)
+	TNT1 A 0 A_JumpIfInventory ("PRLD_M16CoolDown", 30, "Reload")
+	MILI E 3 A_FaceTarget
+	TNT1 A 0 A_PlaySound("weapons/m16/fire", CHAN_AUTO)
+	TNT1 A 0 A_PlaySound("weapons/m16/dist", CHAN_AUTO)
+    TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
+	MILI E 2 BRIGHT A_CustomMissile ("HostileRifleTracer",42,0,random (-2,2))
+	TNT1 A 0 A_GiveInventory ("PRLD_M16CoolDown", 1)
+	TNT1 A 0 A_JumpIfInventory ("PRLD_M16CoolDown", 30, "Reload")
+	TNT1 A 0 A_JumpIfTargetInLos ("Accuracy", 0, JLOSF_CLOSENOJUMP | JLOSF_DEADNOJUMP, 0, 1500)
+	MILI E 3 A_CposRefire
+	Goto SeeLoop
+  Accuracy:
+    MILI E 7 A_FaceTarget
+	TNT1 A 0 A_PlaySound("weapons/m16/fire", CHAN_AUTO)
+	TNT1 A 0 A_PlaySound("weapons/m16/dist", CHAN_AUTO)
+    TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 6, 38)
+	MILI E 2 BRIGHT A_CustomMissile ("HostileRifleTracer",42,0)
+	TNT1 A 0 A_GiveInventory ("PRLD_M16CoolDown", 1)
+	TNT1 A 0 A_JumpIfInventory ("PRLD_M16CoolDown", 30, "Reload")
+	TNT1 A 0 A_JumpIfTargetInLos ("TriShot", 0, JLOSF_CLOSENOJUMP | JLOSF_DEADNOJUMP, 0, 950)
+	Goto SeeLoop
+	
+	GrenadeCheck:
+		TNT1 A 0 A_JumpIfTargetInLos ("Chucker", 0, JLOSF_CLOSENOJUMP | JLOSF_DEADNOJUMP, 700, 300)
+		Goto MissileCheck+2
+	Chucker:
 		TNT1 A 0
-		TNT1 A 0 A_Recoil(-4)
-		TNT1 A 0 A_Jump(192, "MissileLeft", "MissileRight")
-		MILI E 10 A_FaceTarget
-		MILI E 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI E 2 A_Facetarget
-		
-		MILI E 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI E 2 A_Facetarget
-		
-		MILI E 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI E 2 A_Facetarget
-		
-		MILI E 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI E 6 A_Facetarget
-		Goto ChasePlayer
-		
-	MissileLeft:
-		TNT1 A 0
-		MILI ABCA 3 A_FaceTarget
-		TNT1 A 0 ThrustThing(angle*256/360+192, 9, 0, 0)
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI C 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI A 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI C 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI A 3 A_Facetarget
-		
-		TNT1 A 0 ThrustThing(angle*256/360+192, 9, 0, 0)
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI C 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI A 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI C 3 A_Facetarget
-		
-		MILI B 4 A_Facetarget
-		TNT1 A 0 A_JumpIfInTargetInventory("PlayerIsDead", 1, "Laugh")
-		Goto ChasePlayer
-		
-	MissileRight:
-		TNT1 A 0
-		MILI ABCA 3 A_FaceTarget
-		TNT1 A 0 ThrustThing(angle*256/360+64, 9, 0, 0)
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI C 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI A 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI C 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI A 3 A_Facetarget
-		
-		TNT1 A 0 ThrustThing(angle*256/360+64, 9, 0, 0)
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI C 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI A 3 A_Facetarget
-		
-		MILI B 2 BRIGHT A_PlaySound("weapons/m16/fire")
-        TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 31, 4, 38)
-		TNT1 A 0 A_CustomMissile("HostileRifleTracer", 40, 4, random(-2, 2), 1, random(-2, 2))
-		MILI C 3 A_Facetarget
-		
-		MILI B 4 A_Facetarget
-		Goto ChasePlayer
+		TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+		MILI I 4 A_FaceTarget
+		TNT1 A 0 A_PlaySound ("GPIN",CHAN_AUTO)
+		MILI J 4 A_FaceTarget
+		MILI K 14 A_FaceTarget
+		TNT1 A 0 A_PlaySound ("GTOSS",CHAN_AUTO)
+		TNT1 A 0 A_SpawnProjectile("PRLD_HostileGrenade",32,0,0,CMF_OFFSETPITCH,-15)
+		MILI L 8
+		TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
+		TNT1 A 0 A_GiveInventory ("PRLD_GrenadeCoolDown", 1)
+		Goto SeeLoop
+	Reload:
+		MILI D 10
+		TNT1 A 0 A_TakeInventory ("PRLD_M16CoolDown", 30)
+		MILI E 10
+		MILI D 6
+		Goto SeeLoop
 		
     Pain:
-        MILI F 3
-        MILI F 3 A_Pain
-        TNT1 A 0 A_Jump(128, "Missile")
-        Goto ChasePlayer
-    Death:
-    Death.Bullet:
-        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
-        TNT1 A 0 A_Scream
-        TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_Jump(256, "DieNormal", "Crawl")
-    Death.Kick:
-        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
-        TNT1 A 0 A_Scream
-        TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_Jump(256, "DieKick")
-    Death.Explosive:
-        TNT1 A 0 A_ChangeFLag("NODROPOFF", 0)
-        TNT1 A 0 A_Scream
-        TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_JumpIf(health > -10, "DieNormal")
-        TNT1 A 0 A_Jump(256, "DieX")
-    XDeath:
-        TNT1 A 0 A_XScream
-        TNT1 A 0 A_NoBlocking
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Jump(256, "DieX")
+        MILI H 3
+        MILI H 3 A_Pain
+        TNT1 A 0 A_Jump(128, "MissileCheck")
+        Goto SeeLoop	
+	Pain.Minigun:
+	Pain.Kick:
+	Pain.HeavyImpact:
+	Pain.Stomp:
+        TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 0)
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		TNT1 A 0 ThrustThingZ (0, 15, 0, 0)
+	    TNT1 A 0 A_Recoil (random (3,8))
+	    TNT1 A 0 ThrustThing(angle*256/360, 1, 0, 0)
+		MILI O 3
+	FlyLoop:
+		MILI O 1 A_CheckFloor("BrainDamage")
+		Loop
+	BrainDamage:
+        TNT1 A 0
+		TNT1 A 0 A_ChangeFlag(NODROPOFF, 1)
+		TNT1 A 0 A_GiveInventory("IsDown")
+		TNT1 A 0 A_PlaySound("bodydrop", CHAN_AUTO)
+		MILI P 35 A_Stop
+		MILI QR 10
+		Goto See
+		
     DieNormal:
-        MILI GHIJK 5
-        MILI K -1
-    DieKick:
-        TNT1 A 0 ThrustThingZ(0,10,0,1)
-        TNT1 A 0 A_FaceTarget
-        TNT1 A 0 A_Recoil(random(5, 7))
-        MILI GHIJK 5
-        MILI K -1
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 36)
+        MILI STUV 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		TNT1 A 0 A_PlaySound("bodydrop", CHAN_AUTO)
+		TNT1 A 0 A_SetScale(0.5,0.516)
+        MILI W 5
+        TNT1 A 0 A_SpawnItem ("DeadMilitary1_1", 0)
+		TNT1 A -1
+	DieNormal2:	
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_CustomMissile ("PrldGibOfficerHat", 48, 0, random (0, 360), 2, random (0, 160))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 36)
+        MILI STUV 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		TNT1 A 0 A_PlaySound("bodydrop", CHAN_AUTO)
+		TNT1 A 0 A_SetScale(-0.5,0.516)
+        MILI W 5
+        TNT1 A 0 A_SpawnItem ("DeadMilitary1_2", 0)
+		TNT1 A -1
+    DieHeadOff1:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 54)
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+        TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 48, 0, random (0, 360), 2, random (0, 160))
+        MIL0 EFGHI 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		TNT1 A 0 A_PlaySound("bodydrop", CHAN_AUTO)
+		TNT1 A 0 A_SetScale(0.5,0.516)
+        MIL0 J 5
+        TNT1 A 0 A_SpawnItem ("DeadMilitary1HeadOff1", 0)
+		TNT1 A -1
+    DieHeadOff2:
+		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodMist", 0, 0, 54)
+		TNT1 A 0 A_SetScale(-0.5,0.5)
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+        TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 48, 0, random (0, 360), 2, random (0, 160))
+        MIL0 EFGHI 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_SpawnItemEX("PRLD_BloodPool")
+		TNT1 A 0 A_PlaySound("bodydrop", CHAN_AUTO)
+		TNT1 A 0 A_SetScale(-0.5,0.516)
+        MIL0 J 5
+        TNT1 A 0 A_SpawnItem ("DeadMilitary1HeadOff2", 0)
+		TNT1 A -1
     DieX:
-       // TNT1 A 0 A_SpawnItemEx("MeatDeath")
-		Stop
+		C1GS S 1 A_PlaySound ("misc/gibbed",CHAN_AUTO)
+		C1GS S 2 A_SpawnItemEx("PRLD_BloodSplashBoom",1,1,1)
+		TNT1 A 0 A_CustomMissile("EmptyGlock17Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_SpawnItemEx("Cop1GibSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,50,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 1)
+		TNT1 AAA 0 A_CustomMissile("PRLD_BloodFlying", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, -160))
+		TNT1 A -1
+	DieCrawl:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+        MILI STUV 5 A_CustomMissile ("PRLD_BloodFlying", 15, 0, random (0, 360), 2, random (0, 40))
+		TNT1 A 0 A_PlaySound("bodydrop", CHAN_AUTO)
+		TNT1 A 0 A_SetScale(0.5,0.516)
+        MILI W 5
+		TNT1 A 0 A_SetScale(0.5,0.6)
+        MILI W 35
+		TNT1 A 0 A_Jump(256, "SpawnCrawl")
+	SpawnCrawl:
+        TNT1 A 0 A_SpawnItem("InjuredMilitary1")
+		TNT1 A -1
+	DieBurn:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile("EmptyM16Spawner", 38, 0, random(-11, 11), 0)
+		TNT1 A 0 A_Jump(256, "DieBurning")
     Raise:
-        MILI KJIHG 5
+		TNT1 A 0
+		TNT1 A 0 A_SetScale(0.5,0.5)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD", 0)
+        POH1 NMLKJ 5
         Goto See
-	Crawl:
-        //TNT1 A 0 A_SpawnItem("DyingZombieman")
-		Stop
 	}
+}
+Actor DeadMilitary1_1 : PrldDesructableDeadBody
+{
+	YScale 0.6
+	States
+	{
+	Spawn:
+		MILI W -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_CustomMissile ("PrldGibAvgMale1Head", 15, 0, random (0, 360), 2, random (0, 180))
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+actor DeadMilitary1_2 : DeadMilitary1_1
+{
+	XScale -0.5
+	YScale 0.6
+}
+actor DeadMilitary1HeadOff1 : DeadMilitary1_1
+{
+	States
+	{
+	Spawn:
+		MIL0 J -1
+		Stop
+	Death:
+		TNT1 A 0
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_SpawnItemEx("GibHumanSpawnerWhite",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SpawnItemEx("GibFxPRLD_BloodFlyingChunksSpawner",0,0,15,0,0,0,0,2)
+		TNT1 A 0 A_SetScale(0.55,0.55)
+		AXZ5 H -1
+	}
+}
+actor DeadMilitary1HeadOff2 : DeadMilitary1HeadOff1
+{
+	XScale -0.5
+	YScale 0.6
 }
