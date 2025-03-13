@@ -1112,23 +1112,23 @@ Military/See8			"Sounds/Voiceovers/Military/MILSEE8.ogg"
 Military/See9			"Sounds/Voiceovers/Military/MILSEE9.ogg"
 Military/See10			"Sounds/Voiceovers/Military/MILSEE10.ogg"
 
-$random Military/Alert
-{ Military/Alert1 Military/Alert2 Military/Alert3 Military/Alert4 Military/Alert5
- Military/Alert6 Military/Alert7 Military/Alert8 Military/Alert9 Military/Alert10 }
+$random Military/Active
+{ Military/Active1 Military/Active2 Military/Active3 Military/Active4 Military/Active5
+ Military/Active6 Military/Active7 Military/Active8 Military/Active9 Military/Active10 }
 
-Military/Alert1			"Sounds/Voiceovers/Military/MILTALK1.ogg"
-Military/Alert2			"Sounds/Voiceovers/Military/MILTALK2.ogg"
-Military/Alert3			"Sounds/Voiceovers/Military/MILTALK3.ogg"
-Military/Alert4			"Sounds/Voiceovers/Military/MILTALK4.ogg"
-Military/Alert5			"Sounds/Voiceovers/Military/MILTALK5.ogg"
-Military/Alert6			"Sounds/Voiceovers/Military/MILTALK6.ogg"
-Military/Alert7			"Sounds/Voiceovers/Military/MILTALK7.ogg"
-Military/Alert8			"Sounds/Voiceovers/Military/MILTALK8.ogg"
-Military/Alert9			"Sounds/Voiceovers/Military/MILTALK9.ogg"
-Military/Alert10		"Sounds/Voiceovers/Military/MILTALK10.ogg"
+Military/Active1			"Sounds/Voiceovers/Military/MILTALK1.ogg"
+Military/Active2			"Sounds/Voiceovers/Military/MILTALK2.ogg"
+Military/Active3			"Sounds/Voiceovers/Military/MILTALK3.ogg"
+Military/Active4			"Sounds/Voiceovers/Military/MILTALK4.ogg"
+Military/Active5			"Sounds/Voiceovers/Military/MILTALK5.ogg"
+Military/Active6			"Sounds/Voiceovers/Military/MILTALK6.ogg"
+Military/Active7			"Sounds/Voiceovers/Military/MILTALK7.ogg"
+Military/Active8			"Sounds/Voiceovers/Military/MILTALK8.ogg"
+Military/Active9			"Sounds/Voiceovers/Military/MILTALK9.ogg"
+Military/Active10			"Sounds/Voiceovers/Military/MILTALK10.ogg"
 
 $random Military/Grenade
-{ Military/Grenade1 Military/Grenade2 Military/Grenade3 Military/Grenade
+{ Military/Grenade1 Military/Grenade2 Military/Grenade3 Military/Grenade4
  Military/Grenade5 Military/Grenade6 Military/Grenade7 }
 
 Military/Grenade1		"Sounds/Voiceovers/Military/MILGREN1.ogg"
@@ -1140,11 +1140,11 @@ Military/Grenade6		"Sounds/Voiceovers/Military/MILGREN6.ogg"
 Military/Grenade7		"Sounds/Voiceovers/Military/MILGREN7.ogg"
 
 $random Military/Pain
-{ Military/Pain1 Military/Pain2 Military/Pain Military/Pain4 Military/Pain5
+{ Military/Pain1 Military/Pain2 Military/Pain3 Military/Pain4 Military/Pain5
  Military/Pain6 Military/Pain7 Military/Pain8 Military/Pain9 Military/Pain10
  Military/Pain11 Military/Death1 Military/Death2 Military/Death3 Military/Death4
  Military/Death5 Military/Death6 Military/Death7 Military/Death8 Military/Death9
- Military/Death10 }
+ Military/Death10 Military/Death11 Military/Death12 }
 
 Military/Pain1			"Sounds/Voiceovers/Military/MILPAIN1.ogg"
 Military/Pain2			"Sounds/Voiceovers/Military/MILPAIN2.ogg"
@@ -1167,6 +1167,8 @@ Military/Death7			"Sounds/Voiceovers/Military/MILDIE7.ogg"
 Military/Death8			"Sounds/Voiceovers/Military/MILDIE8.ogg"
 Military/Death9			"Sounds/Voiceovers/Military/MILDIE9.ogg"
 Military/Death10		"Sounds/Voiceovers/Military/MILDIE10.ogg"
+Military/Death11		"Sounds/Voiceovers/Military/MILDIE11.ogg"
+Military/Death12		"Sounds/Voiceovers/Military/MILDIE12.ogg"
 
 $random Military/Injured
 { Military/Injured1 Military/Injured2 Military/Injured3 Military/Injured4
@@ -1186,7 +1188,7 @@ Military/Injured10		"Sounds/Voiceovers/Military/MILSUF10.ogg"
 Military/Injured11		"Sounds/Voiceovers/Military/MILSUF11.ogg"
 
 $random Military/Burn
-{ Military/Burn1 Military/Burn2 Military/Burn3 Military/Burn Military/Burn5 }
+{ Military/Burn1 Military/Burn2 Military/Burn3 Military/Burn4 Military/Burn5 }
 
 Military/Burn1		"Sounds/Voiceovers/Military/MILBURN1.ogg"
 Military/Burn2		"Sounds/Voiceovers/Military/MILBURN2.ogg"
