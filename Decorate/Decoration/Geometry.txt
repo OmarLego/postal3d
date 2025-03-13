@@ -448,3 +448,16 @@ actor PRLD_Rock2 : PRLD_Rock1
 			Stop
 	}
 }
+
+ACTOR PRLD_Mailbox
+{
+	Radius 15//20
+	Height 22//29
+	+SOLID
+	Scale 0.75
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

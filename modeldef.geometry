@@ -396,3 +396,11 @@ MODEL PRLD_Pallet2
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_Mailbox//LIKE THE NAME OF THE GAME
+{
+	Path "Models/Geometry"
+	Model 0 "mailbox.md3"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
