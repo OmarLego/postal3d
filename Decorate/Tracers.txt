@@ -227,8 +227,8 @@ Actor PrldHostileTracer: P3D_Tracer
 	States
 	{
     Spawn:
-		//TRAC A 1 BRIGHT A_PlaySound ("subsonic/aggressive", 0, 1.0, true, 2.0)
-        TRAC A 1 BRIGHT A_JumpIfCloser(200, "Matrix")
+		TRAC A 1 BRIGHT A_PlaySound ("subsonic/aggressive", 0, 1.0, true, 2.0)
+        //TRAC A 1 BRIGHT A_JumpIfCloser(200, "Matrix")//the target is the monster idiot
 		Loop
 	Matrix:
 		TNT1 A 0
