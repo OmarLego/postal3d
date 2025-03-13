@@ -461,3 +461,126 @@ ACTOR PRLD_Mailbox
 			Stop
 	}
 }
+actor PRLD_BKSRRUF01
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF02
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF03
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF04
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF05
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF06
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF07
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF08
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF09
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF10
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF11
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF12
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF13
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF14
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF15
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF16
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

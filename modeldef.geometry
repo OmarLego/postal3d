@@ -404,3 +404,131 @@ MODEL PRLD_Mailbox//LIKE THE NAME OF THE GAME
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_BKSRRUF01
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof1.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF02
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof2.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF03
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof3.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF04
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof4.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF05
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof5.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF06
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof6.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF07
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof7.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF08
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof8.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF09
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof9.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF10
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof10.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF11
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof11.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF12
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof12.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF13
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof13.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF14
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof14.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF15
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof15.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BKSRRUF16 //i'll finish the rest of these later, my fucking back hurts
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "roof16.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
