@@ -390,4 +390,13 @@ Map PRLD07B "Blickster"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
+	next = prld08
+}
+Map PRLD08 "Thunderbird"
+{
+	music = ""
+	MONSTERFALLINGDAMAGE
+	FALLINGDAMAGE
+	//NoIntermission
+	InterMusic = "D_DM2INT"
 }
