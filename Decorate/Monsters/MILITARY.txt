@@ -20,7 +20,7 @@ Inventory.Maxamount 30
 ACTOR Military1 : Postal3dMonster
 {
 	//Health 446//way too much lmfao
-	Health 350//00
+	Health 300
 	DamageFactor "Shotgun", 0.75
 	Speed 10
     Mass 100
