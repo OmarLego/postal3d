@@ -583,4 +583,14 @@ actor PRLD_BKSRRUF11
 			BRLS A -1
 			Stop
 	}
+}actor PRLD_RESMBOX
+{
+	Radius 20
+	Height 40
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
 }

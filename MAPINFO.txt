@@ -125,6 +125,7 @@ DoomEdNums
 	13377 = TireStack//ation ddoom 2
 	85 = TechLamp //placeholder for mines
 	15055 = PRLD_Mailbox
+	15072 = PRLD_RESMBOX
 	
 	//cars
 	10017 = PRLD_Car1
