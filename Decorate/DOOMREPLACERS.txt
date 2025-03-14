@@ -217,6 +217,13 @@ ACTOR PrldKnightyReplacer: RandomSpawner replaces HellKnight
     Height 52
 	DropItem "PRLD_Swat2Spawner"
 }
+ACTOR PrldBaronReplacer: RandomSpawner replaces BaronOfHell
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	DropItem "Military1"
+}
 
 
 
