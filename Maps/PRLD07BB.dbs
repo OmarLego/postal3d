@@ -28,9 +28,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 1167.178f;
-		viewpositiony = 231.848f;
-		viewscale = 0.07546905f;
+		viewpositionx = 3925.251f;
+		viewpositiony = 372.4045f;
+		viewscale = 0.09810918f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -106,6 +106,30 @@ maps
 			sector
 			{
 				user_managed_3d_floor = 3;
+			}
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 532;
+				activetab = true;
 			}
 		}
 	}

@@ -593,4 +593,18 @@ actor PRLD_BKSRRUF11
 			BRLS A -1
 			Stop
 	}
+}actor PRLD_KURITE
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BUNKBED
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
 }

@@ -540,3 +540,27 @@ MODEL PRLD_RESMBOX
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_PSW
+{
+	Path "Models\Cars"
+	Model 0 "PSW.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_KURITE
+{
+	Path "Models\Geometry"
+	Model 0 "kurite.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BUNKBED
+{
+	Path "Models\Geometry"
+	Model 0 "bunkbed.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}

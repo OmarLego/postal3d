@@ -265,4 +265,14 @@ Actor BigRigs2 : BigRigs
 		TNT1 A 4
 		Stop
 	}
+}actor PRLD_PSW
+{
+	Radius 20 //to be changed
+	Height 40
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
 }
