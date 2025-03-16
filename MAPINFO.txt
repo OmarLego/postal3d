@@ -126,6 +126,12 @@ DoomEdNums
 	85 = TechLamp //placeholder for mines
 	15055 = PRLD_Mailbox
 	15072 = PRLD_RESMBOX
+	15074 = PRLD_KURITE
+	15075 = PRLD_BUNKBED
+	15076 = PRLD_BARIKADE
+	15077 = PRLD_CLITE64_32
+	15078 = PRLD_CLITE64_32_OFF
+	15080 = PRLD_VM_SOBE
 	
 	//cars
 	10017 = PRLD_Car1
@@ -139,6 +145,7 @@ DoomEdNums
 	15039 = PRLD_CarBrokeP
 	//other vehicles
 	15044 = PRLD_Excavator
+	15073 = PRLD_PSW
 	
 	//destructable (combined with actual map stuff)
 	10016 = PRLD_FenceDestruct
@@ -209,6 +216,7 @@ DoomEdNums
 	15069 = PRLD_BKSRRUF14
 	15070 = PRLD_BKSRRUF15
 	15071 = PRLD_BKSRRUF16
+	15079 = PRLD_LAGERHAUSROOF
 	//I DIDNT KNOW HEXEN ACTORS WERE IN THE THE 10000-10040 RANGES BRO anyways too lazy to change everything right now but ill probably have to do it eventually
 	//THE New era starts now (15000-30000 100% free)                                                         //now i did
 	15000 = PRLD_GunRoof1

@@ -593,4 +593,61 @@ actor PRLD_BKSRRUF11
 			BRLS A -1
 			Stop
 	}
+}actor PRLD_KURITE
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BUNKBED
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BARIKADE
+{
+	Radius 40
+	Height 27
+	+NOGRAVITY
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_CLITE64_32
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_CLITE64_32_OFF
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_LAGERHAUSROOF
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_VM_SOBE
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
 }
