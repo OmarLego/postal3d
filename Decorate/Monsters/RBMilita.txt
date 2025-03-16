@@ -277,7 +277,7 @@ ACTOR RBMUA : CDC1_1
 	seesound "Banderite/See"
 	painsound "Banderite/Pain"
 	activesound "Banderite/Active"
-	Obituary "%o had a hero's ((liberation))."
+	Obituary "%o landed his killer a place in Vahalla."
 	Species "Hostiles"
 	States
 	{
