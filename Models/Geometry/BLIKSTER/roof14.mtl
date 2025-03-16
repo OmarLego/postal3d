@@ -1,52 +1,32 @@
 # Blender 4.0.2 MTL File: 'rufz.blend'
 # www.blender.org
 
-newmtl Default
-Ns 0.000000
+newmtl BLAK1
+Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
-Ks 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
-illum 1
+illum 2
+map_Kd D:/Users/GitHub/postal3d/temp_models/roofz/BLAK1.png
 
-newmtl F_SKY1
-Ns 0.000000
+newmtl ROOFSD01
+Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
-illum 1
-map_Kd D:/Users/GitHub/postal3d/temp_models/roofz/F_SKY1.png
+illum 2
+map_Kd D:/Users/GitHub/postal3d/temp_models/roofz/ROOFSD01.png
 
-newmtl HMEWD10
-Ns 0.000000
+newmtl ROOFTPP
+Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
-illum 1
-map_Kd D:/Users/GitHub/postal3d/temp_models/roofz/HMEWD10.png
-
-newmtl HMEWD28
-Ns 0.000000
-Ka 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 1
-map_Kd D:/Users/GitHub/postal3d/temp_models/roofz/HMEWD28.png
-
-newmtl JYDWD01
-Ns 0.000000
-Ka 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 1
-map_Kd D:/Users/GitHub/postal3d/temp_models/roofz/JYDWD01.png
+illum 2
+map_Kd D:/Users/GitHub/postal3d/temp_models/roofz/ROOFTPP.png

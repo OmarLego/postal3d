@@ -564,3 +564,43 @@ MODEL PRLD_BUNKBED
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_BARIKADE
+{
+	Path "Models\Geometry"
+	Model 0 "BARIKADE.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_CLITE64_32
+{
+	Path "Models\Geometry"
+	Model 0 "CeilingLite64x32.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_CLITE64_32_OFF
+{
+	Path "Models\Geometry"
+	Model 0 "CeilingLite64x32_off.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_LAGERHAUSROOF
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "lagerhausroof.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_VM_SOBE
+{
+	Path "Models\Geometry"
+	Model 0 "zobemachine.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
