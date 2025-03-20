@@ -265,10 +265,55 @@ Actor BigRigs2 : BigRigs
 		TNT1 A 4
 		Stop
 	}
-}actor PRLD_PSW
+}
+actor PRLD_PSW
 {
 	Radius 20 //to be changed
 	Height 40
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_CARLO1
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_CARLO2
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_CARLO3
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_CARLO4
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
 	+SOLID
 	States {
 		Spawn:
