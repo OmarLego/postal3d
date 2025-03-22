@@ -119,6 +119,7 @@ ACTOR Civilian1_1 : Postal3dMonster
 	Tag "Civilian"
 	DamageFactor "HFire", 1.0
 	PainChance "M12", 256
+	DamageFactor "M12", 1.5
 	States
 	{
   	Spawn:

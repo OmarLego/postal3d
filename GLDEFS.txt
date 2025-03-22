@@ -48,6 +48,21 @@ object PrldBurningActor8
 	Frame BVIM { light FireMans }
 }
 
+//   general fire
+
+object BigGrowingFlame
+{
+	Frame FLME { light FireMans }
+}
+object BigGrowingFlameT
+{
+	Frame FLME { light FireMans }
+}
+object BigGrowingFlameT2
+{
+	Frame FLME { light FireMans }
+}
+
 //===========================================================================
 //
 // Postal Dude Firing Dynamic Light

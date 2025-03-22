@@ -1192,22 +1192,24 @@ Actor FxGib1
 	+NOTAUTOAIMED
 	BounceFactor 0.3
 	BounceCount 4
+	Decal "BrutalBloodSmear"
 	States
 	{
 		Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(128,"Spawn2")
 		GIB1 AAAA 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Goto Spawn+2
 		Spawn2:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(-0.7,0.7)
 		GIB1 AAAA 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Loop
 		Death:
 		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloor")
 		TNT1 A 0 A_SpawnItemEx("Gib1",0,0,0,0,0,0,0,SXF_TRANSFERSCALE )
 		TNT1 A 10
 		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
@@ -1260,22 +1262,24 @@ Actor FxGib2
 	BounceFactor 0.3
 	BounceCount 4
     +FORCEXYBILLBOARD
+	Decal "BrutalBloodSmear"
 	States
 	{
 		Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(128,"Spawn2")
 		GIB2 AAAA 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Goto Spawn+2
 		Spawn2:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(-0.7,0.7)
 		GIB2 AAAA 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Loop
 		Death:
 		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloor")
 		TNT1 A 0 A_SpawnItemEx("Gib2",0,0,0,0,0,0,0,SXF_TRANSFERSCALE )
 		TNT1 A 10
 		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
@@ -1329,22 +1333,24 @@ Actor FxGib4
 	BounceFactor 0.3
 	BounceCount 4
     +FORCEXYBILLBOARD
+	Decal "BrutalBloodSmear"
 	States
 	{
 		Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(128,"Spawn2")
 		MGR2 ABCD 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Goto Spawn+2
 		Spawn2:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(-0.7,0.7)
 		MGR2 ABCD 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Loop
 		Death:
 		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloor")
 		TNT1 A 0 A_SpawnItemEx("Gib4",0,0,0,0,0,0,0,SXF_TRANSFERSCALE )
 		TNT1 A 10
 		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
@@ -1398,22 +1404,24 @@ Actor FxGib5
 	BounceFactor 0.3
 	BounceCount 4
     +FORCEXYBILLBOARD
+	Decal "BrutalBloodSmear"
 	States
 	{
 		Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(128,"Spawn2")
 		MGR8 ABCD 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Goto Spawn+2
 		Spawn2:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(-0.7,0.7)
 		MGR8 ABCD 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Loop
 		Death:
 		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloor")
 		TNT1 A 0 A_SpawnItemEx("Gib5",0,0,0,0,0,0,0,SXF_TRANSFERSCALE )
 		TNT1 A 10
 		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))
@@ -1467,22 +1475,24 @@ Actor FxGib6
 	BounceFactor 0.3
 	BounceCount 4
     +FORCEXYBILLBOARD
+	Decal "BrutalBloodSmear"
 	States
 	{
 		Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(128,"Spawn2")
 		MGR1 ABCD 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Goto Spawn+2
 		Spawn2:
 		TNT1 A 0
 		TNT1 A 0 A_SetScale(-0.7,0.7)
 		MGR1 ABCD 3
-		TNT1 A 0 A_SpawnItemEx("FlyingBlood",0,0,0,random(-3,3),random(-3,3),random(0,3))
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFlying",0,0,0,random(-3,3),random(-3,3),random(0,3))
 		Loop
 		Death:
 		TNT1 A 0
+		TNT1 A 0 A_SpawnItemEx("PRLD_BloodFloor")
 		TNT1 A 0 A_SpawnItemEx("Gib6",0,0,0,0,0,0,0,SXF_TRANSFERSCALE )
 		TNT1 A 10
 		TNT1 A 0 A_CustomMissile ("CorpseBloodSmall", 0, 0, random (0, 360), 2, random (0, 90))

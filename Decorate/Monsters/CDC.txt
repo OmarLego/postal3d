@@ -61,6 +61,7 @@ ACTOR CDC1_1 : Civilian1_1
 	ActiveSound ""
 	DamageFactor "HFire", 0.0
 	PainChance "M12", 0
+	DamageFactor "M12", 1.0
 	States
 	{
   	Spawn:
