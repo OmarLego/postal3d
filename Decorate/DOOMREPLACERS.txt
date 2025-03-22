@@ -97,6 +97,7 @@ ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 	DropItem "DPistolOfficer3_4"
 	DropItem "DPistolOfficer3_5"
 	DropItem "DPistolOfficer3_6"
+	DropItem "PRLD_CDCspawn"
 }
 ACTOR PrldImpReplacer: RandomSpawner replaces DoomImp
 {

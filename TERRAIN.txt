@@ -112,35 +112,35 @@ NoAlert
 terrain nukage
 {
 splash nukage
-footclip 10
+//footclip 10
 liquid
 }
 
 terrain	water
 {
 splash water
-footclip 10
+//footclip 10
 liquid
 }
 
 terrain	lava
 {
 splash lava
-footclip 5
+//footclip 5
 liquid
 damagetype "Fire"
 }
 
 terrain blood
 {
-footclip 10
+//footclip 10
 liquid
 splash blood
 }
 
 terrain Slime
 {
-footclip 10
+//footclip 10
 liquid
 splash Slime
 }
