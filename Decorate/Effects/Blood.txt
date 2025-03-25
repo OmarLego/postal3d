@@ -121,8 +121,8 @@ ACTOR PRLD_BloodSmear
 	States
 	{
 	Spawn:
-		TNT1 A 1 A_Recoil(5)
-		Loop
+		TNT1 AAAAAAAAA 1 A_Recoil(5)
+		Stop
 	Death:
 		TNT1 A 1
 		Stop
