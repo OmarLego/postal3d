@@ -22,6 +22,7 @@ ListMenu "MainMenu"
 ListMenu "SPMenu"
 {
 	StaticPatch 94, 2, "M_BACKT"
+	StaticPatch 94, 2, "M_DOOM"//idk why it was gone from home demo i forgo
    // Position 50, 90
 	Position 97, 72
     TextItem "NEW GAME", "n", "PlayerclassMenu"
@@ -32,7 +33,7 @@ ListMenu "SPMenu"
 ListMenu "SkillMenu"
 {
 	//StaticPatch 94, 2, "M_BACKT"
-	StaticPatch 30, 2, "M_BACKT"
+	StaticPatch 30, 25, "M_BACKT"
 		Linespacing 16
 
 		StaticPatch 75, 42, "D_SKILL"

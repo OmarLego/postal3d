@@ -22,6 +22,41 @@ Actor P3D_Tracer: FastProjectile
 	XDeath:
 		TNT1 A 0
 		Stop
+	ActualEffect:
+		PUFF A 1 BRIGHT A_Scream//original effect, no credits originally attached but its PROBABLY from wildweasel if i had to guess
+		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
+		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
+		PUFF D 2 BRIGHT
+		/*TNT1 A 0 A_SetTranslucent(0.9) //big chunk of bullshit with the only purpose of
+		TNT1 A 0 A_SetScale(1)
+		TNT1 A 0 A_Jump(128, 2)
+		TNT1 A 0 A_SetScale(-1,1)
+		TNT1 A 0 A_Jump(128, 2)
+		TNT1 A 0 A_SetScale(1)
+		TNT1 A 0 A_Jump(128, 2)
+		TNT1 A 0 A_SetScale(1,-1) //randomizing rotation of the smoke lmao
+		
+		//TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("PRLD_SparkTracer",0,0,0,random(-360,360),0,random(-180,180),random(-360,360))//mildoom
+		//TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("PRLD_SparkTracer", 0, 0, random (0, 360), 2, random (0, 70))//pipebomb
+		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("PRLD_SparkTracer",0,0,0,random(-360,360),0,random(-180,180),random(-360,360))
+		GNSK AB 1 Bright
+		GNSK CD 1
+		//GNSK EFGHIJKLMN 1//too long
+		GNSK OPQ 1*///scrapped since long story short it made quick work of destructable sectors way faster than intended
+		Stop
+	}
+}
+actor PRLD_SparkTracer : P3D_Tracer
+{
+	//speed 170
+	Scale 0.07
+	radius 1
+	height 1
+	States
+	{
+	Spawn:
+		TRAC A 3 BRIGHT
+		Stop
 	}
 }
 
@@ -45,15 +80,11 @@ Actor P3D_DamagingTracer: P3D_Tracer
 		TRAC A 9 BRIGHT
         Stop   
              
-Death:
+	Death:
 		TNT1 A 0
 		TNT1 A 0 A_PlaySound("Impact", CHAN_AUTO)
-		PUFF A 1 BRIGHT A_Scream
-		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
-		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
-		PUFF D 2 BRIGHT
-		Stop
-		XDeath:
+		TNT1 A 0 A_Jump(256, "ActualEffect")
+	XDeath:
 		TNT1 A 3 A_PlaySound("hitflesh", 4, 0.75)
 		Stop
 	}
@@ -223,24 +254,16 @@ Actor PrldHostileTracer: P3D_Tracer
 	FastSpeed 60
 	damage (2)
 	Decal "BulletChip"
-	DeathSound "Impact"
+	//DeathSound "Impact"
 	States
 	{
     Spawn:
 		TRAC A 1 BRIGHT A_PlaySound ("subsonic/aggressive", 0, 1.0, true, 2.0)
-        //TRAC A 1 BRIGHT A_JumpIfCloser(200, "Matrix")//the target is the monster idiot
 		Loop
-	Matrix:
-		TNT1 A 0
-		TNT1 A 0 A_PlaySound ("subsonic/aggressive", 0, 1.0, true, 2.0)
-		TRAC A 16 BRIGHT
-		Goto Spawn
 	Death:
-		PUFF A 1 BRIGHT A_Scream
-		PUFF B 1 BRIGHT A_SpawnDebris("TracerSpark")
-		PUFF C 2 BRIGHT A_SetTranslucent(0.9,0)
-		PUFF D 2 BRIGHT
-		Stop
+		TNT1 A 0
+		TNT1 A 0 A_PlaySound("Impact", CHAN_AUTO)
+		TNT1 A 0 A_Jump(256, "ActualEffect")
 	XDeath:
 		TNT1 A 3 A_PlaySound("hitflesh", 4, 0.75)
 		Stop

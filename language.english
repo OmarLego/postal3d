@@ -3,10 +3,17 @@
 TXT_GAME_NAME = "POSTAL: Red Letter Day";
 
 SKILL_BABY = "XTreme Loathing";
-SKILL_EASY = "Easy";
+/*SKILL_EASY = "Easy";//original
 SKILL_NORMAL = "Normal";
-SKILL_HARD = "Hard";
-SKILL_NIGHTMARE = "Nightmare";
+SKILL_HARD = "Hard";*/
+/*SKILL_EASY = "Postman Pat";//welcome to paradise
+SKILL_NORMAL = "Gone Postal";
+SKILL_HARD = "Earth demands cleansing...";
+SKILL_NIGHTMARE = "I am the Angel of Death!";*/
+SKILL_EASY = "Postman Pat";
+SKILL_NORMAL = "Gone Postal";
+SKILL_HARD = "Bullet Hell";
+SKILL_NIGHTMARE = "Realism";
 SKILL_MOBILE = "Mobile";
 
 
