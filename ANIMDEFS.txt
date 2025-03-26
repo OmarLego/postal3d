@@ -11,3 +11,80 @@ Switch WINDOW2
 	
 	Off
 	Pic WINDOW2 Tics 0
+	
+warp2 flat WATR1
+warp2 flat WATR2
+
+/*
+----------------------------
+MetaDoom
+Animation Definitions
+----------------------------
+*/
+
+// Warp effects for liquids
+warp2 flat BLOOD1
+warp2 flat BLOOD2
+warp2 flat BLOOD3
+warp2 flat SLIME01
+warp2 flat SLIME02
+warp2 flat SLIME03
+warp2 flat SLIME04
+warp2 flat SLIME05
+warp2 flat SLIME06
+warp2 flat SLIME07
+warp2 flat SLIME08
+warp flat NUKAGE1
+warp flat NUKAGE2
+warp flat NUKAGE3
+warp2 flat FWATER1
+warp2 flat FWATER2
+warp2 flat FWATER3
+warp2 flat FWATER4
+warp flat LAVA1
+warp flat LAVA2
+warp flat LAVA3
+warp flat LAVA4
+
+warp2 flat BSLIME01
+warp2 flat CSLIME01
+warp2 flat WATER01
+
+
+flat FWATER1
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat BLOOD1
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat optional SLIME01
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat NUKAGE1
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat LAVA1
+    pic 1 tics 1
+    pic 1 tics 1
+    
+flat optional SLIME05
+    pic 1 tics 1
+    pic 1 tics 1  
+	
+// PSX Doom TC
+
+flat optional WATER01
+    pic 1 tics 1
+    pic 1 tics 1
+	
+flat optional BSLIME01
+    pic 1 tics 1
+    pic 1 tics 1  
+
+flat optional CSLIME01
+    pic 1 tics 1
+    pic 1 tics 1  
