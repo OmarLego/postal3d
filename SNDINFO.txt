@@ -590,11 +590,84 @@ wind/light WNDLIGHT
 $ambient 1 wind/light point continuous 1.0//surround continuous 0.2
 
 //ambient
-JNGL01 "sounds/Environment/84.ogg"
+JNGL01 "sounds/Environment/NT/84.ogg"
 $ambient 2 JNGL01 point continuous 1.0
-G16 "sounds/Environment/g16.ogg"
+G16 "sounds/Environment/Postal1/g16.ogg"
 $ambient 3 G16 point continuous 1.0
-
+29 "sounds/Environment/Postal1/29.ogg"
+$ambient 4 29 point continuous 1.0
+40 "sounds/Environment/Postal1/40.ogg"
+$ambient 5 40 point continuous 1.0
+46 "sounds/Environment/Postal1/46.ogg"
+$ambient 6 46 point continuous 1.0
+46_2 "sounds/Environment/Postal1/46_2.ogg"
+$ambient 7 46_2 point continuous 1.0
+46_3 "sounds/Environment/Postal1/46_3.ogg"
+$ambient 8 46_3 point continuous 1.0
+47 "sounds/Environment/Postal1/47.ogg"
+$ambient 9 47 point continuous 1.0
+48_1 "sounds/Environment/Postal1/48_1.ogg"
+$ambient 10 48_1 point continuous 1.0
+49 "sounds/Environment/Postal1/49.ogg"
+$ambient 11 49 point continuous 1.0
+52 "sounds/Environment/Postal1/52.ogg"
+$ambient 12 52 point continuous 1.0
+71 "sounds/Environment/Postal1/71.ogg"
+$ambient 13 71 point continuous 1.0
+232 "sounds/Environment/Postal1/232.ogg"
+$ambient 14 232 point continuous 1.0
+234 "sounds/Environment/Postal1/234.ogg"
+$ambient 15 234 point continuous 1.0
+235 "sounds/Environment/Postal1/235.ogg"
+$ambient 16 235 point continuous 1.0
+236 "sounds/Environment/Postal1/236.ogg"
+$ambient 17 236 point continuous 1.0
+237 "sounds/Environment/Postal1/237.ogg"
+$ambient 18 237 point continuous 1.0
+238 "sounds/Environment/Postal1/238.ogg"
+$ambient 19 238 point continuous 1.0
+273 "sounds/Environment/Postal1/273.ogg"
+$ambient 20 273 point continuous 1.0
+351 "sounds/Environment/Postal1/351.ogg"
+$ambient 21 351 point continuous 1.0
+612 "sounds/Environment/Postal1/612.ogg"
+$ambient 22 612 point continuous 1.0
+613 "sounds/Environment/Postal1/613.ogg"
+$ambient 23 613 point continuous 1.0
+633 "sounds/Environment/Postal1/633.ogg"
+$ambient 24 633 point continuous 1.0
+634 "sounds/Environment/Postal1/634.ogg"
+$ambient 25 634 point continuous 1.0
+644 "sounds/Environment/Postal1/644.ogg"
+$ambient 26 644 point continuous 1.0
+birds2 "sounds/Environment/Postal1/birds2.ogg"
+$ambient 27 birds2 point continuous 1.0
+birdscary "sounds/Environment/Postal1/birdscary.ogg"
+$ambient 28 birdscary point continuous 1.0
+cathedralbells "sounds/Environment/Postal1/cathedralbells.ogg"
+$ambient 29 cathedralbells point continuous 1.0
+crickets "sounds/Environment/Postal1/crickets.ogg"
+$ambient 30 crickets point continuous 1.0
+crickets2 "sounds/Environment/Postal1/crickets2.ogg"
+$ambient 31 crickets2 point continuous 1.0
+disttrafdrone "sounds/Environment/Postal1/disttrafdrone.ogg"
+$ambient 32 disttrafdrone point continuous 1.0
+grasshoppers "sounds/Environment/Postal1/grasshoppers.ogg"
+$ambient 33 grasshoppers point continuous 1.0
+harboramb "sounds/Environment/Postal1/harboramb.ogg"
+$ambient 34 harboramb point continuous 1.0
+industamb "sounds/Environment/Postal1/industamb.ogg"
+$ambient 35 industamb point continuous 1.0
+subway "sounds/Environment/Postal1/subway.ogg"
+$ambient 36 subway point continuous 1.0
+wellimpact "sounds/Environment/Postal1/wellimpact.ogg"
+$ambient 37 wellimpact point continuous 1.0
+ghettobeatnt "sounds/Environment/NT/ghettobeat_nt.ogg"
+$ambient 38 ghettobeatnt point continuous 1.0
+dusselbeat1 "sounds/Environment/NT/dusselbeat1.ogg"
+$ambient 39 dusselbeat1 point continuous 1.0
+PLAGRND "sounds/Environment/NT/PLAGRND.ogg"
+$ambient 40 PLAGRND point continuous 1.0
 
 //glass
 glass/break	DSGLASS

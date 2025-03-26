@@ -604,35 +604,3 @@ MODEL PRLD_VM_SOBE
    
 	FrameIndex BRLS A 0 0
 }
-MODEL PRLD_CARLO1
-{
-	Path "Models\Cars"
-	Model 0 "carlo1.obj"
-	Scale 1.0 1.0 1.0
-   
-	FrameIndex BRLS A 0 0
-}
-MODEL PRLD_CARLO2
-{
-	Path "Models\Cars"
-	Model 0 "carlo2.obj"
-	Scale 1.0 1.0 1.0
-   
-	FrameIndex BRLS A 0 0
-}
-MODEL PRLD_CARLO3
-{
-	Path "Models\Cars"
-	Model 0 "carlo3.obj"
-	Scale 1.0 1.0 1.0
-   
-	FrameIndex BRLS A 0 0
-}
-MODEL PRLD_CARLO4
-{
-	Path "Models\Cars"
-	Model 0 "carlo4.obj"
-	Scale 1.0 1.0 1.0
-   
-	FrameIndex BRLS A 0 0
-}

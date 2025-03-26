@@ -71,6 +71,42 @@ Model PRLD_Car8
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_CARLO1
+{
+	Path "Models\Cars"
+	Model 0 "carlo1.obj"
+	Skin 0 "MTCARLO1.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_CARLO2
+{
+	Path "Models\Cars"
+	Model 0 "carlo1.obj"
+	Skin 0 "MTCARLO2.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_CARLO3
+{
+	Path "Models\Cars"
+	Model 0 "carlo1.obj"
+	Skin 0 "MTCARLO3.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_CARLO4
+{
+	Path "Models\Cars"
+	Model 0 "carlo1.obj"
+	Skin 0 "MTCARLO4.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
 
 //broken car
 MODEL PRLD_CarBroke
@@ -87,6 +123,15 @@ MODEL PRLD_CarBrokeP
 	Path "Models/Cars"
 	Model 0 "car.md3"
 	Skin 0 "carbroke.png"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS B 0 0
+}
+MODEL PRLD_CARLOD
+{
+	Path "Models/Cars"
+	Model 0 "carlod.obj"
+	Skin 0 "MTCARLOD.png"
 	Scale 1.0 1.0 1.2
    
 	FrameIndex BRLS B 0 0
