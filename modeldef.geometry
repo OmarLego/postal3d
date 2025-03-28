@@ -604,3 +604,27 @@ MODEL PRLD_VM_SOBE
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_RLCROS
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "base_crossing.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_RLGATE
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "gate1.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TSROOF1
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "STATIONROOF.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}

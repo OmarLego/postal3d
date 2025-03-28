@@ -651,3 +651,31 @@ actor PRLD_VM_SOBE
 			Stop
 	}
 }
+actor PRLD_RLCROS
+{
+	Radius 13
+	Height 128
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_RLGATE
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_TSROOF1
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

@@ -190,6 +190,8 @@ DoomEdNums
 	15029 = PRLD_Rock2
 	15041 = PRLD_RoadBlocker
 	15042 = PRLD_RoadBlockC
+	15086 = PRLD_RLCROS
+	15087 = PRLD_RLGATE
 	//roofs
 	10010 = PRLD_DudeRoof
 	15011 = PRLD_HomeRoof1
@@ -222,6 +224,7 @@ DoomEdNums
 	15070 = PRLD_BKSRRUF15
 	15071 = PRLD_BKSRRUF16
 	15079 = PRLD_LAGERHAUSROOF
+	15088 = PRLD_TSROOF1
 	//I DIDNT KNOW HEXEN ACTORS WERE IN THE THE 10000-10040 RANGES BRO anyways too lazy to change everything right now but ill probably have to do it eventually
 	//THE New era starts now (15000-30000 100% free)                                                         //now i did
 	15000 = PRLD_GunRoof1
@@ -392,11 +395,11 @@ Map PRLD06 "The Junkyard"
 	FALLINGDAMAGE
 	//NoIntermission
 	InterMusic = "D_DM2INT"
-	next = prld07b
+	next = prld07
 	fogdensity = 35
 	fade = "4c677a"
 }
-Map PRLD07B "Blickster"
+Map PRLD07 "Blickster"
 {
 	music = ""
 	sky1 = "SKYOUTSK"
@@ -409,6 +412,15 @@ Map PRLD07B "Blickster"
 Map PRLD08 "Thunderbird"
 {
 	music = ""
+	MONSTERFALLINGDAMAGE
+	FALLINGDAMAGE
+	//NoIntermission
+	InterMusic = "D_DM2INT"
+}
+Map PRLD12B "The Train Station" //currently map is B unless we want to delete that old version of the station
+{
+	music = ""
+	sky1 = "SKYPNIG2"
 	MONSTERFALLINGDAMAGE
 	FALLINGDAMAGE
 	//NoIntermission
