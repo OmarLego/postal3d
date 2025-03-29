@@ -148,6 +148,7 @@ DoomEdNums
 	15083 = PRLD_CARLO3
 	15084 = PRLD_CARLO4
 	15085 = PRLD_CARLOD
+	15090 = PRLD_F1501
 	//other vehicles
 	15044 = PRLD_Excavator
 	15073 = PRLD_PSW
@@ -225,6 +226,7 @@ DoomEdNums
 	15071 = PRLD_BKSRRUF16
 	15079 = PRLD_LAGERHAUSROOF
 	15088 = PRLD_TSROOF1
+	15089 = PRLD_PWRROOF1
 	//I DIDNT KNOW HEXEN ACTORS WERE IN THE THE 10000-10040 RANGES BRO anyways too lazy to change everything right now but ill probably have to do it eventually
 	//THE New era starts now (15000-30000 100% free)                                                         //now i did
 	15000 = PRLD_GunRoof1

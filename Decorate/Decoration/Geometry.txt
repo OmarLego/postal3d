@@ -679,3 +679,11 @@ actor PRLD_TSROOF1
 			Stop
 	}
 }
+actor PRLD_PWRROOF1
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

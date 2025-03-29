@@ -332,3 +332,14 @@ actor PRLD_CARLOD
 			Stop
 	}
 }
+actor PRLD_F1501
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

@@ -107,6 +107,15 @@ MODEL PRLD_CARLO4
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_F1501
+{
+	Path "Models/Cars"
+	Model 0 "F150.obj"
+	Skin 0 "FF150A.png"
+	Scale 1.25 1.14 1.14
+   
+	FrameIndex BRLS A 0 0
+}
 
 //broken car
 MODEL PRLD_CarBroke
@@ -132,7 +141,7 @@ MODEL PRLD_CARLOD
 	Path "Models/Cars"
 	Model 0 "carlod.obj"
 	Skin 0 "MTCARLOD.png"
-	Scale 1.0 1.0 1.2
+	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS B 0 0
 }
