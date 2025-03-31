@@ -145,6 +145,178 @@ Actor PRLD_Car8 : PRLD_Car1
 }
 
 
+actor PRLD_CARLO1
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_CARLO2
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_CARLO3
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_CARLO4
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+
+actor PRLD_CARLOD
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS B -1
+			Stop
+	}
+}
+
+actor PRLD_F1501
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_F1502
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_F1503
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_F1504
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+
+actor PRLD_F150D
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS B -1
+			Stop
+	}
+}
+
+actor PRLD_PREVIA1
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_PREVIA2
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_PREVIA3
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_PREVIA4
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+
+actor PRLD_PREVIAD
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS B -1
+			Stop
+	}
+}
+
+
 
 //Other Vehicles
 ACTOR PRLD_Excavator
@@ -270,72 +442,6 @@ actor PRLD_PSW
 {
 	Radius 20 //to be changed
 	Height 40
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_CARLO1
-{
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_CARLO2
-{
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_CARLO3
-{
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_CARLO4
-{
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_CARLOD
-{
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS B -1
-			Stop
-	}
-}
-actor PRLD_F1501
-{
-	Radius 1 //to be changed
-	Height 1 //tobechanged
 	+SOLID
 	States {
 		Spawn:

@@ -111,8 +111,71 @@ MODEL PRLD_F1501
 {
 	Path "Models/Cars"
 	Model 0 "F150.obj"
-	Skin 0 "FF150A.png"
+	Skin 0 "FF1501.png"
 	Scale 1.25 1.14 1.14
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_F1502
+{
+	Path "Models/Cars"
+	Model 0 "F150.obj"
+	Skin 0 "FF1502.png"
+	Scale 1.25 1.14 1.14
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_F1503
+{
+	Path "Models/Cars"
+	Model 0 "F150.obj"
+	Skin 0 "FF1503.png"
+	Scale 1.25 1.14 1.14
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_F1504
+{
+	Path "Models/Cars"
+	Model 0 "F150.obj"
+	Skin 0 "FF1504.png"
+	Scale 1.25 1.14 1.14
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_PREVIA1
+{
+	Path "Models\Cars"
+	Model 0 "PREVIA1.obj"
+	Skin 0 "PREVIA1.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_PREVIA2
+{
+	Path "Models\Cars"
+	Model 0 "PREVIA1.obj"
+	Skin 0 "PREVIA2.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_PREVIA3
+{
+	Path "Models\Cars"
+	Model 0 "PREVIA1.obj"
+	Skin 0 "PREVIA3.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_PREVIA4
+{
+	Path "Models\Cars"
+	Model 0 "PREVIA1.obj"
+	Skin 0 "PREVIA4.png"
+	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS A 0 0
 }
@@ -141,6 +204,24 @@ MODEL PRLD_CARLOD
 	Path "Models/Cars"
 	Model 0 "carlod.obj"
 	Skin 0 "MTCARLOD.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS B 0 0
+}
+MODEL PRLD_F150D
+{
+	Path "Models/Cars"
+	Model 0 "f150d.obj"
+	Skin 0 "FF150D.png"
+	Scale 1.25 1.14 1.14
+   
+	FrameIndex BRLS B 0 0
+}
+MODEL PRLD_PREVIAD
+{
+	Path "Models/Cars"
+	Model 0 "PREVIAD.obj"
+	Skin 0 "PREVIAD.png"
 	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS B 0 0
