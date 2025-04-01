@@ -5,7 +5,7 @@ strictpatches = 0;
 maps
 {
 	
-	PRLD07B
+	PRLD07
 	{
 		
 		resources
@@ -13,9 +13,9 @@ maps
 		}
 		defaultfloortexture = "PCONCT02";
 		defaultceiltexture = "F_SKY1";
-		defaulttoptexture = "F_SKY1";
-		defaultwalltexture = "F_SKY1";
-		defaultbottomtexture = "F_SKY1";
+		defaulttoptexture = "PGRASS2";
+		defaultwalltexture = "PGRASS2";
+		defaultbottomtexture = "PGRASS2";
 		custombrightness = 196;
 		customfloorheight = 0;
 		customceilheight = 128;
@@ -28,9 +28,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 3496.204f;
-		viewpositiony = -457.8822f;
-		viewscale = 0.08157263f;
+		viewpositionx = 1036.665f;
+		viewpositiony = 522.0186f;
+		viewscale = 0.1792136f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
