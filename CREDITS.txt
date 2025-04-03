@@ -13,17 +13,25 @@ Running With Scissors - POSTAL
 
 katherinecode - Main Sprite, Texture, and Model Artist
 
-SevaKsP - Special Effects, Sprite Artist, Texturing and Modeling Help
+SevaKsP - Special Effects, Sprite Artist, Texturing and Modeling Help, Concept Artist, Promotional Images
+
+e195087 - Sprite, Texture, and Model Artist
 
 N4h - BigFont, Edits to Vehicles
 
-https://ko-fi.com/franart - Natalie's Muzzleflashes, Muzzleflashes from QC:DE
+https://ko-fi.com/franart - Natalie's Muzzleflashes and Muzzleflashes from QC:DE
 
 Hvellor - Muzzleflash States for Weapons that Aren't Natalie
 
 BennyBunny - Texture Artist, Blood Pools
 
+beefbrain - Texture Artist
+
 MedicalEngineer - Texture Artist
+
+BigStronk - Improvements to Various sprites
+
+Dapper Capper - Original Status Bar
 
 Running With Scissors - Various POSTAL Titles
 
@@ -48,6 +56,10 @@ katherinecode - Puts sounds together-er
 
 Running With Scissors - Various POSTAL Titles
 
+Destructive Creations - Hatred
+
+New World Interactive - Insurgency: Sandstorm
+
 Scuba Steve - Action Doom 2's Tire Bouncing
 
 Various people from Pixabay, Soundbible, and Youtube
@@ -58,8 +70,6 @@ Various people from Pixabay, Soundbible, and Youtube
 katherinecode - Main Coder
 
 SevaKsP - Special Effects Coder, Original Weapons
-
-TDRR - Loading Screen BCC
 
 Nomakh Thunder - Hell From Earth's Monster AI
 
@@ -77,6 +87,8 @@ Gerodium - Damage Direction Overlay
 
 Officer D - Doom Exp's Damage Direction Overlay
 
+BrettBotTheCryonaut - Monster Genetics
+
 Caligari87 - Universal fade-to-black on death
 
 Nash - Standalone Game Template
@@ -86,9 +98,11 @@ Nash - Standalone Game Template
 
 katherinecode - Project Lead, Artist, Mapper, and Coder
 SevaKsP - Project Lead, Writer, Artist, Coder, Original Weapon Creator
+e195087 - Artist and Mapper
 ALEX - Mapper
-Many_A_Dead_Mackerels - Mapper
+sally_0e - Mapper
 Knighty - Mapper
+Many_A_Dead_Mackerels - Former Mapper
 BennyBunny - Artist
 MedicalBag - Artist
 xenomy. - Artist
@@ -148,6 +162,8 @@ https://sketchfab.com/3d-models/357-bullet-d15a23bc4ae240ae90759992e06e12e5
 https://sketchfab.com/3d-models/excavator-3c4d505819294b4982a67218fa8baaa2
 https://sketchfab.com/3d-models/military-chest-rig-31e7a2e8130d4f41a1c97e2e8327f815
 https://upload.wikimedia.org/wikipedia/commons/d/d9/Alpha_Ind_CWU_45%28N%29.JPG
+https://sketchfab.com/3d-models/low-poly-medieval-round-shield-optimized-532a2fe0c32948f89a49d3e790c65e6d
+https://sketchfab.com/3d-models/low-poly-medieval-round-shield-optimized-532a2fe0c32948f89a49d3e790c65e6d
 
                                  SOUNDS
 
