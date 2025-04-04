@@ -15,7 +15,7 @@ katherinecode - Main Sprite, Texture, and Model Artist
 
 SevaKsP - Special Effects, Sprite Artist, Texturing and Modeling Help, Concept Artist, Promotional Images
 
-e195087 - Sprite, Texture, and Model Artist
+Nolen Truett - Sprite, Texture, and Model Artist
 
 N4h - BigFont, Edits to Vehicles
 
@@ -98,7 +98,7 @@ Nash - Standalone Game Template
 
 katherinecode - Project Lead, Artist, Mapper, and Coder
 SevaKsP - Project Lead, Writer, Artist, Coder, Original Weapon Creator
-e195087 - Artist and Mapper
+Nolen Truett - Artist and Mapper
 ALEX - Mapper
 sally_0e - Mapper
 Knighty - Mapper
