@@ -5,74 +5,74 @@
 
 actor DPistolOfficer1: PistolOfficer1
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer1_2: PistolOfficer1_2
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer1_3: PistolOfficer1_3
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer1_4: PistolOfficer1_4
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer1_5: PistolOfficer1_5
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer1_6: PistolOfficer1_6
 {
-Health 25
+//Health 25
 }actor DPistolOfficer2: PistolOfficer2
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer2_2: PistolOfficer2_2
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer2_3: PistolOfficer2_3
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer2_4: PistolOfficer2_4
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer2_5: PistolOfficer2_5
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer2_6: PistolOfficer2_6
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer3: PistolOfficer3
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer3_2: PistolOfficer3_2
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer3_3: PistolOfficer3_3
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer3_4: PistolOfficer3_4
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer3_5: PistolOfficer3_5
 {
-Health 25
+//Health 25
 }
 actor DPistolOfficer3_6: PistolOfficer3_6
 {
-Health 25
+//Health 25
 }
 ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 {

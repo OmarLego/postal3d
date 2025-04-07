@@ -102,9 +102,10 @@ ACTOR Postal3dWeapon : Weapon
 	
 	//Weapon.BobRangeX 0.3
 	//Weapon.BobRangeY 0.15
-	//new bob
-	//Weapon.BobRangeX 30.0
-	//Weapon.BobRangeY 15.0
+	
+	//new bob(for quakebob when its really slow)
+	Weapon.BobRangeX 30.0
+	Weapon.BobRangeY 15.0
 	Inventory.PickupSound "weapons/pickup"
 	+weapon.NoAutoaim
 	+Weapon.NoAutoFire

@@ -313,7 +313,8 @@ splash wood
 {
 smallclass		None
 smallclip		0
-smallsound		floor/wood
+//smallsound		floor/wood
+smallsound		floor/hard
 
 baseclass		None
 chunkclass		None
@@ -334,6 +335,11 @@ footclip 0
 terrain dirt
 {
 splash dirt
+footclip 0
+}
+terrain gdirt
+{
+splash gdirt
 footclip 0
 }
 
@@ -591,19 +597,20 @@ endif
 floor HMESNW1 Snow
 floor HMESNW3 Snow
 floor HMWOD1 Wood
-floor HMERD1 gDirt
-floor PODRD1 gDirt
-floor JYDRD1 gDirt
-floor JYDRD2 gDirt
+floor HMERD1 gdirt
+floor PODRD1 gdirt
+floor JYDRD1 gdirt
+floor JYDRD2 gdirt
 floor HMEWD6 Wood
 floor HMEWD14 Wood
 floor PGRASS1 Dirt
 floor PGRASS2 Dirt
 floor PGRASS3 Dirt
-floor PODRD2 gDirt
+floor PODRD2 gdirt
 floor HMEWD4 Wood
 floor WATR1 Water
 floor WATR2 Water
+floor HMERD1 gdirt
 
 
 

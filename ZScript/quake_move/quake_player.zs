@@ -791,11 +791,13 @@ class QuakePlayer : PlayerPawn
         if (bobCycle >= 128) delta *= -1;   // Swap direction for left foot
         newRoll += delta;
 
-        A_SetPitch(pitch - lastPitch + newPitch, SPF_Interpolate);
+        //A_SetPitch(pitch - lastPitch + newPitch, SPF_Interpolate);
         A_SetRoll(roll - lastRoll + newRoll, SPF_Interpolate);
 
         lastPitch = newPitch;
         lastRoll = newRoll;
+
+
 
         // Bob height
         double bobUp = CVar.GetCVar(bobUpCVar, player).GetFloat();
@@ -849,6 +851,10 @@ class QuakePlayer : PlayerPawn
 		{
 			player.viewz = floorz + 4;
 		}
+		
+		
+        Super.CalcHeight();//adding doom viewbob into the pot of shit
+        return;
     }
 
 

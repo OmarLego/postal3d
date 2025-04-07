@@ -103,6 +103,8 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.AttackZOffset 15
 	BloodType "PRLD_BloodPlayer"
 	//Player.ViewBob 0.01
+	Player.ViewBob 0.5
+	//Player.ViewBobSpeed 10.0
 	Player.UseRange 85
    States
     {
@@ -155,8 +157,8 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 		TNT1 A 0
         //DUDE A 6 A_JumpIf(VelZ != 0, "Jump")
 		
-        DUDE A 4 A_JumpIf(VelZ != 0, "Jump")
-        DUDE B 4 A_JumpIf(VelZ != 0, "Jump")
+        DUDE A 5 A_JumpIf(VelZ != 0, "Jump")
+        DUDE B 5 A_JumpIf(VelZ != 0, "Jump")
 		
         DUDE B 6 A_JumpIf(VelZ != 0, "Jump")
 		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
@@ -166,8 +168,8 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 		TNT1 A 0 A_TakeInventory("PRLD_BootsSmeared", 1)//
 		DUDE C 6 A_JumpIf(VelZ != 0, "Jump")
 		
-		DUDE C 4 A_JumpIf(VelZ != 0, "Jump")
-		DUDE D 4 A_JumpIf(VelZ != 0, "Jump")
+		DUDE C 5 A_JumpIf(VelZ != 0, "Jump")
+		DUDE D 5 A_JumpIf(VelZ != 0, "Jump")
 		
 		DUDE D 6 A_JumpIf(VelZ != 0, "Jump")
 		TNT1 A 0 A_SpawnItem("PRLD_Footstep")
