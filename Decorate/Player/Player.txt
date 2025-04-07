@@ -103,8 +103,8 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.AttackZOffset 15
 	BloodType "PRLD_BloodPlayer"
 	//Player.ViewBob 0.01
-	Player.ViewBob 0.5
-	//Player.ViewBobSpeed 10.0
+	Player.ViewBob 0.6//5
+	//Player.ViewBobSpeed 5.0
 	Player.UseRange 85
    States
     {
