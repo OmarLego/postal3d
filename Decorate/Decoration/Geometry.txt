@@ -127,6 +127,137 @@ actor PRLD_OutsRoof4 : PRLD_DudeRoof
 			Stop
 	}
 }
+actor PRLD_BKSRRUF01
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF02
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF03
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF04
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF05
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF06
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF07
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF08
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF09
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF10
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BKSRRUF11
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF12
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF13
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF14
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF15
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}actor PRLD_BKSRRUF16
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_PGNRF
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_Sink
 {
@@ -461,129 +592,7 @@ ACTOR PRLD_Mailbox
 			Stop
 	}
 }
-actor PRLD_BKSRRUF01
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF02
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF03
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF04
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF05
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF06
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF07
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF08
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF09
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF10
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
-actor PRLD_BKSRRUF11
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}actor PRLD_BKSRRUF12
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}actor PRLD_BKSRRUF13
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}actor PRLD_BKSRRUF14
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}actor PRLD_BKSRRUF15
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}actor PRLD_BKSRRUF16
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}actor PRLD_RESMBOX
+actor PRLD_RESMBOX
 {
 	Radius 20
 	Height 40
@@ -643,14 +652,6 @@ actor PRLD_LAGERHAUSROOF
 			Stop
 	}
 }
-actor PRLD_VM_SOBE
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
 actor PRLD_RLCROS
 {
 	Radius 13
@@ -684,6 +685,49 @@ actor PRLD_PWRROOF1
 	States {
 		Spawn:
 			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_PGNPIL
+{
+	Radius 12
+	Height 120
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_SODA1A
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_SODA1B
+{
+	States {
+		Spawn:
+			BRLS B -1
+			Stop
+	}
+}
+actor PRLD_SODA2A
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_SODA2B
+{
+	States {
+		Spawn:
+			BRLS B -1
 			Stop
 	}
 }

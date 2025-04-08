@@ -281,11 +281,19 @@ MODEL PRLD_BKSRRUF15
    
 	FrameIndex BRLS A 0 0
 }
-MODEL PRLD_BKSRRUF16 //i'll finish the rest of these later, my fucking back hurts
+MODEL PRLD_BKSRRUF16
 {
 	Path "Models\Geometry\BLIKSTER"
 	Model 0 "roof16.obj"
 	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_PGNRF
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "paganroof.obj"
+	Scale 1.0 1.0 1.0 
    
 	FrameIndex BRLS A 0 0
 }
@@ -612,14 +620,6 @@ MODEL PRLD_LAGERHAUSROOF
    
 	FrameIndex BRLS A 0 0
 }
-MODEL PRLD_VM_SOBE
-{
-	Path "Models\Geometry"
-	Model 0 "zobemachine.obj"
-	Scale 1.0 1.0 1.0
-   
-	FrameIndex BRLS A 0 0
-}
 MODEL PRLD_RLCROS
 {
 	Path "Models\Geometry\RAILWAY"
@@ -635,4 +635,48 @@ MODEL PRLD_RLGATE
 	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_PGNPIL
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "pagan_pillar.obj"
+	Scale 1.0 1.0 1.0 
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_SODA1A
+{
+	Path "Models\Geometry"
+	Model 0 "zobemachine.obj"
+	Skin 0 "SODAMH01.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_SODA1B
+{
+	Path "Models\Geometry"
+	Model 0 "zobemachine.obj"
+	Skin 0 "SODAMH02.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS B 0 0
+}
+MODEL PRLD_SODA2A
+{
+	Path "Models\Geometry"
+	Model 0 "zobemachine.obj"
+	Skin 0 "SODAMH03.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_SODA2B
+{
+	Path "Models\Geometry"
+	Model 0 "zobemachine.obj"
+	Skin 0 "SODAMH04.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS B 0 0
 }

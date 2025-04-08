@@ -1,0 +1,52 @@
+# Blender 4.0.2 MTL File: 'structures.blend'
+# www.blender.org
+
+newmtl BLAK1
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl PGNRUF01
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 2
+map_Kd D:/Users/GitHub/postal3d/temp_models/pagan_building/PGNRUF01.png
+map_d D:/Users/GitHub/postal3d/temp_models/pagan_building/PGNRUF01.png
+
+newmtl PGNRUF02
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Users/GitHub/postal3d/temp_models/pagan_building/PGNRUF02.png
+
+newmtl PGNRUF03
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Users/GitHub/postal3d/temp_models/pagan_building/PGNRUF03.png
+
+newmtl PGNRUF04
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Users/GitHub/postal3d/temp_models/pagan_building/PGNRUF04.png

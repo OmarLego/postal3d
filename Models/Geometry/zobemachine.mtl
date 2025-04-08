@@ -1,7 +1,7 @@
 # Blender 4.0.2 MTL File: 'mah.blend'
 # www.blender.org
 
-newmtl HMCNC03
+newmtl SODAMH01
 Ns 0.000000
 Ka 1.000000 1.000000 1.000000
 Ks 0.000000 0.000000 0.000000
@@ -9,14 +9,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 1
-map_Kd D:/Users/GitHub/postal3d/temp_models/vendingmachin/HMCNC03.png
-
-newmtl SOBEMH01
-Ns 0.000000
-Ka 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
-Ke 0.000000 0.000000 0.000000
-Ni 1.450000
-d 1.000000
-illum 1
-map_Kd D:/Users/GitHub/postal3d/temp_models/vendingmachin/SOBEMH01.png
+map_Kd D:/Users/GitHub/postal3d/temp_models/vendingmachin/SODAMH01.png
