@@ -180,6 +180,7 @@ ACTOR RBUA : Civilian1_1
 		TNT1 A 0 A_Jump(256, "SpawnCrawl")
 	SpawnCrawl:
         TNT1 A 0 A_SpawnItem("InjuredUA")
+        TNT1 A 0 A_SpawnItem("InjuredCivilian1_1")
 		TNT1 A -1
 	DieBurning:
 		TNT1 A 0
@@ -386,6 +387,7 @@ ACTOR RBRU : RBUA
 		TNT1 A 0 A_Jump(256, "SpawnCrawl")
 	SpawnCrawl:
         TNT1 A 0 A_SpawnItem("InjuredRU")
+        TNT1 A 0 A_SpawnItem("InjuredCivilian1_1")
 		TNT1 A -1
 	DieBurning:
 		TNT1 A 0
@@ -600,6 +602,7 @@ ACTOR RBUS : RBUA
 		TNT1 A 0 A_Jump(256, "SpawnCrawl")
 	SpawnCrawl:
         TNT1 A 0 A_SpawnItem("InjuredUS")
+        TNT1 A 0 A_SpawnItem("InjuredCivilian1_1")
 		TNT1 A -1
 	DieBurning:
 		TNT1 A 0

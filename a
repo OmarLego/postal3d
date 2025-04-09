@@ -1,0 +1,104 @@
+//Banderites
+
+
+
+$random Banderite/See
+{ Banderite/See1 Banderite/See2 Banderite/See3 Banderite/See4 Banderite/See5 Banderite/See6
+ Banderite/See7 Banderite/See8 Banderite/See9 Banderite/See10 }
+
+Banderite/See1			"Sounds/Voiceovers/Banderites/RUSEE1.ogg"
+Banderite/See2			"Sounds/Voiceovers/Banderites/RUSEE2.ogg"
+Banderite/See3			"Sounds/Voiceovers/Banderites/RUSEE3.ogg"
+Banderite/See4			"Sounds/Voiceovers/Banderites/RUSEE4.ogg"
+Banderite/See5			"Sounds/Voiceovers/Banderites/RUSEE5.ogg"
+Banderite/See6			"Sounds/Voiceovers/Banderites/RUSEE6.ogg"
+Banderite/See7			"Sounds/Voiceovers/Banderites/RUSEE7.ogg"
+Banderite/See8			"Sounds/Voiceovers/Banderites/RUSEE8.ogg"
+Banderite/See9			"Sounds/Voiceovers/Banderites/RUSEE9.ogg"
+Banderite/See10			"Sounds/Voiceovers/Banderites/RUSEE10.ogg"
+
+$random Banderite/Active
+{ Banderite/Active1 Banderite/Active2 Banderite/Active3 Banderite/Active4 Banderite/Active5
+ Banderite/Active6 Banderite/Active7 Banderite/Active8 Banderite/Active9 Banderite/Active10
+ Banderite/Active11 Banderite/Active12 Banderite/Active13 Banderite/Active14 Banderite/Active15
+ Banderite/Active16 Banderite/Active17 Banderite/Active18 Banderite/Active19 }
+
+Banderite/Active1			"Sounds/Voiceovers/Banderites/RUTALK1.ogg"
+Banderite/Active2			"Sounds/Voiceovers/Banderites/RUTALK2.ogg"
+Banderite/Active3			"Sounds/Voiceovers/Banderites/RUTALK3.ogg"
+Banderite/Active4			"Sounds/Voiceovers/Banderites/RUTALK4.ogg"
+Banderite/Active5			"Sounds/Voiceovers/Banderites/RUTALK5.ogg"
+Banderite/Active6			"Sounds/Voiceovers/Banderites/RUTALK6.ogg"
+Banderite/Active7			"Sounds/Voiceovers/Banderites/RUTALK7.ogg"
+Banderite/Active8			"Sounds/Voiceovers/Banderites/RUTALK8.ogg"
+Banderite/Active9			"Sounds/Voiceovers/Banderites/RUTALK9.ogg"
+Banderite/Active10			"Sounds/Voiceovers/Banderites/RUTALK10.ogg"
+Banderite/Active11			"Sounds/Voiceovers/Banderites/RUTALK11.ogg"
+Banderite/Active12			"Sounds/Voiceovers/Banderites/RUTALK12.ogg"
+Banderite/Active13			"Sounds/Voiceovers/Banderites/RUTALK13.ogg"
+Banderite/Active14			"Sounds/Voiceovers/Banderites/RUTALK14.ogg"
+Banderite/Active15			"Sounds/Voiceovers/Banderites/RUTALK15.ogg"
+Banderite/Active16			"Sounds/Voiceovers/Banderites/RUTALK16.ogg"
+Banderite/Active17			"Sounds/Voiceovers/Banderites/RUTALK17.ogg"
+Banderite/Active18			"Sounds/Voiceovers/Banderites/RUTALK18.ogg"
+Banderite/Active19			"Sounds/Voiceovers/Banderites/RUTALK19.ogg"
+
+$random Banderite/Molotov
+{ Banderite/Molotov1 Banderite/Molotov2 Banderite/Molotov3 Banderite/Molotov4
+ Banderite/Molotov5 Banderite/Molotov6 Banderite/Molotov7 }
+
+Banderite/Molotov1		"Sounds/Voiceovers/Banderites/RUMOL1.ogg"
+Banderite/Molotov2		"Sounds/Voiceovers/Banderites/RUMOL2.ogg"
+Banderite/Molotov3		"Sounds/Voiceovers/Banderites/RUMOL3.ogg"
+
+$random Banderite/Pain
+{ Banderite/Pain1 Banderite/Pain2 Banderite/Pain3 Banderite/Pain4 Banderite/Pain5
+ Banderite/Pain6 Banderite/Pain7 Banderite/Pain8 Banderite/Pain9 Banderite/Pain10
+ Banderite/Death1 Banderite/Death2 Banderite/Death3 Banderite/Death4 Banderite/Death5
+ Banderite/Death6 Banderite/Death7 Banderite/Death8 Banderite/Death9 Banderite/Death10 }
+
+Banderite/Pain1				"Sounds/Voiceovers/Banderites/RUPAIN1.ogg"
+Banderite/Pain2				"Sounds/Voiceovers/Banderites/RUPAIN2.ogg"
+Banderite/Pain3				"Sounds/Voiceovers/Banderites/RUPAIN3.ogg"
+Banderite/Pain4				"Sounds/Voiceovers/Banderites/RUPAIN4.ogg"
+Banderite/Pain5				"Sounds/Voiceovers/Banderites/RUPAIN5.ogg"
+Banderite/Pain6				"Sounds/Voiceovers/Banderites/RUPAIN6.ogg"
+Banderite/Pain7				"Sounds/Voiceovers/Banderites/RUPAIN7.ogg"
+Banderite/Pain8				"Sounds/Voiceovers/Banderites/RUPAIN8.ogg"
+Banderite/Pain9				"Sounds/Voiceovers/Banderites/RUPAIN9.ogg"
+Banderite/Pain10			"Sounds/Voiceovers/Banderites/RUPAIN10.ogg"
+Banderite/Death1			"Sounds/Voiceovers/Banderites/RUDIE1.ogg"
+Banderite/Death2			"Sounds/Voiceovers/Banderites/RUDIE2.ogg"
+Banderite/Death3			"Sounds/Voiceovers/Banderites/RUDIE3.ogg"
+Banderite/Death4			"Sounds/Voiceovers/Banderites/RUDIE4.ogg"
+Banderite/Death5			"Sounds/Voiceovers/Banderites/RUDIE5.ogg"
+Banderite/Death6			"Sounds/Voiceovers/Banderites/RUDIE6.ogg"
+Banderite/Death7			"Sounds/Voiceovers/Banderites/RUDIE7.ogg"
+Banderite/Death8			"Sounds/Voiceovers/Banderites/RUDIE8.ogg"
+Banderite/Death9			"Sounds/Voiceovers/Banderites/RUDIE9.ogg"
+Banderite/Death10			"Sounds/Voiceovers/Banderites/RUDIE10.ogg"
+
+$random Banderite/Injured
+{ Banderite/Injured1 Banderite/Injured2 Banderite/Injured3 Banderite/Injured4
+ Banderite/Injured5 Banderite/Injured6 Banderite/Injured7 Banderite/Injured8
+ Banderite/Injured9 Banderite/Injured10 Banderite/Injured11 }
+
+Banderite/Injured1		"Sounds/Voiceovers/Banderites/RUSUF1.ogg"
+Banderite/Injured2		"Sounds/Voiceovers/Banderites/RUSUF2.ogg"
+Banderite/Injured3		"Sounds/Voiceovers/Banderites/RUSUF3.ogg"
+Banderite/Injured4		"Sounds/Voiceovers/Banderites/RUSUF4.ogg"
+Banderite/Injured5		"Sounds/Voiceovers/Banderites/RUSUF5.ogg"
+Banderite/Injured6		"Sounds/Voiceovers/Banderites/RUSUF6.ogg"
+Banderite/Injured7		"Sounds/Voiceovers/Banderites/RUSUF7.ogg"
+Banderite/Injured8		"Sounds/Voiceovers/Banderites/RUSUF8.ogg"
+Banderite/Injured9		"Sounds/Voiceovers/Banderites/RUSUF9.ogg"
+Banderite/Injured10		"Sounds/Voiceovers/Banderites/RUSUF10.ogg"
+
+$random Banderite/Burn
+{ Banderite/Burn1 Banderite/Burn2 Banderite/Burn3 Banderite/Burn4 Banderite/Burn5 }
+
+Banderite/Burn1		"Sounds/Voiceovers/Banderites/RUBURN1.ogg"
+Banderite/Burn2		"Sounds/Voiceovers/Banderites/RUBURN2.ogg"
+Banderite/Burn3		"Sounds/Voiceovers/Banderites/RUBURN3.ogg"
+Banderite/Burn4		"Sounds/Voiceovers/Banderites/RUBURN4.ogg"
+Banderite/Burn5		"Sounds/Voiceovers/Banderites/RUBURN5.ogg"
