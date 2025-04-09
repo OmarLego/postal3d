@@ -1110,8 +1110,7 @@ Banderite2/Panic5			"Sounds/Voiceovers/Banderite2/UAPANIC5.ogg"
 
 $random Banderite2/Pain
 { Banderite2/Pain1 Banderite2/Pain2 Banderite2/Pain3 Banderite2/Pain4
-Banderite2/Pain5 Banderite2/Death1 Banderite2/Death2 SLAVDE1 SLAVDE2
-SLAVDE3 SLAVDE4 SLAVDE5 SLAVDE6 }
+Banderite2/Pain5 Banderite2/Death1 Banderite2/Death2 }
 
 Banderite2/Pain1			"Sounds/Voiceovers/Banderite2/UAPAIN1.ogg"
 Banderite2/Pain2			"Sounds/Voiceovers/Banderite2/UAPAIN2.ogg"
@@ -1121,7 +1120,7 @@ Banderite2/Pain5			"Sounds/Voiceovers/Banderite2/UAPAIN5.ogg"
 Banderite2/Death1			"Sounds/Voiceovers/Banderite2/UADEATH1.ogg"
 Banderite2/Death2			"Sounds/Voiceovers/Banderite2/UADEATH2.ogg"
 SLAVDE1 SLAVDE1 //bandit, used to be rare when it was used by milita but its moved
-SLAVDE2 SLAVDE2  //here, idk how well itll work
+SLAVDE2 SLAVDE2  //here, idk how well itll work (it doesnt)
 SLAVDE3 SLAVDE3
 SLAVDE4 SLAVDE4
 SLAVDE5 SLAVDE6
