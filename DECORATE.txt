@@ -56,6 +56,7 @@
 #include  "Decorate/monsters/SwatSPECIAL.txt"
 #include "Decorate/monsters/CDC.txt"
 #include "Decorate/monsters/RBMilita.txt"
+#include "Decorate/monsters/RBShield.txt"
 #include "Decorate/monsters/RB.txt"//technically hostile too
 //bosses
 #include  "Decorate/monsters/SheriffBoss.txt"
