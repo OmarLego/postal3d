@@ -645,3 +645,14 @@ ACTOR EmptyRLSpawner : RifleCaseSpawn
 		Stop
 	}
 } 
+
+ACTOR BatonSpawner : RifleCaseSpawn
+{
+	States
+	{
+	Spawn:
+        TNT1 A 0
+		TNT1 A 1 A_CustomMissile("BatonGib",0,0,random(-80,-100),2,random(40,60))
+		Stop
+	}
+} 
