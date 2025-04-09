@@ -671,12 +671,35 @@ MODEL PRLD_SODA2A
    
 	FrameIndex BRLS A 0 0
 }
-MODEL PRLD_SODA2B
+MODEL PRLD_TACT_CAB
 {
 	Path "Models\Geometry"
-	Model 0 "zobemachine.obj"
-	Skin 0 "SODAMH04.png"
+	Model 0 "tact_cab.obj"
 	Scale 1.0 1.0 1.0
    
-	FrameIndex BRLS B 0 0
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_FRIDGE48
+{
+	Path "Models\Geometry"
+	Model 0 "fridge48x32.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_FRIDGE64
+{
+	Path "Models\Geometry"
+	Model 0 "fridge64x32.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_LITEINLET
+{
+	Path "Models\Geometry"
+	Model 0 "light_inlet.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
 }

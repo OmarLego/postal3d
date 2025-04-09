@@ -695,6 +695,12 @@ TANK1 TANK1//brutal doom
 TANK2 TANK2
 TANK3 TANK3//doom burtal
 
+//nt sounds
+keypad/enter "Sounds/NTSounds/keypad.ogg"
+distantsiren "Sounds/Environment/NT/distantsiren.ogg"
+fence/close1 "Sounds/Environment/Objects/fence_close.ogg"
+kr/beat2 "Sounds/NTSounds/kr_instr2_radio.ogg"
+
 
 //Menu
 menu/option/open		"Sounds/Menu/MenuOptionChoose.ogg"
