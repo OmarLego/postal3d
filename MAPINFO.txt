@@ -88,6 +88,7 @@ DoomEdNums
 	15048 = PRLD_RBMspawn
 	15053 = PRLD_RBspawn
 	15054 = PRLD_RBspawnGun
+	15105 = PRLD_RBShieldSpawn
 	//bosses
 	//= PRLD_SheriffBoss
 	//civilians

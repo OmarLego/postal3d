@@ -9,7 +9,7 @@ ACTOR PRLD_RBShieldSpawn : RandomSpawner
 	States
 	{
 	Spawn:
-		RSUA E 0
+		RSUA A 0
 		Stop
 	}
 }
