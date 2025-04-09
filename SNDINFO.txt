@@ -396,6 +396,10 @@ Enemy/Gibbed4 "Sounds/Gore/GenericBloodSplashBig4.ogg"
 $rolloff Enemy/Gibbed 250 1250
 $volume Enemy/Gibbed 0.8
 
+DSHEDXP1 DSHEDXP1
+DSHEDXP2 DSHEDXP2
+postal2gib    "Sounds/Gore/flesh_explode.wav"
+
 //$alias misc/gibbed meat/headshot
 $Random misc/gibbed { Enemy/Gibbed meat/headshot }
 
