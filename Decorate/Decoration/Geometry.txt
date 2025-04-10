@@ -594,7 +594,7 @@ ACTOR PRLD_Mailbox
 }
 actor PRLD_RESMBOX
 {
-	Radius 20
+	Radius 10
 	Height 40
 	+SOLID
 	States {
@@ -618,7 +618,7 @@ actor PRLD_RESMBOX
 	}
 }actor PRLD_BARIKADE
 {
-	Radius 40
+	Radius 34
 	Height 27
 	+NOGRAVITY
 	+SOLID
@@ -741,6 +741,9 @@ actor PRLD_TACT_CAB
 }
 actor PRLD_FRIDGE48
 {
+	+SOLID
+	Radius 16
+	Height 80
 	States {
 		Spawn:
 			BRLS A -1
@@ -749,6 +752,9 @@ actor PRLD_FRIDGE48
 }
 actor PRLD_FRIDGE64
 {
+	+SOLID
+	Radius 16
+	Height 80
 	States {
 		Spawn:
 			BRLS A -1
@@ -756,6 +762,24 @@ actor PRLD_FRIDGE64
 	}
 }
 actor PRLD_LITEINLET
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_SHOWERH
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_ALARMDEVISE
 {
 	+NOGRAVITY
 	States {
