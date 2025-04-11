@@ -703,3 +703,19 @@ MODEL PRLD_LITEINLET
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_SHOWERH
+{
+	Path "Models\Geometry"
+	Model 0 "showerhead.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_ALARMDEVISE
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "klaxon.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
