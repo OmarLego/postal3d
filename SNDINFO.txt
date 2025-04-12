@@ -600,7 +600,7 @@ $ambient 4 29 point continuous 1.0
 40 "sounds/Environment/Postal1/40.ogg"
 $ambient 5 40 point continuous 1.0
 46 "sounds/Environment/Postal1/46.ogg"
-$ambient 6 46 point continuous 1.0
+$ambient 6 46 surround continuous 1.0//point continuous 1.0
 46_2 "sounds/Environment/Postal1/46_2.ogg"
 $ambient 7 46_2 point continuous 1.0
 46_3 "sounds/Environment/Postal1/46_3.ogg"
@@ -641,8 +641,8 @@ $ambient 24 633 point continuous 1.0
 $ambient 25 634 point continuous 1.0
 644 "sounds/Environment/Postal1/644.ogg"
 $ambient 26 644 point continuous 1.0
-birds2 "sounds/Environment/Postal1/birds2.ogg"
-$ambient 27 birds2 point continuous 1.0
+//birds2 "sounds/Environment/Postal1/birds2.ogg"
+//$ambient 27 birds2 point continuous 1.0
 birdscary "sounds/Environment/Postal1/birdscary.ogg"
 $ambient 28 birdscary point continuous 1.0
 cathedralbells "sounds/Environment/Postal1/cathedralbells.ogg"
@@ -669,6 +669,17 @@ dusselbeat1 "sounds/Environment/NT/dusselbeat1.ogg"
 $ambient 39 dusselbeat1 point continuous 1.0
 PLAGRND "sounds/Environment/NT/PLAGRND.ogg"
 $ambient 40 PLAGRND point continuous 1.0
+carengines01 "Sounds/Environment/Objects/CarEngine-01.ogg"
+$ambient 41 carengines01 point continuous 1.0
+
+$Random birdamb { birdamb1 birdamb2 birdamb3 birdamb4 }
+
+birdamb1 "Sounds/Environment/BirdAmb-01.ogg"
+birdamb2 "Sounds/Environment/BirdAmb-02.ogg"
+birdamb3 "Sounds/Environment/BirdAmb-03.ogg"
+birdamb4 "Sounds/Environment/BirdAmb-04.ogg"
+
+$ambient 27 birdamb point continuous 1.0
 
 //glass
 glass/break	DSGLASS
@@ -684,7 +695,6 @@ WDCLO WDCLO
 //objects
 policesiren2 "Sounds/Environment/Objects/PoliceSiren2.wav"
 caralarm01 "Sounds/Environment/Objects/CarAlarm01.ogg"
-carengines01 "Sounds/Environment/Objects/CarEngine-01.ogg"
 truck/open "Sounds/Environment/Objects/truck-open.ogg"
 truck/close "Sounds/Environment/Objects/truck-close.ogg"
 truck/drive "Sounds/Environment/Objects/truck-drive.ogg"
