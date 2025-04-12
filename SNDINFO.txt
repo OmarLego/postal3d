@@ -671,6 +671,8 @@ PLAGRND "sounds/Environment/NT/PLAGRND.ogg"
 $ambient 40 PLAGRND point continuous 1.0
 carengines01 "Sounds/Environment/Objects/CarEngine-01.ogg"
 $ambient 41 carengines01 point continuous 1.0
+lampbuzz "Sounds/Environment/Objects/LampBuzz.wav"
+$ambient 42 LampBuzz point continuous 1.0
 
 $Random birdamb { birdamb1 birdamb2 birdamb3 birdamb4 }
 
@@ -693,6 +695,11 @@ WDOPN WDOPN
 WDCLO WDCLO
 
 //objects
+$Random policesirenredux { policesirenredux1 policesirenredux2 }
+
+policesirenredux1 "Sounds/Environment/Objects/PoliceSiren-01.ogg"
+policesirenredux2 "Sounds/Environment/Objects/PoliceSiren-02.ogg"
+
 policesiren2 "Sounds/Environment/Objects/PoliceSiren2.wav"
 caralarm01 "Sounds/Environment/Objects/CarAlarm01.ogg"
 truck/open "Sounds/Environment/Objects/truck-open.ogg"
