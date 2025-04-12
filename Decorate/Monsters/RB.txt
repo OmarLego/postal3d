@@ -483,7 +483,7 @@ ACTOR RBUS : RBUA
 	seesound "ARyan/Panic"
 	activesound "ARyan/Panic"
     PainSound "act8_pain"
-	Obituary "%o's killer's ((ancestors)) are proud of him."
+	Obituary "%o's killer's quote unquote ancestors are proud of him."
 	States
 	{
   	Spawn:
