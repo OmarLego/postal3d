@@ -673,6 +673,10 @@ carengines01 "Sounds/Environment/Objects/CarEngine-01.ogg"
 $ambient 41 carengines01 point continuous 1.0
 lampbuzz "Sounds/Environment/Objects/LampBuzz.wav"
 $ambient 42 LampBuzz point continuous 1.0
+Crickets "Sounds/Environment/Crickets.ogg"
+$ambient 43 Crickets point continuous 1.0
+FliesBuzzing01 "Sounds/Environment/FliesBuzzing01.ogg"
+$ambient 44 FliesBuzzing01 point continuous 1.0
 
 $Random birdamb { birdamb1 birdamb2 birdamb3 birdamb4 }
 

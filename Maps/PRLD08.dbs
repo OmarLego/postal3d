@@ -9,7 +9,7 @@ maps
 	{
 		defaultwalltexture = "DEV1";
 		overridemiddletexture = false;
-		defaultceiltexture = "F_SKY1";
+		defaultceiltexture = "HMWOD1";
 		overrideceiltexture = false;
 		custombrightness = 196;
 		scriptcompiler = "zdoom_acs.cfg";
@@ -17,8 +17,8 @@ maps
 		resources
 		{
 		}
-		viewpositiony = -10318.87f;
-		viewpositionx = 13951.65f;
+		viewpositiony = -9063.976f;
+		viewpositionx = 16340.64f;
 		
 		testprecommand
 		{
@@ -38,11 +38,11 @@ maps
 			gridrotate = 0;
 			backscalex = 100;
 			gridoriginx = 0;
-			gridsize = 1;
+			gridsize = 64;
 			background = "";
 			backoffsety = 0;
 		}
-		viewscale = 0.2677096f;
+		viewscale = 0.3480218f;
 		
 		reloadresourceprecommand
 		{
