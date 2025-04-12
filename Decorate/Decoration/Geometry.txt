@@ -788,3 +788,14 @@ actor PRLD_ALARMDEVISE
 			Stop
 	}
 }
+actor PRLD_POKRTABL1
+{
+	+SOLID
+	Radius 29
+	Height 29
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
