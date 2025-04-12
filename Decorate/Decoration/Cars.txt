@@ -315,6 +315,28 @@ actor PRLD_PREVIAD
 			Stop
 	}
 }
+actor PRLD_MILIT_JE1
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_MILIT_JE2
+{
+	Radius 1 //to be changed
+	Height 1 //tobechanged
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 
 
