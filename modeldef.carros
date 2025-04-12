@@ -179,6 +179,24 @@ MODEL PRLD_PREVIA4
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_MILIT_JE1
+{
+	Path "Models\Cars"
+	Model 0 "MILIT_JE.obj"
+	Skin 0 "HUMVEE01.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_MILIT_JE2
+{
+	Path "Models\Cars"
+	Model 0 "MILIT_JE.obj"
+	Skin 0 "HUMVEE02.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
 
 //broken car
 MODEL PRLD_CarBroke
