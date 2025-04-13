@@ -272,12 +272,49 @@ ACTOR PRLD_Sink
 			Stop
 	}
 }
+ACTOR PRLD_Sinkbroke
+{
+	Radius 2
+	Height 16
+	//+NOCLIP
+	+NOGRAVITY
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+ACTOR PRLD_Sinkdirty
+{
+	Radius 16
+	Height 16
+	//+NOCLIP
+	+NOGRAVITY
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_TVoff
 {
 	Radius 24
 	Height 45
 	+NOGRAVITY
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+ACTOR PRLD_TVBROKEN
+{
+	Radius 19
+	Height 39
 	+SOLID
 	States {
 		Spawn:
@@ -793,6 +830,29 @@ actor PRLD_POKRTABL1
 	+SOLID
 	Radius 29
 	Height 29
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BTHRMCBNT1
+{
+	+SOLID
+	Radius 12
+	Height 32
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_BTHRMCBNT2
+{
+	+SOLID
+	+NOGRAVITY
+	Radius 12
+	Height 32
 	States {
 		Spawn:
 			BRLS A -1

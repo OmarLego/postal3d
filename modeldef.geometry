@@ -310,6 +310,22 @@ MODEL PRLD_Sink
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_Sinkbroke
+{
+	Path "Models/Geometry"
+	Model 0 "sinkbroke.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_Sinkdirty
+{
+	Path "Models/Geometry"
+	Model 0 "sinkdirty.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
 
 MODEL PRLD_TVoff
 {
@@ -723,6 +739,30 @@ MODEL PRLD_ALARMDEVISE
 {
 	Path "Models\Geometry\BLIKSTER"
 	Model 0 "klaxon.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BTHRMCBNT1
+{
+	Path "Models\Geometry"
+	Model 0 "BTHRMCBNT1.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_BTHRMCBNT2
+{
+	Path "Models\Geometry"
+	Model 0 "BTHRMCBNT2.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TVBROKEN
+{
+	Path "Models\Geometry"
+	Model 0 "brokentv.obj"
 	Scale 1.0 1.0 1.2
    
 	FrameIndex BRLS A 0 0
