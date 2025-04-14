@@ -222,15 +222,23 @@ ACTOR MolotovRB : MolotovFly
 	+DONTHARMSPECIES
 	+STRIFEDAMAGE
 	Gravity 0.5
+	+NOGRAVITY
+	Speed 4
 	States
 	{
 	Spawn:
+	TNT1 A 21
+	TNT1 A 0 A_ScaleVelocity (5)
+	TNT1 A 1
+	TNT1 A 0 A_ChangeFlag(NOGRAVITY, 0)
+	Spawn2:
 	MOLZ A 1 A_SetRoll(roll + 10, SPF_INTERPOLATE)
 	Loop
 
 	Death:
 	XDeath:	
 	//TNT1 A 0 A_Explode(31, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
+	TNT1 A 0 A_Explode(31, 56, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
 	Explode:
 	TNT1 A 0
     TNT1 A 0 A_PlaySound("MBREAK",CHAN_AUTO)
@@ -250,8 +258,14 @@ ACTOR MolotovRB : MolotovFly
 	Goto Burn
 	Burn:
 	TNT1 A 0
-	TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",19,"BurnOut")//15,"BurnOut")
+	TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",25,"BurningOut")//15,"BurnOut")
 	TNT1 A 0 A_Explode(23, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
+	TNT1 A 0 A_GiveInventory ("SpielMitMir-RammsteinOfficial",1)
+	TNT1 A 14
+	loop
+	BurningOut:
+	TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",35,"BurnOut")
+	TNT1 A 0 A_Explode(9, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
 	TNT1 A 0 A_GiveInventory ("SpielMitMir-RammsteinOfficial",1)
 	TNT1 A 14
 	loop
@@ -342,14 +356,15 @@ ACTOR RBMUA : CDC1_1
 		TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("Banderite/Molotov")
 		RBUA G 8 A_FaceTarget
+		TNT1 A 0 A_SpawnProjectile("MolotovRB",32,0,0,CMF_OFFSETPITCH,-5)
 		TNT1 A 0 A_PlaySound ("LITUP",CHAN_AUTO)
 		TNT1 A 0 A_PlaySound ("MOLFIR",CHAN_AUTO)
-		RBUA G 8 A_FaceTarget
-		RBUA G 7 A_FaceTarget
+		RBUA G 8 //A_FaceTarget
+		RBUA G 7 //A_FaceTarget
 		TNT1 A 0 A_PlaySound ("Throw",CHAN_AUTO)
-		RBUA H 7 A_FaceTarget
+		RBUA H 7 //A_FaceTarget
 		TNT1 A 0 A_PlaySound ("GTOSS",CHAN_AUTO)
-		TNT1 A 0 A_SpawnProjectile("MolotovRB",32,0,0,CMF_OFFSETPITCH,-5)
+		//TNT1 A 0 A_SpawnProjectile("MolotovRB",32,0,0,CMF_OFFSETPITCH,-5)//hopefully they dont throw it at a doorframe you barely walked away from
 		TNT1 A 0 A_GiveInventory ("PRLD_GrenadeCoolDown", 3)
 		RBUA I 8
 		TNT1 A 0 A_PlaySound ("WEPSEL",CHAN_AUTO)
