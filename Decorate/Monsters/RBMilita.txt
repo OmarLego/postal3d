@@ -221,6 +221,7 @@ ACTOR MolotovRB : MolotovFly
 	+NOINFIGHTSPECIES
 	+DONTHARMSPECIES
 	+STRIFEDAMAGE
+	Gravity 0.5
 	States
 	{
 	Spawn:
@@ -229,9 +230,7 @@ ACTOR MolotovRB : MolotovFly
 
 	Death:
 	XDeath:	
-	//TNT1 A 0 A_Explode(39, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
-	//TNT1 A 0 A_Explode(23, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
-	TNT1 A 0 A_Explode(31, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
+	//TNT1 A 0 A_Explode(31, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
 	Explode:
 	TNT1 A 0
     TNT1 A 0 A_PlaySound("MBREAK",CHAN_AUTO)
@@ -247,10 +246,11 @@ ACTOR MolotovRB : MolotovFly
 	TNT1 A 0 A_SpawnItemEx ("BigGrowingFlameT2",1,1,1,0,0,0,0,SXF_TRANSFERPOINTERS)
 	//TNT1 A 0 A_PlaySoundEx("fire/body","weapon",true)
 	TNT1 A 0 A_PlaySoundEx("fire/small","weapon",true)
+	TNT1 A 10 //replicate original postal where it takes it bit for it to spread damage
 	Goto Burn
 	Burn:
 	TNT1 A 0
-	TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",15,"BurnOut")
+	TNT1 A 0 A_JumpIfInventory ("SpielMitMir-RammsteinOfficial",19,"BurnOut")//15,"BurnOut")
 	TNT1 A 0 A_Explode(23, 192, XF_EXPLICITDAMAGETYPE, 0, 0,0 ,0 ,0 ,"HFire")
 	TNT1 A 0 A_GiveInventory ("SpielMitMir-RammsteinOfficial",1)
 	TNT1 A 14
