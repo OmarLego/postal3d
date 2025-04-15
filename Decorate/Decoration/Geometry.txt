@@ -859,3 +859,35 @@ actor PRLD_BTHRMCBNT2
 			Stop
 	}
 }
+actor PRLD_SLPINGBAG
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_GUNCASE1
+{
+	+SOLID
+	+NOGRAVITY
+	Radius 13
+	Height 6
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_GUNCASE2
+{
+	+SOLID
+	+NOGRAVITY
+	Radius 16
+	Height 7
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

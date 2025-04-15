@@ -767,3 +767,27 @@ MODEL PRLD_TVBROKEN
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_SLPINGBAG
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "sleepingbag.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_GUNCASE1
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "guncase.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_GUNCASE2
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "guncase_open.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
