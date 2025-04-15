@@ -87,6 +87,8 @@ Gerodium - Damage Direction Overlay
 
 Officer D - Doom Exp's Damage Direction Overlay
 
+Kraja - I.H.N.I.'s Weapon Rotation
+
 BrettBotTheCryonaut - Monster Genetics
 
 Caligari87 - Universal fade-to-black on death
