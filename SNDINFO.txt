@@ -687,6 +687,11 @@ birdamb4 "Sounds/Environment/BirdAmb-04.ogg"
 
 $ambient 27 birdamb point continuous 1.0
 
+$random p1dogs { dogbark1 dogbark2 }
+dogbark1 "sounds/Environment/Postal1/dogbark1.ogg"
+dogbark2 "sounds/Environment/Postal1/dogbark2.ogg"
+$ambient 45 p1dogs surround continuous 1.0
+
 //glass
 glass/break	DSGLASS
 $limit 	glass/break 0
@@ -722,6 +727,7 @@ distantsiren "Sounds/Environment/NT/distantsiren.ogg"
 fence/close1 "Sounds/Environment/Objects/fence_close.ogg"
 kr/beat2 "Sounds/NTSounds/kr_instr2_radio.ogg"
 klaxon1 "Sounds/Environment/NT/klaxon1.ogg"
+bo1flies "Sounds/Environment/NT/flies1.ogg"
 //train
 trainfalldeath "Sounds/Gore/train_death_fall.ogg"
 trainridingext "Sounds/NTSounds/train-riding-out.ogg"

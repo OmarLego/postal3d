@@ -502,6 +502,14 @@ MODEL PRLD_Propane
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_Propane_Dest
+{
+	Path "Models/Geometry"
+	Model 0 "propane_dest.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
 
 MODEL PRLD_HomeRay
 {
@@ -788,6 +796,14 @@ MODEL PRLD_GUNCASE2
 	Path "Models\Geometry\BLIKSTER"
 	Model 0 "guncase_open.obj"
 	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TRASH1
+{
+	Path "Models\Geometry"
+	Model 0 "trashbag1.obj"
+	Scale 1.2 1.2 1.4
    
 	FrameIndex BRLS A 0 0
 }

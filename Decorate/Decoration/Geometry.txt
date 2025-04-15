@@ -542,6 +542,17 @@ Actor PRLD_Propane
 {
 	Radius 32
 	Height 57
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_Propane_Dest
+{
+	Radius 32
+	Height 57
 	+NOCLIP
 	+NOGRAVITY
 	States {
@@ -885,6 +896,17 @@ actor PRLD_GUNCASE2
 	+NOGRAVITY
 	Radius 16
 	Height 7
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_TRASH1
+{
+	+SOLID
+	Radius 16
+	Height 19
 	States {
 		Spawn:
 			BRLS A -1
