@@ -713,6 +713,7 @@ policesiren2 "Sounds/Environment/Objects/PoliceSiren2.wav"
 caralarm01 "Sounds/Environment/Objects/CarAlarm01.ogg"
 truck/open "Sounds/Environment/Objects/truck-open.ogg"
 truck/close "Sounds/Environment/Objects/truck-close.ogg"
+truck/close/quick "Sounds/Environment/Objects/truck-close-quiker.ogg"
 truck/drive "Sounds/Environment/Objects/truck-drive.ogg"
 jail/open "Sounds/Environment/Objects/door_prison_cell_LP.wav"
 jail/close "Sounds/Environment/Objects/door_prison_cell_close.wav"
@@ -724,16 +725,21 @@ TANK3 TANK3//doom burtal
 //nt sounds
 keypad/enter "Sounds/NTSounds/keypad.ogg"
 distantsiren "Sounds/Environment/NT/distantsiren.ogg"
+distantsiren2 "Sounds/Environment/NT/distantsiren2.ogg"
 fence/close1 "Sounds/Environment/Objects/fence_close.ogg"
-kr/beat2 "Sounds/NTSounds/kr_instr2_radio.ogg"
 klaxon1 "Sounds/Environment/NT/klaxon1.ogg"
 bo1flies "Sounds/Environment/NT/flies1.ogg"
+//amd muzak
+kr/beat2 "Sounds/NTSounds/kr_instr2_radio.ogg"
+ts/jazz1 "Sounds/Environment/muzak/ts_jazz.ogg"
 //train
 trainfalldeath "Sounds/Gore/train_death_fall.ogg"
 trainridingext "Sounds/NTSounds/train-riding-out.ogg"
 trainridingint "Sounds/NTSounds/train-riding-in.ogg"
 //blikster
 cutsn/helpcall "Sounds/Voiceovers/Scripted/Map7/secur_helpcall_placeholder.ogg"
+//trainstation
+cutsn12/radio1 "Sounds/Voiceovers/Scripted/Map12/train_policeradio_1.ogg"
 
 
 //Menu
