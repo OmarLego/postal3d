@@ -923,3 +923,11 @@ actor PRLD_GASLITE1
 			Stop
 	}
 }
+actor PRLD_RAILSWITCH1
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

@@ -826,3 +826,11 @@ MODEL PRLD_GASLITE1
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_RAILSWITCH1
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "railswitch1.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}

@@ -123,6 +123,9 @@ DoomEdNums
 	30206 = rwldecTree4
 	15128 = TRSBush01
 	15129 = TRSBush02
+	15131 = CACTUS01
+	15132 = CACTUS02
+	15133 = CACTUS03
 	10042 = PRLD_HomeSiren
 	13376 = Tire//action doom 2
 	13377 = TireStack//ation ddoom 2
@@ -231,6 +234,8 @@ DoomEdNums
 	15123 = PRLD_TRASH1
 	15124 = PRLD_Propane_Dest
 	15126 = PRLD_GASLITE1
+	15130 = PRLD_RAILSWITCH1
+
 	//roofs
 	10010 = PRLD_DudeRoof
 	15011 = PRLD_HomeRoof1

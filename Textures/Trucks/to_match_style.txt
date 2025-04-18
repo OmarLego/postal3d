@@ -1,1 +1,1 @@
-dither every truck texture with 25 on the every RGB setting, if you're using GIMP. not sure for other programs
+dither all 20 with luminance on Floyd Steinberg in gimp

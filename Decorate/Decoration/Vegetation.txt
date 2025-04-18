@@ -183,3 +183,42 @@ ACTOR TRSBush02
   loop
   }
 }
+ACTOR CACTUS01
+{
+  height 64
+  radius 0.5
+  scale .75
+  -SOLID
+  STATES
+  {
+  Spawn:
+  CTS1 I 1
+  loop
+  }
+}
+ACTOR CACTUS02
+{
+  height 64
+  radius 1
+  scale .75
+  +SOLID
+  STATES
+  {
+  Spawn:
+  CTS2 I 1
+  loop
+  }
+}
+ACTOR CACTUS03
+{
+  height 64
+  radius 1
+  scale .75
+  +SOLID
+  STATES
+  {
+  Spawn:
+  CTS3 I 1
+  loop
+  }
+}
