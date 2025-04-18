@@ -157,3 +157,29 @@ ACTOR rwldecTree4
     loop
   }
 }
+ACTOR TRSBush01
+{
+  height 64
+  radius 0.5
+  scale .5
+  -SOLID
+  STATES
+  {
+  Spawn:
+  BSH1 I 1
+  loop
+  }
+}
+ACTOR TRSBush02
+{
+  height 64
+  radius 0.5
+  scale .5
+  -SOLID
+  STATES
+  {
+  Spawn:
+  BSH2 I 1
+  loop
+  }
+}

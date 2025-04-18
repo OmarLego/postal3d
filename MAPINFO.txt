@@ -121,10 +121,13 @@ DoomEdNums
 	30202 = rwldecTree2
 	30204 = rwldecTree3
 	30206 = rwldecTree4
+	15128 = TRSBush01
+	15129 = TRSBush02
 	10042 = PRLD_HomeSiren
 	13376 = Tire//action doom 2
 	13377 = TireStack//ation ddoom 2
 	85 = TechLamp //placeholder for mines
+	15125 = CarSpot //reference for teleporting cars into scene
 	
 	//cars
 	10017 = PRLD_Car1
@@ -153,6 +156,7 @@ DoomEdNums
 	15099 = PRLD_PREVIAD
 	15112 = PRLD_MILIT_JE1
 	15113 = PRLD_MILIT_JE2
+	15127 = PRLD_MILIT_JED
 	//other vehicles
 	15044 = PRLD_Excavator
 	15073 = PRLD_PSW
@@ -226,6 +230,7 @@ DoomEdNums
 	15122 = PRLD_GUNCASE2
 	15123 = PRLD_TRASH1
 	15124 = PRLD_Propane_Dest
+	15126 = PRLD_GASLITE1
 	//roofs
 	10010 = PRLD_DudeRoof
 	15011 = PRLD_HomeRoof1
@@ -453,7 +458,7 @@ Map PRLD08 "Thunderbird"
 	//NoIntermission
 	InterMusic = "D_DM2INT"
 }
-Map PRLD12B "The Train Station" //currently map is B unless we want to delete that old version of the station
+Map PRLD12C "The Train Station" //currently map is B unless we want to delete that old version of the station
 {
 	music = ""
 	sky1 = "SKYPNIG2"

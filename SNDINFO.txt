@@ -698,6 +698,7 @@ $limit 	glass/break 0
 $pitchshift 	glass/break 3
 $rolloff 	glass/break 1000 2000
 fencebreak "Sounds/Environment/fencebreak.ogg"
+atm/dest "Sounds/Impacts/atm.ogg"
 
 //doors
 WDOPN WDOPN

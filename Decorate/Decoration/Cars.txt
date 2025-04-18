@@ -144,198 +144,394 @@ Actor PRLD_Car8 : PRLD_Car1
 {
 }
 
-
+//MONTE CARLO
 actor PRLD_CARLO1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
+	Radius 40
+	Height 26
 	+SOLID
+	+SHOOTABLE
+	+SOLID
+	+FLOORCLIP
+	+NOBLOOD
+    	-PUSHABLE
+	+NOTAUTOAIMED
+	Health	300
+   	Gravity 0.7
+	Mass	99999999
+	DamageFactor "Blast", 4.0
+	DamageFactor "Explosive", 4.0
+	DamageFactor "Trample", 0.0
+	DamageFactor "KillMe", 0.0
+	DamageFactor "Headkick", 0.0
+	DeathSound "CarCrash"
 	States {
-		Spawn:
-			BRLS A -1
-			Stop
+	Spawn:
+		BRLS A 1
+		TNT1 A 0 A_SpawnItemEx("CarloColision1", -66)
+		TNT1 A 0 A_SpawnItemEx("CarloColision2", -104)
+		BRLS A 1
+		Goto Stay
+	Stay:
+		BRLS A 10 A_JumpIFHealthLower(200, "Damaged")
+		Loop
+	Damaged:
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItemEx("DamagedCarSmokeSpawner", 50, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire1", 22, 25)
+		BRLS A 84
+		TNT1 A 0 A_JumpIFHealthLower(120, "HeavyDamaged")
+		Loop
+	HeavyDamaged:
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire2", 22, 25)
+		BRLS A 0 A_SpawnItemEx("HeavyDamagedCarSmokeSpawner", 50, 0)
+		BRLS A 84
+		Loop	
+	Death:
+	    	BRLS A 0
+		TNT1 A 0 A_NoBlocking
+        		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_SpawnItem("PRLD_GlassDestruct")
+		TNT1 A 0 A_PlaySound("glass/break", CHAN_AUTO)
+		BRLS A 0 A_Explode(100, 250)
+		TNT1 A 0 A_SpawnItem("PrldExplosion", 0, 35)
+		TNT1 A 0 A_SpawnItemEx("PRLD_CARLOD",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERTRANSLATION, 0)
+		Stop
 	}
 }
-actor PRLD_CARLO2
+actor PRLD_CARLO2 : PRLD_CARLO1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
-actor PRLD_CARLO3
+actor PRLD_CARLO3 : PRLD_CARLO1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
-actor PRLD_CARLO4
+actor PRLD_CARLO4 : PRLD_CARLO1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
-
 actor PRLD_CARLOD
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
 	+SOLID
+	Radius 40
+	Height 26
 	States {
-		Spawn:
-			BRLS B -1
-			Stop
+	Spawn:
+		BRLS B -1
+		TNT1 A 0 A_SpawnItemEx("CarloColision1", -66)
+		TNT1 A 0 A_SpawnItemEx("CarloColision2", -104)
+        		BRLS B -1
+		Stop
 	}
+}
+Actor CarloColision1
+{
+	+SOLID
+	+FLOORCLIP
+	Height	40
+	Radius	38
+	States
+	{
+	Spawn:
+		TNT1 A -1
+		Stop
+	}
+}
+Actor CarloColision2 : CarloColision1
+{
+	Height	25
+	Radius	40
 }
 
+//F150
 actor PRLD_F1501
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
+	Radius 40
+	Height 37
 	+SOLID
+	+SHOOTABLE
+	+SOLID
+	+FLOORCLIP
+	+NOBLOOD
+    	-PUSHABLE
+	+NOTAUTOAIMED
+	Health	300
+   	Gravity 0.7
+	Mass	99999999
+	DamageFactor "Blast", 4.0
+	DamageFactor "Explosive", 4.0
+	DamageFactor "Trample", 0.0
+	DamageFactor "KillMe", 0.0
+	DamageFactor "Headkick", 0.0
+	DeathSound "CarCrash"
 	States {
-		Spawn:
-			BRLS A -1
-			Stop
+	Spawn:
+		BRLS A 1
+		TNT1 A 0 A_SpawnItemEx("FordColision1", -36)
+		TNT1 A 0 A_SpawnItemEx("FordColision2", -104)
+		BRLS A 1
+		Goto Stay
+	Stay:
+		BRLS A 10 A_JumpIFHealthLower(200, "Damaged")
+		Loop
+	Damaged:
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItemEx("DamagedCarSmokeSpawner", 50, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire1", 22, 25)
+		BRLS A 84
+		TNT1 A 0 A_JumpIFHealthLower(120, "HeavyDamaged")
+		Loop
+	HeavyDamaged:
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire2", 22, 25)
+		BRLS A 0 A_SpawnItemEx("HeavyDamagedCarSmokeSpawner", 50, 0)
+		BRLS A 84
+		Loop	
+	Death:
+	    	BRLS A 0
+		TNT1 A 0 A_NoBlocking
+        		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_SpawnItem("PRLD_GlassDestruct")
+		TNT1 A 0 A_PlaySound("glass/break", CHAN_AUTO)
+		BRLS A 0 A_Explode(100, 250)
+		TNT1 A 0 A_SpawnItem("PrldExplosion", 0, 35)
+		TNT1 A 0 A_SpawnItemEx("PRLD_F150D",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERTRANSLATION, 0)
+		Stop
 	}
 }
-actor PRLD_F1502
+actor PRLD_F1502 : PRLD_F1501
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
-actor PRLD_F1503
+actor PRLD_F1503 : PRLD_F1501
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
-actor PRLD_F1504
+actor PRLD_F1504 : PRLD_F1501
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
 
 actor PRLD_F150D
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
 	+SOLID
+	Radius 40
+	Height 37
 	States {
-		Spawn:
-			BRLS B -1
-			Stop
+	Spawn:
+		BRLS B -1
+		TNT1 A 0 A_SpawnItemEx("FordColision1", -36)
+		TNT1 A 0 A_SpawnItemEx("FordColision2", -104)
+        		BRLS B -1
+		Stop
 	}
 }
+Actor FordColision1
+{
+	+SOLID
+	+FLOORCLIP
+	Radius	24
+	Height	52
+	States
+	{
+	Spawn:
+		TNT1 A -1
+		Stop
+	}
+}
+Actor FordColision2 : FordColision1
+{
+	Radius	40
+	Height	29
+}
+
+//PREVIA 
 
 actor PRLD_PREVIA1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
+	Radius 44
+	Height 36
 	+SOLID
+	+SHOOTABLE
+	+SOLID
+	+FLOORCLIP
+	+NOBLOOD
+    	-PUSHABLE
+	+NOTAUTOAIMED
+	Health	300
+   	Gravity 0.7
+	Mass	99999999
+	DamageFactor "Blast", 4.0
+	DamageFactor "Explosive", 4.0
+	DamageFactor "Trample", 0.0
+	DamageFactor "KillMe", 0.0
+	DamageFactor "Headkick", 0.0
+	DeathSound "CarCrash"
 	States {
-		Spawn:
-			BRLS A -1
-			Stop
+	Spawn:
+		BRLS A 1
+		TNT1 A 0 A_SpawnItemEx("PreviaColision1", -6)
+		TNT1 A 0 A_SpawnItemEx("PreviaColision2", -96)
+		BRLS A 1
+		Goto Stay
+	Stay:
+		BRLS A 10 A_JumpIFHealthLower(200, "Damaged")
+		Loop
+	Damaged:
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItemEx("DamagedCarSmokeSpawner", 50, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire1", 22, 25)
+		BRLS A 84
+		TNT1 A 0 A_JumpIFHealthLower(120, "HeavyDamaged")
+		Loop
+	HeavyDamaged:
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire2", 22, 25)
+		BRLS A 0 A_SpawnItemEx("HeavyDamagedCarSmokeSpawner", 50, 0)
+		BRLS A 84
+		Loop	
+	Death:
+	    	BRLS A 0
+		TNT1 A 0 A_NoBlocking
+        		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_SpawnItem("PRLD_GlassDestruct")
+		TNT1 A 0 A_PlaySound("glass/break", CHAN_AUTO)
+		BRLS A 0 A_Explode(100, 250)
+		TNT1 A 0 A_SpawnItem("PrldExplosion", 0, 35)
+		TNT1 A 0 A_SpawnItemEx("PRLD_PREVIAD",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERTRANSLATION, 0)
+		Stop
 	}
 }
-actor PRLD_PREVIA2
+actor PRLD_PREVIA2 : PRLD_PREVIA1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
-actor PRLD_PREVIA3
+actor PRLD_PREVIA3 : PRLD_PREVIA1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
-actor PRLD_PREVIA4
+actor PRLD_PREVIA4 : PRLD_PREVIA1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
-	+SOLID
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
 }
 
 actor PRLD_PREVIAD
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
 	+SOLID
+	Radius 44
+	Height 36
 	States {
-		Spawn:
-			BRLS B -1
-			Stop
+	Spawn:
+		BRLS B -1
+		TNT1 A 0 A_SpawnItemEx("PreviaColision1", -6)
+		TNT1 A 0 A_SpawnItemEx("PreviaColision2", -96)
+        		BRLS B -1
+		Stop
 	}
 }
+Actor PreviaColision1
+{
+	+SOLID
+	+FLOORCLIP
+	Radius	44
+	Height	53
+	States
+	{
+	Spawn:
+		TNT1 A -1
+		Stop
+	}
+}
+Actor PreviaColision2 : PreviaColision1
+{
+	Radius	44
+	Height	61
+}
+
+//humvee
+
 actor PRLD_MILIT_JE1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
+	Radius 44
+	Height 42
 	+SOLID
+	+SHOOTABLE
+	+SOLID
+	+FLOORCLIP
+	+NOBLOOD
+    	-PUSHABLE
+	+NOTAUTOAIMED
+	Health	900
+   	Gravity 0.7
+	Mass	99999999
+	DamageFactor "Blast", 4.0
+	DamageFactor "Explosive", 4.0
+	DamageFactor "Trample", 0.0
+	DamageFactor "KillMe", 0.0
+	DamageFactor "Headkick", 0.0
+	DeathSound "CarCrash"
 	States {
-		Spawn:
-			BRLS A -1
-			Stop
+	Spawn:
+		BRLS A 1
+		TNT1 A 0 A_SpawnItemEx("HumveColision1", -56)
+		TNT1 A 0 A_SpawnItemEx("HumveColision2", -96)
+		BRLS A 1
+		Goto Stay
+	Stay:
+		BRLS A 10 A_JumpIFHealthLower(200, "Damaged")
+		Loop
+	Damaged:
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItemEx("DamagedCarSmokeSpawner", 50, 0)
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire1", 22, 25)
+		BRLS A 84
+		TNT1 A 0 A_JumpIFHealthLower(120, "HeavyDamaged")
+		Loop
+	HeavyDamaged:
+		TNT1 A 0 
+		TNT1 A 0 A_SpawnItem("PRLD_CarFire2", 22, 25)
+		BRLS A 0 A_SpawnItemEx("HeavyDamagedCarSmokeSpawner", 50, 0)
+		BRLS A 84
+		Loop	
+	Death:
+	    	BRLS A 0
+		TNT1 A 0 A_NoBlocking
+        		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_SpawnItem("PRLD_GlassDestruct")
+		TNT1 A 0 A_PlaySound("glass/break", CHAN_AUTO)
+		BRLS A 0 A_Explode(100, 250)
+		TNT1 A 0 A_SpawnItem("PrldExplosion", 0, 35)
+		TNT1 A 0 A_SpawnItemEx("PRLD_MILIT_JED",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION | SXF_TRANSFERTRANSLATION, 0)
+		Stop
 	}
 }
-actor PRLD_MILIT_JE2
+actor PRLD_MILIT_JE2 : PRLD_MILIT_JE1
 {
-	Radius 1 //to be changed
-	Height 1 //tobechanged
+}
+actor PRLD_MILIT_JED
+{
 	+SOLID
+	Radius 44
+	Height 42
 	States {
-		Spawn:
-			BRLS A -1
-			Stop
+	Spawn:
+		BRLS B -1
+		TNT1 A 0 A_SpawnItemEx("HumveColision1", -56)
+		TNT1 A 0 A_SpawnItemEx("HumveColision2", -96)
+        		BRLS B -1
+		Stop
 	}
+}
+Actor HumveColision1
+{
+	+SOLID
+	+FLOORCLIP
+	Radius	44
+	Height	60
+	States
+	{
+	Spawn:
+		TNT1 A -1
+		Stop
+	}
+}
+Actor HumveColision2 : HumveColision1
+{
+	Radius	44
+	Height	54
 }
 
 
@@ -470,4 +666,17 @@ actor PRLD_PSW
 			BRLS A -1
 			Stop
 	}
+}
+
+
+
+
+actor CarSpot
+{
+  +NOBLOCKMAP
+  +NOSECTOR
+  +NOGRAVITY
+  +DONTSPLASH
+  RenderStyle None
+  CameraHeight 0
 }

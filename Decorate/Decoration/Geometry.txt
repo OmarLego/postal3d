@@ -713,6 +713,8 @@ actor PRLD_RLCROS
 }
 actor PRLD_RLGATE
 {
+	+ROLLSPRITE
+	+ABSVIEWANGLES
 	+NOGRAVITY
 	States {
 		Spawn:
@@ -907,6 +909,14 @@ actor PRLD_TRASH1
 	+SOLID
 	Radius 16
 	Height 19
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_GASLITE1
+{
 	States {
 		Spawn:
 			BRLS A -1

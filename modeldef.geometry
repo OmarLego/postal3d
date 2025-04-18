@@ -665,6 +665,8 @@ MODEL PRLD_RLGATE
 	Path "Models\Geometry\RAILWAY"
 	Model 0 "gate1.obj"
 	Scale 1.0 1.0 1.0
+	USEACTORPITCH
+	USEACTORROLL
    
 	FrameIndex BRLS A 0 0
 }
@@ -702,6 +704,15 @@ MODEL PRLD_SODA2A
 	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_SODA2B
+{
+	Path "Models\Geometry"
+	Model 0 "zobemachine.obj"
+	Skin 0 "SODAMH04.png"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS B 0 0
 }
 MODEL PRLD_TACT_CAB
 {
@@ -804,6 +815,14 @@ MODEL PRLD_TRASH1
 	Path "Models\Geometry"
 	Model 0 "trashbag1.obj"
 	Scale 1.2 1.2 1.4
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_GASLITE1
+{
+	Path "Models\Geometry"
+	Model 0 "GasLight1.obj"
+	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS A 0 0
 }
