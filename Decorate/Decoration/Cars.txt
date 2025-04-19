@@ -667,6 +667,28 @@ actor PRLD_PSW
 			Stop
 	}
 }
+actor PRLD_SEMI1
+{
+	Radius 63
+	Height 112
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_TANKER1
+{
+	Radius 64
+	Height 112
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 
 

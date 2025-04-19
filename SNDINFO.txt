@@ -677,6 +677,8 @@ Crickets "Sounds/Environment/Crickets.ogg"
 $ambient 43 Crickets point continuous 1.0
 FliesBuzzing01 "Sounds/Environment/FliesBuzzing01.ogg"
 $ambient 44 FliesBuzzing01 point continuous 1.0
+distantsiren2 "Sounds/Environment/NT/distantsiren2.ogg"
+$ambient 46 distantsiren2 point continuous 1.0
 
 $Random birdamb { birdamb1 birdamb2 birdamb3 birdamb4 }
 

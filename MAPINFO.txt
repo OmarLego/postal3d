@@ -163,6 +163,8 @@ DoomEdNums
 	//other vehicles
 	15044 = PRLD_Excavator
 	15073 = PRLD_PSW
+	15134 = PRLD_SEMI1
+	15135 = PRLD_TANKER1
 	
 	//destructable (combined with actual map stuff)
 	10016 = PRLD_FenceDestruct
@@ -235,6 +237,8 @@ DoomEdNums
 	15124 = PRLD_Propane_Dest
 	15126 = PRLD_GASLITE1
 	15130 = PRLD_RAILSWITCH1
+	15136 = PRLD_CONCBARER1
+	15137 = PRLD_CONCBARER1C
 
 	//roofs
 	10010 = PRLD_DudeRoof

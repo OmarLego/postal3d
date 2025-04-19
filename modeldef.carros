@@ -269,8 +269,22 @@ MODEL PRLD_ExcavatorD
    
 	FrameIndex BRLS A 0 0
 }
-
-
+MODEL PRLD_SEMI1
+{
+	Path "Models/Cars"
+	Model 0 "semitruk1.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TANKER1
+{
+	Path "Models/Cars"
+	Model 0 "tanker1.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
 
 //Cutscene
 

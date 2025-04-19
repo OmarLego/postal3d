@@ -931,3 +931,25 @@ actor PRLD_RAILSWITCH1
 			Stop
 	}
 }
+actor PRLD_CONCBARER1
+{
+	Radius 6
+	Height 28
+	+NOGRAVITY
+	+SOLID
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_CONCBARER1C : PRLD_Table1C
+{
+	Radius 6
+	Height 28
+	States {
+		Spawn:
+			TNT1 A -1
+			Stop
+	}
+}
