@@ -297,6 +297,22 @@ MODEL PRLD_PGNRF
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_KGROOF
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "KGROOF.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_INSURROOF
+{
+	Path "Models\Geometry\roofs"
+	Model 0 "insurroof01.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
 
 //           PROPS
 
@@ -834,11 +850,51 @@ MODEL PRLD_RAILSWITCH1
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_RAILSWITCH2
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "railswitch1.obj"
+	Scale -1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
 MODEL PRLD_CONCBARER1
 {
 	Path "Models\Geometry"
 	Model 0 "CONCBARER1.obj"
 	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_POLEMOUNT
+{
+	Path "Models\Geometry\traffic"
+	Model 0 "polemount.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TRAFLITE1
+{
+	Path "Models\Geometry\traffic"
+	Model 0 "tl01.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TRAFLITE2
+{
+	Path "Models\Geometry\traffic"
+	Model 0 "tl02.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TRAFLITE3
+{
+	Path "Models\Geometry\traffic"
+	Model 0 "tl03.obj"
+	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS A 0 0
 }

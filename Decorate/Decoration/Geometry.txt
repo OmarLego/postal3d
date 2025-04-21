@@ -258,6 +258,24 @@ actor PRLD_PGNRF
 			Stop
 	}
 }
+actor PRLD_KGROOF
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_INSURROOF
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_Sink
 {
@@ -931,6 +949,9 @@ actor PRLD_RAILSWITCH1
 			Stop
 	}
 }
+actor PRLD_RAILSWITCH2 : PRLD_RAILSWITCH1
+{
+}
 actor PRLD_CONCBARER1
 {
 	Radius 6
@@ -950,6 +971,43 @@ Actor PRLD_CONCBARER1C : PRLD_Table1C
 	States {
 		Spawn:
 			TNT1 A -1
+			Stop
+	}
+}
+Actor PRLD_POLEMOUNT
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_TRAFLITE1
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_TRAFLITE2
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+
+Actor PRLD_TRAFLITE3
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
 			Stop
 	}
 }
