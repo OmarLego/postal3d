@@ -250,6 +250,15 @@ actor PRLD_BKSRRUF11
 			Stop
 	}
 }
+actor PRLD_LAGERHAUSROOF
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 actor PRLD_PGNRF
 {
 	States {
@@ -270,6 +279,14 @@ actor PRLD_KGROOF
 actor PRLD_INSURROOF
 {
 	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_SILOROOF
+{
 	States {
 		Spawn:
 			BRLS A -1
@@ -710,14 +727,6 @@ actor PRLD_RESMBOX
 			Stop
 	}
 }
-actor PRLD_LAGERHAUSROOF
-{
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
 actor PRLD_RLCROS
 {
 	Radius 13
@@ -769,6 +778,9 @@ actor PRLD_PGNPIL
 }
 actor PRLD_SODA1A
 {
+	Radius 24
+	Height 67
+	+SOLID
 	States {
 		Spawn:
 			BRLS A -1
@@ -777,6 +789,9 @@ actor PRLD_SODA1A
 }
 actor PRLD_SODA1B
 {
+	Radius 24
+	Height 67
+	+SOLID
 	States {
 		Spawn:
 			BRLS B -1
@@ -785,6 +800,9 @@ actor PRLD_SODA1B
 }
 actor PRLD_SODA2A
 {
+	Radius 24
+	Height 67
+	+SOLID
 	States {
 		Spawn:
 			BRLS A -1
@@ -793,6 +811,9 @@ actor PRLD_SODA2A
 }
 actor PRLD_SODA2B
 {
+	Radius 24
+	Height 67
+	+SOLID
 	States {
 		Spawn:
 			BRLS B -1
@@ -1003,6 +1024,26 @@ Actor PRLD_TRAFLITE2
 }
 
 Actor PRLD_TRAFLITE3
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_PISJUG01
+{
+	+SOLID
+	Radius 8
+	Height 8
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_GRAINSPOUT
 {
 	+NOGRAVITY
 	States {

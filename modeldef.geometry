@@ -313,6 +313,14 @@ MODEL PRLD_INSURROOF
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_SILOROOF
+{
+	Path "Models\Geometry\roofs"
+	Model 0 "siloroof.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
 
 //           PROPS
 
@@ -894,6 +902,22 @@ MODEL PRLD_TRAFLITE3
 {
 	Path "Models\Geometry\traffic"
 	Model 0 "tl03.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_PISJUG01
+{
+	Path "Models\Geometry\BLIKSTER"
+	Model 0 "pissjug1.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_GRAINSPOUT
+{
+	Path "Models\Geometry"
+	Model 0 "spout.obj"
 	Scale 1.0 1.0 1.0
    
 	FrameIndex BRLS A 0 0
