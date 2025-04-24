@@ -285,6 +285,8 @@ DoomEdNums
 	15138 = PRLD_KGROOF
 	15139 = PRLD_INSURROOF
 	15146 = PRLD_SILOROOF
+	15148 = PRLD_BARNROOF
+	15149 = PRLD_FARMHAUSROOF
 	//I DIDNT KNOW HEXEN ACTORS WERE IN THE THE 10000-10040 RANGES BRO anyways too lazy to change everything right now but ill probably have to do it eventually
 	//THE New era starts now (15000-30000 100% free)                                                         //now i did
 	15000 = PRLD_GunRoof1
@@ -479,7 +481,7 @@ Map PRLD08 "Thunderbird"
 }
 Map PRLD12C "The Train Station" //currently map is B unless we want to delete that old version of the station
 {
-	music = ""
+	music = "NoSoundHax"
 	sky1 = "SKYPNIG2"
 	MONSTERFALLINGDAMAGE
 	FALLINGDAMAGE

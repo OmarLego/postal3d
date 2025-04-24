@@ -30,9 +30,9 @@ maps
 		}
 		defaultfloortexture = "PCONCT06";
 		defaultceiltexture = "F_SKY1";
-		defaulttoptexture = "BLAK1";
-		defaultwalltexture = "BLAK1";
-		defaultbottomtexture = "BLAK1";
+		defaulttoptexture = "KGDECOR3";
+		defaultwalltexture = "KGDECOR3";
+		defaultbottomtexture = "KGDECOR3";
 		custombrightness = 196;
 		customfloorheight = 0;
 		customceilheight = 128;
@@ -45,9 +45,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = -2462.411f;
-		viewpositiony = -716.5871f;
-		viewscale = 0.5274737f;
+		viewpositionx = -3625.684f;
+		viewpositiony = 353.7917f;
+		viewscale = 0.08406214f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
@@ -58,7 +58,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 16;
+			gridsize = 1;
 			gridrotate = 0;
 			gridoriginx = 0;
 			gridoriginy = 0;
@@ -120,7 +120,8 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 433;
+				caretposition = 1089;
+				firstvisibleline = 28;
 				activetab = true;
 			}
 		}

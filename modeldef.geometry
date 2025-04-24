@@ -321,6 +321,22 @@ MODEL PRLD_SILOROOF
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_BARNROOF
+{
+	Path "Models\Geometry\roofs"
+	Model 0 "barnroof.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_FARMHAUSROOF
+{
+	Path "Models\Geometry\roofs"
+	Model 0 "farmhouseroof.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
 
 //           PROPS
 

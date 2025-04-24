@@ -293,6 +293,22 @@ actor PRLD_SILOROOF
 			Stop
 	}
 }
+actor PRLD_BARNROOF
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_FARMHAUSROOF
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_Sink
 {
