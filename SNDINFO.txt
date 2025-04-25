@@ -743,6 +743,7 @@ trainridingint "Sounds/NTSounds/train-riding-in.ogg"
 cutsn/helpcall "Sounds/Voiceovers/Scripted/Map7/secur_helpcall_placeholder.ogg"
 //trainstation
 cutsn12/radio1 "Sounds/Voiceovers/Scripted/Map12/train_policeradio_1.ogg"
+cutsn12/firstwave "Sounds/Voiceovers/Scripted/Map12/police_pl_entry.ogg"
 
 
 //Menu

@@ -267,15 +267,6 @@ actor PRLD_PGNRF
 			Stop
 	}
 }
-actor PRLD_KGROOF
-{
-	+NOGRAVITY
-	States {
-		Spawn:
-			BRLS A -1
-			Stop
-	}
-}
 actor PRLD_INSURROOF
 {
 	+NOGRAVITY
@@ -303,6 +294,42 @@ actor PRLD_BARNROOF
 }
 actor PRLD_FARMHAUSROOF
 {
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_KGROOF2
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_KGROOF3
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_KGROOF3A
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_KGROOF4
+{
+	+NOGRAVITY
 	States {
 		Spawn:
 			BRLS A -1

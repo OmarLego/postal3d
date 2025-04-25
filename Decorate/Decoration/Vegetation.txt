@@ -163,6 +163,7 @@ ACTOR TRSBush01
   radius 0.5
   scale .5
   -SOLID
+	+NOGRAVITY
   STATES
   {
   Spawn:
@@ -176,6 +177,7 @@ ACTOR TRSBush02
   radius 0.5
   scale .5
   -SOLID
+	+NOGRAVITY
   STATES
   {
   Spawn:
@@ -188,6 +190,7 @@ ACTOR CACTUS01
   height 64
   radius 0.5
   scale .75
+	+NOGRAVITY
   -SOLID
   STATES
   {
@@ -202,6 +205,7 @@ ACTOR CACTUS02
 	radius 1
 	scale .75
 	+SOLID
+	+NOGRAVITY
 //	+LOOKALLAROUND
 //	+ACTIVATEMCROSS
 	STATES
@@ -221,6 +225,7 @@ ACTOR CACTUS03
  	radius 1
   	scale .75
   	+SOLID
+	+NOGRAVITY
 //	+ACTIVATEMCROSS
   	STATES
   	{

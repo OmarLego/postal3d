@@ -282,11 +282,14 @@ DoomEdNums
 	15088 = PRLD_TSROOF1
 	15089 = PRLD_PWRROOF1
 	15101 = PRLD_PGNRF
-	15138 = PRLD_KGROOF
 	15139 = PRLD_INSURROOF
 	15146 = PRLD_SILOROOF
 	15148 = PRLD_BARNROOF
 	15149 = PRLD_FARMHAUSROOF
+	15138 = PRLD_KGROOF4
+	15150 = PRLD_KGROOF2
+	15151 = PRLD_KGROOF3
+	15152 = PRLD_KGROOF3A
 	//I DIDNT KNOW HEXEN ACTORS WERE IN THE THE 10000-10040 RANGES BRO anyways too lazy to change everything right now but ill probably have to do it eventually
 	//THE New era starts now (15000-30000 100% free)                                                         //now i did
 	15000 = PRLD_GunRoof1
