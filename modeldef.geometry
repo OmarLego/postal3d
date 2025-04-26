@@ -297,14 +297,39 @@ MODEL PRLD_PGNRF
    
 	FrameIndex BRLS A 0 0
 }
-MODEL PRLD_KGROOF
+MODEL PRLD_KGROOF2
 {
 	Path "Models\Geometry\RAILWAY"
-	Model 0 "KGROOF.obj"
+	Model 0 "KGROOF2.obj"
 	Scale 1.0 1.0 1.2
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_KGROOF3A
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "KGROOF3.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_KGROOF3
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "KGROOF3.obj"
+	Scale -1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_KGROOF4
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "KGROOF4.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+
 MODEL PRLD_INSURROOF
 {
 	Path "Models\Geometry\roofs"
@@ -879,6 +904,30 @@ MODEL PRLD_RAILSWITCH2
 	Path "Models\Geometry\RAILWAY"
 	Model 0 "railswitch1.obj"
 	Scale -1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_RAILSIGNAL1
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "SIGNAL1.obj"
+	Scale 0.75 0.75 0.75
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_RAILSIGNAL2
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "SIGNAL2.obj"
+	Scale 0.75 0.75 0.75
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_RAILSIGNAL3
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "SIGNAL3.obj"
+	Scale 0.75 0.75 0.75
    
 	FrameIndex BRLS A 0 0
 }

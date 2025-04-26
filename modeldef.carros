@@ -285,6 +285,14 @@ MODEL PRLD_TANKER1
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_VMS1
+{
+	Path "Models/Cars"
+	Model 0 "VMS.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}
 
 //Cutscene
 
