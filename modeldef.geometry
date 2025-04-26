@@ -907,6 +907,30 @@ MODEL PRLD_RAILSWITCH2
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_RAILSIGNAL1
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "SIGNAL1.obj"
+	Scale 0.75 0.75 0.75
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_RAILSIGNAL2
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "SIGNAL2.obj"
+	Scale 0.75 0.75 0.75
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_RAILSIGNAL3
+{
+	Path "Models\Geometry\RAILWAY"
+	Model 0 "SIGNAL3.obj"
+	Scale 0.75 0.75 0.75
+   
+	FrameIndex BRLS A 0 0
+}
 MODEL PRLD_CONCBARER1
 {
 	Path "Models\Geometry"

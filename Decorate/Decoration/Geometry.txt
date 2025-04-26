@@ -1095,3 +1095,20 @@ Actor PRLD_GRAINSPOUT
 			Stop
 	}
 }
+Actor PRLD_RAILSIGNAL1
+{
+	+SOLID
+	Radius 9
+	Height 113
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_RAILSIGNAL2 : PRLD_RAILSIGNAL1
+{
+}
+Actor PRLD_RAILSIGNAL3 : PRLD_RAILSIGNAL1
+{
+}

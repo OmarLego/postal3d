@@ -689,6 +689,14 @@ actor PRLD_TANKER1
 			Stop
 	}
 }
+actor PRLD_VMS1
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 
 
