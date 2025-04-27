@@ -336,6 +336,24 @@ actor PRLD_KGROOF4
 			Stop
 	}
 }
+actor PRLD_MBLHMROOF1
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+actor PRLD_TSLHROOF1
+{
+	+NOGRAVITY
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
 
 ACTOR PRLD_Sink
 {
@@ -933,6 +951,7 @@ actor PRLD_POKRTABL1
 }
 actor PRLD_BTHRMCBNT1
 {
+	+NOGRAVITY
 	+SOLID
 	Radius 12
 	Height 32

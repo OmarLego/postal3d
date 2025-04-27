@@ -732,6 +732,7 @@ distantsiren2 "Sounds/Environment/NT/distantsiren2.ogg"
 fence/close1 "Sounds/Environment/Objects/fence_close.ogg"
 klaxon1 "Sounds/Environment/NT/klaxon1.ogg"
 bo1flies "Sounds/Environment/NT/flies1.ogg"
+tvsound4 "Sounds/NTSounds/tv_loop4.ogg"
 //amd muzak
 kr/beat2 "Sounds/NTSounds/kr_instr2_radio.ogg"
 ts/jazz1 "Sounds/Environment/muzak/ts_jazz.ogg"

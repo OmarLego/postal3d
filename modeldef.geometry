@@ -362,6 +362,22 @@ MODEL PRLD_FARMHAUSROOF
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_MBLHMROOF1
+{
+	Path "Models\Geometry\roofs"
+	Model 0 "MOBILEHOMEROOF01.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TSLHROOF1
+{
+	Path "Models\Geometry\roofs"
+	Model 0 "ts_lagerhausroof1.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
 
 //           PROPS
 
