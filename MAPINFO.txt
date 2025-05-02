@@ -316,7 +316,7 @@ DoomEdNums
 
 Episode PRLD01
 {
-   //Intro {video = "Movies/burningparadisetest.ivf" sound = "Movies/burningparadisetest"}
+Intro {video = "Movies/home.ivf" sound = "Movies/HOME"}
 name = "Welcome To Paradise"
 }
 
