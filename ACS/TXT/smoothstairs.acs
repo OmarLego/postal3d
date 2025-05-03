@@ -1,0 +1,173 @@
+#library "smoothstairs"
+#include "zcommon.acs"
+#include "commonFuncs.acs"
+
+// Smooth stair/camera movement (aka No More Slipping), by Turret49.
+//
+// A bit tired of losing control and slipping around whenever Doomguy comes
+// across even the slightest gradation in the ground, I made this script which
+// attempts to keep the player's feet firmly on the floor and let them be able
+// to fully control their movement.
+//
+// This script also takes control over the player's ViewHeight, giving a
+// smoother stair-travelling experience.
+//
+// (Also I am not that experienced at ACS so sorry for any newbie-isms)
+//
+// Update 4/7/16
+//	- Now smooths if the player climbs up a step while in midair.
+//	- Added basic elevation detection using a dummy actor, camera will now account for lift movement instead of squashing/stretching.
+//	- (lift detection is buggy when you stand on the edge, and actor platforms aren't detected at all)
+
+// edited by BROS_ETT_311 i think?? i got it from one of his files and he necroposted
+//  on the original link on how to fix a thing so i presume the fix is here
+
+script "SSEnter" ENTER
+{
+	int LocationZ = GetActorZ(0);
+	int OldLocationZ = LocationZ;
+	int StepHeight = 16.0; //Default = 16.0
+	int speed;
+	int velx;
+	int vely;
+	int OldVelZ;
+	int smooth;
+	int bound;
+	bool bFalling;
+	bool bJustLanded;
+	
+	int LiftTID;
+	int LiftZ = GetActorZ(0);
+	int OldLiftZ;
+	int LiftMom;
+	
+	int PlayerActor = GetActorClass(0);
+	int TempTID = UniqueTID();
+	
+	SpawnForced (PlayerActor, 0, 0, 0, TempTID);
+	
+	// Gathers the player actor's default height properties, if you want to
+	// change player height midgame, you will need to also reset these ints.
+	int CollisionHeight = GetActorProperty(TempTID, APROP_Height);
+	int BaseEyeHeight = GetActorProperty(TempTID, APROP_ViewHeight);
+	int EyeHeight = GetActorProperty(TempTID, APROP_ViewHeight);
+	
+	Thing_Remove (TempTID);
+
+	while (GetActorProperty(0, APROP_HEALTH) > 0)
+	{
+
+		// Lift detection.
+		OldLiftZ = LiftZ;
+		LiftZ = GetActorZ(LiftTID);
+		if (GetActorVelZ(LiftTID) == 0 && GetActorVelZ(0) == 0)
+		{
+			LiftMom = LiftZ - OldLiftZ;
+		}
+		else
+		{
+			LiftMom = 0;
+		}
+		
+		Thing_Remove (LiftTID);
+		//print(f:OldLiftZ, s:"\n", f:LiftZ, s:"\n", f:LiftMom); //debug
+		LiftTID = UniqueTID();
+		Spawn("LiftCheck", GetActorX(0), GetActorY(0), GetActorZ(0), LiftTID);
+		LiftZ = GetActorZ(LiftTID);
+		
+	
+		// If player is moving upwards and not already falling...
+		if (GetActorVelZ(0) > 0 && bFalling == 0)
+		{
+			// ...they are probably in the air.
+			bFalling = 1; 
+		}
+		
+		// If player is moving downwards and not already falling...
+		if (GetActorVelZ(0) < 0 && bFalling == 0)
+		{
+			// ...and there is a (StepHeight) unit height or less step below...
+			if (GetActorZ(0) <= (GetActorFloorZ(0)+StepHeight))
+			{
+				// ...set player down to that step.
+				int spacebelow = (GetActorZ(0) - GetActorFloorZ(0));
+				Warp (0, 0, 0, -spacebelow, 0,0);
+				// WARPF_TOFLOOR worked at first, then I realized a bug
+				// where it would warp the player inside walls and get stuck.
+				
+				// If going too fast due to stair physics, slow down.
+				velx = GetActorVelX(0);
+				vely = GetActorVelY(0);
+				speed = magnitudeTwo_f( velx, vely ) >> 16;
+				if (speed > 20) {SetActorVelocity(0, FixedMul(-velx,0.05), FixedMul(-vely,0.05), 0, 1, 0);}
+				
+			}
+			else
+			{
+				// Otherwise they are probably in the air.
+				bFalling = 1;
+			}
+		}
+	
+		if (GetActorVelZ(0) == 0 && GetActorZ(0) == GetActorFloorZ(0) && bFalling == 1)
+		{
+			// If player is on the ground, they can't be in the air.
+			bFalling = 0;
+			bJustLanded = true;
+		}
+		
+		
+		// Unreal's smooth up/down stairs code, modified for ACS/ZDoom.
+		// Credits to Epic MegaGames and Digital Extremes!		
+		LocationZ = GetActorZ(0);
+		smooth = 0.3;
+		
+		If( bFalling == 0 && !bJustLanded || LocationZ > OldLocationZ + OldVelZ)
+		{
+			bJustLanded = false;
+			EyeHeight = FixedMul((EyeHeight - LocationZ + (OldLocationZ + LiftMom)), (1.0 - smooth)) + FixedMul(BaseEyeHeight, smooth);
+			bound = FixedMul(0.25, CollisionHeight);
+			if (EyeHeight < bound)
+				{EyeHeight = bound;}
+			else
+			{
+				bound = CollisionHeight;
+				if ( EyeHeight > bound )
+					{EyeHeight = bound;}
+			}
+			SetActorProperty(TempTID,APROP_ViewHeight,EyeHeight);
+		}
+		
+		else
+		{
+			smooth = 0.35;
+			EyeHeight = FixedMul(EyeHeight, (1.0 - smooth)) + FixedMul(BaseEyeHeight, smooth);
+			bJustLanded = false;
+			SetActorProperty(TempTID,APROP_ViewHeight,EyeHeight);
+		}
+		
+		OldLocationZ = LocationZ;
+		OldVelZ = GetActorVelZ(0);
+		//print(f:bFalling); //debug
+		
+		Delay (1);
+	}
+}
+
+
+// The smooth camera loop stops when the player is dead, so their death camera
+// works properly. These two scripts start it up again if the player uses the
+// resurrect cheat or respawns.
+// code borrowed from "The Trailblazer" (KeksDose's code).
+
+script "SSRessurect" death
+{
+	while(GetActorProperty(0, APROP_HEALTH) <= 0)
+		Delay(const:1);
+	ACS_NamedExecuteAlways("SSEnter",0,0,0);
+}
+
+script "SSRespawn" respawn
+{
+	ACS_NamedExecuteAlways("SSEnter",0,0,0);
+}

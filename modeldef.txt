@@ -129,7 +129,7 @@ Model PrldHostileTracer // Name of actor in DECORATE
 { 
    Path "Models/Projectiles" // Path to model in PK3
    SKIN 0 "tracer1.tga" // Model index, model file
-   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   MODEL 0 "Tracer2.md3" // Model index, texture (can be in any format supported by GZDoom)
    Scale 1.0 1.0 1.5 // Scale values
    PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
    
@@ -140,7 +140,7 @@ Model HostileRifleTracer // Name of actor in DECORATE
 { 
    Path "Models/Projectiles" // Path to model in PK3
    SKIN 0 "tracer1.tga" // Model index, model file
-   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   MODEL 0 "Tracer2.md3" // Model index, texture (can be in any format supported by GZDoom)
    Scale 2.5 2.5 1.5 // Scale values
    PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
    
@@ -151,7 +151,7 @@ Model HostileRifleTracer2 // Name of actor in DECORATE
 { 
    Path "Models/Projectiles" // Path to model in PK3
    SKIN 0 "tracer1.tga" // Model index, model file
-   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   MODEL 0 "Tracer2.md3" // Model index, texture (can be in any format supported by GZDoom)
    Scale 2.5 2.5 1.5 // Scale values
    PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
    
@@ -162,7 +162,7 @@ Model HostileShotgunTracer // Name of actor in DECORATE
 { 
    Path "Models/Projectiles" // Path to model in PK3
    SKIN 0 "tracer1.tga" // Model index, model file
-   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   MODEL 0 "Tracer2.md3" // Model index, texture (can be in any format supported by GZDoom)
    //Scale 1.5 2.5 1.5 // Scale values
    Scale 1.5 1.5 1.5
    PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
@@ -174,7 +174,7 @@ Model HRevolverTracer // Name of actor in DECORATE
 { 
    Path "models/Projectiles" // Path to model in PK3
    SKIN 0 "tracer1.tga" // Model index, model file
-   MODEL 0 "Tracer.md3" // Model index, texture (can be in any format supported by GZDoom)
+   MODEL 0 "Tracer2.md3" // Model index, texture (can be in any format supported by GZDoom)
    Scale 4.5 4.5 1.5 // Scale values
    PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
    

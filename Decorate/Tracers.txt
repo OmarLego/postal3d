@@ -255,6 +255,7 @@ Actor PrldHostileTracer: P3D_Tracer
 	damage (2)
 	Decal "BulletChip"
 	//DeathSound "Impact"
+	scale .14
 	States
 	{
     Spawn:

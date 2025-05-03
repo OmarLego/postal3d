@@ -215,7 +215,7 @@ ACTOR Military1 : Postal3dMonster
 		TNT1 A 0 A_PlaySound("weapons/m16/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/m16/dist", CHAN_AUTO)
 		TNT1 A 0 A_SpawnItemEx("PRLD_MuzzleFlash1", 41, 6, 11)
-		MILI G 2 BRIGHT A_CustomMissile ("HostileRifleTracer",11,0,random (-4,4))
+		MILI G 2 BRIGHT A_CustomMissile ("HostileRifleTracer",11,0,random (-4,4),CMF_ABSOLUTEPITCH,1)
 		TNT1 A 0 A_GiveInventory ("PRLD_M16CoolDown", 1)
 		TNT1 A 0 A_JumpIfInventory ("PRLD_M16CoolDown", 30, "Reload")
 		MILI G 1
