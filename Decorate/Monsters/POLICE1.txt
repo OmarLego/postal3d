@@ -2663,42 +2663,42 @@ ACTOR Sheriff1 :  ShotgunOfficer1
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		//GUYS I DID THE MUZZLE FLASH FRAME FINALLY
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 		Goto SeeLoop
 	8Fire:
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 	4Fire:
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHRF I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHRF E 7 A_FaceTarget
+		SHRF E 13 A_FaceTarget
 		Goto SeeLoop
 	Pain:   
 		SHRF F 3
@@ -3168,41 +3168,41 @@ ACTOR Sheriff2 : Sheriff1
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		//GUYS I DID THE MUZZLE FLASH FRAME FINALLY
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 		Goto SeeLoop
 	8Fire:
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 	4Fire:
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR2 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR2 E 7 A_FaceTarget
+		SHR2 E 13 A_FaceTarget
 		Goto SeeLoop
 	Pain:   
 		SHR2 F 3
@@ -3667,42 +3667,42 @@ ACTOR Sheriff3 : Sheriff1
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		//GUYS I DID THE MUZZLE FLASH FRAME FINALLY
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 		Goto SeeLoop
 	8Fire:
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 	4Fire:
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 		TNT1 A 0 A_PlaySound("weapons/glock17/fire", CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("weapons/glock17/dist", CHAN_AUTO)
 		SHR3 I 1 BRIGHT A_CustomMissile("PrldHostileTracer", 48, 0, random(-2, 2), 1, random(-2, 2))
-		SHR3 E 7 A_FaceTarget
+		SHR3 E 13 A_FaceTarget
 		Goto SeeLoop
 	Pain:   
 		SHR3 F 3
