@@ -1003,3 +1003,19 @@ MODEL PRLD_GRAINSPOUT
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_FILECABINET1
+{
+	Path "Models\Geometry"
+	Model 0 "FILECABNET01.obj"
+	Scale 0.75 0.75 0.75
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_TRAINBENCH1
+{
+	Path "Models/Geometry"
+	Model 0 "trainbench.obj"
+	Scale 1.0 1.0 1.0
+   
+	FrameIndex BRLS A 0 0
+}

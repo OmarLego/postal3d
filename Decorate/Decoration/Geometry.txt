@@ -1131,3 +1131,47 @@ Actor PRLD_RAILSIGNAL2 : PRLD_RAILSIGNAL1
 Actor PRLD_RAILSIGNAL3 : PRLD_RAILSIGNAL1
 {
 }
+Actor PRLD_FILECABINET1
+{
+	+SOLID
+	Radius 9
+	Height 45
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+ACTOR LITEFIXTURE01
+{
+	radius 1
+	Height 2
+	scale .5
+	+NOGRAVITY
+	-SOLID
+	+noclip
+	STATES
+	{
+		Spawn:
+		LTF1 I 1
+		loop
+	}
+}
+ACTOR PRLD_TRAINBENCH1 : PRLD_Chair1
+{
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_Bench2C : PRLD_Table1C
+{
+	Radius 18
+	Height 15
+	States {
+		Spawn:
+			TNT1 A -1
+			Stop
+	}
+}
