@@ -78,73 +78,92 @@ actor DPistolOfficer3_6: PistolOfficer3_6
 actor DSheriff1: Sheriff1
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff1_2: Sheriff1_2
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff1_3: Sheriff1_3
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff1_4: Sheriff1_4
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff1_5: Sheriff1_5
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff1_6: Sheriff1_6
 {
 Health 25
-}actor DSheriff2: Sheriff2
+DropItem "Clip"
+}
+actor DSheriff2: Sheriff2
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff2_2: Sheriff2_2
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff2_3: Sheriff2_3
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff2_4: Sheriff2_4
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff2_5: Sheriff2_5
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff2_6: Sheriff2_6
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff3: Sheriff3
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff3_2: Sheriff3_2
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff3_3: Sheriff3_3
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff3_4: Sheriff3_4
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff3_5: Sheriff3_5
 {
 Health 25
+DropItem "Clip"
 }
 actor DSheriff3_6: Sheriff3_6
 {
 Health 25
+DropItem "Clip"
 }
 
 
@@ -312,7 +331,7 @@ ACTOR PrldBaronReplacer: RandomSpawner replaces BaronOfHell
 
 
 
-//Weapons
+//                                             Weapon Spawners
 
 
 
