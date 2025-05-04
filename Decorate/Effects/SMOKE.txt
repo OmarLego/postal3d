@@ -454,3 +454,41 @@ SMK3 CDEFGHIJKLM 1
 Stop
 }
 }
+
+ACTOR PRLD_HeatSmoke
+{
+    Speed 25
+    +NOCLIP
+    States
+    {
+    Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_CustomMissile ("GunBarrelSmoke", -10, 0, 0, 2, 90)
+		TNT1 A 1
+        Stop
+    }
+}
+Actor GunBarrelSmoke: ExplosionSmoke//bur tumd
+{
+	Alpha 0.01
+	RenderStyle Add
+	XScale 0.12
+	YScale 0.15
+	Speed 1
+    States
+    {
+    Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(waterlevel > 1, "Stap")
+		smk2 aaaaa 1 A_FadeIn(0.1)
+		smk2 A 2
+		smk2 AAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_FadeOut(0.04)
+		Goto Death
+	Death:
+		TNT1 A 0
+		Stop
+	Stap:		
+		TNT1 A 0
+		Stop
+    }
+}
