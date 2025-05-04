@@ -67,6 +67,15 @@ script "Not Actual Population IDK how to count civvies without fucking up the no
 	}
 }
 
+script "ItClearsTheInventorySoIHaveToDoThis" ENTER
+{
+	delay(5);
+	SetActivator(0, AAPTR_PLAYER1);//<<X);
+	delay(5);
+	GiveInventory("PRLD_M4Start", 1);
+	delay(5);
+}	
+
 script "da use attack to attack and use" ENTER
 {
  int buttons;

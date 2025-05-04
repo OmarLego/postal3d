@@ -1,8 +1,8 @@
-//Monsters
-//im changing this to be vanilla balanced versions of the main hostile roster, since atm they are too different from main doom cast for me to
-//just copy and paste them verbatim
+//Monsters Edits
 
 
+
+//                               Pistol Cop
 actor DPistolOfficer1: PistolOfficer1
 {
 //Health 25
@@ -74,11 +74,118 @@ actor DPistolOfficer3_6: PistolOfficer3_6
 {
 //Health 25
 }
+//                               Sheriff
+actor DSheriff1: Sheriff1
+{
+Health 25
+}
+actor DSheriff1_2: Sheriff1_2
+{
+Health 25
+}
+actor DSheriff1_3: Sheriff1_3
+{
+Health 25
+}
+actor DSheriff1_4: Sheriff1_4
+{
+Health 25
+}
+actor DSheriff1_5: Sheriff1_5
+{
+Health 25
+}
+actor DSheriff1_6: Sheriff1_6
+{
+Health 25
+}actor DSheriff2: Sheriff2
+{
+Health 25
+}
+actor DSheriff2_2: Sheriff2_2
+{
+Health 25
+}
+actor DSheriff2_3: Sheriff2_3
+{
+Health 25
+}
+actor DSheriff2_4: Sheriff2_4
+{
+Health 25
+}
+actor DSheriff2_5: Sheriff2_5
+{
+Health 25
+}
+actor DSheriff2_6: Sheriff2_6
+{
+Health 25
+}
+actor DSheriff3: Sheriff3
+{
+Health 25
+}
+actor DSheriff3_2: Sheriff3_2
+{
+Health 25
+}
+actor DSheriff3_3: Sheriff3_3
+{
+Health 25
+}
+actor DSheriff3_4: Sheriff3_4
+{
+Health 25
+}
+actor DSheriff3_5: Sheriff3_5
+{
+Health 25
+}
+actor DSheriff3_6: Sheriff3_6
+{
+Health 25
+}
+
+
+
+//                                Monster Spawners
+
+
+
 ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 {
 	Species Hostile
 	Radius 20
     Height 52
+	DropItem "DSheriff1"
+	DropItem "DSheriff1_2"
+	DropItem "DSheriff1_3"
+	DropItem "DSheriff1_4"
+	DropItem "DSheriff1_5"
+	DropItem "Sheriff1_6"
+	DropItem "DSheriff2"
+	DropItem "DSheriff2_2"
+	DropItem "DSheriff2_3"
+	DropItem "DSheriff2_4"
+	DropItem "DSheriff2_5"
+	DropItem "DSheriff2_6"
+	DropItem "DSheriff3"
+	DropItem "DSheriff3_2"
+	DropItem "DSheriff3_3"
+	DropItem "DSheriff3_4"
+	DropItem "DSheriff3_5"
+	DropItem "DSheriff3_6"//trying out swapping sheriffs and pistol cops
+	DropItem "PRLD_CDCspawn"
+	DropItem "PRLD_CDCspawn"
+}
+ACTOR PrldImpReplacer: RandomSpawner replaces DoomImp
+{
+	Species Hostile
+	Radius 20
+    Height 52
+	//18/19 sheriff 1/19 grenader
+	//might be too much or little
 	DropItem "DPistolOfficer1"
 	DropItem "DPistolOfficer1_2"
 	DropItem "DPistolOfficer1_3"
@@ -97,33 +204,8 @@ ACTOR PrldZombiemanReplacer: RandomSpawner replaces Zombieman
 	DropItem "DPistolOfficer3_4"
 	DropItem "DPistolOfficer3_5"
 	DropItem "DPistolOfficer3_6"
-	DropItem "PRLD_CDCspawn"
-}
-ACTOR PrldImpReplacer: RandomSpawner replaces DoomImp
-{
-	Species Hostile
-	Radius 20
-    Height 52
-	//18/19 sheriff 1/19 grenader
-	//might be too much or little
-	DropItem "Sheriff1"
-	DropItem "Sheriff1_2"
-	DropItem "Sheriff1_3"
-	DropItem "Sheriff1_4"
-	DropItem "Sheriff1_5"
-	DropItem "Sheriff1_6"
-	DropItem "Sheriff2"
-	DropItem "Sheriff2_2"
-	DropItem "Sheriff2_3"
-	DropItem "Sheriff2_4"
-	DropItem "Sheriff2_5"
-	DropItem "Sheriff2_6"
-	DropItem "Sheriff3"
-	DropItem "Sheriff3_2"
-	DropItem "Sheriff3_3"
-	DropItem "Sheriff3_4"
-	DropItem "Sheriff3_5"
-	DropItem "Sheriff3_6"
+	DropItem "RBMUA"
+	DropItem "RBMUA"
 	//DropItem "Grenader1_1"//trying it out on the chaingunner instead
 }
 ACTOR PrldShotgunnerReplacer: RandomSpawner replaces Shotgunguy
@@ -149,6 +231,8 @@ ACTOR PrldShotgunnerReplacer: RandomSpawner replaces Shotgunguy
 	DropItem "ShotgunOfficer3_4"
 	DropItem "ShotgunOfficer3_5"
 	DropItem "ShotgunOfficer3_6"
+	DropItem "Grenader1_1"//fuck it shotgunner spawn grenaders
+	DropItem "Grenader1_1"
 }
 ACTOR PrldChaingunnerReplacer: RandomSpawner replaces Chaingunguy
 {
@@ -181,7 +265,7 @@ ACTOR PrldDemonReplacer: RandomSpawner replaces Demon
 	Species Hostile
 	Radius 20
     Height 52
-	DropItem "Miner1_1"
+	DropItem "RBShield"
 }
 ACTOR PrldSpectreReplacer: RandomSpawner replaces Spectre
 {
