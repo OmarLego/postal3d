@@ -88,7 +88,7 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.StartItem "MacheteAmmoLoaded", 1
 	Player.StartItem "PRLD_CutsceneFUCK", 1//used so player movement Is Normal, removing makes player slower for da cinematikz
 	Player.StartItem "MoreThan8Pages", 1
-	Player.StartItem "PRLD_M4Burst", 1
+	//Player.StartItem "PRLD_M4Burst", 1
     Player.WeaponSlot 1, "Machete"
     Player.Weaponslot 2, "PRLD_M12", "MP5K", "Magnum"
     Player.Weaponslot 3, "DoubleBarrel", "PRLD_LeverAction"
