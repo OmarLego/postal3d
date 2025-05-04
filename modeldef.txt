@@ -158,6 +158,17 @@ Model HostileRifleTracer2 // Name of actor in DECORATE
    FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
 }
 
+Model HostileRifleTracer3 // Name of actor in DECORATE
+{ 
+   Path "Models/Projectiles" // Path to model in PK3
+   SKIN 0 "tracer1.tga" // Model index, model file
+   MODEL 0 "Tracer2.md3" // Model index, texture (can be in any format supported by GZDoom)
+   Scale 2.5 2.5 1.5 // Scale values
+   PITCHFROMMOMENTUM // A flag that will fix the model pitch for projectiles
+   
+   FrameIndex TRAC A 0 0 // The sprite lump, sprite frame, model index, frame number
+}
+
 Model HostileShotgunTracer // Name of actor in DECORATE
 { 
    Path "Models/Projectiles" // Path to model in PK3

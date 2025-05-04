@@ -279,6 +279,10 @@ Actor HostileRifleTracer2: PrldHostileTracer
 {
 damage (8)
 }
+Actor HostileRifleTracer3: PrldHostileTracer
+{
+Speed 35
+}
 
 Actor HostileShotgunTracer: PrldHostileTracer
 {
