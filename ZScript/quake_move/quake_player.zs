@@ -857,8 +857,8 @@ class QuakePlayer : PlayerPawn
 		}
 		
 		
-        //Super.CalcHeight();//adding doom viewbob into the pot of shit
-		let player = self.player;
+        Super.CalcHeight();//adding doom viewbob into the pot of shit//ok so this messes up smooth stair movement completely idk how to make the same effect without doing that so uh
+		/*let player = self.player;//me trying to fix it but (go down for more)
 		double angle;
 		//double bob;
 		bool still = false;
@@ -972,7 +972,7 @@ class QuakePlayer : PlayerPawn
 		if (player.viewz < floorz + 4)
 		{
 			player.viewz = floorz + 4;
-		}
+		}*/ //didnt work lmao
         return;
     }
 

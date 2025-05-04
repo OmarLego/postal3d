@@ -164,13 +164,29 @@ SLOAD SLOAD
 SCLOS SCLOS
 
 //The Unmistakable M-16
-AKFIR AKFIR
+$Random Weapons/M4/Fire
+{ Weapons/M4/Fire1 Weapons/M4/Fire2 Weapons/M4/Fire3}
+
+Weapons/M4/Fire1 	"Sounds/Weapons/M-16/G36_Outdoor_Fire01.ogg"
+Weapons/M4/Fire2 	"Sounds/Weapons/M-16/G36_Outdoor_Fire02.ogg"
+Weapons/M4/Fire3 	"Sounds/Weapons/M-16/G36_Outdoor_Fire03.ogg"
+/*Weapons/M4/Fire1 	"Sounds/Weapons/M-16/AKM_Outdoor_Fire01.ogg"
+Weapons/M4/Fire2 	"Sounds/Weapons/M-16/AKM_Outdoor_Fire02.ogg"
+Weapons/M4/Fire3 	"Sounds/Weapons/M-16/AKM_Outdoor_Fire03.ogg"*/
+
+//AKFIR AKFIR
+$Alias AKFIR Weapons/M4/Fire
 AKMAGIN AKMAGIN
 AKMAGOUT AKMAGOUT
 AKMAGMOV AKMAGMOV
 AKBACK AKBACK
 AKREL AKREL
 AKEMPT AKEMPT
+$Random Weapons/M4/Modeswitch 
+{ Weapons/M4/Modeswitch1 Weapons/M4/Modeswitch2 }
+
+Weapons/M4/Modeswitch1	 	"Sounds/Weapons/M-16/M4-modeswitch1.wav"
+Weapons/M4/Modeswitch2 		"Sounds/Weapons/M-16/M4-modeswitch2.ogg"
 
 //im too lazy to label the weapon sounds just guess what they are idk man im tired i dont feel good
 

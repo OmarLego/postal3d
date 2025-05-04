@@ -46,13 +46,13 @@ actor PRLD_MuzzleFlash3 : PRLD_MuzzleFlash2
 {
 	Scale 1.4
 }
-//Token for progression in "cutscene" sequences
+//Token for progression in "cutscene" sequences//meant for a doom 3 phobos-like system
 Actor PRLD_CutsceneToken : Inventory
 {
 Inventory.MaxAmount 99
 +UNDROPPABLE
 }
-//Token so changes in the player actor can happen through decorate
+//Token so changes in the player actor can happen through decorate//whatever that means
 Actor PRLD_CutsceneFUCK : Inventory
 {
 Inventory.MaxAmount 1
@@ -86,8 +86,9 @@ ACTOR PostalDude : QuakePlayer//PlayerPawn
 	Player.StartItem "PB",2
 	Player.StartItem "DBMag", 2
 	Player.StartItem "MacheteAmmoLoaded", 1
-	Player.StartItem "PRLD_CutsceneFUCK", 1
+	Player.StartItem "PRLD_CutsceneFUCK", 1//used so player movement Is Normal, removing makes player slower for da cinematikz
 	Player.StartItem "MoreThan8Pages", 1
+	Player.StartItem "PRLD_M4Burst", 1
     Player.WeaponSlot 1, "Machete"
     Player.Weaponslot 2, "PRLD_M12", "MP5K", "Magnum"
     Player.Weaponslot 3, "DoubleBarrel", "PRLD_LeverAction"
