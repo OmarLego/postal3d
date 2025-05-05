@@ -1175,3 +1175,34 @@ Actor PRLD_Bench2C : PRLD_Table1C
 			Stop
 	}
 }
+Actor PRLD_Colision32x8 : PRLD_Table1C
+{
+	Radius 16
+	Height 8
+	States {
+		Spawn:
+			TNT1 A -1
+			Stop
+	}
+}
+Actor PRLD_TRAINWORKDESK1
+{
+	Radius 16
+	Height 32
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}
+Actor PRLD_OUTDRLITE01
+{
+	+solid
+	Radius 3
+	Height 96
+	States {
+		Spawn:
+			BRLS A -1
+			Stop
+	}
+}

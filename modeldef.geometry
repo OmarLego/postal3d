@@ -1019,3 +1019,19 @@ MODEL PRLD_TRAINBENCH1
    
 	FrameIndex BRLS A 0 0
 }
+MODEL PRLD_TRAINWORKDESK1
+{
+	Path "Models/Geometry/RAILWAY"
+	Model 0 "TRANWRKDSK.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}
+MODEL PRLD_OUTDRLITE01 //temp til i texture it
+{
+	Path "Models/Geometry"
+	Model 0 "outdoorlight.obj"
+	Scale 1.0 1.0 1.2
+   
+	FrameIndex BRLS A 0 0
+}

@@ -13,9 +13,9 @@ maps
 		}
 		defaultfloortexture = "PCONCT02";
 		defaultceiltexture = "F_SKY1";
-		defaulttoptexture = "F_SKY1";
-		defaultwalltexture = "F_SKY1";
-		defaultbottomtexture = "F_SKY1";
+		defaulttoptexture = "PGRASS2";
+		defaultwalltexture = "PGRASS2";
+		defaultbottomtexture = "PGRASS2";
 		custombrightness = 196;
 		customfloorheight = 0;
 		customceilheight = 128;
@@ -28,9 +28,9 @@ maps
 		overrideceilheight = false;
 		overridebrightness = false;
 		uselongtexturenames = false;
-		viewpositionx = 3256.768f;
-		viewpositiony = -476.489f;
-		viewscale = 0.08406286f;
+		viewpositionx = 7542.916f;
+		viewpositiony = 1081.59f;
+		viewscale = 0.800317f;
 		scriptcompiler = "zdoom_acs.cfg";
 		
 		grid
